@@ -1,0 +1,18 @@
+module-name:
+    StaticNarrative
+
+module-description:
+    A KBase module
+
+service-language:
+    python
+
+module-version:
+    0.0.1
+
+service-config:
+    dynamic-service: true
+
+owners:
+    [wjriehl]
+
