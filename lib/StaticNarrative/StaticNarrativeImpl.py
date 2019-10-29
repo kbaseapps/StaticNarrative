@@ -2,6 +2,7 @@
 #BEGIN_HEADER
 import logging
 import os
+from StaticNarrative.exporter.exporter import NarrativeExporter
 
 #END_HEADER
 
@@ -34,6 +35,7 @@ class StaticNarrative:
         #BEGIN_CONSTRUCTOR
         self.callback_url = os.environ['SDK_CALLBACK_URL']
         self.shared_folder = config['scratch']
+        self.workspace_url = config['workspace-url']
         logging.basicConfig(format='%(created)s %(levelname)s: %(message)s',
                             level=logging.INFO)
         #END_CONSTRUCTOR
@@ -57,6 +59,7 @@ class StaticNarrative:
         # ctx is the context object
         # return variables are: returnVal
         #BEGIN create_static_narrative
+        exporter = NarrativeExporter(self.workspace_url, ctx['user_id'], ctx['token'])
         #END create_static_narrative
 
         # At some point might do deeper type checking...

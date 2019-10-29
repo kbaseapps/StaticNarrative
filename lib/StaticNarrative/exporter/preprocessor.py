@@ -10,24 +10,17 @@ from .processor_util import (
     get_icon,
     get_authors
 )
-from biokbase.narrative.common.util import kbase_env
+
 
 class NarrativePreprocessor(Preprocessor):
-    """
-    A KBase Narrative specific pre-processor.
-    Right now it simply extracts the narrative title and
-    provides it as a resource under resources['kbase']['title']
-
-    Something to build on!
-    """
-
-    def __init__(self, **kw):
-        super(NarrativePreprocessor, self).__init__(**kw)
-        env = kbase_env.env
-        if env == "dev":
-            env = "ci"
-        self.env = env
-        self.host = f'https://{self.env}.kbase.us'
+    def __init__(self, config=None, **kw):
+        super(NarrativePreprocessor, self).__init__(config=config, **kw)
+        # self.c = config
+        # # if env == "dev":
+        # #     env = "ci"
+        # # self.env = env
+        self.host = self.config.narrative_session.host  #f'https://{self.env}.kbase.us'
+        print(self.host)
         self.fonts_root = os.path.join(os.environ.get('NARRATIVE_DIR', '.'), 'kbase-extension', 'static', 'kbase', 'fonts')
         self.app_style_file = os.path.join(os.environ.get('NARRATIVE_DIR', '.'), 'src', 'biokbase', 'narrative', 'exporter', 'app_style.css')
         self.icon_style_file = os.path.join(os.environ.get('NARRATIVE_DIR', '.'), 'kbase-extension', 'static', 'kbase', 'css', 'kbaseIcons.css')

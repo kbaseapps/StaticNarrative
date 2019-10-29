@@ -61,6 +61,7 @@ class KBaseAuth(object):
     '''
 
     _LOGIN_URL = 'https://kbase.us/services/auth/api/legacy/KBase/Sessions/Login'
+    ENDPT_USER_DISPLAY = "/users/?list="
 
     def __init__(self, auth_url=None):
         '''
@@ -92,3 +93,11 @@ class KBaseAuth(object):
         user = ret.json()['user_id']
         self._cache.add_valid_token(token, user)
         return user
+
+    def get_display_names(self, auth_token: str, user_ids: list) -> dict:
+        headers = {"Authorization": auth_token}
+        r = _requests.get(self._authurl + self.ENDPT_USER_DISPLAY + ",".join(user_ids),
+                          headers=headers)
+        if r.status_code != _requests.codes.ok:
+            r.raise_for_status()
+        return r.json()

@@ -30,7 +30,8 @@ if __name__ == "__main__":
                 "shock_url = " + kbase_endpoint + "/shock-api\n" + \
                 "handle_url = " + kbase_endpoint + "/handle_service\n" + \
                 "srv_wiz_url = " + kbase_endpoint + "/service_wizard\n" + \
-                "njsw_url = " + kbase_endpoint + "/njs_wrapper\n"
+                "njsw_url = " + kbase_endpoint + "/njs_wrapper\n" + \
+                "nms_url = " + kbase_endpoint + "/narrative_method_store\n"
         if "AUTH_SERVICE_URL" in os.environ:
             props += "auth_service_url = " + os.environ.get("AUTH_SERVICE_URL") + "\n"
         props += "auth_service_url_allow_insecure = " + \

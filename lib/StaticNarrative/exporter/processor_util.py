@@ -1,9 +1,8 @@
 import json
 import os
-from biokbase.narrative.common.url_config import URLS
-import biokbase.narrative.clients as clients
-import biokbase.auth as auth
+import installed_clients.authclient as auth
 import html
+
 
 def build_report_view_data(result):
     """
@@ -68,6 +67,7 @@ def build_report_view_data(result):
         'html': html
     }
 
+
 def get_icon(metadata):
     """
     Should return a dict with keys "type" and "icon"
@@ -99,6 +99,7 @@ def get_icon(metadata):
         icon['color'] = 'silver'
     return icon
 
+
 def get_data_icon(obj_type):
     icon_json = os.path.join(os.environ.get('NARRATIVE_DIR', '.'), 'kbase-extension', 'static', 'kbase', 'config', 'icons.json')
     with open(icon_json, 'r') as icon_file:
@@ -113,6 +114,7 @@ def get_data_icon(obj_type):
     if obj_type in icon_mapping['color_mapping']:
         icon_info['color'] = icon_mapping['color_mapping'][obj_type]
     return icon_info
+
 
 def get_authors(wsid):
     ws = clients.get('workspace')

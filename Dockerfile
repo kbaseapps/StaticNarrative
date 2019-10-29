@@ -17,6 +17,8 @@ RUN chmod -R a+rw /kb/module
 
 WORKDIR /kb/module
 
+RUN pip install -r requirements.txt
+
 RUN make all
 
 ENTRYPOINT [ "./scripts/entrypoint.sh" ]
