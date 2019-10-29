@@ -22,8 +22,8 @@ class StaticNarrative:
     # the latter method is running.
     ######################################### noqa
     VERSION = "0.0.1"
-    GIT_URL = ""
-    GIT_COMMIT_HASH = ""
+    GIT_URL = "https://github.com/briehl/StaticNarrative"
+    GIT_COMMIT_HASH = "6a39b78d77ea487805f17568d99edaa9cc820e31"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER

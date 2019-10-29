@@ -8,7 +8,6 @@ from StaticNarrative.StaticNarrativeImpl import StaticNarrative
 from StaticNarrative.StaticNarrativeServer import MethodContext
 from StaticNarrative.authclient import KBaseAuth as _KBaseAuth
 
-from installed_clients.WorkspaceClient import Workspace
 
 
 class StaticNarrativeTest(unittest.TestCase):
@@ -37,20 +36,36 @@ class StaticNarrativeTest(unittest.TestCase):
                              'method_params': []
                              }],
                         'authenticated': 1})
-        cls.wsURL = cls.cfg['workspace-url']
-        cls.wsClient = Workspace(cls.wsURL)
-        cls.serviceImpl = StaticNarrative(cls.cfg)
+        # cls.wsURL = cls.cfg['workspace-url']
+        # cls.wsClient = Workspace(cls.wsURL)
+        cls.service_impl = StaticNarrative(cls.cfg)
         cls.scratch = cls.cfg['scratch']
         cls.callback_url = os.environ['SDK_CALLBACK_URL']
-        suffix = int(time.time() * 1000)
-        cls.wsName = "test_ContigFilter_" + str(suffix)
-        ret = cls.wsClient.create_workspace({'workspace': cls.wsName})  # noqa
+        # suffix = int(time.time() * 1000)
+        # cls.wsName = "test_ContigFilter_" + str(suffix)
+        # ret = cls.wsClient.create_workspace({'workspace': cls.wsName})  # noqa
 
     @classmethod
     def tearDownClass(cls):
-        if hasattr(cls, 'wsName'):
-            cls.wsClient.delete_workspace({'workspace': cls.wsName})
-            print('Test workspace was deleted')
+        pass
+        # if hasattr(cls, 'wsName'):
+        #     cls.wsClient.delete_workspace({'workspace': cls.wsName})
+        #     print('Test workspace was deleted')
+
+    def test_status(self):
+        impl = self.service_impl
+        status = impl.status(self.ctx)[0]
+        self.assertEqual(status, {
+            'state': "OK",
+            'message': "",
+            'version': impl.VERSION,
+            'git_url': impl.GIT_URL,
+            'git_commit_hash': impl.GIT_COMMIT_HASH
+        })
+        self.assertIsNotNone(status['version'])
+        self.assertIsNotNone(status['git_url'])
+        self.assertIsNotNone(status['git_commit_hash'])
+
 
     # NOTE: According to Python unittest naming rules test method names should start from 'test'. # noqa
     def test_your_method(self):

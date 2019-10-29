@@ -2,3 +2,4 @@ test_local
 sdk.cfg
 lib/StaticNarrative/StaticNarrative*.bak*
 *.pyc
+.vscode
