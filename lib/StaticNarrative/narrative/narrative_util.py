@@ -46,7 +46,8 @@ def read_narrative(ref: str, ws_client: Workspace) -> Dict:
         # nar['data'] = update_narrative(nar['data'])
         return nar['data']
     except ServerError as err:
-        raise WorkspaceError(err, ref.wsid)
+        ws_id = ref.split('/')[0]
+        raise WorkspaceError(err, ws_id)
 
 
 def _validate_nar_type(t: str, ref: str):

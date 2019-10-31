@@ -1,10 +1,12 @@
 import json
 import os
 import installed_clients.authclient as auth
+from installed_clients.WorkspaceClient import Workspace
+from installed_clients.authclient import KBaseAuth as _KBaseAuth
 import html
 
 
-def build_report_view_data(result):
+def build_report_view_data(config, result):
     """
     Returns a structure like this:
     {
@@ -22,7 +24,7 @@ def build_report_view_data(result):
     if not result or not result[0].get('report_name') or not result[0].get('report_ref'):
         return {}
     report_ref = result[0].get('report_ref')
-    ws = clients.get('workspace')
+    ws = Workspace(url=config.narrative_session.ws_url, token=config.narrative_session.token)
     report = ws.get_objects2({'objects': [{'ref': report_ref}]})['data'][0]['data']
     """{'direct_html': None,
      'direct_html_link_index': None,
@@ -68,7 +70,7 @@ def build_report_view_data(result):
     }
 
 
-def get_icon(metadata):
+def get_icon(config, metadata):
     """
     Should return a dict with keys "type" and "icon"
     if "type" = image, then "icon" second should be the src.
@@ -91,7 +93,8 @@ def get_icon(metadata):
         icon['shape'] = 'square'
     elif metadata.get('type') == 'app':
         icon['type'] = 'image'
-        icon['icon'] = URLS.narrative_method_store_image + metadata.get('appCell', {})['app']['spec']['info']['icon']['url']
+        icon['icon'] = config.narrative_session.nms_image_url + \
+            metadata.get('appCell', {})['app']['spec']['info']['icon']['url']
     else:
         icon['type'] = 'class'
         icon['icon'] = 'fa-question-circle-o'
@@ -101,7 +104,7 @@ def get_icon(metadata):
 
 
 def get_data_icon(obj_type):
-    icon_json = os.path.join(os.environ.get('NARRATIVE_DIR', '.'), 'kbase-extension', 'static', 'kbase', 'config', 'icons.json')
+    icon_json = os.path.join("/kb", "module", "data", "icons.json")
     with open(icon_json, 'r') as icon_file:
         icon_mapping = json.load(icon_file)
     icon_info = {
@@ -116,16 +119,17 @@ def get_data_icon(obj_type):
     return icon_info
 
 
-def get_authors(wsid):
-    ws = clients.get('workspace')
+def get_authors(config, wsid):
+    ws = Workspace(url=config.narrative_session.ws_url, token=config.narrative_session.token)
     ws_info = ws.get_workspace_info({'id': wsid})
     author_id_list = [ws_info[2]]
-    disp_names = auth.get_display_names(auth.get_auth_token(), author_id_list)
+    auth = _KBaseAuth(config.narrative_session.auth_url)
+    disp_names = auth.get_display_names(config.narrative_session.token, author_id_list)
     author_list = []
     for author in author_id_list:
         author_list.append({
             'id': author,
             'name': html.escape(disp_names.get(author, author)),
-            'path': URLS.profile_page + author
+            'path': config.narrative_session.profile_page_url + author
         })
     return author_list

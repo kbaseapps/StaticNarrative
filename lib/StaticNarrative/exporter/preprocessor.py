@@ -36,7 +36,7 @@ class NarrativePreprocessor(Preprocessor):
             'host': self.host,
             'creator': nb['metadata']['creator'],
             'narrative_link': f"{self.host}/narrative/{nb['metadata']['wsid']}",
-            'authors': get_authors(nb['metadata']['wsid'])
+            'authors': get_authors(self.config, nb['metadata']['wsid'])
         })
 
         if not 'inlining' in resources:
@@ -59,7 +59,7 @@ class NarrativePreprocessor(Preprocessor):
                 'type': kb_meta.get('type'),
                 'idx': index,
                 'attributes': kb_meta.get('attributes', {}),
-                'icon': get_icon(kb_meta)
+                'icon': get_icon(self.config, kb_meta)
             }
             if kb_info['type'] == 'app':
                 kb_info.update(self._process_app_info(kb_info, kb_meta))
@@ -79,11 +79,11 @@ class NarrativePreprocessor(Preprocessor):
         resources['kbase']['cells'][index] = cell.metadata.get('kbase')
         return cell, resources
 
-
     def _process_app_info(self, kb_info: dict, kb_meta: dict) -> dict:
         """
-        Extracts the useful bits of the complicated metadata structure so that the Jinja templates don't
-        look like spaghetti with stuff like 'kbase.appCell.app.spec.info......'
+        Extracts the useful bits of the complicated metadata structure so that the Jinja
+        templates don't look like spaghetti with stuff like
+        'kbase.appCell.app.spec.info......'
         returns a dict with the updated info.
         """
         kb_info['app'] = {
@@ -108,7 +108,10 @@ class NarrativePreprocessor(Preprocessor):
         kb_info['output'] = {
             "widget": kb_meta['appCell']['exec'].get('outputWidgetInfo', {}),
             "result": kb_meta['appCell']['exec']['jobState'].get('result', []),
-            "report": build_report_view_data(kb_meta['appCell']['exec']['jobState'].get('result', []))
+            "report": build_report_view_data(
+                          self.config,
+                          kb_meta['appCell']['exec']['jobState'].get('result', [])
+                      )
         }
         kb_info['job'] = {
             'state': kb_meta['appCell']['exec']['jobState']['job_state']
