@@ -15,15 +15,12 @@ from .processor_util import (
 class NarrativePreprocessor(Preprocessor):
     def __init__(self, config=None, **kw):
         super(NarrativePreprocessor, self).__init__(config=config, **kw)
-        # self.c = config
-        # # if env == "dev":
-        # #     env = "ci"
-        # # self.env = env
-        self.host = self.config.narrative_session.host  #f'https://{self.env}.kbase.us'
+        self.host = self.config.narrative_session.host
         print(self.host)
-        self.fonts_root = os.path.join(os.environ.get('NARRATIVE_DIR', '.'), 'kbase-extension', 'static', 'kbase', 'fonts')
-        self.app_style_file = os.path.join(os.environ.get('NARRATIVE_DIR', '.'), 'src', 'biokbase', 'narrative', 'exporter', 'app_style.css')
-        self.icon_style_file = os.path.join(os.environ.get('NARRATIVE_DIR', '.'), 'kbase-extension', 'static', 'kbase', 'css', 'kbaseIcons.css')
+        base_path = self.config.narrative_session.base_path
+        self.fonts_root = os.path.join(base_path, "fonts")
+        self.app_style_file = os.path.join(base_path, "styles", "app_style.css")
+        self.icon_style_file = os.path.join(base_path, "styles", "kbaseIcons.css")
 
     def preprocess(self, nb, resources):
         (nb, resources) = super(NarrativePreprocessor, self).preprocess(nb, resources)

@@ -69,7 +69,8 @@ def _mock_adapter(ws_id: int = None,
                 "version": "1.1"
             }), "UTF-8")
         elif rq_method == "GET":
-            if request.url.endswith("/api/V2/users"):
+            print(request.url)
+            if "/api/V2/users/?list=" in request.url:
                 response._content = bytes(json.dumps(user_map), "UTF-8")
         return response
 

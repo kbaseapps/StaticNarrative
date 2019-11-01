@@ -61,7 +61,7 @@ class KBaseAuth(object):
     '''
 
     _LOGIN_URL = 'https://kbase.us/services/auth/api/legacy/KBase/Sessions/Login'
-    ENDPT_USER_DISPLAY = "/users/?list="
+    ENDPT_USER_DISPLAY = "/api/V2/users/?list="
 
     def __init__(self, auth_url=None):
         '''

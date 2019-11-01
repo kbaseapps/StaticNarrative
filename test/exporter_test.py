@@ -58,4 +58,4 @@ class ExporterTest(unittest.TestCase):
             user_map
         )
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
-        url = exporter.export_narrative("43666/1/18", "outfile.html")
+        url = exporter.export_narrative("43666/1/18", os.path.join(self.cfg["scratch"], "outfile.html"))

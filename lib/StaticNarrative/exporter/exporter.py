@@ -29,7 +29,11 @@ class NarrativeExporter:
     def __init__(self, exporter_cfg: Dict[str, str], user_id: str, token: str):
         c = Config()
         c.HTMLExporter.preprocessors = [preprocessor.NarrativePreprocessor]
-        c.TemplateExporter.template_path = ['.', self._narrative_template_path()]
+
+        # all the static files (css, fonts, etc.) are relative to this dir.
+        base_path = os.path.dirname(os.path.abspath(__file__))
+
+        c.TemplateExporter.template_path = ['.', os.path.join(base_path, "templates")]
         c.CSSHTMLHeaderPreprocessor.enabled = True
         c.NarrativePreprocessor.enabled = True
         c.ClearMetadataPreprocessor.enabled = False
@@ -39,14 +43,12 @@ class NarrativeExporter:
         c.narrative_session.nms_url = exporter_cfg["nms-url"]
         c.narrative_session.nms_image_url = exporter_cfg["nms-image-url"]
         c.narrative_session.profile_page_url = exporter_cfg["profile-page-url"]
-        c.narrative_session.auth_url = exporter_cfg["auth-service-url"]
+        c.narrative_session.auth_url = exporter_cfg["auth-url"]
         c.narrative_session.host = "https://some_host.kbase.us"
+        c.narrative_session.base_path = base_path
         self.html_exporter = HTMLExporter(config=c)
         self.html_exporter.template_file = NARRATIVE_TEMPLATE_FILE
         self.ws_client = Workspace(url=exporter_cfg["workspace-url"], token=token)
-
-    def _narrative_template_path(self):
-        return os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
 
     def export_narrative(self, narrative_ref: str, output_file: str) -> None:
         validate_ref(narrative_ref)
