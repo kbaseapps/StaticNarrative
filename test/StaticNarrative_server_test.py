@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 import os
-import time
 import unittest
 from configparser import ConfigParser
 
 from StaticNarrative.StaticNarrativeImpl import StaticNarrative
 from StaticNarrative.StaticNarrativeServer import MethodContext
 # from StaticNarrative.authclient import KBaseAuth as _KBaseAuth
-
 
 
 class StaticNarrativeTest(unittest.TestCase):
@@ -27,8 +25,8 @@ class StaticNarrativeTest(unittest.TestCase):
         # WARNING: don't call any logging methods on the context object,
         # it'll result in a NoneType error
         cls.ctx = MethodContext(None)
-        cls.ctx.update({'token': "some_token", # token,
-                        'user_id': "some_user", # user_id,
+        cls.ctx.update({'token': "some_token",
+                        'user_id': "some_user",
                         'provenance': [
                             {'service': 'StaticNarrative',
                              'method': 'please_never_use_it_in_production',

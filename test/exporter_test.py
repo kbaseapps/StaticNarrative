@@ -58,4 +58,5 @@ class ExporterTest(unittest.TestCase):
             user_map
         )
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
-        url = exporter.export_narrative("43666/1/18", os.path.join(self.cfg["scratch"], "outfile.html"))
+        static_path = exporter.export_narrative("43666/1/18", "outfile.html")
+        self.assertEqual(static_path, os.path.join(self.cfg["scratch"], "outfile.html"))
