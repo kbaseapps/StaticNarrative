@@ -1,0 +1,104 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/6f4e2100-4ef2-4182-b4de-6ae5feb88067",
+                "description": null,
+                "handle": "KBH_476885",
+                "label": "QUAST report",
+                "name": "report.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., \"# contigs (>= 0 bp)\" and \"Total length (>= 0 bp)\" include all contigs).\n\nAssembly                        Rhodobacter_CACIA_14H1_contigs\n# contigs (>= 0 bp)             304                           \n# contigs (>= 1000 bp)          290                           \n# contigs (>= 10000 bp)         147                           \n# contigs (>= 100000 bp)        0                             \n# contigs (>= 1000000 bp)       0                             \nTotal length (>= 0 bp)          3867594                       \nTotal length (>= 1000 bp)       3860047                       \nTotal length (>= 10000 bp)      2990442                       \nTotal length (>= 100000 bp)     0                             \nTotal length (>= 1000000 bp)    0                             \n# contigs                       299                           \nLargest contig                  58528                         \nTotal length                    3866436                       \nGC (%)                          66.62                         \nN50                             17793                         \nN75                             10888                         \nL50                             70                            \nL75                             139                           \n# N's per 100 kbp               0.00                          \n# predicted genes (unique)      3817                          \n# predicted genes (>= 0 bp)     3817                          \n# predicted genes (>= 300 bp)   3446                          \n# predicted genes (>= 1500 bp)  487                           \n# predicted genes (>= 3000 bp)  36                            \n",
+        "warnings": []
+    },
+    "info": [
+        3,
+        "kb_quast_report_753191bb-e485-42f8-8e33-9a78b06b34c6",
+        "KBaseReport.Report-3.0",
+        "2019-07-30T17:20:18+0000",
+        1,
+        "wjriehl",
+        43666,
+        "wjriehl:narrative_1564507007662",
+        "296ec75f2fd9062917e5b782141d38a2",
+        2127,
+        {
+            "Size(characters)": "1734",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "43666/3/1"
+    ],
+    "provenance": [
+        {
+            "time": "2019-07-30T17:18:39+0000",
+            "epoch": 1564507119000,
+            "service": "kb_quast",
+            "service_ver": "0.0.3",
+            "method": "run_QUAST_app",
+            "method_params": [
+                {
+                    "assemblies": [
+                        "43666/2/8"
+                    ],
+                    "workspace_name": "wjriehl:narrative_1564507007662"
+                }
+            ],
+            "input_ws_objects": [
+                "43666/2/8"
+            ],
+            "resolved_ws_objects": [
+                "43666/2/8"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "kb_quast",
+                    "ver": "0.0.3",
+                    "code_url": "https://github.com/kbaseapps/kb_quast",
+                    "commit": "055c7eeda5f420f6d72b2fc8d542f7444a51ba84"
+                },
+                {
+                    "name": "AssemblyUtil",
+                    "ver": "1.1.0-release",
+                    "code_url": "https://github.com/kbaseapps/AssemblyUtil",
+                    "commit": "afd3f360f4fb30143bca41cf58c1977d8ab45e8b"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.1.1-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "7f5646bc29b5cb35d32c86f3acdf7b18a0f6d53f"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.5-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "0356e0313025b0d4b1b7fa11e96050aeaaaa828c"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 43666,
+    "created": "2019-07-30T17:20:17+0000",
+    "epoch": 1564507217486,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_476885"
+        ]
+    }
+}

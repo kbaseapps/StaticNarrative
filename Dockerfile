@@ -7,6 +7,16 @@ MAINTAINER KBase Developer
 # installation scripts.
 
 # RUN apt-get update
+RUN pip install nbconvert==5.6.0 \
+    nbformat==4.4.0 \
+    traitlets==4.3.3 \
+    coverage==4.5.3 \
+    pytest-cov==2.8.1 \
+    pytest==4.0.2 \
+    flake8==3.5.0 \
+    coveralls==1.8.2 \
+    requests-mock==1.7.0 \
+    jsonrpcbase==0.2.0
 
 
 # -----------------------------------------

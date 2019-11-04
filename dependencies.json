@@ -1,4 +1,8 @@
 [ {
+  "module_name" : "Catalog",
+  "type" : "core",
+  "file_path" : "https://raw.githubusercontent.com/kbase/catalog/master/catalog.spec"
+}, {
   "module_name" : "Workspace",
   "type" : "core",
   "file_path" : "https://raw.githubusercontent.com/kbase/workspace_deluxe/master/workspace.spec"
