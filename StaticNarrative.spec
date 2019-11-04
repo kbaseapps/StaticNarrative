@@ -31,7 +31,7 @@ module StaticNarrative {
     /*
         Creates a static Narrative from the given Narrative ref string.
     */
-    funcdef create_static_narrative(CreateStaticNarrativeInput) returns (CreateStaticNarrativeOutput) authentication required;
+    funcdef create_static_narrative(CreateStaticNarrativeInput params) returns (CreateStaticNarrativeOutput output) authentication required;
 
     /*
         state - a string, either OK or ...(TBD)
