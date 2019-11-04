@@ -25,7 +25,6 @@ def _mock_adapter(ws_id: int = None,
         rq_method = request.method.upper()
         if rq_method == "POST":
             params = request.json().get("params")
-            print(params)
             method = request.json().get("method")
 
             result = []
@@ -35,8 +34,6 @@ def _mock_adapter(ws_id: int = None,
                 # only gets called with a single obj requested, so craft the
                 # response that way
                 ref = params[0].get("objects", [{}])[0].get("ref")
-                print(ref_to_file)
-                print(isinstance(ref_to_file, dict))
                 if ref not in ref_to_file:
                     response.status_code = 500
                     result = [{"error": f"no object with reference {ref}"}]
@@ -69,7 +66,6 @@ def _mock_adapter(ws_id: int = None,
                 "version": "1.1"
             }), "UTF-8")
         elif rq_method == "GET":
-            print(request.url)
             if "/api/V2/users/?list=" in request.url:
                 response._content = bytes(json.dumps(user_map), "UTF-8")
         return response
@@ -99,7 +95,6 @@ def _get_object_from_file(filename: str):
     This should be a JSON file representing a workspace data object.
     If it's not JSON, it'll crash.
     """
-    print("Trying to open " + filename)
     with open(filename, "r") as f:
         obj = json.load(f)
     return obj
@@ -111,8 +106,6 @@ def set_up_ok_mocks(rqm,
                     ref_to_info: Dict,
                     ws_info: List,
                     user_map: Dict):
-    print(ref_to_file)
-    print(isinstance(ref_to_file, dict))
     rqm.add_matcher(_mock_adapter(ws_id=ws_id,
                                   ref_to_file=ref_to_file,
                                   ref_to_info=ref_to_info,

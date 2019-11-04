@@ -44,7 +44,11 @@ class NarrativeExporter:
         c.narrative_session.nms_image_url = exporter_cfg["nms-image-url"]
         c.narrative_session.profile_page_url = exporter_cfg["profile-page-url"]
         c.narrative_session.auth_url = exporter_cfg["auth-url"]
-        c.narrative_session.host = "https://some_host.kbase.us"
+
+        endpt = exporter_cfg["kbase-endpoint"]
+
+
+        c.narrative_session.host = endpt
         c.narrative_session.base_path = base_path
         self.html_exporter = HTMLExporter(config=c)
         self.html_exporter.template_file = NARRATIVE_TEMPLATE_FILE
