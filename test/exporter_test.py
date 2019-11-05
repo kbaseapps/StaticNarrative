@@ -4,6 +4,7 @@ import requests_mock
 from configparser import ConfigParser
 import os
 from test.mocks import set_up_ok_mocks
+from StaticNarrative.narrative_ref import NarrativeRef
 
 
 class ExporterTest(unittest.TestCase):
@@ -58,4 +59,8 @@ class ExporterTest(unittest.TestCase):
             user_map
         )
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
-        url = exporter.export_narrative("43666/1/18", os.path.join(self.cfg["scratch"], "outfile.html"))
+        static_path = exporter.export_narrative(
+            NarrativeRef({"wsid": 43666, "objid": 1, "ver": 18}),
+            "outfile.html"
+        )
+        self.assertEqual(static_path, os.path.join(self.cfg["scratch"], "outfile.html"))

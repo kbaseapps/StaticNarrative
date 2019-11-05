@@ -3,6 +3,9 @@
 import logging
 import os
 from StaticNarrative.exporter.exporter import NarrativeExporter
+from StaticNarrative.uploader.uploader import upload_static_narrative
+from StaticNarrative.narrative_ref import NarrativeRef
+from StaticNarrative.narrative.narrative_util import save_narrative_url
 
 #END_HEADER
 
@@ -24,7 +27,7 @@ class StaticNarrative:
     ######################################### noqa
     VERSION = "0.0.1"
     GIT_URL = "https://github.com/briehl/StaticNarrative"
-    GIT_COMMIT_HASH = "6a39b78d77ea487805f17568d99edaa9cc820e31"
+    GIT_COMMIT_HASH = "c05ca10c0d11a33157f4b9f028de6c02fae72692"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -38,36 +41,43 @@ class StaticNarrative:
         self.workspace_url = config['workspace-url']
         logging.basicConfig(format='%(created)s %(levelname)s: %(message)s',
                             level=logging.INFO)
+        self.config = config
         #END_CONSTRUCTOR
         pass
 
 
-    def create_static_narrative(self, ctx, CreateStaticNarrativeInput):
+    def create_static_narrative(self, ctx, params):
         """
         Creates a static Narrative from the given Narrative ref string.
-        :param CreateStaticNarrativeInput: instance of type
-           "CreateStaticNarrativeInput" (narrative_ref - the reference to the
-           Narrative object to make a static version of. must include
-           version! overwrite - if true, overwrite any previous version of
-           the static Narrative.) -> structure: parameter "narrative_ref" of
-           type "ws_ref" (a workspace object reference string (of the form
-           wsid/objid/ver)), parameter "overwrite" of type "boolean" (allowed
-           0 or 1)
+        :param params: instance of type "CreateStaticNarrativeInput"
+           (narrative_ref - the reference to the Narrative object to make a
+           static version of. must include version! overwrite - if true,
+           overwrite any previous version of the static Narrative.) ->
+           structure: parameter "narrative_ref" of type "ws_ref" (a workspace
+           object reference string (of the form wsid/objid/ver)), parameter
+           "overwrite" of type "boolean" (allowed 0 or 1)
         :returns: instance of type "CreateStaticNarrativeOutput" ->
            structure: parameter "static_narrative_url" of type "url"
         """
         # ctx is the context object
-        # return variables are: returnVal
+        # return variables are: output
         #BEGIN create_static_narrative
-        exporter = NarrativeExporter(self.workspace_url, ctx['user_id'], ctx['token'])
+        ref = NarrativeRef.parse(params["narrative_ref"])
+        exporter = NarrativeExporter(self.config, ctx["user_id"], ctx["token"])
+        output_path = exporter.export_narrative(ref, "narrative.html")
+        static_url = upload_static_narrative(ref, output_path, self.config["static-file-root"])
+        save_narrative_url(self.config, ctx["token"], ref, static_url)
+        output = {
+            "static_narrative_url": static_url
+        }
         #END create_static_narrative
 
         # At some point might do deeper type checking...
-        if not isinstance(returnVal, dict):
+        if not isinstance(output, dict):
             raise ValueError('Method create_static_narrative return value ' +
-                             'returnVal is not type dict as required.')
+                             'output is not type dict as required.')
         # return the results
-        return [returnVal]
+        return [output]
 
     def status(self, ctx):
         """
