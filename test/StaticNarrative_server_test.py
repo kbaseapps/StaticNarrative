@@ -66,7 +66,7 @@ class StaticNarrativeTest(unittest.TestCase):
         self.assertIsNotNone(status['git_commit_hash'])
 
     @requests_mock.Mocker()
-    def test_create_static_narrative_ok(self, rqm):
+    def test_create_static_narrative_ok_unit(self, rqm):
         """
         Happy case, test a Narrative exporter process.
         """
