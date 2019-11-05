@@ -61,6 +61,6 @@ class ExporterTest(unittest.TestCase):
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
         static_path = exporter.export_narrative(
             NarrativeRef({"wsid": 43666, "objid": 1, "ver": 18}),
-            "outfile.html"
+            self.cfg["scratch"]
         )
-        self.assertEqual(static_path, os.path.join(self.cfg["scratch"], "outfile.html"))
+        self.assertEqual(static_path, os.path.join(self.cfg["scratch"], "narrative.html"))
