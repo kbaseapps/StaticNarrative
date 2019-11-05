@@ -3,3 +3,4 @@ sdk.cfg
 lib/StaticNarrative/StaticNarrative*.bak*
 *.pyc
 .vscode
+.DS_Store
