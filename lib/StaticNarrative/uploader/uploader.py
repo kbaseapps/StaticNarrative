@@ -1,8 +1,9 @@
 import os
 import shutil
+from ..narrative_ref import NarrativeRef
 
 
-def upload_static_narrative(narr_id: int, narr_ver: int, narr_path: str,
+def upload_static_narrative(ref: NarrativeRef, narr_path: str,
                             upload_endpt: str, url_prefix: str = None) -> str:
     """
     Uploads a finished static Narrative to the display endpoint.
@@ -27,10 +28,10 @@ def upload_static_narrative(narr_id: int, narr_ver: int, narr_path: str,
     # 1. Make a directory there if it doesn't exist (/narr_id)
     # 2. Copy the file to /narr_id/index.html
     # 3. return the url
-    static_narr_path = os.path.join(upload_endpt, str(narr_id))
+    static_narr_path = os.path.join(upload_endpt, str(ref.wsid), str(ref.ver))
     if not os.path.exists(static_narr_path):
         os.makedirs(static_narr_path)
     shutil.copyfile(narr_path, os.path.join(static_narr_path, "index.html"))
 
     static_url = url_prefix or ""
-    return f"{static_url}/{narr_id}"
+    return f"{static_url}/{ref.wsid}/{ref.ver}"

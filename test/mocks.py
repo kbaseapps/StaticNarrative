@@ -2,6 +2,7 @@ import requests
 import requests_mock
 from typing import Dict, List
 import json
+from copy import deepcopy
 
 
 def _mock_adapter(ws_id: int = None,
@@ -19,6 +20,9 @@ def _mock_adapter(ws_id: int = None,
     Mocks GET calls to:
         Auth (api/V2/users)
     """
+
+    workspace_meta = dict()
+
     def mock_adapter(request):
         response = requests.Response()
         response.status_code = 200
@@ -58,9 +62,17 @@ def _mock_adapter(ws_id: int = None,
             elif method == "Workspace.get_workspace_info":
                 # return workspace info object, with or w/o extra metadata field
                 # for static narrative
-                if static_nar_ver:
-                    ws_info[8]["static_nar_ver"] = static_nar_ver
-                result = [ws_info]
+                ws_id = params[0].get("id")
+                info = deepcopy(ws_info)
+                if ws_id in workspace_meta:
+                    info[8].update(workspace_meta[ws_id])
+                result = [info]
+            elif method == "Workspace.alter_workspace_metadata":
+                # returns nothing, so this is simple.
+                # but every proceeding get_workspace_info call should return
+                # updated metadata.
+                ws_id = params[0].get("wsi", {}).get("id")
+                workspace_meta[ws_id] = params[0].get("new")
             response._content = bytes(json.dumps({
                 "result": result,
                 "version": "1.1"

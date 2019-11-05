@@ -5,6 +5,7 @@ import os
 from StaticNarrative.exporter.exporter import NarrativeExporter
 from StaticNarrative.uploader.uploader import upload_static_narrative
 from StaticNarrative.narrative_ref import NarrativeRef
+from StaticNarrative.narrative.narrative_util import save_narrative_url
 
 #END_HEADER
 
@@ -63,8 +64,12 @@ class StaticNarrative:
         #BEGIN create_static_narrative
         ref = NarrativeRef.parse(params["narrative_ref"])
         exporter = NarrativeExporter(self.config, ctx["user_id"], ctx["token"])
-        output_path = exporter.create_static_narrative(ref, "narrative.html")
-        upload_static_narrative(ref, )
+        output_path = exporter.export_narrative(ref, "narrative.html")
+        static_url = upload_static_narrative(ref, output_path, self.config["static-file-root"])
+        save_narrative_url(self.config, ctx["token"], ref, static_url)
+        output = {
+            "static_narrative_url": static_url
+        }
         #END create_static_narrative
 
         # At some point might do deeper type checking...
