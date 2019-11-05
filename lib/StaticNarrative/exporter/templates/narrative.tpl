@@ -185,7 +185,7 @@ div#notebook {
 
 
   </script>
-{%- endblock body %}
+{% endblock body %}
 </body>
 
 {% block footer %}

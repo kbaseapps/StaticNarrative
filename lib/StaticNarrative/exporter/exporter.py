@@ -50,15 +50,12 @@ class NarrativeExporter:
         self.html_exporter = HTMLExporter(config=c)
         self.html_exporter.template_file = NARRATIVE_TEMPLATE_FILE
         self.ws_client = Workspace(url=exporter_cfg["workspace-url"], token=token)
-        self.scratch = exporter_cfg["scratch"]
 
-    def export_narrative(self, narrative_ref: NarrativeRef,
-                         output_filename: str = "index.html") -> str:
+    def export_narrative(self, narrative_ref: NarrativeRef, output_dir: str) -> str:
         """
         Exports the Narrative to an HTML file and returns the path to that file.
         :param narrative_ref: NarrativeRef - the workspace reference to the narrative object
-        :param output_filename: str - the requested output file name that gets created in the
-            scratch directory
+        :param output_dir: str - the requested output file path.
         :return: str - the absolute path to the generated static Narrative HTML file.
         """
         # 1. Get the Narrative object
@@ -74,7 +71,8 @@ class NarrativeExporter:
         # 3. make the thing
         (body, resources) = self.html_exporter.from_notebook_node(kb_notebook)
 
-        output_path = os.path.join(self.scratch, output_filename)
+        output_filename = "narrative.html"
+        output_path = os.path.join(output_dir, output_filename)
         with open(output_path, 'w') as output_html:
             output_html.write(body)
 

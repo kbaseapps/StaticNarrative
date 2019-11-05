@@ -36,8 +36,6 @@ class StaticNarrative:
     # be found
     def __init__(self, config):
         #BEGIN_CONSTRUCTOR
-        self.shared_folder = config['scratch']
-        self.workspace_url = config['workspace-url']
         logging.basicConfig(format='%(created)s %(levelname)s: %(message)s',
                             level=logging.INFO)
         self.config = config
@@ -63,7 +61,9 @@ class StaticNarrative:
         #BEGIN create_static_narrative
         ref = NarrativeRef.parse(params["narrative_ref"])
         exporter = NarrativeExporter(self.config, ctx["user_id"], ctx["token"])
-        output_path = exporter.export_narrative(ref, "narrative.html")
+        output_dir = os.path.join(self.config["scratch"], str(ref.wsid), str(ref.objid), str(ref.ver))
+        os.makedirs(output_dir, exist_ok=True)
+        output_path = exporter.export_narrative(ref, output_dir)
         static_url = upload_static_narrative(ref, output_path, self.config["static-file-root"])
         save_narrative_url(self.config, ctx["token"], ref, static_url)
         output = {
