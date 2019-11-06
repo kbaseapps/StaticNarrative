@@ -11,7 +11,7 @@
             {{ summary_panel(rep.summary, metadata.idx) }}
         {% endif %}
     {% else %}
-        <div>No output found.</div>
+        <div class="kb-no-output">No output found.</div>
     {% endif %}
 {%- endmacro -%}
 

@@ -16,7 +16,6 @@ class NarrativePreprocessor(Preprocessor):
     def __init__(self, config=None, **kw):
         super(NarrativePreprocessor, self).__init__(config=config, **kw)
         self.host = self.config.narrative_session.host
-        print(self.host)
         base_path = self.config.narrative_session.base_path
         self.fonts_root = os.path.join(base_path, "fonts")
         self.app_style_file = os.path.join(base_path, "styles", "app_style.css")
@@ -103,15 +102,17 @@ class NarrativePreprocessor(Preprocessor):
             p_type = p['ui_class']
             kb_info['params'][p_type].append(p)
         kb_info['output'] = {
-            "widget": kb_meta['appCell']['exec'].get('outputWidgetInfo', {}),
-            "result": kb_meta['appCell']['exec']['jobState'].get('result', []),
+            "widget": kb_meta['appCell'].get('exec', {}).get('outputWidgetInfo', {}),
+            "result": kb_meta['appCell'].get('exec', {}).get('jobState', {}).get('result', []),
             "report": build_report_view_data(
                           self.config,
-                          kb_meta['appCell']['exec']['jobState'].get('result', [])
+                          kb_meta['appCell'].get('exec', {}).get('jobState', {}).get('result', [])
                       )
         }
         kb_info['job'] = {
-            'state': kb_meta['appCell']['exec']['jobState']['job_state']
+            'state': "new, and hasn't been started."
         }
+        if 'exec' in kb_meta['appCell']:
+            kb_info['job']['state'] = kb_meta['appCell']['exec']['jobState']['job_state']
         return kb_info
 

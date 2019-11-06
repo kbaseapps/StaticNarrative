@@ -13,7 +13,7 @@ from ..exceptions import WorkspaceError
 import StaticNarrative.exporter.preprocessor as preprocessor
 from ..narrative.narrative_util import read_narrative
 from typing import Dict
-
+from urllib.parse import urlparse
 import nbformat
 import json
 import os
@@ -30,6 +30,10 @@ class NarrativeExporter:
 
         # all the static files (css, fonts, etc.) are relative to this dir.
         base_path = os.path.dirname(os.path.abspath(__file__))
+        service_endpt = exporter_cfg["kbase-endpoint"]
+
+        endpt_parsed = urlparse(service_endpt)
+        host = (endpt_parsed.scheme or "https") + "://" + endpt_parsed.netloc
 
         c.TemplateExporter.template_path = ['.', os.path.join(base_path, "templates")]
         c.CSSHTMLHeaderPreprocessor.enabled = True
@@ -43,9 +47,7 @@ class NarrativeExporter:
         c.narrative_session.profile_page_url = exporter_cfg["profile-page-url"]
         c.narrative_session.auth_url = exporter_cfg["auth-url"]
 
-        endpt = exporter_cfg["kbase-endpoint"]
-
-        c.narrative_session.host = endpt
+        c.narrative_session.host = host
         c.narrative_session.base_path = base_path
         self.html_exporter = HTMLExporter(config=c)
         self.html_exporter.template_file = NARRATIVE_TEMPLATE_FILE
