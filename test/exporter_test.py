@@ -24,6 +24,7 @@ class ExporterTest(unittest.TestCase):
     def test_exporter_ok(self, rqm):
         ws_id = 43666
         ref_to_file = {
+            "43666/1/21": "data/narrative-43666.1.21.json",
             "43666/1/18": "data/narrative-43666.1.18.json",
             "43666/3/1": "data/report-43666.3.1.json",
             "43666/7/1": "data/report-43666.7.1.json"
@@ -60,7 +61,7 @@ class ExporterTest(unittest.TestCase):
         )
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
         static_path = exporter.export_narrative(
-            NarrativeRef({"wsid": 43666, "objid": 1, "ver": 18}),
+            NarrativeRef({"wsid": 43666, "objid": 1, "ver": 21}),
             self.cfg["scratch"]
         )
         self.assertEqual(static_path, os.path.join(self.cfg["scratch"], "narrative.html"))

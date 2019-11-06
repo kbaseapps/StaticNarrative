@@ -141,6 +141,13 @@
     text-align: center;
 }
 
+.kb-no-output {
+    height: 125px;
+    background-color: #fff;
+    padding-top: 50px;
+    text-align: center;
+}
+
 .kb-temp-data-cell {
     height: 125px;
     background-color: #daedf7;

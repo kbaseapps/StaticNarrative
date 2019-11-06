@@ -92,9 +92,15 @@ def get_icon(config, metadata):
         icon['color'] = 'silver'
         icon['shape'] = 'square'
     elif metadata.get('type') == 'app':
-        icon['type'] = 'image'
-        icon['icon'] = config.narrative_session.nms_image_url + \
-            metadata.get('appCell', {})['app']['spec']['info']['icon']['url']
+        if 'icon' in metadata.get('appCell', {}).get('app', {}).get('spec', {}).get('info', {}):
+            icon['type'] = 'image'
+            icon['icon'] = config.narrative_session.nms_image_url + \
+                metadata['appCell']['app']['spec']['info']['icon']['url']
+        else:
+            icon['type'] = 'class'
+            icon['icon'] = 'fa-cube'
+            icon['shape'] = 'square'
+            icon['color'] = '#673ab7'
     else:
         icon['type'] = 'class'
         icon['icon'] = 'fa-question-circle-o'
