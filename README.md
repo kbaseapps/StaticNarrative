@@ -35,6 +35,23 @@ $ kb-sdk test
 
 After making any additional changes to this repo, run `kb-sdk test` again to verify that everything still works.
 
+# Deployment
+
+This is deployed as all other KBase dynamic services, with a hitch. This needs an extra configured directory mount to put the generated static narratives. This is set internally to the module in `deploy.cfg` as `static-file-root`, but must be mounted in the running service externally.
+
+As of 11/7/2019, we use Rancher to handle this process. The setup is done in the following steps.
+1. Deploy the service (it might need to be prodded to start up a container, run `status` if needed).
+2. Log in to Rancher on the environment to manage.
+3. Scroll down to the `staticnarrative` entry and click the `+`
+4. Figure out what's the active service, click on the link to it to go to the service page.
+5. Click the `Upgrade` icon in the upper right corner.
+6. Go to the `Volumes` tab, hit the `+ Add Volume` button, and put in this line: `/data/static_narratives:/kb/module/work/nginx`. Note that the second part of that is the entry for `static-file-root` in `deploy.cfg`.
+7. Go over to the `Scheduling` tab, and add a rule: The host `must` have a `host label` of `kbasetype` = `core`, so it'll get deployed on the right node.
+8. Hit the `Upgrade` button, and it should restart and be connected.
+
+This will all become outdated (and removed) once the Service Wizard gets updated to do this as part of its service startup process. But right now it needs to be done by hand.
+
+
 # Help
 
 You may find the answers to your questions in our [FAQ](https://kbase.github.io/kb_sdk_docs/references/questions_and_answers.html) or [Troubleshooting Guide](https://kbase.github.io/kb_sdk_docs/references/troubleshooting.html).
