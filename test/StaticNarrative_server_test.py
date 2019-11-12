@@ -127,6 +127,45 @@ class StaticNarrativeTest(unittest.TestCase):
         """
         pass
 
+    @requests_mock.Mocker()
+    def test_get_static_info_ok(self, rqm):
+        ws_id = 5
+        ws_name = "fake_ws"
+        ts_iso = "2019-10-24T21:51:17+0000"
+        ws_meta = {
+            'cell_count': '1',
+            'narrative_nice_name': 'Tester',
+            'searchtags': 'narrative',
+            'is_temporary': 'false',
+            'narrative': '1',
+            'static_narrative_ver': '1',
+            'static_narrative_saved': '1573170933432',
+            'static_narrative': '/5/1'
+        }
+        ref_to_file = {}
+        ref_to_info = {
+            "5/1/1": [1, "fake_narr", "KBaseNarrative.Narrative-4.0", ts_iso, 1, self.user_id, ws_id, ws_name, "an_md5", 12345, None]
+        }
+        ws_info = [5, ws_name, self.user_id, ts_iso, 1, 'a', 'r', 'unlocked', ws_meta]
+        set_up_ok_mocks(
+            rqm,
+            ws_id,
+            ref_to_file,
+            ref_to_info,
+            ws_info,
+            {}
+        )
+        info = self.service_impl.get_static_narrative_info(self.ctx, {"ws_id": ws_id})[0]
+        std_info = {
+            "ws_id": ws_id,
+            "version": 1,
+            "narrative_id": 1,
+            "url": "/5/1",
+            "static_saved": 1573170933432,
+            "narr_saved": 1571953877000
+        }
+        self.assertEqual(info, std_info)
+
 
     # NOTE: According to Python unittest naming rules test method names should start from 'test'. # noqa
     def test_your_method(self):

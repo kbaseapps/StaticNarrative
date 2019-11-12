@@ -5,6 +5,7 @@ from typing import Dict
 # from .updater import update_narrative
 from StaticNarrative.narrative_ref import NarrativeRef
 import time
+from dateutil import parser as date_parser
 
 NARRATIVE_TYPE = "KBaseNarrative.Narrative"
 
@@ -69,3 +70,54 @@ def save_narrative_url(config: Dict[str, str], token: str, ref: NarrativeRef, ur
         ws_client.alter_workspace_metadata({"wsi": {"id": ref.wsid}, "new": new_meta})
     except ServerError as err:
         raise WorkspaceError(err, ref.wsid)
+
+
+def get_static_info(config: Dict[str, str], token: str, ws_id: int) -> Dict:
+    """
+    Looks up the static narrative info for the given Workspace id.
+    That info is stashed in the Workspace metadata, so that gets fetched, munged into a structure,
+    and returned.
+    If there's no static narrative, this returns an empty structure, as there's no info.
+    If ws_id is not present, or not numeric, raises a ValueError.
+    If there's a problem when contacting the Workspace (anything that raises a ServerError),
+    this raises a WorkspaceError.
+    :param config: the module configuration structure, mainly we need workspace-url from it.
+    :param token: the user auth token
+    :param ws_id: the workspace id of the narrative to fetch info for.
+    :returns: a dictionary with the following keys if a static narrative is present:
+        ws_id - int - the workspace id
+        narrative_id - int - the id of the narrative object
+        version - int - the version of the narrative object made static
+        url - str - the url of the static narrative
+        narr_saved - int - the timestamp of when the narrative that the static version is
+            based on was saved (ms since epoch)
+        static_saved - int - the timestamp of when the static narrative was saved (ms
+            since epoch)
+
+    """
+    if not ws_id or not str(ws_id).isdigit():
+        raise ValueError(f"The parameter ws_id must be an integer, not {ws_id}")
+
+    ws_client = Workspace(url=config["workspace-url"], token=token)
+    try:
+        ws_info = ws_client.get_workspace_info({"id": ws_id})
+    except ServerError as err:
+        raise WorkspaceError(err, ws_id)
+    info = {}
+    meta = ws_info[8]
+    if "static_narrative_ver" in meta:
+        info = {
+            "ws_id": ws_id,
+            "version": int(meta["static_narrative_ver"]),
+            "narrative_id": int(meta["narrative"]),
+            "url": meta["static_narrative"],
+            "static_saved": int(meta["static_narrative_saved"])
+        }
+        obj_info = ws_client.get_object_info3({
+            "objects": [{
+                "ref": f"{ws_id}/{info['narrative_id']}/{info['version']}"
+            }]
+        })
+        ts = date_parser.isoparse(obj_info["infos"][0][3]).timestamp()
+        info["narr_saved"] = int(ts*1000)
+    return info
