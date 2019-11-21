@@ -57,6 +57,7 @@ class ExporterTest(unittest.TestCase):
             ref_to_file,
             ref_to_info,
             ws_info,
+            {},
             user_map
         )
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)

@@ -10,6 +10,7 @@ def _mock_adapter(ws_id: int = None,
                   ref_to_info: Dict[str, List] = {},
                   ws_info: List = [],
                   user_map: Dict[str, str] = {},
+                  ws_perms: Dict[int, Dict[str, str]] = {},
                   static_nar_ver: int = None):
     """
     Sets up mock calls as a requests_mock adapter function.
@@ -73,6 +74,9 @@ def _mock_adapter(ws_id: int = None,
                 # updated metadata.
                 ws_id = params[0].get("wsi", {}).get("id")
                 workspace_meta[ws_id] = params[0].get("new")
+            elif method == "Workspace.get_permissions":
+                ws_id = params[0].get("id")
+                result = [ws_perms.get(ws_id, {})]
             response._content = bytes(json.dumps({
                 "result": result,
                 "version": "1.1"
@@ -117,11 +121,13 @@ def set_up_ok_mocks(rqm,
                     ref_to_file: Dict,
                     ref_to_info: Dict,
                     ws_info: List,
+                    ws_perms: Dict,
                     user_map: Dict):
     rqm.add_matcher(_mock_adapter(ws_id=ws_id,
                                   ref_to_file=ref_to_file,
                                   ref_to_info=ref_to_info,
                                   ws_info=ws_info,
+                                  ws_perms=ws_perms,
                                   user_map=user_map))
 
 

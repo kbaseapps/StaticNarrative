@@ -7,7 +7,8 @@ from StaticNarrative.uploader.uploader import upload_static_narrative
 from StaticNarrative.narrative_ref import NarrativeRef
 from StaticNarrative.narrative.narrative_util import (
     save_narrative_url,
-    get_static_info
+    get_static_info,
+    verify_admin_privilege
 )
 
 #END_HEADER
@@ -62,13 +63,22 @@ class StaticNarrative:
         # ctx is the context object
         # return variables are: output
         #BEGIN create_static_narrative
+
+        # init - get NarrativeRef and Exporter set up
         ref = NarrativeRef.parse(params["narrative_ref"])
+        ws_url = self.config["workspace-url"]
+        verify_admin_privilege(ws_url, ctx["user_id"], ctx["token"], ref.wsid)
         exporter = NarrativeExporter(self.config, ctx["user_id"], ctx["token"])
+
+        # set up output directories
         output_dir = os.path.join(self.config["scratch"], str(ref.wsid), str(ref.objid), str(ref.ver))
         os.makedirs(output_dir, exist_ok=True)
+
+        # export the narrative to a file
         output_path = exporter.export_narrative(ref, output_dir)
+        # upload it and save it to the Workspace metadata before returning the url path
         static_url = upload_static_narrative(ref, output_path, self.config["static-file-root"])
-        save_narrative_url(self.config, ctx["token"], ref, static_url)
+        save_narrative_url(self.config["workspace-url"], ctx["token"], ref, static_url)
         output = {
             "static_narrative_url": static_url
         }
@@ -100,7 +110,7 @@ class StaticNarrative:
         # ctx is the context object
         # return variables are: info
         #BEGIN get_static_narrative_info
-        info = get_static_info(self.config, ctx["token"], params.get("ws_id"))
+        info = get_static_info(self.config["workspace-url"], ctx["token"], params.get("ws_id"))
         #END get_static_narrative_info
 
         # At some point might do deeper type checking...
