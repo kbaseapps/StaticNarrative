@@ -5,18 +5,12 @@ from configparser import ConfigParser
 import os
 from test.mocks import set_up_ok_mocks
 from StaticNarrative.narrative_ref import NarrativeRef
-
+from test.test_config import get_test_config
 
 class ExporterTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        config_file = os.environ.get("KB_DEPLOYMENT_CONFIG", "test/deploy.cfg")
-        cls.cfg = {}
-        config = ConfigParser()
-        config.read(config_file)
-        for nameval in config.items("StaticNarrative"):
-            cls.cfg[nameval[0]] = nameval[1]
-        cls.ws_url = cls.cfg["workspace-url"]
+        cls.cfg = get_test_config()
         cls.user_id = "some_user"
         cls.token = "some_token"
 
@@ -33,7 +27,7 @@ class ExporterTest(unittest.TestCase):
 
         }
         ws_info = [
-            43666,
+            ws_id,
             'some_narrative',
             self.user_id,
             '2019-08-26T17:33:56+0000',
@@ -53,16 +47,14 @@ class ExporterTest(unittest.TestCase):
 
         set_up_ok_mocks(
             rqm,
-            ws_id,
-            ref_to_file,
-            ref_to_info,
-            ws_info,
-            {},
-            user_map
+            ref_to_file=ref_to_file,
+            ref_to_info=ref_to_info,
+            ws_info=ws_info,
+            user_map=user_map
         )
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
         static_path = exporter.export_narrative(
-            NarrativeRef({"wsid": 43666, "objid": 1, "ver": 21}),
+            NarrativeRef({"wsid": ws_id, "objid": 1, "ver": 21}),
             self.cfg["scratch"]
         )
         self.assertEqual(static_path, os.path.join(self.cfg["scratch"], "narrative.html"))

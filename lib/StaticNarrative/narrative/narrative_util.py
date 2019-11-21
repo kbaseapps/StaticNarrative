@@ -119,6 +119,7 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> Dict:
         ws_info = ws_client.get_workspace_info({"id": ws_id})
     except ServerError as err:
         raise WorkspaceError(err, ws_id)
+
     info = {}
     meta = ws_info[8]
     if "static_narrative_ver" in meta:
@@ -129,11 +130,14 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> Dict:
             "url": meta["static_narrative"],
             "static_saved": int(meta["static_narrative_saved"])
         }
-        obj_info = ws_client.get_object_info3({
-            "objects": [{
-                "ref": f"{ws_id}/{info['narrative_id']}/{info['version']}"
-            }]
-        })
+        try:
+            obj_info = ws_client.get_object_info3({
+                "objects": [{
+                    "ref": f"{ws_id}/{info['narrative_id']}/{info['version']}"
+                }]
+            })
+        except ServerError as err:
+            raise WorkspaceError(err, ws_id)
         ts = date_parser.isoparse(obj_info["infos"][0][3]).timestamp()
         info["narr_saved"] = int(ts*1000)
     return info

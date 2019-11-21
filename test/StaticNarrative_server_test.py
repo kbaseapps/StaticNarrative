@@ -8,17 +8,13 @@ from StaticNarrative.StaticNarrativeServer import MethodContext
 # from StaticNarrative.authclient import KBaseAuth as _KBaseAuth
 from test.mocks import set_up_ok_mocks
 import requests_mock
+from test.test_config import get_test_config
 
 
 class StaticNarrativeTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        config_file = os.environ.get('KB_DEPLOYMENT_CONFIG', "test/deploy.cfg")
-        cls.cfg = {}
-        config = ConfigParser()
-        config.read(config_file)
-        for nameval in config.items('StaticNarrative'):
-            cls.cfg[nameval[0]] = nameval[1]
+        cls.cfg = get_test_config()
         # Getting username from Auth profile for token
         # authServiceUrl = cls.cfg['auth-service-url']
         # auth_client = _KBaseAuth(authServiceUrl)
@@ -100,12 +96,11 @@ class StaticNarrativeTest(unittest.TestCase):
 
         set_up_ok_mocks(
             rqm,
-            ws_id,
-            ref_to_file,
-            ref_to_info,
-            ws_info,
-            ws_perms,
-            user_map
+            ref_to_file=ref_to_file,
+            ref_to_info=ref_to_info,
+            ws_info=ws_info,
+            ws_perms=ws_perms,
+            user_map=user_map
         )
         impl = self.service_impl
         output = impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/18"})[0]
@@ -123,8 +118,11 @@ class StaticNarrativeTest(unittest.TestCase):
         Test case where user doesn't have admin rights on the workspace.
         """
         ws_id = 12345
-        set_up_ok_mocks(rqm, ws_id, {}, {}, [], {ws_id: {self.user_id: "n"}},
-                        {self.user_id: "Some User"})
+        set_up_ok_mocks(
+            rqm,
+            ws_perms={ws_id: {self.user_id: "n"}},
+            user_map={self.user_id: "Some User"}
+        )
         with self.assertRaises(PermissionError) as e:
             self.service_impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/1"})
         self.assertIn(f"User {self.user_id} does not have admin rights on workspace {ws_id}",
@@ -158,12 +156,9 @@ class StaticNarrativeTest(unittest.TestCase):
         ws_info = [5, ws_name, self.user_id, ts_iso, 1, 'a', 'r', 'unlocked', ws_meta]
         set_up_ok_mocks(
             rqm,
-            ws_id,
-            ref_to_file,
-            ref_to_info,
-            ws_info,
-            {},
-            {}
+            ref_to_file=ref_to_file,
+            ref_to_info=ref_to_info,
+            ws_info=ws_info
         )
         info = self.service_impl.get_static_narrative_info(self.ctx, {"ws_id": ws_id})[0]
         std_info = {
