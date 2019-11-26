@@ -342,6 +342,10 @@ class Application(object):
                              name='StaticNarrative.create_static_narrative',
                              types=[dict])
         self.method_authentication['StaticNarrative.create_static_narrative'] = 'required'  # noqa
+        self.rpc_service.add(impl_StaticNarrative.get_static_narrative_info,
+                             name='StaticNarrative.get_static_narrative_info',
+                             types=[dict])
+        self.method_authentication['StaticNarrative.get_static_narrative_info'] = 'required'  # noqa
         self.rpc_service.add(impl_StaticNarrative.status,
                              name='StaticNarrative.status',
                              types=[])

@@ -8,17 +8,13 @@ from StaticNarrative.StaticNarrativeServer import MethodContext
 # from StaticNarrative.authclient import KBaseAuth as _KBaseAuth
 from test.mocks import set_up_ok_mocks
 import requests_mock
+from test.test_config import get_test_config
 
 
 class StaticNarrativeTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        config_file = os.environ.get('KB_DEPLOYMENT_CONFIG', "test/deploy.cfg")
-        cls.cfg = {}
-        config = ConfigParser()
-        config.read(config_file)
-        for nameval in config.items('StaticNarrative'):
-            cls.cfg[nameval[0]] = nameval[1]
+        cls.cfg = get_test_config()
         # Getting username from Auth profile for token
         # authServiceUrl = cls.cfg['auth-service-url']
         # auth_client = _KBaseAuth(authServiceUrl)
@@ -71,15 +67,15 @@ class StaticNarrativeTest(unittest.TestCase):
         """
         ws_id = 43666
         ref_to_file = {
-            "43666/1/18": "data/narrative-43666.1.18.json",
-            "43666/3/1": "data/report-43666.3.1.json",
-            "43666/7/1": "data/report-43666.7.1.json"
+            f"{ws_id}/1/18": "data/narrative-43666.1.18.json",
+            f"{ws_id}/3/1": "data/report-43666.3.1.json",
+            f"{ws_id}/7/1": "data/report-43666.7.1.json"
         }
         ref_to_info = {
 
         }
         ws_info = [
-            43666,
+            ws_id,
             'some_narrative',
             self.user_id,
             '2019-08-26T17:33:56+0000',
@@ -95,19 +91,20 @@ class StaticNarrativeTest(unittest.TestCase):
                 'narrative': '1'
             }
         ]
+        ws_perms = {ws_id: {self.user_id: "a"}}
         user_map = {self.user_id: "Some User"}
 
         set_up_ok_mocks(
             rqm,
-            ws_id,
-            ref_to_file,
-            ref_to_info,
-            ws_info,
-            user_map
+            ref_to_file=ref_to_file,
+            ref_to_info=ref_to_info,
+            ws_info=ws_info,
+            ws_perms=ws_perms,
+            user_map=user_map
         )
         impl = self.service_impl
-        output = impl.create_static_narrative(self.ctx, {"narrative_ref": "43666/1/18"})[0]
-        self.assertEqual(output["static_narrative_url"], "/43666/18")
+        output = impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/18"})[0]
+        self.assertEqual(output["static_narrative_url"], f"/{ws_id}/18")
 
     def test_create_static_narrative_no_auth(self):
         """
@@ -115,11 +112,21 @@ class StaticNarrativeTest(unittest.TestCase):
         """
         pass
 
-    def test_create_static_narrative_not_allowed(self):
+    @requests_mock.Mocker()
+    def test_create_static_narrative_not_allowed(self, rqm):
         """
         Test case where user doesn't have admin rights on the workspace.
         """
-        pass
+        ws_id = 12345
+        set_up_ok_mocks(
+            rqm,
+            ws_perms={ws_id: {self.user_id: "n"}},
+            user_map={self.user_id: "Some User"}
+        )
+        with self.assertRaises(PermissionError) as e:
+            self.service_impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/1"})
+        self.assertIn(f"User {self.user_id} does not have admin rights on workspace {ws_id}",
+                      str(e.exception))
 
     def test_create_static_narrative_bad(self):
         """
@@ -127,16 +134,39 @@ class StaticNarrativeTest(unittest.TestCase):
         """
         pass
 
-
-    # NOTE: According to Python unittest naming rules test method names should start from 'test'. # noqa
-    def test_your_method(self):
-        # Prepare test objects in workspace if needed using
-        # self.getWsClient().save_objects({'workspace': self.getWsName(),
-        #                                  'objects': []})
-        #
-        # Run your method by
-        # ret = self.getImpl().your_method(self.getContext(), parameters...)
-        #
-        # Check returned data with
-        # self.assertEqual(ret[...], ...) or other unittest methods
-        pass
+    @requests_mock.Mocker()
+    def test_get_static_info_ok(self, rqm):
+        ws_id = 5
+        ws_name = "fake_ws"
+        ts_iso = "2019-10-24T21:51:17+0000"
+        ws_meta = {
+            'cell_count': '1',
+            'narrative_nice_name': 'Tester',
+            'searchtags': 'narrative',
+            'is_temporary': 'false',
+            'narrative': '1',
+            'static_narrative_ver': '1',
+            'static_narrative_saved': '1573170933432',
+            'static_narrative': '/5/1'
+        }
+        ref_to_file = {}
+        ref_to_info = {
+            "5/1/1": [1, "fake_narr", "KBaseNarrative.Narrative-4.0", ts_iso, 1, self.user_id, ws_id, ws_name, "an_md5", 12345, None]
+        }
+        ws_info = [5, ws_name, self.user_id, ts_iso, 1, 'a', 'r', 'unlocked', ws_meta]
+        set_up_ok_mocks(
+            rqm,
+            ref_to_file=ref_to_file,
+            ref_to_info=ref_to_info,
+            ws_info=ws_info
+        )
+        info = self.service_impl.get_static_narrative_info(self.ctx, {"ws_id": ws_id})[0]
+        std_info = {
+            "ws_id": ws_id,
+            "version": 1,
+            "narrative_id": 1,
+            "url": "/5/1",
+            "static_saved": 1573170933432,
+            "narr_saved": 1571953877000
+        }
+        self.assertEqual(info, std_info)

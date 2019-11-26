@@ -33,6 +33,33 @@ module StaticNarrative {
     */
     funcdef create_static_narrative(CreateStaticNarrativeInput params) returns (CreateStaticNarrativeOutput output) authentication required;
 
+    typedef structure {
+        ws_id ws_id;
+    } GetStaticNarrativeInfo;
+
+    /*
+        ws_id - the workspace id
+        narrative_id - the id of the narrative object made static
+        narrative_version - the version of the narrative object saved
+        url - the url of the static narrative (just the path, the Narrative front end should provide the host)
+        narr_saved - ms since epoch of when the narrative that was made static was saved.
+        static_saved - ms since epoch of when the static narrative was saved
+    */
+    typedef structure {
+        ws_id ws_id;
+        int narrative_id;
+        int narrative_version;
+        url url;
+        int narr_saved;
+        int static_saved;
+    } StaticNarrativeInfo;
+
+    /*
+        Returns info about a created static narrative, given the workspace id.
+        If no static narrative has been created, returns an empty structure.
+    */
+    funcdef get_static_narrative_info(GetStaticNarrativeInfo params) returns (StaticNarrativeInfo info) authentication required;
+
     /*
         state - a string, either OK or ...(TBD)
         message - optional, some message about the state of the service.

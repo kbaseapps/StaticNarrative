@@ -16,8 +16,8 @@ RUN pip install nbconvert==5.6.0 \
     flake8==3.5.0 \
     coveralls==1.8.2 \
     requests-mock==1.7.0 \
-    jsonrpcbase==0.2.0
-
+    jsonrpcbase==0.2.0 \
+    python-dateutil==2.8.1
 
 # -----------------------------------------
 
