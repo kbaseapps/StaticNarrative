@@ -1,6 +1,5 @@
 import json
 import os
-import installed_clients.authclient as auth
 from installed_clients.WorkspaceClient import Workspace
 from installed_clients.authclient import KBaseAuth as _KBaseAuth
 import html
@@ -73,9 +72,10 @@ def build_report_view_data(config, result):
 def get_icon(config, metadata):
     """
     Should return a dict with keys "type" and "icon"
-    if "type" = image, then "icon" second should be the src.
-    if "type" = class, "icon" should be the full class to use to render the icon - "fa fa-right-arrow", for instance.
-    also, if "type" == "class", then the keys "color" and "shape" should also be present.
+    * if "type" = image, then "icon" second should be the src.
+    * if "type" = class, "icon" should be the full class to use to render the icon -
+        "fa fa-right-arrow", for instance.
+    * also, if "type" == "class", then the keys "color" and "shape" should also be present.
     """
     meta_icon = metadata.get('attributes', {}).get('icon')
     icon = {
@@ -85,7 +85,11 @@ def get_icon(config, metadata):
     icon_type = 'image'
     if metadata.get('type') == 'data':
         icon['type'] = 'class'
-        icon.update(get_data_icon(metadata.get('dataCell', {}).get('objectInfo', {}).get('typeName')))
+        icon.update(
+            get_data_icon(metadata.get('dataCell', {})
+                                  .get('objectInfo', {})
+                                  .get('typeName'))
+        )
     elif metadata.get('type') == 'output':
         icon['type'] = 'class'
         icon['icon'] = 'fa-arrow-right'

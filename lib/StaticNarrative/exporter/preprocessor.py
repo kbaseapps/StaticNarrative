@@ -25,7 +25,7 @@ class NarrativePreprocessor(Preprocessor):
         (nb, resources) = super(NarrativePreprocessor, self).preprocess(nb, resources)
 
         # Get some more stuff to show in the page into resources
-        if not 'kbase' in resources:
+        if 'kbase' not in resources:
             resources['kbase'] = {}
         resources['kbase'].update({
             'title': nb['metadata']['name'],
@@ -35,9 +35,9 @@ class NarrativePreprocessor(Preprocessor):
             'authors': get_authors(self.config, nb['metadata']['wsid'])
         })
 
-        if not 'inlining' in resources:
+        if 'inlining' not in resources:
             resources['inlining'] = {}
-        if not 'css' in resources['inlining']:
+        if 'css' not in resources['inlining']:
             resources['inlining']['css'] = []
         with open(self.app_style_file, 'r') as css:
             resources['inlining']['css'].append(css.read())
@@ -61,15 +61,16 @@ class NarrativePreprocessor(Preprocessor):
                 kb_info.update(self._process_app_info(kb_info, kb_meta))
                 kb_info['external_link'] = self.host + kb_info['app']['catalog_url']
             elif kb_info['type'] == 'data':
-                kb_info['external_link'] = self.host + '/#dataview/' + kb_meta['dataCell']['objectInfo']['ref']
+                kb_info['external_link'] = self.host + '/#dataview/' + \
+                                           kb_meta['dataCell']['objectInfo']['ref']
             cell.metadata['kbase'] = kb_info
         else:
             kb_info = {
                 'type': 'nonkb'
             }
-        if not 'kbase' in resources:
+        if 'kbase' not in resources:
             resources['kbase'] = {}
-        if not 'cells' in resources['kbase']:
+        if 'cells' not in resources['kbase']:
             resources['kbase']['cells'] = {}
         resources['foo'] = 'bar'
         resources['kbase']['cells'][index] = cell.metadata.get('kbase')
