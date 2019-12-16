@@ -133,6 +133,12 @@ class NarrativePreprocessor(Preprocessor):
             'state': "new, and hasn't been started."
         }
         if 'exec' in kb_meta['appCell']:
-            kb_info['job']['state'] = kb_meta['appCell']['exec']['jobState']['job_state']
+            kb_info['job']['state'] = self._get_job_state(kb_meta['appCell'])
         return kb_info
 
+    def _get_job_state(self, app_meta):
+        job_state = app_meta['exec'].get('jobState', {})
+        state = job_state.get('job_state', job_state.get('status', 'unknown'))
+        if isinstance(state, list):
+            state = state[1]
+        return state

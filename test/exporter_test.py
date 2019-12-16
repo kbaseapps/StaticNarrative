@@ -11,7 +11,6 @@ class ExporterTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.cfg = get_test_config()
-        print(cls.cfg)
         cls.user_id = "some_user"
         cls.token = "some_token"
 
