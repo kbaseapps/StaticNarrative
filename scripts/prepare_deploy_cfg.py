@@ -2,12 +2,9 @@ import sys
 import os
 import os.path
 from jinja2 import Template
-try:
-    from configparser import ConfigParser
-    from io import StringIO
-except ImportError:
-    from ConfigParser import ConfigParser
-    from StringIO import StringIO
+from configparser import ConfigParser
+from io import StringIO
+from urllib.parse import urlparse
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -30,11 +27,7 @@ if __name__ == "__main__":
                 "shock_url = " + kbase_endpoint + "/shock-api\n" + \
                 "handle_url = " + kbase_endpoint + "/handle_service\n" + \
                 "srv_wiz_url = " + kbase_endpoint + "/service_wizard\n" + \
-                "njsw_url = " + kbase_endpoint + "/njs_wrapper\n" + \
-                "nms_url = " + kbase_endpoint + "/narrative_method_store/rpc\n" + \
-                "nms_image_url = " + kbase_endpoint + "/narrative_method_store\n" + \
-                "profile_page_url = " + kbase_endpoint + "/#people/\n" + \
-                "auth_url = " + kbase_endpoint + "/auth\n"
+                "njsw_url = " + kbase_endpoint + "/njs_wrapper\n"
         if "AUTH_SERVICE_URL" in os.environ:
             props += "auth_service_url = " + os.environ.get("AUTH_SERVICE_URL") + "\n"
         props += "auth_service_url_allow_insecure = " + \
@@ -47,6 +40,20 @@ if __name__ == "__main__":
     else:
         raise ValueError('Neither ' + sys.argv[2] + ' file nor KBASE_ENDPOINT env-variable found')
     props = dict(config.items("global"))
+
+    ### Additional properties for the StaticNarrative module
+    kbase_endpoint = props.get('kbase_endpoint')
+    parsed_endpt = urlparse(kbase_endpoint)
+    kbase_root = parsed_endpt.scheme + "://" + parsed_endpt.netloc
+    props.update({
+        "nms_url": kbase_endpoint + "/narrative_method_store/rpc",
+        "nms_image_url": kbase_endpoint + "/narrative_method_store/",
+        "profile_page_url": kbase_root + "/#people/",
+        "auth_url": kbase_endpoint + "/auth",
+        "assets_base_url": kbase_root + "/ui-assets"
+    })
+    ### End changes for StaticNarrative
+
     output = t.render(props)
     with open(sys.argv[1] + ".orig", 'w') as f:
         f.write(text)

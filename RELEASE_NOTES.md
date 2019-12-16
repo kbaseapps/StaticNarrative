@@ -1,6 +1,10 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.3
+-----
+* Add support for KBase icons font pack.
+
 0.0.2
 -----
 * Added status function. Returns the status of the service, including running version and hash string for the deployed Git commit.

@@ -6,8 +6,8 @@ CONFIG_FILE = "./deploy.cfg"
 
 
 def get_test_config():
-    config = get_test_config
     config_file = os.environ.get('KB_DEPLOYMENT_CONFIG', CONFIG_FILE)
+    print(config_file)
     cfg_dict = dict()
     config = ConfigParser()
     config.read(config_file)

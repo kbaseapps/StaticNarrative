@@ -46,6 +46,7 @@ class NarrativeExporter:
         c.narrative_session.nms_image_url = exporter_cfg["nms-image-url"]
         c.narrative_session.profile_page_url = exporter_cfg["profile-page-url"]
         c.narrative_session.auth_url = exporter_cfg["auth-url"]
+        c.narrative_session.assets_base_url = exporter_cfg["assets-base-url"]
 
         c.narrative_session.host = host
         c.narrative_session.base_path = base_path
