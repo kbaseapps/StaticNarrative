@@ -20,6 +20,7 @@ class NarrativePreprocessor(Preprocessor):
         self.fonts_root = os.path.join(base_path, "fonts")
         self.app_style_file = os.path.join(base_path, "styles", "app_style.css")
         self.icon_style_file = os.path.join(base_path, "styles", "kbaseIcons.css")
+        self.assets_base_url = self.config.narrative_session.assets_base_url
 
     def preprocess(self, nb, resources):
         (nb, resources) = super(NarrativePreprocessor, self).preprocess(nb, resources)
@@ -42,11 +43,29 @@ class NarrativePreprocessor(Preprocessor):
         with open(self.app_style_file, 'r') as css:
             resources['inlining']['css'].append(css.read())
         with open(self.icon_style_file, 'r') as icons:
-            icons_file = icons.read()
-            icons_file = icons_file.replace('url("../fonts', f'url("{self.fonts_root}')
+            icons_file = self.icons_font_css() + icons.read()
             resources['inlining']['css'].append(icons_file)
 
         return nb, resources
+
+    def icons_font_css(self):
+        """
+        Generates the icon font loading css chunk
+        """
+        font_url = self.assets_base_url + "/fonts/kbase-icons"
+        font_css = (
+            '@font-face {\n'
+            '    font-family: "kbase-icons";\n'
+            f'    src:url("{font_url}.eot");\n'
+            f'    src:url("{font_url}.eot?#iefix") format("embedded-opentype"),\n'
+            f'        url("{font_url}.woff") format("woff"),\n'
+            f'        url("{font_url}.ttf") format("truetype"),\n'
+            f'        url("{font_url}.svg#kbase-icons") format("svg");\n'
+            '    font-weight: normal;\n'
+            '    font-style: normal;\n'
+            '}\n'
+        )
+        return font_css
 
     def preprocess_cell(self, cell, resources, index):
         if 'kbase' in cell.metadata:

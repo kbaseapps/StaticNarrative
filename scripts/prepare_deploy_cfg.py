@@ -2,12 +2,9 @@ import sys
 import os
 import os.path
 from jinja2 import Template
-try:
-    from configparser import ConfigParser
-    from io import StringIO
-except ImportError:
-    from ConfigParser import ConfigParser
-    from StringIO import StringIO
+from configparser import ConfigParser
+from io import StringIO
+from urllib.parse import urlparse
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -23,6 +20,8 @@ if __name__ == "__main__":
         config.read(sys.argv[2])
     elif "KBASE_ENDPOINT" in os.environ:
         kbase_endpoint = os.environ.get("KBASE_ENDPOINT")
+        parsed_endpt = urlparse(kbase_endpoint)
+        kbase_root = parsed_endpt.scheme + "://" + parsed_endpt.netloc
         props = "[global]\n" + \
                 "kbase_endpoint = " + kbase_endpoint + "\n" + \
                 "job_service_url = " + kbase_endpoint + "/userandjobstate\n" + \
@@ -33,8 +32,9 @@ if __name__ == "__main__":
                 "njsw_url = " + kbase_endpoint + "/njs_wrapper\n" + \
                 "nms_url = " + kbase_endpoint + "/narrative_method_store/rpc\n" + \
                 "nms_image_url = " + kbase_endpoint + "/narrative_method_store\n" + \
-                "profile_page_url = " + kbase_endpoint + "/#people/\n" + \
-                "auth_url = " + kbase_endpoint + "/auth\n"
+                "profile_page_url = " + kbase_root + "/#people/\n" + \
+                "auth_url = " + kbase_endpoint + "/auth\n" + \
+                "assets_base_url = " + kbase_root + "/ui-assets\n"
         if "AUTH_SERVICE_URL" in os.environ:
             props += "auth_service_url = " + os.environ.get("AUTH_SERVICE_URL") + "\n"
         props += "auth_service_url_allow_insecure = " + \
