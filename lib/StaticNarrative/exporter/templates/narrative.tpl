@@ -100,7 +100,7 @@ div#notebook {
         <h1>{{ resources['kbase']['title'] }}</h1>
         <div class="kb-author-list">
           {%- for author in resources['kbase']['authors'] -%}
-            <a href="{{ resources.kbase.host }}{{ author.path }}">{{ author.name }}</a>
+            <a href="{{ author.path }}">{{ author.name }}</a>
             {%- if not loop.last -%}, {% endif -%}
           {%- endfor -%}
         </div>
@@ -112,9 +112,6 @@ div#notebook {
 {{ super() }}
     </div>
   </div>
-  <style type="text/css">
-    .white-text{color:white !important;}
-  </style>
   <script>
 
   function toggleAppView(btn) {
