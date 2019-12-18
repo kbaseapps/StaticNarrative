@@ -9,7 +9,8 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
                   ref_to_info: Dict[str, List] = {},
                   ws_info: List = [],
                   user_map: Dict[str, str] = {},
-                  ws_perms: Dict[int, Dict[str, str]] = {}):
+                  ws_perms: Dict[int, Dict[str, str]] = {},
+                  ws_obj_infos: List = []):
     """
     Sets up mock calls as a requests_mock adapter function.
     Mocks POST calls to:
@@ -84,6 +85,14 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
             elif method == "Workspace.get_permissions":
                 ws_id = params[0].get("id")
                 result = [ws_perms.get(ws_id, {})]
+            elif method == "ServiceWizard.get_service_status":
+                result = [{
+                    "url": "https://something.kbase.us/service/narrative_service_url"
+                }]
+            elif method == "NarrativeService.list_objects_with_sets":
+                result = [{
+                    "data": ws_obj_infos
+                }]
             response._content = bytes(json.dumps({
                 "result": result,
                 "version": "1.1"
