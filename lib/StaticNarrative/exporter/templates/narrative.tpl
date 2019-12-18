@@ -96,7 +96,7 @@ div#notebook {
   <div class="container">
     <div class="row">
       <div class="col-md-1"><h1><img src="{{ resources['kbase']['host'] }}/modules/plugins/mainwindow/resources/images/kbase_logo.png"/></h1></div>
-      <div class="col-md-11">
+      <div class="col-md-10">
         <h1>{{ resources['kbase']['title'] }}</h1>
         <div class="kb-author-list">
           {%- for author in resources['kbase']['authors'] -%}
@@ -105,7 +105,15 @@ div#notebook {
           {%- endfor -%}
         </div>
       </div>
+      <div class="col-md-1">
+        <div class="pull-right">
+          <h1><button id="kbs-data-toggle" class="btn btn-md btn-primary">Toggle Narrative Data</button></h1>
+        </div>
+      </div>
     </div>
+  </div>
+  <div id="kbs-data" class="container kbs-data is-hidden">
+    stuff.
   </div>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -127,6 +135,7 @@ div#notebook {
     document.querySelector('div[id^="' + id + '-' + view + '"]').hidden = false;
     btn.classList.add('selected');
   }
+
   document.querySelectorAll('button.app-view-toggle').forEach((node) => {
     node.addEventListener('click', (e) => {
       toggleAppView(node);
@@ -135,6 +144,7 @@ div#notebook {
 
   let fileSetServUrl = null,
       lastFSSUrlLookup = 0;
+
   function getFileServUrl(servWizardUrl) {
     const now = new Date();
     const fiveMin = 300000;  //ms
@@ -168,7 +178,7 @@ div#notebook {
       });
     }
   }
-  getFileServUrl("https://ci.kbase.us/services/service_wizard")
+  getFileServUrl("{{ resources['kbase']['service_wizard_url'] }}")
     .then((fssUrl) => {
       document.querySelectorAll('div.kb-app-report').forEach((node) => {
         const reportUrl = fssUrl + node.dataset.path;
@@ -179,6 +189,10 @@ div#notebook {
         iframe.setAttribute('src', reportUrl);
       });
     });
+
+  document.querySelector('button#kbs-data-toggle').addEventListener('click', event => {
+    document.querySelector('div#kbs-data').classList.toggle('is-hidden');
+  });
 
 
   </script>

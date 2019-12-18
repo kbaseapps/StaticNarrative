@@ -33,7 +33,8 @@ class NarrativePreprocessor(Preprocessor):
             'host': self.host,
             'creator': nb['metadata']['creator'],
             'narrative_link': f"{self.host}/narrative/{nb['metadata']['wsid']}",
-            'authors': get_authors(self.config, nb['metadata']['wsid'])
+            'authors': get_authors(self.config, nb['metadata']['wsid']),
+            'service_wizard_url': self.config.narrative_session.service_wizard_url
         })
 
         if 'inlining' not in resources:
