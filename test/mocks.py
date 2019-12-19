@@ -10,7 +10,7 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
                   ws_info: List = [],
                   user_map: Dict[str, str] = {},
                   ws_perms: Dict[int, Dict[str, str]] = {},
-                  ws_obj_infos: List = []):
+                  ws_obj_info_file: str = None):
     """
     Sets up mock calls as a requests_mock adapter function.
     Mocks POST calls to:
@@ -90,9 +90,10 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
                     "url": "https://something.kbase.us/service/narrative_service_url"
                 }]
             elif method == "NarrativeService.list_objects_with_sets":
-                result = [{
-                    "data": ws_obj_infos
-                }]
+                if ws_obj_info_file is not None:
+                    result = [_get_object_from_file(ws_obj_info_file)]
+                else:
+                    result = [{"data": []}]
             response._content = bytes(json.dumps({
                 "result": result,
                 "version": "1.1"
@@ -105,7 +106,7 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
     return mock_adapter
 
 
-def _fake_obj_info(ref: str):
+def _fake_obj_info(ref: str) -> List:
     split_ref = ref.split('/')
     return [
         split_ref[1],
@@ -122,9 +123,10 @@ def _fake_obj_info(ref: str):
     ]
 
 
-def _get_object_from_file(filename: str):
+def _get_object_from_file(filename: str) -> Dict:
     """
-    This should be a JSON file representing a workspace data object.
+    This should be a JSON file representing workspace data or some other JSON data
+    returned from a service.
     If it's not JSON, it'll crash.
     """
     with open(filename, "r") as f:
@@ -137,12 +139,14 @@ def set_up_ok_mocks(rqm,
                     ref_to_info: Dict = {},
                     ws_info: List = [],
                     ws_perms: Dict = {},
-                    user_map: Dict = {}):
+                    user_map: Dict = {},
+                    ws_obj_info_file: str = None):
     rqm.add_matcher(_mock_adapter(ref_to_file=ref_to_file,
                                   ref_to_info=ref_to_info,
                                   ws_info=ws_info,
                                   ws_perms=ws_perms,
-                                  user_map=user_map))
+                                  user_map=user_map,
+                                  ws_obj_info_file=ws_obj_info_file))
 
 
 def mock_auth_ok(user_id, token):

@@ -100,7 +100,8 @@ class StaticNarrativeTest(unittest.TestCase):
             ref_to_info=ref_to_info,
             ws_info=ws_info,
             ws_perms=ws_perms,
-            user_map=user_map
+            user_map=user_map,
+            ws_obj_info_file="data/objects-43666.json"
         )
         impl = self.service_impl
         output = impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/18"})[0]
