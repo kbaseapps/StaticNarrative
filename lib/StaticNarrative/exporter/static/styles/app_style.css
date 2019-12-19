@@ -180,3 +180,15 @@
     min-width: 0;
 }
 
+.kbs-data {
+    max-width: 100rem;
+    max-height: 10rem;
+    background-color: blue;
+    color: white;
+    position: fixed;
+    z-index: 1;
+}
+
+.kbs-data.is-hidden {
+    display: none;
+}

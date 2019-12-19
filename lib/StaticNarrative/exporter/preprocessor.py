@@ -17,9 +17,8 @@ class NarrativePreprocessor(Preprocessor):
         super(NarrativePreprocessor, self).__init__(config=config, **kw)
         self.host = self.config.narrative_session.host
         base_path = self.config.narrative_session.base_path
-        self.fonts_root = os.path.join(base_path, "fonts")
-        self.app_style_file = os.path.join(base_path, "styles", "app_style.css")
-        self.icon_style_file = os.path.join(base_path, "styles", "kbaseIcons.css")
+        self.app_style_file = os.path.join(base_path, "static", "styles", "app_style.css")
+        self.icon_style_file = os.path.join(base_path, "static", "styles", "kbaseIcons.css")
         self.assets_base_url = self.config.narrative_session.assets_base_url
 
     def preprocess(self, nb, resources):
@@ -33,7 +32,8 @@ class NarrativePreprocessor(Preprocessor):
             'host': self.host,
             'creator': nb['metadata']['creator'],
             'narrative_link': f"{self.host}/narrative/{nb['metadata']['wsid']}",
-            'authors': get_authors(self.config, nb['metadata']['wsid'])
+            'authors': get_authors(self.config, nb['metadata']['wsid']),
+            'service_wizard_url': self.config.narrative_session.service_wizard_url
         })
 
         if 'inlining' not in resources:

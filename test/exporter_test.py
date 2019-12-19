@@ -50,7 +50,8 @@ class ExporterTest(unittest.TestCase):
             ref_to_file=ref_to_file,
             ref_to_info=ref_to_info,
             ws_info=ws_info,
-            user_map=user_map
+            user_map=user_map,
+            ws_obj_info_file="data/objects-43666.json"
         )
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
         static_path = exporter.export_narrative(
