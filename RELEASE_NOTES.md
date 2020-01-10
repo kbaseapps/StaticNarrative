@@ -1,6 +1,12 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.4
+-----
+* Fixed bug where non-public Narratives, or non-admin users could create Static Narratives.
+* Added popup overlay with list of data in the Narrative.
+* Minor Narrative cell support tweaks.
+
 0.0.3
 -----
 * Add support for KBase icons font pack.
