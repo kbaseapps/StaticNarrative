@@ -152,7 +152,19 @@ class StaticNarrativeTest(unittest.TestCase):
         }
         ref_to_file = {}
         ref_to_info = {
-            "5/1/1": [1, "fake_narr", "KBaseNarrative.Narrative-4.0", ts_iso, 1, self.user_id, ws_id, ws_name, "an_md5", 12345, None]
+            "5/1/1": [
+                1,
+                "fake_narr",
+                "KBaseNarrative.Narrative-4.0",
+                ts_iso,
+                1,
+                self.user_id,
+                ws_id,
+                ws_name,
+                "an_md5",
+                12345,
+                None
+            ]
         }
         ws_info = [5, ws_name, self.user_id, ts_iso, 1, 'a', 'r', 'unlocked', ws_meta]
         set_up_ok_mocks(
