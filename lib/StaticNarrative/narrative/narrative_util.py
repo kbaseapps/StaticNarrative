@@ -184,4 +184,6 @@ def verify_public_narrative(workspace_url: str, ws_id: int) -> None:
     except ServerError as err:
         raise WorkspaceError(err, ws_id)
     if perms.get("*", "n") not in ["r", "w", "a"]:
-        raise PermissionError(f"Workspace {ws_id} must be publicly readable to be made static")
+        raise PermissionError(
+            f"Workspace {ws_id} must be publicly readable to make a Static Narrative"
+        )

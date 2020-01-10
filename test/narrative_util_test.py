@@ -14,7 +14,8 @@ from StaticNarrative.narrative.narrative_util import (
     _validate_nar_type,
     get_static_info,
     save_narrative_url,
-    verify_admin_privilege
+    verify_admin_privilege,
+    verify_public_narrative
 )
 from StaticNarrative.narrative_ref import NarrativeRef
 
@@ -233,5 +234,46 @@ class NarrativeUtilTestCase(unittest.TestCase):
         ws_id = 5
         with self.assertRaises(WorkspaceError) as e:
             verify_admin_privilege(self.cfg["workspace-url"], self.user_id, self.token, ws_id)
+        self.assertIn("Can't reach workspace", str(e.exception))
+        self.assertIn(str(ws_id), str(e.exception))
+
+    @requests_mock.Mocker()
+    def test_verify_public_narrative_ok(self, rqm):
+        # all kinda stupid, but valid.
+        ws_perms = {
+            123: {self.user_id: "a", "*": "r"},
+            456: {self.user_id: "n", "*": "w"},
+            "789": {self.user_id: "r", "*": "a"}
+        }
+        set_up_ok_mocks(rqm, ws_perms=ws_perms)
+        for ws_id in ws_perms:
+            self.assertIsNone(verify_public_narrative(
+                self.cfg["workspace-url"], ws_id
+            ))
+
+    @requests_mock.Mocker()
+    def test_verify_public_narrative_fail(self, rqm):
+        ws_no_privs = {
+            123: {self.user_id: "n"},
+            "456": {self.user_id: "a"},
+            789: {self.user_id: "w"}
+        }
+        set_up_ok_mocks(rqm, ws_perms=ws_no_privs)
+        for ws_id in ws_no_privs:
+            with self.assertRaises(PermissionError) as e:
+                verify_public_narrative(
+                    self.cfg["workspace-url"], ws_id
+                )
+            self.assertIn(
+                f"Workspace {ws_id} must be publicly readable to make a Static Narrative",
+                str(e.exception)
+            )
+
+    @requests_mock.Mocker()
+    def test_verify_public_privs_bad_client(self, rqm):
+        mock_ws_bad(rqm, "Can't reach workspace")
+        ws_id = 666
+        with self.assertRaises(WorkspaceError) as e:
+            verify_public_narrative(self.cfg["workspace-url"], ws_id)
         self.assertIn("Can't reach workspace", str(e.exception))
         self.assertIn(str(ws_id), str(e.exception))
