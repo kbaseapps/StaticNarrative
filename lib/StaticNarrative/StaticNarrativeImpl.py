@@ -8,7 +8,8 @@ from StaticNarrative.narrative_ref import NarrativeRef
 from StaticNarrative.narrative.narrative_util import (
     save_narrative_url,
     get_static_info,
-    verify_admin_privilege
+    verify_admin_privilege,
+    verify_public_narrative
 )
 
 #END_HEADER
@@ -68,6 +69,7 @@ class StaticNarrative:
         ref = NarrativeRef.parse(params["narrative_ref"])
         ws_url = self.config["workspace-url"]
         verify_admin_privilege(ws_url, ctx["user_id"], ctx["token"], ref.wsid)
+        verify_public_narrative(ws_url, ref.wsid)
         exporter = NarrativeExporter(self.config, ctx["user_id"], ctx["token"])
 
         # set up output directories

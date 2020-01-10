@@ -4,6 +4,15 @@ from installed_clients.WorkspaceClient import Workspace
 from installed_clients.authclient import KBaseAuth as _KBaseAuth
 import html
 
+ICON_DATA = None
+
+
+def _load_icon_data():
+    icon_json = os.path.join("/kb", "module", "data", "icons.json")
+    with open(icon_json, 'r') as icon_file:
+        global ICON_DATA
+        ICON_DATA = json.load(icon_file)
+
 
 def build_report_view_data(config, result):
     """
@@ -114,18 +123,18 @@ def get_icon(config, metadata):
 
 
 def get_data_icon(obj_type):
-    icon_json = os.path.join("/kb", "module", "data", "icons.json")
-    with open(icon_json, 'r') as icon_file:
-        icon_mapping = json.load(icon_file)
+    if ICON_DATA is None:
+        _load_icon_data()
+
     icon_info = {
-        'icon': icon_mapping['data']['DEFAULT'],
-        'color': icon_mapping['colors'][0],
+        'icon': ICON_DATA['data']['DEFAULT'],
+        'color': ICON_DATA['colors'][0],
         'shape': 'circle'
     }
-    if obj_type in icon_mapping['data']:
-        icon_info['icon'] = " ".join(icon_mapping['data'][obj_type])
-    if obj_type in icon_mapping['color_mapping']:
-        icon_info['color'] = icon_mapping['color_mapping'][obj_type]
+    if obj_type in ICON_DATA['data']:
+        icon_info['icon'] = " ".join(ICON_DATA['data'][obj_type])
+    if obj_type in ICON_DATA['color_mapping']:
+        icon_info['color'] = ICON_DATA['color_mapping'][obj_type]
     return icon_info
 
 

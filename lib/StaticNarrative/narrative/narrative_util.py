@@ -152,7 +152,7 @@ def verify_admin_privilege(workspace_url: str, user_id: str, token: str, ws_id: 
 
     Raises a WorkspaceError if anything goes wrong with the permission lookup.
 
-    :param ws_url: str - the workspace endpoint url
+    :param workspace_url: str - the workspace endpoint url
     :param token: str - the auth token
     :param user_id: str - the user id to check. This is expected to be the owner of the
         provided token. Not checked, though, since that should be done by the Server module.
@@ -165,3 +165,23 @@ def verify_admin_privilege(workspace_url: str, user_id: str, token: str, ws_id: 
         raise WorkspaceError(err, ws_id)
     if user_id not in perms or perms[user_id] != "a":
         raise PermissionError(f"User {user_id} does not have admin rights on workspace {ws_id}")
+
+
+def verify_public_narrative(workspace_url: str, ws_id: int) -> None:
+    """
+    Raises a PermissionError if the workspace is not public (i.e. user '*' has 'r' access).
+    Creating a stating Narrative is only permitted on public Narratives.
+    If the Narrative is public, this returns None.
+
+    Raises a WorkspaceError if anything goes wrong with the lookup.
+
+    :param workspace_url: str - the workspace endpoint url
+    :param ws_id: int - the workspace to check
+    """
+    ws_client = Workspace(url=workspace_url)
+    try:
+        perms = ws_client.get_permissions({"id": ws_id})
+    except ServerError as err:
+        raise WorkspaceError(err, ws_id)
+    if perms.get("*", "n") not in ["r", "w", "a"]:
+        raise PermissionError(f"Workspace {ws_id} must be publicly readable to be made static")

@@ -1,5 +1,6 @@
 from typing import List
 from installed_clients.NarrativeServiceClient import NarrativeService
+from .processor_util import get_data_icon
 import os
 import json
 
@@ -14,16 +15,30 @@ def export_narrative_data(wsid: int, output_dir: str, service_wizard_url: str, t
         "includeMetadata": 1
     })['data']
     filtered_data = []
+    type_info = {}
     for item in ws_data:
         obj = item["object_info"]
         obj_type = obj[2].split("-")[0]
         if obj_type in IGNORED_TYPES:
             continue
+        type_name = obj_type.split('.')[-1]
+        if type_name not in type_info:
+            type_info[type_name] = {
+                'count': 0,
+                'icon': get_data_icon(type_name)
+            }
         filtered_data.append(_reshape_obj(obj))
+        type_info[type_name]['count'] += 1
+
     # Maybe sort it later. For now, dump to file.
+    output_data = {
+        'data': filtered_data,
+        'types': type_info
+    }
+
     output_path = os.path.join(output_dir, "data.json")
     with open(output_path, "w") as outfile:
-        json.dump(filtered_data, outfile)
+        json.dump(output_data, outfile)
     return output_path
 
 

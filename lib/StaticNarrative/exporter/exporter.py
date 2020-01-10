@@ -60,11 +60,15 @@ class NarrativeExporter:
         html_exporter = self._build_exporter(data_file_path)
         (body, resources) = html_exporter.from_notebook_node(kb_notebook)
 
+        # copy some assets
+        # TODO: remove this, make them static, compile others, etc.
+        # TODO: Maybe add to ui-assets repo?
+        # ...maybe not yet.
+
         output_filename = "narrative.html"
         output_path = os.path.join(output_dir, output_filename)
         with open(output_path, 'w') as output_html:
             output_html.write(body)
-
         return output_path
 
     def _build_exporter(self, data_file_path: str) -> HTMLExporter:
