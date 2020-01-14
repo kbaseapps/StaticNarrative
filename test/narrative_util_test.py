@@ -11,7 +11,7 @@ from installed_clients.WorkspaceClient import Workspace
 from StaticNarrative.exceptions import WorkspaceError
 from StaticNarrative.narrative.narrative_util import (
     read_narrative,
-    _validate_nar_type,
+    _validate_narr_type,
     get_static_info,
     save_narrative_url,
     verify_admin_privilege,
@@ -62,7 +62,7 @@ class NarrativeUtilTestCase(unittest.TestCase):
             str(e.exception)
         )
 
-    def test_validate_nar_type(self):
+    def test_validate_narr_type(self):
         good_types = [
             "KBaseNarrative.Narrative-1.0",
             "KBaseNarrative.Narrative-4.0"
@@ -81,15 +81,15 @@ class NarrativeUtilTestCase(unittest.TestCase):
         ]
         ref = NarrativeRef.parse("1/2/3")
         for t in good_types:
-            self.assertIsNone(_validate_nar_type(t, ref))
+            self.assertIsNone(_validate_narr_type(t, ref))
         for t in bad_types:
             with self.assertRaises(ValueError) as e:
-                _validate_nar_type(t, ref)
+                _validate_narr_type(t, ref)
             self.assertIn(f"Expected a Narrative object with reference {str(ref)}, got a",
                           str(e.exception))
         for t in invalid_types:
             with self.assertRaises(ValueError) as e:
-                _validate_nar_type(t, ref)
+                _validate_narr_type(t, ref)
             self.assertIn(f"The type string must be a string",
                           str(e.exception))
 

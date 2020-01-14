@@ -33,16 +33,16 @@ def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> Dict:
     :param include_metadata: if True, includes the object metadata when returning
     """
     try:
-        nar_data = ws_client.get_objects2({'objects': [{'ref': str(ref)}]})
-        nar = nar_data['data'][0]
-        _validate_nar_type(nar['info'][2], ref)
+        narr_data = ws_client.get_objects2({'objects': [{'ref': str(ref)}]})
+        nar = narr_data['data'][0]
+        _validate_narr_type(nar['info'][2], ref)
         # nar['data'] = update_narrative(nar['data'])
         return nar['data']
     except ServerError as err:
         raise WorkspaceError(err, ref.wsid)
 
 
-def _validate_nar_type(t: str, ref: NarrativeRef) -> None:
+def _validate_narr_type(t: str, ref: NarrativeRef) -> None:
     """
     Validates that the given string is a KBase Narrative type string. That is,
     it's of the form "KBaseNarrative.Narrative-1.0", including the version.

@@ -442,8 +442,8 @@ def suggest_apps(obsolete_id):
     return suggestions
 
 try:
-    nar_path = os.environ["NARRATIVE_DIR"]
-    obsolete_json = open(os.path.join(nar_path, "src", "obsolete_app_mapping.json"))
+    narr_path = os.environ["NARRATIVE_DIR"]
+    obsolete_json = open(os.path.join(narr_path, "src", "obsolete_app_mapping.json"))
     obsolete_apps = json.loads(obsolete_json.read())
 except:
     obsolete_apps = dict()
