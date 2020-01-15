@@ -1,3 +1,6 @@
+"""
+Some utility functions for handling Narratives and permissions.
+"""
 from installed_clients.WorkspaceClient import Workspace
 from installed_clients.baseclient import ServerError
 from ..exceptions import WorkspaceError

@@ -1,3 +1,6 @@
+"""
+Some catch-all functions for helping process Narrative cells.
+"""
 import json
 import os
 from installed_clients.WorkspaceClient import Workspace
@@ -14,7 +17,7 @@ def _load_icon_data():
         ICON_DATA = json.load(icon_file)
 
 
-def build_report_view_data(config, result):
+def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
     """
     Returns a structure like this:
     {
@@ -32,7 +35,7 @@ def build_report_view_data(config, result):
     if not result or not result[0].get('report_name') or not result[0].get('report_ref'):
         return {}
     report_ref = result[0].get('report_ref')
-    ws = Workspace(url=config.narrative_session.ws_url, token=config.narrative_session.token)
+    ws = Workspace(url=ws_url, token=token)
     report = ws.get_objects2({'objects': [{'ref': report_ref}]})['data'][0]['data']
     """{'direct_html': None,
      'direct_html_link_index': None,
