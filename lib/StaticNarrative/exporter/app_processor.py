@@ -1,3 +1,4 @@
+from installed_clients.WorkspaceClient import Workspace
 from .processor_util import build_report_view_data
 import re
 
@@ -52,13 +53,38 @@ class AppProcessor:
             "output": [],
             "parameter": []
         }
+
+        # two passes
+        # 1. Make a lookup table for UPA -> object info
+        upas = dict()
         for p in spec_params:
-            p["value"] = self._translate_param_value(param_values.get(p["id"]), p)
+            upas.update(self._make_upa_dict(param_values.get(p["id"]), p))
+
+        # 2. Do translation from internal value -> something prettier.
+        for p in spec_params:
+            p["value"] = self._translate_param_value(param_values.get(p["id"]), p, upas)
             p_type = p["ui_class"]
             info[p_type].append(p)
         return info
 
-    def _translate_param_value(self, value, param_spec: dict):
+    def _make_upa_dict(self, value, param_spec: dict):
+        upas = list()
+        if param_spec["field_type"] == "text":
+            valid_ws_types = param_spec.get("text_options", {}).get("valid_ws_types", [])
+            if len(valid_ws_types) > 0 and value:
+                if isinstance(value, list):
+                    for v in value:
+                        if self._is_upa(v):
+                            upas.append(v)
+                else:
+                    if self._is_upa(value):
+                        upas.append(value)
+        ws = Workspace(url=self.ws_url, token=self.token)
+        obj_infos = ws.get_object_info3({"objects": [{"ref": upa} for upa in upas]})["infos"]
+        upa_map = {u: obj_infos[i] for i, u in enumerate(upas)}
+        return upa_map
+
+    def _translate_param_value(self, value, param_spec: dict, upas: dict):
         """
         Overall flow.
         1. if value is a list, iterate everything below over it.
@@ -77,17 +103,10 @@ class AppProcessor:
             valid_ws_types = param_spec.get("text_options", {}).get("valid_ws_types", [])
             if len(valid_ws_types) > 0 and value:
                 if isinstance(value, list):
-                    value = [self._interpret_ws_obj_input(v) for v in value]
+                    value = [upas[v][1] if v in upas else v for v in value]
                 else:
-                    value = self._interpret_ws_obj_input(value)
+                    value = upas[value][1] if value in upas else value
         return value
-
-    def _interpret_ws_obj_input(self, value: str) -> str:
-        """
-        If value is an UPA, translate into workspace object names
-        """
-        if self._is_upa(value):
-            return
 
     def _is_upa(self, s: str) -> bool:
         """
