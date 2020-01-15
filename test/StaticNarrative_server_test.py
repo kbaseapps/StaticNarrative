@@ -91,7 +91,7 @@ class StaticNarrativeTest(unittest.TestCase):
                 'narrative': '1'
             }
         ]
-        ws_perms = {ws_id: {self.user_id: "a"}}
+        ws_perms = {ws_id: {self.user_id: "a", "*": "r"}}
         user_map = {self.user_id: "Some User"}
 
         set_up_ok_mocks(
@@ -114,7 +114,7 @@ class StaticNarrativeTest(unittest.TestCase):
         pass
 
     @requests_mock.Mocker()
-    def test_create_static_narrative_not_allowed(self, rqm):
+    def test_create_static_narrative_user_not_admin(self, rqm):
         """
         Test case where user doesn't have admin rights on the workspace.
         """
@@ -128,6 +128,29 @@ class StaticNarrativeTest(unittest.TestCase):
             self.service_impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/1"})
         self.assertIn(f"User {self.user_id} does not have admin rights on workspace {ws_id}",
                       str(e.exception))
+
+    @requests_mock.Mocker()
+    def test_create_static_narrative_not_public(self, rqm):
+        """
+        Test case where Narative isn't public.
+        """
+        ws_perms = {
+            123: {self.user_id: "a", "*": "n"},
+            456: {self.user_id: "a"}
+        }
+        set_up_ok_mocks(
+            rqm,
+            ws_perms=ws_perms,
+            user_map={self.user_id: "Some User"}
+        )
+        for ws_id in ws_perms:
+            with self.assertRaises(PermissionError) as e:
+                self.service_impl.create_static_narrative(
+                    self.ctx,
+                    {"narrative_ref": f"{ws_id}/1/1"}
+                )
+            self.assertIn(f"Workspace {ws_id} must be publicly readable to make a Static Narrative",
+                          str(e.exception))
 
     def test_create_static_narrative_bad(self):
         """
@@ -152,7 +175,19 @@ class StaticNarrativeTest(unittest.TestCase):
         }
         ref_to_file = {}
         ref_to_info = {
-            "5/1/1": [1, "fake_narr", "KBaseNarrative.Narrative-4.0", ts_iso, 1, self.user_id, ws_id, ws_name, "an_md5", 12345, None]
+            "5/1/1": [
+                1,
+                "fake_narr",
+                "KBaseNarrative.Narrative-4.0",
+                ts_iso,
+                1,
+                self.user_id,
+                ws_id,
+                ws_name,
+                "an_md5",
+                12345,
+                None
+            ]
         }
         ws_info = [5, ws_name, self.user_id, ts_iso, 1, 'a', 'r', 'unlocked', ws_meta]
         set_up_ok_mocks(

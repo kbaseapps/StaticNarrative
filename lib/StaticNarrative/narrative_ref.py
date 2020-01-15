@@ -22,23 +22,28 @@ class NarrativeRef:
         (self.wsid, self.objid, self.ver) = (ref.get("wsid"), ref.get("objid"), ref.get("ver"))
         try:
             self.wsid = int(self.wsid)
-        except ValueError:
-            err = f"A numerical Workspace id is required for a Narrative ref, not {self.wsid}"
+            if self.wsid <= 0:
+                raise ValueError()
+        except (ValueError, TypeError):
+            err = f"The Narrative Workspace id must be an integer > 0, not {self.wsid}"
             raise ValueError(err)
 
-        if self.ver is not None:
-            try:
-                self.ver = int(self.ver)
-            except ValueError:
-                err = f"If ver is present in the ref, it must be numerical, not {self.ver}"
-                raise ValueError(err)
-        if self.objid is not None:
-            try:
-                self.objid = int(self.objid)
-            except ValueError:
-                raise ValueError("objid must be numerical, not {}".format(self.objid))
-        else:
-            raise ValueError("objid is required")
+        try:
+            self.objid = int(self.objid)
+            if self.objid <= 0:
+                raise ValueError()
+        except (ValueError, TypeError):
+            raise ValueError(
+                f"The Narrative object id must be an integer > 0, not {self.objid}"
+            )
+
+        try:
+            self.ver = int(self.ver)
+            if self.ver <= 0:
+                raise ValueError()
+        except (ValueError, TypeError):
+            err = f"The Narrative version must be an integer > 0, not {self.ver}"
+            raise ValueError(err)
 
     @staticmethod
     def parse(ref: str):

@@ -12,6 +12,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="./dataBrowser.js"></script>
 
 {% for css in resources.inlining.css -%}
     <style type="text/css">
@@ -51,8 +52,8 @@ div#notebook {
 <!-- Loading mathjax macro -->
 {{ mathjax() }}
 
-<script src="{{ resources['kbase']['host'] }}/static/narrative_paths.js"></script>
-<script>
+{# <script src="{{ resources['kbase']['host'] }}/static/narrative_paths.js"></script> #}
+{# <script>
     require.config({
         baseUrl: "{{ resources['kbase']['host'] }}/static/",
         paths: {
@@ -86,7 +87,7 @@ div#notebook {
             }
         }
     });
-</script>
+</script> #}
 {%- endblock html_head -%}
 </head>
 {%- endblock header -%}
@@ -112,14 +113,13 @@ div#notebook {
       </div>
     </div>
   </div>
-  <div id="kbs-data" class="container kbs-data is-hidden">
-    stuff.
-  </div>
+  <div id="kbs-data" class="container kbs-data is-hidden"></div>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 {{ super() }}
     </div>
   </div>
+
   <script>
 
   function toggleAppView(btn) {
@@ -143,7 +143,8 @@ div#notebook {
   });
 
   let fileSetServUrl = null,
-      lastFSSUrlLookup = 0;
+      lastFSSUrlLookup = 0,
+      dataBrowser = null;
 
   function getFileServUrl(servWizardUrl) {
     const now = new Date();
@@ -191,7 +192,14 @@ div#notebook {
     });
 
   document.querySelector('button#kbs-data-toggle').addEventListener('click', event => {
-    document.querySelector('div#kbs-data').classList.toggle('is-hidden');
+    const dbNode = document.querySelector('div#kbs-data');
+    if (!dataBrowser) {
+      dataBrowser = new DataBrowser({
+        node: dbNode,
+        dataFile: 'data.json'
+      });
+    }
+    dbNode.classList.toggle('is-hidden');
   });
 
 

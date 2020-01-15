@@ -6,10 +6,10 @@ __author__ = 'Bill Riehl <wjriehl@lbl.gov>'
 from nbconvert.preprocessors import Preprocessor
 import os
 from .processor_util import (
-    build_report_view_data,
     get_icon,
     get_authors
 )
+from .app_processor import AppProcessor
 
 
 class NarrativePreprocessor(Preprocessor):
@@ -20,6 +20,8 @@ class NarrativePreprocessor(Preprocessor):
         self.app_style_file = os.path.join(base_path, "static", "styles", "app_style.css")
         self.icon_style_file = os.path.join(base_path, "static", "styles", "kbaseIcons.css")
         self.assets_base_url = self.config.narrative_session.assets_base_url
+        self.app_processor = AppProcessor(self.config.narrative_session.ws_url,
+                                          self.config.narrative_session.token)
 
     def preprocess(self, nb, resources):
         (nb, resources) = super(NarrativePreprocessor, self).preprocess(nb, resources)
@@ -69,7 +71,7 @@ class NarrativePreprocessor(Preprocessor):
 
     def preprocess_cell(self, cell, resources, index):
         if 'kbase' in cell.metadata:
-            kb_meta = cell.metadata.get('kbase')
+            kb_meta = cell.metadata.get('kbase', {})
             kb_info = {
                 'type': kb_meta.get('type'),
                 'idx': index,
@@ -77,7 +79,9 @@ class NarrativePreprocessor(Preprocessor):
                 'icon': get_icon(self.config, kb_meta)
             }
             if kb_info['type'] == 'app':
-                kb_info.update(self._process_app_info(kb_info, kb_meta))
+                kb_info.update(
+                    self.app_processor.process(kb_info, kb_meta)
+                )
                 kb_info['external_link'] = self.host + kb_info['app']['catalog_url']
             elif kb_info['type'] == 'data':
                 kb_info['external_link'] = self.host + '/#dataview/' + \
@@ -95,50 +99,3 @@ class NarrativePreprocessor(Preprocessor):
         resources['kbase']['cells'][index] = cell.metadata.get('kbase')
         return cell, resources
 
-    def _process_app_info(self, kb_info: dict, kb_meta: dict) -> dict:
-        """
-        Extracts the useful bits of the complicated metadata structure so that the Jinja
-        templates don't look like spaghetti with stuff like
-        'kbase.appCell.app.spec.info......'
-        returns a dict with the updated info.
-        """
-        kb_info['app'] = {
-            'title': kb_meta['attributes']['title'],
-            'subtitle': kb_meta['attributes']['subtitle'],
-            'version': kb_meta['appCell']['app']['version'],
-            'id': kb_meta['appCell']['app']['id'],
-            'tag': kb_meta['appCell']['app']['tag'],
-            'catalog_url': kb_meta['attributes']['info']['url'],
-        }
-        kb_info['params'] = {
-            'input': [],
-            'output': [],
-            'parameter': []
-        }
-        param_values = kb_meta['appCell']['params']
-        spec_params = kb_meta['appCell']['app']['spec']['parameters']
-        for p in spec_params:
-            p['value'] = param_values.get(p['id'])
-            p_type = p['ui_class']
-            kb_info['params'][p_type].append(p)
-        kb_info['output'] = {
-            "widget": kb_meta['appCell'].get('exec', {}).get('outputWidgetInfo', {}),
-            "result": kb_meta['appCell'].get('exec', {}).get('jobState', {}).get('result', []),
-            "report": build_report_view_data(
-                          self.config,
-                          kb_meta['appCell'].get('exec', {}).get('jobState', {}).get('result', [])
-                      )
-        }
-        kb_info['job'] = {
-            'state': "new, and hasn't been started."
-        }
-        if 'exec' in kb_meta['appCell']:
-            kb_info['job']['state'] = self._get_job_state(kb_meta['appCell'])
-        return kb_info
-
-    def _get_job_state(self, app_meta):
-        job_state = app_meta['exec'].get('jobState', {})
-        state = job_state.get('job_state', job_state.get('status', 'unknown'))
-        if isinstance(state, list):
-            state = state[1]
-        return state
