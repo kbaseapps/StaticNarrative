@@ -79,9 +79,11 @@ class AppProcessor:
                 else:
                     if self._is_upa(value):
                         upas.append(value)
-        ws = Workspace(url=self.ws_url, token=self.token)
-        obj_infos = ws.get_object_info3({"objects": [{"ref": upa} for upa in upas]})["infos"]
-        upa_map = {u: obj_infos[i] for i, u in enumerate(upas)}
+        upa_map = dict()
+        if len(upas):
+            ws = Workspace(url=self.ws_url, token=self.token)
+            obj_infos = ws.get_object_info3({"objects": [{"ref": upa} for upa in upas]})["infos"]
+            upa_map = {u: obj_infos[i] for i, u in enumerate(upas)}
         return upa_map
 
     def _translate_param_value(self, value, param_spec: dict, upas: dict):
