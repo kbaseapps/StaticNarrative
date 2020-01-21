@@ -103,6 +103,7 @@
     flex-grow: 1;
     line-height: 20px;
     overflow: hidden;
+    padding-left: 5px;
 }
 
 .kb-app-header-title-text .title {
@@ -166,14 +167,6 @@
 .kb-author-list {
     font-size: 16px;
     line-height: 20px;
-}
-
-.kb-author-list > a {
-    color: #555;
-}
-
-.kb-author-list > a:hover {
-    color: #23527B;
 }
 
 .prompt {

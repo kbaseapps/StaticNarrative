@@ -98,7 +98,7 @@ div#notebook {
     <div class="row">
       <div class="col-md-1"><h1><img src="{{ resources['kbase']['host'] }}/modules/plugins/mainwindow/resources/images/kbase_logo.png"/></h1></div>
       <div class="col-md-10">
-        <h1>{{ resources['kbase']['title'] }}</h1>
+        <h1><a href="{{ resources.kbase.narrative_link }}">{{ resources.kbase.title }}</a></h1>
         <div class="kb-author-list">
           {%- for author in resources['kbase']['authors'] -%}
             <a href="{{ author.path }}">{{ author.name }}</a>
