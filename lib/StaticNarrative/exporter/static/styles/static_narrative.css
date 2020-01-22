@@ -182,7 +182,7 @@
     background-color: #fff;
 }
 
-.kbs-data.is-hidden {
+.kbs-is-hidden {
     display: none;
 }
 
@@ -201,4 +201,11 @@
 
 .kb-data-card-info {
 
+}
+
+#notebook-container {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
 }

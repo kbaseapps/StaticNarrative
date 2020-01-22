@@ -1,0 +1,572 @@
+{
+    "data": [
+        {
+            "object_info": [
+                1,
+                "Narrative.1502225097649",
+                "KBaseNarrative.Narrative-4.0",
+                "2020-01-17T22:18:13+0000",
+                114,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "9d86727d867fdbda37b1d271af243c4d",
+                313324,
+                {
+                    "method.kb_uploadmethods/import_fastq_sra_as_reads_from_staging/4c0579bec5aa606f5e42cf29d920872d34ea5b52": "1",
+                    "job_info": "{\"queue_time\": 0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}",
+                    "method.fba_tools/edit_media/f6f8088e846831fc94a0b0806d7a769dfaccf836": "2",
+                    "description": "",
+                    "type": "KBaseNarrative.Narrative",
+                    "method.kb_Msuite/run_checkM_lineage_wf/4b0c3c462f1ccf0dcc30330e99fa2173d7907c7a": "2",
+                    "method.NarrativeTest/test_input_widget/ce273c5ba9f7aae461a78a861be3e0949095f2c6": "1",
+                    "is_temporary": "false",
+                    "method.kb_uploadmethods/import_fasta_as_assembly_from_staging/376efd14d584f6642a5ceeea33d3acd2d3c78b20": "1",
+                    "method.kb_uploadmethods/import_fasta_as_assembly_from_staging/cac123b09271d200e018fbef52286b98e56daf42": "1",
+                    "method.kb_uploadmethods/import_gff_fasta_as_metagenome_from_staging/eaacbb349d721977a6c667031f37c5a60f3528c5": "1",
+                    "method.kb_trimmomatic/run_trimmomatic/09b94c39b2fab79962a8d978aa15a424342defe4": "1",
+                    "method.NarrativeTest/report_example/4fa11388bfaea2d912e62ffc24220f60c8acdda3": "1",
+                    "method.NarrativeTest/test_input_params/ce273c5ba9f7aae461a78a861be3e0949095f2c6": "2",
+                    "creator": "wjriehl",
+                    "method.kb_SPAdes/run_metaSPAdes/e0a0f9df50bb6765db40f6949b18c7a016610801": "1",
+                    "data_dependencies": "[]",
+                    "format": "ipynb",
+                    "method.NarrativeTest/introspect_job/daaf0bd2a797f60c85dfbfe3a0b4e7568037e763": "1",
+                    "method.RAST_SDK/reannotate_microbial_genome/50b012d9b41b71ba31b30355627cf85f2611bc3e": "1",
+                    "name": "Scratch",
+                    "method.NarrativeTest/report_example/be11b8565ec27d8d1df75b3f26862dbf4a738e5b": "1",
+                    "method.NarrativeTest/report_example/b45261584ab5c5bd6c6efc0d9abf123377467a8f": "1",
+                    "method.kb_uploadmethods/import_fastq_sra_as_reads_from_staging/cac123b09271d200e018fbef52286b98e56daf42": "2",
+                    "ws_name": "wjriehl:narrative_1502225097649"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                3,
+                "small.forward.fq_reads",
+                "KBaseFile.SingleEndLibrary-2.2",
+                "2018-01-18T22:26:25+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "416864468c635a029a1a42c2fab65084",
+                628,
+                {
+                    "qual_min": "10.0",
+                    "qual_mean": "44.7367",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "4",
+                    "read_length_mean": "100.0",
+                    "qual_stdev": "9.0087",
+                    "read_length_stdev": "0.0",
+                    "qual_max": "51.0",
+                    "total_bases": "125000",
+                    "single_genome": "1",
+                    "gc_content": "0.6798169999999999",
+                    "phred_type": "33",
+                    "read_count": "1250"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                5,
+                "small.forward.fq_reads2",
+                "KBaseFile.SingleEndLibrary-2.2",
+                "2018-01-18T22:39:42+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "9a14a2b5addd690d41f79169e9b354d9",
+                628,
+                {
+                    "qual_min": "10.0",
+                    "qual_mean": "44.7367",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "4",
+                    "read_length_mean": "100.0",
+                    "qual_stdev": "9.0087",
+                    "read_length_stdev": "0.0",
+                    "qual_max": "51.0",
+                    "total_bases": "125000",
+                    "single_genome": "1",
+                    "gc_content": "0.6798169999999999",
+                    "phred_type": "33",
+                    "read_count": "1250"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                7,
+                "Desulfovibrio_vulgaris_Hildenborough_C1.fasta_assembly",
+                "KBaseGenomeAnnotations.Assembly-6.0",
+                "2018-01-19T00:30:50+0000",
+                2,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "62ef23323e3e4d1db3bbb6ae2ff8bd1d",
+                853,
+                {
+                    "GC content": "0.63143",
+                    "Size": "3570858",
+                    "N Contigs": "1",
+                    "MD5": "12b876ac629bbf83dad31c321df32393"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                14,
+                "-123.45-",
+                "KBaseFBA.FBAModel-13.0",
+                "2018-01-26T15:29:14+0000",
+                2,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "3cbcac6de065ee04a941f3c0f86366aa",
+                1267550,
+                {
+                    "Type": "GenomeScale",
+                    "Number gapgens": "0",
+                    "Number gapfills": "0",
+                    "Source ID": "kb|g.220339.fbamdl",
+                    "Number biomasses": "1",
+                    "Number compartments": "2",
+                    "Genome": "2968/4/1",
+                    "Source": "KBase",
+                    "Name": "Rhodobacter CACIA 14H1",
+                    "Number compounds": "1048",
+                    "Number reactions": "1002"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                15,
+                "Sbicolor.JGI-v2.1",
+                "KBaseGenomes.Genome-8.0",
+                "2019-04-22T17:28:24+0000",
+                9,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "568659960eba4cd449cdb644798ebc60",
+                39145804,
+                {
+                    "Taxonomy": "Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; Mesangiospermae; Liliopsida; Petrosaviidae; commelinids; Poales; Poaceae; PACMAD clade; Panicoideae; Andropogoneae; Sorghum; Sorghum bicolor",
+                    "Size": "726616606",
+                    "Source": "Phytozome",
+                    "Name": "Sorghum bicolor",
+                    "GC content": "41.6771896622467",
+                    "Genetic code": "1",
+                    "Close genomes": "0",
+                    "Source ID": "Sbicolor.JGI-v2.1",
+                    "Number features": "39441",
+                    "Number contigs": "1610",
+                    "Domain": "Plant",
+                    "MD5": "35cecccd999e0045d9f2091205de9899"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                16,
+                "SomeFakeData",
+                "KBaseFeatureValues.ExpressionMatrix-1.0",
+                "2018-10-24T23:38:58+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "471a0f8092a38820c5fef2962ef69c4f",
+                654238,
+                {
+                    "scale": "1.0",
+                    "feature_count": "4297",
+                    "condition_count": "16",
+                    "type": "log-ratio",
+                    "Genome": "899/6/2"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                17,
+                "small.forward.fq_reads2_trimmed",
+                "KBaseFile.SingleEndLibrary-2.2",
+                "2018-12-10T18:41:10+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "b04ea5f807c7f71fb29b285c5435d9c7",
+                675,
+                {
+                    "qual_min": "10.0",
+                    "qual_mean": "44.7367",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "4",
+                    "read_length_mean": "99.4112",
+                    "qual_stdev": "9.0087",
+                    "read_length_stdev": "3.276",
+                    "qual_max": "51.0",
+                    "total_bases": "124264",
+                    "single_genome": "1",
+                    "gc_content": "0.6798169999999999",
+                    "phred_type": "33",
+                    "read_count": "1250"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                22,
+                "_Echinacea_purpurea__witches_-broom_phytoplasma",
+                "KBaseGenomes.Genome-14.2",
+                "2019-06-12T20:48:34+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "8dbc93f33815ddf74cb53ea0e2d25acd",
+                1596724,
+                {
+                    "Taxonomy": "cellular organisms; Bacteria; Terrabacteria group; Tenericutes; Mollicutes; Acholeplasmatales; Acholeplasmataceae; Candidatus Phytoplasma; 16SrII (Peanut WB group)",
+                    "Size": "545427",
+                    "accession": "GCF_001307505.1",
+                    "version": "1",
+                    "url": "ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/307/505/GCF_001307505.1_ASM130750v1/GCF_001307505.1_ASM130750v1_genomic.gbff.gz",
+                    "refname": "GCF_001307505.1",
+                    "Source": "RefSeq",
+                    "Name": "'Echinacea purpurea' witches'-broom phytoplasma",
+                    "GC content": "0.23888",
+                    "Genetic code": "11",
+                    "Suspect Genome": "1",
+                    "Number of Genome Level Warnings": "1",
+                    "Source ID": "NZ_LKAC01000001",
+                    "Number of Protein Encoding Genes": "460",
+                    "assembly_level": "Contig",
+                    "Number contigs": "28",
+                    "refid": "GCF_001307505",
+                    "Domain": "Bacteria",
+                    "Number of CDS": "460",
+                    "MD5": "257134b447c06ce07e966605f892ef11"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                23,
+                "3702_Phytozome_TAIR10",
+                "KBaseGenomeAnnotations.GenomeAnnotation-3.1",
+                "2019-06-12T20:50:10+0000",
+                31,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "e3c5ef03e533d37226ab5ec1b3d82893",
+                12261043,
+                {
+                    "Source_File_Name": "/homes/seaver/Plant_Genomes/CDM/Staging/Phytozome/11/Athaliana/TAIR10/Athaliana_167_TAIR10.gene.gff3.gz",
+                    "Release": "TAIR10",
+                    "Source": "pacid",
+                    "Name": "Arabidopsis thaliana"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                24,
+                "4529_Ensembl",
+                "KBaseGenomeAnnotations.GenomeAnnotation-2.1",
+                "2019-06-12T20:50:42+0000",
+                2,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "00769e5ad8f120886adc790f4c2961ef",
+                28061149,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                25,
+                "bsub_annotation",
+                "KBaseGenomes.Genome-8.0",
+                "2019-06-12T20:51:08+0000",
+                15,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "c85809f93839d0316bd231b3d3ba658f",
+                2684445,
+                {
+                    "GC content": "0.5",
+                    "Genetic code": "11",
+                    "Close genomes": "30",
+                    "Source ID": "bsub_annotation",
+                    "Size": "4215606",
+                    "Number features": "4553",
+                    "Number contigs": "1",
+                    "Domain": "B",
+                    "Source": "KBase",
+                    "Name": "B subtilis",
+                    "MD5": "dbf77105f122414ce1969295209d0f14"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                26,
+                "rhodobacter.art.q50.SE.reads",
+                "KBaseFile.SingleEndLibrary-2.0",
+                "2019-06-13T18:01:58+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "31b40bb1004929f69cd4acfe247ea46d",
+                351,
+                {
+                    "sequencing_tech": "Illumina",
+                    "single_genome": "1"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                27,
+                "rhodobacter.art.q20.int.PE.reads",
+                "KBaseFile.PairedEndLibrary-2.0",
+                "2019-07-23T22:36:49+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "abaa39d622962856b799c3eb32de2c2f",
+                447,
+                {
+                    "sequencing_tech": "Illumina",
+                    "single_genome": "1"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                28,
+                "rhodobacter.art.q10.PE.reads",
+                "KBaseFile.PairedEndLibrary-2.0",
+                "2019-07-23T22:42:43+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "997a75309bf763aad577df56cad4bfd9",
+                746,
+                {
+                    "sequencing_tech": "Illumina",
+                    "single_genome": "1"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                29,
+                "rhodo.art.jgi.reads",
+                "KBaseFile.PairedEndLibrary-2.0",
+                "2019-07-23T22:42:44+0000",
+                4,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "de8a03fefb60abe573225cf03a42887b",
+                542,
+                {
+                    "sequencing_tech": "Illumina",
+                    "source.project_id": "9000009",
+                    "strain.strain": "CACIA14H1",
+                    "strain.genus": "Rhodobacter",
+                    "source.source": "JGI",
+                    "strain.species": "sp.",
+                    "read_size": "100",
+                    "read_count": "386108",
+                    "source.source_id": "91eec603067c014b2c664ec9"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                30,
+                "small_pe_reads",
+                "KBaseFile.PairedEndLibrary-2.2",
+                "2019-07-23T22:50:28+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "9c1d905e8a4ca5797e1c9e18bcfd3054",
+                749,
+                {
+                    "qual_min": "10.0",
+                    "qual_mean": "43.0606",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "11",
+                    "read_length_mean": "100.0",
+                    "qual_stdev": "10.5302",
+                    "read_length_stdev": "0.0",
+                    "qual_max": "51.0",
+                    "total_bases": "250000",
+                    "single_genome": "1",
+                    "gc_content": "0.680846",
+                    "phred_type": "33",
+                    "read_count": "2500"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                32,
+                "metagenome.gff_metagenome.assembly",
+                "KBaseGenomeAnnotations.Assembly-6.0",
+                "2019-07-26T21:21:53+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "15142b97802a6605403fb8c100e9c03d",
+                14888929,
+                {
+                    "GC content": "0.63534",
+                    "Size": "70257324",
+                    "N Contigs": "87272",
+                    "MD5": "8ac7402452ede5f469ac439c3e48decd"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                33,
+                "metagenome.gff_metagenome",
+                "KBaseMetagenomes.AnnotatedMetagenomeAssembly-1.0",
+                "2019-07-26T21:29:27+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "153d588d732a0a4d50f15a5dd560756b",
+                2018848,
+                {
+                    "GC content": "0.63534",
+                    "Source ID": "unknown",
+                    "Size": "70257324",
+                    "Assembly Object": "25022/32/1",
+                    "Number features": "265441",
+                    "Number contigs": "87272",
+                    "Number of Warnings": "1",
+                    "Source": "Other",
+                    "MD5": "8ac7402452ede5f469ac439c3e48decd"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                35,
+                "Rsp-minimal",
+                "KBaseBiochem.Media-1.0",
+                "2019-09-10T18:52:45+0000",
+                8,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "e358ba8a23a151ae2f72b831cae5230d",
+                2440,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                36,
+                "Rsp-minimal-extra-h2o",
+                "KBaseBiochem.Media-4.2",
+                "2019-09-10T18:55:15+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "c24d6c5601bc263c1c370512e73e40ed",
+                2475,
+                {
+                    "Is Minimal": "0",
+                    "Source ID": "Rsp-minimal",
+                    "Is Defined": "1",
+                    "Number compounds": "23",
+                    "Name": "Rsp-minimal-extra-h2o"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                37,
+                "ArgonneLBMedia",
+                "KBaseBiochem.Media-1.0",
+                "2019-09-10T18:57:37+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "8927c6efb3021f86593024995a9db438",
+                6535,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                38,
+                "ArgonneLBMedia_extra_h2o",
+                "KBaseBiochem.Media-4.2",
+                "2019-09-10T18:59:09+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "b75d480cce5c948c27bb2019cd4b4474",
+                6568,
+                {
+                    "Is Minimal": "0",
+                    "Source ID": "ArgonneLBMedia_FIXED",
+                    "Is Defined": "1",
+                    "Number compounds": "65",
+                    "Name": "ArgonneLBMedia_extra_h2o"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                39,
+                "ArgonneLBMedia_plus_cpd00025",
+                "KBaseBiochem.Media-4.2",
+                "2019-09-10T19:02:32+0000",
+                1,
+                "wjriehl",
+                25022,
+                "wjriehl:narrative_1502225097649",
+                "a0887a926d93cfbd1a36753eae4da28b",
+                6682,
+                {
+                    "Is Minimal": "0",
+                    "Source ID": "ArgonneLBMedia_FIXED",
+                    "Is Defined": "1",
+                    "Number compounds": "66",
+                    "Name": "ArgonneLBMedia_plus_cpd00025"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/b0b71045-fb02-48b5-a55b-7cbc5008445e",
+                "description": "HTML summary report for Imported Assembly",
+                "handle": "KBH_476021",
+                "label": "report.html",
+                "name": "report.html"
+            }
+        ],
+        "html_window_height": 460,
+        "objects_created": [
+            {
+                "description": "Imported Reads",
+                "ref": "25022/30/1"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": "",
+        "warnings": []
+    },
+    "info": [
+        31,
+        "kb_sra_upload_report_fdf10dfe-4c80-4515-923a-263556c8f3e9",
+        "KBaseReport.Report-3.0",
+        "2019-07-23T22:53:53+0000",
+        1,
+        "wjriehl",
+        25022,
+        "wjriehl:narrative_1502225097649",
+        "ba245d1afe2f58d3971da6a2244fee12",
+        450,
+        {
+            "Size(characters)": "0",
+            "Objects Created": "1",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "25022/31/1"
+    ],
+    "provenance": [
+        {
+            "time": "2019-07-23T22:46:12+0000",
+            "epoch": 1563921972000,
+            "service": "kb_uploadmethods",
+            "service_ver": "1.0.29",
+            "method": "import_reads_from_staging",
+            "method_params": [
+                {
+                    "fastq_fwd_staging_file_name": "small.forward.fq",
+                    "sequencing_tech": "Illumina",
+                    "insert_size_std_dev": null,
+                    "name": "small_pe_reads",
+                    "insert_size_mean": null,
+                    "interleaved": 1,
+                    "single_genome": 1,
+                    "import_type": "FASTQ/FASTA",
+                    "read_orientation_outward": 0,
+                    "sra_staging_file_name": null,
+                    "fastq_rev_staging_file_name": "small.reverse.fq",
+                    "workspace_name": "wjriehl:narrative_1502225097649"
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "kb_uploadmethods",
+                    "ver": "1.0.29",
+                    "code_url": "https://github.com/kbaseapps/kb_uploadmethods",
+                    "commit": "4c0579bec5aa606f5e42cf29d920872d34ea5b52"
+                },
+                {
+                    "name": "ReadsUtils",
+                    "ver": "0.3.12-release",
+                    "code_url": "https://github.com/kbaseapps/ReadsUtils",
+                    "commit": "e644add24aa36536a2d488e5a814226771a9292a"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.1.1-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "7f5646bc29b5cb35d32c86f3acdf7b18a0f6d53f"
+                },
+                {
+                    "name": "kb_ea_utils",
+                    "ver": "1.1.0-release",
+                    "code_url": "https://github.com/kbaseapps/kb_ea_utils",
+                    "commit": "bcbdd44da1f13e14325deeca99a93211939a7ba9"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.5-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "0356e0313025b0d4b1b7fa11e96050aeaaaa828c"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 25022,
+    "created": "2019-07-23T22:53:52+0000",
+    "epoch": 1563922432275,
+    "refs": [
+        "25022/30/1"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_476021"
+        ]
+    }
+}
