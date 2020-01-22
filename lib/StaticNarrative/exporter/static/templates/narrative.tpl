@@ -113,10 +113,27 @@ div#notebook {
       </div>
     </div>
   </div>
-  <div id="kbs-data" class="container kbs-data is-hidden"></div>
+  {# <div id="kbs-data" class="container kbs-data is-hidden"></div> #}
   <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-{{ super() }}
+    <div class="container">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#kbs-narrative" aria-controls="kbs-narrative" role="tab" data-toggle="tab">Narrative</a>
+        </li>
+        <li role="presentation">
+          <a href="#kbs-data" aria-controls="kbs-data" role="tab" data-toggle="tab">Data</a>
+        </li>
+        <li role="presentation">
+          <a href="#kbs-citations" aria-controls="kbs-citations" role="tab" data-toggle="tab">Citations</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="notebook-container">
+        <div role="tabpanel" class="tab-pane active" id="kbs-narrative">
+          {{ super() }}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="kbs-data"></div>
+        <div role="tabpanel" class="tab-pane" id="kbs-citations"></div>
+      </div>
     </div>
   </div>
 
