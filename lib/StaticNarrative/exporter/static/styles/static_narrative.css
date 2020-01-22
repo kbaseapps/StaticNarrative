@@ -209,3 +209,30 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-top: none;
 }
+
+
+.kbs-tabs {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.kbs-tabs>.active>a, .kbs-tabs>.active>a:hover, .kbs-tabs>.active>a:focus {
+    border-color: rgba(0, 0, 0, 0.2) !important;
+    border-bottom-color: transparent !important;
+}
+
+.kbs-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.kbs-header>.branding {
+    margin-left: auto;
+    text-align: right
+}
+
+.kbs-title {
+    font-size: 33px;
+    font-weight: 500;
+}
