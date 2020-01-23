@@ -21,6 +21,7 @@ class NarrativePreprocessor(Preprocessor):
         self.style_file = os.path.join(base_path, "static", "styles", "static_narrative.css")
         self.icon_style_file = os.path.join(base_path, "static", "styles", "kbase_icons.css")
         self.assets_base_url = self.config.narrative_session.assets_base_url
+        self.assets_version = self.config.narrative_session.assets_version
         self.app_processor = AppProcessor(self.config.narrative_session.ws_url,
                                           self.config.narrative_session.token)
 
@@ -37,7 +38,9 @@ class NarrativePreprocessor(Preprocessor):
             'narrative_link': f"{self.host}/narrative/{nb['metadata']['wsid']}",
             'authors': get_authors(self.config, nb['metadata']['wsid']),
             'service_wizard_url': self.config.narrative_session.service_wizard_url,
-            'datestamp': datetime.now().strftime("%B %d, %Y").replace(" 0", " ")
+            'script_bundle_url': self.assets_base_url + '/js/' + self.assets_version + '/staticNarrativeBundle.js',
+            'datestamp': datetime.now().strftime("%B %d, %Y").replace(" 0", " "),
+            'logo_url': self.assets_base_url + '/images/kbase-logos/logo-icon-46-46.png'
         })
 
         if 'inlining' not in resources:
@@ -56,7 +59,7 @@ class NarrativePreprocessor(Preprocessor):
         """
         Generates the icon font loading css chunk
         """
-        font_url = self.assets_base_url + "/fonts/kbase-icons"
+        font_url = self.assets_base_url + "/fonts/" + self.assets_version + "/kbase-icons"
         font_css = (
             '@font-face {\n'
             '    font-family: "kbase-icons";\n'
