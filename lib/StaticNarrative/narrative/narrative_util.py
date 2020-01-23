@@ -10,6 +10,7 @@ from StaticNarrative.narrative_ref import NarrativeRef
 import time
 from dateutil import parser as date_parser
 import re
+import logging
 
 
 NARRATIVE_TYPE = "KBaseNarrative.Narrative"
@@ -167,7 +168,9 @@ def verify_admin_privilege(workspace_url: str, user_id: str, token: str, ws_id: 
     except ServerError as err:
         raise WorkspaceError(err, ws_id)
     if user_id not in perms or perms[user_id] != "a":
-        raise PermissionError(f"User {user_id} does not have admin rights on workspace {ws_id}")
+        err = f"User {user_id} does not have admin rights on workspace {ws_id}"
+        logging.getLogger("StaticNarrative").error(err)
+        raise PermissionError(err)
 
 
 def verify_public_narrative(workspace_url: str, ws_id: int) -> None:
@@ -187,6 +190,6 @@ def verify_public_narrative(workspace_url: str, ws_id: int) -> None:
     except ServerError as err:
         raise WorkspaceError(err, ws_id)
     if perms.get("*", "n") not in ["r", "w", "a"]:
-        raise PermissionError(
-            f"Workspace {ws_id} must be publicly readable to make a Static Narrative"
-        )
+        err = f"Workspace {ws_id} must be publicly readable to make a Static Narrative"
+        logging.getLogger("StaticNarrative").error(err)
+        raise PermissionError(err)

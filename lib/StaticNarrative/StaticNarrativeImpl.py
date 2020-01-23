@@ -43,6 +43,13 @@ class StaticNarrative:
         #BEGIN_CONSTRUCTOR
         logging.basicConfig(format='%(created)s %(levelname)s: %(message)s',
                             level=logging.INFO)
+        self.logger = logging.getLogger("StaticNarrative")
+        self.logger.setLevel(logging.INFO)
+        ch = logging.StreamHandler()
+        ch.setLevel(logging.INFO)
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        ch.setFormatter(formatter)
+        self.logger.addHandler(ch)
         self.config = config
         #END_CONSTRUCTOR
         pass
@@ -68,22 +75,33 @@ class StaticNarrative:
         # init - get NarrativeRef and Exporter set up
         ref = NarrativeRef.parse(params["narrative_ref"])
         ws_url = self.config["workspace-url"]
+        self.logger.info(f"Creating Static Narrative {ref}")
         verify_admin_privilege(ws_url, ctx["user_id"], ctx["token"], ref.wsid)
         verify_public_narrative(ws_url, ref.wsid)
         exporter = NarrativeExporter(self.config, ctx["user_id"], ctx["token"])
 
         # set up output directories
-        output_dir = os.path.join(self.config["scratch"], str(ref.wsid), str(ref.objid), str(ref.ver))
-        os.makedirs(output_dir, exist_ok=True)
+        try:
+            output_dir = os.path.join(
+                self.config["scratch"], str(ref.wsid), str(ref.objid), str(ref.ver)
+            )
+            os.makedirs(output_dir, exist_ok=True)
+        except IOError as e:
+            self.logger.error("Error while creating Static Narrative directory", e)
 
         # export the narrative to a file
-        output_path = exporter.export_narrative(ref, output_dir)
+        try:
+            output_path = exporter.export_narrative(ref, output_dir)
+        except Exception as e:
+            self.logger.error("Error while exporting Narrative", e)
+
         # upload it and save it to the Workspace metadata before returning the url path
         static_url = upload_static_narrative(ref, output_path, self.config["static-file-root"])
         save_narrative_url(self.config["workspace-url"], ctx["token"], ref, static_url)
         output = {
             "static_narrative_url": static_url
         }
+        self.logger.info(f"Finished creating Static Narrative {ref}")
         #END create_static_narrative
 
         # At some point might do deeper type checking...
