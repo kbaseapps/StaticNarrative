@@ -1,0 +1,76 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/0e7fc7a6-9d93-4cac-b972-8a6b331392bd",
+                "description": "Just an example report",
+                "handle": "KBH_237530",
+                "label": null,
+                "name": "index.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "This is a report message"
+    },
+    "info": [
+        12,
+        "NarrativeTest.example_report1ceed2fa-aa79-47c0-8f5b-bb30eaa433a4",
+        "KBaseReport.Report-3.0",
+        "2018-01-22T20:37:16+0000",
+        1,
+        "wjriehl",
+        25022,
+        "wjriehl:narrative_1502225097649",
+        "529f492d255bcd1e6c745371af47eff6",
+        381,
+        {
+            "Size(characters)": "24",
+            "Objects Created": "0"
+        }
+    ],
+    "path": [
+        "25022/12/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create_extended_report",
+            "method_params": [
+                {
+                    "report_object_name": "NarrativeTest.example_report1ceed2fa-aa79-47c0-8f5b-bb30eaa433a4",
+                    "workspace_name": "wjriehl:narrative_1502225097649",
+                    "direct_html_link_index": 0,
+                    "html_links": [
+                        {
+                            "shock_id": "0e7fc7a6-9d93-4cac-b972-8a6b331392bd",
+                            "name": "index.html",
+                            "description": "Just an example report"
+                        }
+                    ],
+                    "message": "This is a report message"
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 25022,
+    "created": "2018-01-22T20:37:16+0000",
+    "epoch": 1516653436300,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_237530"
+        ]
+    }
+}

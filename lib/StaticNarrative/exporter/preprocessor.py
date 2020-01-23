@@ -10,6 +10,7 @@ from .processor_util import (
     get_authors
 )
 from .app_processor import AppProcessor
+from datetime import datetime
 
 
 class NarrativePreprocessor(Preprocessor):
@@ -17,8 +18,8 @@ class NarrativePreprocessor(Preprocessor):
         super(NarrativePreprocessor, self).__init__(config=config, **kw)
         self.host = self.config.narrative_session.host
         base_path = self.config.narrative_session.base_path
-        self.app_style_file = os.path.join(base_path, "static", "styles", "app_style.css")
-        self.icon_style_file = os.path.join(base_path, "static", "styles", "kbaseIcons.css")
+        self.style_file = os.path.join(base_path, "static", "styles", "static_narrative.css")
+        self.icon_style_file = os.path.join(base_path, "static", "styles", "kbase_icons.css")
         self.assets_base_url = self.config.narrative_session.assets_base_url
         self.app_processor = AppProcessor(self.config.narrative_session.ws_url,
                                           self.config.narrative_session.token)
@@ -35,14 +36,15 @@ class NarrativePreprocessor(Preprocessor):
             'creator': nb['metadata']['creator'],
             'narrative_link': f"{self.host}/narrative/{nb['metadata']['wsid']}",
             'authors': get_authors(self.config, nb['metadata']['wsid']),
-            'service_wizard_url': self.config.narrative_session.service_wizard_url
+            'service_wizard_url': self.config.narrative_session.service_wizard_url,
+            'datestamp': datetime.now().strftime("%B %d, %Y").replace(" 0", " ")
         })
 
         if 'inlining' not in resources:
             resources['inlining'] = {}
         if 'css' not in resources['inlining']:
             resources['inlining']['css'] = []
-        with open(self.app_style_file, 'r') as css:
+        with open(self.style_file, 'r') as css:
             resources['inlining']['css'].append(css.read())
         with open(self.icon_style_file, 'r') as icons:
             icons_file = self.icons_font_css() + icons.read()

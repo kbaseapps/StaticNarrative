@@ -107,6 +107,53 @@ class StaticNarrativeTest(unittest.TestCase):
         output = impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/18"})[0]
         self.assertEqual(output["static_narrative_url"], f"/{ws_id}/18")
 
+    @requests_mock.Mocker()
+    def test_large_create_static_narrative_ok_unit(self, rqm):
+        """
+        Happy case, test a Narrative exporter process.
+        """
+        ws_id = 25022
+        ref_to_file = {
+            f"{ws_id}/1/114": "data/narrative-25022.1.114.json",
+        }
+        for rep_id in [4, 6, 8, 9, 11, 12, 13, 19, 20, 31, 34]:
+            ref_to_file[f"{ws_id}/{rep_id}/1"] = f"data/report-{ws_id}.{rep_id}.1.json"
+        ref_to_info = {
+
+        }
+        ws_info = [
+            ws_id,
+            'some_narrative',
+            self.user_id,
+            '2019-08-26T17:33:56+0000',
+            7,
+            'a',
+            'r',
+            'unlocked',
+            {
+                'cell_count': '1',
+                'narrative_nice_name': 'Test Exporting',
+                'searchtags': 'narrative',
+                'is_temporary': 'false',
+                'narrative': '1'
+            }
+        ]
+        ws_perms = {ws_id: {self.user_id: "a", "*": "r"}}
+        user_map = {self.user_id: "Some User"}
+
+        set_up_ok_mocks(
+            rqm,
+            ref_to_file=ref_to_file,
+            ref_to_info=ref_to_info,
+            ws_info=ws_info,
+            ws_perms=ws_perms,
+            user_map=user_map,
+            ws_obj_info_file="data/objects-25022.json"
+        )
+        impl = self.service_impl
+        output = impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/114"})[0]
+        self.assertEqual(output["static_narrative_url"], f"/{ws_id}/114")
+
     def test_create_static_narrative_no_auth(self):
         """
         Test case where user isn't logged in, or just no auth token passed.

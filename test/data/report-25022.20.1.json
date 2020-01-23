@@ -1,0 +1,121 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/e1cf9741-060f-4d19-ac9b-643c54d9b82b",
+                "description": "Full output of CheckM",
+                "handle": "KBH_464018",
+                "label": "",
+                "name": "full_output.zip"
+            },
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/2ffe443f-9566-4784-bf08-1782175cbe5a",
+                "description": "Output plots from CheckM",
+                "handle": "KBH_464019",
+                "label": "",
+                "name": "plots.zip"
+            }
+        ],
+        "html_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/0c55ca25-4ec7-49ce-84c2-0078434e8b1b",
+                "description": "Summarized report from CheckM",
+                "handle": "KBH_464020",
+                "label": "",
+                "name": "report.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "",
+        "warnings": []
+    },
+    "info": [
+        20,
+        "kb_checkM_report_09f8c877-401c-4350-bef4-98c7f4e8bc2f",
+        "KBaseReport.Report-3.0",
+        "2019-03-22T23:37:27+0000",
+        1,
+        "wjriehl",
+        25022,
+        "wjriehl:narrative_1502225097649",
+        "6fdf146d16f881a77091b9e7293666dc",
+        747,
+        {
+            "Size(characters)": "0",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "25022/20/1"
+    ],
+    "provenance": [
+        {
+            "time": "2019-03-22T23:28:24+0000",
+            "epoch": 1553297304000,
+            "service": "kb_Msuite",
+            "service_ver": "1.2.2",
+            "method": "run_checkM_lineage_wf",
+            "method_params": [
+                {
+                    "reduced_tree": "1",
+                    "save_plots_dir": "1",
+                    "input_ref": "25022/7/2",
+                    "workspace_name": "wjriehl:narrative_1502225097649"
+                }
+            ],
+            "input_ws_objects": [
+                "25022/7/2"
+            ],
+            "resolved_ws_objects": [
+                "25022/7/2"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "kb_Msuite",
+                    "ver": "1.2.2",
+                    "code_url": "https://github.com/kbaseapps/kb_Msuite",
+                    "commit": "4b0c3c462f1ccf0dcc30330e99fa2173d7907c7a"
+                },
+                {
+                    "name": "AssemblyUtil",
+                    "ver": "1.0.11-release",
+                    "code_url": "https://github.com/kbaseapps/AssemblyUtil",
+                    "commit": "c01351fb5658ae670d5083462717b26a556f83ea"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.0.27-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "bd85fa75be6a15a087a7e49bd4686dd05c6d5655"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.5-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "0356e0313025b0d4b1b7fa11e96050aeaaaa828c"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 25022,
+    "created": "2019-03-22T23:37:26+0000",
+    "epoch": 1553297846753,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_464020",
+            "KBH_464018",
+            "KBH_464019"
+        ]
+    }
+}

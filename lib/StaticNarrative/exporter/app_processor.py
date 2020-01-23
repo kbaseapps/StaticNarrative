@@ -1,7 +1,7 @@
 from installed_clients.WorkspaceClient import Workspace
 from .processor_util import build_report_view_data
 import re
-
+import math
 
 class AppProcessor:
     def __init__(self, ws_url: str, token: str):
@@ -15,31 +15,31 @@ class AppProcessor:
         'kbase.appCell.app.spec.info......'
         returns a dict with the updated info.
         """
-        kb_info['app'] = {
-            'title': kb_meta['attributes']['title'],
-            'subtitle': kb_meta['attributes']['subtitle'],
-            'version': kb_meta['appCell']['app']['version'],
-            'id': kb_meta['appCell']['app']['id'],
-            'tag': kb_meta['appCell']['app']['tag'],
-            'catalog_url': kb_meta['attributes']['info']['url'],
+        kb_info["app"] = {
+            "title": kb_meta["attributes"]["title"],
+            "subtitle": kb_meta["attributes"]["subtitle"],
+            "version": kb_meta["appCell"]["app"]["version"],
+            "id": kb_meta["appCell"]["app"]["id"],
+            "tag": kb_meta["appCell"]["app"]["tag"],
+            "catalog_url": kb_meta["attributes"]["info"]["url"],
         }
         kb_info["params"] = self._process_app_params(
             kb_meta["appCell"]["app"]["spec"]["parameters"],
             kb_meta["appCell"]["params"]
         )
-        kb_info['output'] = {
-            "widget": kb_meta['appCell'].get('exec', {}).get('outputWidgetInfo', {}),
-            "result": kb_meta['appCell'].get('exec', {}).get('jobState', {}).get('result', []),
-            "report": build_report_view_data(
-                          self.ws_url, self.token,
-                          kb_meta['appCell'].get('exec', {}).get('jobState', {}).get('result', [])
-                      )
+        exec_state = kb_meta["appCell"].get("exec", {})
+        exec_results = exec_state.get("jobState", {}).get("result", [])
+
+        kb_info["output"] = {
+            "widget": exec_state.get("outputWidgetInfo", {}),
+            "result": exec_results,
+            "report": build_report_view_data(self.ws_url, self.token, exec_results)
         }
-        kb_info['job'] = {
-            'state': "new, and hasn't been started."
+        kb_info["job"] = {
+            "state": "This app is new, and hasn't been started."
         }
-        if 'exec' in kb_meta['appCell']:
-            kb_info['job']['state'] = self._get_job_state(kb_meta['appCell'])
+        if "exec" in kb_meta["appCell"]:
+            kb_info["job"]["state"] = self._get_job_state(kb_meta["appCell"])
         return kb_info
 
     def _process_app_params(self, spec_params: dict, param_values: dict) -> dict:
@@ -119,8 +119,89 @@ class AppProcessor:
         return re.match(upa_regex, s) is not None
 
     def _get_job_state(self, app_meta: dict) -> str:
+        """
+        Returns the job state as a readable string.
+        One of:
+        "completed without errors in TTT"
+        "completed with errors in TTT"
+        "canceled"
+        "queued and not run"
+        """
+
+        # Step 1, get job state
         job_state = app_meta['exec'].get('jobState', {})
         state = job_state.get('job_state', job_state.get('status', 'unknown'))
         if isinstance(state, list):
             state = state[1]
-        return state
+
+        # support NJS_Wrapper's "suspend" state
+        if state == "suspend":
+            if job_state.get("error"):
+                state = "error"
+            elif job_state.get("cancelled") or job_state.get("canceled"):
+                state = "canceled"
+
+        if state in ["canceled", "cancelled", "terminated"]:
+            return "This app was canceled before completion."
+
+        # Step 2, get runtime.
+        # runtime is calculated as either:
+        # (ee2) 'finished - running' or
+        # (njs) 'finish_time - exec_start_time'
+        runtime = None
+        # njs
+        if "finish_time" in job_state and "exec_start_time" in job_state:
+            runtime = self._ms_to_readable(job_state["finish_time"] - job_state["exec_start_time"])
+        # ee2
+        elif "finished" in job_state and "running" in job_state:
+            runtime = self._ms_to_readable(job_state["finished"] - job_state["running"])
+
+        return_state = state
+        if state in ["estimating", "running", "in-progress"]:
+            return_state = "This app is still in progress"
+            if runtime:
+                return_state = f"{return_state}, and has been running for {runtime}."
+        elif state in ["completed", "finished"]:
+            return_state = "This app completed without errors"
+            if runtime:
+                return_state = f"{return_state} in {runtime}"
+        else:
+            return_state = "This app produced errors"
+            if runtime:
+                return_state = f"{return_state} in {runtime}"
+
+        return return_state + "."
+
+    def _ms_to_readable(self, ms: int) -> str:
+        """
+        Converts number of milliseconds to a human readable string with format Wd Xh Ym Zs
+        e.g. 1234567ms => "
+        """
+        # simply make sure it's a number
+        try:
+            ms = int(ms)
+        except Exception:
+            return None
+        DAYS = 86400000
+        HOURS = 3600000
+        MINUTES = 60000
+        SECONDS = 1000
+        d = math.floor(ms / DAYS)
+        r = ms % DAYS
+        h = math.floor(r / HOURS)
+        r = r % HOURS
+        m = math.floor(r / MINUTES)
+        r = r % MINUTES
+        s = round(r / SECONDS)
+
+        t = list()
+        used_h = False
+        if d > 0:
+            t.append(f"{d}d")
+        if h > 0 or d > 0:
+            t.append(f"{h}h")
+            used_h = True
+        if m > 0 or used_h:
+            t.append(f"{m}m")
+        t.append(f"{s}s")
+        return " ".join(t)

@@ -109,7 +109,7 @@
                               metadata.attributes.subtitle|default('', True)) %}
         <div class="kb-app-controls-wrapper">
             <div class="kb-app-status">
-                This app is {{ metadata.job.state }}
+                {{ metadata.job.state }}
             </div>
             <div class="kb-app-controls">
                 <button type="button" class="btn btn-primary kb-app-cell-btn app-view-toggle" data-idx={{metadata.idx}} data-view="config">
@@ -166,19 +166,20 @@
                             {% endif %}
                         </div>
                         <div class="kb-app-header-title-text">
-                            <div class="title">{{ title }}</div>
+                            <div class="title">
+                                {% if metadata.external_link %}
+                                <a href="{{ metadata.external_link }}">
+                                {% endif %}
+
+                                {{ title }}
+
+                                {% if metadata.external_link %}
+                                    <span class="fa fa-external-link"></span>
+                                </a>
+                                {% endif %}
+                            </div>
                             <div class="subtitle">{{ subtitle }}</div>
                         </div>
-                        {% if metadata.external_link %}
-                        <div class="kb-external-link">
-                            <a href="{{ metadata.external_link }}">
-                                <span class="fa-stack fa-2x">
-                                    <span class="fa fa-square fa-stack-2x"></span>
-                                    <span class="fa fa-inverse fa-stack-1x fa-external-link"></span>
-                                </span>
-                            </a>
-                        </div>
-                        {% endif %}
                     </div>
                 </div>
                 <div class="kb-cell-body">

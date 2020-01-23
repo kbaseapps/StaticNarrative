@@ -103,6 +103,7 @@
     flex-grow: 1;
     line-height: 20px;
     overflow: hidden;
+    padding-left: 5px;
 }
 
 .kb-app-header-title-text .title {
@@ -168,14 +169,6 @@
     line-height: 20px;
 }
 
-.kb-author-list > a {
-    color: #555;
-}
-
-.kb-author-list > a:hover {
-    color: #23527B;
-}
-
 .prompt {
     min-width: 0;
 }
@@ -189,7 +182,7 @@
     background-color: #fff;
 }
 
-.kbs-data.is-hidden {
+.kbs-is-hidden {
     display: none;
 }
 
@@ -208,4 +201,38 @@
 
 .kb-data-card-info {
 
+}
+
+#notebook-container {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
+}
+
+
+.kbs-tabs {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.kbs-tabs>.active>a, .kbs-tabs>.active>a:hover, .kbs-tabs>.active>a:focus {
+    border-color: rgba(0, 0, 0, 0.2) !important;
+    border-bottom-color: transparent !important;
+}
+
+.kbs-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.kbs-header>.branding {
+    margin-left: auto;
+    text-align: right
+}
+
+.kbs-title {
+    font-size: 33px;
+    font-weight: 500;
 }
