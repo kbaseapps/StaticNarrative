@@ -1,6 +1,12 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.5
+-----
+* Added tabs to header of Static Narrative to flip between the main Narrative, Data, and Citations.
+* Changed app cell headers to better handle runtime and final app state.
+* Changed UPAs to object names in app cell configs (when they're UPAs and not names).
+
 0.0.4
 -----
 * Fixed bug where non-public Narratives, or non-admin users could create Static Narratives.
