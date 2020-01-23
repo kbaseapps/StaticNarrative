@@ -3,6 +3,7 @@ from .processor_util import build_report_view_data
 import re
 import math
 
+
 class AppProcessor:
     def __init__(self, ws_url: str, token: str):
         self.ws_url = ws_url

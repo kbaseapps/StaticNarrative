@@ -12,7 +12,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="./dataBrowser.js"></script>
 
 {% for css in resources.inlining.css -%}
     <style type="text/css">
@@ -106,7 +105,7 @@ div#notebook {
         </div>
       </div>
       <div class="branding">
-        <img src="https://ci.kbase.us/modules/plugins/mainwindow/resources/images/kbase_logo.png"/>
+        <img src="{{ resources.kbase.logo_url }}"/>
         <div>Generated {{ resources.kbase.datestamp }}</div>
       </div>
     </div>
@@ -135,117 +134,9 @@ div#notebook {
     </div>
   </div>
 
+  <script type="text/javascript" src="{{ resources.kbase.script_bundle_url }}" crossorigin="anonymous"></script>
   <script>
-
-  function selectTab(tabId) {
-    // get the tab and panel, make sure they're real.
-    const tab = document.querySelector('.kbs-tabs [href="#' + tabId + '"]').parentElement;
-    if (tab.classList.contains('active')) {
-      return;
-    }
-    const tabPanel = document.querySelector('.tab-content [id="' + tabId + '"]');
-    if (tab && tabPanel) {
-      // set all tabs inactive, activate given tab.
-      document.querySelectorAll('.kbs-tabs > li').forEach(node => node.classList.remove('active'));
-      tab.classList.add('active');
-      // set all tabPanels inactive, activate given one.
-      document.querySelectorAll('.tab-content[id="notebook-container"] > div[role="tabpanel"]').forEach((node) => {
-        node.classList.remove('active');
-        node.classList.add('kbs-is-hidden');
-      });
-      tabPanel.classList.add('active');
-      tabPanel.classList.remove('kbs-is-hidden');
-    }
-  }
-
-  function toggleAppView(btn) {
-    const appIdx = btn.dataset.idx;
-    const id = 'app-' + appIdx;
-    const view = btn.dataset.view;
-    document.querySelectorAll('div[id^="' + id + '"]').forEach(node => {
-      node.hidden = true;
-    });
-    document.querySelectorAll('button.app-view-toggle[data-idx="' + appIdx + '"]').forEach(node => {
-      node.classList.remove('selected');
-    });
-    document.querySelector('div[id^="' + id + '-' + view + '"]').hidden = false;
-    btn.classList.add('selected');
-  }
-
-  let fileSetServUrl = null,
-      lastFSSUrlLookup = 0,
-      dataBrowser = null;
-
-  function getFileServUrl(servWizardUrl) {
-    const now = new Date();
-    const fiveMin = 300000;  //ms
-    if (fileSetServUrl == null || now.getTime() > lastFSSUrlLookup + fiveMin) {
-      return fetch(servWizardUrl, {
-        method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          method: 'ServiceWizard.get_service_status',
-          params: [{
-            module_name: 'HTMLFileSetServ',
-            version: null
-          }],
-          version: '1.1',
-          id: String(Math.random()).slice(2)
-        })
-      })
-      .then(response => response.json())
-      .then((res) => {
-        fileSetServUrl = res.result[0].url;
-        return fileSetServUrl;
-      });
-    }
-    else {
-      return new Promise((resolve) => {
-        resolve(fileSetServUrl);
-      });
-    }
-  }
-  getFileServUrl("https://ci.kbase.us/services/service_wizard")
-    .then((fssUrl) => {
-      document.querySelectorAll('div.kb-app-report').forEach((node) => {
-        const reportUrl = fssUrl + node.dataset.path;
-        const iframe = document.createElement('iframe');
-        iframe.setAttribute('id', 'iframe-' + String(Math.random()).slice(2));
-        iframe.classList.add('kb-app-report-iframe');
-        node.appendChild(iframe);
-        iframe.setAttribute('src', reportUrl);
-      });
-    });
-
-  // init main tab events
-  document.querySelectorAll('.kbs-tabs a').forEach((node) => {
-    node.addEventListener('click', (e) => {
-      e.preventDefault();
-      selectTab(node.getAttribute('href').slice(1));
-    });
-  });
-
-  // init data browser on click
-  document.querySelector('a[href="#kbs-data"]').addEventListener('click', event => {
-    if (!dataBrowser) {
-      dataBrowser = new DataBrowser({
-        node: document.querySelector('div#kbs-data'),
-        dataFile: 'data.json'
-      });
-    }
-  });
-
-  // init app cell tab events
-  document.querySelectorAll('button.app-view-toggle').forEach((node) => {
-    node.addEventListener('click', (e) => {
-      toggleAppView(node);
-    });
-  });
-
+    initStaticNarrative("{{ resources.kbase.service_wizard_url }}")
   </script>
 {% endblock body %}
 </body>

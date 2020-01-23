@@ -118,6 +118,7 @@ class NarrativeExporter:
         c.narrative_session.base_path = base_path
         c.narrative_session.data_file_path = exported_data["path"]
         c.narrative_session.narrative_data = exported_data
+        c.narrative_session.assets_version = self.exporter_cfg["assets-version"]
 
         html_exporter = HTMLExporter(config=c)
         html_exporter.template_file = NARRATIVE_TEMPLATE_FILE
