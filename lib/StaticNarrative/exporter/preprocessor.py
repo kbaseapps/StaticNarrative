@@ -47,8 +47,6 @@ class NarrativePreprocessor(Preprocessor):
             'app_citations': self._get_app_citations(nb, self.config.narrative_session.nms_url)
         })
 
-        print(json.dumps(resources['kbase']['app_citations'], indent=4))
-
         if 'inlining' not in resources:
             resources['inlining'] = {}
         if 'css' not in resources['inlining']:

@@ -173,15 +173,6 @@
     min-width: 0;
 }
 
-.kbs-data {
-    max-width: 100rem;
-    max-height: 80vh;
-    position: fixed;
-    z-index: 1;
-    overflow-y: auto;
-    background-color: #fff;
-}
-
 .kbs-is-hidden {
     display: none;
 }
@@ -189,10 +180,7 @@
 .kb-data-card {
     display: flex;
     flex-direction: row;
-    transition: all 0.1s ease;
-    box-shadow: 1px 1px 1px 1px #fff;
-    --webkit-box-shadow: 1px 1px 1px 1px #fff;
-    --moz-box-shadow: 1px 1px 1px 1px #fff;
+    margin-bottom: 1rem;
 }
 
 .kb-data-card-icon {

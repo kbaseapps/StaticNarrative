@@ -131,7 +131,11 @@ div#notebook {
         <div role="tabpanel" class="tab-pane" id="kbs-data"></div>
         <div role="tabpanel" class="tab-pane" id="kbs-citations">
           {%- for app_block in resources.kbase.app_citations -%}
+            {%- if resources.kbase.app_citations | length == 1 -%}
+            <h3>Apps</h3>
+            {%- else -%}
             <h3>{{ app_block.heading }}</h3>
+            {% endif %}
             <ol>
             {%- for app in app_block.app_list -%}
               <li>
@@ -139,7 +143,12 @@ div#notebook {
                 {% if app_block.app_list[app]|length > 0 %}
                   <ul>
                     {%- for citation in app_block.app_list[app] -%}
-                      <li>{{ citation.display_text }}</li>
+                      <li>
+                        {{ citation.display_text }}
+                        {%- if citation.link -%}
+                        <a href="{{ citation.link }}"><span class="fa fa-external-link"></span></a>
+                        {% endif %}
+                      </li>
                     {% endfor %}
                   </ul>
                 {% else %}
