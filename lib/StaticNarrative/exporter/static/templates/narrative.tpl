@@ -129,7 +129,27 @@ div#notebook {
           {{ super() }}
         </div>
         <div role="tabpanel" class="tab-pane" id="kbs-data"></div>
-        <div role="tabpanel" class="tab-pane" id="kbs-citations"></div>
+        <div role="tabpanel" class="tab-pane" id="kbs-citations">
+          {%- for app_block in resources.kbase.app_citations -%}
+            <h3>{{ app_block.heading }}</h3>
+            <ol>
+            {%- for app in app_block.app_list -%}
+              <li>
+                <div><b>{{ app }}</b></div>
+                {% if app_block.app_list[app]|length > 0 %}
+                  <ul>
+                    {%- for citation in app_block.app_list[app] -%}
+                      <li>{{ citation.display_text }}</li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  <div>no citations</div>
+                {% endif %}
+              </li>
+            {%- endfor -%}
+            </ol>
+          {%- endfor -%}
+        </div>
       </div>
     </div>
   </div>
