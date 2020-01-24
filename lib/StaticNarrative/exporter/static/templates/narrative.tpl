@@ -137,7 +137,7 @@ div#notebook {
             <h3>{{ app_block.heading }}</h3>
             {% endif %}
             <ol>
-            {%- for app in app_block.app_list -%}
+            {%- for app in app_block.app_list|sort()-%}
               <li>
                 <div><b>{{ app }}</b></div>
                 {% if app_block.app_list[app]|length > 0 %}
