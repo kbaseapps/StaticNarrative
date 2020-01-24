@@ -143,15 +143,22 @@ def get_data_icon(obj_type):
 
 def get_authors(config, wsid):
     ws = Workspace(url=config.narrative_session.ws_url, token=config.narrative_session.token)
-    ws_info = ws.get_workspace_info({'id': wsid})
+    ws_info = ws.get_workspace_info({"id": wsid})
     author_id_list = [ws_info[2]]
+
+    other_authors = ws.get_permissions({"id": wsid})
+
+    for author in sorted(other_authors.keys()):
+        if author != "*" and other_authors[author] in ["w", "a"] and author not in author_id_list:
+            author_id_list.append(author)
+
     auth = _KBaseAuth(config.narrative_session.auth_url)
     disp_names = auth.get_display_names(config.narrative_session.token, author_id_list)
     author_list = []
     for author in author_id_list:
         author_list.append({
-            'id': author,
-            'name': html.escape(disp_names.get(author, author)),
-            'path': config.narrative_session.profile_page_url + author
+            "id": author,
+            "name": html.escape(disp_names.get(author, author)),
+            "path": config.narrative_session.profile_page_url + author
         })
     return author_list

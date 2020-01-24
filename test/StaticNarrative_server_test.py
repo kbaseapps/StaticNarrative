@@ -91,8 +91,8 @@ class StaticNarrativeTest(unittest.TestCase):
                 'narrative': '1'
             }
         ]
-        ws_perms = {ws_id: {self.user_id: "a", "*": "r"}}
-        user_map = {self.user_id: "Some User"}
+        ws_perms = {ws_id: {self.user_id: "a", "*": "r", "some_other_user": "w"}}
+        user_map = {self.user_id: "Some User", "some_other_user": "Some Other User"}
 
         set_up_ok_mocks(
             rqm,
