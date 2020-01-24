@@ -11,7 +11,9 @@ from .processor_util import (
 )
 from .app_processor import AppProcessor
 from datetime import datetime
-
+from collections import defaultdict
+from installed_clients.NarrativeMethodStoreClient import NarrativeMethodStore
+import json
 
 class NarrativePreprocessor(Preprocessor):
     def __init__(self, config=None, **kw):
@@ -23,6 +25,7 @@ class NarrativePreprocessor(Preprocessor):
         self.assets_base_url = self.config.narrative_session.assets_base_url
         self.assets_version = self.config.narrative_session.assets_version
         self.app_processor = AppProcessor(self.config.narrative_session.ws_url,
+                                          self.config.narrative_session.nms_url,
                                           self.config.narrative_session.token)
 
     def preprocess(self, nb, resources):
@@ -40,7 +43,8 @@ class NarrativePreprocessor(Preprocessor):
             'service_wizard_url': self.config.narrative_session.service_wizard_url,
             'script_bundle_url': self.assets_base_url + '/js/' + self.assets_version + '/staticNarrativeBundle.js',
             'datestamp': datetime.now().strftime("%B %d, %Y").replace(" 0", " "),
-            'logo_url': self.assets_base_url + '/images/kbase-logos/logo-icon-46-46.png'
+            'logo_url': self.assets_base_url + '/images/kbase-logos/logo-icon-46-46.png',
+            'app_citations': self._get_app_citations(nb, self.config.narrative_session.nms_url)
         })
 
         if 'inlining' not in resources:
@@ -55,7 +59,56 @@ class NarrativePreprocessor(Preprocessor):
 
         return nb, resources
 
-    def icons_font_css(self):
+    def _get_app_citations(self, nb, nms_url: str) -> dict:
+        """
+        Returns a fairly simple dict if citations are available for the app:
+        {
+            app_id: {
+                name: "real name" (for convenience later),
+                citations: [{
+                    display_text: str,
+                    link: str
+                }]
+            }
+        }
+        Returns None if no citations
+        """
+        # will be tag -> app_id
+        apps = defaultdict(set)
+        for cell in nb.cells:
+            if 'kbase' in cell.metadata:
+                kb_meta = cell.metadata.get('kbase', {})
+                if kb_meta.get('type') == 'app' and "app" in kb_meta:
+                    apps[kb_meta["app"].get("tag", "dev")].add(kb_meta["app"]["id"])
+
+        citations = defaultdict(dict)
+        nms = NarrativeMethodStore(url=nms_url)
+        for tag in apps:
+            nms_inputs = {
+                "ids": list(apps[tag]),
+                "tag": tag
+            }
+
+            try:
+                app_infos = nms.get_method_full_info(nms_inputs)
+            except Exception as e:
+                app_infos = []
+            for info in app_infos:
+                if "publications" in info:
+                    citations[tag][info["name"]] = info["publications"]
+
+        parsed_citations = list()
+        tag_map = {
+            "release": "Released Apps",
+            "beta": "Apps in Beta",
+            "dev": "Apps in development"
+        }
+        for tag in ["release", "beta", "dev"]:
+            if tag in citations:
+                parsed_citations.append({"heading": tag_map[tag], "app_list": citations[tag]})
+        return parsed_citations
+
+    def icons_font_css(self) -> str:
         """
         Generates the icon font loading css chunk
         """
@@ -100,7 +153,6 @@ class NarrativePreprocessor(Preprocessor):
             resources['kbase'] = {}
         if 'cells' not in resources['kbase']:
             resources['kbase']['cells'] = {}
-        resources['foo'] = 'bar'
         resources['kbase']['cells'][index] = cell.metadata.get('kbase')
         return cell, resources
 

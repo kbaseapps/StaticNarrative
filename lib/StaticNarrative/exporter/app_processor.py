@@ -1,12 +1,14 @@
 from installed_clients.WorkspaceClient import Workspace
+from installed_clients.NarrativeMethodStoreClient import NarrativeMethodStore
 from .processor_util import build_report_view_data
 import re
 import math
 
 
 class AppProcessor:
-    def __init__(self, ws_url: str, token: str):
+    def __init__(self, ws_url: str, nms_url: str, token: str):
         self.ws_url = ws_url
+        self.nms_url = nms_url
         self.token = token
 
     def process(self, kb_info: dict, kb_meta: dict) -> dict:

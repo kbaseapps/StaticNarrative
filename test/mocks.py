@@ -39,7 +39,6 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
         if rq_method == "POST":
             params = request.json().get("params")
             method = request.json().get("method")
-
             result = []
             if method == "Workspace.get_objects2":
                 # maps a workspace object reference to returns from a file,
@@ -94,6 +93,10 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
                     result = [_get_object_from_file(ws_obj_info_file)]
                 else:
                     result = [{"data": []}]
+            elif method == "NarrativeMethodStore.get_method_full_info":
+                tag = params[0]["tag"]
+                ids = params[0]["ids"]
+                result = [_get_fake_nms_info(tag, ids)]
             response._content = bytes(json.dumps({
                 "result": result,
                 "version": "1.1"
@@ -104,6 +107,21 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
         return response
 
     return mock_adapter
+
+
+def _get_fake_nms_info(tag: str, ids: list) -> List:
+    app_infos = _get_object_from_file("data/nms_info.json")[tag]
+    ret = list()
+    for i in ids:
+        if i in app_infos:
+            ret.append(app_infos[i])
+        else:
+            ret.append({
+                "id": "SomeModule/some_app",
+                "name": "Some Unknown App",
+                "publications": []
+            })
+    return ret
 
 
 def _fake_obj_info(ref: str) -> List:

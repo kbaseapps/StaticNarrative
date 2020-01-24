@@ -61,7 +61,7 @@ def export_narrative_data(wsid: int, output_dir: str, service_wizard_url: str, t
 
     # Maybe sort it later. For now, dump to file.
     output_data = {
-        "data": filtered_data,
+        "data": sorted(filtered_data, key=lambda o: o[1].lower()),
         "types": type_info
     }
 

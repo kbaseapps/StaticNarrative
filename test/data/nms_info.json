@@ -1,0 +1,288 @@
+{
+    "dev": {
+        "NarrativeTest/report_example": {
+            "id": "NarrativeTest/report_example",
+            "module_name": "NarrativeTest",
+            "git_commit_hash": "ce273c5ba9f7aae461a78a861be3e0949095f2c6",
+            "name": "Example HTML Report",
+            "ver": "0.0.2",
+            "authors": [
+                "wjriehl"
+            ],
+            "contact": "help@kbase.us",
+            "subtitle": "Show an example HTML Report",
+            "tooltip": "Show an example HTML Report",
+            "description": "<p>Demonstrate a KBase HTML Report using some simple inputs.</p>",
+            "technical_description": "none",
+            "app_type": "app",
+            "suggestions": {
+                "related_methods": [],
+                "next_methods": [],
+                "related_apps": [],
+                "next_apps": []
+            },
+            "categories": [],
+            "screenshots": [],
+            "publications": [],
+            "namespace": "NarrativeTest"
+        },
+        "NarrativeTest/test_input_params": {
+            "id": "NarrativeTest/test_input_params",
+            "module_name": "NarrativeTest",
+            "git_commit_hash": "ce273c5ba9f7aae461a78a861be3e0949095f2c6",
+            "name": "Test Input Parameters",
+            "ver": "0.0.2",
+            "authors": [
+                "wjriehl"
+            ],
+            "contact": "help@kbase.us",
+            "subtitle": "Used for testing that input parameters are properly validated.",
+            "tooltip": "Used for testing that input parameters are properly validated.",
+            "description": "<p>This is a tiny method intended for just automated testing that parameters of different forms validate (or not) as expected.</p>\n<p>It still runs, though! All it does is make a copy of a genome. Kinda boring, yes, but it's mainly for testing and validation.</p>",
+            "technical_description": "",
+            "app_type": "app",
+            "suggestions": {
+                "related_methods": [],
+                "next_methods": [],
+                "related_apps": [],
+                "next_apps": []
+            },
+            "categories": [
+                "active"
+            ],
+            "screenshots": [],
+            "publications": [],
+            "namespace": "NarrativeTest"
+        },
+        "kb_uploadmethods/import_gff_fasta_as_metagenome_from_staging": {
+            "id": "kb_uploadmethods/import_gff_fasta_as_metagenome_from_staging",
+            "module_name": "kb_uploadmethods",
+            "git_commit_hash": "e4c061e7da4decf808a5f4ace3d897b108b4c876",
+            "name": "Import GFF3/FASTA file as Annotated Metagenome Assembly from Staging Area",
+            "ver": "1.0.34",
+            "authors": [
+                "slebras"
+            ],
+            "contact": "help@kbase.us",
+            "subtitle": "Import a GFF3 and FASTA file from your staging area into your Narrative as an Annotated Metagenome Assembly data object",
+            "tooltip": "Import a GFF3 and FASTA file from your staging area into your Narrative as an Annotated Metagenome Assembly data object",
+            "description": "<p> Import a GFF or FASTA file from your staging area into your Narrative as a Genome data object. \nPlease see the <a href=\"http://kbase.us/data-upload-download-guide/\">Data Upload/Download Guide</a> for more information. </p>",
+            "technical_description": "none",
+            "app_type": "app",
+            "suggestions": {
+                "related_methods": [],
+                "next_methods": [],
+                "related_apps": [],
+                "next_apps": []
+            },
+            "icon": {
+                "url": "img?method_id=kb_uploadmethods/import_gff_fasta_as_metagenome_from_staging&image_name=data-red.png&tag=dev"
+            },
+            "categories": [
+                "inactive",
+                "assembly",
+                "upload"
+            ],
+            "screenshots": [],
+            "publications": [],
+            "namespace": "kb_uploadmethods"
+        },
+        "NarrativeTest/test_input_widget": {
+            "id": "NarrativeTest/test_input_widget",
+            "module_name": "NarrativeTest",
+            "git_commit_hash": "ce273c5ba9f7aae461a78a861be3e0949095f2c6",
+            "name": "Test Input Widget",
+            "ver": "0.0.2",
+            "authors": [
+                "wjriehl"
+            ],
+            "contact": "help@kbase.us",
+            "subtitle": "Tests input widgets by just loading a simple, predefined widget.\nThis one just has a KBaseBiochem.Media object as an input.",
+            "tooltip": "Tests input widgets by just loading a simple, predefined widget.\nThis one just has a KBaseBiochem.Media object as an input.",
+            "description": "<p>This is a tiny method intended for just loading a custom input widget for testing.</p>",
+            "technical_description": "",
+            "app_type": "app",
+            "suggestions": {
+                "related_methods": [],
+                "next_methods": [],
+                "related_apps": [],
+                "next_apps": []
+            },
+            "categories": [
+                "active"
+            ],
+            "screenshots": [],
+            "publications": [],
+            "namespace": "NarrativeTest"
+        },
+        "kb_uploadmethods/import_fasta_as_assembly_from_staging": {
+            "id": "kb_uploadmethods/import_fasta_as_assembly_from_staging",
+            "module_name": "kb_uploadmethods",
+            "git_commit_hash": "e4c061e7da4decf808a5f4ace3d897b108b4c876",
+            "name": "Import FASTA File as Assembly from Staging Area",
+            "ver": "1.0.34",
+            "authors": [
+                "tgu2"
+            ],
+            "contact": "http://kbase.us/contact-us/",
+            "subtitle": "Import a FASTA file from your staging area into your Narrative as an Assembly data object",
+            "tooltip": "Import a FASTA file from your staging area into your Narrative as an Assembly data object",
+            "description": "<p> Import a FASTA file from your staging area into your Narrative as an Assembly data object.\nPlease see the <a href=\"http://kbase.us/data-upload-download-guide/\">Data Upload/Download Guide</a> for more information. </p>",
+            "technical_description": "",
+            "app_type": "app",
+            "suggestions": {
+                "related_methods": [],
+                "next_methods": [],
+                "related_apps": [],
+                "next_apps": []
+            },
+            "icon": {
+                "url": "img?method_id=kb_uploadmethods/import_fasta_as_assembly_from_staging&image_name=data-blue.png&tag=dev"
+            },
+            "categories": [
+                "inactive",
+                "reads",
+                "upload"
+            ],
+            "screenshots": [],
+            "publications": [],
+            "namespace": "kb_uploadmethods"
+        },
+        "NarrativeTest/introspect_job": {
+            "id": "NarrativeTest/introspect_job",
+            "module_name": "NarrativeTest",
+            "git_commit_hash": "ce273c5ba9f7aae461a78a861be3e0949095f2c6",
+            "name": "Introspect Job",
+            "ver": "0.0.2",
+            "authors": [
+                "wjriehl"
+            ],
+            "contact": "help@kbase.us",
+            "subtitle": "Introspect the information provided to an app",
+            "tooltip": "Introspect the information provided to an app",
+            "description": "<p>Just returns the information submitted to a job. If a token is in the context object where it's expected, it gets scrubbed out.</p>",
+            "technical_description": "none",
+            "app_type": "app",
+            "suggestions": {
+                "related_methods": [],
+                "next_methods": [],
+                "related_apps": [],
+                "next_apps": []
+            },
+            "categories": [],
+            "screenshots": [],
+            "publications": [],
+            "namespace": "NarrativeTest"
+        }
+    },
+    "release": {
+        "fba_tools/edit_media": {
+            "id": "fba_tools/edit_media",
+            "module_name": "fba_tools",
+            "git_commit_hash": "f6f8088e846831fc94a0b0806d7a769dfaccf836",
+            "name": "Edit Media",
+            "ver": "1.7.5",
+            "authors": [
+                "chenry@mcs.anl.gov"
+            ],
+            "contact": "http://kbase.us/contact-us/",
+            "subtitle": "Edit an existing media formulation.",
+            "tooltip": "Edit an existing media formulation.",
+            "description": "<p>Edit a media formulation by adding or removing compounds, changing concentrations, or adjusting flux bounds.</p>",
+            "technical_description": "",
+            "app_type": "app",
+            "suggestions": {
+                "related_methods": [],
+                "next_methods": [],
+                "related_apps": [],
+                "next_apps": []
+            },
+            "categories": [
+                "active",
+                "metabolic_modeling"
+            ],
+            "screenshots": [],
+            "publications": [],
+            "namespace": "fba_tools"
+        },
+        "ProkkaAnnotation/annotate_contigs": {
+            "id": "ProkkaAnnotation/annotate_contigs",
+            "module_name": "ProkkaAnnotation",
+            "git_commit_hash": "e681a8b929e31b86c97e134411773006cd75187d",
+            "name": "Annotate Assembly and Re-annotate Genomes with Prokka(v1.12)",
+            "ver": "2.1.2",
+            "authors": [
+                "rsutormin",
+                "bsadkhin"
+            ],
+            "contact": "help@kbase.us",
+            "subtitle": "Annotate Assembly and Re-annotate Genomes with Prokka annotation pipeline.",
+            "tooltip": "Annotate Assembly and Re-annotate Genomes with Prokka annotation pipeline.",
+            "description": "<p>\nThis is a KBase wrapper for the\n<a href=\"http://www.bioinformatics.net.au/software.prokka.shtml\" target=\"_blank\">Prokka</a>\nannotation pipeline.\n</p>\n\n<p>\nProkka is a software tool for the rapid annotation of prokaryotic genomes. A typical 4Mbp genome can be fully annotated in less than 20 minutes.\n</p>\n\n<p>\nFor rRNA prediction this app currently uses Barrnap (written by the author of Prokka and recommended if you prefer speed over absolute accuracy).\n</p>\n\n<p>\nSee more information at https://github.com/kbaseapps/ProkkaAnnotation/blob/master/README.rst\n</p>\n\n<p>Prokka version: 1.12</p>\n<p>Barrnap version: 0.8</p>",
+            "technical_description": "",
+            "app_type": "app",
+            "suggestions": {
+                "related_methods": [],
+                "next_methods": [],
+                "related_apps": [],
+                "next_apps": []
+            },
+            "icon": {
+                "url": "img?method_id=ProkkaAnnotation/annotate_contigs&image_name=prokka.png&tag=release"
+            },
+            "categories": [
+                "active",
+                "annotation"
+            ],
+            "screenshots": [],
+            "publications": [
+                {
+                    "pmid": "24642063",
+                    "display_text": "Seemann T. Prokka: rapid prokaryotic genome annotation. Bioinformatics. 2014;30: 2068 2069. doi:10.1093/bioinformatics/btu153\n",
+                    "link": "https://www.ncbi.nlm.nih.gov/pubmed/24642063"
+                }
+            ],
+            "namespace": "ProkkaAnnotation"
+        },
+        "kb_quast/run_QUAST_app": {
+            "id": "kb_quast/run_QUAST_app",
+            "module_name": "kb_quast",
+            "git_commit_hash": "055c7eeda5f420f6d72b2fc8d542f7444a51ba84",
+            "name": "QUAST - Quality Assessment Tool for Genome Assemblies",
+            "ver": "0.0.3",
+            "authors": [],
+            "contact": "help@kbase.us",
+            "subtitle": "Run QUAST on a set of assemblies to assess quality.",
+            "tooltip": "Run QUAST on a set of assemblies to assess quality.",
+            "description": "<p>\nThis is a KBase wrapper for version 4.4 of the \n<a href=\"http://quast.sourceforge.net/\" target=\"_blank\">QUAST</a> \nassembly quality assessment tool. \n</p>",
+            "technical_description": "",
+            "app_type": "app",
+            "suggestions": {
+                "related_methods": [],
+                "next_methods": [],
+                "related_apps": [],
+                "next_apps": []
+            },
+            "icon": {
+                "url": "img?method_id=kb_quast/run_QUAST_app&image_name=quast-blue_360.png&tag=release"
+            },
+            "categories": [
+                "assembly"
+            ],
+            "screenshots": [],
+            "publications": [
+                {
+                    "pmid": "23422339",
+                    "display_text": "Alexey Gurevich, Vladislav Saveliev, Nikolay Vyahhi and Glenn Tesler, QUAST: quality assessment tool for genome assemblies, Bioinformatics (2013) 29 (8): 1072-1075. doi: 10.1093/bioinformatics/btt086 First published online: February 19, 2013\n",
+                    "link": "https://www.ncbi.nlm.nih.gov/pubmed/23422339"
+                },
+                {
+                    "pmid": "27378299",
+                    "display_text": "Alla Mikheenko, Gleb Valin, Andrey Prjibelski, Vladislav Saveliev, Alexey Gurevich, Icarus: visualizer for de novo assembly evaluation, Bioinformatics (2016). doi: 10.1093/bioinformatics/btw379 First published online: July 4, 2016\n",
+                    "link": "https://www.ncbi.nlm.nih.gov/pubmed/27378299"
+                }
+            ],
+            "namespace": "kb_quast"
+        }
+    }
+}

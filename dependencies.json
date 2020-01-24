@@ -3,6 +3,10 @@
   "type" : "core",
   "file_path" : "https://raw.githubusercontent.com/kbase/catalog/master/catalog.spec"
 }, {
+  "module_name" : "NarrativeMethodStore",
+  "type" : "core",
+  "file_path" : "https://raw.githubusercontent.com/kbase/narrative_method_store/master/NarrativeMethodStore.spec"
+}, {
   "module_name" : "NarrativeService",
   "type" : "sdk",
   "version_tag" : "release"
