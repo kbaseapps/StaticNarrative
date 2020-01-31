@@ -13,7 +13,7 @@ from .app_processor import AppProcessor
 from datetime import datetime
 from collections import defaultdict
 from installed_clients.NarrativeMethodStoreClient import NarrativeMethodStore
-import json
+
 
 class NarrativePreprocessor(Preprocessor):
     def __init__(self, config=None, **kw):
@@ -31,6 +31,10 @@ class NarrativePreprocessor(Preprocessor):
     def preprocess(self, nb, resources):
         (nb, resources) = super(NarrativePreprocessor, self).preprocess(nb, resources)
 
+        app_meta = self._get_app_metadata(nb, self.config.narrative_session.nms_url)
+        narr_data = self.config.narrative_session.narrative_data
+        data_types = ", ".join(sorted(narr_data.get("types", {}).keys()))
+
         # Get some more stuff to show in the page into resources
         if 'kbase' not in resources:
             resources['kbase'] = {}
@@ -44,7 +48,9 @@ class NarrativePreprocessor(Preprocessor):
             'script_bundle_url': self.assets_base_url + '/js/' + self.assets_version + '/staticNarrativeBundle.js',
             'datestamp': datetime.now().strftime("%B %d, %Y").replace(" 0", " "),
             'logo_url': self.assets_base_url + '/images/kbase-logos/logo-icon-46-46.png',
-            'app_citations': self._get_app_citations(nb, self.config.narrative_session.nms_url)
+            'app_citations': app_meta['citations'],
+            'meta_keywords': f"{app_meta['meta']}, {data_types}",
+            'meta_description': f"A KBase Narrative that uses these Apps: {app_meta['meta']}"
         })
 
         if 'inlining' not in resources:
@@ -59,19 +65,25 @@ class NarrativePreprocessor(Preprocessor):
 
         return nb, resources
 
-    def _get_app_citations(self, nb, nms_url: str) -> dict:
+    def _get_app_metadata(self, nb, nms_url: str) -> dict:
         """
-        Returns a fairly simple dict if citations are available for the app:
+        Returns a structure containing app metadata and citations.
         {
-            app_id: {
-                name: "real name" (for convenience later),
-                citations: [{
-                    display_text: str,
-                    link: str
-                }]
-            }
+            meta: str,
+            citations: [{
+                heading: "Released Apps" (some readable str, not just "dev"),
+                app_list: {
+                    app_name_1: [{
+                        link: 'some link',
+                        display_text: 'publication_text'
+                    }],
+                    app_name_2: [{
+                        link: 'some other link',
+                        display_text: 'other publication'
+                    }]
+                }
+            }]
         }
-        Returns None if no citations
         """
         # will be tag -> app_id
         apps = defaultdict(set)
@@ -82,6 +94,7 @@ class NarrativePreprocessor(Preprocessor):
                     apps[kb_meta["app"].get("tag", "dev")].add(kb_meta["app"]["id"])
 
         citations = defaultdict(dict)
+        app_names = set()  # the "metadata" is just a list of unique app names.
         nms = NarrativeMethodStore(url=nms_url)
         for tag in apps:
             nms_inputs = {
@@ -94,6 +107,7 @@ class NarrativePreprocessor(Preprocessor):
             except Exception as e:
                 app_infos = []
             for info in app_infos:
+                app_names.add(info["name"])
                 if "publications" in info:
                     citations[tag][info["name"]] = info["publications"]
 
@@ -106,7 +120,10 @@ class NarrativePreprocessor(Preprocessor):
         for tag in ["release", "beta", "dev"]:
             if tag in citations:
                 parsed_citations.append({"heading": tag_map[tag], "app_list": citations[tag]})
-        return parsed_citations
+        return {
+            "citations": parsed_citations,
+            "meta": ", ".join(sorted(app_names))
+        }
 
     def icons_font_css(self) -> str:
         """
