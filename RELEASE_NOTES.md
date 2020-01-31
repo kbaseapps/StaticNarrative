@@ -1,6 +1,12 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.6
+-----
+* Added Google Analytics tag to generated Static Narratives.
+* Removed unused script codes from the templates.
+* Removed notes about how to upgrade running containers in Rancher, since we don't need to anymore!
+
 0.0.5
 -----
 * Added tabs to header of Static Narrative to flip between the main Narrative, Data, and Citations.
