@@ -75,7 +75,7 @@ class NarrativeExporter:
             output_html.write(body)
         return output_path
 
-    def _build_exporter(self, exported_data) -> HTMLExporter:
+    def _build_exporter(self, exported_data: dict) -> HTMLExporter:
         """
         This builds the HTMLExporter used to export the Notebook (i.e. Narrative) to
         HTML. Data is passed into the exporter by configuration with various specific

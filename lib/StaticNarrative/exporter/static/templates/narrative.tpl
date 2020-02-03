@@ -16,7 +16,10 @@
   gtag('config', 'AW-753507180'); //tracking for Google Ads
 </script><!-- End of Global Site Tag (gtag.js) - Google Analytics -->
 <meta charset="utf-8" />
-<title>KBase Narrative - {{ resources['kbase']['title'] }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="{{ resources.kbase.meta_keywords }}" />
+<meta name="description" content="A KBase Narrative that uses the following Apps: {{ resources.kbase.meta_description }}" />
+<title>KBase Narrative - {{ resources.kbase.title }}</title>
 
 {% for css in resources.inlining.css -%}
     <style type="text/css">
@@ -67,7 +70,7 @@ div#notebook {
       <div>
         <div class="kbs-title"><a href="{{ resources.kbase.narrative_link }}">{{ resources.kbase.title }}</a></div>
         <div class="kb-author-list">
-          {%- for author in resources['kbase']['authors'] -%}
+          {%- for author in resources.kbase.authors -%}
             <a href="{{ author.path }}">{{ author.name }}</a>
             {%- if not loop.last -%}, {% endif -%}
           {%- endfor -%}
