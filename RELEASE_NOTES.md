@@ -4,6 +4,7 @@
 0.0.6
 -----
 * Added Google Analytics tag to generated Static Narratives.
+* Added HTML meta tags with keywords (apps and data types) and description
 * Removed unused script codes from the templates.
 * Removed notes about how to upgrade running containers in Rancher, since we don't need to anymore!
 
