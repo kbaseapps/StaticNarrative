@@ -88,12 +88,14 @@ class StaticNarrative:
             os.makedirs(output_dir, exist_ok=True)
         except IOError as e:
             self.logger.error("Error while creating Static Narrative directory", e)
+            raise
 
         # export the narrative to a file
         try:
             output_path = exporter.export_narrative(ref, output_dir)
         except Exception as e:
             self.logger.error("Error while exporting Narrative", e)
+            raise
 
         # upload it and save it to the Workspace metadata before returning the url path
         static_url = upload_static_narrative(ref, output_path, self.config["static-file-root"])

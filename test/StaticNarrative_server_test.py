@@ -105,7 +105,7 @@ class StaticNarrativeTest(unittest.TestCase):
         )
         impl = self.service_impl
         output = impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/18"})[0]
-        self.assertEqual(output["static_narrative_url"], f"/{ws_id}/18")
+        self.assertEqual(output["static_narrative_url"], f"/{ws_id}/18/")
 
     @requests_mock.Mocker()
     def test_large_create_static_narrative_ok_unit(self, rqm):
@@ -152,7 +152,7 @@ class StaticNarrativeTest(unittest.TestCase):
         )
         impl = self.service_impl
         output = impl.create_static_narrative(self.ctx, {"narrative_ref": f"{ws_id}/1/114"})[0]
-        self.assertEqual(output["static_narrative_url"], f"/{ws_id}/114")
+        self.assertEqual(output["static_narrative_url"], f"/{ws_id}/114/")
 
     def test_create_static_narrative_no_auth(self):
         """

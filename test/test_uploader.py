@@ -23,7 +23,7 @@ class UploaderTestCase(unittest.TestCase):
             fout.write("test")
         upload_endpt = str(os.path.join(self.cfg["scratch"], "upload_test"))
         ret = upload_static_narrative(self.ref, narr_file, upload_endpt, None)
-        self.assertEqual(f"/{self.ref.wsid}/{self.ref.ver}", ret)
+        self.assertEqual(f"/{self.ref.wsid}/{self.ref.ver}/", ret)
         self.assertTrue(
             os.path.exists(
                 os.path.join(upload_endpt, str(self.ref.wsid), str(self.ref.ver))))
