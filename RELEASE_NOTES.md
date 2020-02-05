@@ -1,6 +1,10 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.7
+-----
+* Fixed issue with errors that aren't being propagated properly.
+
 0.0.6
 -----
 * Added Google Analytics tag to generated Static Narratives.
