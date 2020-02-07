@@ -13,6 +13,7 @@ from .app_processor import AppProcessor
 from datetime import datetime
 from collections import defaultdict
 from installed_clients.NarrativeMethodStoreClient import NarrativeMethodStore
+from StaticNarrative.upa import deserialize
 
 
 class NarrativePreprocessor(Preprocessor):
@@ -34,6 +35,7 @@ class NarrativePreprocessor(Preprocessor):
         app_meta = self._get_app_metadata(nb, self.config.narrative_session.nms_url)
         narr_data = self.config.narrative_session.narrative_data
         data_types = ", ".join(sorted(narr_data.get("types", {}).keys()))
+        ws_id = self.config.narrative_session.ws_id
 
         # Get some more stuff to show in the page into resources
         if 'kbase' not in resources:
@@ -42,7 +44,7 @@ class NarrativePreprocessor(Preprocessor):
             'title': nb['metadata']['name'],
             'host': self.host,
             'creator': nb['metadata']['creator'],
-            'narrative_link': f"{self.host}/narrative/{nb['metadata']['wsid']}",
+            'narrative_link': f"{self.host}/narrative/{ws_id}",
             'authors': get_authors(self.config, nb['metadata']['wsid']),
             'service_wizard_url': self.config.narrative_session.service_wizard_url,
             'script_bundle_url': self.assets_base_url + '/js/' + self.assets_version + '/staticNarrativeBundle.js',
@@ -144,7 +146,38 @@ class NarrativePreprocessor(Preprocessor):
         )
         return font_css
 
-    def preprocess_cell(self, cell, resources, index):
+    def _get_data_cell_ref(self, meta: dict, ws_id: int=None) -> str:
+        """
+        Returns the object reference inside a data cell, if present.
+        If not present, or not creatable from the metadata, returns None.
+        If there's an upas set, use that, and cast it to the current workspace
+            (and verify the object is there?)
+        Otherwise, if there's "objectInfo", use that.
+        """
+        if "dataCell" not in meta:
+            return None
+        meta = meta["dataCell"]
+        ref = None
+        if "upas" in meta and ws_id is not None:
+            refs = [deserialize(u, ws_id) for u in meta["upas"].values()]
+            ref = refs[0]
+        elif "objectInfo" in meta:
+            obj_info = meta["objectInfo"]
+            if "ref" in obj_info:
+                ref = obj_info["ref"]
+            else:
+                if (("ws_id" in obj_info or "wsid" in obj_info) and
+                        "id" in obj_info):
+                    ref = f"{obj_info.get('ws_id', obj_info.get('wsid'))}/{obj_info['id']}"
+                    if "version" in obj_info:
+                        ref = f"{ref}/{obj_info['version']}"
+        else:
+            return None
+        return ref
+
+    def preprocess_cell(self, cell, resources: dict, index: int):
+        ws_id = self.config.narrative_session.ws_id
+
         if 'kbase' in cell.metadata:
             kb_meta = cell.metadata.get('kbase', {})
             kb_info = {
@@ -159,8 +192,9 @@ class NarrativePreprocessor(Preprocessor):
                 )
                 kb_info['external_link'] = self.host + kb_info['app']['catalog_url']
             elif kb_info['type'] == 'data':
-                kb_info['external_link'] = self.host + '/#dataview/' + \
-                                           kb_meta['dataCell']['objectInfo']['ref']
+                ref = self._get_data_cell_ref(kb_meta, ws_id)
+                if ref is not None:
+                    kb_info["external_link"] = f"{self.host}/#dataview/{ref}"
             cell.metadata['kbase'] = kb_info
         else:
             kb_info = {

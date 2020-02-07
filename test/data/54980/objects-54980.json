@@ -1,0 +1,3152 @@
+{
+    "data": [
+        {
+            "object_info": [
+                2,
+                "CCESR16_MEGAHIT.assembly",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2020-02-05T18:01:21+0000",
+                5,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "e2541fecf9ffd73af7192cea6766f700",
+                19762,
+                {
+                    "GC content": "0.53684",
+                    "Size": "11793728",
+                    "N Contigs": "108",
+                    "MD5": "53b60dd671af1da9916b82e38cd97a20"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                3,
+                "CCESR16_IDBA.assembly",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "35305773df037b9181d36ced981cdfea",
+                36605,
+                {
+                    "GC content": "0.53671",
+                    "Size": "11834795",
+                    "N Contigs": "188",
+                    "MD5": "2123961f9a2d891f39a0490bc09bf7ee"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                4,
+                "Sample_CCESR16",
+                "KBaseFile.PairedEndLibrary-2.1",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "2aa8e7aedba0a03453c23581b3b7d296",
+                773,
+                {
+                    "qual_min": "2.0",
+                    "qual_mean": "36.6187",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "353787",
+                    "read_length_mean": "101.0",
+                    "qual_stdev": "5.9076",
+                    "read_length_stdev": "0.0",
+                    "qual_max": "41.0",
+                    "total_bases": "1995212580",
+                    "single_genome": "0",
+                    "gc_content": "0.6448269999999999",
+                    "phred_type": "33",
+                    "read_count": "19754580"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                7,
+                "CCESR16_MEGAHIT.Bins",
+                "KBaseMetagenomes.BinnedContigs-1.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "67c37ea8870e9541649eaafaf769b01e",
+                4705,
+                {
+                    "n_bins": "2",
+                    "total_contig_len": "11804951",
+                    "assembly_ref": "24065/2/3"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                9,
+                "CCESR16_IDBA.Bins",
+                "KBaseMetagenomes.BinnedContigs-1.0",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "b768c2968770e388e5d0faa1ea25d22b",
+                5819,
+                {
+                    "n_bins": "2",
+                    "total_contig_len": "11795350",
+                    "assembly_ref": "24035/3/1"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                11,
+                "Bin.001.fastaCCESR16_IDBA.bin.001.assembly",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "3352dccf57df43667525382305a874ce",
+                13355,
+                {
+                    "GC content": "0.67061",
+                    "Size": "6873102",
+                    "N Contigs": "78",
+                    "MD5": "d4144bf9299a3111c21cfd0f96e25479"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                13,
+                "Bin.002.fastaCCESR16_IDBA.bin.002.assembly",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "22748cd30dc8b82cdd31465e72f113a0",
+                8947,
+                {
+                    "GC content": "0.3499",
+                    "Size": "4922248",
+                    "N Contigs": "51",
+                    "MD5": "112c262f339ebb8d82c37641aa1878bf"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                16,
+                "CCESR16_IDBA.bin.001.genome",
+                "KBaseGenomes.Genome-8.2",
+                "2020-02-05T18:01:21+0000",
+                3,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "573a970be98163efb316580c06907cf6",
+                19357816,
+                {
+                    "GC content": "0.671",
+                    "Genetic code": "11",
+                    "Close genomes": "30",
+                    "Source ID": "CCESR16_IDBA.bin.001.genome",
+                    "Number features": "6726",
+                    "Number contigs": "78",
+                    "Domain": "B",
+                    "Source": "KBase",
+                    "MD5": "f2c80cd77d9b60f64234b22acf4113ad",
+                    "Name": "Burkholderiales sp"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                18,
+                "CCESR16_IDBA.bin.002.genome",
+                "KBaseGenomes.Genome-8.2",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "4631bd22a52e1f1612ab75d0c4d5d84a",
+                13181769,
+                {
+                    "GC content": "0.35",
+                    "Genetic code": "11",
+                    "Close genomes": "30",
+                    "Source ID": "CCESR16_IDBA.bin.002.genome",
+                    "Number features": "4526",
+                    "Number contigs": "51",
+                    "Domain": "B",
+                    "Source": "KBase",
+                    "MD5": "f6e70e0d96c4c4211c1665f916191e62",
+                    "Name": "Flavobacteriaceae sp."
+                }
+            ]
+        },
+        {
+            "object_info": [
+                20,
+                "CCESR16_species_tree",
+                "KBaseTrees.Tree-1.0",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "7e5561cbb4869fb8ecfbcb02983e2f8c",
+                18199,
+                {
+                    "type": "SpeciesTree"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                23,
+                "CCESR16_IDBA.bin.001.genome_Prokka_Annotation",
+                "KBaseGenomes.Genome-8.2",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "37e4d820e0b1cb65bb535066490cf032",
+                17093499,
+                {
+                    "GC content": "0.67061",
+                    "Genetic code": "0",
+                    "Size": "6873102",
+                    "Number features": "6431",
+                    "Domain": "Bacteria",
+                    "Source": "PROKKA annotation pipeline",
+                    "Name": "Burkholderiales sp."
+                }
+            ]
+        },
+        {
+            "object_info": [
+                26,
+                "IDBA_Bin1_RASTvsProkka_proteome_comparison",
+                "GenomeComparison.ProteomeComparison-2.0",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "1dfedc673f170e8b2a769aebbc9f5ca0",
+                966296,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                29,
+                "PanGenomeAnalysis_Bin1vsBin2",
+                "KBaseGenomes.Pangenome-4.0",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "7b12a7af859ee83120d9bd5743130c51",
+                1225224,
+                {
+                    "Number orthologs": "7065",
+                    "Type": "orthomcl",
+                    "Number genomes": "2",
+                    "Name": "PanGenomeAnalysis_Bin1vsBin2"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                32,
+                "Flavobacterium_limnosediminis_JC290201__kb_g.210419_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "e484028bfc6bb2b71fc00a65aa45d977",
+                5149718,
+                {
+                    "GC content": "38.5280844552961",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium limnosediminis JC2902",
+                    "Source ID": "1341181.4",
+                    "Size": "3466544",
+                    "Number features": "3240",
+                    "Number contigs": "56",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium limnosediminis JC290201",
+                    "MD5": "c2dbfac62a43832ae7988a99ab69fdfa"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                33,
+                "Curvibacter_gracilis_ATCC_BAA_807__kb_g.210302_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "385584ff3a249bdc7defde76d24b6fad",
+                9754103,
+                {
+                    "GC content": "66.0105409645793",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Curvibacter; Curvibacter gracilis",
+                    "Source ID": "1336244.3",
+                    "Size": "6745303",
+                    "Number features": "6170",
+                    "Number contigs": "79",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Curvibacter gracilis ATCC BAA-807",
+                    "MD5": "df7f9bf398052c3b4b9b59b6b1d88c9a"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                34,
+                "Flavobacterium_enshiense_DK6901__kb_g.206912_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "5c3bfdd341b848d8faf5347f11d020e5",
+                5033813,
+                {
+                    "GC content": "37.7311497480138",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium enshiense DK69",
+                    "Source ID": "1107311.3",
+                    "Size": "3387090",
+                    "Number features": "3158",
+                    "Number contigs": "48",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium enshiense DK6901",
+                    "MD5": "ed759fe590a173e03005648563674545"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                35,
+                "Simplicispira_psychrophila_DSM_11588__kb_g.242814_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "c0ae1d0ff4b974022aa6a915097c773e",
+                5300226,
+                {
+                    "GC content": "61.4673293762201",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Simplicispira; Simplicispira psychrophila DSM 11588",
+                    "Source ID": "1123255.3",
+                    "Size": "3600773",
+                    "Number features": "3426",
+                    "Number contigs": "38",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Simplicispira psychrophila DSM 11588",
+                    "MD5": "8a0b065034c5c76c21610c6e4ca62bb9"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                36,
+                "Acidovorax_sp._JS42__kb_g.456_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "a63300e46a1721e185312e7f8985a40f",
+                8450339,
+                {
+                    "GC content": "66.0875512578204",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax sp. JS42",
+                    "Source ID": "232721.9",
+                    "Size": "4585154",
+                    "Number features": "4452",
+                    "Number contigs": "3",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax sp. JS42",
+                    "MD5": "9aca7a73852a3955d8af3e1f98262217"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                37,
+                "Flavobacterium_cauense_R2A_701__kb_g.210415_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "95ceb1e7b56cc6870d9e2b41b35f8578",
+                4727598,
+                {
+                    "GC content": "38.1730827282081",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium cauense R2A-7",
+                    "Source ID": "1341154.3",
+                    "Size": "3113956",
+                    "Number features": "2997",
+                    "Number contigs": "39",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium cauense R2A-701",
+                    "MD5": "c25aa3b3bbb6e3857938ac46bae299ba"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                38,
+                "Acidovorax_sp._KKS102__kb_g.26496_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "03fe22196c652e86d9f717455c8495ad",
+                7961961,
+                {
+                    "GC content": "64.9185144705485",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax sp. KKS102",
+                    "Source ID": "358220.3",
+                    "Size": "5196935",
+                    "Number features": "4938",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax sp. KKS102",
+                    "MD5": "8638f8248329dd0dc98621e94af1c79b"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                39,
+                "Flavobacterium_saliperosum_S1301__kb_g.210416_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "04b371aef9d94f295ba58cd0a085d440",
+                4344246,
+                {
+                    "GC content": "39.5900490926903",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium saliperosum",
+                    "Source ID": "1341155.3",
+                    "Size": "2894932",
+                    "Number features": "2747",
+                    "Number contigs": "76",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium saliperosum S1301",
+                    "MD5": "c70b28ff993aa56abd4e49a773887d74"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                40,
+                "Comamonas_badia_DSM_1755201__kb_g.207088_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "15c03e5049cb8aa8021a2a8b5f7de2d4",
+                5536348,
+                {
+                    "GC content": "65.9644337710743",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas badia",
+                    "Source ID": "1121348.4",
+                    "Size": "3681020",
+                    "Number features": "3618",
+                    "Number contigs": "24",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas badia DSM 1755201",
+                    "MD5": "ee1425efa93dd7eb2e4a55fdfc4d6de4"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                41,
+                "Comamonas_composti_DSM_21721__kb_g.207089_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "456b736e81adc517a441406c865a8a41",
+                6631023,
+                {
+                    "GC content": "63.2955665503255",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas composti",
+                    "Source ID": "1121349.4",
+                    "Size": "4631495",
+                    "Number features": "4316",
+                    "Number contigs": "64",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas composti DSM 21721",
+                    "MD5": "449dcc54ff9488f01ac5efd27a598ecd"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                42,
+                "Flavobacterium_sp._F52__kb_g.25430_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "668e3625642981fb6a9fa3caa985adaf",
+                7964704,
+                {
+                    "GC content": "34.4408722754508",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp. F52",
+                    "Source ID": "1202532.3",
+                    "Size": "5336938",
+                    "Number features": "4766",
+                    "Number contigs": "54",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. F52",
+                    "MD5": "e45de4f9cedccff70ef843100118b51f"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                43,
+                "Comamonas_testosteroni_CNB_2__kb_g.2973_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "92610db9ec4aff4b336394d01b71cb30",
+                9713353,
+                {
+                    "GC content": "61.4723914255976",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas testosteroni CNB-2",
+                    "Source ID": "688245.4",
+                    "Size": "5464824",
+                    "Number features": "5139",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas testosteroni CNB-2",
+                    "MD5": "511507287b9ff51d651ab9d4b93295da"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                44,
+                "Comamonadaceae_bacterium_ED16__kb_g.216004_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "6eff80d4220b1dbb70ae67c1ac2da35e",
+                6208690,
+                {
+                    "GC content": "60.9477400654635",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Rhodoferax; Rhodoferax saidenbachensis ED16",
+                    "Source ID": "614083.3",
+                    "Size": "4249393",
+                    "Number features": "4040",
+                    "Number contigs": "70",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonadaceae bacterium ED16",
+                    "MD5": "7da0abdfe1914fd1dc60341750e2301f"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                45,
+                "Variovorax_paradoxus_B4__kb_g.208407_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "5c3291a6c7f04da0a38b5988df47c6cb",
+                11044704,
+                {
+                    "GC content": "67.1562181577267",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Variovorax; Variovorax paradoxus",
+                    "Source ID": "1246301.3",
+                    "Size": "7148516",
+                    "Number features": "6891",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Variovorax paradoxus B4",
+                    "MD5": "3a32bb591a11a63b07bdc8d9c54350b4"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                46,
+                "Limnohabitans_sp._Rim28__kb_g.24192_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "b5abf2d0f92d4ec3ce9aa4579e8ef8f8",
+                5203614,
+                {
+                    "GC content": "58.5103486197981",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Limnohabitans; Limnohabitans sp. Rim28",
+                    "Source ID": "1100720.3",
+                    "Size": "3411711",
+                    "Number features": "3418",
+                    "Number contigs": "73",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Limnohabitans sp. Rim28",
+                    "MD5": "313b4ee5c65e179f9635afcb9a54bf28"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                47,
+                "Limnohabitans_sp._Rim47__kb_g.24193_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "c234dba2687e9ea731760fd92c17dfc5",
+                4544571,
+                {
+                    "GC content": "58.4773279706795",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Limnohabitans; Limnohabitans sp. Rim47",
+                    "Source ID": "1100721.3",
+                    "Size": "3025865",
+                    "Number features": "2921",
+                    "Number contigs": "230",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Limnohabitans sp. Rim47",
+                    "MD5": "0f259f2dd2adfb7664de96dc9747f368"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                48,
+                "Polaromonas_naphthalenivorans_CJ2__kb_g.1088_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "9bc587badb31ba68a64b64c1fed5a047",
+                9369089,
+                {
+                    "GC content": "61.6795527066647",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Polaromonas; Polaromonas naphthalenivorans CJ2",
+                    "Source ID": "365044.20",
+                    "Size": "5366143",
+                    "Number features": "5083",
+                    "Number contigs": "9",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Polaromonas naphthalenivorans CJ2",
+                    "MD5": "fc263f157c2276ba3962c2f66274f1a5"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                49,
+                "Ramlibacter_tataouinensis_TTB310__kb_g.1089_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "9cf42b40a23ac23479a3b09630124cab",
+                6942821,
+                {
+                    "GC content": "69.9967053159396",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Ramlibacter; Ramlibacter tataouinensis TTB310",
+                    "Source ID": "365046.3",
+                    "Size": "4070193",
+                    "Number features": "3967",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Ramlibacter tataouinensis TTB310",
+                    "MD5": "ebf883f6fa3571ab60848f92a37fad2a"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                50,
+                "Flavobacterium_frigoris_PS1__kb_g.24017_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "f8f21c9f26937dae65664ebcb3e76f3a",
+                5846988,
+                {
+                    "GC content": "34.3728084256098",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium frigoris PS1",
+                    "Source ID": "1086011.3",
+                    "Size": "3934101",
+                    "Number features": "3557",
+                    "Number contigs": "52",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium frigoris PS1",
+                    "MD5": "2b8bc99a8133ffd74d2be0f5ff84c1e9"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                51,
+                "Variovorax_paradoxus_S110__kb_g.2164_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "f87792661f5ada3e232091b88c5fe9bb",
+                12471389,
+                {
+                    "GC content": "67.5362402085449",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Variovorax; Variovorax paradoxus S110",
+                    "Source ID": "543728.3",
+                    "Size": "6754997",
+                    "Number features": "6410",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Variovorax paradoxus S110",
+                    "MD5": "f20aac5a09ffc055e8e9ab0dbe88cce1"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                52,
+                "Comamonadaceae_bacterium_URHA0028__kb_g.209281_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "bc90831c1c979eb2d291cf4cc27b6ed1",
+                7259088,
+                {
+                    "GC content": "68.0305326202013",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonadaceae bacterium URHA0028",
+                    "Source ID": "1298913.3",
+                    "Size": "4904001",
+                    "Number features": "4700",
+                    "Number contigs": "15",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonadaceae bacterium URHA0028",
+                    "MD5": "e2e985c4a111ccd98aa3e2042575d758"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                53,
+                "Acidovorax_sp._CF316__kb_g.24629_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "a19c78df3616cbc1646b5b6450062c05",
+                10876479,
+                {
+                    "GC content": "67.7664997183974",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax sp. CF316",
+                    "Source ID": "1144317.3",
+                    "Size": "7086227",
+                    "Number features": "6648",
+                    "Number contigs": "315",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax sp. CF316",
+                    "MD5": "b720cfe9a085f961a9b231867e787ecb"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                54,
+                "Variovorax_sp._CF313__kb_g.24627_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "ace044863dc8f1839563f7f9463a0917",
+                9472669,
+                {
+                    "GC content": "66.836966390421",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Variovorax; Variovorax sp. CF313",
+                    "Source ID": "1144315.3",
+                    "Size": "6029174",
+                    "Number features": "5669",
+                    "Number contigs": "173",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Variovorax sp. CF313",
+                    "MD5": "c38bdf69c6f3133d4aa8fd320547a0bd"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                55,
+                "Flavobacterium_sp._CF136__kb_g.24625_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "623d84f24b2bd8d07c2ae5895fc38aaf",
+                7616360,
+                {
+                    "GC content": "33.5925641942322",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp. CF136",
+                    "Source ID": "1144313.4",
+                    "Size": "5102016",
+                    "Number features": "4426",
+                    "Number contigs": "113",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. CF136",
+                    "MD5": "863870b90869ed1f6f3a086a28deb6bd"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                56,
+                "Chryseobacterium_taeanense_ARB2__kb_g.25712_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "6c024724d0bcade4ee0512827d35d240",
+                9544342,
+                {
+                    "GC content": "66.5700885972195",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Chryseobacterium; Chryseobacterium taeanense ARB2",
+                    "Source ID": "1227361.3",
+                    "Size": "6642985",
+                    "Number features": "6043",
+                    "Number contigs": "565",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Chryseobacterium taeanense ARB2",
+                    "MD5": "126d9854aa1f780218f7be7eb16539b9"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                57,
+                "Comamonas_testosteroni_NBRC_100989__kb_g.24294_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "5782ae59c2e9704648febabb21d5d935",
+                7971209,
+                {
+                    "GC content": "61.8955701173552",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas testosteroni NBRC 100989",
+                    "Source ID": "1111078.3",
+                    "Size": "5589358",
+                    "Number features": "5195",
+                    "Number contigs": "153",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas testosteroni NBRC 100989",
+                    "MD5": "fc0959d1856fd4bc7b3d8cd6af265064"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                58,
+                "Flavobacterium_johnsonia_johnsoniae_UW101__kb_g.26540_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "189211ea1d1183eb3ed37bcd1f135d7f",
+                9036373,
+                {
+                    "GC content": "34.1128532795178",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium johnsoniae UW101",
+                    "Source ID": "376686.6",
+                    "Size": "6096872",
+                    "Number features": "5097",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium johnsonia johnsoniae UW101",
+                    "MD5": "a4e6ac0814f7473f3489e4fb17420d46"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                59,
+                "Acidovorax_avenae_subsp._avenae_RS_1__kb_g.3862_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "fb247af360cfde5e6b833d6bf68ae7ec",
+                8647757,
+                {
+                    "GC content": "68.6689488150008",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax avenae subsp. avenae RS-1",
+                    "Source ID": "995087.3",
+                    "Size": "5522282",
+                    "Number features": "5069",
+                    "Number contigs": "156",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax avenae subsp. avenae RS-1",
+                    "MD5": "4da923acd6fe15ff163620a76d5c6690"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                60,
+                "Flavobacterium_sp._ACAM_123__kb_g.25291_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "efd64cdd30f8d919cf3b87dcafc1a208",
+                5483394,
+                {
+                    "GC content": "34.8323707751406",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp. ACAM 123",
+                    "Source ID": "1189620.3",
+                    "Size": "3955605",
+                    "Number features": "3804",
+                    "Number contigs": "285",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. ACAM 123",
+                    "MD5": "8de63174c61718a711fc14872d0eef2e"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                61,
+                "Ottowia_thiooxydans_DSM_14619__kb_g.207216_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "f0cb5be4a29b41fb723bbdf73025a434",
+                10162618,
+                {
+                    "GC content": "58.5891687718934",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Ottowia; Ottowia thiooxydans",
+                    "Source ID": "1122623.4",
+                    "Size": "7044372",
+                    "Number features": "6795",
+                    "Number contigs": "87",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Ottowia thiooxydans DSM 14619",
+                    "MD5": "8f9c1db280342fbb5d11c1492ea9edbd"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                62,
+                "Comamonas_sp._B_9__kb_g.206759_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "03db14b0a774d1245c5826e3f1ca0359",
+                7101948,
+                {
+                    "GC content": "63.5991702455243",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas sp.",
+                    "Source ID": "1055192.4",
+                    "Size": "5217447",
+                    "Number features": "4831",
+                    "Number contigs": "624",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas sp. B-9",
+                    "MD5": "6811f7fae87d2bac8e4b55d6f71eb103"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                63,
+                "Polaromonas_sp._CF318__kb_g.24630_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "b305eb4010330704ed0dc5f5c3b39054",
+                7790230,
+                {
+                    "GC content": "64.9468257568256",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Polaromonas; Polaromonas sp. CF318",
+                    "Source ID": "1144318.3",
+                    "Size": "5008816",
+                    "Number features": "4773",
+                    "Number contigs": "159",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Polaromonas sp. CF318",
+                    "MD5": "9cfc9ddca92df26d54d6ad869bf0e552"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                64,
+                "Acidovorax_radicis_N35__kb_g.3893_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "190bb6aae0fb5b831cab580b4ae1f836",
+                9303577,
+                {
+                    "GC content": "64.8570258896914",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax radicis N35",
+                    "Source ID": "999386.3",
+                    "Size": "5530232",
+                    "Number features": "5173",
+                    "Number contigs": "30",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax radicis N35",
+                    "MD5": "eb99d30d0bfdd4e182cf99ac93b68b79"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                65,
+                "Acidovorax_radicis_N35v__kb_g.3894_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "7b55a7a212a759b75dab6166b1cf1903",
+                9311186,
+                {
+                    "GC content": "64.8586477678647",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax radicis N35v",
+                    "Source ID": "999394.3",
+                    "Size": "5530086",
+                    "Number features": "5175",
+                    "Number contigs": "33",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax radicis N35v",
+                    "MD5": "f117ac6382d4f428bdbbfbbf98ea33b6"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                66,
+                "Delftia_acidovorans_SPH_1__kb_g.1274_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "9d14c1e5869bc6643c2e7b6cde9bbc50",
+                12122154,
+                {
+                    "GC content": "66.4762570125455",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Delftia; Delftia acidovorans SPH-1",
+                    "Source ID": "398578.5",
+                    "Size": "6767514",
+                    "Number features": "6225",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Delftia acidovorans SPH-1",
+                    "MD5": "d429dde4f9e0f56dab252c57be56c114"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                67,
+                "Delftia_sp._RIT313__kb_g.240409_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "f0c4cb012e52fe2838e8c1aa4edbabad",
+                10082366,
+                {
+                    "GC content": "66.8936127649156",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Delftia; Delftia sp. RIT313",
+                    "Source ID": "1468410.3",
+                    "Size": "6698360",
+                    "Number features": "6082",
+                    "Number contigs": "122",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Delftia sp. RIT313",
+                    "MD5": "d97ced941fd4077eddf288c292b2343a"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                68,
+                "Flavobacterium_antarcticum_DSM_19726__kb_g.206925_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "93b5eb9661c812950385e52405e309e7",
+                4431641,
+                {
+                    "GC content": "34.967827592792",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium antarcticum",
+                    "Source ID": "1111730.5",
+                    "Size": "3079036",
+                    "Number features": "2858",
+                    "Number contigs": "15",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium antarcticum DSM 19726",
+                    "MD5": "32fe07bef83142b03b24d4d9b249a64a"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                69,
+                "Acidovorax_sp._JHL_9__kb_g.208652_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "5e769350370f177d3c395a7fbfdb326b",
+                6140555,
+                {
+                    "GC content": "64.9187849740043",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax sp. JHL-9",
+                    "Source ID": "1276756.3",
+                    "Size": "4194544",
+                    "Number features": "4039",
+                    "Number contigs": "66",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax sp. JHL-9",
+                    "MD5": "78cf5af749368db3887f7fe9d727aadb"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                70,
+                "Acidovorax_sp._JHL_3__kb_g.208651_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "912ad647fcfb6549a0508428787ca2e4",
+                5786805,
+                {
+                    "GC content": "63.6410777977043",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax sp. JHL-3",
+                    "Source ID": "1276755.3",
+                    "Size": "3987984",
+                    "Number features": "3786",
+                    "Number contigs": "4",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax sp. JHL-3",
+                    "MD5": "89eaf39b809311547afb0ef7c3c2fd36"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                71,
+                "Comamonas_testosteroni_TK102__kb_g.244926_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "3108fd529394aee27235f0a546a8ce4e",
+                8832934,
+                {
+                    "GC content": "61.8722869980601",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas testosteroni",
+                    "Source ID": "1392005.3",
+                    "Size": "6062703",
+                    "Number features": "5735",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas testosteroni TK102",
+                    "MD5": "3cebdf99f7aa9dcbb713e6ed4019f9d0"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                72,
+                "Rhodoferax_ferrireducens_T118__kb_g.944_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "e6e1eef83a2f4fc75698ea17ddfa4a13",
+                9039255,
+                {
+                    "GC content": "59.5960307329252",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Rhodoferax; Albidiferax ferrireducens T118",
+                    "Source ID": "338969.11",
+                    "Size": "4969784",
+                    "Number features": "4723",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Rhodoferax ferrireducens T118",
+                    "MD5": "833a6c36a74d55b3d1c3d7fbdad48ead"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                73,
+                "Xenophilus_azovorans_DSM_13620__kb_g.244814_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "a2d00a8efee05329246827f6aba8d790",
+                9641660,
+                {
+                    "GC content": "69.7937325030091",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Xenophilus; Xenophilus azovorans DSM 13620",
+                    "Source ID": "1123504.3",
+                    "Size": "6529337",
+                    "Number features": "6296",
+                    "Number contigs": "137",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Xenophilus azovorans DSM 13620",
+                    "MD5": "0279d2bf9b1736aae4a7e1049e2ad8a3"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                74,
+                "Comamonas_testosteroni_ATCC_11996__kb_g.23291_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "117c84553c4b0e8cd346213bbe2df3a4",
+                8088903,
+                {
+                    "GC content": "61.4837282850491",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas testosteroni ATCC 11996",
+                    "Source ID": "1009852.3",
+                    "Size": "5410155",
+                    "Number features": "5050",
+                    "Number contigs": "63",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas testosteroni ATCC 11996",
+                    "MD5": "cd82364eb8f0b68945352abb173cf504"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                75,
+                "Acidovorax_oryzae_ATCC_19882__kb_g.239427_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "b36215cfaecd2ffa52967930d4e481c0",
+                8034633,
+                {
+                    "GC content": "68.7544749478933",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax oryzae ATCC 19882",
+                    "Source ID": "1408420.3",
+                    "Size": "5525204",
+                    "Number features": "5019",
+                    "Number contigs": "72",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax oryzae ATCC 19882",
+                    "MD5": "f60161fa89fa02b48338207067aeae05"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                76,
+                "Delftia_sp._Cs1_4__kb_g.3122_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "3db91c06abf947dfe63f74159e18e066",
+                11536095,
+                {
+                    "GC content": "66.7179541484827",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Delftia; Delftia sp. Cs1-4",
+                    "Source ID": "742013.3",
+                    "Size": "6685842",
+                    "Number features": "6111",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Delftia sp. Cs1-4",
+                    "MD5": "ff2667e61dfb39190677f311d84ff450"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                77,
+                "Diaphorobacter_sp._TPSY__kb_g.2134_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "a52998bf7e240a5b3349c711051cb89b",
+                7183949,
+                {
+                    "GC content": "66.8339842273545",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax ebreus TPSY",
+                    "Source ID": "535289.3",
+                    "Size": "3796573",
+                    "Number features": "3654",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Diaphorobacter sp. TPSY",
+                    "MD5": "3164081548c9229b1ff20217cb110eb9"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                78,
+                "Flavobacterium_sp._URHB0058__kb_g.209268_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "84acab7977e28ed85c2a4d43256563ea",
+                7393181,
+                {
+                    "GC content": "33.7167780456313",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp.",
+                    "Source ID": "1298868.4",
+                    "Size": "5261167",
+                    "Number features": "4638",
+                    "Number contigs": "35",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. URHB0058",
+                    "MD5": "672f9ab367414a53edd642f77b45c28b"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                79,
+                "Variovorax_sp._URHB0020__kb_g.244747_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "dc3fbfc8e2e5163cfe7d14c48d22cedc",
+                9825836,
+                {
+                    "GC content": "64.5763307313307",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Variovorax; Variovorax sp. URHB0020",
+                    "Source ID": "1380385.4",
+                    "Size": "6629381",
+                    "Number features": "6536",
+                    "Number contigs": "43",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Variovorax sp. URHB0020",
+                    "MD5": "6af72bb67daf580bef49269f1ca726df"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                80,
+                "Acidovorax_avenae_subsp._avenae_ATCC_19860__kb_g.2733_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "68df8d8b0264ad20b873054e4382f3da",
+                9462010,
+                {
+                    "GC content": "68.890874591462",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax avenae subsp. avenae ATCC 19860",
+                    "Source ID": "643561.3",
+                    "Size": "5428809",
+                    "Number features": "4902",
+                    "Number contigs": "84",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax avenae subsp. avenae ATCC 19860",
+                    "MD5": "05f6904545d25b07075c2016299af6ba"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                81,
+                "Caldimonas_manganoxidans_ATCC_BAA_369__kb_g.31538_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "b949de09ab369dac49c25f978d1d6f97",
+                5413318,
+                {
+                    "GC content": "65.9633740829081",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Caldimonas; Caldimonas manganoxidans ATCC BAA-369",
+                    "Source ID": "1265502.3",
+                    "Size": "3531816",
+                    "Number features": "3458",
+                    "Number contigs": "92",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Caldimonas manganoxidans ATCC BAA-369",
+                    "MD5": "ad44b6dcfcae51c149bd478d58541ca3"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                82,
+                "Verminephrobacter_eiseniae_EF01_2__kb_g.1217_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "2ea6588833164023bf6e17100b5c5729",
+                10160582,
+                {
+                    "GC content": "65.241911180589",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Verminephrobacter; Verminephrobacter eiseniae EF01-2",
+                    "Source ID": "391735.7",
+                    "Size": "5597943",
+                    "Number features": "5449",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Verminephrobacter eiseniae EF01-2",
+                    "MD5": "07cc6d171d95e3d479703c10b2f6458c"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                83,
+                "Acidovorax_avenae_subsp._avenae_ATCC_19860__kb_g.2734_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "210b677211517e641540c9109b65626c",
+                9868975,
+                {
+                    "GC content": "68.8210143063787",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax avenae subsp. avenae ATCC 19860",
+                    "Source ID": "643561.4",
+                    "Size": "5482170",
+                    "Number features": "4969",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax avenae subsp. avenae ATCC 19860",
+                    "MD5": "1b18f58d60728be31e010b7f8a754844"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                84,
+                "Flavobacterium_frigidarium_DSM_17623__kb_g.207136_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "4f09864c5d2789de10a499a9156bf0b2",
+                5107184,
+                {
+                    "GC content": "34.0709664793228",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium frigidarium",
+                    "Source ID": "1121890.3",
+                    "Size": "3627910",
+                    "Number features": "3230",
+                    "Number contigs": "39",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium frigidarium DSM 17623",
+                    "MD5": "ef87a2d5678a4176861226edefea1623"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                85,
+                "Comamonas_granuli_NBRC_101663__kb_g.240359_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "b5e7240e0ef85f67220a825fcd0135dc",
+                5222506,
+                {
+                    "GC content": "68.5446832930879",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas granuli NBRC 101663",
+                    "Source ID": "1223521.5",
+                    "Size": "3505986",
+                    "Number features": "3297",
+                    "Number contigs": "34",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas granuli NBRC 101663",
+                    "MD5": "6949a23ac5cec9de77dba6083ca31f55"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                86,
+                "Flavobacterium_filum_DSM_17961__kb_g.207135_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "f88646f48c6f3329a3d2983b90bcc478",
+                4639930,
+                {
+                    "GC content": "33.8224557688641",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium filum",
+                    "Source ID": "1121889.3",
+                    "Size": "3188704",
+                    "Number features": "2938",
+                    "Number contigs": "52",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium filum DSM 17961",
+                    "MD5": "930ae2f6b337af847fcdd690b7c9836b"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                87,
+                "Acidovorax_sp._MR_S7__kb_g.31650_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "d7fd6de0c0329f42c5f519c5cff0d74c",
+                7584874,
+                {
+                    "GC content": "68.3036216345246",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax sp. MR-S7",
+                    "Source ID": "1268622.3",
+                    "Size": "5006165",
+                    "Number features": "4782",
+                    "Number contigs": "129",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax sp. MR-S7",
+                    "MD5": "5701f34aa6ccea28256e3f26e23b50a1"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                88,
+                "Comamonas_aquatica_NBRC_14918__kb_g.240357_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "e6f7dd2e688bc03b8d148c9f834b4a63",
+                5336626,
+                {
+                    "GC content": "65.1921979449944",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas aquatica NBRC 14918",
+                    "Source ID": "1219031.4",
+                    "Size": "3732350",
+                    "Number features": "3577",
+                    "Number contigs": "103",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas aquatica NBRC 14918",
+                    "MD5": "b9670a4e2d33f953d8bc6f12b527679f"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                89,
+                "Flavobacterium_soli_DSM_19725__kb_g.207138_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "22c2a5c045786d5a17bdf74fc0571700",
+                5765817,
+                {
+                    "GC content": "36.0889937883104",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium soli",
+                    "Source ID": "1121897.4",
+                    "Size": "3998751",
+                    "Number features": "3655",
+                    "Number contigs": "24",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium soli DSM 19725",
+                    "MD5": "be71a1d9dc46e738025c0b68e48b105e"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                90,
+                "Brachymonas_chironomi_DSM_19884__kb_g.29566_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "fe205e5580a64da224f810af037ef084",
+                3788816,
+                {
+                    "GC content": "63.6036021628969",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Brachymonas; Brachymonas chironomi DSM 19884",
+                    "Source ID": "1121116.3",
+                    "Size": "2501275",
+                    "Number features": "2436",
+                    "Number contigs": "36",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Brachymonas chironomi DSM 19884",
+                    "MD5": "787eb56f729e06285fb04bc4afd7c425"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                91,
+                "Comamonas_aquatica_DA1877__kb_g.215503_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "c11bdad3c80143f05be2c328e40ed224",
+                5809203,
+                {
+                    "GC content": "64.7993561277067",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas aquatica",
+                    "Source ID": "1457173.3",
+                    "Size": "3956064",
+                    "Number features": "3776",
+                    "Number contigs": "83",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas aquatica DA1877",
+                    "MD5": "55e188466e91e62b647db942022ee132"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                92,
+                "Acidovorax_citrulli_AAC00_1__kb_g.1268_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "de5e3b5359b8249767dfca460268cd7b",
+                9509029,
+                {
+                    "GC content": "68.5323043835979",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax citrulli AAC00-1",
+                    "Source ID": "397945.6",
+                    "Size": "5352772",
+                    "Number features": "4946",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax citrulli AAC00-1",
+                    "MD5": "bccfd96af660d1b07017d56cd090bf5e"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                93,
+                "Rhodoferax_ferrireducens_DSM_15236__kb_g.26428_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "66b238a026541082160050134823d3e5",
+                8064154,
+                {
+                    "GC content": "59.5960307329252",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Rhodoferax; Albidiferax ferrireducens T118",
+                    "Source ID": "338969.3",
+                    "Size": "4969784",
+                    "Number features": "4482",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Rhodoferax ferrireducens DSM 15236",
+                    "MD5": "833a6c36a74d55b3d1c3d7fbdad48ead"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                94,
+                "Comamonas_testosteroni_KF_1__kb_g.1288_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "db9b6eea705f40f69dea7d758075f643",
+                10240851,
+                {
+                    "GC content": "61.7920238306408",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Comamonas; Comamonas testosteroni KF-1",
+                    "Source ID": "399795.3",
+                    "Size": "6026527",
+                    "Number features": "5615",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Comamonas testosteroni KF-1",
+                    "MD5": "51d35f0a3ca7568688cdb623706ae559"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                95,
+                "Polaromonas_sp._JS666__kb_g.710_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "777f6843a4ac9773d85187053a51de4e",
+                10296867,
+                {
+                    "GC content": "61.9751556230154",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Polaromonas; Polaromonas sp. JS666",
+                    "Source ID": "296591.1",
+                    "Size": "5894533",
+                    "Number features": "5661",
+                    "Number contigs": "39",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Polaromonas sp. JS666",
+                    "MD5": "4ee1e7fe94115ea1d1b475c56cc7f4d7"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                96,
+                "Flavobacteria_bacterium_BAL38__kb_g.1205_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "66fd5f46747d96d926808087a0b96b60",
+                4833238,
+                {
+                    "GC content": "31.4314377434326",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteria bacterium BAL38",
+                    "Source ID": "391598.3",
+                    "Size": "2806989",
+                    "Number features": "2591",
+                    "Number contigs": "14",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacteria bacterium BAL38",
+                    "MD5": "f91ebcd543af25c45cc1865408408e34"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                97,
+                "Alicycliphilus_denitrificans_K601__kb_g.2599_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "c1cdedf75331ece6cf67af8709c136bf",
+                9251653,
+                {
+                    "GC content": "67.8975757239904",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Alicycliphilus; Alicycliphilus denitrificans K601",
+                    "Source ID": "596154.3",
+                    "Size": "5070751",
+                    "Number features": "4937",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Alicycliphilus denitrificans K601",
+                    "MD5": "80f6c2419bb150dd41d031185e5537d8"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                98,
+                "Alicycliphilus_denitrificans_BC__kb_g.2598_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "1e4418385881bd768c3b5ab04b5d300e",
+                9095576,
+                {
+                    "GC content": "67.9686532265252",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Alicycliphilus; Alicycliphilus denitrificans BC",
+                    "Source ID": "596153.4",
+                    "Size": "4835713",
+                    "Number features": "4687",
+                    "Number contigs": "3",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Alicycliphilus denitrificans BC",
+                    "MD5": "36ba44e01d78645b1410fa214078d8d1"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                99,
+                "Genome_24035_18_1__CCESR16_IDBA.bin.002.genome_",
+                "KBaseGenomes.Genome-8.2",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "4631bd22a52e1f1612ab75d0c4d5d84a",
+                13181769,
+                {
+                    "GC content": "0.35",
+                    "Genetic code": "11",
+                    "Close genomes": "30",
+                    "Source ID": "CCESR16_IDBA.bin.002.genome",
+                    "Number features": "4526",
+                    "Number contigs": "51",
+                    "Domain": "B",
+                    "Source": "KBase",
+                    "MD5": "f6e70e0d96c4c4211c1665f916191e62",
+                    "Name": "Flavobacteriaceae sp."
+                }
+            ]
+        },
+        {
+            "object_info": [
+                100,
+                "Genome_24035_16_1__CCESR16_IDBA.bin.001.genome_",
+                "KBaseGenomes.Genome-8.2",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "b286ca7524fb972ed6138af548066adc",
+                19358526,
+                {
+                    "GC content": "0.671",
+                    "Genetic code": "11",
+                    "Close genomes": "30",
+                    "Source ID": "CCESR16_IDBA.bin.001.genome",
+                    "Number features": "6726",
+                    "Number contigs": "78",
+                    "Domain": "B",
+                    "Source": "KBase",
+                    "MD5": "f2c80cd77d9b60f64234b22acf4113ad",
+                    "Name": "Burkholderiales sp."
+                }
+            ]
+        },
+        {
+            "object_info": [
+                101,
+                "Acidovorax_sp._NO_1__kb_g.26835_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "3cc95fdcb9d260a05352cb2b05d8e28c",
+                7584926,
+                {
+                    "GC content": "64.3633463534392",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax sp. NO-1",
+                    "Source ID": "512030.4",
+                    "Size": "5011736",
+                    "Number features": "4745",
+                    "Number contigs": "161",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax sp. NO-1",
+                    "MD5": "cd776f47e2160979962c2659fb2325ae"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                102,
+                "Flavobacterium_sp._EM1321__kb_g.241196_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "1627a72a038ddd0ac3d4d1e611e60d51",
+                5659839,
+                {
+                    "GC content": "33.2497416047924",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp. EM1321",
+                    "Source ID": "1492738.3",
+                    "Size": "3792640",
+                    "Number features": "3267",
+                    "Number contigs": "56",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. EM1321",
+                    "MD5": "0bd8099b1c5465b7b93814babf9dcbbc"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                103,
+                "Alicycliphilus_denitrificans_BC__kb_g.2597_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "a1864e99fb0a7393ca8e8828771ee16c",
+                8483166,
+                {
+                    "GC content": "68.0606690436312",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Alicycliphilus; Alicycliphilus denitrificans BC",
+                    "Source ID": "596153.3",
+                    "Size": "4747792",
+                    "Number features": "4559",
+                    "Number contigs": "140",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Alicycliphilus denitrificans BC",
+                    "MD5": "13877d4068af5b1c5165e735e01f2ff6"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                104,
+                "Flavobacterium_denitrificans_DSM_15936__kb_g.207134_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "4e11c06a3f4ba7e93339ec3bde317ac4",
+                6863886,
+                {
+                    "GC content": "34.0385095724174",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium denitrificans",
+                    "Source ID": "1121888.3",
+                    "Size": "4820308",
+                    "Number features": "4284",
+                    "Number contigs": "30",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium denitrificans DSM 15936",
+                    "MD5": "324633173088793093abe0fdefb176cb"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                105,
+                "Variovorax_paradoxus_EPS__kb_g.2595_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "b8fc28611cc475c6052df7deec8612a7",
+                11727238,
+                {
+                    "GC content": "66.4797217000893",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Variovorax; Variovorax paradoxus EPS",
+                    "Source ID": "595537.3",
+                    "Size": "6550056",
+                    "Number features": "6169",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Variovorax paradoxus EPS",
+                    "MD5": "fdce7d4ed5d5b405de5b7f3bc2232d4c"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                106,
+                "Curvibacter_lanceolatus_ATCC_14669__kb_g.31540_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "58edb906fdc299bdbe83d557b68e576c",
+                10018941,
+                {
+                    "GC content": "65.5462909360502",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Curvibacter; Curvibacter lanceolatus ATCC 14669",
+                    "Source ID": "1265504.3",
+                    "Size": "6831845",
+                    "Number features": "6320",
+                    "Number contigs": "74",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Curvibacter lanceolatus ATCC 14669",
+                    "MD5": "4f5e2f22cf747c34fec066a8fef02c2a"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                107,
+                "Flavobacterium_tegetincola_DSM_22377__kb_g.207141_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "d00dc3ba72a1e14df28336a26c6920cb",
+                5336273,
+                {
+                    "GC content": "34.9768542238188",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium tegetincola DSM 22377",
+                    "Source ID": "1121901.3",
+                    "Size": "3766994",
+                    "Number features": "3541",
+                    "Number contigs": "53",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium tegetincola DSM 22377",
+                    "MD5": "6843fca0f04522292e784c52ab84dd06"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                108,
+                "Polaromonas_sp._JS666__kb_g.711_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "9f675b38954a0912035469d7a079ffff",
+                10415611,
+                {
+                    "GC content": "61.9746024362077",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Polaromonas; Polaromonas sp. JS666",
+                    "Source ID": "296591.12",
+                    "Size": "5898676",
+                    "Number features": "5643",
+                    "Number contigs": "3",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Polaromonas sp. JS666",
+                    "MD5": "14a247a329cf91d4eb940a4f881d73b2"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                109,
+                "Flavobacterium_johnsoniae_UW101__kb_g.1136_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "389e0fd81c8762cb2320ce2ca30cb957",
+                10552504,
+                {
+                    "GC content": "34.1128532795178",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium johnsoniae UW101",
+                    "Source ID": "376686.10",
+                    "Size": "6096872",
+                    "Number features": "5309",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium johnsoniae UW101",
+                    "MD5": "a4e6ac0814f7473f3489e4fb17420d46"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                110,
+                "Delftia_acidovorans_SPH_1__kb_g.26606_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "444193312eb8da943b9ac957a9576ce5",
+                10569513,
+                {
+                    "GC content": "66.4762570125455",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Delftia; Delftia acidovorans SPH-1",
+                    "Source ID": "398578.3",
+                    "Size": "6767514",
+                    "Number features": "6140",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Delftia acidovorans SPH-1",
+                    "MD5": "d429dde4f9e0f56dab252c57be56c114"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                111,
+                "Flavobacterium_sp._WG21__kb_g.31316_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "26d08fad46d240d4f40426a5fdb1a259",
+                7379557,
+                {
+                    "GC content": "35.6095222596303",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp. WG21",
+                    "Source ID": "1229487.5",
+                    "Size": "5198514",
+                    "Number features": "4485",
+                    "Number contigs": "84",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. WG21",
+                    "MD5": "7d21ac1a2f17d404459858e4b8a059ee"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                112,
+                "Polaromonas_glacialis__kb_g.242232_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "337e98c4fb968bdfa3f32e2c135087a6",
+                7569812,
+                {
+                    "GC content": "62.2766849929659",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Polaromonas; Polaromonas glacialis",
+                    "Source ID": "866564.4",
+                    "Size": "5270022",
+                    "Number features": "5223",
+                    "Number contigs": "59",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Polaromonas glacialis",
+                    "MD5": "13d80e093e97078054af6efeb9d72841"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                113,
+                "Polaromonas_sp._EUR3_1.2.1__kb_g.242233_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "4aa2306bf31b79c21f4d64aa062f30e8",
+                6386193,
+                {
+                    "GC content": "59.8690060976787",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Polaromonas; Polaromonas sp. EUR3 1.2.1",
+                    "Source ID": "1305734.3",
+                    "Size": "4402495",
+                    "Number features": "4421",
+                    "Number contigs": "3",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Polaromonas sp. EUR3 1.2.1",
+                    "MD5": "c4c7263f2006fe0af76ef5ef5bc2402b"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                114,
+                "Hylemonella_gracilis_ATCC_19624__kb_g.3582_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "7cd6438e382d44c7a386cd4b55d57024",
+                5989073,
+                {
+                    "GC content": "65.085660406974",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Hylemonella; Hylemonella gracilis ATCC 19624",
+                    "Source ID": "887062.3",
+                    "Size": "3618708",
+                    "Number features": "3354",
+                    "Number contigs": "115",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Hylemonella gracilis ATCC 19624",
+                    "MD5": "7eacb0ef93f895172db7ba927d41c6b4"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                115,
+                "Hydrogenophaga_sp._PBC__kb_g.27773_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "b9723701cd40e77328f4e3b63cee8e6c",
+                8096516,
+                {
+                    "GC content": "68.4366246161699",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Hydrogenophaga; Hydrogenophaga sp. PBC",
+                    "Source ID": "795665.3",
+                    "Size": "5144529",
+                    "Number features": "4931",
+                    "Number contigs": "148",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Hydrogenophaga sp. PBC",
+                    "MD5": "42a604e7c3de9096dc61bc0df5c9de96"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                116,
+                "Flavobacterium_daejeonense_DSM_17708__kb_g.241189_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "6d719bbf9cc69d92b82c8f77457fdceb",
+                6049314,
+                {
+                    "GC content": "34.6546313701104",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium daejeonense DSM 17708",
+                    "Source ID": "1121887.3",
+                    "Size": "4240527",
+                    "Number features": "3679",
+                    "Number contigs": "52",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium daejeonense DSM 17708",
+                    "MD5": "31877ed270edade46cb4b8e01af51e29"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                117,
+                "Flavobacterium_chungangense_LMG_26729__kb_g.241188_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "41f8b4e2cd747229c3b9cd33b21d0a46",
+                7872777,
+                {
+                    "GC content": "33.6737116777334",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium chungangense LMG 26729",
+                    "Source ID": "1453505.4",
+                    "Size": "5597105",
+                    "Number features": "4919",
+                    "Number contigs": "46",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium chungangense LMG 26729",
+                    "MD5": "abb74a562027b32e114f93bcd660e1cb"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                118,
+                "Hylemonella_gracilis_str._Niagara_R__kb_g.241298_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "971014864f2d9ac0bab2cbdeaa485514",
+                5734446,
+                {
+                    "GC content": "64.6952924352662",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Hylemonella; Hylemonella gracilis str. Niagara R",
+                    "Source ID": "1458275.3",
+                    "Size": "3821615",
+                    "Number features": "3552",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Hylemonella gracilis str. Niagara R",
+                    "MD5": "deb2c850f64a2bac787ccc629bcbfd41"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                119,
+                "Hydrogenophaga_intermedia__kb_g.241295_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "8bae2dc140391f83d30262da210fc7ff",
+                8140730,
+                {
+                    "GC content": "68.3950958135524",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Hydrogenophaga; Hydrogenophaga intermedia",
+                    "Source ID": "65786.3",
+                    "Size": "5288135",
+                    "Number features": "5077",
+                    "Number contigs": "124",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Hydrogenophaga intermedia",
+                    "MD5": "c882ddd8f6450f8ad7197b7c458a7f10"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                120,
+                "Acidovorax_delafieldii_2AN__kb_g.26975_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "4ba5d416a2a6fe05aa63d86e7186ec40",
+                6830193,
+                {
+                    "GC content": "64.9674820632934",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Acidovorax; Acidovorax delafieldii 2AN",
+                    "Source ID": "573060.3",
+                    "Size": "4836869",
+                    "Number features": "4584",
+                    "Number contigs": "636",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Acidovorax delafieldii 2AN",
+                    "MD5": "5a22ed6b4e37a64b9168bd42c55b2504"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                121,
+                "Flavobacterium_branchiophilum_FL_15__kb_g.23355_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "28bc8fc0b049ed61a873757308a3d0b8",
+                5552558,
+                {
+                    "GC content": "32.8576998576358",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium branchiophilum FL-15",
+                    "Source ID": "1034807.5",
+                    "Size": "3559884",
+                    "Number features": "3361",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium branchiophilum FL-15",
+                    "MD5": "fc19c90edb617ae8c9169d1d87f57c04"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                122,
+                "Flavobacterium_sp._KJJ__kb_g.241198_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "0b6cd3b70b7bc103ac177f0269725289",
+                6566480,
+                {
+                    "GC content": "33.2707526045915",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp. KJJ",
+                    "Source ID": "1270193.7",
+                    "Size": "4603121",
+                    "Number features": "4063",
+                    "Number contigs": "11",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. KJJ",
+                    "MD5": "d98da52c2f9235549fad05805932b6fa"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                123,
+                "Flavobacterium_succinicans_LMG_10402__kb_g.241199_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "6ed8fa6faf977981c87fa632e2cc968d",
+                5182699,
+                {
+                    "GC content": "35.4926869918632",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium succinicans LMG 10402",
+                    "Source ID": "1450525.5",
+                    "Size": "3652806",
+                    "Number features": "3310",
+                    "Number contigs": "48",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium succinicans LMG 10402",
+                    "MD5": "da9c236f04b1a10402e40fd3d3f406ed"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                124,
+                "Flavobacterium_sasangense_DSM_21067__kb_g.241193_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "15ab2af947ceb33fe2683c5a57a12317",
+                4609902,
+                {
+                    "GC content": "32.3170733638999",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sasangense DSM 21067",
+                    "Source ID": "1121896.3",
+                    "Size": "3156607",
+                    "Number features": "2987",
+                    "Number contigs": "73",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sasangense DSM 21067",
+                    "MD5": "d8860f705201352cb5abc0187ae32815"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                125,
+                "Flavobacterium_hydatis__kb_g.241190_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "32a61e8078c8c9f25232bcb75dd445f6",
+                8394851,
+                {
+                    "GC content": "32.6632436555227",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium hydatis",
+                    "Source ID": "991.9",
+                    "Size": "5877671",
+                    "Number features": "5116",
+                    "Number contigs": "99",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium hydatis",
+                    "MD5": "61db68a3ec9417abb41da065cd042b0e"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                126,
+                "Flavobacterium_reichenbachii__kb_g.241191_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "8e91b4aa157c3914d682fa3fcaa944ae",
+                8047392,
+                {
+                    "GC content": "33.6178002657868",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium reichenbachii",
+                    "Source ID": "362418.5",
+                    "Size": "5501401",
+                    "Number features": "4903",
+                    "Number contigs": "12",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium reichenbachii",
+                    "MD5": "7d48ee3c3a5c1ea2e466cd2dfdb07530"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                127,
+                "Variovorax_paradoxus_110B__kb_g.30216_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "c04563d003b454b85963cd3f79eccb3b",
+                11228934,
+                {
+                    "GC content": "67.73483765333",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Variovorax; Variovorax paradoxus 110B",
+                    "Source ID": "1157708.3",
+                    "Size": "7515245",
+                    "Number features": "7051",
+                    "Number contigs": "50",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Variovorax paradoxus 110B",
+                    "MD5": "b184f58780b31864c77e2227cfe5424b"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                128,
+                "Flavobacterium_sp._Fl__kb_g.241197_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "f67db110dadbea09faff520312c5a04f",
+                7483779,
+                {
+                    "GC content": "33.4286757580811",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp. Fl",
+                    "Source ID": "1506583.3",
+                    "Size": "5282713",
+                    "Number features": "4653",
+                    "Number contigs": "22",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. Fl",
+                    "MD5": "5733f2f053547a939fa450f6f53741cd"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                129,
+                "Flavobacterium_sp._83__kb_g.241194_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "89bb0397a2ecf679aa934e9ebdb83466",
+                5433459,
+                {
+                    "GC content": "33.3034701447257",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp. 83",
+                    "Source ID": "1131812.3",
+                    "Size": "3790620",
+                    "Number features": "3399",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. 83",
+                    "MD5": "aa6312dabe253422a7e86274b0d7a39c"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                130,
+                "Flavobacterium_sp._EM1308__kb_g.241195_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "cda7b49791cc56c5fd7a6d8b79255bbf",
+                6252287,
+                {
+                    "GC content": "35.1043072509869",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Bacteroidetes; Flavobacteriia; Flavobacteriales; Flavobacteriaceae; Flavobacterium; Flavobacterium sp. EM1308",
+                    "Source ID": "1492737.3",
+                    "Size": "4321991",
+                    "Number features": "3685",
+                    "Number contigs": "215",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Flavobacterium sp. EM1308",
+                    "MD5": "eeb1c246ec759dd5a6781673baf49681"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                131,
+                "Variovorax_paradoxus_4MFCol3.1__kb_g.29969_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "880783e4591f46c255f6e02b6cd341fa",
+                10622118,
+                {
+                    "GC content": "67.5226811460878",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Variovorax; Variovorax paradoxus 4MFCol3.1",
+                    "Source ID": "1150395.3",
+                    "Size": "7011330",
+                    "Number features": "6628",
+                    "Number contigs": "71",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Variovorax paradoxus 4MFCol3.1",
+                    "MD5": "04c95d8498a49f3da4814f6d720927ee"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                132,
+                "Delftia_acidovorans_CCUG_274B__kb_g.32373_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "6bacf52b606dba7c3dd3b229239b47aa",
+                10507190,
+                {
+                    "GC content": "66.6041508756676",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Delftia; Delftia acidovorans CCUG 274B",
+                    "Source ID": "883101.3",
+                    "Size": "6942246",
+                    "Number features": "6485",
+                    "Number contigs": "90",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Delftia acidovorans CCUG 274B",
+                    "MD5": "4dc955d65a62f3d24734d2d8f38a456f"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                133,
+                "Delftia_acidovorans_CCUG_15835__kb_g.32372_",
+                "KBaseGenomes.Genome-8.0",
+                "2020-02-05T18:01:21+0000",
+                2,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "ab5ead8ec2e6b41c8a9ddf14148bd4b6",
+                10339353,
+                {
+                    "GC content": "66.5854346468838",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Comamonadaceae; Delftia; Delftia acidovorans CCUG 15835",
+                    "Source ID": "883100.3",
+                    "Size": "6807250",
+                    "Number features": "6350",
+                    "Number contigs": "68",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Delftia acidovorans CCUG 15835",
+                    "MD5": "7feafc85d17dabbe55ac46f62a8c5009"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                134,
+                "CCESR16_species_tree_GenomeSet",
+                "KBaseSearch.GenomeSet-2.1",
+                "2020-02-05T18:01:21+0000",
+                3,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "c90a98a36d337b39ba626a762d300e3a",
+                3320,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                135,
+                "Sbicolor_v2.1",
+                "KBaseGenomes.Genome-8.2",
+                "2020-02-05T18:01:21+0000",
+                10,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "869ab4368950d0fbebe4ee810dc29dd2",
+                202586138,
+                {
+                    "Taxonomy": "cellular organisms; Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; Mesangiospermae; Liliopsida; Petrosaviidae; commelinids; Poales; Poaceae; PACMAD clade; Panicoideae; Andropogonodae; Andropogoneae; Sorghinae; Sorghum",
+                    "Size": "726616606",
+                    "url": "https://transfer.api.globusonline.org/v0.10/endpoint/78312867-6d04-11e5-ba46-22000b92c6ec/ls?path=By_Organism_Name//P/PhytozomeV11/",
+                    "Source": "PhytozomeV11",
+                    "Name": "Sorghum bicolor",
+                    "GC content": "0.42",
+                    "Genetic code": "1",
+                    "Version": "v2.1",
+                    "Source ID": "Sbicolor_v2.1",
+                    "Number features": "33032",
+                    "Number contigs": "1610",
+                    "Domain": "Eukaryota"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                139,
+                "Bin.001.fastaBin1_assembly",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "5121a434943f98ef9b3c82ea05357fa4",
+                13341,
+                {
+                    "GC content": "0.67061",
+                    "Size": "6873102",
+                    "N Contigs": "78",
+                    "MD5": "d4144bf9299a3111c21cfd0f96e25479"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                140,
+                "Bin.002.fasta_assembly",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "dc7bffd75741f8bd83635ad48518c5ff",
+                8929,
+                {
+                    "GC content": "0.3499",
+                    "Size": "4922248",
+                    "N Contigs": "51",
+                    "MD5": "112c262f339ebb8d82c37641aa1878bf"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                144,
+                "Narrative.1504710860060",
+                "KBaseNarrative.Narrative-4.0",
+                "2020-02-05T18:01:21+0000",
+                1,
+                "wjriehl",
+                54980,
+                "wjriehl:narrative_1580925681044",
+                "165cbc8c9e89e6c0fc6f207ae6303461",
+                174241,
+                {
+                    "creator": "janakakbase",
+                    "method.RAST_SDK/annotate_plant_transcripts/44dd19a28a24ec2fdd178f5bf9f80303050412af": "1",
+                    "method.kb_maxbin/run_maxbin2/cb01c12e327a089953f59f4085623d9046daa11a": "2",
+                    "method.ProkkaAnnotation/annotate_contigs/30eb4fb9e26c82dcf02d55c58beabf7fb5796332": "1",
+                    "jupyter.markdown": "20",
+                    "jupyter.code": "1",
+                    "data_dependencies": "[]",
+                    "method.GenomeProteomeComparison/compare_two_proteomes/51060a171c71d15a85ce9c6f36c28e3c9dbcb2f4": "1",
+                    "job_info": "{\"queue_time\": 0, \"running\": 0, \"completed\": 0, \"run_time\": 0, \"error\": 0}",
+                    "format": "ipynb",
+                    "description": "",
+                    "method.PangenomeOrthomcl/build_pangenome_with_orthomcl/fd6b156cb12dd66341002f18325d6869c2b19136": "1",
+                    "type": "KBaseNarrative.Narrative",
+                    "method.kb_Msuite/run_checkM_lineage_wf/4b0c3c462f1ccf0dcc30330e99fa2173d7907c7a": "4",
+                    "method.SpeciesTreeBuilder/insert_set_of_genomes_into_species_tree/3eeaaa02c0ec0b57a42cab029c093bf6e8138e6e": "1",
+                    "method.RAST_SDK/annotate_contigset/44dd19a28a24ec2fdd178f5bf9f80303050412af": "2",
+                    "is_temporary": "false",
+                    "method.SpeciesTreeBuilder/build_genome_set_from_tree/3eeaaa02c0ec0b57a42cab029c093bf6e8138e6e": "1",
+                    "method.MEGAHIT/run_megahit/833c6d8cceedbb67c4001133e347f71cab488572": "1",
+                    "name": "Metagenome Assembly, Binning, Quality Assessment, Genome Annotation and Comparative Genomics - Workshop @ICSB 2019-  RESET  Version - Copy",
+                    "method.MetagenomeUtils/extract_bins_as_assemblies/66c2d8b2b1baab8a3d81cca10068df455db4a321": "1",
+                    "method.kb_IDBA/run_idba_ud/6b53504432594986d85ad0895cd3b99cd3720be8": "1",
+                    "ws_name": "wjriehl:narrative_1580925681044"
+                }
+            ]
+        }
+    ]
+}
