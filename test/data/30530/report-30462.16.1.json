@@ -1,0 +1,89 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api//node/949cabd2-d0d7-4cf6-8486-f029db5dc0ea",
+                "description": null,
+                "handle": "KBH_1133884",
+                "label": "QUAST report",
+                "name": "report.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [
+            {
+                "description": "Assembled contigs",
+                "ref": "30462/14/1"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": "Velvet results saved to: jplfaria:narrative_1523236349247//kb/module/work/tmp/velvet_output_dir\nAssembly saved to: jplfaria:narrative_1523236349247/GW456_trim_Velvet.contigs\nAssembled into 234 contigs.\nAvg Length: 26102.9017094 bp.\nContig Length Distribution (# of contigs -- min to max basepairs):\n   143\t--\t508.0 to 22525.2 bp\n   40\t--\t22525.2 to 44542.4 bp\n   28\t--\t44542.4 to 66559.6 bp\n   10\t--\t66559.6 to 88576.8 bp\n   8\t--\t88576.8 to 110594.0 bp\n   4\t--\t110594.0 to 132611.2 bp\n   0\t--\t132611.2 to 154628.4 bp\n   0\t--\t154628.4 to 176645.6 bp\n   0\t--\t176645.6 to 198662.8 bp\n   1\t--\t198662.8 to 220680.0 bp\n"
+    },
+    "info": [
+        16,
+        "kb_velvet_report_9be6cebd-237d-40d0-b43c-09c2d03fa465",
+        "KBaseReport.Report-2.0",
+        "2018-04-09T01:33:00+0000",
+        1,
+        "jplfaria",
+        30462,
+        "jplfaria:narrative_1523236349247",
+        "348edccac7c1812b12bf78eddc76362a",
+        1049,
+        {
+            "Size(characters)": "613",
+            "Objects Created": "1"
+        }
+    ],
+    "path": [
+        "30462/16/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create_extended_report",
+            "method_params": [
+                {
+                    "objects_created": [
+                        {
+                            "ref": "jplfaria:narrative_1523236349247/GW456_trim_Velvet.contigs",
+                            "description": "Assembled contigs"
+                        }
+                    ],
+                    "workspace_name": "jplfaria:narrative_1523236349247",
+                    "report_object_name": "kb_velvet_report_9be6cebd-237d-40d0-b43c-09c2d03fa465",
+                    "direct_html_link_index": 0,
+                    "html_links": [
+                        {
+                            "shock_id": "949cabd2-d0d7-4cf6-8486-f029db5dc0ea",
+                            "label": "QUAST report",
+                            "name": "report.html"
+                        }
+                    ],
+                    "message": "Velvet results saved to: jplfaria:narrative_1523236349247//kb/module/work/tmp/velvet_output_dir\nAssembly saved to: jplfaria:narrative_1523236349247/GW456_trim_Velvet.contigs\nAssembled into 234 contigs.\nAvg Length: 26102.9017094 bp.\nContig Length Distribution (# of contigs -- min to max basepairs):\n   143\t--\t508.0 to 22525.2 bp\n   40\t--\t22525.2 to 44542.4 bp\n   28\t--\t44542.4 to 66559.6 bp\n   10\t--\t66559.6 to 88576.8 bp\n   8\t--\t88576.8 to 110594.0 bp\n   4\t--\t110594.0 to 132611.2 bp\n   0\t--\t132611.2 to 154628.4 bp\n   0\t--\t154628.4 to 176645.6 bp\n   0\t--\t176645.6 to 198662.8 bp\n   1\t--\t198662.8 to 220680.0 bp\n"
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30462,
+    "created": "2018-04-09T01:33:00+0000",
+    "epoch": 1523237580131,
+    "refs": [
+        "30462/14/1"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_1133884"
+        ]
+    }
+}

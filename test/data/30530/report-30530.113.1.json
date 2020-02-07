@@ -1,0 +1,76 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api//node/8526ef91-d0f5-49e8-8908-27413fe39c1f",
+                "description": null,
+                "handle": "KBH_1152715",
+                "label": "QUAST report",
+                "name": "report.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., \"# contigs (>= 0 bp)\" and \"Total length (>= 0 bp)\" include all contigs).\nSuggestion: assemblies GW456A_Velvet.contigs, GW456_trim_Velvet.contigs, GW456A_SPAdes.contigs, GW456_trim_SPAdes.contigs contain continuous fragments of N's of length >= 10 bp. You may consider rerunning QUAST using --scaffolds (-s) option!\n\nAssembly                      GW456A_Velvet.contigs  GW456_trim_Velvet.contigs  GW456A_SPAdes.contigs  GW456_trim_SPAdes.contigs  GW456A_MEGAHIT.contigs  GW456_trim_MEGAHIT.contigs\n# contigs (>= 0 bp)           260                    234                        84                     84                         103                     104                       \n# contigs (>= 1000 bp)        222                    209                        79                     80                         103                     104                       \n# contigs (>= 10000 bp)       140                    137                        64                     60                         85                      86                        \n# contigs (>= 100000 bp)      7                      7                          22                     21                         19                      18                        \n# contigs (>= 1000000 bp)     0                      0                          0                      0                          0                       0                         \nTotal length (>= 0 bp)        6131469                6108079                    6252703                6251530                    6226533                 6223993                   \nTotal length (>= 1000 bp)     6105163                6090344                    6249532                6249067                    6226533                 6223993                   \nTotal length (>= 10000 bp)    5757948                5805427                    6197236                6172954                    6131358                 6134044                   \nTotal length (>= 100000 bp)   891736                 917592                     4232505                4226133                    3089308                 2985090                   \nTotal length (>= 1000000 bp)  0                      0                          0                      0                          0                       0                         \n# contigs                     260                    234                        84                     84                         103                     104                       \nLargest contig                196341                 220680                     385273                 528913                     307438                  446416                    \nTotal length                  6131469                6108079                    6252703                6251530                    6226533                 6223993                   \nGC (%)                        62.86                  62.89                      62.93                  62.93                      62.93                   62.94                     \nN50                           53521                  54269                      131421                 131421                     96269                   96269                     \nN75                           27258                  30807                      75993                  84750                      60034                   59506                     \nL50                           36                     37                         13                     12                         20                      20                        \nL75                           77                     74                         28                     26                         40                      40                        \n# N's per 100 kbp             653.55                 588.89                     12.67                  6.03                       0.00                    0.00                      \n"
+    },
+    "info": [
+        113,
+        "kb_quast_report_1906a28f-7e56-45cb-9b2c-38d184830b6a",
+        "KBaseReport.Report-2.0",
+        "2018-04-10T18:54:48+0000",
+        1,
+        "jplfaria",
+        30530,
+        "jplfaria:narrative_1523380297505",
+        "cd4e3ffb0902b04211822a7eccdb6ce3",
+        4395,
+        {
+            "Size(characters)": "4021",
+            "Objects Created": "0"
+        }
+    ],
+    "path": [
+        "30530/113/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create_extended_report",
+            "method_params": [
+                {
+                    "report_object_name": "kb_quast_report_1906a28f-7e56-45cb-9b2c-38d184830b6a",
+                    "message": "All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., \"# contigs (>= 0 bp)\" and \"Total length (>= 0 bp)\" include all contigs).\nSuggestion: assemblies GW456A_Velvet.contigs, GW456_trim_Velvet.contigs, GW456A_SPAdes.contigs, GW456_trim_SPAdes.contigs contain continuous fragments of N's of length >= 10 bp. You may consider rerunning QUAST using --scaffolds (-s) option!\n\nAssembly                      GW456A_Velvet.contigs  GW456_trim_Velvet.contigs  GW456A_SPAdes.contigs  GW456_trim_SPAdes.contigs  GW456A_MEGAHIT.contigs  GW456_trim_MEGAHIT.contigs\n# contigs (>= 0 bp)           260                    234                        84                     84                         103                     104                       \n# contigs (>= 1000 bp)        222                    209                        79                     80                         103                     104                       \n# contigs (>= 10000 bp)       140                    137                        64                     60                         85                      86                        \n# contigs (>= 100000 bp)      7                      7                          22                     21                         19                      18                        \n# contigs (>= 1000000 bp)     0                      0                          0                      0                          0                       0                         \nTotal length (>= 0 bp)        6131469                6108079                    6252703                6251530                    6226533                 6223993                   \nTotal length (>= 1000 bp)     6105163                6090344                    6249532                6249067                    6226533                 6223993                   \nTotal length (>= 10000 bp)    5757948                5805427                    6197236                6172954                    6131358                 6134044                   \nTotal length (>= 100000 bp)   891736                 917592                     4232505                4226133                    3089308                 2985090                   \nTotal length (>= 1000000 bp)  0                      0                          0                      0                          0                       0                         \n# contigs                     260                    234                        84                     84                         103                     104                       \nLargest contig                196341                 220680                     385273                 528913                     307438                  446416                    \nTotal length                  6131469                6108079                    6252703                6251530                    6226533                 6223993                   \nGC (%)                        62.86                  62.89                      62.93                  62.93                      62.93                   62.94                     \nN50                           53521                  54269                      131421                 131421                     96269                   96269                     \nN75                           27258                  30807                      75993                  84750                      60034                   59506                     \nL50                           36                     37                         13                     12                         20                      20                        \nL75                           77                     74                         28                     26                         40                      40                        \n# N's per 100 kbp             653.55                 588.89                     12.67                  6.03                       0.00                    0.00                      \n",
+                    "workspace_name": "jplfaria:narrative_1523380297505",
+                    "html_links": [
+                        {
+                            "name": "report.html",
+                            "shock_id": "8526ef91-d0f5-49e8-8908-27413fe39c1f",
+                            "label": "QUAST report"
+                        }
+                    ],
+                    "direct_html_link_index": 0
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30530,
+    "created": "2018-04-10T18:54:48+0000",
+    "epoch": 1523386488743,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_1152715"
+        ]
+    }
+}

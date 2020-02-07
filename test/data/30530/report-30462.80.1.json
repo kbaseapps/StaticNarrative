@@ -1,0 +1,137 @@
+{
+    "data": {
+        "direct_html": "",
+        "direct_html_link_index": 0,
+        "file_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api//node/bf235940-2088-47a8-853a-de8d3840305f",
+                "description": null,
+                "handle": "KBH_1144657",
+                "label": "Pangenome Circle Plot PNG",
+                "name": "pan_circle_plot.png"
+            },
+            {
+                "URL": "https://kbase.us/services/shock-api//node/a7244f77-82bb-4c4e-99a1-ca183a4ec25e",
+                "description": null,
+                "handle": "KBH_1144660",
+                "label": "Pangenome Circle Plot PDF",
+                "name": "pan_circle_plot.pdf"
+            }
+        ],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api//node/1545bde3-43e9-42d8-ad53-92474d0325aa",
+                "description": null,
+                "handle": "KBH_1144663",
+                "label": "Pangenome Circle Plot Report",
+                "name": "pan_circle_plot_report.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [
+            {
+                "description": "janthinobacterium_10_closest_pangenome.base_genome-GW456A_Prokka_genome singleton pangenome features",
+                "ref": "30462/77/1"
+            },
+            {
+                "description": "janthinobacterium_10_closest_pangenome.base_genome-GW456A_Prokka_genome non-core pangenome features",
+                "ref": "30462/78/1"
+            },
+            {
+                "description": "janthinobacterium_10_closest_pangenome.base_genome-GW456A_Prokka_genome core pangenome features",
+                "ref": "30462/79/1"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": ""
+    },
+    "info": [
+        80,
+        "kb_phylogenomics_report_a36e9149-0784-4da8-8609-5101638e81e5",
+        "KBaseReport.Report-2.0",
+        "2018-04-10T01:18:58+0000",
+        1,
+        "jplfaria",
+        30462,
+        "jplfaria:narrative_1523236349247",
+        "20b9cac3baf777f197d199c3970a74b8",
+        1175,
+        {
+            "Size(characters)": "0",
+            "Objects Created": "3"
+        }
+    ],
+    "path": [
+        "30462/80/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create_extended_report",
+            "method_params": [
+                {
+                    "file_links": [
+                        {
+                            "label": "Pangenome Circle Plot PNG",
+                            "shock_id": "bf235940-2088-47a8-853a-de8d3840305f",
+                            "name": "pan_circle_plot.png"
+                        },
+                        {
+                            "label": "Pangenome Circle Plot PDF",
+                            "shock_id": "a7244f77-82bb-4c4e-99a1-ca183a4ec25e",
+                            "name": "pan_circle_plot.pdf"
+                        }
+                    ],
+                    "direct_html": "",
+                    "report_object_name": "kb_phylogenomics_report_a36e9149-0784-4da8-8609-5101638e81e5",
+                    "objects_created": [
+                        {
+                            "ref": "30462/77/1",
+                            "description": "janthinobacterium_10_closest_pangenome.base_genome-GW456A_Prokka_genome singleton pangenome features"
+                        },
+                        {
+                            "description": "janthinobacterium_10_closest_pangenome.base_genome-GW456A_Prokka_genome non-core pangenome features",
+                            "ref": "30462/78/1"
+                        },
+                        {
+                            "ref": "30462/79/1",
+                            "description": "janthinobacterium_10_closest_pangenome.base_genome-GW456A_Prokka_genome core pangenome features"
+                        }
+                    ],
+                    "message": "",
+                    "html_links": [
+                        {
+                            "label": "Pangenome Circle Plot Report",
+                            "name": "pan_circle_plot_report.html",
+                            "shock_id": "1545bde3-43e9-42d8-ad53-92474d0325aa"
+                        }
+                    ],
+                    "workspace_name": "jplfaria:narrative_1523236349247",
+                    "direct_html_link_index": 0
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30462,
+    "created": "2018-04-10T01:18:58+0000",
+    "epoch": 1523323138449,
+    "refs": [
+        "30462/79/1",
+        "30462/77/1",
+        "30462/78/1"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_1144660",
+            "KBH_1144663",
+            "KBH_1144657"
+        ]
+    }
+}

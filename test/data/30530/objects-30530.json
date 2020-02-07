@@ -1,0 +1,1374 @@
+{
+    "data": [
+        {
+            "object_info": [
+                2,
+                "GW456A_reads",
+                "KBaseFile.PairedEndLibrary-2.1",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "78abe95ad73a351d901a9a89aef678fd",
+                766,
+                {
+                    "qual_min": "2.0",
+                    "qual_mean": "35.7068",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "69681",
+                    "read_length_mean": "149.6386",
+                    "qual_stdev": "4.6886",
+                    "read_length_stdev": "1.9392",
+                    "qual_max": "39.0",
+                    "total_bases": "177475884",
+                    "single_genome": "1",
+                    "gc_content": "0.618847",
+                    "read_count": "1186030",
+                    "phred_type": "33"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                4,
+                "GW456A_trim_reads_paired",
+                "KBaseFile.PairedEndLibrary-2.1",
+                "2018-04-10T18:35:54+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "d27e9051cb193ede270655f01b0dcf6a",
+                765,
+                {
+                    "qual_min": "2.0",
+                    "qual_mean": "35.9332",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "60572",
+                    "read_length_mean": "144.9661",
+                    "qual_stdev": "4.227",
+                    "read_length_stdev": "17.7819",
+                    "qual_max": "39.0",
+                    "total_bases": "166576785",
+                    "single_genome": "1",
+                    "gc_content": "0.618698",
+                    "phred_type": "33",
+                    "read_count": "1149074"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                5,
+                "GW456A_trim_reads_unpaired_fwd",
+                "KBaseFile.SingleEndLibrary-2.1",
+                "2018-04-10T18:36:22+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "4d7109a7095f3f98e6ba722bdbefe6d5",
+                677,
+                {
+                    "qual_min": "2.0",
+                    "qual_mean": "35.2325",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "5191",
+                    "read_length_mean": "127.936",
+                    "qual_stdev": "5.1006",
+                    "read_length_stdev": "31.6289",
+                    "qual_max": "39.0",
+                    "total_bases": "2214700",
+                    "single_genome": "1",
+                    "gc_content": "0.60171",
+                    "phred_type": "33",
+                    "read_count": "17311"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                6,
+                "GW456A_trim_reads_unpaired_rev",
+                "KBaseFile.SingleEndLibrary-2.1",
+                "2018-04-10T18:36:49+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "0efd3276734d540d252b24b970a4fd0c",
+                674,
+                {
+                    "qual_min": "12.0",
+                    "qual_mean": "29.4236",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "18",
+                    "read_length_mean": "107.0675",
+                    "qual_stdev": "9.0528",
+                    "read_length_stdev": "42.4632",
+                    "qual_max": "39.0",
+                    "total_bases": "103106",
+                    "single_genome": "1",
+                    "gc_content": "0.584572",
+                    "phred_type": "33",
+                    "read_count": "963"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                9,
+                "GW456A_Velvet.contigs",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "8c466ebf2cba286ae36727ae7a1718a8",
+                62186,
+                {
+                    "GC content": "0.6245",
+                    "Size": "6131469",
+                    "N Contigs": "260",
+                    "MD5": "bf05b03311c36096fe375567f831d1fc"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                10,
+                "GW456A_MEGAHIT.contigs",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2018-04-10T18:49:58+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "fe219bcc038ccd0b42d72d3fd980f125",
+                18805,
+                {
+                    "GC content": "0.62931",
+                    "Size": "6226533",
+                    "N Contigs": "103",
+                    "MD5": "7ed15d90a9ce2df4f144939641f329f9"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                13,
+                "GW456_trim_MEGAHIT.contigs",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "97fec94b384ae05490419fa99990786b",
+                18982,
+                {
+                    "GC content": "0.62937",
+                    "Size": "6223993",
+                    "N Contigs": "104",
+                    "MD5": "949ce798d5147ab4a181afcbeac3cee5"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                14,
+                "GW456_trim_Velvet.contigs",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "8513e2716772100b4bbcc00e72bde280",
+                56190,
+                {
+                    "GC content": "0.62521",
+                    "Size": "6108079",
+                    "N Contigs": "234",
+                    "MD5": "7ea3f14de2d6ce3b6daf26bedeffc8f8"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                17,
+                "GW456A_SPAdes.contigs",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2018-04-10T18:56:01+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "8c75e46804031f23dade8a589d544b16",
+                19675,
+                {
+                    "GC content": "0.62924",
+                    "Size": "6252703",
+                    "N Contigs": "84",
+                    "MD5": "b16b4748b625e4edd09a9bc5498e417c"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                19,
+                "GW456_trim_SPAdes.contigs",
+                "KBaseGenomeAnnotations.Assembly-5.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "1b28738437cc6bfc032fc609feea026e",
+                19615,
+                {
+                    "GC content": "0.62927",
+                    "Size": "6251530",
+                    "N Contigs": "84",
+                    "MD5": "18b94625a00378450d8f1ab638e2c0d6"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                23,
+                "GW456A_RAST_genome",
+                "KBaseGenomes.Genome-8.2",
+                "2018-04-10T19:20:30+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "6e5654d455c3ea3579be0935c1a332ab",
+                17032222,
+                {
+                    "GC content": "0.629",
+                    "Genetic code": "11",
+                    "Close genomes": "30",
+                    "Source ID": "GW456A_RAST_genome",
+                    "Number features": "5898",
+                    "Number contigs": "84",
+                    "Domain": "B",
+                    "Source": "KBase",
+                    "MD5": "52b0e6113d5449076a66ea4fbb8c24fe",
+                    "Name": "Janthinobacterium sp. GW456A"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                25,
+                "GW456A_Prokka_genome",
+                "KBaseGenomes.Genome-8.2",
+                "2018-04-10T19:29:22+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "4a2e3af36a7f1789441000997cf13bdb",
+                15349551,
+                {
+                    "GC content": "0.62927",
+                    "Genetic code": "0",
+                    "Size": "6251530",
+                    "Number features": "5520",
+                    "Domain": "Bacteria",
+                    "Source": "PROKKA annotation pipeline",
+                    "Name": "Janthinobacterium sp. GW456A"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                27,
+                "Janthinobacterium_sp._Marseille__kb_g.1131_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "9426c386c704b9f221c2e3388813a6e6",
+                7492055,
+                {
+                    "GC content": "54.234181805442",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Janthinobacterium; Janthinobacterium sp. Marseille",
+                    "Source ID": "375286.7",
+                    "Size": "4110251",
+                    "Number features": "3780",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Janthinobacterium sp. Marseille",
+                    "MD5": "6b3996168e9c8f84a5dbe5f689a2469b"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                28,
+                "Massilia_alkalitolerans_DSM_17462__kb_g.206928_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "7b2954ba9431695a4c7ac6727bc4ee41",
+                8727918,
+                {
+                    "GC content": "65.3054154965692",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Massilia; Massilia alkalitolerans DSM 17462",
+                    "Source ID": "1111733.3",
+                    "Size": "6111314",
+                    "Number features": "5455",
+                    "Number contigs": "77",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Massilia alkalitolerans DSM 17462",
+                    "MD5": "57f8887e609b2912a93177fad32700be"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                29,
+                "Duganella_violaceinigra_DSM_15887__kb_g.207123_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:12+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "95c336c4ee464bc36efe006e73183ee6",
+                8817031,
+                {
+                    "GC content": "62.971636324314",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Duganella; Duganella violaceinigra",
+                    "Source ID": "1121480.5",
+                    "Size": "6103405",
+                    "Number features": "5600",
+                    "Number contigs": "48",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Duganella violaceinigra DSM 15887",
+                    "MD5": "3c051e5aabe9d87e312219eb3423745b"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                30,
+                "Herbaspirillum_huttiense_subsp._putei_IAM_1503201__kb_g.208285_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "d3dbf1374aa51c5e1336377366a2a717",
+                8093660,
+                {
+                    "GC content": "62.2759855235077",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Herbaspirillum; Herbaspirillum huttiense subsp. huttiense",
+                    "Source ID": "1235558.4",
+                    "Size": "5777919",
+                    "Number features": "5322",
+                    "Number contigs": "32",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Herbaspirillum huttiense subsp. putei IAM 1503201",
+                    "MD5": "dbbbf07858ed77cd20f1618f3b148d40"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                31,
+                "Herbaspirillum_sp._RV1423__kb_g.214952_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "e3818580d380ea509cc2bf7079774500",
+                8749777,
+                {
+                    "GC content": "59.2264129647767",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Herbaspirillum; Herbaspirillum sp. RV1423",
+                    "Source ID": "1443993.3",
+                    "Size": "6210859",
+                    "Number features": "5777",
+                    "Number contigs": "131",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Herbaspirillum sp. RV1423",
+                    "MD5": "580ff126876129cd8e99f89f0f5a761e"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                32,
+                "Janthinobacterium_lividum__kb_g.241316_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:12+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "4cfaf288b4716fd232e849b47dccf558",
+                9505469,
+                {
+                    "GC content": "62.7751261480239",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Janthinobacterium; Janthinobacterium lividum",
+                    "Source ID": "29581.5",
+                    "Size": "6212741",
+                    "Number features": "5636",
+                    "Number contigs": "44",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Janthinobacterium lividum",
+                    "MD5": "03202a3ae611a40706798c5b005b2763"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                33,
+                "Janthinobacterium_sp._RA13__kb_g.241317_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:12+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "35a3897ed1cbc9afecfeea1614a13953",
+                9317729,
+                {
+                    "GC content": "62.4666848770132",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Janthinobacterium; Janthinobacterium sp. RA13",
+                    "Source ID": "1502762.4",
+                    "Size": "6421258",
+                    "Number features": "5834",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Janthinobacterium sp. RA13",
+                    "MD5": "3eb6c22496f3cd8d51e590191829e2bb"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                34,
+                "Massilia_sp._9096__kb_g.241887_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "91c79455bc26ad838d25b4ef0d9a37af",
+                8122196,
+                {
+                    "GC content": "65.6951783066177",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Massilia; Massilia sp. 9096",
+                    "Source ID": "1500894.3",
+                    "Size": "5710276",
+                    "Number features": "5094",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Massilia sp. 9096",
+                    "MD5": "b0d008105c6d969a38fdb330a0a309b0"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                35,
+                "Massilia_sp._LC238__kb_g.241888_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:12+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "58e31ebb4b48b0e6f168a4d0b0433e6c",
+                8686290,
+                {
+                    "GC content": "65.2860245549154",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Massilia; Massilia sp. LC238",
+                    "Source ID": "1502852.3",
+                    "Size": "5799572",
+                    "Number features": "5180",
+                    "Number contigs": "83",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Massilia sp. LC238",
+                    "MD5": "5a40cd8810ba59ad58d43cef1b230d5f"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                36,
+                "Janthinobacterium_sp._PAMC_25724__kb_g.24302_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:13+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "9a729d3e4f0cda327054d4523ee56106",
+                7234759,
+                {
+                    "GC content": "60.60307830076",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Janthinobacterium; Janthinobacterium lividum PAMC 25724",
+                    "Source ID": "1112211.3",
+                    "Size": "4984958",
+                    "Number features": "4645",
+                    "Number contigs": "48",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Janthinobacterium sp. PAMC 25724",
+                    "MD5": "37c8bea244f4276999bf9f29602ac6ad"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                37,
+                "Janthinobacterium_agaricidamnosum_NBRC_102515___DSM_9628__kb_g.244976_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:13+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "53ac3f44df40c046c6fc75c7299ce844",
+                8644260,
+                {
+                    "GC content": "61.0479305685106",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Janthinobacterium; Janthinobacterium agaricidamnosum NBRC 102515 = DSM 9628",
+                    "Source ID": "1349767.4",
+                    "Size": "5949001",
+                    "Number features": "5256",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Janthinobacterium agaricidamnosum NBRC 102515 = DSM 9628",
+                    "MD5": "a71a0ee62c2d55042bfe89db2243e433"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                38,
+                "Herbaspirillum_sp._CF444__kb_g.24631_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "ad810030b37b7c6ffc77f18c69cb09ed",
+                8466316,
+                {
+                    "GC content": "59.74840260445",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Herbaspirillum; Herbaspirillum sp. CF444",
+                    "Source ID": "1144319.3",
+                    "Size": "5594732",
+                    "Number features": "5148",
+                    "Number contigs": "125",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Herbaspirillum sp. CF444",
+                    "MD5": "b2fabc58b9e9dafaa8a972853eca01a8"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                39,
+                "Herminiimonas_arsenicoxydans__kb_g.26090_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "357a31794f3504de0de5ef3fc1afd606",
+                5304717,
+                {
+                    "GC content": "54.2949274115901",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Herminiimonas; Herminiimonas arsenicoxydans",
+                    "Source ID": "204773.3",
+                    "Size": "3424307",
+                    "Number features": "3432",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Herminiimonas arsenicoxydans",
+                    "MD5": "f119cf05cdab100282577c5d139fec49"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                40,
+                "Massilia_timonae_CCUG_45783__kb_g.28038_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:13+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "27a735b907c8dc5071398f6280231ceb",
+                9093605,
+                {
+                    "GC content": "65.4303457869634",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Massilia; Massilia timonae CCUG 45783",
+                    "Source ID": "883126.3",
+                    "Size": "6038400",
+                    "Number features": "5377",
+                    "Number contigs": "76",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Massilia timonae CCUG 45783",
+                    "MD5": "f330d7ba54cefdbe4e19d32d152d0a7a"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                41,
+                "Janthinobacterium_sp._CG3__kb_g.29223_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:13+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "3571e0c55976988b9c0dd5f82fa95d39",
+                9057928,
+                {
+                    "GC content": "65.5360042518017",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Janthinobacterium; Janthinobacterium sp. CG3",
+                    "Source ID": "1075768.5",
+                    "Size": "6261816",
+                    "Number features": "5655",
+                    "Number contigs": "41",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Janthinobacterium sp. CG3",
+                    "MD5": "49b2c90e52f868cebe39c87e5a879d05"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                42,
+                "Massilia_niastensis_DSM_21313__kb_g.29636_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "9848121fe0bc417b0e879a5fb9795881",
+                9648494,
+                {
+                    "GC content": "66.2618693020371",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Massilia; Massilia niastensis DSM 21313",
+                    "Source ID": "1122215.3",
+                    "Size": "6590952",
+                    "Number features": "5920",
+                    "Number contigs": "143",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Massilia niastensis DSM 21313",
+                    "MD5": "fadced451e48a8153b6d5a3ab3ee6746"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                43,
+                "Janthinobacterium_sp._HH01__kb_g.31045_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:13+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "5520825074f1e082ce41571a3369e1fa",
+                10851641,
+                {
+                    "GC content": "64.2186978630363",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Janthinobacterium; Janthinobacterium sp. HH01",
+                    "Source ID": "1198452.4",
+                    "Size": "7114674",
+                    "Number features": "6194",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Janthinobacterium sp. HH01",
+                    "MD5": "53d8eb1025dd5529e33547607f122ea9"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                44,
+                "Duganella_zoogloeoides_ATCC_25935__kb_g.31514_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T19:25:13+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "4ad9c6e9157af7fa21068e442030d920",
+                9195986,
+                {
+                    "GC content": "63.687818788531",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Duganella; Duganella zoogloeoides ATCC 25935",
+                    "Source ID": "1261617.3",
+                    "Size": "6268654",
+                    "Number features": "5447",
+                    "Number contigs": "27",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Duganella zoogloeoides ATCC 25935",
+                    "MD5": "9018e91d88bde0d544ecb0d82f2400ee"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                45,
+                "Herbaspirillum_seropedicae_SmR1__kb_g.3247_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "3f3b4487abf1d9a88e3dec645f9316ba",
+                9406142,
+                {
+                    "GC content": "63.4045637859463",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Herbaspirillum; Herbaspirillum seropedicae SmR1",
+                    "Source ID": "757424.7",
+                    "Size": "5513887",
+                    "Number features": "4923",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Herbaspirillum seropedicae SmR1",
+                    "MD5": "ba74b38dd900b852b9f51b83a2bc69af"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                46,
+                "Herminiimonas_arsenicoxydans__kb_g.344_",
+                "KBaseGenomes.Genome-8.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "26b7504205f70158a68bd825c12efe88",
+                6303592,
+                {
+                    "GC content": "54.2949274115901",
+                    "Genetic code": "11",
+                    "Taxonomy": "Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales; Oxalobacteraceae; Herminiimonas; Herminiimonas arsenicoxydans",
+                    "Source ID": "204773.6",
+                    "Size": "3424307",
+                    "Number features": "3341",
+                    "Number contigs": "1",
+                    "Domain": "Bacteria",
+                    "Source": "KBase Central Store",
+                    "Name": "Herminiimonas arsenicoxydans",
+                    "MD5": "f119cf05cdab100282577c5d139fec49"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                47,
+                "janthinobacterium_isolates_species_tree",
+                "KBaseTrees.Tree-1.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "ea2ed9a8e8a8baac5450c86f92204b5e",
+                4128,
+                {
+                    "type": "SpeciesTree"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                48,
+                "janthinobacterium_close_genomes",
+                "KBaseSearch.GenomeSet-2.1",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "e5b1181f2b368443ad8e352ec4630cd2",
+                727,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                50,
+                "janthinobacterium_pangenome",
+                "KBaseGenomes.Pangenome-4.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "5b130f2143d9a52eb315de804cc4a1e4",
+                16926847,
+                {
+                    "Number orthologs": "33412",
+                    "Type": "kmer",
+                    "Number genomes": "21",
+                    "Name": "Janthinobacterium pangenome"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                52,
+                "domains_Janthinobacterium_lividum__kb_g.241316_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:37+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "b90fb8742791d3f720b845d91b150565",
+                2889411,
+                {
+                    "annotated_features": "10637",
+                    "annotated_domains": "4712"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                54,
+                "GW456A_Prokka_genome_domains",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "bfda346438741d51cc04741632227161",
+                4549409,
+                {
+                    "annotated_features": "17251",
+                    "annotated_domains": "4689"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                56,
+                "domains_Janthinobacterium_sp._HH01__kb_g.31045_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:37+0000",
+                3,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "09e38dd4499239e90ad10fe0e45ba2a5",
+                3101026,
+                {
+                    "annotated_features": "10774",
+                    "annotated_domains": "5149"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                58,
+                "domains_Herminiimonas_arsenicoxydans__kb_g.344_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "ed947160d0d1637fe9994e2406c5f5a2",
+                1527972,
+                {
+                    "annotated_features": "9037",
+                    "annotated_domains": "2779"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                60,
+                "domains_Herminiimonas_arsenicoxydans__kb_g.26090_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "065d7fab57b752e4cb9b47c4b0d79c2e",
+                1560901,
+                {
+                    "annotated_features": "9089",
+                    "annotated_domains": "2814"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                62,
+                "domains_Duganella_zoogloeoides_ATCC_25935__kb_g.31514_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:37+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "698222d70e65b880598f347925cbc710",
+                2623933,
+                {
+                    "annotated_features": "10517",
+                    "annotated_domains": "4559"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                64,
+                "janthinobacterium_10_closest_tree",
+                "KBaseTrees.Tree-1.0",
+                "2018-04-10T19:25:23+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "fd5833af7a602e6186afdeb0fb86164e",
+                2401,
+                {
+                    "type": "SpeciesTree"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                65,
+                "janthinobacterium_10_closest",
+                "KBaseSearch.GenomeSet-2.1",
+                "2018-04-10T19:25:31+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "8bff5aa4e6ff2b18343ecb8c25b48c07",
+                417,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                66,
+                "domains_Massilia_sp._9096__kb_g.241887_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "1ca765c745eca99a8811ee7e591296e7",
+                2430588,
+                {
+                    "annotated_features": "10194",
+                    "annotated_domains": "4159"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                68,
+                "janthinobacterium_pangenome_orthoMCL",
+                "KBaseGenomes.Pangenome-4.0",
+                "2018-04-10T17:11:37+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "7ebd71d38618e3cbf5cc83cb3077ed10",
+                6458209,
+                {
+                    "Number orthologs": "24070",
+                    "Type": "orthomcl",
+                    "Number genomes": "21",
+                    "Name": "janthinobacterium_pangenome_orthoMCL"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                70,
+                "domains_Massilia_sp._LC238__kb_g.241888_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:38+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "c71861bb3e74eaad12e662f159cf3198",
+                2482984,
+                {
+                    "annotated_features": "10253",
+                    "annotated_domains": "4243"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                72,
+                "janthinobacterium_10_closest_pangenome",
+                "KBaseGenomes.Pangenome-4.0",
+                "2018-04-10T17:11:38+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "9a0e3ce42c43b57b34326d71ad9ffa2b",
+                3801903,
+                {
+                    "Number orthologs": "15841",
+                    "Type": "orthomcl",
+                    "Number genomes": "11",
+                    "Name": "janthinobacterium_10_closest_pangenome"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                75,
+                "domains_Janthinobacterium_sp._CG3__kb_g.29223_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:38+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "46eff77fed32ec91ed84beed7bea8c65",
+                2822508,
+                {
+                    "annotated_features": "10496",
+                    "annotated_domains": "4581"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                77,
+                "janthinobacterium_10_closest_pangenome.base_genome-GW456A_Prokka_genome.singleton_pangenome.FeatureSet",
+                "KBaseCollections.FeatureSet-1.0",
+                "2018-04-10T17:11:38+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "2a60a2bd8108144d10ac8f6ebc195bea",
+                311033,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                78,
+                "janthinobacterium_10_closest_pangenome.base_genome-GW456A_Prokka_genome.non-core_pangenome.FeatureSet",
+                "KBaseCollections.FeatureSet-1.0",
+                "2018-04-10T17:11:38+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "1cae4b1db5abbb83ea3297c293b03b86",
+                1025027,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                79,
+                "janthinobacterium_10_closest_pangenome.base_genome-GW456A_Prokka_genome.core_pangenome.FeatureSet",
+                "KBaseCollections.FeatureSet-1.0",
+                "2018-04-10T17:11:38+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "66692104c6968c7227cd027dc5df5d60",
+                849197,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                81,
+                "janthinobacterium_pagenome_compar",
+                "KBaseGenomes.GenomeComparison-2.0",
+                "2018-04-10T17:11:38+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "f58f6c5c8b4ca7ca1c835aebc2e3c771",
+                11721417,
+                {
+                    "Core functions": "83",
+                    "Core families": "2023",
+                    "Number genomes": "11",
+                    "Name": "janthinobacterium_pagenome_compar"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                83,
+                "domains_Janthinobacterium_sp._PAMC_25724__kb_g.24302_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:38+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "51ad95ad88cf4456774e1a6e61b00392",
+                2195129,
+                {
+                    "annotated_features": "10020",
+                    "annotated_domains": "3734"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                87,
+                "domains_Massilia_timonae_CCUG_45783__kb_g.28038_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:38+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "aa5a077ed001d4de20b46edf39c86410",
+                2589900,
+                {
+                    "annotated_features": "10460",
+                    "annotated_domains": "4440"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                90,
+                "domains_Duganella_violaceinigra_DSM_15887__kb_g.207123_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:38+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "bf8de0edc553f8894bec918466352356",
+                2559275,
+                {
+                    "annotated_features": "10442",
+                    "annotated_domains": "4512"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                93,
+                "LoadFromWebReadsObject",
+                "KBaseFile.PairedEndLibrary-2.1",
+                "2018-04-10T18:23:07+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "722259eb4f9e4f810277d8c758132bf3",
+                749,
+                {
+                    "qual_min": "10.0",
+                    "qual_mean": "43.0493",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "792",
+                    "read_length_mean": "100.0",
+                    "qual_stdev": "10.545",
+                    "read_length_stdev": "0.0",
+                    "qual_max": "51.0",
+                    "total_bases": "2500000",
+                    "single_genome": "1",
+                    "gc_content": "0.679273",
+                    "phred_type": "33",
+                    "read_count": "25000"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                95,
+                "GW456_Reads",
+                "KBaseFile.PairedEndLibrary-2.1",
+                "2018-04-10T17:11:38+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "662d7b24261f0c009fa3716ec9982393",
+                767,
+                {
+                    "qual_min": "2.0",
+                    "qual_mean": "35.7068",
+                    "sequencing_tech": "Illumina",
+                    "number_of_duplicates": "69681",
+                    "read_length_mean": "149.6386",
+                    "qual_stdev": "4.6886",
+                    "read_length_stdev": "1.9392",
+                    "qual_max": "39.0",
+                    "total_bases": "177475884",
+                    "single_genome": "1",
+                    "gc_content": "0.618847",
+                    "phred_type": "33",
+                    "read_count": "1186030"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                98,
+                "domains_Janthinobacterium_agaricidamnosum_NBRC_102515___DSM_9628__kb_g.244976_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:38+0000",
+                2,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "67703ca03d31e857260ca33ce20d6369",
+                2656504,
+                {
+                    "annotated_features": "10269",
+                    "annotated_domains": "4318"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                101,
+                "domains_Janthinobacterium_sp._RA13__kb_g.241317_.DomainAnnotation",
+                "KBaseGeneFamilies.DomainAnnotation-2.0",
+                "2018-04-10T17:11:38+0000",
+                1,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "1ab484f7755c950af0324095c3dde490",
+                2877628,
+                {
+                    "annotated_features": "10672",
+                    "annotated_domains": "4777"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                107,
+                "Narrative.1523236349247",
+                "KBaseNarrative.Narrative-4.0",
+                "2018-04-10T19:22:51+0000",
+                25,
+                "jplfaria",
+                30530,
+                "jplfaria:narrative_1523380297505",
+                "8439bd205ece15507e260478ba406cfd",
+                414183,
+                {
+                    "job_info": "{\"queue_time\": 0, \"running\": 0, \"completed\": 0, \"run_time\": 0, \"error\": 0}",
+                    "description": "",
+                    "method.PangenomeOrthomcl/build_pangenome_with_orthomcl/fd6b156cb12dd66341002f18325d6869c2b19136": "1",
+                    "method.GenomeComparisonSDK/compare_genomes/4f5874f57e7c366a6d373200a76f0d5c3fe7a887": "1",
+                    "type": "KBaseNarrative.Narrative",
+                    "method.kb_phylogenomics/run_DomainAnnotation_Sets/aa81ae70e8e32dd7d9faa89bef19b12b4a3c3bae": "1",
+                    "is_temporary": "false",
+                    "method.MEGAHIT/run_megahit/833c6d8cceedbb67c4001133e347f71cab488572": "2",
+                    "method.kb_phylogenomics/view_tree/133b7b7c4179b5fb1b51bade70069a545bca91fc": "1",
+                    "method.kb_assembly_compare/run_contig_distribution_compare/39ac58cc7cf47afa017eb8d1318b0757658de2d8": "1",
+                    "method.kb_uploadmethods/load_paired_end_reads_from_URL/8ebb66e4f2c27bc4a9b7cddff7d7b0f27f4ee433": "1",
+                    "method.kb_trimmomatic/run_trimmomatic/09b94c39b2fab79962a8d978aa15a424342defe4": "1",
+                    "method.kb_quast/run_QUAST_app/cdb54192310bd25fd775e51ad7a6d1835ac96a32": "1",
+                    "method.kb_uploadmethods/import_fastq_sra_as_reads_from_staging/8ebb66e4f2c27bc4a9b7cddff7d7b0f27f4ee433": "2",
+                    "method.kb_phylogenomics/view_pan_circle_plot/aa81ae70e8e32dd7d9faa89bef19b12b4a3c3bae": "1",
+                    "method.kb_fastqc/runFastQC/0b89d71ea1c42fba94263fe3ac528bbddc5cb9ac": "3",
+                    "creator": "jplfaria",
+                    "method.ProkkaAnnotation/annotate_contigs/30eb4fb9e26c82dcf02d55c58beabf7fb5796332": "1",
+                    "jupyter.markdown": "21",
+                    "data_dependencies": "[]",
+                    "method.kb_uploadmethods/import_sra_as_reads_from_web/8ebb66e4f2c27bc4a9b7cddff7d7b0f27f4ee433": "1",
+                    "format": "ipynb",
+                    "method.kb_SPAdes/run_SPAdes/647a2c3367aba00ddbaaf51d064c949d097a260d": "2",
+                    "method.SpeciesTreeBuilder/insert_set_of_genomes_into_species_tree/3eeaaa02c0ec0b57a42cab029c093bf6e8138e6e": "1",
+                    "method.RAST_SDK/annotate_contigset/44dd19a28a24ec2fdd178f5bf9f80303050412af": "1",
+                    "method.Velvet/run_velvet/9b74f5ec3e4978d0ad5f28800429dbe28649e6c3": "2",
+                    "name": "Janthinobacterium FRC Isolate Analysis @ MBL - RESET",
+                    "method.kb_phylogenomics/view_fxn_profile_phylo/aa81ae70e8e32dd7d9faa89bef19b12b4a3c3bae": "1",
+                    "method.DomainAnnotation/annotate_domains_in_a_genome/4875183ff3284901e2a2c591830237b086e398d6": "1",
+                    "ws_name": "jplfaria:narrative_1523380297505"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": null,
+        "file_links": [],
+        "html_links": [],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "Import Finished\nImported Reads: 1\nReads Name: LoadFromWebReadsObject\nReads Info: \n \"qual_max\": \"51.0\", \n \"read_length_stdev\": \"0.0\", \n \"total_bases\": \"2500000\", \n \"qual_min\": \"10.0\", \n \"phred_type\": \"33\", \n \"read_count\": \"25000\", \n \"qual_mean\": \"43.0493\", \n \"read_length_mean\": \"100.0\", \n \"sequencing_tech\": \"Illumina\", \n \"qual_stdev\": \"10.545\", \n \"number_of_duplicates\": \"792\", \n \"gc_content\": \"0.679273\", \n \"single_genome\": \"1\"\n\n"
+    },
+    "info": [
+        108,
+        "kb_upload_mothods_report_64c20eaa-f410-43fb-8d5b-26cf6352952a",
+        "KBaseReport.Report-2.0",
+        "2018-04-10T18:23:13+0000",
+        1,
+        "jplfaria",
+        30530,
+        "jplfaria:narrative_1523380297505",
+        "748d55108912e99eb44983ee8b3456e1",
+        677,
+        {
+            "Size(characters)": "431",
+            "Objects Created": "0"
+        }
+    ],
+    "path": [
+        "30530/108/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create_extended_report",
+            "method_params": [
+                {
+                    "workspace_name": "jplfaria:narrative_1523380297505",
+                    "message": "Import Finished\nImported Reads: 1\nReads Name: LoadFromWebReadsObject\nReads Info: \n \"qual_max\": \"51.0\", \n \"read_length_stdev\": \"0.0\", \n \"total_bases\": \"2500000\", \n \"qual_min\": \"10.0\", \n \"phred_type\": \"33\", \n \"read_count\": \"25000\", \n \"qual_mean\": \"43.0493\", \n \"read_length_mean\": \"100.0\", \n \"sequencing_tech\": \"Illumina\", \n \"qual_stdev\": \"10.545\", \n \"number_of_duplicates\": \"792\", \n \"gc_content\": \"0.679273\", \n \"single_genome\": \"1\"\n\n",
+                    "report_object_name": "kb_upload_mothods_report_64c20eaa-f410-43fb-8d5b-26cf6352952a"
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30530,
+    "created": "2018-04-10T18:23:13+0000",
+    "epoch": 1523384593591,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

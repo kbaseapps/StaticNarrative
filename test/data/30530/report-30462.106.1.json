@@ -1,0 +1,79 @@
+{
+    "data": {
+        "direct_html": "",
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api//node/44273661-9bf8-4505-9edd-37b72b3cc2e5",
+                "description": null,
+                "handle": "KBH_1151446",
+                "label": "Functional Domain Profile report",
+                "name": "domain_profile_report.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": ""
+    },
+    "info": [
+        106,
+        "kb_phylogenomics_report_ec3d88eb-00f6-4bb3-9742-7f1a7ccac3e4",
+        "KBaseReport.Report-2.0",
+        "2018-04-10T16:46:51+0000",
+        1,
+        "jplfaria",
+        30462,
+        "jplfaria:narrative_1523236349247",
+        "9befcbe13f22d31ad93b7ec46abe87e9",
+        380,
+        {
+            "Size(characters)": "0",
+            "Objects Created": "0"
+        }
+    ],
+    "path": [
+        "30462/106/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create_extended_report",
+            "method_params": [
+                {
+                    "html_links": [
+                        {
+                            "name": "domain_profile_report.html",
+                            "shock_id": "44273661-9bf8-4505-9edd-37b72b3cc2e5",
+                            "label": "Functional Domain Profile report"
+                        }
+                    ],
+                    "direct_html": "",
+                    "report_object_name": "kb_phylogenomics_report_ec3d88eb-00f6-4bb3-9742-7f1a7ccac3e4",
+                    "workspace_name": "jplfaria:narrative_1523236349247",
+                    "message": "",
+                    "direct_html_link_index": 0,
+                    "file_links": [],
+                    "objects_created": []
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30462,
+    "created": "2018-04-10T16:46:51+0000",
+    "epoch": 1523378811532,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_1151446"
+        ]
+    }
+}

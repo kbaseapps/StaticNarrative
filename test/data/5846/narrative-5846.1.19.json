@@ -1,0 +1,1238 @@
+{
+    "data": {
+        "cells": [
+            {
+                "cell_type": "markdown",
+                "metadata": {
+                    "kbase": {
+                        "attributes": {
+                            "icon": "paragraph",
+                            "title": ""
+                        },
+                        "cellState": {
+                            "selected": true,
+                            "showTitle": false
+                        },
+                        "info": {
+                            "app": {
+                                "info": {
+                                    "categories": [
+                                        "featured_apps"
+                                    ],
+                                    "header": "<p>The Insert Genomes into Species Tree app enables a user to determine evolutionary relationships between organisms based on the differences in their genomic sequences by creating both a species tree and a genome set of closely related organisms. A set of reference alignments based on 49 highly conserved COG families is used to find the matching corresponding set of sequences in the seed genome. The sequences from the selected genome are then inserted into the reference alignments and the closest neighbors are extracted and concatenated, and a tree is rendered from them using FastTree (an approximate maximum likelihood method). After the tree is rendered, the set of neighboring genomes can be curated by adding or subtracting genomes as desired.</p>\n\n<p><a href=\"http://kbase.us/insert-genomes-into-species-tree-app/\" target=\"_blank\">Tutorial for Insert Genomes into Species Tree App</a></p>\n",
+                                    "id": "build_species_tree",
+                                    "name": "Insert Genomes into Species Tree",
+                                    "subtitle": "Determine evolutionary relationships between organisms by generating both a tree and genome set combining user-supplied genomes with closely related public genomes in KBase.\n",
+                                    "tooltip": "Determine evolutionary relationships between organisms by generating both a tree and genome set combining user-supplied genomes with closely related public genomes in KBase.\n",
+                                    "ver": "0.1.0"
+                                },
+                                "steps": [
+                                    {
+                                        "description": "Construct a species tree containing all supplied genomes \n",
+                                        "input_mapping": [],
+                                        "method_id": "insert_set_of_genomes_into_species_tree_generic",
+                                        "step_id": "step_1"
+                                    },
+                                    {
+                                        "description": "Build a new genome set containing all genomes included in the species tree\n",
+                                        "input_mapping": [
+                                            {
+                                                "from": "param2",
+                                                "is_from_input": 1,
+                                                "step_source": "step_1",
+                                                "to": "param0"
+                                            }
+                                        ],
+                                        "method_id": "build_genome_set_from_tree_generic",
+                                        "step_id": "step_2"
+                                    }
+                                ]
+                            },
+                            "stackTrace": [
+                                "INFO:biokbase.narrative.services.app_service.app_call:func.begin;params={'stepId':'step_1','methodId':'insert_set_of_genomes_into_species_tree_generic','values':[{'id':'param0','value':['MvFGP2_annotated','Mv9802_annotated'],{'stepId':'step_2','methodId':'build_genome_set_from_tree_generic','values':[{'id':'param0','value':'Microcoelus_tree'},{'id':'param1','value':'Microcoleus_set'}] severity=INFO\n",
+                                "INFO:biokbase.narrative.services.app_service.app_call:start app;severity=INFO jobid=id=njs:54eb8bd560b24c486355acd9\n",
+                                "INFO:biokbase.narrative.services.app_service.app_call:func.end;dur=0.99623799324 severity=INFO\n",
+                                [
+                                    "{\"app\": {\"steps\": [{\"service\": {\"method_name\": \"construct_species_tree\", \"service_name\": \"KBaseTrees\", \"service_url\": \"https://kbase.us/services/trees\"}, \"script\": {\"method_name\": \"\", \"service_name\": \"\", \"has_files\": 0}, \"input_values\": [{\"out_tree_id\": \"Microcoelus_tree\", \"out_workspace\": \"trent:1424722432331\", \"nearest_genome_count\": 50, \"new_genomes\": [\"trent:1424722432331/MvFGP2_annotated\", \"trent:1424722432331/Mv9802_annotated\"], \"use_ribosomal_s9_only\": 0}], \"step_id\": \"step_1\", \"type\": \"service\", \"is_long_running\": 1}, {\"service\": {\"method_name\": \"build_genome_set_from_tree\", \"service_name\": \"KBaseTrees\", \"service_url\": \"https://kbase.us/services/trees\"}, \"script\": {\"method_name\": \"\", \"service_name\": \"\", \"has_files\": 0}, \"input_values\": [{\"genomeset_ref\": \"trent:1424722432331/Microcoleus_set\", \"tree_ref\": \"trent:1424722432331/Microcoelus_tree\"}], \"step_id\": \"step_2\", \"type\": \"service\", \"is_long_running\": 0}], \"name\": \"build_species_tree\"}, \"app_state\": {\"start_timestamp\": 1424722901298, \"is_deleted\": 0, \"job_id\": \"54eb8bd560b24c486355acd9\", \"job_state\": \"queued\", \"step_outputs\": {}, \"step_errors\": {}}, \"job_id\": \"njs:54eb8bd560b24c486355acd9\"}"
+                                ]
+                            ],
+                            "type": "kb_app",
+                            "widget_state": [
+                                {
+                                    "state": {
+                                        "runningState": {
+                                            "appRunState": "input",
+                                            "runningStep": null,
+                                            "submittedText": "submitted on 15:21:40, 2/23/2015"
+                                        },
+                                        "step": {
+                                            "step_1": {
+                                                "inputState": {
+                                                    "param0": [
+                                                        "MvFGP2_annotated",
+                                                        "Mv9802_annotated"
+                                                    ],
+                                                    "param1": "50",
+                                                    "param2": "Microcoelus_tree"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "height": "500px",
+                                                        "jobID": "54eb8bd560b24c486355acda",
+                                                        "treeID": "Microcoelus_tree",
+                                                        "workspaceID": "trent:1424722432331"
+                                                    }
+                                                }
+                                            },
+                                            "step_2": {
+                                                "inputState": {
+                                                    "param0": "Microcoelus_tree",
+                                                    "param1": "Microcoleus_set"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "genomeSetName": "Microcoleus_set",
+                                                        "loadExisting": 1,
+                                                        "wsName": "trent:1424722432331"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "time": 1424726601676
+                                },
+                                {
+                                    "state": {
+                                        "runningState": {
+                                            "appRunState": "input",
+                                            "runningStep": null,
+                                            "submittedText": "submitted on 15:21:40, 2/23/2015"
+                                        },
+                                        "step": {
+                                            "step_1": {
+                                                "inputState": {
+                                                    "param0": [
+                                                        "MvFGP2_annotated",
+                                                        "Mv9802_annotated"
+                                                    ],
+                                                    "param1": "50",
+                                                    "param2": "Microcoelus_tree"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "height": "500px",
+                                                        "jobID": "54eb8bd560b24c486355acda",
+                                                        "treeID": "Microcoelus_tree",
+                                                        "workspaceID": "trent:1424722432331"
+                                                    }
+                                                }
+                                            },
+                                            "step_2": {
+                                                "inputState": {
+                                                    "param0": "Microcoelus_tree",
+                                                    "param1": "Microcoleus_set"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "genomeSetName": "Microcoleus_set",
+                                                        "loadExisting": 1,
+                                                        "wsName": "trent:1424722432331"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "time": 1424725627188
+                                }
+                            ]
+                        },
+                        "old_app": true
+                    }
+                },
+                "source": "<div style=\"border:1px solid #CECECE; padding: 5px\">\n    <div style=\"font-size: 120%; font-family: 'OxygenBold', Arial, sans-serif; color:#2e618d;\">Insert Genomes into Species Tree (multi-step app)</div>\n    <div style=\"font-family: 'OxygenBold', Arial, sans-serif;\">\n    Obsolete App!\n    </div>\n    Sorry, this app is obsolete and can no longer function. But don't worry! Any data objects that were produced when you ran this app have been saved.\n    <br>Please see the <a href=\"http://kbase.us/kbase-app-replacement/\">App Replacement page</a> for more information.\n    <br><br><b>Parameter settings you used:</b>\n    <ol>\n<li>insert_set_of_genomes_into_species_tree_generic<ul><li>param0 - ['MvFGP2_annotated', 'Mv9802_annotated']</li><li>param1 - 50</li><li>param2 - Microcoelus_tree</li></ul>\n<li>build_genome_set_from_tree_generic<ul><li>param0 - Microcoelus_tree</li><li>param1 - Microcoleus_set</li></ul>\n</ol>\n    <br><b>Suggested replacement app(s):</b><br>\n    The following replacement apps might help and are available in the Apps menu:<br><ol><li>insert_set_of_genomes_into_species_tree_generic<ul><li>No suggestions found</li></ul></li><li>build_genome_set_from_tree_generic<ul><li>No suggestions found</li></ul></li></ol>\n</div>"
+            },
+            {
+                "cell_type": "markdown",
+                "metadata": {
+                    "kbase": {
+                        "attributes": {
+                            "icon": "paragraph",
+                            "title": ""
+                        },
+                        "cellState": {
+                            "showTitle": false
+                        }
+                    }
+                },
+                "source": "<div style=\"border:1px solid #CECECE; padding: 5px\">\n    <div style=\"font-size: 120%; font-family: 'OxygenBold', Arial, sans-serif; color:#2e618d;\">Compare Two Proteomes</div>\n    <div style=\"font-family: 'OxygenBold', Arial, sans-serif;\">\n    Obsolete App!\n    </div>\n    Sorry, this app is obsolete and can no longer function. But don't worry! Any data objects that were produced when you ran this app have been saved.\n    <br>Please see the <a href=\"http://kbase.us/kbase-app-replacement/\">App Replacement page</a> for more information.\n    <br><br><b>Parameter settings you used:</b>\n    <ul>\n<li>Genome1 ID - MvFGP2_annotated</li>\n<li>Genome2 ID - Mv9802_annotated</li>\n<li>Output Proteome Comparison ID - Microcoleus_proteome_comparison_FGP2v9802</li>\n<li>Max. e-value - 10e-10</li>\n<li>Minimum sub-optimal BBH ratio - 90</li>\n</ul>\n    <br><b>Suggested replacement app(s):</b><br>\n    Sorry, no suggested apps found.\n</div>"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 1,
+                "metadata": {
+                    "kb-cell": {
+                        "type": "function_output",
+                        "widget": "GenomeComparisonWidget",
+                        "widget_state": [
+                            {
+                                "state": {
+                                    "cmp_ref": "5846/56/1",
+                                    "dirI": 1,
+                                    "dirJ": 1,
+                                    "geneI": 573,
+                                    "geneJ": 6311,
+                                    "imgI": 0,
+                                    "imgJ": 0,
+                                    "scale": 7.224389539083948
+                                },
+                                "time": 1424726601677
+                            },
+                            {
+                                "state": {
+                                    "cmp_ref": "5846/56/1",
+                                    "dirI": 1,
+                                    "dirJ": 1,
+                                    "geneI": 573,
+                                    "geneJ": 6311,
+                                    "imgI": 0,
+                                    "imgJ": 0,
+                                    "scale": 7.224389539083948
+                                },
+                                "time": 1424725627189
+                            }
+                        ]
+                    },
+                    "kbase": {
+                        "attributes": {
+                            "lastLoaded": "Wed, 05 Feb 2020 16:31:27 GMT",
+                            "status": "new",
+                            "title": "Data Viewer"
+                        },
+                        "dataCell": {},
+                        "outputCell": {
+                            "user-settings": {
+                                "showCodeInputArea": false
+                            }
+                        },
+                        "type": "output"
+                    }
+                },
+                "outputs": [
+                    {
+                        "data": {
+                            "application/javascript": "\n element.html(\"<div id='kb-cell-out-e9d32aa3-efe8-4ad1-91d2-1291d4d746ab' class='kb-vis-area'></div>\");\n\n require([\"kbaseNarrativeOutputCell\"], function(kbaseNarrativeOutputCell) { new kbaseNarrativeOutputCell($(\"#kb-cell-out-e9d32aa3-efe8-4ad1-91d2-1291d4d746ab\"), {\"data\":{\"ws_name\":\"trent:1424722432331\",\"ws_id\":\"Microcoleus_proteome_comparison_FGP2v9802\",\"job_id\":\"54eb8cde60b24c486355acdc\"}, \"type\":\"method\", \"widget\":\"GenomeComparisonWidget\", \"cellId\":\"kb-cell-out-e9d32aa3-efe8-4ad1-91d2-1291d4d746ab\", \"title\":\"Compare Two Proteomes\", \"time\":1424723493819}); });",
+                            "text/plain": "<IPython.core.display.Javascript object>"
+                        },
+                        "execution_count": 1,
+                        "metadata": {},
+                        "output_type": "execute_result"
+                    }
+                ],
+                "source": "from IPython.display import Javascript\nJavascript(\"\"\"\n element.html(\"<div id='kb-cell-out-e9d32aa3-efe8-4ad1-91d2-1291d4d746ab' class='kb-vis-area'></div>\");\n\n require([\"kbaseNarrativeOutputCell\"], function(kbaseNarrativeOutputCell) { new kbaseNarrativeOutputCell($(\"#kb-cell-out-e9d32aa3-efe8-4ad1-91d2-1291d4d746ab\"), {\"data\":{\"ws_name\":\"trent:1424722432331\",\"ws_id\":\"Microcoleus_proteome_comparison_FGP2v9802\",\"job_id\":\"54eb8cde60b24c486355acdc\"}, \"type\":\"method\", \"widget\":\"GenomeComparisonWidget\", \"cellId\":\"kb-cell-out-e9d32aa3-efe8-4ad1-91d2-1291d4d746ab\", \"title\":\"Compare Two Proteomes\", \"time\":1424723493819}); });\"\"\")"
+            },
+            {
+                "cell_type": "markdown",
+                "metadata": {
+                    "kbase": {
+                        "attributes": {
+                            "icon": "paragraph",
+                            "title": ""
+                        },
+                        "cellState": {
+                            "showTitle": false
+                        }
+                    }
+                },
+                "source": "<div style=\"border:1px solid #CECECE; padding: 5px\">\n    <div style=\"font-size: 120%; font-family: 'OxygenBold', Arial, sans-serif; color:#2e618d;\">Compute Pangenome</div>\n    <div style=\"font-family: 'OxygenBold', Arial, sans-serif;\">\n    Obsolete App!\n    </div>\n    Sorry, this app is obsolete and can no longer function. But don't worry! Any data objects that were produced when you ran this app have been saved.\n    <br>Please see the <a href=\"http://kbase.us/kbase-app-replacement/\">App Replacement page</a> for more information.\n    <br><br><b>Parameter settings you used:</b>\n    <ul>\n<li>Genome(s) - None</li>\n<li>Genome Set - None</li>\n<li>Pangenome ID - </li>\n</ul>\n    <br><b>Suggested replacement app(s):</b><br>\n    Sorry, no suggested apps found.\n</div>"
+            },
+            {
+                "cell_type": "markdown",
+                "metadata": {
+                    "kbase": {
+                        "attributes": {
+                            "icon": "paragraph",
+                            "title": ""
+                        },
+                        "cellState": {
+                            "showTitle": false
+                        },
+                        "info": {
+                            "app": {
+                                "info": {
+                                    "categories": [
+                                        "featured_apps"
+                                    ],
+                                    "header": "<p>The Insert Genomes into Species Tree app enables a user to determine evolutionary relationships between organisms based on the differences in their genomic sequences by creating both a species tree and a genome set of closely related organisms. A set of reference alignments based on 49 highly conserved COG families is used to find the matching corresponding set of sequences in the seed genome. The sequences from the selected genome are then inserted into the reference alignments and the closest neighbors are extracted and concatenated, and a tree is rendered from them using FastTree (an approximate maximum likelihood method). After the tree is rendered, the set of neighboring genomes can be curated by adding or subtracting genomes as desired.</p>\n\n<p><a href=\"http://kbase.us/insert-genomes-into-species-tree-app/\" target=\"_blank\">Tutorial for Insert Genomes into Species Tree App</a></p>\n",
+                                    "id": "build_species_tree",
+                                    "name": "Insert Genomes into Species Tree",
+                                    "subtitle": "Determine evolutionary relationships between organisms by generating both a tree and genome set combining user-supplied genomes with closely related public genomes in KBase.\n",
+                                    "tooltip": "Determine evolutionary relationships between organisms by generating both a tree and genome set combining user-supplied genomes with closely related public genomes in KBase.\n",
+                                    "ver": "0.1.0"
+                                },
+                                "steps": [
+                                    {
+                                        "description": "Construct a species tree containing all supplied genomes \n",
+                                        "input_mapping": [],
+                                        "method_id": "insert_set_of_genomes_into_species_tree_generic",
+                                        "step_id": "step_1"
+                                    },
+                                    {
+                                        "description": "Build a new genome set containing all genomes included in the species tree\n",
+                                        "input_mapping": [
+                                            {
+                                                "from": "param2",
+                                                "is_from_input": 1,
+                                                "step_source": "step_1",
+                                                "to": "param0"
+                                            }
+                                        ],
+                                        "method_id": "build_genome_set_from_tree_generic",
+                                        "step_id": "step_2"
+                                    }
+                                ]
+                            },
+                            "stackTrace": [
+                                "INFO:biokbase.narrative.services.app_service.app_call:func.begin;params={'stepId':'step_1','methodId':'insert_set_of_genomes_into_species_tree_generic','values':[{'id':'param0','value':['MvFGP2_annotated','Mv9802_annotated'],{'stepId':'step_2','methodId':'build_genome_set_from_tree_generic','values':[{'id':'param0','value':'Mv_tree'},{'id':'param1','value':'Microcoleus_set10'}] severity=INFO\n",
+                                "INFO:biokbase.narrative.services.app_service.app_call:start app;severity=INFO jobid=id=njs:54eb8ef060b24c486355acde\n",
+                                "INFO:biokbase.narrative.services.app_service.app_call:func.end;dur=0.346074104309 severity=INFO\n",
+                                [
+                                    "{\"app\": {\"steps\": [{\"service\": {\"method_name\": \"construct_species_tree\", \"service_name\": \"KBaseTrees\", \"service_url\": \"https://kbase.us/services/trees\"}, \"script\": {\"method_name\": \"\", \"service_name\": \"\", \"has_files\": 0}, \"input_values\": [{\"out_tree_id\": \"Mv_tree\", \"out_workspace\": \"trent:1424722432331\", \"nearest_genome_count\": 10, \"new_genomes\": [\"trent:1424722432331/MvFGP2_annotated\", \"trent:1424722432331/Mv9802_annotated\"], \"use_ribosomal_s9_only\": 0}], \"step_id\": \"step_1\", \"type\": \"service\", \"is_long_running\": 1}, {\"service\": {\"method_name\": \"build_genome_set_from_tree\", \"service_name\": \"KBaseTrees\", \"service_url\": \"https://kbase.us/services/trees\"}, \"script\": {\"method_name\": \"\", \"service_name\": \"\", \"has_files\": 0}, \"input_values\": [{\"genomeset_ref\": \"trent:1424722432331/Microcoleus_set10\", \"tree_ref\": \"trent:1424722432331/Mv_tree\"}], \"step_id\": \"step_2\", \"type\": \"service\", \"is_long_running\": 0}], \"name\": \"build_species_tree\"}, \"app_state\": {\"start_timestamp\": 1424723696658, \"is_deleted\": 0, \"job_id\": \"54eb8ef060b24c486355acde\", \"job_state\": \"queued\", \"step_outputs\": {}, \"step_errors\": {}}, \"job_id\": \"njs:54eb8ef060b24c486355acde\"}"
+                                ]
+                            ],
+                            "type": "kb_app",
+                            "widget_state": [
+                                {
+                                    "state": {
+                                        "runningState": {
+                                            "appRunState": "input",
+                                            "runningStep": null,
+                                            "submittedText": "submitted on 15:34:56, 2/23/2015"
+                                        },
+                                        "step": {
+                                            "step_1": {
+                                                "inputState": {
+                                                    "param0": [
+                                                        "MvFGP2_annotated",
+                                                        "Mv9802_annotated"
+                                                    ],
+                                                    "param1": "10",
+                                                    "param2": "Mv_tree"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "height": "500px",
+                                                        "jobID": "54eb8ef060b24c486355acdf",
+                                                        "treeID": "Mv_tree",
+                                                        "workspaceID": "trent:1424722432331"
+                                                    }
+                                                }
+                                            },
+                                            "step_2": {
+                                                "inputState": {
+                                                    "param0": "Mv_tree",
+                                                    "param1": "Microcoleus_set10"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "genomeSetName": "Microcoleus_set10",
+                                                        "loadExisting": 1,
+                                                        "wsName": "trent:1424722432331"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "time": 1424726601677
+                                },
+                                {
+                                    "state": {
+                                        "runningState": {
+                                            "appRunState": "input",
+                                            "runningStep": null,
+                                            "submittedText": "submitted on 15:34:56, 2/23/2015"
+                                        },
+                                        "step": {
+                                            "step_1": {
+                                                "inputState": {
+                                                    "param0": [
+                                                        "MvFGP2_annotated",
+                                                        "Mv9802_annotated"
+                                                    ],
+                                                    "param1": "10",
+                                                    "param2": "Mv_tree"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "height": "500px",
+                                                        "jobID": "54eb8ef060b24c486355acdf",
+                                                        "treeID": "Mv_tree",
+                                                        "workspaceID": "trent:1424722432331"
+                                                    }
+                                                }
+                                            },
+                                            "step_2": {
+                                                "inputState": {
+                                                    "param0": "Mv_tree",
+                                                    "param1": "Microcoleus_set10"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "genomeSetName": "Microcoleus_set10",
+                                                        "loadExisting": 1,
+                                                        "wsName": "trent:1424722432331"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "time": 1424725627189
+                                }
+                            ]
+                        },
+                        "old_app": true
+                    }
+                },
+                "source": "<div style=\"border:1px solid #CECECE; padding: 5px\">\n    <div style=\"font-size: 120%; font-family: 'OxygenBold', Arial, sans-serif; color:#2e618d;\">Insert Genomes into Species Tree (multi-step app)</div>\n    <div style=\"font-family: 'OxygenBold', Arial, sans-serif;\">\n    Obsolete App!\n    </div>\n    Sorry, this app is obsolete and can no longer function. But don't worry! Any data objects that were produced when you ran this app have been saved.\n    <br>Please see the <a href=\"http://kbase.us/kbase-app-replacement/\">App Replacement page</a> for more information.\n    <br><br><b>Parameter settings you used:</b>\n    <ol>\n<li>insert_set_of_genomes_into_species_tree_generic<ul><li>param0 - ['MvFGP2_annotated', 'Mv9802_annotated']</li><li>param1 - 10</li><li>param2 - Mv_tree</li></ul>\n<li>build_genome_set_from_tree_generic<ul><li>param0 - Mv_tree</li><li>param1 - Microcoleus_set10</li></ul>\n</ol>\n    <br><b>Suggested replacement app(s):</b><br>\n    The following replacement apps might help and are available in the Apps menu:<br><ol><li>insert_set_of_genomes_into_species_tree_generic<ul><li>No suggestions found</li></ul></li><li>build_genome_set_from_tree_generic<ul><li>No suggestions found</li></ul></li></ol>\n</div>"
+            },
+            {
+                "cell_type": "markdown",
+                "metadata": {
+                    "kbase": {
+                        "attributes": {
+                            "icon": "paragraph",
+                            "title": ""
+                        },
+                        "cellState": {
+                            "showTitle": false
+                        },
+                        "info": {
+                            "app": {
+                                "info": {
+                                    "categories": [
+                                        "featured_apps"
+                                    ],
+                                    "header": "<p>The Compare Genomes from Pangenome app conducts a detailed comparison of genomes on the basis of protein sequence similarity and function. It begins by creating a pangenome for a set of closely related organisms. The pangenome is defined as the set of conserved and variable genes that are found within a set of related genomes. In many cases, this is a desirable analysis for understanding which genes were gained and lost between strains, or for inferring which genes may confer a phenotype to a given strain.</p>\n\n<p><a href=\"http://kbase.us/compare-genomes-from-pangenome-app/\" target=\"_blank\">Tutorial for Compare Genomes from Pangenome App</a></p>\n",
+                                    "id": "genome_comparison",
+                                    "name": "Compare Genomes from Pangenome",
+                                    "subtitle": "Conduct a detailed comparison of genomes on the basis of protein sequence similarity and function.\n",
+                                    "tooltip": "Conduct a detailed comparison of genomes on the basis of protein sequence similarity and function.\n",
+                                    "ver": "0.1.0"
+                                },
+                                "steps": [
+                                    {
+                                        "description": "additional instructions/details regarding the step with id step_1\n",
+                                        "input_mapping": [],
+                                        "method_id": "compute_pangenome",
+                                        "step_id": "step_1"
+                                    },
+                                    {
+                                        "description": "additional instructions/details regarding the step with id step_2\n",
+                                        "input_mapping": [
+                                            {
+                                                "from": "output_pangenome",
+                                                "is_from_input": 1,
+                                                "step_source": "step_1",
+                                                "to": "input_pangenome"
+                                            }
+                                        ],
+                                        "method_id": "genome_comparison_from_pangenome",
+                                        "step_id": "step_2"
+                                    }
+                                ]
+                            },
+                            "stackTrace": [
+                                "INFO:biokbase.narrative.services.app_service.app_call:func.begin;params={'stepId':'step_1','methodId':'compute_pangenome','values':[{'id':'input_genomeset','value':'Microcoleus_set10'},{'id':'input_genomes','value':null},{'id':'output_pangenome','value':'Mv_pangenome'}],{'stepId':'step_2','methodId':'genome_comparison_from_pangenome','values':[{'id':'input_pangenome','value':'Mv_pangenome'},{'id':'output_gencomp','value':'Mv_comparison'}] severity=INFO\n",
+                                "INFO:biokbase.narrative.services.app_service.app_call:start app;severity=INFO jobid=id=njs:970ee21f-01eb-41d0-91d5-f8aea33c3396\n",
+                                "INFO:biokbase.narrative.services.app_service.app_call:func.end;dur=1.68321108818 severity=INFO\n",
+                                [
+                                    "{\"app\": {\"steps\": [{\"parameters\": [{\"ws_object\": {\"workspace_name\": \"\", \"object_type\": \"\", \"is_input\": 0}, \"value\": \"Microcoleus_set10\", \"step_source\": \"\", \"label\": \"pangenome_set\", \"type\": \"string\", \"is_workspace_id\": 0}, {\"ws_object\": {\"workspace_name\": \"\", \"object_type\": \"\", \"is_input\": 0}, \"value\": \"genomes\", \"step_source\": \"\", \"label\": \"genome_workspaces\", \"type\": \"string\", \"is_workspace_id\": 0}, {\"ws_object\": {\"workspace_name\": \"\", \"object_type\": \"\", \"is_input\": 0}, \"value\": \"Mv_pangenome\", \"step_source\": \"\", \"label\": \"output_id\", \"type\": \"string\", \"is_workspace_id\": 0}, {\"ws_object\": {\"workspace_name\": \"\", \"object_type\": \"\", \"is_input\": 0}, \"value\": \"trent:1424722432331\", \"step_source\": \"\", \"label\": \"workspace\", \"type\": \"string\", \"is_workspace_id\": 0}], \"service\": {\"method_name\": \"build_pangenome\", \"service_name\": \"KBaseFBAModeling\", \"service_url\": \"\"}, \"script\": {\"method_name\": \"\", \"service_name\": \"\", \"has_files\": 0}, \"step_id\": \"step_1\", \"type\": \"service\", \"is_long_running\": 0}, {\"parameters\": [{\"ws_object\": {\"workspace_name\": \"\", \"object_type\": \"\", \"is_input\": 0}, \"value\": \"Mv_pangenome\", \"step_source\": \"\", \"label\": \"pangenome_id\", \"type\": \"string\", \"is_workspace_id\": 0}, {\"ws_object\": {\"workspace_name\": \"\", \"object_type\": \"\", \"is_input\": 0}, \"value\": \"Mv_comparison\", \"step_source\": \"\", \"label\": \"output_id\", \"type\": \"string\", \"is_workspace_id\": 0}, {\"ws_object\": {\"workspace_name\": \"\", \"object_type\": \"\", \"is_input\": 0}, \"value\": \"trent:1424722432331\", \"step_source\": \"\", \"label\": \"workspace\", \"type\": \"string\", \"is_workspace_id\": 0}, {\"ws_object\": {\"workspace_name\": \"\", \"object_type\": \"\", \"is_input\": 0}, \"value\": \"trent:1424722432331\", \"step_source\": \"\", \"label\": \"pangenome_ws\", \"type\": \"string\", \"is_workspace_id\": 0}], \"service\": {\"method_name\": \"compare_genomes\", \"service_name\": \"KBaseFBAModeling\", \"service_url\": \"\"}, \"script\": {\"method_name\": \"\", \"service_name\": \"\", \"has_files\": 0}, \"step_id\": \"step_2\", \"type\": \"service\", \"is_long_running\": 0}], \"name\": \"genome_comparison\"}, \"app_state\": {\"job_id\": \"970ee21f-01eb-41d0-91d5-f8aea33c3396\", \"complete_time\": \"\", \"job_state\": \"init\", \"running_step_id\": \"\", \"step_outputs\": {}, \"submit_time\": \"2015-02-23T14:37:25.513795725-06:00\", \"position\": 0, \"start_time\": \"\", \"step_errors\": {}}, \"job_id\": \"njs:970ee21f-01eb-41d0-91d5-f8aea33c3396\"}"
+                                ]
+                            ],
+                            "type": "kb_app",
+                            "widget_state": [
+                                {
+                                    "state": {
+                                        "runningState": {
+                                            "appRunState": "input",
+                                            "runningStep": null,
+                                            "submittedText": "submitted on 15:37:23, 2/23/2015"
+                                        },
+                                        "step": {
+                                            "step_1": {
+                                                "inputState": {
+                                                    "input_genomes": null,
+                                                    "input_genomeset": "Microcoleus_set10",
+                                                    "output_pangenome": "Mv_pangenome"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "name": "Mv_pangenome",
+                                                        "ws": "trent:1424722432331"
+                                                    }
+                                                }
+                                            },
+                                            "step_2": {
+                                                "inputState": {
+                                                    "input_pangenome": "Mv_pangenome",
+                                                    "output_gencomp": "Mv_comparison"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "id": "Mv_comparison",
+                                                        "ws": "trent:1424722432331"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "time": 1424726601678
+                                },
+                                {
+                                    "state": {
+                                        "runningState": {
+                                            "appRunState": "input",
+                                            "runningStep": null,
+                                            "submittedText": "submitted on 15:37:23, 2/23/2015"
+                                        },
+                                        "step": {
+                                            "step_1": {
+                                                "inputState": {
+                                                    "input_genomes": null,
+                                                    "input_genomeset": "Microcoleus_set10",
+                                                    "output_pangenome": "Mv_pangenome"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "name": "Mv_pangenome",
+                                                        "ws": "trent:1424722432331"
+                                                    }
+                                                }
+                                            },
+                                            "step_2": {
+                                                "inputState": {
+                                                    "input_pangenome": "Mv_pangenome",
+                                                    "output_gencomp": "Mv_comparison"
+                                                },
+                                                "outputState": {
+                                                    "output": {
+                                                        "id": "Mv_comparison",
+                                                        "ws": "trent:1424722432331"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "time": 1424725627190
+                                }
+                            ]
+                        },
+                        "old_app": true
+                    }
+                },
+                "source": "<div style=\"border:1px solid #CECECE; padding: 5px\">\n    <div style=\"font-size: 120%; font-family: 'OxygenBold', Arial, sans-serif; color:#2e618d;\">Compare Genomes from Pangenome (multi-step app)</div>\n    <div style=\"font-family: 'OxygenBold', Arial, sans-serif;\">\n    Obsolete App!\n    </div>\n    Sorry, this app is obsolete and can no longer function. But don't worry! Any data objects that were produced when you ran this app have been saved.\n    <br>Please see the <a href=\"http://kbase.us/kbase-app-replacement/\">App Replacement page</a> for more information.\n    <br><br><b>Parameter settings you used:</b>\n    <ol>\n<li>compute_pangenome<ul><li>input_genomes - None</li><li>input_genomeset - Microcoleus_set10</li><li>output_pangenome - Mv_pangenome</li></ul>\n<li>genome_comparison_from_pangenome<ul><li>input_pangenome - Mv_pangenome</li><li>output_gencomp - Mv_comparison</li></ul>\n</ol>\n    <br><b>Suggested replacement app(s):</b><br>\n    The following replacement apps might help and are available in the Apps menu:<br><ol><li>compute_pangenome<ul><li>No suggestions found</li></ul></li><li>genome_comparison_from_pangenome<ul><li>No suggestions found</li></ul></li></ol>\n</div>"
+            },
+            {
+                "cell_type": "markdown",
+                "metadata": {
+                    "kbase": {
+                        "attributes": {
+                            "icon": "paragraph",
+                            "title": "Initialize some clients"
+                        },
+                        "cellState": {
+                            "showTitle": false
+                        }
+                    }
+                },
+                "source": "Initialize some clients"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 1,
+                "metadata": {
+                    "kbase": {
+                        "codeCell": {
+                            "userSettings": {
+                                "showCodeInputArea": true
+                            }
+                        }
+                    }
+                },
+                "outputs": [],
+                "source": "from biokbase.workspace.client import Workspace\nimport os\n\nws = Workspace('https://kbase.us/services/ws')"
+            },
+            {
+                "cell_type": "markdown",
+                "metadata": {
+                    "kbase": {
+                        "attributes": {
+                            "icon": "paragraph",
+                            "title": "The below function will fetch either a single obje..."
+                        },
+                        "cellState": {
+                            "showTitle": false
+                        }
+                    }
+                },
+                "source": "The below function will fetch either a single object by its name (in the data panel), or a list of them. If a single object is requested, it just returns that object. If a list is requested, it returns a list.\n\nAny missing objects throw a ServerError exception"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 2,
+                "metadata": {
+                    "kbase": {
+                        "codeCell": {
+                            "userSettings": {
+                                "showCodeInputArea": true
+                            }
+                        }
+                    }
+                },
+                "outputs": [],
+                "source": "def get_data(obj_names):\n    \"\"\"\n    Fetch data from the workspace your narrative lives in.\n    \"\"\"\n    from biokbase.workspace.client import Workspace\n    import os\n    \n    ws = Workspace('https://kbase.us/services/ws')\n    ws_name = os.environ['KB_WORKSPACE_ID']\n    if type(obj_names) is list:\n        lookup_list = [{'workspace':ws_name, 'name':name} for name in obj_names]\n        return ws.get_objects(lookup_list)\n    elif type(obj_names) is str:\n        return ws.get_objects([{'workspace':ws_name, 'name':obj_names}])[0]\n    else:\n        raise TypeError('obj_names must be a list or str')"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 3,
+                "metadata": {
+                    "kbase": {
+                        "codeCell": {
+                            "userSettings": {
+                                "showCodeInputArea": true
+                            }
+                        }
+                    }
+                },
+                "outputs": [],
+                "source": "mv_pg = get_data('Mv_pangenome')"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 4,
+                "metadata": {
+                    "kbase": {
+                        "codeCell": {
+                            "userSettings": {
+                                "showCodeInputArea": true
+                            }
+                        }
+                    }
+                },
+                "outputs": [
+                    {
+                        "data": {
+                            "text/plain": "[59,\n u'Mv_pangenome',\n u'KBaseGenomes.Pangenome-3.1',\n u'2015-02-23T20:58:05+0000',\n 1,\n u'trent',\n 5846,\n u'trent:1424722432331',\n u'854fb6c1d5b99b9c1cc9af524c9c01f7',\n 14389425,\n {u'Name': u'Chlorogloeopsis pangenome',\n  u'Number genomes': u'12',\n  u'Number orthologs': u'37631',\n  u'Type': u'kmer'}]"
+                        },
+                        "execution_count": 4,
+                        "metadata": {},
+                        "output_type": "execute_result"
+                    }
+                ],
+                "source": "mv_pg['info']"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": null,
+                "metadata": {
+                    "kbase": {
+                        "codeCell": {
+                            "userSettings": {
+                                "showCodeInputArea": true
+                            }
+                        }
+                    }
+                },
+                "outputs": [],
+                "source": ""
+            }
+        ],
+        "metadata": {
+            "creator": "trent",
+            "data_dependencies": [],
+            "description": "",
+            "format": "ipynb",
+            "is_temporary": "false",
+            "job_ids": {
+                "apps": [
+                    {
+                        "$elem": "null",
+                        "id": "njs:54eb8bd560b24c486355acd9",
+                        "source": "kb-cell-0-0e1eb803-5090-4bd9-8593-51766fae0132",
+                        "state": {
+                            "is_deleted": 0,
+                            "job_id": "njs:54eb8bd560b24c486355acd9",
+                            "job_state": "completed",
+                            "original_app": {
+                                "name": "build_species_tree",
+                                "steps": [
+                                    {
+                                        "input_values": [
+                                            {
+                                                "nearest_genome_count": 50,
+                                                "new_genomes": [
+                                                    "trent:1424722432331/MvFGP2_annotated",
+                                                    "trent:1424722432331/Mv9802_annotated"
+                                                ],
+                                                "out_tree_id": "Microcoelus_tree",
+                                                "out_workspace": "trent:1424722432331",
+                                                "use_ribosomal_s9_only": 0
+                                            }
+                                        ],
+                                        "is_long_running": 1,
+                                        "script": {
+                                            "has_files": 0,
+                                            "method_name": "",
+                                            "service_name": ""
+                                        },
+                                        "service": {
+                                            "method_name": "construct_species_tree",
+                                            "service_name": "KBaseTrees",
+                                            "service_url": "https://kbase.us/services/trees"
+                                        },
+                                        "step_id": "step_1",
+                                        "type": "service"
+                                    },
+                                    {
+                                        "input_values": [
+                                            {
+                                                "genomeset_ref": "trent:1424722432331/Microcoleus_set",
+                                                "tree_ref": "trent:1424722432331/Microcoelus_tree"
+                                            }
+                                        ],
+                                        "is_long_running": 0,
+                                        "script": {
+                                            "has_files": 0,
+                                            "method_name": "",
+                                            "service_name": ""
+                                        },
+                                        "service": {
+                                            "method_name": "build_genome_set_from_tree",
+                                            "service_name": "KBaseTrees",
+                                            "service_url": "https://kbase.us/services/trees"
+                                        },
+                                        "step_id": "step_2",
+                                        "type": "service"
+                                    }
+                                ]
+                            },
+                            "start_timestamp": 1424722901298,
+                            "step_errors": {},
+                            "step_outputs": {
+                                "step_1": "\"54eb8bd560b24c486355acda\"",
+                                "step_2": "null"
+                            },
+                            "widget_outputs": {
+                                "step_1": {
+                                    "height": "500px",
+                                    "jobID": "54eb8bd560b24c486355acda",
+                                    "treeID": "Microcoelus_tree",
+                                    "workspaceID": "trent:1424722432331"
+                                },
+                                "step_2": {
+                                    "genomeSetName": "Microcoleus_set",
+                                    "loadExisting": 1,
+                                    "wsName": "trent:1424722432331"
+                                }
+                            }
+                        },
+                        "status": "completed",
+                        "target": "",
+                        "timestamp": "2015-02-23T20:21:41.324Z"
+                    },
+                    {
+                        "$elem": "null",
+                        "id": "njs:54eb8ef060b24c486355acde",
+                        "source": "kb-cell-4-f071f7d3-30eb-4fa5-a974-63f08c840ca4",
+                        "state": {
+                            "is_deleted": 0,
+                            "job_id": "njs:54eb8ef060b24c486355acde",
+                            "job_state": "completed",
+                            "original_app": {
+                                "name": "build_species_tree",
+                                "steps": [
+                                    {
+                                        "input_values": [
+                                            {
+                                                "nearest_genome_count": 10,
+                                                "new_genomes": [
+                                                    "trent:1424722432331/MvFGP2_annotated",
+                                                    "trent:1424722432331/Mv9802_annotated"
+                                                ],
+                                                "out_tree_id": "Mv_tree",
+                                                "out_workspace": "trent:1424722432331",
+                                                "use_ribosomal_s9_only": 0
+                                            }
+                                        ],
+                                        "is_long_running": 1,
+                                        "script": {
+                                            "has_files": 0,
+                                            "method_name": "",
+                                            "service_name": ""
+                                        },
+                                        "service": {
+                                            "method_name": "construct_species_tree",
+                                            "service_name": "KBaseTrees",
+                                            "service_url": "https://kbase.us/services/trees"
+                                        },
+                                        "step_id": "step_1",
+                                        "type": "service"
+                                    },
+                                    {
+                                        "input_values": [
+                                            {
+                                                "genomeset_ref": "trent:1424722432331/Microcoleus_set10",
+                                                "tree_ref": "trent:1424722432331/Mv_tree"
+                                            }
+                                        ],
+                                        "is_long_running": 0,
+                                        "script": {
+                                            "has_files": 0,
+                                            "method_name": "",
+                                            "service_name": ""
+                                        },
+                                        "service": {
+                                            "method_name": "build_genome_set_from_tree",
+                                            "service_name": "KBaseTrees",
+                                            "service_url": "https://kbase.us/services/trees"
+                                        },
+                                        "step_id": "step_2",
+                                        "type": "service"
+                                    }
+                                ]
+                            },
+                            "start_timestamp": 1424723696658,
+                            "step_errors": {},
+                            "step_outputs": {
+                                "step_1": "\"54eb8ef060b24c486355acdf\"",
+                                "step_2": "null"
+                            },
+                            "widget_outputs": {
+                                "step_1": {
+                                    "height": "500px",
+                                    "jobID": "54eb8ef060b24c486355acdf",
+                                    "treeID": "Mv_tree",
+                                    "workspaceID": "trent:1424722432331"
+                                },
+                                "step_2": {
+                                    "genomeSetName": "Microcoleus_set10",
+                                    "loadExisting": 1,
+                                    "wsName": "trent:1424722432331"
+                                }
+                            }
+                        },
+                        "status": "completed",
+                        "target": "",
+                        "timestamp": "2015-02-23T20:34:56.714Z"
+                    },
+                    {
+                        "$elem": "null",
+                        "id": "njs:970ee21f-01eb-41d0-91d5-f8aea33c3396",
+                        "source": "kb-cell-5-6b4a9934-a687-4085-87c9-b549ee4c76df",
+                        "state": {
+                            "complete_time": "2015-02-23T14:59:23.652-06:00",
+                            "job_id": "njs:970ee21f-01eb-41d0-91d5-f8aea33c3396",
+                            "job_state": "completed",
+                            "position": 0,
+                            "running_step_id": "",
+                            "start_time": "2015-02-23T14:37:26.014-06:00",
+                            "step_errors": {},
+                            "step_outputs": {
+                                "step_1": "Processing genome 0\nProcessing genome 1\nProcessing genome 2\nProcessing genome 3\nProcessing genome 4\nProcessing genome 5\nProcessing genome 6\nProcessing genome 7\nProcessing genome 8\nProcessing genome 9\nProcessing genome 10\nProcessing genome 11\nFinal score computing!\n[\"59\",\"Mv_pangenome\",\"KBaseGenomes.Pangenome-3.1\",\"2015-02-23T20:58:05+0000\",\"1\",\"trent\",\"5846\",\"trent:1424722432331\",\"854fb6c1d5b99b9c1cc9af524c9c01f7\",14389425,{\"Number orthologs\":\"37631\",\"Type\":\"kmer\",\"Number genomes\":\"12\",\"Name\":\"Chlorogloeopsis pangenome\"}]",
+                                "step_2": "5846/22/2\t0\n5846/17/2\t1\n5846/16/2\t2\n5846/34/2\t3\n5846/47/2\t4\n5846/41/2\t5\n5846/2/2\t6\n5846/46/2\t7\n5846/20/2\t8\n5846/14/2\t9\n5846/45/2\t10\n5846/3/2\t11\n[\"60\",\"Mv_comparison\",\"KBaseGenomes.GenomeComparison-1.1\",\"2015-02-23T20:59:21+0000\",\"1\",\"trent\",\"5846\",\"trent:1424722432331\",\"c3118f2494cc12f83b0b403060d1857d\",17230794,{\"Number genomes\":\"12\",\"Core functions\":\"369\",\"Core families\":\"1307\",\"Name\":\"Mv_comparison\"}]"
+                            },
+                            "submit_time": "2015-02-23T14:37:25.513-06:00",
+                            "widget_outputs": {
+                                "step_1": {
+                                    "name": "Mv_pangenome",
+                                    "ws": "trent:1424722432331"
+                                },
+                                "step_2": {
+                                    "id": "Mv_comparison",
+                                    "ws": "trent:1424722432331"
+                                }
+                            }
+                        },
+                        "status": "completed",
+                        "target": "",
+                        "timestamp": "2015-02-23T20:37:26.322Z"
+                    }
+                ],
+                "job_usage": {
+                    "queue_time": 501,
+                    "run_time": 1641638
+                },
+                "methods": [
+                    {
+                        "$elem": "null",
+                        "id": "54eb8cde60b24c486355acdc",
+                        "source": "kb-cell-1-ae2eaf8b-68aa-41a0-a2a6-24a78a8e2553",
+                        "state": {
+                            "job_id": "54eb8cde60b24c486355acdc",
+                            "job_state": "completed",
+                            "running_step_id": "",
+                            "step_errors": {},
+                            "step_outputs": {},
+                            "ujs_info": [
+                                "54eb8cde60b24c486355acdc",
+                                "trent",
+                                "complete",
+                                "2015-02-23T20:26:06+0000",
+                                "done",
+                                "2015-02-23T20:31:30+0000",
+                                null,
+                                null,
+                                "none",
+                                null,
+                                1,
+                                0,
+                                "Blast proteomes of two genomes",
+                                {
+                                    "workspaceids": [
+                                        "trent:1424722432331/Microcoleus_proteome_comparison_FGP2v9802"
+                                    ],
+                                    "workspaceurl": "https://kbase.us/services/ws/"
+                                }
+                            ],
+                            "widget_outputs": {
+                                "job_id": "54eb8cde60b24c486355acdc",
+                                "ws_id": "Microcoleus_proteome_comparison_FGP2v9802",
+                                "ws_name": "trent:1424722432331"
+                            }
+                        },
+                        "status": "completed",
+                        "target": "",
+                        "timestamp": "2015-02-23T20:26:07.186Z"
+                    }
+                ]
+            },
+            "kbase": {
+                "creator": "trent",
+                "job_ids": {
+                    "apps": [
+                        {
+                            "$elem": "null",
+                            "id": "njs:54eb8bd560b24c486355acd9",
+                            "source": "kb-cell-0-0e1eb803-5090-4bd9-8593-51766fae0132",
+                            "state": {
+                                "is_deleted": 0,
+                                "job_id": "njs:54eb8bd560b24c486355acd9",
+                                "job_state": "completed",
+                                "original_app": {
+                                    "name": "build_species_tree",
+                                    "steps": [
+                                        {
+                                            "input_values": [
+                                                {
+                                                    "nearest_genome_count": 50,
+                                                    "new_genomes": [
+                                                        "trent:1424722432331/MvFGP2_annotated",
+                                                        "trent:1424722432331/Mv9802_annotated"
+                                                    ],
+                                                    "out_tree_id": "Microcoelus_tree",
+                                                    "out_workspace": "trent:1424722432331",
+                                                    "use_ribosomal_s9_only": 0
+                                                }
+                                            ],
+                                            "is_long_running": 1,
+                                            "script": {
+                                                "has_files": 0,
+                                                "method_name": "",
+                                                "service_name": ""
+                                            },
+                                            "service": {
+                                                "method_name": "construct_species_tree",
+                                                "service_name": "KBaseTrees",
+                                                "service_url": "https://kbase.us/services/trees"
+                                            },
+                                            "step_id": "step_1",
+                                            "type": "service"
+                                        },
+                                        {
+                                            "input_values": [
+                                                {
+                                                    "genomeset_ref": "trent:1424722432331/Microcoleus_set",
+                                                    "tree_ref": "trent:1424722432331/Microcoelus_tree"
+                                                }
+                                            ],
+                                            "is_long_running": 0,
+                                            "script": {
+                                                "has_files": 0,
+                                                "method_name": "",
+                                                "service_name": ""
+                                            },
+                                            "service": {
+                                                "method_name": "build_genome_set_from_tree",
+                                                "service_name": "KBaseTrees",
+                                                "service_url": "https://kbase.us/services/trees"
+                                            },
+                                            "step_id": "step_2",
+                                            "type": "service"
+                                        }
+                                    ]
+                                },
+                                "start_timestamp": 1424722901298,
+                                "step_errors": {},
+                                "step_outputs": {
+                                    "step_1": "\"54eb8bd560b24c486355acda\"",
+                                    "step_2": "null"
+                                },
+                                "widget_outputs": {
+                                    "step_1": {
+                                        "height": "500px",
+                                        "jobID": "54eb8bd560b24c486355acda",
+                                        "treeID": "Microcoelus_tree",
+                                        "workspaceID": "trent:1424722432331"
+                                    },
+                                    "step_2": {
+                                        "genomeSetName": "Microcoleus_set",
+                                        "loadExisting": 1,
+                                        "wsName": "trent:1424722432331"
+                                    }
+                                }
+                            },
+                            "status": "completed",
+                            "target": "",
+                            "timestamp": "2015-02-23T20:21:41.324Z"
+                        },
+                        {
+                            "$elem": "null",
+                            "id": "njs:54eb8ef060b24c486355acde",
+                            "source": "kb-cell-4-f071f7d3-30eb-4fa5-a974-63f08c840ca4",
+                            "state": {
+                                "is_deleted": 0,
+                                "job_id": "njs:54eb8ef060b24c486355acde",
+                                "job_state": "completed",
+                                "original_app": {
+                                    "name": "build_species_tree",
+                                    "steps": [
+                                        {
+                                            "input_values": [
+                                                {
+                                                    "nearest_genome_count": 10,
+                                                    "new_genomes": [
+                                                        "trent:1424722432331/MvFGP2_annotated",
+                                                        "trent:1424722432331/Mv9802_annotated"
+                                                    ],
+                                                    "out_tree_id": "Mv_tree",
+                                                    "out_workspace": "trent:1424722432331",
+                                                    "use_ribosomal_s9_only": 0
+                                                }
+                                            ],
+                                            "is_long_running": 1,
+                                            "script": {
+                                                "has_files": 0,
+                                                "method_name": "",
+                                                "service_name": ""
+                                            },
+                                            "service": {
+                                                "method_name": "construct_species_tree",
+                                                "service_name": "KBaseTrees",
+                                                "service_url": "https://kbase.us/services/trees"
+                                            },
+                                            "step_id": "step_1",
+                                            "type": "service"
+                                        },
+                                        {
+                                            "input_values": [
+                                                {
+                                                    "genomeset_ref": "trent:1424722432331/Microcoleus_set10",
+                                                    "tree_ref": "trent:1424722432331/Mv_tree"
+                                                }
+                                            ],
+                                            "is_long_running": 0,
+                                            "script": {
+                                                "has_files": 0,
+                                                "method_name": "",
+                                                "service_name": ""
+                                            },
+                                            "service": {
+                                                "method_name": "build_genome_set_from_tree",
+                                                "service_name": "KBaseTrees",
+                                                "service_url": "https://kbase.us/services/trees"
+                                            },
+                                            "step_id": "step_2",
+                                            "type": "service"
+                                        }
+                                    ]
+                                },
+                                "start_timestamp": 1424723696658,
+                                "step_errors": {},
+                                "step_outputs": {
+                                    "step_1": "\"54eb8ef060b24c486355acdf\"",
+                                    "step_2": "null"
+                                },
+                                "widget_outputs": {
+                                    "step_1": {
+                                        "height": "500px",
+                                        "jobID": "54eb8ef060b24c486355acdf",
+                                        "treeID": "Mv_tree",
+                                        "workspaceID": "trent:1424722432331"
+                                    },
+                                    "step_2": {
+                                        "genomeSetName": "Microcoleus_set10",
+                                        "loadExisting": 1,
+                                        "wsName": "trent:1424722432331"
+                                    }
+                                }
+                            },
+                            "status": "completed",
+                            "target": "",
+                            "timestamp": "2015-02-23T20:34:56.714Z"
+                        },
+                        {
+                            "$elem": "null",
+                            "id": "njs:970ee21f-01eb-41d0-91d5-f8aea33c3396",
+                            "source": "kb-cell-5-6b4a9934-a687-4085-87c9-b549ee4c76df",
+                            "state": {
+                                "complete_time": "2015-02-23T14:59:23.652-06:00",
+                                "job_id": "njs:970ee21f-01eb-41d0-91d5-f8aea33c3396",
+                                "job_state": "completed",
+                                "position": 0,
+                                "running_step_id": "",
+                                "start_time": "2015-02-23T14:37:26.014-06:00",
+                                "step_errors": {},
+                                "step_outputs": {
+                                    "step_1": "Processing genome 0\nProcessing genome 1\nProcessing genome 2\nProcessing genome 3\nProcessing genome 4\nProcessing genome 5\nProcessing genome 6\nProcessing genome 7\nProcessing genome 8\nProcessing genome 9\nProcessing genome 10\nProcessing genome 11\nFinal score computing!\n[\"59\",\"Mv_pangenome\",\"KBaseGenomes.Pangenome-3.1\",\"2015-02-23T20:58:05+0000\",\"1\",\"trent\",\"5846\",\"trent:1424722432331\",\"854fb6c1d5b99b9c1cc9af524c9c01f7\",14389425,{\"Number orthologs\":\"37631\",\"Type\":\"kmer\",\"Number genomes\":\"12\",\"Name\":\"Chlorogloeopsis pangenome\"}]",
+                                    "step_2": "5846/22/2\t0\n5846/17/2\t1\n5846/16/2\t2\n5846/34/2\t3\n5846/47/2\t4\n5846/41/2\t5\n5846/2/2\t6\n5846/46/2\t7\n5846/20/2\t8\n5846/14/2\t9\n5846/45/2\t10\n5846/3/2\t11\n[\"60\",\"Mv_comparison\",\"KBaseGenomes.GenomeComparison-1.1\",\"2015-02-23T20:59:21+0000\",\"1\",\"trent\",\"5846\",\"trent:1424722432331\",\"c3118f2494cc12f83b0b403060d1857d\",17230794,{\"Number genomes\":\"12\",\"Core functions\":\"369\",\"Core families\":\"1307\",\"Name\":\"Mv_comparison\"}]"
+                                },
+                                "submit_time": "2015-02-23T14:37:25.513-06:00",
+                                "widget_outputs": {
+                                    "step_1": {
+                                        "name": "Mv_pangenome",
+                                        "ws": "trent:1424722432331"
+                                    },
+                                    "step_2": {
+                                        "id": "Mv_comparison",
+                                        "ws": "trent:1424722432331"
+                                    }
+                                }
+                            },
+                            "status": "completed",
+                            "target": "",
+                            "timestamp": "2015-02-23T20:37:26.322Z"
+                        }
+                    ],
+                    "job_usage": {
+                        "queue_time": 501,
+                        "run_time": 1641638
+                    },
+                    "methods": [
+                        {
+                            "$elem": "null",
+                            "id": "54eb8cde60b24c486355acdc",
+                            "source": "kb-cell-1-ae2eaf8b-68aa-41a0-a2a6-24a78a8e2553",
+                            "state": {
+                                "job_id": "54eb8cde60b24c486355acdc",
+                                "job_state": "completed",
+                                "running_step_id": "",
+                                "step_errors": {},
+                                "step_outputs": {},
+                                "ujs_info": [
+                                    "54eb8cde60b24c486355acdc",
+                                    "trent",
+                                    "complete",
+                                    "2015-02-23T20:26:06+0000",
+                                    "done",
+                                    "2015-02-23T20:31:30+0000",
+                                    null,
+                                    null,
+                                    "none",
+                                    null,
+                                    1,
+                                    0,
+                                    "Blast proteomes of two genomes",
+                                    {
+                                        "workspaceids": [
+                                            "trent:1424722432331/Microcoleus_proteome_comparison_FGP2v9802"
+                                        ],
+                                        "workspaceurl": "https://kbase.us/services/ws/"
+                                    }
+                                ],
+                                "widget_outputs": {
+                                    "job_id": "54eb8cde60b24c486355acdc",
+                                    "ws_id": "Microcoleus_proteome_comparison_FGP2v9802",
+                                    "ws_name": "trent:1424722432331"
+                                }
+                            },
+                            "status": "completed",
+                            "target": "",
+                            "timestamp": "2015-02-23T20:26:07.186Z"
+                        }
+                    ]
+                },
+                "name": "Microcoleus comparative genomics",
+                "ws_name": "trent:1424722432331"
+            },
+            "kernelspec": {
+                "display_name": "Python 3",
+                "language": "python",
+                "name": "python3"
+            },
+            "language_info": {
+                "codemirror_mode": {
+                    "name": "ipython",
+                    "version": 3
+                },
+                "file_extension": ".py",
+                "mimetype": "text/x-python",
+                "name": "python",
+                "nbconvert_exporter": "python",
+                "pygments_lexer": "ipython3",
+                "version": "3.6.9"
+            },
+            "name": "Microcoleus comparative genomics",
+            "type": "KBaseNarrative.Narrative",
+            "ws_name": "trent:1424722432331"
+        },
+        "nbformat": 4,
+        "nbformat_minor": 2
+    },
+    "info": [
+        1,
+        "Narrative.1424722432331",
+        "KBaseNarrative.Narrative-4.0",
+        "2020-02-05T17:59:13+0000",
+        19,
+        "wjriehl",
+        5846,
+        "trent:1424722432331",
+        "fb72a4a1050975fa3e41d115ee4a1ca1",
+        38648,
+        {
+            "viewer": "1",
+            "creator": "trent",
+            "data_dependencies": "[]",
+            "jupyter.markdown": "7",
+            "jupyter.code": "5",
+            "job_info": "{\"queue_time\": 501, \"run_time\": 1641638, \"running\": 0, \"completed\": 4, \"error\": 0}",
+            "format": "ipynb",
+            "description": "",
+            "type": "KBaseNarrative.Narrative",
+            "is_temporary": "false",
+            "name": "Microcoleus comparative genomics",
+            "ws_name": "trent:1424722432331"
+        }
+    ],
+    "path": [
+        "5846/1/19"
+    ],
+    "provenance": [
+        {
+            "service": "narrative",
+            "service_ver": "4.0.0",
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {},
+            "description": "Saved by KBase Narrative Interface"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 5846,
+    "created": "2020-02-05T17:59:13+0000",
+    "epoch": 1580925553429,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

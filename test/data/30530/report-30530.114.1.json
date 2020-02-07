@@ -1,0 +1,89 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api//node/5c9e4952-a747-4c7e-9536-cfdc5b20aa4d",
+                "description": null,
+                "handle": "KBH_1152763",
+                "label": "QUAST report",
+                "name": "report.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [
+            {
+                "description": "Assembled contigs",
+                "ref": "30530/17/2"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": "Assembly saved to: jplfaria:narrative_1523380297505/GW456A_SPAdes.contigs\nAssembled into 84 contigs.\nAvg Length: 74436.9404762 bp.\nContig Length Distribution (# of contigs -- min to max basepairs):\n   37\t--\t504.0 to 38980.9 bp\n   20\t--\t38980.9 to 77457.8 bp\n   13\t--\t77457.8 to 115934.7 bp\n   3\t--\t115934.7 to 154411.6 bp\n   3\t--\t154411.6 to 192888.5 bp\n   1\t--\t192888.5 to 231365.4 bp\n   0\t--\t231365.4 to 269842.3 bp\n   4\t--\t269842.3 to 308319.2 bp\n   1\t--\t308319.2 to 346796.1 bp\n   2\t--\t346796.1 to 385273.0 bp\n"
+    },
+    "info": [
+        114,
+        "kb_megahit_report_61dc23f8-2091-4628-8cd7-980e8b9f94b0",
+        "KBaseReport.Report-2.0",
+        "2018-04-10T18:56:55+0000",
+        1,
+        "jplfaria",
+        30530,
+        "jplfaria:narrative_1523380297505",
+        "c27c7c793b46ff9484105ebc67530a97",
+        949,
+        {
+            "Size(characters)": "514",
+            "Objects Created": "1"
+        }
+    ],
+    "path": [
+        "30530/114/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create_extended_report",
+            "method_params": [
+                {
+                    "report_object_name": "kb_megahit_report_61dc23f8-2091-4628-8cd7-980e8b9f94b0",
+                    "workspace_name": "jplfaria:narrative_1523380297505",
+                    "objects_created": [
+                        {
+                            "description": "Assembled contigs",
+                            "ref": "jplfaria:narrative_1523380297505/GW456A_SPAdes.contigs"
+                        }
+                    ],
+                    "html_links": [
+                        {
+                            "name": "report.html",
+                            "label": "QUAST report",
+                            "shock_id": "5c9e4952-a747-4c7e-9536-cfdc5b20aa4d"
+                        }
+                    ],
+                    "direct_html_link_index": 0,
+                    "message": "Assembly saved to: jplfaria:narrative_1523380297505/GW456A_SPAdes.contigs\nAssembled into 84 contigs.\nAvg Length: 74436.9404762 bp.\nContig Length Distribution (# of contigs -- min to max basepairs):\n   37\t--\t504.0 to 38980.9 bp\n   20\t--\t38980.9 to 77457.8 bp\n   13\t--\t77457.8 to 115934.7 bp\n   3\t--\t115934.7 to 154411.6 bp\n   3\t--\t154411.6 to 192888.5 bp\n   1\t--\t192888.5 to 231365.4 bp\n   0\t--\t231365.4 to 269842.3 bp\n   4\t--\t269842.3 to 308319.2 bp\n   1\t--\t308319.2 to 346796.1 bp\n   2\t--\t346796.1 to 385273.0 bp\n"
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30530,
+    "created": "2018-04-10T18:56:55+0000",
+    "epoch": 1523386615224,
+    "refs": [
+        "30530/17/2"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_1152763"
+        ]
+    }
+}

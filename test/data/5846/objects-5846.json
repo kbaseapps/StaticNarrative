@@ -1,0 +1,959 @@
+{
+    "data": [
+        {
+            "object_info": [
+                1,
+                "Narrative.1424722432331",
+                "KBaseNarrative.Narrative-4.0",
+                "2020-02-05T17:59:13+0000",
+                19,
+                "wjriehl",
+                5846,
+                "trent:1424722432331",
+                "fb72a4a1050975fa3e41d115ee4a1ca1",
+                38648,
+                {
+                    "viewer": "1",
+                    "creator": "trent",
+                    "data_dependencies": "[]",
+                    "jupyter.markdown": "7",
+                    "jupyter.code": "5",
+                    "job_info": "{\"queue_time\": 501, \"run_time\": 1641638, \"running\": 0, \"completed\": 4, \"error\": 0}",
+                    "format": "ipynb",
+                    "description": "",
+                    "type": "KBaseNarrative.Narrative",
+                    "is_temporary": "false",
+                    "name": "Microcoleus comparative genomics",
+                    "ws_name": "trent:1424722432331"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                2,
+                "Mv9802_annotated",
+                "KBaseGenomes.Genome-8.0",
+                "2015-02-23T20:19:42+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "6184b64f158115833b6ce6fa9c7cd6cd",
+                4854546,
+                {
+                    "Scientific name": "Microcoleus vaginatus PCC9802",
+                    "Taxonomy": "Bacteria",
+                    "Size": "6698929",
+                    "Source": "KBase",
+                    "Name": "Microcoleus vaginatus PCC9802",
+                    "GC content": "0.460352990754194",
+                    "Genetic code": "11",
+                    "Close genomes": "0",
+                    "Source ID": "kb|g.255027",
+                    "Number features": "6997",
+                    "Number contigs": "40",
+                    "Domain": "Bacteria",
+                    "MD5": "c689e3ee238c5c903d65be2c4f512544"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                3,
+                "MvFGP2_annotated",
+                "KBaseGenomes.Genome-8.0",
+                "2015-02-23T20:19:50+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "e4f9189a38f105c0771f4e27312237d7",
+                4829110,
+                {
+                    "Scientific name": "Microcoleus vaginatus FGP-2",
+                    "Taxonomy": "Bacteria",
+                    "Size": "6698929",
+                    "Source": "KBase",
+                    "Name": "Microcoleus vaginatus FGP-2",
+                    "GC content": "0.460352990754194",
+                    "Genetic code": "11",
+                    "Close genomes": "0",
+                    "Source ID": "kb|g.254830",
+                    "Number features": "6949",
+                    "Number contigs": "40",
+                    "Domain": "Bacteria",
+                    "MD5": "5e69a43b2050773f22689a29f99757d5"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                4,
+                "Microcoelus_tree",
+                "KBaseTrees.Tree-1.0",
+                "2015-02-23T20:23:18+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "4bfd9036fb2119ea342ecdd21754dcce",
+                8510,
+                {
+                    "type": "SpeciesTree"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                5,
+                "Microcoleus_chthonoplastes_PCC_7420",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "45faa6a7a7e611bda11859196e690321",
+                5643875,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                6,
+                "Cyanothece_sp._PCC_7425",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "32829580b774440e58a2a7676a756fcc",
+                5014473,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                7,
+                "Cyanothece_sp._PCC_8802",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "af7571917b3eaf7c535f608f3a29ba13",
+                4266738,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                8,
+                "Cyanothece_sp._PCC_8801",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "aeb4d58cf043fb007acb4f8d25be026e",
+                4298516,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                9,
+                "Cylindrospermopsis_raciborskii_CS_505",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "2e536e6fc2031a9a41ee28b50bccffe3",
+                3198273,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                10,
+                "Raphidiopsis_brookii_D9",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "ed25b18ff1d90ebd4600b22a32a0bf76",
+                2779253,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                11,
+                "_Nostoc_azollae__0708",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "e3409bb8adc467fa12fbf925b59ed19a",
+                4278339,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                12,
+                "Trichodesmium_erythraeum_IMS101",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "ade8c63d48d63fd95987bc58767629d9",
+                5550258,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                13,
+                "Calothrix_sp._PCC_6303",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "ae7181873b7eda6a691aeeb344b77679",
+                4278077,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                14,
+                "Crinalium_epipsammum_PCC_9333",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "0ae478b2193f5538f46bb6f4912ab1fb",
+                3646768,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                15,
+                "Geitlerinema_sp._PCC_7407",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "39470b249568ba2220736f0c02199c6d",
+                3018192,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                16,
+                "Gloeocapsa_sp._PCC_7428",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "e613dac3946b874211ce6fc3efb83b79",
+                3835177,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                17,
+                "Microcoleus_sp._PCC_7113",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "d1ab46247fd608c2b04ca73e67730367",
+                5085554,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                18,
+                "Fischerella_sp._PCC_9339",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "28f06d4315582183c1e4fb7892ff8606",
+                4620628,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                19,
+                "Pleurocapsa_sp._PCC_7327",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "bad8c83d5d66e4075ef02cd1862e12c3",
+                3429868,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                20,
+                "Oscillatoria_nigro_viridis_PCC_7112",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "4ba02ddce21a18827f01c5652f4035eb",
+                5158800,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                21,
+                "Chlorogloeopsis_sp._PCC_9212",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "e53eb7381250ca0709b03e0084c7c563",
+                4433372,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                22,
+                "Chlorogloeopsis_fritschii_PCC_6912",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "92de14fb2318983ed24e15bf80c92188",
+                4511029,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                23,
+                "Mastigocladopsis_repens_PCC_10914",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "f8f26c268059f05a7c7e1470206f9dbe",
+                3783356,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                24,
+                "Chroococcidiopsis_thermalis_PCC_7203",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "2f46b048185b42c420b86b1bd94b81ec",
+                4545210,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                25,
+                "Anabaena_cylindrica_PCC_7122",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "680a43304346a413c624bcc3dc1466c5",
+                4471381,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                26,
+                "Fischerella_muscicola_PCC_7414",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "0c38b260dbf4ba3233a901f463dd3d9f",
+                4055602,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                27,
+                "Nostoc_sp._PCC_7107",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "0a5c80b6695d64e6d0277b33a416d9b5",
+                4075881,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                28,
+                "Calothrix_sp._PCC_7103",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "438dd7e705580f8b49bcd6195989776a",
+                6488003,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                29,
+                "Fischerella_muscicola_SAG_1427_1___PCC_73103",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "4968a101a42aa494aba2359b7b59293a",
+                4161533,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                30,
+                "Rivularia_sp._PCC_7116",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "c5837bd37f0bdb40efaab138f8b2394f",
+                5105149,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                31,
+                "Anabaena_sp._90",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "87a49af5f51a3b8d264c65c5bf00ecdb",
+                3405701,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                32,
+                "Moorea_producta_3L",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:23+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "d320a28bb5a32b4da4737f36ae7b967d",
+                4831979,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                33,
+                "Nostoc_punctiforme_PCC_73102",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "019c08dec8d9329207f42fa242145030",
+                7318533,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                34,
+                "Cylindrospermum_stagnale_PCC_7417",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "714b19c40c8075fa6cb4e90f288651d3",
+                4844862,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                35,
+                "Oscillatoria_acuminata_PCC_6304",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "88ec5a275c92425d36ed7482ab8dcd66",
+                4899600,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                36,
+                "Nostoc_punctiforme_PCC_73102_0",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "2700f8fa16a6c37a4a0c8612221c1cfc",
+                5355368,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                37,
+                "Synechocystis_sp._PCC_7509",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "5785494b6c9c9a814caa694b2318f4b0",
+                3333017,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                38,
+                "Fischerella_thermalis_PCC_7521",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "9f0a7060ec724a3f9a3edd6ed26c1863",
+                3161464,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                39,
+                "Calothrix_sp._PCC_7507",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "50ec148b6c457445d38360bff8b2bc66",
+                4523445,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                40,
+                "Arthrospira_platensis_NIES_39",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "bd58a4fda483f51bf9ce721cc1d42781",
+                5353697,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                41,
+                "Oscillatoria_sp._PCC_10802",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "0fef2760a22c0773b734c5a779a6eadb",
+                5223030,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                42,
+                "Scytonema_hofmanni_PCC_7110",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "0632316fddea262e5ea30f6cce37d009",
+                7009848,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                43,
+                "Anabaena_sp._PCC_7108",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "4b16e513c81bf5e5f5f3ee1156ffc8a2",
+                3389713,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                44,
+                "Leptolyngbya_boryana_PCC_6306",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "7c4865b4e42df9f1cb1e00495047893e",
+                4452265,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                45,
+                "Oscillatoria_formosa_PCC_6407",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "e7b758b8f903b9cd339f7684cc0274d1",
+                4053562,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                46,
+                "Microchaete_sp._PCC_7126",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "29ddfb42f0563448bfcac3b44c9aeddc",
+                3439011,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                47,
+                "Microcoleus_vaginatus_FGP_2",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:35:52+0000",
+                2,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "fec301129ac6e19767e35b79bc9d4f77",
+                4592101,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                48,
+                "Trichodesmium_erythraeum_IMS101_0",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "8fdac588b82581bc3c0012d57e3e66fc",
+                4926944,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                49,
+                "Anabaena_variabilis_ATCC_29413",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "71af3a0ec32d95e81cb624c8bf23feee",
+                6348013,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                50,
+                "Anabaena_variabilis_ATCC_29413_0",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "297dac1bc5a70b1788fef89a2c37e5a5",
+                5723066,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                51,
+                "Oscillatoria_sp._PCC_6506__Oscillatoria_sp._PCC_9029_",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "6a39b6aafaee3ee810bb5a5878a8c344",
+                4636237,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                52,
+                "Nostoc_sp._PCC_7120",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "d7d2680cfc37216cb64e0b0c2f2dfbff",
+                5807744,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                53,
+                "Lyngbya_sp._PCC_8106",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "73c17f3c55a1a6e42ad6be280676fb48",
+                4898502,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                54,
+                "Nodularia_spumigena_CCY9414",
+                "KBaseGenomes.Genome-6.0",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "d5f33b4c91eec5b64e623d35d0e7d9ee",
+                4034529,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                55,
+                "Microcoleus_set",
+                "KBaseSearch.GenomeSet-2.1",
+                "2015-02-23T20:23:24+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "e5d73d51cb729d982c4ed3c98814d4e3",
+                1655,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                56,
+                "Microcoleus_proteome_comparison_FGP2v9802",
+                "GenomeComparison.ProteomeComparison-2.0",
+                "2015-02-23T20:31:29+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "1cfb37cbba74fe846e2b34923c7b9612",
+                957192,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                57,
+                "Mv_tree",
+                "KBaseTrees.Tree-1.0",
+                "2015-02-23T20:35:48+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "6abda46d5f107684dbe25ff82c45aa97",
+                2327,
+                {
+                    "type": "SpeciesTree"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                58,
+                "Microcoleus_set10",
+                "KBaseSearch.GenomeSet-2.1",
+                "2015-02-23T20:35:52+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "f5dfb7f2ce10978908a1d2ae44b0fd82",
+                451,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                59,
+                "Mv_pangenome",
+                "KBaseGenomes.Pangenome-3.1",
+                "2015-02-23T20:58:05+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "854fb6c1d5b99b9c1cc9af524c9c01f7",
+                14389425,
+                {
+                    "Number orthologs": "37631",
+                    "Type": "kmer",
+                    "Number genomes": "12",
+                    "Name": "Chlorogloeopsis pangenome"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                60,
+                "Mv_comparison",
+                "KBaseGenomes.GenomeComparison-1.1",
+                "2015-02-23T20:59:21+0000",
+                1,
+                "trent",
+                5846,
+                "trent:1424722432331",
+                "c3118f2494cc12f83b0b403060d1857d",
+                17230794,
+                {
+                    "Core functions": "369",
+                    "Core families": "1307",
+                    "Number genomes": "12",
+                    "Name": "Mv_comparison"
+                }
+            ]
+        }
+    ]
+}
