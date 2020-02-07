@@ -32,9 +32,16 @@ def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
         report: ''
     }
     """
-    if not result or not result[0].get('report_name') or not result[0].get('report_ref'):
+    if not result:
         return {}
-    report_ref = result[0].get('report_ref')
+    if not isinstance(result, list):
+        result = [result]
+    if (not result[0] or
+            not isinstance(result[0], dict) or
+            not result[0].get('report_name') or
+            not result[0].get('report_ref')):
+        return {}
+    report_ref = result[0]['report_ref']
     ws = Workspace(url=ws_url, token=token)
     report = ws.get_objects2({'objects': [{'ref': report_ref}]})['data'][0]['data']
     """{'direct_html': None,

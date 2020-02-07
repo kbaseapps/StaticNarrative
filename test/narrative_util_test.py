@@ -30,7 +30,7 @@ class NarrativeUtilTestCase(unittest.TestCase):
     @requests_mock.Mocker()
     def test_read_narrative_ok(self, rqm):
         ref = "43666/1/18"
-        ref_to_file = {ref: "data/narrative-43666.1.18.json"}
+        ref_to_file = {ref: "data/43666/narrative-43666.1.18.json"}
         set_up_ok_mocks(rqm, ref_to_file=ref_to_file)
         nar = read_narrative(NarrativeRef.parse("43666/1/18"),
                              Workspace(url=self.cfg["workspace-url"], token=self.token))
@@ -52,7 +52,7 @@ class NarrativeUtilTestCase(unittest.TestCase):
     @requests_mock.Mocker()
     def test_read_narrative_not_narrative(self, rqm):
         ref = "43666/3/1"
-        ref_to_file = {ref: "data/report-43666.3.1.json"}
+        ref_to_file = {ref: "data/43666/report-43666.3.1.json"}
         set_up_ok_mocks(rqm, ref_to_file=ref_to_file)
         with self.assertRaises(ValueError) as e:
             read_narrative(NarrativeRef.parse(ref),

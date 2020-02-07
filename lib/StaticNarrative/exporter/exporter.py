@@ -61,7 +61,7 @@ class NarrativeExporter:
         )
 
         # 4. Export the Narrative to an HTML file
-        html_exporter = self._build_exporter(exported_data)
+        html_exporter = self._build_exporter(exported_data, narrative_ref.wsid)
         (body, resources) = html_exporter.from_notebook_node(kb_notebook)
 
         # copy some assets
@@ -75,7 +75,7 @@ class NarrativeExporter:
             output_html.write(body)
         return output_path
 
-    def _build_exporter(self, exported_data: dict) -> HTMLExporter:
+    def _build_exporter(self, exported_data: dict, ws_id: int) -> HTMLExporter:
         """
         This builds the HTMLExporter used to export the Notebook (i.e. Narrative) to
         HTML. Data is passed into the exporter by configuration with various specific
@@ -119,6 +119,7 @@ class NarrativeExporter:
         c.narrative_session.data_file_path = exported_data["path"]
         c.narrative_session.narrative_data = exported_data
         c.narrative_session.assets_version = self.exporter_cfg["assets-version"]
+        c.narrative_session.ws_id = ws_id
 
         html_exporter = HTMLExporter(config=c)
         html_exporter.template_file = NARRATIVE_TEMPLATE_FILE

@@ -1,0 +1,69 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": null,
+        "file_links": [],
+        "html_links": [],
+        "html_window_height": null,
+        "objects_created": [
+            {
+                "description": "Annotated genome",
+                "ref": "24065/23/2"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": "Genome saved to: janakakbase:narrative_1504758657134/CCESR16_IDBA.bin.001.genome_Prokka_Annotation\nNumber of genes predicted: 6431\nNumber of protein coding genes: 6373\nNumber of genes with non-hypothetical function: 3989\nNumber of genes with EC-number: 2216\nNumber of genes with Seed Subsystem Ontology: 1655\nAverage protein length: 325 aa.\n"
+    },
+    "info": [
+        143,
+        "kb_prokka_report_ab7747a9-017c-47bf-b929-f39922b3dd27",
+        "KBaseReport.Report-2.0",
+        "2018-03-13T22:47:28+0000",
+        1,
+        "janakakbase",
+        24065,
+        "janakakbase:narrative_1504758657134",
+        "ca085bb74182db07fac503fc2382415f",
+        577,
+        {
+            "Size(characters)": "341",
+            "Objects Created": "1"
+        }
+    ],
+    "path": [
+        "24065/143/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create_extended_report",
+            "method_params": [
+                {
+                    "message": "Genome saved to: janakakbase:narrative_1504758657134/CCESR16_IDBA.bin.001.genome_Prokka_Annotation\nNumber of genes predicted: 6431\nNumber of protein coding genes: 6373\nNumber of genes with non-hypothetical function: 3989\nNumber of genes with EC-number: 2216\nNumber of genes with Seed Subsystem Ontology: 1655\nAverage protein length: 325 aa.\n",
+                    "report_object_name": "kb_prokka_report_ab7747a9-017c-47bf-b929-f39922b3dd27",
+                    "workspace_name": "janakakbase:narrative_1504758657134",
+                    "objects_created": [
+                        {
+                            "description": "Annotated genome",
+                            "ref": "24065/23/2"
+                        }
+                    ]
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "janakakbase",
+    "orig_wsid": 24065,
+    "created": "2018-03-13T22:47:28+0000",
+    "epoch": 1520981248301,
+    "refs": [
+        "24065/23/2"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

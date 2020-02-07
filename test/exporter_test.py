@@ -18,10 +18,10 @@ class ExporterTest(unittest.TestCase):
     def test_exporter_ok(self, rqm):
         ws_id = 43666
         ref_to_file = {
-            "43666/1/21": "data/narrative-43666.1.21.json",
-            "43666/1/18": "data/narrative-43666.1.18.json",
-            "43666/3/1": "data/report-43666.3.1.json",
-            "43666/7/1": "data/report-43666.7.1.json"
+            "43666/1/21": "data/43666/narrative-43666.1.21.json",
+            "43666/1/18": "data/43666/narrative-43666.1.18.json",
+            "43666/3/1": "data/43666/report-43666.3.1.json",
+            "43666/7/1": "data/43666/report-43666.7.1.json"
         }
         ref_to_info = {
 
@@ -51,7 +51,7 @@ class ExporterTest(unittest.TestCase):
             ref_to_info=ref_to_info,
             ws_info=ws_info,
             user_map=user_map,
-            ws_obj_info_file="data/objects-43666.json"
+            ws_obj_info_file="data/43666/objects-43666.json"
         )
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
         static_path = exporter.export_narrative(

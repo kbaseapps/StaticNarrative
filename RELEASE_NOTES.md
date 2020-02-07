@@ -1,6 +1,11 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.8
+-----
+* Fixed error when trying to parse a data cell that doesn't have a ref key.
+* Added support for "upas" key in data cell (handle copy-of-a-copy issues).
+
 0.0.7
 -----
 * Fixed issue with errors that aren't being propagated properly.
