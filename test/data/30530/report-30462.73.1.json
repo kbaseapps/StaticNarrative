@@ -1,0 +1,87 @@
+{
+    "data": {
+        "objects_created": [
+            {
+                "description": "Pangenome object",
+                "ref": "30462/72/1"
+            }
+        ],
+        "text_message": "Input genomes: 11\nOutput orthologs: 15841\n"
+    },
+    "info": [
+        73,
+        "orthomcl_report_0x242ac110005L",
+        "KBaseReport.Report-2.0",
+        "2018-04-09T18:17:24+0000",
+        1,
+        "jplfaria",
+        30462,
+        "jplfaria:narrative_1523236349247",
+        "421dcabb0d2f58fa8c916c5a54a4e1a5",
+        137,
+        {
+            "Size(characters)": "42",
+            "Objects Created": "1"
+        }
+    ],
+    "path": [
+        "30462/73/1"
+    ],
+    "provenance": [
+        {
+            "service": "PangenomeOrthomcl",
+            "method": "build_pangenome_with_orthomcl",
+            "method_params": [
+                {
+                    "mcl_warn_factor": null,
+                    "seg": null,
+                    "xdrop_gap_final": null,
+                    "mcl_warn_p": null,
+                    "window_size": null,
+                    "matrix": null,
+                    "input_genome_refs": [],
+                    "mcl_init_l": null,
+                    "gapopen": null,
+                    "comp_based_stats": null,
+                    "mcl_init_i": null,
+                    "input_genomeset_ref": "jplfaria:narrative_1523236349247/janthinobacterium_10_closest",
+                    "word_size": null,
+                    "threshold": null,
+                    "output_workspace": "jplfaria:narrative_1523236349247",
+                    "use_sw_tback": 0,
+                    "output_pangenome_id": "janthinobacterium_10_closest_pangenome",
+                    "num_descriptions": null,
+                    "num_alignments": null,
+                    "gapextend": null,
+                    "mcl_pct": null,
+                    "mcl_p": null,
+                    "mcl_r": null,
+                    "mcl_s": null,
+                    "lcase_masking": 0,
+                    "mcl_main_l": null,
+                    "evalue": null,
+                    "mcl_main_i": null
+                }
+            ],
+            "input_ws_objects": [
+                "jplfaria:narrative_1523236349247/janthinobacterium_10_closest"
+            ],
+            "resolved_ws_objects": [
+                "30462/65/1"
+            ],
+            "external_data": [],
+            "subactions": [],
+            "custom": {},
+            "description": "Orthologous groups construction using OrthoMCL tool"
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30462,
+    "created": "2018-04-09T18:17:24+0000",
+    "epoch": 1523297844063,
+    "refs": [
+        "30462/72/1"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

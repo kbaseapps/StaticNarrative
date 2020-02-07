@@ -1,0 +1,52 @@
+{
+    "data": {
+        "objects_created": [],
+        "text_message": "Search Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\n"
+    },
+    "info": [
+        105,
+        "report_e5c94b9e-2b45-be8b-b387-93eb516192be",
+        "KBaseReport.Report-2.0",
+        "2018-04-10T15:18:15+0000",
+        1,
+        "jplfaria",
+        30462,
+        "jplfaria:narrative_1523236349247",
+        "9bf351034749951ad31e2ccf144f81f6",
+        2728,
+        {
+            "Size(characters)": "2608",
+            "Objects Created": "0"
+        }
+    ],
+    "path": [
+        "30462/105/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create",
+            "method_params": [
+                {
+                    "report": {
+                        "objects_created": [],
+                        "text_message": "Search Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\nSearch Domains output:\nGetting DomainModelSet from storage.\nGetting Genome from storage.\nRunning domain search against library 2959/1/7\nRunning domain search against library 2959/6/6\nRunning domain search against library 2959/7/6\nRunning domain search against library 2959/4/6\nRunning domain search against library 2959/5/7\n\n\n"
+                    },
+                    "workspace_name": "jplfaria:narrative_1523236349247"
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30462,
+    "created": "2018-04-10T15:18:15+0000",
+    "epoch": 1523373495286,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

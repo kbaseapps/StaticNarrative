@@ -1,0 +1,61 @@
+{
+    "data": {
+        "objects_created": [
+            {
+                "description": "GenomeComparison",
+                "ref": "30462/81/1"
+            }
+        ],
+        "text_message": "GenomeComparison saved to jplfaria:narrative_1523236349247/janthinobacterium_pagenome_compar\n"
+    },
+    "info": [
+        82,
+        "genomecomparison_report_janthinobacterium_pagenome_compar",
+        "KBaseReport.Report-2.0",
+        "2018-04-10T01:21:41+0000",
+        1,
+        "jplfaria",
+        30462,
+        "jplfaria:narrative_1523236349247",
+        "60a7b150522c3d9bd0be06ac941772f2",
+        187,
+        {
+            "Size(characters)": "93",
+            "Objects Created": "1"
+        }
+    ],
+    "path": [
+        "30462/82/1"
+    ],
+    "provenance": [
+        {
+            "service": "GenomeComparisonSDK",
+            "method": "compare_genomes",
+            "method_params": [
+                {
+                    "workspace": "jplfaria:narrative_1523236349247",
+                    "pangenome_ref": "jplfaria:narrative_1523236349247/janthinobacterium_10_closest_pangenome",
+                    "output_id": "janthinobacterium_pagenome_compar"
+                }
+            ],
+            "input_ws_objects": [
+                "jplfaria:narrative_1523236349247/janthinobacterium_10_closest_pangenome"
+            ],
+            "resolved_ws_objects": [
+                "30462/72/1"
+            ],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30462,
+    "created": "2018-04-10T01:21:41+0000",
+    "epoch": 1523323301101,
+    "refs": [
+        "30462/81/1"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

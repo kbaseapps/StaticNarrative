@@ -1,0 +1,111 @@
+{
+    "data": {
+        "direct_html": "",
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api//node/f39c2624-cbcc-4425-8592-85e9ed57778b",
+                "description": null,
+                "handle": "KBH_1152382",
+                "label": "GW456A_trim_reads HTML",
+                "name": "GW456A_trim_reads.html"
+            }
+        ],
+        "html_window_height": 220,
+        "objects_created": [
+            {
+                "description": "Trimmed Reads",
+                "ref": "30530/4/2"
+            },
+            {
+                "description": "Trimmed Unpaired Forward Reads",
+                "ref": "30530/5/2"
+            },
+            {
+                "description": "Trimmed Unpaired Reverse Reads",
+                "ref": "30530/6/2"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": ""
+    },
+    "info": [
+        111,
+        "kb_trimmomatic_report_dfac1d6b-545c-48a1-873d-16cf27bf6746",
+        "KBaseReport.Report-2.0",
+        "2018-04-10T18:37:13+0000",
+        1,
+        "jplfaria",
+        30530,
+        "jplfaria:narrative_1523380297505",
+        "cfee9b4c60e598fab2728c1484cdb567",
+        548,
+        {
+            "Size(characters)": "0",
+            "Objects Created": "3"
+        }
+    ],
+    "path": [
+        "30530/111/1"
+    ],
+    "provenance": [
+        {
+            "service": "KBaseReport",
+            "method": "create_extended_report",
+            "method_params": [
+                {
+                    "html_window_height": 220,
+                    "file_links": [],
+                    "report_object_name": "kb_trimmomatic_report_dfac1d6b-545c-48a1-873d-16cf27bf6746",
+                    "objects_created": [
+                        {
+                            "ref": "30530/4/2",
+                            "description": "Trimmed Reads"
+                        },
+                        {
+                            "description": "Trimmed Unpaired Forward Reads",
+                            "ref": "30530/5/2"
+                        },
+                        {
+                            "ref": "30530/6/2",
+                            "description": "Trimmed Unpaired Reverse Reads"
+                        }
+                    ],
+                    "html_links": [
+                        {
+                            "name": "GW456A_trim_reads.html",
+                            "label": "GW456A_trim_reads HTML",
+                            "shock_id": "f39c2624-cbcc-4425-8592-85e9ed57778b"
+                        }
+                    ],
+                    "direct_html_index": 0,
+                    "message": "",
+                    "direct_html_link_index": 0,
+                    "direct_html": "",
+                    "workspace_name": "jplfaria:narrative_1523380297505"
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {}
+        }
+    ],
+    "creator": "jplfaria",
+    "orig_wsid": 30530,
+    "created": "2018-04-10T18:37:13+0000",
+    "epoch": 1523385433103,
+    "refs": [
+        "30530/5/2",
+        "30530/6/2",
+        "30530/4/2"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_1152382"
+        ]
+    }
+}
