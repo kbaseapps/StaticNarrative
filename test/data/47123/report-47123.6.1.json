@@ -1,0 +1,91 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/742021ac-6e33-4cc8-b4f0-0d90960daf81",
+                "description": "Just an example report",
+                "handle": "KBH_519792",
+                "label": "",
+                "name": "index.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "This is a report message",
+        "warnings": []
+    },
+    "info": [
+        6,
+        "NarrativeTest.example_report2d7ef9d1-4e1f-4449-aa7a-8b7f6ba8d1ac",
+        "KBaseReport.Report-3.0",
+        "2020-02-12T21:10:13+0000",
+        1,
+        "wjriehl",
+        47123,
+        "wjriehl:narrative_1581384702051",
+        "2ebe47508f2d10413e8af0fbe13dfce4",
+        393,
+        {
+            "Size(characters)": "24",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "47123/6/1"
+    ],
+    "provenance": [
+        {
+            "time": "2020-02-12T21:09:04+0000",
+            "epoch": 1581541744000,
+            "service": "NarrativeTest",
+            "service_ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+            "method": "example_report",
+            "method_params": [
+                {
+                    "workspace_name": "wjriehl:narrative_1581384702051",
+                    "text_input": "blah!",
+                    "checkbox_input": 1
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "NarrativeTest",
+                    "ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                    "code_url": "https://github.com/briehl/narrative-test",
+                    "commit": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "df0bb6568008983c1daf6966cf8cebf54f0a0d80"
+                },
+                {
+                    "name": "KBaseReport",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "0356e0313025b0d4b1b7fa11e96050aeaaaa828c"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 47123,
+    "created": "2020-02-12T21:10:11+0000",
+    "epoch": 1581541811878,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_519792"
+        ]
+    }
+}

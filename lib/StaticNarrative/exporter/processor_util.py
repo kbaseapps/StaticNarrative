@@ -70,6 +70,13 @@ def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
     html = {}
     if report.get('direct_html'):
         html['direct'] = report.get('direct_html')
+        html['iframe_style'] = ";".join([
+            "display: block",
+            "width: 100%",
+            "height: 500px",
+            "margin: 0",
+            "padding: 0"
+        ])
 
     if report.get('html_links'):
         idx = report.get('direct_html_link_index', 0)

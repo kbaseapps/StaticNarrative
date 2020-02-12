@@ -1,0 +1,1046 @@
+{
+    "data": [
+        {
+            "object_info": [
+                13,
+                "P_fluorescens_GW456-L13",
+                "KBaseGenomes.Genome-9.0",
+                "2019-02-21T20:19:19+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "69bf9329f61387ac0c1673bac6febaa9",
+                19189915,
+                {
+                    "Taxonomy": "cellular organisms; Bacteria; Proteobacteria; Gammaproteobacteria; Pseudomonadales; Pseudomonadaceae; Pseudomonas; Pseudomonas fluorescens group",
+                    "Size": "5757432",
+                    "accession": "GCF_001440325.1",
+                    "version": "1",
+                    "url": "ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/440/325/GCF_001440325.1_ASM144032v1/GCF_001440325.1_ASM144032v1_genomic.gbff.gz",
+                    "refname": "GCF_001440325.1",
+                    "Source": "RefSeq",
+                    "Name": "Pseudomonas fluorescens",
+                    "GC content": "0.59846",
+                    "Genetic code": "11",
+                    "Source ID": "NZ_LKBJ01000002",
+                    "Number of Protein Encoding Genes": "5308",
+                    "assembly_level": "Scaffold",
+                    "Assembly Object": "19217/118635/4",
+                    "Number contigs": "2",
+                    "refid": "GCF_001440325",
+                    "Domain": "Bacteria",
+                    "Number of CDS": "5308",
+                    "MD5": "2f5744d1963a2a3c5602231537aa3dc8"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                16,
+                "P_fluorescens_GW456-L13.RAST",
+                "KBaseGenomes.Genome-10.0",
+                "2019-02-21T20:19:19+0000",
+                2,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "283a27026e5b05c5fe9f7e3519cd1f62",
+                20018625,
+                {
+                    "Taxonomy": "cellular organisms; Bacteria; Proteobacteria; Gammaproteobacteria; Pseudomonadales; Pseudomonadaceae; Pseudomonas; Pseudomonas fluorescens group",
+                    "Size": "5757432",
+                    "Source": "RefSeq",
+                    "Name": "Pseudomonas fluorescens",
+                    "GC content": "0.599",
+                    "Genetic code": "11",
+                    "Number of Genome Level Warnings": "0",
+                    "Source ID": "NZ_LKBJ01000002",
+                    "Number of Protein Encoding Genes": "5308",
+                    "Assembly Object": "19217/118635/4",
+                    "Number contigs": "2",
+                    "Domain": "Bacteria",
+                    "Number of CDS": "5308",
+                    "MD5": "b6945f10714710051e0e674649e8ae65"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                20,
+                "P_flourescens_GW456-L13.mdl",
+                "KBaseFBA.FBAModel-11.0",
+                "2019-02-21T20:19:19+0000",
+                3,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "c772a40b31b91cd64291b14d652b20a1",
+                1831916,
+                {
+                    "Number gapgens": "0",
+                    "Type": "GenomeScale",
+                    "Number gapfills": "1",
+                    "Source ID": "P_flourescens_GW456-L13.mdl",
+                    "Number biomasses": "1",
+                    "Number compartments": "2",
+                    "Genome": "40589/16/2",
+                    "Source": "KBase",
+                    "Number compounds": "1231",
+                    "Number reactions": "1270",
+                    "Name": "Pseudomonas fluorescens"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                24,
+                "ExometaboliteMedia",
+                "KBaseBiochem.Media-4.1",
+                "2019-02-21T20:19:19+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "7f8f87b33ebe25bfb07f0c56869d11e9",
+                3465,
+                {
+                    "Is Minimal": "0",
+                    "Source ID": "Carbon-D-Glucose",
+                    "Is Defined": "1",
+                    "Number compounds": "21",
+                    "Name": "ExometaboliteMedia"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                25,
+                "P_flourescens_GW456-L13.mdl.recon",
+                "KBaseFBA.FBAModel-11.0",
+                "2019-02-21T20:19:19+0000",
+                2,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "ce7003fc3423b0f016ceef82263ae63c",
+                2045754,
+                {
+                    "Number gapgens": "0",
+                    "Type": "GenomeScale",
+                    "Number gapfills": "2",
+                    "Source ID": "P_flourescens_GW456-L13.mdl",
+                    "Number biomasses": "2",
+                    "Number compartments": "2",
+                    "Genome": "40589/16/2",
+                    "Source": "KBase",
+                    "Number compounds": "1315",
+                    "Number reactions": "1390",
+                    "Name": "Pseudomonas fluorescens"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                28,
+                "Betaine_pathway_FBA",
+                "KBaseFBA.FBA-13.1",
+                "2019-02-21T20:19:19+0000",
+                2,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "e531aa4b987c5cdbe7e1633f08538f3d",
+                481568,
+                {
+                    "Number compound variables": "138",
+                    "Number constraints": "0",
+                    "Media": "262/34/1",
+                    "Number additional compounds": "0",
+                    "Maximized": "1",
+                    "Number reaction variables": "1390",
+                    "Number gene KO": "0",
+                    "Minimize reactions": "0",
+                    "Objective": "39.213",
+                    "Number compound bounds": "0",
+                    "Number biomass objectives": "1",
+                    "Combination deletions": "0",
+                    "Model": "40589/25/2",
+                    "Number reaction KO": "0",
+                    "Number reaction bounds": "0"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                29,
+                "cpd00540_genes",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:19+0000",
+                2,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "4a5996d1e1bfe1906775aecb9887e6d5",
+                2073,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                33,
+                "P_fluorescens_GW456-L13.tree",
+                "KBaseTrees.Tree-1.0",
+                "2019-02-21T20:19:19+0000",
+                2,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "8c1f483584e7ccd43eae5d7a3611f8bb",
+                2736,
+                {
+                    "type": "SpeciesTree"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                34,
+                "P_fluorescens_GW456-L13.genome_set",
+                "KBaseSearch.GenomeSet-2.1",
+                "2019-02-21T20:19:19+0000",
+                2,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "c16530d6cac8151674a70d96e87b7386",
+                456,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                36,
+                "P_fluorescens_GW456-L13.tree.GenomeSet",
+                "KBaseSearch.GenomeSet-2.1",
+                "2019-02-21T20:19:19+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "57f2efd3a392cc8fcd3289e03401ef95",
+                531,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                37,
+                "Betaine_pathway_candidates_rxn00270",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:19+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "d2292cca97b3ea5a39f55633cccbf9cd",
+                749,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                39,
+                "Betaine_pathway_candidates_rxn05010",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:19+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "c749df8b2e82d7d6ca68f22140a9fe19",
+                749,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                41,
+                "Betaine_pathway_candidates_rxn05011",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:19+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "44f534d02ad712d6c05922289d855530",
+                749,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                88,
+                "40589_16_2_AO361_RS00865.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "125d6034eb6060afcf244358f7199685",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                90,
+                "40589_16_2_AO361_RS01110.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "de1444fa21f88fb0aa32fe2a5e56b1de",
+                975,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                92,
+                "40589_16_2_AO361_RS02225.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "30d0f1a32948d7506ac771da8b15fd07",
+                1611,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                94,
+                "40589_16_2_AO361_RS02230.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "5f68822eb1fcee2ec6e74ff23f1c536d",
+                1560,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                96,
+                "40589_16_2_AO361_RS04445.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "46f7d7aed548eecea3bc34c2a45febed",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                98,
+                "40589_16_2_AO361_RS04450.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "ce90e39aef76048f1a33eae4f936f335",
+                1317,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                100,
+                "40589_16_2_AO361_RS04455.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "588315eed785af7949dabb38b59252cf",
+                980,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                102,
+                "40589_16_2_AO361_RS04655.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "a5fbac87795565f3320439d999bfc625",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                104,
+                "40589_16_2_AO361_RS04695.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "2651f7833e89c772a5736172de915c06",
+                1076,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                106,
+                "40589_16_2_AO361_RS04795.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "8084deac78d306d19d9c1a879246216a",
+                618,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                108,
+                "40589_16_2_AO361_RS05185.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "fe398f5f42eecef1d2c4400cf6230e08",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                109,
+                "PF_D50_trimm_paired_SampleSet_TPM_ExpressionMatrix",
+                "KBaseFeatureValues.ExpressionMatrix-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "5f6e7151ca7df7d7ed8813ef575c7080",
+                1626940,
+                {
+                    "feature_count": "6177",
+                    "scale": "log2",
+                    "condition_count": "12",
+                    "Genome": "39253/2/1",
+                    "type": "level"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                111,
+                "40589_16_2_AO361_RS05190.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "524e158c045c0772fd07d3fee9a5e604",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                113,
+                "40589_16_2_AO361_RS05240.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "615fdebb3fcfb58839ba0569f79ca437",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                115,
+                "40589_16_2_AO361_RS05495.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "f5bb5f9362ee61a04defaaa013de5e99",
+                1424,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                117,
+                "40589_16_2_AO361_RS05525.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "594319ef4202648029964b127e008040",
+                906,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                119,
+                "40589_16_2_AO361_RS05685.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "3ff0cc87f2228c63c9f27ac52824c5a7",
+                2101,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                121,
+                "40589_16_2_AO361_RS05695.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "3ff0cc87f2228c63c9f27ac52824c5a7",
+                2101,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                123,
+                "40589_16_2_AO361_RS05700.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "51284810574381ffc9b444ab9d55d00a",
+                2551,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                125,
+                "40589_16_2_AO361_RS06900.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "01308c9ab702f216216e201e08f8dc1d",
+                573,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                127,
+                "40589_16_2_AO361_RS06905.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "d115aea6d3293c20b5e38163a5df2c5c",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                129,
+                "40589_16_2_AO361_RS07215.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "f5bb5f9362ee61a04defaaa013de5e99",
+                1424,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                131,
+                "40589_16_2_AO361_RS09295.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "36a1a95bca6472a77c0ce27104020ee8",
+                773,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                133,
+                "40589_16_2_AO361_RS09305.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "588315eed785af7949dabb38b59252cf",
+                980,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                135,
+                "40589_16_2_AO361_RS09310.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "ce90e39aef76048f1a33eae4f936f335",
+                1317,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                137,
+                "40589_16_2_AO361_RS10810.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "418e32295ac97933d511d5900fe76d88",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                139,
+                "40589_16_2_AO361_RS11600.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "0329b372ebfe6aed31305f06ea5bbe69",
+                268,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                141,
+                "40589_16_2_AO361_RS12415.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "e07a859ce98f77fd3a4b3bf4ffb64407",
+                166,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                143,
+                "40589_16_2_AO361_RS12925.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "57cc9960fbe0b35477929b11ec916110",
+                618,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                145,
+                "40589_16_2_AO361_RS13375.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "f5bb5f9362ee61a04defaaa013de5e99",
+                1424,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                147,
+                "40589_16_2_AO361_RS13380.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "ce90e39aef76048f1a33eae4f936f335",
+                1317,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                149,
+                "40589_16_2_AO361_RS14190.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "79cbd9de6ac60a2c23c4dbb8e08a51aa",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                151,
+                "40589_16_2_AO361_RS14775.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "f70c4ef9fe10866070ea4a4f792c2eb8",
+                814,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                153,
+                "40589_16_2_AO361_RS15775.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "3ff0cc87f2228c63c9f27ac52824c5a7",
+                2101,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                155,
+                "40589_16_2_AO361_RS16855.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "54a1853162ae07cea93bd43bdc00eca5",
+                640,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                157,
+                "40589_16_2_AO361_RS16865.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "9b1a59c8e88ecd4a9c126cd336caeaa3",
+                219,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                159,
+                "40589_16_2_AO361_RS17435.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "2c8480c5ccab29bd61cc46490f297e73",
+                865,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                161,
+                "40589_16_2_AO361_RS19515.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "f4f1fc14e16ec679b9f2e4c39686a278",
+                616,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                163,
+                "40589_16_2_AO361_RS19525.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "4c5c78845772b868a80fe2aadd3f70a4",
+                808,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                165,
+                "40589_16_2_AO361_RS20655.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "73f2b97814219ca82df9a09c6d816ec7",
+                569,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                167,
+                "40589_16_2_AO361_RS21045.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "164ccafad863a94929213e384d837c09",
+                1166,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                169,
+                "40589_16_2_AO361_RS22455.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "809ca4f6b4f6c71672e6f37e5037ac21",
+                667,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                171,
+                "40589_16_2_AO361_RS22870.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "6616b0f422e7eac0e25f65cc3ae27d9c",
+                430,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                173,
+                "40589_16_2_AO361_RS24455.FeatureSet-P_fluorescens_GW456-L13.tree.BLASTp_homologs",
+                "KBaseCollections.FeatureSet-1.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "5442c4874812518617eeb0cfb5d27078",
+                2256,
+                {}
+            ]
+        },
+        {
+            "object_info": [
+                176,
+                "Carbon-D-Glucose",
+                "KBaseBiochem.Media-4.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "3dfd7fb34954d2bdf6ec6078a067b9d8",
+                2169,
+                {
+                    "Is Minimal": "0",
+                    "Source ID": "Carbon-D-Glucose",
+                    "Is Defined": "0",
+                    "Name": "Carbon-D-Glucose",
+                    "Number compounds": "20"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                177,
+                "WOM_exometabolite_profiles",
+                "KBaseMatrices.MetaboliteMatrix-2.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "2922520492ff256c6d46d273da63e57f",
+                227370,
+                {
+                    "col_attribute_mapping": "39477/12/1",
+                    "scale": "log2",
+                    "compound_count": "589",
+                    "row_attribute_mapping": "39477/14/1",
+                    "condition_count": "56"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                178,
+                "Narrative.1547576298419",
+                "KBaseNarrative.Narrative-4.0",
+                "2019-02-21T20:19:20+0000",
+                1,
+                "wjriehl",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "534138e78440217401a15f499c5b5359",
+                117013,
+                {
+                    "creator": "trentnorth",
+                    "method.kb_reaction_gene_finder/find_genes_from_similar_reactions/b3460385b29e058580923f6fb737d795cf0b52c4": "1",
+                    "method.mags_mash/run_mags_mash/72111c6891b3d102f5ed17f17008fedd27619430": "1",
+                    "data_dependencies": "[]",
+                    "jupyter.markdown": "14",
+                    "method.SpeciesTreeBuilder/insert_set_of_genomes_into_species_tree/32374e065449eb18a2a0eefe5c9f9dbc7fa2b179": "1",
+                    "job_info": "{\"queue_time\": 0, \"running\": 0, \"completed\": 0, \"run_time\": 0, \"error\": 0}",
+                    "format": "ipynb",
+                    "description": "",
+                    "method.fba_tools/fit_exometabolite_data/0ab8e60f63b2b85a7b69869d7d13ad4859b46a64": "1",
+                    "type": "KBaseNarrative.Narrative",
+                    "method.fba_tools/build_metabolic_model/584206644abfeb5f3184783aaa27b3a0993ca583": "1",
+                    "method.fba_tools/predict_metabolite_biosynthesis_pathway/e445caf84edc20738d49de61c7f96a0b783f9644": "1",
+                    "method.kb_mash/run_mash_dist_search/1618fb569fb82c81d1a4ec2828f7f94bef45e8bc": "1",
+                    "is_temporary": "false",
+                    "name": "Web of Microbes: Exometabolomics of Pseudomonas fluorescens GW456-L13 - GSP Demo - Copy",
+                    "method.kb_phylogenomics/find_homologs_with_genome_context/0e01be7c00f0bd97c8b03561de091bdcb03d4d16": "1",
+                    "method.RAST_SDK/reannotate_microbial_genome/18b20b4597b7f741a69e06c360b2b938f14e44d2": "1",
+                    "ws_name": "wjriehl:narrative_1550780359051"
+                }
+            ]
+        },
+        {
+            "object_info": [
+                179,
+                "Metabolomics_ENIGMA-CORESEG-ht",
+                "KBaseMatrices.MetaboliteMatrix-2.0",
+                "2019-06-24T23:02:08+0000",
+                3,
+                "slebras",
+                40800,
+                "wjriehl:narrative_1550780359051",
+                "bd55f07ae4de6b9c82fe8c9b200acbe6",
+                8076,
+                {
+                    "col_attribute_mapping": "39605/10/2",
+                    "scale": "raw",
+                    "compound_count": "34",
+                    "row_attribute_mapping": "39605/12/4",
+                    "condition_count": "14"
+                }
+            ]
+        }
+    ]
+}
