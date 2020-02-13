@@ -84,8 +84,8 @@ def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
             idx = 0
         html['links'] = report['html_links']
         html['paths'] = []
-        for idx, link in enumerate(html['links']):
-            html['paths'].append(f'/api/v1/{report_ref}/$/{idx}/{link["name"]}')
+        for i, link in enumerate(html['links']):
+            html['paths'].append(f'/api/v1/{report_ref}/$/{i}/{link["name"]}')
         html['link_idx'] = idx
 
     return {

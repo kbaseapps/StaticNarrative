@@ -31,12 +31,17 @@ class AppProcessor:
             kb_meta["appCell"]["params"]
         )
         exec_state = kb_meta["appCell"].get("exec", {})
-        exec_results = exec_state.get("jobState", {}).get("result", [])
+        exec_result = list()
+        job_state = exec_state.get("jobState", {})
+        if "result" in job_state:        # NJS (aka EE1)
+            exec_result = job_state["result"]
+        elif "job_output" in job_state:  # EE2
+            exec_result = job_state["job_output"].get("result")
 
         kb_info["output"] = {
             "widget": exec_state.get("outputWidgetInfo", {}),
-            "result": exec_results,
-            "report": build_report_view_data(self.ws_url, self.token, exec_results)
+            "result": exec_result,
+            "report": build_report_view_data(self.ws_url, self.token, exec_result)
         }
         kb_info["job"] = {
             "state": "This app is new, and hasn't been started."
