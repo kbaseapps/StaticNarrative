@@ -1,4 +1,4 @@
-{%- macro result_tab(metadata) -%}
+{%- macro result_tab(metadata, narrative_link) -%}
     {% if metadata.output.report %}
         {% set rep = metadata.output.report %}
         {% if rep.objects|count > 0 %}
@@ -14,7 +14,7 @@
             {{ report_links_panel(rep.html, metadata.idx) }}
         {% endif %}
         {% if rep.html.file_links %}
-            {{ report_file_links_panel(rep.html, metadata.idx) }}
+            {{ report_file_links_panel(rep.html, metadata.idx, narrative_link) }}
         {% endif %}
     {% else %}
         <div class="kb-no-output">No output found.</div>
@@ -61,17 +61,17 @@
 {% endmacro %}
 
 {# Renders links to report files #}
-{% macro report_file_links_panel(html_info, idx) %}
+{% macro report_file_links_panel(html_info, idx, narrative_link) %}
     {% call render_panel("Files", idx) -%}
+        These are only available in the live Narrative: <a href="{{ narrative_link }}">{{ narrative_link }}</a>
         <ul class="kb-report-file-list">
         {% for link_info in html_info["file_links"] -%}
         <li>
-            <a href="#" data-target="report-file-frame-{{idx}}" data-src="{{ link_info.URL }}" data-name="{{ link_info.name }}">{{ link_info.name }}</a>
+            {{ link_info.name }}
             {% if link_info.description -%} - {{ link_info.description }}{%- endif %}
         </li>
         {%- endfor %}
         </ul>
-        <iframe id="report-file-frame-{{idx}}" style="display: none;"></iframe>
     {%- endcall %}
 {% endmacro %}
 
@@ -143,7 +143,7 @@
     {% endcall %}
 {%- endmacro -%}
 
-{%- macro render_app_cell(metadata) -%}
+{%- macro render_app_cell(metadata, narrative_link) -%}
     {% call render_kbase_cell(metadata,
                               metadata.attributes.title|default('App Cell', True),
                               metadata.attributes.subtitle|default('', True)) %}
@@ -178,7 +178,7 @@
             </div>
 
             <div id="app-{{metadata.idx}}-result" class="kb-app-results">
-              {{ result_tab(metadata) }}
+              {{ result_tab(metadata, narrative_link) }}
             </div>
         </div>
     {% endcall %}

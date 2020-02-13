@@ -5,7 +5,7 @@
 <div class="cell border-box-sizing code_cell rendered">
 {%- if cell.metadata.kbase and cell.metadata.kbase.type == 'app' -%}
   {% block kb_app_cell %}
-    {{ render_app_cell(cell.metadata.kbase) }}
+    {{ render_app_cell(cell.metadata.kbase, resources.kbase.narrative_link) }}
   {% endblock kb_app_cell %}
 {%- elif cell.metadata.kbase and cell.metadata.kbase.type == 'output' -%}
   {% block kb_output_cell %}
