@@ -1,0 +1,148 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api/node/668dd7be-e4a6-4715-bf38-3e78ec471073",
+                "description": null,
+                "handle": "KBH_3060614",
+                "label": "P_fluorescens_GW456-L13.tree NEWICK",
+                "name": "P_fluorescens_GW456-L13.tree.newick"
+            },
+            {
+                "URL": "https://kbase.us/services/shock-api/node/e61f8bcb-6d1d-40aa-ab25-595b0c847ed1",
+                "description": null,
+                "handle": "KBH_3060618",
+                "label": "P_fluorescens_GW456-L13.tree NEWICK (with labels)",
+                "name": "P_fluorescens_GW456-L13.tree-labels.newick"
+            },
+            {
+                "URL": "https://kbase.us/services/shock-api/node/9af2e99b-e5f1-4253-899a-3e2d968c12b3",
+                "description": null,
+                "handle": "KBH_3060622",
+                "label": "P_fluorescens_GW456-L13.tree PNG",
+                "name": "P_fluorescens_GW456-L13.tree.png"
+            },
+            {
+                "URL": "https://kbase.us/services/shock-api/node/e3c97629-a6c3-4873-a251-bb59842c9bae",
+                "description": null,
+                "handle": "KBH_3060626",
+                "label": "P_fluorescens_GW456-L13.tree PDF",
+                "name": "P_fluorescens_GW456-L13.tree.pdf"
+            }
+        ],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api/node/60a1b440-7933-484a-a835-4ca81f460c51",
+                "description": null,
+                "handle": "KBH_3060630",
+                "label": "P_fluorescens_GW456-L13.tree HTML",
+                "name": "P_fluorescens_GW456-L13.tree.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": null,
+        "warnings": []
+    },
+    "info": [
+        44,
+        "blast_report_5091efe8-fc74-44a6-bcf1-c61878aed0d5",
+        "KBaseReport.Report-2.0",
+        "2019-02-15T16:51:44+0000",
+        1,
+        "chenry",
+        40589,
+        "chenry:narrative_1550247300208",
+        "a72e9683fb9f2106cee1e553929608b1",
+        1297,
+        {
+            "Size(characters)": "NaN",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "40589/44/1"
+    ],
+    "provenance": [
+        {
+            "time": "2019-02-15T16:49:19+0000",
+            "epoch": 1550249359000,
+            "service": "SpeciesTreeBuilder",
+            "service_ver": "0.0.13",
+            "method": "construct_species_tree",
+            "method_params": [
+                {
+                    "out_workspace": "chenry:narrative_1550247300208",
+                    "copy_genomes": 0,
+                    "out_tree_id": "P_fluorescens_GW456-L13.tree",
+                    "nearest_genome_count": 10,
+                    "use_ribosomal_s9_only": 0,
+                    "new_genomes": [
+                        "40589/16/2"
+                    ],
+                    "out_genomeset_ref": "chenry:narrative_1550247300208/P_fluorescens_GW456-L13.genome_set"
+                }
+            ],
+            "input_ws_objects": [
+                "40589/16/2"
+            ],
+            "resolved_ws_objects": [
+                "40589/16/2"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "SpeciesTreeBuilder",
+                    "ver": "0.0.13",
+                    "code_url": "https://github.com/kbaseapps/SpeciesTreeBuilder",
+                    "commit": "32374e065449eb18a2a0eefe5c9f9dbc7fa2b179"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.0.25-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "bcef6723524598b739e910f7d6ce9220d4b09bd2"
+                },
+                {
+                    "name": "GenomeAnnotationAPI",
+                    "ver": "0.3.4-release",
+                    "code_url": "https://github.com/kbase/genome_annotation_api",
+                    "commit": "686f24e31ce773a6300eef9c0b6d0d0332eb4fc4"
+                },
+                {
+                    "name": "kb_phylogenomics",
+                    "ver": "1.2.3",
+                    "code_url": "https://github.com/kbaseapps/kb_phylogenomics",
+                    "commit": "e618cd1b8905b9dcb92913acd2e44f3751ce679c"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.3-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "b2a10f82aadad8937f84144815fb4dafc1e6ffaf"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "chenry",
+    "orig_wsid": 40589,
+    "created": "2019-02-15T16:51:44+0000",
+    "epoch": 1550249504567,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_3060614",
+            "KBH_3060626",
+            "KBH_3060622",
+            "KBH_3060630",
+            "KBH_3060618"
+        ]
+    }
+}

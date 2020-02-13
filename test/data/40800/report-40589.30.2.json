@@ -1,0 +1,113 @@
+{
+    "data": {
+        "direct_html": "<html><head><script type='text/javascript' src='https://www.google.com/jsapi'></script><script type='text/javascript'>google.load('visualization', '1', {packages:['controls'], callback: drawDashboard});google.setOnLoadCallback(drawDashboard);function drawDashboard() {var data = new google.visualization.DataTable();data.addColumn('string','Compound ID');data.addColumn('string','Reaction ID');data.addColumn('string','Equation');data.addColumn('string','Genes');data.addRows([[\"BET_c0 (cpd00540)\",\"rxn00910\",\"(1) NADP_c0[c0] + (1) 5-Methyltetrahydrofolate_c0[c0] <=> (1) NADPH_c0[c0] + (1) H+_c0[c0] + (1) 5-10-Methylenetetrahydrofolate_c0[c0]\",\"AO361_RS05185\"],[\"BET_c0 (cpd00540)\",\"rxn00692\",\"(1) H2O_c0[c0] + (1) Glycine_c0[c0] + (1) 5-10-Methylenetetrahydrofolate_c0[c0] <=> (1) L-Serine_c0[c0] + (1) Tetrahydrofolate_c0[c0]\",\"(AO361_RS07215 or AO361_RS13375 or AO361_RS05495)\"],[\"BET_c0 (cpd00540)\",\"rxn00131\",\"(1) H2O_c0[c0] + (1) AMP_c0[c0] <=> (1) ribose-5-phosphate_c0[c0] + (1) Adenine_c0[c0]\",\"AO361_RS06905\"],[\"BET_c0 (cpd00540)\",\"rxn00927\",\"(1) H2O_c0[c0] + (1) Adenosine_c0[c0] <=> (1) D-Ribose_c0[c0] + (1) Adenine_c0[c0]\",\"AO361_RS19515\"],[\"BET_c0 (cpd00540)\",\"rxn00126\",\"(1) H2O_c0[c0] + (1) ATP_c0[c0] + (1) L-Methionine_c0[c0] => (1) Phosphate_c0[c0] + (1) PPi_c0[c0] + (1) S-Adenosyl-L-methionine_c0[c0] + (1) H+_c0[c0]\",\"AO361_RS05240\"],[\"BET_c0 (cpd00540)\",\"rxn00429\",\"(1) H2O_c0[c0] + (1) NAD_c0[c0] + (1) Formaldehyde_c0[c0] <=> (1) NADH_c0[c0] + (1) Formate_c0[c0] + (2) H+_c0[c0]\",\"AO361_RS05525\"],[\"BET_c0 (cpd00540)\",\"rxn00772\",\"(1) ATP_c0[c0] + (1) D-Ribose_c0[c0] => (1) ADP_c0[c0] + (1) H+_c0[c0] + (1) ribose-5-phosphate_c0[c0]\",\"AO361_RS19525\"],[\"BET_c0 (cpd00540)\",\"rxn00420\",\"(1) H2O_c0[c0] + (1) phosphoserine_c0[c0] => (1) Phosphate_c0[c0] + (1) L-Serine_c0[c0]\",\"(AO361_RS04795 or AO361_RS04695 or AO361_RS20655 or AO361_RS21045 or AO361_RS00865)\"],[\"BET_c0 (cpd00540)\",\"rxn06377\",\"(1) Glycine_c0[c0] + (1) H+_c0[c0] + (1) Lipoylprotein_c0[c0] => (1) CO2_c0[c0] + (1) S-Aminomethyldihydrolipoylprotein_c0[c0]\",\"(AO361_RS09305 or AO361_RS04455)\"],[\"BET_c0 (cpd00540)\",\"rxn10010\",\"(1) NADH_c0[c0] + (1) H+_c0[c0] + (1) (2E)-Hexenoyl-CoA_c0[c0] => (1) NAD_c0[c0] + (1) Hexanoyl-CoA_c0[c0]\",\"(AO361_RS16855 or AO361_RS16865 or AO361_RS12415)\"],[\"BET_c0 (cpd00540)\",\"rxn00693\",\"(1) Homocysteine_c0[c0] + (1) 5-Methyltetrahydrofolate_c0[c0] <=> (1) L-Methionine_c0[c0] + (1) Tetrahydrofolate_c0[c0]\",\"AO361_RS14190\"],[\"BET_c0 (cpd00540)\",\"rxn01101\",\"(1) NAD_c0[c0] + (1) 3-Phosphoglycerate_c0[c0] <=> (1) NADH_c0[c0] + (1) H+_c0[c0] + (1) 3-Phosphonooxypyruvate_c0[c0]\",\"(AO361_RS04655 or AO361_RS17435 or AO361_RS14775 or AO361_RS22455 or AO361_RS11600)\"],[\"BET_c0 (cpd00540)\",\"rxn06600\",\"(1) Tetrahydrofolate_c0[c0] + (1) S-Aminomethyldihydrolipoylprotein_c0[c0] => (1) NH3_c0[c0] + (1) 5-10-Methylenetetrahydrofolate_c0[c0] + (1) Dihydrolipolprotein_c0[c0]\",\"((AO361_RS09295 or AO361_RS04445) and (AO361_RS13380 or AO361_RS04450 or AO361_RS09310))\"],[\"BET_c0 (cpd00540)\",\"rxn00141\",\"(1) H2O_c0[c0] + (1) S-Adenosyl-homocysteine_c0[c0] <=> (1) Homocysteine_c0[c0] + (1) Adenosine_c0[c0]\",\"AO361_RS05190\"],[\"BET_c0 (cpd00540)\",\"rxn03251\",\"(1) FAD_c0[c0] + (1) H+_c0[c0] + (1) Hexanoyl-CoA_c0[c0] <=> (1) FADH2_c0[c0] + (1) (2E)-Hexenoyl-CoA_c0[c0]\",\"(AO361_RS05685 or AO361_RS06900 or AO361_RS05700 or AO361_RS12925 or AO361_RS01110 or AO361_RS05695 or AO361_RS15775 or AO361_RS24455 or AO361_RS02230 or AO361_RS02225 or AO361_RS22870)\"],[\"BET_c0 (cpd00540)\",\"rxn02914\",\"(1) 2-Oxoglutarate_c0[c0] + (1) phosphoserine_c0[c0] <=> (1) L-Glutamate_c0[c0] + (1) 3-Phosphonooxypyruvate_c0[c0]\",\"AO361_RS10810\"],[\"BET_c0 (cpd00540)\",\"rxn06493\",\"(1) NAD_c0[c0] + (1) Dihydrolipolprotein_c0[c0] <=> (1) NADH_c0[c0] + (1) H+_c0[c0] + (1) Lipoylprotein_c0[c0]\",\"((Unknown and Unknown and (AO361_RS04450 or AO361_RS09310 or AO361_RS13380)) or ((AO361_RS04450 or AO361_RS09310 or AO361_RS13380) and (AO361_RS04455 or AO361_RS09305)))\"],[\"BET_c0 (cpd00540)\",\"rxn05011\",\"(1) S-Adenosyl-L-methionine_c0[c0] + (1) Dimethylglycine_c0[c0] => (1) S-Adenosyl-homocysteine_c0[c0] + (1) H+_c0[c0] + (1) BET_c0[c0]\",\"Unknown\"],[\"BET_c0 (cpd00540)\",\"rxn00270\",\"(1) S-Adenosyl-L-methionine_c0[c0] + (1) Glycine_c0[c0] => (1) S-Adenosyl-homocysteine_c0[c0] + (1) H+_c0[c0] + (1) Sarcosine_c0[c0]\",\"Unknown\"],[\"BET_c0 (cpd00540)\",\"rxn12739\",\"(1) H2O_c0[c0] + (1) FAD_c0[c0] + (1) H+_c0[c0] + (1) Dimethylglycine_c0[c0] <= (1) Formaldehyde_c0[c0] + (1) Sarcosine_c0[c0] + (1) FADH2_c0[c0]\",\"Unknown\"],]);var filterColumns = [];var tab_columns = [];for (var j = 0, dcols = data.getNumberOfColumns(); j < dcols; j++) {filterColumns.push(j);tab_columns.push(j);}filterColumns.push({type: 'string',calc: function (dt, row) {for (var i = 0, vals = [], cols = dt.getNumberOfColumns(); i < cols; i++) {vals.push(dt.getFormattedValue(row, i));}return vals.join('\\n');}});var table = new google.visualization.ChartWrapper({chartType: 'Table',containerId: 'table_div',options: {allowHtml: true,showRowNumber: true,page: 'enable',pageSize: 20},view: {columns: tab_columns}});var search_filter = new google.visualization.ControlWrapper({controlType: 'StringFilter',containerId: 'search_div',options: {filterColumnIndex: data.getNumberOfColumns(),matchType: 'any',caseSensitive: false,ui: {label: 'Search data:'}},view: {columns: filterColumns}});var dashboard = new google.visualization.Dashboard(document.querySelector('#dashboard_div'));var formatter = new google.visualization.ColorFormat();formatter.addRange(0.5, null, 'red', 'white');dashboard.bind([search_filter], [table]);dashboard.draw(data);}</script></head><body><h4>Results from pathway analysis</h4><div id='dashboard_div'><table class='columns'><tr><td><div id='search_div'></div></td></tr><tr><td><div id='table_div'></div></td></tr></table></div></body></html>",
+        "direct_html_link_index": null,
+        "file_links": [],
+        "html_links": [],
+        "html_window_height": null,
+        "objects_created": [
+            {
+                "description": "FBA-13 Betaine_pathway_FBA",
+                "ref": "40589/28/2"
+            },
+            {
+                "description": "FeatureSet-1 cpd00540_genes",
+                "ref": "40589/29/2"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": "Complete media.",
+        "warnings": []
+    },
+    "info": [
+        30,
+        "Betaine_pathway_FBA.pathway.report",
+        "KBaseReport.Report-2.0",
+        "2019-02-15T17:45:21+0000",
+        2,
+        "chenry",
+        40589,
+        "chenry:narrative_1550247300208",
+        "9f18783678b53688308fc784c2f52593",
+        6312,
+        {
+            "Size(characters)": "15",
+            "Objects Created": "2",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "40589/30/2"
+    ],
+    "provenance": [
+        {
+            "time": "2019-02-15T17:44:39+0000",
+            "epoch": 1550252679000,
+            "service": "fba_tools",
+            "service_ver": "1.7.8",
+            "method": "predict_metabolite_biosynthesis_pathway",
+            "method_params": [
+                {
+                    "feature_ko_list": [],
+                    "fbamodel_id": "40589/25/2",
+                    "expression_condition": "",
+                    "expseries_id": null,
+                    "reaction_ko_list": "",
+                    "exp_threshold_margin": 0.1,
+                    "exp_threshold_percentile": 0.5,
+                    "target_metabolite_list": "cpd00540_c0",
+                    "source_metabolite_list": "",
+                    "workspace": "chenry:narrative_1550247300208",
+                    "activation_coefficient": 0.5,
+                    "media_id": null,
+                    "fba_output_id": "Betaine_pathway_FBA"
+                }
+            ],
+            "input_ws_objects": [
+                "40589/25/2"
+            ],
+            "resolved_ws_objects": [
+                "40589/25/2"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "fba_tools",
+                    "ver": "1.7.8",
+                    "code_url": "https://github.com/cshenry/fba_tools",
+                    "commit": "e445caf84edc20738d49de61c7f96a0b783f9644"
+                },
+                {
+                    "name": "GenomeAnnotationAPI",
+                    "ver": "0.3.4-beta",
+                    "code_url": "https://github.com/kbase/genome_annotation_api",
+                    "commit": "686f24e31ce773a6300eef9c0b6d0d0332eb4fc4"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.3-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "b2a10f82aadad8937f84144815fb4dafc1e6ffaf"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.0.25-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "bcef6723524598b739e910f7d6ce9220d4b09bd2"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "chenry",
+    "orig_wsid": 40589,
+    "created": "2019-02-15T17:45:21+0000",
+    "epoch": 1550252721063,
+    "refs": [
+        "40589/29/2",
+        "40589/28/2"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

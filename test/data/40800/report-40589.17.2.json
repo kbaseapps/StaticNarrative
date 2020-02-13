@@ -1,0 +1,132 @@
+{
+    "data": {
+        "direct_html": "<pre>The RAST algorithm was applied to annotating an existing genome: Pseudomonas fluorescens. \nThe sequence for this genome is comprised of 2 contigs containing 5757432 nucleotides. \nThe input genome has 5308 existing coding features and 200 existing non-coding features.\nInput genome has the following feature types:\n\tNon-coding gene                   97 \n\tNon-coding ncRNA                   3 \n\tNon-coding rRNA                   22 \n\tNon-coding regulatory              6 \n\tNon-coding tRNA                   71 \n\tNon-coding tmRNA                   1 \n\tgene                            5308 \nA scan was conducted for the following additional feature types: insertion sequences.\nThe genome features were functionally annotated using the following algorithm(s): Kmers V2; Kmers V1; protein similarity.\nIn addition to the remaining original 5308 coding features and 200 non-coding features, 1 new features were called, of which 1 are non-coding.\nOutput genome has the following feature types:\n\tCoding gene                     5308 \n\tNon-coding IS_Unknown              1 \n\tNon-coding gene                   97 \n\tNon-coding ncRNA                   3 \n\tNon-coding rRNA                   22 \n\tNon-coding regulatory              6 \n\tNon-coding tRNA                   71 \n\tNon-coding tmRNA                   1 \nOverall, the genes have 3474 distinct functions. \nThe genes include 2662 genes with a SEED annotation ontology across 1588 distinct SEED functions.\nThe number of distinct functions can exceed the number of genes because some genes have multiple functions.\n</pre>",
+        "direct_html_link_index": null,
+        "file_links": [],
+        "html_links": [],
+        "html_window_height": null,
+        "objects_created": [
+            {
+                "description": "Annotated genome",
+                "ref": "40589/16/2"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": null,
+        "warnings": []
+    },
+    "info": [
+        17,
+        "P_fluorescens_GW456-L13.RAST.report",
+        "KBaseReport.Report-2.0",
+        "2019-02-15T16:20:10+0000",
+        2,
+        "chenry",
+        40589,
+        "chenry:narrative_1550247300208",
+        "9039c4a0ee1c6e4efccdfe6e88f7a9ce",
+        1848,
+        {
+            "Size(characters)": "NaN",
+            "Objects Created": "1",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "40589/17/2"
+    ],
+    "provenance": [
+        {
+            "time": "2019-02-15T16:16:27+0000",
+            "epoch": 1550247387000,
+            "service": "RAST_SDK",
+            "service_ver": "0.0.16",
+            "method": "annotate_genome",
+            "method_params": [
+                {
+                    "call_pyrrolysoproteins": 0,
+                    "call_features_strep_suis_repeat": 0,
+                    "call_features_strep_pneumo_repeat": 0,
+                    "call_features_rRNA_SEED": 0,
+                    "kmer_v1_parameters": 1,
+                    "call_features_crispr": 0,
+                    "call_features_CDS_prodigal": 0,
+                    "retain_old_anno_for_hypotheticals": 0,
+                    "annotate_proteins_similarity": 1,
+                    "call_features_tRNA_trnascan": 0,
+                    "annotate_proteins_kmer_v2": 1,
+                    "output_genome": "P_fluorescens_GW456-L13.RAST",
+                    "resolve_overlapping_features": 0,
+                    "workspace": "chenry:narrative_1550247300208",
+                    "call_features_CDS_glimmer3": 0,
+                    "call_selenoproteins": 0,
+                    "input_genome": "40589/13/1",
+                    "call_features_repeat_region_SEED": 0,
+                    "call_features_prophage_phispy": 0
+                }
+            ],
+            "input_ws_objects": [
+                "40589/13/1"
+            ],
+            "resolved_ws_objects": [
+                "40589/13/1"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "RAST_SDK",
+                    "ver": "0.0.16",
+                    "code_url": "https://github.com/kbaseapps/RAST_SDK",
+                    "commit": "18b20b4597b7f741a69e06c360b2b938f14e44d2"
+                },
+                {
+                    "name": "GenomeAnnotationAPI",
+                    "ver": "0.3.4-release",
+                    "code_url": "https://github.com/kbase/genome_annotation_api",
+                    "commit": "686f24e31ce773a6300eef9c0b6d0d0332eb4fc4"
+                },
+                {
+                    "name": "AssemblyUtil",
+                    "ver": "1.0.10-release",
+                    "code_url": "https://github.com/kbaseapps/AssemblyUtil",
+                    "commit": "963bd86e017d84a556a99fc8871b8121ded9083a"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.0.25-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "bcef6723524598b739e910f7d6ce9220d4b09bd2"
+                },
+                {
+                    "name": "GenomeFileUtil",
+                    "ver": "0.8.12-release",
+                    "code_url": "https://github.com/kbaseapps/GenomeFileUtil",
+                    "commit": "8f98bb8637c4fa5cd743e3d88fd5b336836fcabc"
+                },
+                {
+                    "name": "WsLargeDataIO",
+                    "ver": "0.0.2-beta",
+                    "code_url": "https://github.com/kbaseapps/WsLargeDataIO",
+                    "commit": "3f3b26590690901c01f8872fa49996863af05fb9"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.3-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "b2a10f82aadad8937f84144815fb4dafc1e6ffaf"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "chenry",
+    "orig_wsid": 40589,
+    "created": "2019-02-15T16:20:10+0000",
+    "epoch": 1550247610206,
+    "refs": [
+        "40589/16/2"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

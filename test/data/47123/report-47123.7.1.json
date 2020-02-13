@@ -1,0 +1,124 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 2,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/47b5a29a-6650-4d59-856a-e61079e13fb1",
+                "description": "Report page 1",
+                "handle": "KBH_519789",
+                "label": "",
+                "name": "page1.html"
+            },
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/cd95091e-3e31-4a21-a4df-de924b5fd9e0",
+                "description": "Report page 2",
+                "handle": "KBH_519791",
+                "label": "",
+                "name": "page2.html"
+            },
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/db80c207-e368-4601-8eb6-5ff341190efe",
+                "description": "Report page 3",
+                "handle": "KBH_519794",
+                "label": "",
+                "name": "page3.html"
+            },
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/9522541c-f0e2-40ef-88ca-25c92c4d2f68",
+                "description": "Report page 4",
+                "handle": "KBH_519795",
+                "label": "",
+                "name": "page4.html"
+            },
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/fbcd9693-72b3-4bd4-8a77-202787c35b8d",
+                "description": "Report page 5",
+                "handle": "KBH_519796",
+                "label": "",
+                "name": "page5.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "Here is an example report",
+        "warnings": []
+    },
+    "info": [
+        7,
+        "NarrativeTest.example_report-c544984d-f764-4716-8a31-6ceabff4bb4b",
+        "KBaseReport.Report-3.0",
+        "2020-02-12T21:10:47+0000",
+        1,
+        "wjriehl",
+        47123,
+        "wjriehl:narrative_1581384702051",
+        "d57c87b804431ac93566b481dffde223",
+        1081,
+        {
+            "Size(characters)": "25",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "47123/7/1"
+    ],
+    "provenance": [
+        {
+            "time": "2020-02-12T21:09:04+0000",
+            "epoch": 1581541744000,
+            "service": "NarrativeTest",
+            "service_ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+            "method": "report_html_links",
+            "method_params": [
+                {
+                    "workspace_name": "wjriehl:narrative_1581384702051",
+                    "num_pages": 5,
+                    "initial_page": 3,
+                    "include_direct_html": 0
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "NarrativeTest",
+                    "ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                    "code_url": "https://github.com/briehl/narrative-test",
+                    "commit": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"
+                },
+                {
+                    "name": "KBaseReport",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "0356e0313025b0d4b1b7fa11e96050aeaaaa828c"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "df0bb6568008983c1daf6966cf8cebf54f0a0d80"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 47123,
+    "created": "2020-02-12T21:10:46+0000",
+    "epoch": 1581541846483,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_519789",
+            "KBH_519794",
+            "KBH_519791",
+            "KBH_519796",
+            "KBH_519795"
+        ]
+    }
+}

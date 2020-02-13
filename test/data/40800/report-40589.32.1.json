@@ -1,0 +1,98 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api/node/9ab85cc6-b38a-479d-a51c-9f0c3a20750d",
+                "description": null,
+                "handle": "KBH_3060542",
+                "label": "Mash search results",
+                "name": "index.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": null,
+        "warnings": []
+    },
+    "info": [
+        32,
+        "kb_mash_report_3a3947ad-9eba-424c-aadc-d4a74d465cbd",
+        "KBaseReport.Report-2.0",
+        "2019-02-15T16:37:10+0000",
+        1,
+        "chenry",
+        40589,
+        "chenry:narrative_1550247300208",
+        "f4b302e595e0a8e350aa302d32c45f1d",
+        368,
+        {
+            "Size(characters)": "NaN",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "40589/32/1"
+    ],
+    "provenance": [
+        {
+            "time": "2019-02-15T16:35:52+0000",
+            "epoch": 1550248552000,
+            "service": "kb_mash",
+            "service_ver": "0.0.3",
+            "method": "run_mash_dist_search",
+            "method_params": [
+                {
+                    "search_db": "NCBI_Refseq",
+                    "workspace_name": "chenry:narrative_1550247300208",
+                    "input_upa": "40589/13/1",
+                    "n_max_results": 100
+                }
+            ],
+            "input_ws_objects": [
+                "40589/13/1"
+            ],
+            "resolved_ws_objects": [
+                "40589/13/1"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "kb_mash",
+                    "ver": "0.0.3",
+                    "code_url": "https://github.com/psdehal/kb_mash",
+                    "commit": "1618fb569fb82c81d1a4ec2828f7f94bef45e8bc"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.0.25-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "bcef6723524598b739e910f7d6ce9220d4b09bd2"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.3-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "b2a10f82aadad8937f84144815fb4dafc1e6ffaf"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "chenry",
+    "orig_wsid": 40589,
+    "created": "2019-02-15T16:37:10+0000",
+    "epoch": 1550248630586,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_3060542"
+        ]
+    }
+}

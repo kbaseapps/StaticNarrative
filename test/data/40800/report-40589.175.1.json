@@ -1,0 +1,335 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api/node/e9091136-c514-4565-b437-306192a4ce41",
+                "description": null,
+                "handle": "KBH_3061126",
+                "label": "P_fluorescens_GW456-L13.tree scanned by cpd00540_genes HTML",
+                "name": "P_fluorescens_GW456-L13.tree-homologs_chromosomal_context.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS00865",
+                "ref": "40589/88/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS01110",
+                "ref": "40589/90/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS02225",
+                "ref": "40589/92/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS02230",
+                "ref": "40589/94/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS04445",
+                "ref": "40589/96/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS04450",
+                "ref": "40589/98/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS04455",
+                "ref": "40589/100/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS04655",
+                "ref": "40589/102/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS04695",
+                "ref": "40589/104/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS04795",
+                "ref": "40589/106/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS05185",
+                "ref": "40589/108/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS05190",
+                "ref": "40589/111/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS05240",
+                "ref": "40589/113/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS05495",
+                "ref": "40589/115/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS05525",
+                "ref": "40589/117/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS05685",
+                "ref": "40589/119/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS05695",
+                "ref": "40589/121/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS05700",
+                "ref": "40589/123/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS06900",
+                "ref": "40589/125/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS06905",
+                "ref": "40589/127/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS07215",
+                "ref": "40589/129/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS09295",
+                "ref": "40589/131/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS09305",
+                "ref": "40589/133/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS09310",
+                "ref": "40589/135/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS10810",
+                "ref": "40589/137/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS11600",
+                "ref": "40589/139/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS12415",
+                "ref": "40589/141/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS12925",
+                "ref": "40589/143/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS13375",
+                "ref": "40589/145/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS13380",
+                "ref": "40589/147/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS14190",
+                "ref": "40589/149/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS14775",
+                "ref": "40589/151/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS15775",
+                "ref": "40589/153/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS16855",
+                "ref": "40589/155/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS16865",
+                "ref": "40589/157/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS17435",
+                "ref": "40589/159/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS19515",
+                "ref": "40589/161/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS19525",
+                "ref": "40589/163/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS20655",
+                "ref": "40589/165/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS21045",
+                "ref": "40589/167/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS22455",
+                "ref": "40589/169/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS22870",
+                "ref": "40589/171/1"
+            },
+            {
+                "description": "Homologs of P_fluorescens_GW456-L13.RAST AO361_RS24455",
+                "ref": "40589/173/1"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": null,
+        "warnings": []
+    },
+    "info": [
+        175,
+        "blast_report_6b523bd4-26fb-4816-ae0f-acfd06c4449a",
+        "KBaseReport.Report-2.0",
+        "2019-02-15T19:32:42+0000",
+        1,
+        "chenry",
+        40589,
+        "chenry:narrative_1550247300208",
+        "942ce1363d6fbb79ad4e02bfc4dc92ba",
+        4452,
+        {
+            "Size(characters)": "NaN",
+            "Objects Created": "43",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "40589/175/1"
+    ],
+    "provenance": [
+        {
+            "time": "2019-02-15T17:55:37+0000",
+            "epoch": 1550253337000,
+            "service": "kb_phylogenomics",
+            "service_ver": "1.3.1",
+            "method": "find_homologs_with_genome_context",
+            "method_params": [
+                {
+                    "bitscore": 100,
+                    "ident_thresh": 40,
+                    "input_speciesTree_ref": "40589/33/2",
+                    "neighbor_thresh": 10,
+                    "save_per_genome_featureSets": "0",
+                    "overlap_fraction": 50,
+                    "workspace_name": "chenry:narrative_1550247300208",
+                    "input_featureSet_ref": "40589/29/2",
+                    "e_value": 0.001,
+                    "color_seed": 1
+                }
+            ],
+            "input_ws_objects": [
+                "40589/29/2",
+                "40589/33/2"
+            ],
+            "resolved_ws_objects": [
+                "40589/29/2",
+                "40589/33/2"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "kb_phylogenomics",
+                    "ver": "1.3.1",
+                    "code_url": "https://github.com/kbaseapps/kb_phylogenomics",
+                    "commit": "0e01be7c00f0bd97c8b03561de091bdcb03d4d16"
+                },
+                {
+                    "name": "kb_blast",
+                    "ver": "1.1.0-beta",
+                    "code_url": "https://github.com/kbaseapps/kb_blast",
+                    "commit": "763083fdf49a0d2efbcbb8ba81e6efb63ed5b71b"
+                },
+                {
+                    "name": "KBaseDataObjectToFileUtils",
+                    "ver": "0.0.7-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseDataObjectToFileUtils",
+                    "commit": "cf2a2acac87f20fce9ad720c5d1b2b37804432de"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.0.25-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "bcef6723524598b739e910f7d6ce9220d4b09bd2"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.3-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "b2a10f82aadad8937f84144815fb4dafc1e6ffaf"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "chenry",
+    "orig_wsid": 40589,
+    "created": "2019-02-15T19:32:42+0000",
+    "epoch": 1550259162037,
+    "refs": [
+        "40589/119/1",
+        "40589/92/1",
+        "40589/117/1",
+        "40589/94/1",
+        "40589/139/1",
+        "40589/96/1",
+        "40589/115/1",
+        "40589/137/1",
+        "40589/98/1",
+        "40589/113/1",
+        "40589/135/1",
+        "40589/157/1",
+        "40589/159/1",
+        "40589/161/1",
+        "40589/163/1",
+        "40589/141/1",
+        "40589/165/1",
+        "40589/143/1",
+        "40589/167/1",
+        "40589/145/1",
+        "40589/123/1",
+        "40589/100/1",
+        "40589/121/1",
+        "40589/90/1",
+        "40589/108/1",
+        "40589/129/1",
+        "40589/106/1",
+        "40589/127/1",
+        "40589/104/1",
+        "40589/125/1",
+        "40589/102/1",
+        "40589/169/1",
+        "40589/147/1",
+        "40589/149/1",
+        "40589/171/1",
+        "40589/151/1",
+        "40589/173/1",
+        "40589/153/1",
+        "40589/155/1",
+        "40589/88/1",
+        "40589/111/1",
+        "40589/133/1",
+        "40589/131/1"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_3061126"
+        ]
+    }
+}

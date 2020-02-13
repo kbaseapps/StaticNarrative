@@ -1,0 +1,100 @@
+{
+    "data": {
+        "direct_html": "Here is some direct html for your Narrative perusal.",
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/3a6972b9-9453-4b74-b705-a9679dff26af",
+                "description": "Report page 1",
+                "handle": "KBH_519788",
+                "label": "",
+                "name": "page1.html"
+            },
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/8b982303-0c1f-4f4c-a487-1e7583754e08",
+                "description": "Report page 2",
+                "handle": "KBH_519790",
+                "label": "",
+                "name": "page2.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "Here is an example report",
+        "warnings": []
+    },
+    "info": [
+        5,
+        "NarrativeTest.example_report-92b37ca6-5542-435b-8fe0-be5d2eb1a109",
+        "KBaseReport.Report-3.0",
+        "2020-02-12T21:10:02+0000",
+        1,
+        "wjriehl",
+        47123,
+        "wjriehl:narrative_1581384702051",
+        "7db73635d6879fbcddcd88c3f2b4bc77",
+        609,
+        {
+            "Size(characters)": "25",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "47123/5/1"
+    ],
+    "provenance": [
+        {
+            "time": "2020-02-12T21:08:59+0000",
+            "epoch": 1581541739000,
+            "service": "NarrativeTest",
+            "service_ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+            "method": "report_html_links",
+            "method_params": [
+                {
+                    "workspace_name": "wjriehl:narrative_1581384702051",
+                    "num_pages": 2,
+                    "initial_page": 1,
+                    "include_direct_html": 1
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "NarrativeTest",
+                    "ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                    "code_url": "https://github.com/briehl/narrative-test",
+                    "commit": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"
+                },
+                {
+                    "name": "KBaseReport",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "0356e0313025b0d4b1b7fa11e96050aeaaaa828c"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "df0bb6568008983c1daf6966cf8cebf54f0a0d80"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 47123,
+    "created": "2020-02-12T21:10:01+0000",
+    "epoch": 1581541801368,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_519788",
+            "KBH_519790"
+        ]
+    }
+}

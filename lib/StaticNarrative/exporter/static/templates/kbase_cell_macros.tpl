@@ -23,7 +23,7 @@
         {% if html_info.link_idx is not none and html_info.paths %}
             <div class="kb-app-report" data-path="{{ html_info.paths[html_info.link_idx] }}"></div>
         {% elif html_info.direct %}
-            Some directly injected HTML up in here!
+            <iframe srcdoc="{{ html_info.direct }}" class="kb-app-report-iframe" style="{{ html_info.iframe_style }}"></iframe>
         {% endif %}
     {%- endcall %}
 {% endmacro %}

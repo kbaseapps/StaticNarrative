@@ -1,0 +1,80 @@
+{
+    "data": {
+        "direct_html": "Here is some direct html for your Narrative perusal.",
+        "direct_html_link_index": null,
+        "file_links": [],
+        "html_links": [],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "Here is an example report",
+        "warnings": []
+    },
+    "info": [
+        8,
+        "NarrativeTest.example_report-2e0a57b9-18a9-4fd8-a448-02be9388b9e8",
+        "KBaseReport.Report-3.0",
+        "2020-02-12T21:19:47+0000",
+        1,
+        "wjriehl",
+        47123,
+        "wjriehl:narrative_1581384702051",
+        "8517efb8d47e730309f784aab6161c3e",
+        265,
+        {
+            "Size(characters)": "25",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "47123/8/1"
+    ],
+    "provenance": [
+        {
+            "time": "2020-02-12T21:19:07+0000",
+            "epoch": 1581542347000,
+            "service": "NarrativeTest",
+            "service_ver": "84738351645e027a3b9d5adc9b8551c4c4c82c73",
+            "method": "report_html_links",
+            "method_params": [
+                {
+                    "workspace_name": "wjriehl:narrative_1581384702051",
+                    "num_pages": 0,
+                    "initial_page": 0,
+                    "include_direct_html": 1
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "NarrativeTest",
+                    "ver": "84738351645e027a3b9d5adc9b8551c4c4c82c73",
+                    "code_url": "https://github.com/briehl/narrative-test",
+                    "commit": "84738351645e027a3b9d5adc9b8551c4c4c82c73"
+                },
+                {
+                    "name": "KBaseReport",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "0356e0313025b0d4b1b7fa11e96050aeaaaa828c"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "df0bb6568008983c1daf6966cf8cebf54f0a0d80"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 47123,
+    "created": "2020-02-12T21:19:47+0000",
+    "epoch": 1581542387350,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

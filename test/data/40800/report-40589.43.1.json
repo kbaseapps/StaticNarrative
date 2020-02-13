@@ -1,0 +1,139 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api/node/88107c0d-9b06-4f99-bb4d-6ebb1f651a0a",
+                "description": "HTML report for reaction to gene candidates app",
+                "handle": "KBH_3060610",
+                "label": "",
+                "name": "find_genes_for_rxn.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [
+            {
+                "description": "A set of the top gene candidates",
+                "ref": "40589/37/1"
+            },
+            {
+                "description": "A set of the top gene candidates",
+                "ref": "40589/39/1"
+            },
+            {
+                "description": "A set of the top gene candidates",
+                "ref": "40589/41/1"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": null,
+        "warnings": []
+    },
+    "info": [
+        43,
+        "find_genes_for_rxn_0aa26841-df98-45e2-9817-cd6a81536eb1",
+        "KBaseReport.Report-2.0",
+        "2019-02-15T16:51:19+0000",
+        1,
+        "chenry",
+        40589,
+        "chenry:narrative_1550247300208",
+        "1acaf105537bd57597c8697229b57031",
+        616,
+        {
+            "Size(characters)": "NaN",
+            "Objects Created": "3",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "40589/43/1"
+    ],
+    "provenance": [
+        {
+            "time": "2019-02-15T16:48:24+0000",
+            "epoch": 1550249304000,
+            "service": "kb_reaction_gene_finder",
+            "service_ver": "0.0.1",
+            "method": "find_genes_from_similar_reactions",
+            "method_params": [
+                {
+                    "structural_similarity_floor": 0.75,
+                    "workspace_id": 40589,
+                    "blast_score_floor": 30,
+                    "difference_similarity_floor": 0.75,
+                    "reaction_set": null,
+                    "feature_set_prefix": "Betaine_pathway_candidates",
+                    "workspace_name": "chenry:narrative_1550247300208",
+                    "bulk_reaction_ids": "rxn00270\nrxn05010\nrxn05011",
+                    "query_genome_ref": "40589/13/1",
+                    "number_of_hits_to_report": 10
+                }
+            ],
+            "input_ws_objects": [
+                "40589/13/1"
+            ],
+            "resolved_ws_objects": [
+                "40589/13/1"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "kb_reaction_gene_finder",
+                    "ver": "0.0.1",
+                    "code_url": "https://github.com/kbaseapps/kb_rxn_gene_finder",
+                    "commit": "b3460385b29e058580923f6fb737d795cf0b52c4"
+                },
+                {
+                    "name": "GenomeFileUtil",
+                    "ver": "0.8.12-dev",
+                    "code_url": "https://github.com/kbaseapps/GenomeFileUtil",
+                    "commit": "8f98bb8637c4fa5cd743e3d88fd5b336836fcabc"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.0.25-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "bcef6723524598b739e910f7d6ce9220d4b09bd2"
+                },
+                {
+                    "name": "FeatureSetUtils",
+                    "ver": "1.2.5-beta",
+                    "code_url": "https://github.com/kbaseapps/FeatureSetUtils",
+                    "commit": "c4f81b53cbafe133dbb8efa246976b8820a5727a"
+                },
+                {
+                    "name": "GenomeSearchUtil",
+                    "ver": "1.0.1-release",
+                    "code_url": "https://github.com/kbaseapps/GenomeSearchUtil",
+                    "commit": "d7e7828091fc4073fd790f747c1ff623944cc207"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.3-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "b2a10f82aadad8937f84144815fb4dafc1e6ffaf"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "chenry",
+    "orig_wsid": 40589,
+    "created": "2019-02-15T16:51:19+0000",
+    "epoch": 1550249479776,
+    "refs": [
+        "40589/39/1",
+        "40589/37/1",
+        "40589/41/1"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_3060610"
+        ]
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "data": {
+        "direct_html": "\t<style>\n\t.reporttbl {\n\t\tborder:1px solid #C0C0C0;\n\t\tborder-collapse:collapse;\n\t\tpadding:5px;\n\t}\n\t.reporttbl th {\n\t\tborder:1px solid #C0C0C0;\n\t\tpadding:5px;\n\t\tbackground:#F0F0F0;\n\t}\n\t.reporttbl td {\n\t\tborder:1px solid #C0C0C0;\n\t\ttext-align:left;\n\t\tpadding:5px;\n\t}\n\t</style><div style=\"height: 200px; overflow-y: scroll;\"><p>A new draft genome-scale metabolic model was constructed based on the annotations in the genome 40589/16/2.<p>The model P_flourescens_GW456-L13.mdl was gapfilled in 40589/176/1 media to force a minimum flux of 0.1 through the bio1 reaction.</p> Model was saved with the name P_flourescens_GW456-L13.mdl. The final model includes 1270 reactions, 1231 compounds, and 1177 genes.</p><p>During gapfilling, 60 new reactions were added to the model, while 0 existing reactions were made reversible. The reactions added and modified during gapfilling are listed below:</p><br><table class=\"reporttbl\"><tr><th>Reaction</th><th>Direction</th><th>Equation</th><th>Action</th></tr><tr><td>rxn01258_c0</td><td>></td><td>(1) Chorismate_c0[c0] => (1) Isochorismate_c0[c0]</td><td>added</td></tr><tr><td>rxn02929_c0</td><td><</td><td>(1) NADP_c0[c0] + (1) tetrahydrodipicolinate_c0[c0] <= (1) NADPH_c0[c0] + (1) H+_c0[c0] + (1) Dihydrodipicolinate_c0[c0]</td><td>added</td></tr><tr><td>rxn08583_c0</td><td>></td><td>(1) UDP-glucose_c0[c0] + (1) glucosyl-inner core oligosaccharide lipid A_c0[c0] => (1) UDP_c0[c0] + (1) galactosyl-glucosyl-inner core oligosaccharide lipid A_c0[c0]</td><td>added</td></tr><tr><td>rxn00851_c0</td><td>></td><td>(1) ATP_c0[c0] + (2) D-Alanine_c0[c0] => (1) ADP_c0[c0] + (1) Phosphate_c0[c0] + (1) H+_c0[c0] + (1) Ala-Ala_c0[c0]</td><td>added</td></tr><tr><td>rxn02774_c0</td><td>></td><td>(1) NAD_c0[c0] + (1) Precorrin 2_c0[c0] => (1) NADH_c0[c0] + (2) H+_c0[c0] + (1) Sirohydrochlorin_c0[c0]</td><td>added</td></tr><tr><td>rxn04675_c0</td><td>></td><td>(1) 2-Oxoglutarate_c0[c0] + (1) H+_c0[c0] + (1) Isochorismate_c0[c0] => (1) CO2_c0[c0] + (1) Pyruvate_c0[c0] + (1) SHCHC_c0[c0]</td><td>added</td></tr><tr><td>rxn02898_c0</td><td>></td><td>(1) Succinylbenzoyl-CoA_c0[c0] => (1) CoA_c0[c0] + (1) 1-4-Dihydroxy-2-naphthoate_c0[c0]</td><td>added</td></tr><tr><td>rxn10094_c0</td><td>></td><td>(1) S-Adenosyl-L-methionine_c0[c0] + (1) 2-Demethylmenaquinone 8_c0[c0] => (1) S-Adenosyl-homocysteine_c0[c0] + (1) H+_c0[c0] + (1) Menaquinone 8_c0[c0]</td><td>added</td></tr><tr><td>rxn08954_c0</td><td>></td><td>(1) CMP-KDO_c0[c0] + (1) phospho-heptosyl-phospho-heptosyl-heptosyl-kdo2-lipidA_c0[c0] => (1) CMP_c0[c0] + (1) H+_c0[c0] + (1) kdo-phospho-heptosyl-phospho-heptosyl-heptosyl-kdo2-lipidA_c0[c0]</td><td>added</td></tr><tr><td>rxn05039_c0</td><td>></td><td>(1) H2O_c0[c0] + (1) 5-Amino-6--5-phosphoribitylaminouracil_c0[c0] => (1) Phosphate_c0[c0] + (1) 4--1-D-Ribitylamino-5-aminouracil_c0[c0]</td><td>added</td></tr><tr><td>rxn00119_c0</td><td>></td><td>(1) ATP_c0[c0] + (1) H+_c0[c0] + (1) UMP_c0[c0] => (1) ADP_c0[c0] + (1) UDP_c0[c0]</td><td>added</td></tr><tr><td>rxn08712_c0</td><td>></td><td>(1) ADP-L-glycero-D-manno-heptose_c0[c0] + (1) phospho-heptosyl-heptosyl-kdo2-lipidA_c0[c0] => (1) ADP_c0[c0] + (1) heptosyl-phospho-heptosyl-heptosyl-kdo2-lipidA_c0[c0]</td><td>added</td></tr><tr><td>rxn05386_c0</td><td>></td><td>(1) 5-methyl-3-hydroxy-hexanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 5-methyl-trans-hex-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn10484_c0</td><td>></td><td>(1) NADPH_c0[c0] + (1) NH3_c0[c0] + (2) H+_c0[c0] + (1) tetrahydrodipicolinate_c0[c0] => (1) NADP_c0[c0] + (1) meso-2,6-Diaminopimelate_c0[c0]</td><td>added</td></tr><tr><td>rxn05361_c0</td><td>></td><td>(1) 4-methyl-3-hydroxy-hexanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 4-methyl-trans-hex-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn03916_c0</td><td>></td><td>(1) ATP_c0[c0] + (1) D-Glycero-D-manno-heptose1-phosphate_c0[c0] => (1) PPi_c0[c0] + (1) ADP-D-glycero-D-manno-heptose_c0[c0]</td><td>added</td></tr><tr><td>rxn03917_c0</td><td>></td><td>(1) Sedoheptulose7-phosphate_c0[c0] => (1) D-Glycero-D-manno-heptose7-phosphate_c0[c0]</td><td>added</td></tr><tr><td>rxn03167_c0</td><td>></td><td>(3) H2O_c0[c0] + (1) 7,8-Dihydroneopterin 3'-triphosphate_c0[c0] => (3) Phosphate_c0[c0] + (3) H+_c0[c0] + (1) Dihydroneopterin_c0[c0]</td><td>added</td></tr><tr><td>rxn05402_c0</td><td>></td><td>(1) 13-methyl-3-hydroxy-tetra-decanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 13-methyl-trans-tetra-dec-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn05381_c0</td><td>></td><td>(1) 14-methyl-3-hydroxy-hexa-decanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 14-methyl-trans-hexa-dec-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn10030_c0</td><td>></td><td>(15) NADPH_c0[c0] + (1) Acetyl-CoA_c0[c0] + (22) H+_c0[c0] + (8) Malonyl-CoA_c0[c0] => (7) H2O_c0[c0] + (15) NADP_c0[c0] + (9) CoA_c0[c0] + (8) CO2_c0[c0] + (1) octadecenoate_c0[c0]</td><td>added</td></tr><tr><td>rxn05373_c0</td><td>></td><td>(1) 10-methyl-3-hydroxy-dodecanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 10-methyl-trans-dodec-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn05398_c0</td><td>></td><td>(1) 11-methyl-3-hydroxy-dodecanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 11-methyl-trans-dodec-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn10473_c0</td><td><</td><td>(1) Cl-_c0[c0] <= (1) Cl-_e0[e0]</td><td>added</td></tr><tr><td>rxn05618_c0</td><td>></td><td>(1) Mn2+_e0[e0] + (1) H+_e0[e0] => (1) Mn2+_c0[c0] + (1) H+_c0[c0]</td><td>added</td></tr><tr><td>rxn02831_c0</td><td>></td><td>(1) ATP_c0[c0] + (1) CoA_c0[c0] + (1) Succinylbenzoate_c0[c0] => (1) PPi_c0[c0] + (1) AMP_c0[c0] + (1) H+_c0[c0] + (1) Succinylbenzoyl-CoA_c0[c0]</td><td>added</td></tr><tr><td>rxn13477_c0</td><td>></td><td>(3) Isopentenyldiphosphate_c0[c0] + (1) Farnesyldiphosphate_c0[c0] => (3) PPi_c0[c0] + (3) H+_c0[c0] + (1) all-trans-Hexaprenyl diphosphate_c0[c0]</td><td>added</td></tr><tr><td>rxn12933_c0</td><td><</td><td>(1) CoA_c0[c0] + (1) Dodecanoyl-ACP_c0[c0] <= (1) Lauroyl-CoA_c0[c0] + (1) ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn09225_c0</td><td>></td><td>(4) H+_c0[c0] + (1) dTDP-rhamnose_c0[c0] + (1) kdo-phospho-heptosyl-phospho-heptosyl-heptosyl-kdo2-lipidA_c0[c0] => (1) dTDP_c0[c0] + (1) inner core oligosaccharide lipid A_c0[c0]</td><td>added</td></tr><tr><td>rxn02832_c0</td><td><</td><td>(1) H2O_c0[c0] + (1) Succinylbenzoate_c0[c0] <= (1) SHCHC_c0[c0]</td><td>added</td></tr><tr><td>rxn08333_c0</td><td>></td><td>(1) 1-4-Dihydroxy-2-naphthoate_c0[c0] + (1) Farnesylfarnesylgeraniol_c0[c0] => (1) CO2_c0[c0] + (1) PPi_c0[c0] + (1) 2-Demethylmenaquinol 8_c0[c0]</td><td>added</td></tr><tr><td>rxn08709_c0</td><td>></td><td>(1) ATP_c0[c0] + (1) heptosyl-phospho-heptosyl-heptosyl-kdo2-lipidA_c0[c0] => (1) ADP_c0[c0] + (1) H+_c0[c0] + (1) phospho-heptosyl-phospho-heptosyl-heptosyl-kdo2-lipidA_c0[c0]</td><td>added</td></tr><tr><td>rxn03511_c0</td><td>></td><td>(1) ADP-D-glycero-D-manno-heptose_c0[c0] => (1) ADP-L-glycero-D-manno-heptose_c0[c0]</td><td>added</td></tr><tr><td>rxn13022_c0</td><td>></td><td>(1) NAD_c0[c0] + (1) 2-Isopropylmalate_c0[c0] => (1) NADH_c0[c0] + (1) CO2_c0[c0] + (1) 4MOP_c0[c0]</td><td>added</td></tr><tr><td>rxn01644_c0</td><td>></td><td>(1) Pyruvate_c0[c0] + (1) L-Aspartate4-semialdehyde_c0[c0] => (2) H2O_c0[c0] + (1) H+_c0[c0] + (1) Dihydrodipicolinate_c0[c0]</td><td>added</td></tr><tr><td>rxn03250_c0</td><td>></td><td>(1) (S)-Hydroxyhexanoyl-CoA_c0[c0] => (1) H2O_c0[c0] + (1) (2E)-Hexenoyl-CoA_c0[c0]</td><td>added</td></tr><tr><td>rxn03182_c0</td><td>></td><td>(1) CMP-KDO_c0[c0] + (1) Lipid IV(A)_c0[c0] => (1) CMP_c0[c0] + (1) H+_c0[c0] + (1) KDO-lipid IV(A)_c0[c0]</td><td>added</td></tr><tr><td>rxn08713_c0</td><td>></td><td>(1) ADP-L-glycero-D-manno-heptose_c0[c0] + (1) glucosyl-glucosyl-galactosyl-glucosyl-inner core oligosaccharide lipid A_c0[c0] => (1) ADP_c0[c0] + (1) core oligosaccharide lipid A_c0[c0]</td><td>added</td></tr><tr><td>rxn12008_c0</td><td><</td><td>(1) PPi_c0[c0] + (1) H+_c0[c0] + (1) Farnesylfarnesylgeraniol_c0[c0] <= (1) Isopentenyldiphosphate_c0[c0] + (1) all-trans-Heptaprenyl diphosphate_c0[c0]</td><td>added</td></tr><tr><td>rxn05514_c0</td><td><</td><td>(1) Ca2+_c0[c0] + (1) H+_e0[e0] <= (1) Ca2+_e0[e0] + (1) H+_c0[c0]</td><td>added</td></tr><tr><td>rxn03918_c0</td><td>></td><td>(1) ATP_c0[c0] + (1) D-Glycero-D-manno-heptose7-phosphate_c0[c0] => (1) ADP_c0[c0] + (1) H+_c0[c0] + (1) D-Glycero-D-manno-heptose1-7-bisphosphate_c0[c0]</td><td>added</td></tr><tr><td>rxn01022_c0</td><td>></td><td>(1) Phosphate_c0[c0] + (1) 5-Methylthioadenosine_c0[c0] => (1) Adenine_c0[c0] + (1) methylthioribose-1-phosphate_c0[c0]</td><td>added</td></tr><tr><td>rxn12376_c0</td><td><</td><td>(1) 4-Hydroxy-benzylalcohol_e0[e0] <= (1) 4-Hydroxy-benzylalcohol_c0[c0]</td><td>added</td></tr><tr><td>rxn08620_c0</td><td>></td><td>(1) UDP-glucose_c0[c0] + (1) glucosyl-galactosyl-glucosyl-inner core oligosaccharide lipid A_c0[c0] => (1) UDP_c0[c0] + (1) glucosyl-glucosyl-galactosyl-glucosyl-inner core oligosaccharide lipid A_c0[c0]</td><td>added</td></tr><tr><td>rxn00916_c0</td><td>></td><td>(1) ATP_c0[c0] + (1) NH3_c0[c0] + (1) XMP_c0[c0] => (1) PPi_c0[c0] + (1) AMP_c0[c0] + (3) H+_c0[c0] + (1) GMP_c0[c0]</td><td>added</td></tr><tr><td>rxn05377_c0</td><td>></td><td>(1) 12-methyl-3-hydroxy-tetra-decanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 12-methyl-trans-tetra-dec-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn03164_c0</td><td>></td><td>(1) ATP_c0[c0] + (1) Ala-Ala_c0[c0] + (1) UDP-N-acetylmuramoyl-L-alanyl-D-gamma-glutamyl-meso-2-6-diaminopimelate_c0[c0] => (1) ADP_c0[c0] + (1) Phosphate_c0[c0] + (1) H+_c0[c0] + (1) UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-6-carboxy-L-lysyl-D-alanyl- D-alanine_c0[c0]</td><td>added</td></tr><tr><td>rxn05394_c0</td><td>></td><td>(1) 9-methyl-3-hydroxy-decanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 9-methyl-trans-dec-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn03397_c0</td><td>></td><td>(1) S-Adenosyl-L-methionine_c0[c0] + (1) 2-Octaprenyl-6-methoxy-1,4-benzoquinone_c0[c0] => (1) S-Adenosyl-homocysteine_c0[c0] + (1) H+_c0[c0] + (1) 2-Octaprenyl-3-methyl-6-methoxy-1,4-benzoquinone_c0[c0]</td><td>added</td></tr><tr><td>rxn05144_c0</td><td>></td><td>(1) L-Glutamine_c0[c0] + (1) Glyceraldehyde3-phosphate_c0[c0] + (1) D-Ribulose5-phosphate_c0[c0] => (3) H2O_c0[c0] + (1) Phosphate_c0[c0] + (1) Pyridoxal phosphate_c0[c0] + (1) L-Glutamate_c0[c0] + (1) H+_c0[c0]</td><td>added</td></tr><tr><td>rxn08619_c0</td><td>></td><td>(1) UDP-glucose_c0[c0] + (1) galactosyl-glucosyl-inner core oligosaccharide lipid A_c0[c0] => (1) UDP_c0[c0] + (1) glucosyl-galactosyl-glucosyl-inner core oligosaccharide lipid A_c0[c0]</td><td>added</td></tr><tr><td>rxn00056_c0</td><td><</td><td>(1) O2_c0[c0] + (4) H+_c0[c0] + (4) Fe2+_c0[c0] <= (2) H2O_c0[c0] + (4) fe3_c0[c0]</td><td>added</td></tr><tr><td>rxn06848_c0</td><td><</td><td>(1) kdo2-lipid a_c0[c0] + (1) ACP_c0[c0] <= (1) Lauroyl-KDO2-lipid IV(A)_c0[c0] + (1) Myristoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn05365_c0</td><td>></td><td>(1) 6-methyl-3-hydroxy-octanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 6-methyl-trans-oct-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn05390_c0</td><td>></td><td>(1) 7-methyl-3-hydroxy-octanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 7-methyl-trans-oct-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn03439_c0</td><td>></td><td>(1) CMP-KDO_c0[c0] + (1) KDO-lipid IV(A)_c0[c0] => (1) CMP_c0[c0] + (1) H+_c0[c0] + (1) kdo2-lipid iva_c0[c0]</td><td>added</td></tr><tr><td>rxn05369_c0</td><td>></td><td>(1) 8-methyl-3-hydroxy-decanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 8-methyl-trans-dec-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn02304_c0</td><td>></td><td>(3) O2_c0[c0] + (2) ProtoporphyrinogenIX_c0[c0] => (6) H2O_c0[c0] + (2) Protoporphyrin_c0[c0]</td><td>added</td></tr><tr><td>rxn05406_c0</td><td>></td><td>(1) 15-methyl-3-hydroxy-hexa-decanoyl-ACP_c0[c0] => (1) H2O_c0[c0] + (1) 15-methyl-trans-hexa-dec-2-enoyl-ACP_c0[c0]</td><td>added</td></tr><tr><td>rxn03891_c0</td><td>></td><td>(1) Isopentenyldiphosphate_c0[c0] + (1) all-trans-Hexaprenyl diphosphate_c0[c0] => (1) PPi_c0[c0] + (1) H+_c0[c0] + (1) all-trans-Heptaprenyl diphosphate_c0[c0]</td><td>added</td></tr></table></div>",
+        "direct_html_link_index": null,
+        "file_links": [],
+        "html_links": [],
+        "html_window_height": null,
+        "objects_created": [
+            {
+                "description": "FBAModel-11 P_flourescens_GW456-L13.mdl",
+                "ref": "40589/20/3"
+            },
+            {
+                "description": "FBA-13 P_flourescens_GW456-L13.mdl.gf.0",
+                "ref": "40589/21/3"
+            }
+        ],
+        "summary_window_height": null,
+        "text_message": null,
+        "warnings": []
+    },
+    "info": [
+        22,
+        "P_flourescens_GW456-L13.mdl.report",
+        "KBaseReport.Report-2.0",
+        "2019-02-21T19:27:49+0000",
+        3,
+        "chenry",
+        40589,
+        "chenry:narrative_1550247300208",
+        "f2626affa9b3e9f4432d91831bfbcd3f",
+        12618,
+        {
+            "Size(characters)": "NaN",
+            "Objects Created": "2",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "40589/22/3"
+    ],
+    "provenance": [
+        {
+            "time": "2019-02-21T19:25:28+0000",
+            "epoch": 1550777128000,
+            "service": "fba_tools",
+            "service_ver": "1.7.6",
+            "method": "build_metabolic_model",
+            "method_params": [
+                {
+                    "media_id": "40589/176/1",
+                    "custom_bound_list": [],
+                    "fbamodel_output_id": "P_flourescens_GW456-L13.mdl",
+                    "genome_id": "40589/16/2",
+                    "workspace": "chenry:narrative_1550247300208",
+                    "minimum_target_flux": 0.1,
+                    "media_supplement_list": "",
+                    "gapfill_model": 1,
+                    "template_id": "auto"
+                }
+            ],
+            "input_ws_objects": [
+                "40589/16/2",
+                "40589/176/1"
+            ],
+            "resolved_ws_objects": [
+                "40589/16/2",
+                "40589/176/1"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "fba_tools",
+                    "ver": "1.7.6",
+                    "code_url": "https://github.com/cshenry/fba_tools",
+                    "commit": "584206644abfeb5f3184783aaa27b3a0993ca583"
+                },
+                {
+                    "name": "GenomeAnnotationAPI",
+                    "ver": "0.3.4-beta",
+                    "code_url": "https://github.com/kbase/genome_annotation_api",
+                    "commit": "686f24e31ce773a6300eef9c0b6d0d0332eb4fc4"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.3-release",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "b2a10f82aadad8937f84144815fb4dafc1e6ffaf"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.0.25-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "bcef6723524598b739e910f7d6ce9220d4b09bd2"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "chenry",
+    "orig_wsid": 40589,
+    "created": "2019-02-21T19:27:49+0000",
+    "epoch": 1550777269272,
+    "refs": [
+        "40589/21/3",
+        "40589/20/3"
+    ],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}

@@ -1,0 +1,98 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [],
+        "html_links": [
+            {
+                "URL": "https://kbase.us/services/shock-api/node/4ae89fba-1163-4637-a001-028bc97566da",
+                "description": "MAG Mash output html report",
+                "handle": "KBH_3060538",
+                "label": "",
+                "name": "index.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": null,
+        "warnings": []
+    },
+    "info": [
+        31,
+        "Mags_Mash_702e0fb3-22db-4ddd-b5e1-9243ab1a2142",
+        "KBaseReport.Report-2.0",
+        "2019-02-15T16:34:47+0000",
+        1,
+        "chenry",
+        40589,
+        "chenry:narrative_1550247300208",
+        "2611fcab899fb6b781a947027276aab0",
+        374,
+        {
+            "Size(characters)": "NaN",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "40589/31/1"
+    ],
+    "provenance": [
+        {
+            "time": "2019-02-15T16:33:40+0000",
+            "epoch": 1550248420000,
+            "service": "mags_mash",
+            "service_ver": "0.0.1",
+            "method": "run_mags_mash",
+            "method_params": [
+                {
+                    "workspace_name": "chenry:narrative_1550247300208",
+                    "workspace_id": 40589,
+                    "ws_ref": "chenry:narrative_1550247300208/P_fluorescens_GW456-L13",
+                    "n_max_results": 100
+                }
+            ],
+            "input_ws_objects": [
+                "40589/13/1"
+            ],
+            "resolved_ws_objects": [
+                "40589/13/1"
+            ],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "mags_mash",
+                    "ver": "0.0.1",
+                    "code_url": "https://github.com/kbaseapps/mags_mash",
+                    "commit": "72111c6891b3d102f5ed17f17008fedd27619430"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "ver": "0.0.25-release",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "bcef6723524598b739e910f7d6ce9220d4b09bd2"
+                },
+                {
+                    "name": "KBaseReport",
+                    "ver": "3.0.3",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "b2a10f82aadad8937f84144815fb4dafc1e6ffaf"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "chenry",
+    "orig_wsid": 40589,
+    "created": "2019-02-15T16:34:47+0000",
+    "epoch": 1550248487283,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_3060538"
+        ]
+    }
+}
