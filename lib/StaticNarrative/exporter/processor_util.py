@@ -83,7 +83,7 @@ def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
         if idx < 0 or idx >= len(report['html_links']):
             idx = 0
         html['links'] = report['html_links']
-        html['paths'] = []
+        html['paths'] = list()
         for i, link in enumerate(html['links']):
             html['paths'].append(f'/api/v1/{report_ref}/$/{i}/{link["name"]}')
         html['link_idx'] = idx
