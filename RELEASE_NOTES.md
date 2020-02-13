@@ -1,6 +1,11 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.9
+-----
+* Added support for direct html reports.
+* Added links out to reports in a separate window.
+
 0.0.8
 -----
 * Fixed error when trying to parse a data cell that doesn't have a ref key.

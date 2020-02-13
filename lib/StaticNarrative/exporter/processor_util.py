@@ -21,7 +21,28 @@ def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
     """
     Returns a structure like this:
     {
-        links: []
+        html: {
+            direct: string (optional) - direct html to plop in the page,
+            iframe_style: string (optional) - styling for direct html iframe,
+            links: [{
+                url: string,
+                name: string,
+                description: string,
+                handle: ?
+                label: ?
+            }],
+            paths: [ path1, path2, path3, ... ] for all urls in links (just a convenience),
+            link_idx: index of paths to use
+                (this is a little funky, might get cleared up in a later iteration.)
+                (I suspect this'll be here 3 years later. Today's 2/13/2020. Let's see!)
+            file_links: [{
+                'URL': 'https://ci.kbase.us/services/shock-api/node/a2625b71-48d5-4ba6-8603-355485508da8',
+                'description': 'JGI Metagenome Assembly Report',
+                'handle': 'KBH_253154',
+                'label': 'assembly_report',
+                'name': 'assembly_report.zip'
+            }]
+        }
         objects: [{
             'upa': '...',
             'name': 'foo',
@@ -83,10 +104,14 @@ def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
         if idx < 0 or idx >= len(report['html_links']):
             idx = 0
         html['links'] = report['html_links']
-        html['paths'] = []
+        html['paths'] = list()
         for i, link in enumerate(html['links']):
             html['paths'].append(f'/api/v1/{report_ref}/$/{i}/{link["name"]}')
         html['link_idx'] = idx
+
+    if report.get('file_links'):
+        html['file_links'] = report['file_links']
+
 
     return {
         'objects': created_objs,

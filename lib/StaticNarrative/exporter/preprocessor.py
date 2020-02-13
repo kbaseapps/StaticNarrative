@@ -47,6 +47,7 @@ class NarrativePreprocessor(Preprocessor):
             'narrative_link': f"{self.host}/narrative/{ws_id}",
             'authors': get_authors(self.config, nb['metadata']['wsid']),
             'service_wizard_url': self.config.narrative_session.service_wizard_url,
+            'data_ie_url': self.config.narrative_session.data_ie_url,
             'script_bundle_url': self.assets_base_url + '/js/' + self.assets_version + '/staticNarrativeBundle.js',
             'datestamp': datetime.now().strftime("%B %d, %Y").replace(" 0", " "),
             'logo_url': self.assets_base_url + '/images/kbase-logos/logo-icon-46-46.png',

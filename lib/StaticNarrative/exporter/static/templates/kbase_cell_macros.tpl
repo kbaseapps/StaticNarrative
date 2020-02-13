@@ -1,4 +1,4 @@
-{%- macro result_tab(metadata) -%}
+{%- macro result_tab(metadata, narrative_link) -%}
     {% if metadata.output.report %}
         {% set rep = metadata.output.report %}
         {% if rep.objects|count > 0 %}
@@ -9,6 +9,12 @@
         {% endif %}
         {% if rep.summary %}
             {{ summary_panel(rep.summary, metadata.idx) }}
+        {% endif %}
+        {% if rep.html.links %}
+            {{ report_links_panel(rep.html, metadata.idx) }}
+        {% endif %}
+        {% if rep.html.file_links %}
+            {{ report_file_links_panel(rep.html, metadata.idx, narrative_link) }}
         {% endif %}
     {% else %}
         <div class="kb-no-output">No output found.</div>
@@ -21,7 +27,12 @@
 {% macro report_panel(html_info, idx) %}
     {% call render_panel("Report", idx) -%}
         {% if html_info.link_idx is not none and html_info.paths %}
-            <div class="kb-app-report" data-path="{{ html_info.paths[html_info.link_idx] }}"></div>
+            <div data-kbreport="{{ html_info.paths[html_info.link_idx] }}">
+                <a class="btn btn-md btn-default" target="_blank">
+                View report in separate window
+                </a>
+                <div class="kb-app-report"></div>
+            </div>
         {% elif html_info.direct %}
             <iframe srcdoc="{{ html_info.direct }}" class="kb-app-report-iframe" style="{{ html_info.iframe_style }}"></iframe>
         {% endif %}
@@ -32,6 +43,35 @@
 {% macro summary_panel(summary, idx) %}
     {% call render_panel("Summary", idx) -%}
         <div class="kb-app-report-summary">{{ summary }}</div>
+    {%- endcall %}
+{% endmacro %}
+
+{# Renders links to individual report pages #}
+{% macro report_links_panel(html_info, idx) %}
+    {% call render_panel("Links", idx) -%}
+        <ul class="kb-report-link-list">
+        {% for link_info in html_info["links"] -%}
+        <li>
+            <a href="{{html_info.paths[loop.index0]}}" target="_blank">{{link_info.name}}</a>
+            {% if link_info.description -%} - {{link_info.description}}{%- endif %}
+        </li>
+        {%- endfor %}
+        </ul>
+    {%- endcall %}
+{% endmacro %}
+
+{# Renders links to report files #}
+{% macro report_file_links_panel(html_info, idx, narrative_link) %}
+    {% call render_panel("Files", idx) -%}
+        These are only available in the live Narrative: <a href="{{ narrative_link }}">{{ narrative_link }}</a>
+        <ul class="kb-report-file-list">
+        {% for link_info in html_info["file_links"] -%}
+        <li>
+            {{ link_info.name }}
+            {% if link_info.description -%} - {{ link_info.description }}{%- endif %}
+        </li>
+        {%- endfor %}
+        </ul>
     {%- endcall %}
 {% endmacro %}
 
@@ -103,7 +143,7 @@
     {% endcall %}
 {%- endmacro -%}
 
-{%- macro render_app_cell(metadata) -%}
+{%- macro render_app_cell(metadata, narrative_link) -%}
     {% call render_kbase_cell(metadata,
                               metadata.attributes.title|default('App Cell', True),
                               metadata.attributes.subtitle|default('', True)) %}
@@ -138,7 +178,7 @@
             </div>
 
             <div id="app-{{metadata.idx}}-result" class="kb-app-results">
-              {{ result_tab(metadata) }}
+              {{ result_tab(metadata, narrative_link) }}
             </div>
         </div>
     {% endcall %}
