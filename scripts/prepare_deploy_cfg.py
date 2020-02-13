@@ -50,7 +50,8 @@ if __name__ == "__main__":
         "nms_image_url": kbase_endpoint + "/narrative_method_store/",
         "profile_page_url": kbase_root + "/#people/",
         "auth_url": kbase_endpoint + "/auth",
-        "assets_base_url": kbase_root + "/ui-assets"
+        "assets_base_url": kbase_root + "/ui-assets",
+        "data_ie_url": kbase_endpoint + "/data_import_export"
     })
     ### End changes for StaticNarrative
 

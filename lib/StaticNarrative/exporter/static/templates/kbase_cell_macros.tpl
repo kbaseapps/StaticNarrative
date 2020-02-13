@@ -13,6 +13,9 @@
         {% if rep.html.links %}
             {{ report_links_panel(rep.html, metadata.idx) }}
         {% endif %}
+        {% if rep.html.file_links %}
+            {{ report_file_links_panel(rep.html, metadata.idx) }}
+        {% endif %}
     {% else %}
         <div class="kb-no-output">No output found.</div>
     {% endif %}
@@ -43,18 +46,32 @@
     {%- endcall %}
 {% endmacro %}
 
-{# Renders links to individual report pages and files #}
+{# Renders links to individual report pages #}
 {% macro report_links_panel(html_info, idx) %}
     {% call render_panel("Links", idx) -%}
         <ul class="kb-report-link-list">
         {% for link_info in html_info["links"] -%}
         <li>
-            <a href="{{html_info.paths[loop.index0]}}" target="_blank">
-                {{link_info.name}}
-            </a> - {{link_info.description}}
+            <a href="{{html_info.paths[loop.index0]}}" target="_blank">{{link_info.name}}</a>
+            {% if link_info.description -%} - {{link_info.description}}{%- endif %}
         </li>
         {%- endfor %}
         </ul>
+    {%- endcall %}
+{% endmacro %}
+
+{# Renders links to report files #}
+{% macro report_file_links_panel(html_info, idx) %}
+    {% call render_panel("Files", idx) -%}
+        <ul class="kb-report-file-list">
+        {% for link_info in html_info["file_links"] -%}
+        <li>
+            <a href="#" data-target="report-file-frame-{{idx}}" data-src="{{ link_info.URL }}" data-name="{{ link_info.name }}">{{ link_info.name }}</a>
+            {% if link_info.description -%} - {{ link_info.description }}{%- endif %}
+        </li>
+        {%- endfor %}
+        </ul>
+        <iframe id="report-file-frame-{{idx}}" style="display: none;"></iframe>
     {%- endcall %}
 {% endmacro %}
 

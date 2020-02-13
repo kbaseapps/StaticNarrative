@@ -114,6 +114,7 @@ class NarrativeExporter:
         c.narrative_session.auth_url = self.exporter_cfg["auth-url"]
         c.narrative_session.assets_base_url = self.exporter_cfg["assets-base-url"]
         c.narrative_session.service_wizard_url = self.exporter_cfg["srv-wiz-url"]
+        c.narrative_session.data_ie_url = self.exporter_cfg["data-ie-url"]
         c.narrative_session.host = host
         c.narrative_session.base_path = base_path
         c.narrative_session.data_file_path = exported_data["path"]
