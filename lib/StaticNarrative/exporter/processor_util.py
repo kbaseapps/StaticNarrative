@@ -17,7 +17,7 @@ def _load_icon_data():
         ICON_DATA = json.load(icon_file)
 
 
-def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
+def build_report_view_data(host: str, ws_url: str, token: str, result: list) -> dict:
     """
     Returns a structure like this:
     {
@@ -86,7 +86,8 @@ def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
                 'upa': report_objs_created[idx]['ref'],
                 'description': report_objs_created[idx].get('description', ''),
                 'name': info[1],
-                'type': info[2].split('-')[0].split('.')[-1]
+                'type': info[2].split('-')[0].split('.')[-1],
+                'link': host + '/#dataview/' + report_objs_created[idx]['ref']
             })
     html = {}
     if report.get('direct_html'):
@@ -111,7 +112,6 @@ def build_report_view_data(ws_url: str, token: str, result: list) -> dict:
 
     if report.get('file_links'):
         html['file_links'] = report['file_links']
-
 
     return {
         'objects': created_objs,

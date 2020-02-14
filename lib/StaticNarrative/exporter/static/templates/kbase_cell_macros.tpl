@@ -34,7 +34,7 @@
                 <div class="kb-app-report"></div>
             </div>
         {% elif html_info.direct %}
-            <iframe srcdoc="{{ html_info.direct }}" class="kb-app-report-iframe" style="{{ html_info.iframe_style }}"></iframe>
+            <iframe srcdoc="{{ html_info.direct|e }}" class="kb-app-report-iframe" style="{{ html_info.iframe_style }}"></iframe>
         {% endif %}
     {%- endcall %}
 {% endmacro %}
@@ -89,7 +89,13 @@
                 <tr>
                 {% for o in objects %}
                     <tr>
-                        <td>{{o.name}}</td>
+                        <td>
+                        {% if o.link %}
+                        <a href="{{ o.link }}">{{o.name}}</a>
+                        {% else %}
+                        {{o.name}}
+                        {% endif %}
+                        </td>
                         <td>{{o.type}}</td>
                         <td>{{o.description}}</td>
                     </tr>
