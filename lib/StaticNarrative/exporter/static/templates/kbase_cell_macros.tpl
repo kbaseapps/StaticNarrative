@@ -8,7 +8,7 @@
             {{ report_panel(rep.html, metadata.idx) }}
         {% endif %}
         {% if rep.summary %}
-            {{ summary_panel(rep.summary, metadata.idx) }}
+            {{ summary_panel(rep.summary, rep.summary_height, metadata.idx) }}
         {% endif %}
         {% if rep.html.links %}
             {{ report_links_panel(rep.html, metadata.idx) }}
@@ -34,15 +34,18 @@
                 <div class="kb-app-report"></div>
             </div>
         {% elif html_info.direct %}
-            <iframe srcdoc="{{ html_info.direct }}" class="kb-app-report-iframe" style="{{ html_info.iframe_style }}"></iframe>
+            <iframe src="{{ html_info.direct|e }}"
+                    class="kb-app-report-iframe"
+                    style="{{ html_info.iframe_style }}"
+                    onload="this.style.height=(Math.max(500, this.contentDocument.body.scrollHeight+45)) + 'px';"></iframe>
         {% endif %}
     {%- endcall %}
 {% endmacro %}
 
 {# Renders the report's text summary #}
-{% macro summary_panel(summary, idx) %}
+{% macro summary_panel(summary, summary_height, idx) %}
     {% call render_panel("Summary", idx) -%}
-        <div class="kb-app-report-summary">{{ summary }}</div>
+        <div class="kb-app-report-summary" style="max-height: {{ summary_height }}">{{ summary }}</div>
     {%- endcall %}
 {% endmacro %}
 
@@ -89,7 +92,13 @@
                 <tr>
                 {% for o in objects %}
                     <tr>
-                        <td>{{o.name}}</td>
+                        <td>
+                        {% if o.link %}
+                        <a href="{{ o.link }}">{{o.name}}</a>
+                        {% else %}
+                        {{o.name}}
+                        {% endif %}
+                        </td>
                         <td>{{o.type}}</td>
                         <td>{{o.description}}</td>
                     </tr>

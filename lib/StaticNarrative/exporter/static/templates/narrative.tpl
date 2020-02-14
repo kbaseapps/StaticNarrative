@@ -137,7 +137,7 @@ div#notebook {
 
   <script type="text/javascript" src="{{ resources.kbase.script_bundle_url }}" crossorigin="anonymous"></script>
   <script>
-    initStaticNarrative("{{ resources.kbase.service_wizard_url }}", "{{ resources.kbase.data_ie_url }}")
+    initStaticNarrative("{{ resources.kbase.service_wizard_url }}", "{{ resources.kbase.data_ie_url }}", "{{ resources.kbase.host }}")
   </script>
 {% endblock body %}
 </body>

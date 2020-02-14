@@ -1,6 +1,10 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.11
+------
+* Include host in call to initialize Javascript on the page.
+
 0.0.10
 ------
 * Handle UI links in production better (kbase.us -> narrative.kbase.us)

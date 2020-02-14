@@ -25,7 +25,8 @@ class NarrativePreprocessor(Preprocessor):
         self.icon_style_file = os.path.join(base_path, "static", "styles", "kbase_icons.css")
         self.assets_base_url = self.config.narrative_session.assets_base_url
         self.assets_version = self.config.narrative_session.assets_version
-        self.app_processor = AppProcessor(self.config.narrative_session.ws_url,
+        self.app_processor = AppProcessor(self.host,
+                                          self.config.narrative_session.ws_url,
                                           self.config.narrative_session.nms_url,
                                           self.config.narrative_session.token)
 

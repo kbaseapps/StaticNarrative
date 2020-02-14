@@ -6,7 +6,8 @@ import math
 
 
 class AppProcessor:
-    def __init__(self, ws_url: str, nms_url: str, token: str):
+    def __init__(self, host: str, ws_url: str, nms_url: str, token: str):
+        self.host = host
         self.ws_url = ws_url
         self.nms_url = nms_url
         self.token = token
@@ -41,7 +42,7 @@ class AppProcessor:
         kb_info["output"] = {
             "widget": exec_state.get("outputWidgetInfo", {}),
             "result": exec_result,
-            "report": build_report_view_data(self.ws_url, self.token, exec_result)
+            "report": build_report_view_data(self.host, self.ws_url, self.token, exec_result)
         }
         kb_info["job"] = {
             "state": "This app is new, and hasn't been started."
