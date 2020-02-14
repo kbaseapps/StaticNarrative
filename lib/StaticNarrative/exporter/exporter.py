@@ -98,7 +98,11 @@ class NarrativeExporter:
         service_endpt = self.exporter_cfg["kbase-endpoint"]
 
         endpt_parsed = urlparse(service_endpt)
-        host = (endpt_parsed.scheme or "https") + "://" + endpt_parsed.netloc
+        netloc = endpt_parsed.netloc
+        # kinda hacky. dealing with it.
+        if netloc.startswith("kbase.us"):
+            netloc = "narrative." + netloc
+        host = (endpt_parsed.scheme or "https") + "://" + netloc
 
         c.TemplateExporter.template_path = ['.', os.path.join(base_path, "static", "templates")]
         c.CSSHTMLHeaderPreprocessor.enabled = True
