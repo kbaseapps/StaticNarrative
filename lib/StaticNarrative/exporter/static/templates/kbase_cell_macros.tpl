@@ -34,7 +34,10 @@
                 <div class="kb-app-report"></div>
             </div>
         {% elif html_info.direct %}
-            <iframe srcdoc="{{ html_info.direct|e }}" class="kb-app-report-iframe" style="{{ html_info.iframe_style }}"></iframe>
+            <iframe src="{{ html_info.direct|e }}"
+                    class="kb-app-report-iframe"
+                    style="{{ html_info.iframe_style }}"
+                    onload="this.style.height=(Math.max(500, this.contentDocument.body.scrollHeight+45)) + 'px';"></iframe>
         {% endif %}
     {%- endcall %}
 {% endmacro %}

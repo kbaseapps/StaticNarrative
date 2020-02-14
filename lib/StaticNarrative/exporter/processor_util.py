@@ -6,6 +6,7 @@ import os
 from installed_clients.WorkspaceClient import Workspace
 from installed_clients.authclient import KBaseAuth as _KBaseAuth
 import html
+from urllib.parse import quote
 
 ICON_DATA = None
 
@@ -22,6 +23,8 @@ def build_report_view_data(host: str, ws_url: str, token: str, result: list) -> 
     Returns a structure like this:
     {
         html: {
+            height: max height string for iframes (default = 500px, unless present in report),
+            set_height: boolean - if True, then apply height to the height style value as well.
             direct: string (optional) - direct html to plop in the page,
             iframe_style: string (optional) - styling for direct html iframe,
             links: [{
@@ -50,6 +53,7 @@ def build_report_view_data(host: str, ws_url: str, token: str, result: list) -> 
             'description': '...'
         }]
         summary: '',
+        summary_height: height string for summary panel (default = 500px unless specified in report),
         report: ''
     }
     """
@@ -93,40 +97,41 @@ def build_report_view_data(host: str, ws_url: str, token: str, result: list) -> 
     if html_height is None:
         html_height = 500
     html = {
-        "height": f"{html_height}px"
+        "height": f"{html_height}px",
+        "set_height": True
     }
-    if report.get('direct_html'):
-        html['direct'] = report.get('direct_html')
-        html['iframe_style'] = ";".join([
-            "display: block",
-            "width: 100%",
-            "height: 500px",
-            "margin: 0",
-            "padding: 0"
-        ])
+    if report.get("direct_html"):
+        if not report.get("direct_html").startswith("<html"):
+            html["set_height"] = False
+        html["direct"] = "data:text/html;charset=utf-8," + quote(report.get("direct_html"))
 
-    if report.get('html_links'):
-        idx = report.get('direct_html_link_index', 0)
-        if idx < 0 or idx >= len(report['html_links']):
+    if report.get("html_links"):
+        idx = report.get("direct_html_link_index", 0)
+        if idx < 0 or idx >= len(report["html_links"]):
             idx = 0
-        html['links'] = report['html_links']
-        html['paths'] = list()
-        for i, link in enumerate(html['links']):
-            html['paths'].append(f'/api/v1/{report_ref}/$/{i}/{link["name"]}')
-        html['link_idx'] = idx
+        html["links"] = report["html_links"]
+        html["paths"] = list()
+        for i, link in enumerate(html["links"]):
+            html["paths"].append(f'/api/v1/{report_ref}/$/{i}/{link["name"]}')
+        html["link_idx"] = idx
 
-    if report.get('file_links'):
-        html['file_links'] = report['file_links']
+    if report.get("file_links"):
+        html["file_links"] = report["file_links"]
 
     summary_height = report.get("summary_window_height")
     if summary_height is None:
         summary_height = 500
 
+    html["iframe_style"] = f"max-height: {html['height']}"
+    if html["set_height"]:
+        html["iframe_style"] += f"; height: {html['height']}"
+    else:
+        html["iframe_style"] += "; height: auto"
     return {
-        'objects': created_objs,
-        'summary': report.get('text_message', ''),
-        'summary_height': f"{summary_height}px",
-        'html': html
+        "objects": created_objs,
+        "summary": report.get("text_message", ""),
+        "summary_height": f"{summary_height}px",
+        "html": html
     }
 
 
