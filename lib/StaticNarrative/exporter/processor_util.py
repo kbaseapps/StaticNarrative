@@ -89,7 +89,12 @@ def build_report_view_data(host: str, ws_url: str, token: str, result: list) -> 
                 'type': info[2].split('-')[0].split('.')[-1],
                 'link': host + '/#dataview/' + report_objs_created[idx]['ref']
             })
-    html = {}
+    html_height = report.get("html_window_height")
+    if html_height is None:
+        html_height = 500
+    html = {
+        "height": f"{html_height}px"
+    }
     if report.get('direct_html'):
         html['direct'] = report.get('direct_html')
         html['iframe_style'] = ";".join([
@@ -113,9 +118,14 @@ def build_report_view_data(host: str, ws_url: str, token: str, result: list) -> 
     if report.get('file_links'):
         html['file_links'] = report['file_links']
 
+    summary_height = report.get("summary_window_height")
+    if summary_height is None:
+        summary_height = 500
+
     return {
         'objects': created_objs,
         'summary': report.get('text_message', ''),
+        'summary_height': f"{summary_height}px",
         'html': html
     }
 

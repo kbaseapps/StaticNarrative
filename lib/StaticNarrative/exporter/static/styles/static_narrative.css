@@ -124,7 +124,6 @@
     white-space: pre-wrap;
     overflow: auto;
     height: auto;
-    max-height: 500px;
 }
 
 .kb-app-report-iframe {

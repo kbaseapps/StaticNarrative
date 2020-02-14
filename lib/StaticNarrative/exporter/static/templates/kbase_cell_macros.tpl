@@ -8,7 +8,7 @@
             {{ report_panel(rep.html, metadata.idx) }}
         {% endif %}
         {% if rep.summary %}
-            {{ summary_panel(rep.summary, metadata.idx) }}
+            {{ summary_panel(rep.summary, rep.summary_height, metadata.idx) }}
         {% endif %}
         {% if rep.html.links %}
             {{ report_links_panel(rep.html, metadata.idx) }}
@@ -40,9 +40,9 @@
 {% endmacro %}
 
 {# Renders the report's text summary #}
-{% macro summary_panel(summary, idx) %}
+{% macro summary_panel(summary, summary_height, idx) %}
     {% call render_panel("Summary", idx) -%}
-        <div class="kb-app-report-summary">{{ summary }}</div>
+        <div class="kb-app-report-summary" style="max-height: {{ summary_height }}">{{ summary }}</div>
     {%- endcall %}
 {% endmacro %}
 
