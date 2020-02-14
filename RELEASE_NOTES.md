@@ -1,6 +1,10 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.12
+------
+* Fixed duplicate text in template (metadata description)
+
 0.0.11
 ------
 * Include host in call to initialize Javascript on the page.
