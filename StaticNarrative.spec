@@ -60,6 +60,15 @@ module StaticNarrative {
     */
     funcdef get_static_narrative_info(GetStaticNarrativeInfo params) returns (StaticNarrativeInfo info) authentication required;
 
+
+
+    typedef structure {
+        int count;
+        mapping<ws_id, StaticNarrativeInfo> narratives;
+    } AllStaticNarratives;
+
+    funcdef list_static_narratives() returns (AllStaticNarratives narratives);
+
     /*
         state - a string, either OK or ...(TBD)
         message - optional, some message about the state of the service.

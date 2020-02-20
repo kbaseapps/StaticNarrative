@@ -1,9 +1,15 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.13
+------
+* Fixed author url links.
+* Add a list_static_narratives function - returns a dictionary mapping from each Static Narrative
+  id to all versions available.
+
 0.0.12
 ------
-* Fixed duplicate text in template (metadata description)
+* Fixed duplicate text in template (metadata description).
 
 0.0.11
 ------

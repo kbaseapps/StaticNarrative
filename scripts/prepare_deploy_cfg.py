@@ -48,7 +48,6 @@ if __name__ == "__main__":
     props.update({
         "nms_url": kbase_endpoint + "/narrative_method_store/rpc",
         "nms_image_url": kbase_endpoint + "/narrative_method_store/",
-        "profile_page_url": kbase_root + "/#people/",
         "auth_url": kbase_endpoint + "/auth",
         "assets_base_url": kbase_root + "/ui-assets",
         "data_ie_url": kbase_endpoint + "/data_import_export"

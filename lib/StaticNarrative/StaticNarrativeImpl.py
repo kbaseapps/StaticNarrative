@@ -11,6 +11,7 @@ from StaticNarrative.narrative.narrative_util import (
     verify_admin_privilege,
     verify_public_narrative
 )
+from StaticNarrative.manager import StaticNarrativeManager
 
 #END_HEADER
 
@@ -30,9 +31,9 @@ class StaticNarrative:
     # state. A method could easily clobber the state set by another while
     # the latter method is running.
     ######################################### noqa
-    VERSION = "0.0.1"
+    VERSION = "0.0.12"
     GIT_URL = "https://github.com/briehl/StaticNarrative"
-    GIT_COMMIT_HASH = "c773a0c8e98a683de627d335abe48d4b6f7d8eed"
+    GIT_COMMIT_HASH = "aed622bf428f5131b0c888f227495d46ef7d986d"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -115,6 +116,8 @@ class StaticNarrative:
 
     def get_static_narrative_info(self, ctx, params):
         """
+        Returns info about a created static narrative, given the workspace id.
+        If no static narrative has been created, returns an empty structure.
         :param params: instance of type "GetStaticNarrativeInfo" ->
            structure: parameter "ws_id" of type "ws_id" (a workspace id)
         :returns: instance of type "StaticNarrativeInfo" (ws_id - the
@@ -141,6 +144,36 @@ class StaticNarrative:
                              'info is not type dict as required.')
         # return the results
         return [info]
+
+    def list_static_narratives(self, ctx):
+        """
+        :returns: instance of type "AllStaticNarratives" -> structure:
+           parameter "count" of Long, parameter "narratives" of mapping from
+           type "ws_id" (a workspace id) to type "StaticNarrativeInfo" (ws_id
+           - the workspace id narrative_id - the id of the narrative object
+           made static narrative_version - the version of the narrative
+           object saved url - the url of the static narrative (just the path,
+           the Narrative front end should provide the host) narr_saved - ms
+           since epoch of when the narrative that was made static was saved.
+           static_saved - ms since epoch of when the static narrative was
+           saved) -> structure: parameter "ws_id" of type "ws_id" (a
+           workspace id), parameter "narrative_id" of Long, parameter
+           "narrative_version" of Long, parameter "url" of type "url",
+           parameter "narr_saved" of Long, parameter "static_saved" of Long
+        """
+        # ctx is the context object
+        # return variables are: narratives
+        #BEGIN list_static_narratives
+        manager = StaticNarrativeManager(self.config)
+        narratives = manager.list_static_narratives()
+        #END list_static_narratives
+
+        # At some point might do deeper type checking...
+        if not isinstance(narratives, dict):
+            raise ValueError('Method list_static_narratives return value ' +
+                             'narratives is not type dict as required.')
+        # return the results
+        return [narratives]
 
     def status(self, ctx):
         """
