@@ -114,7 +114,7 @@ class NarrativeExporter:
         c.narrative_session.ws_url = self.exporter_cfg["workspace-url"]
         c.narrative_session.nms_url = self.exporter_cfg["nms-url"]
         c.narrative_session.nms_image_url = self.exporter_cfg["nms-image-url"]
-        c.narrative_session.profile_page_url = self.exporter_cfg["profile-page-url"]
+        c.narrative_session.profile_page_url = host + self.exporter_cfg["profile-page-path"]
         c.narrative_session.auth_url = self.exporter_cfg["auth-url"]
         c.narrative_session.assets_base_url = self.exporter_cfg["assets-base-url"]
         c.narrative_session.service_wizard_url = self.exporter_cfg["srv-wiz-url"]
