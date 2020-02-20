@@ -178,7 +178,19 @@
                   {% for p in metadata.params[b[0]] %}
                     <div class="kb-app-param">
                       <div class="kb-app-param-name">{{ p.ui_name }}</div>
-                      <div class="kb-app-param-field">{{ p.value }}</div>
+                      <div class="kb-app-param-field">
+                      {% if p.value is not string and p.value is iterable %}
+                        <table>
+                        {% for v in p.value %}
+                          <tr><td>{{ v }}</td></tr>
+                        {% endfor %}
+                        </table>
+                      {% elif p.value or p.value == 0 %}
+                          {{ p.value }}
+                      {% else %}
+                        &lt;Not set&gt;
+                      {%- endif %}
+                      </div>
                     </div>
                   {% endfor %}
                 </div>

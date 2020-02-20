@@ -221,3 +221,11 @@ class StaticNarrativeTest(unittest.TestCase):
             "narr_saved": 1571953877000
         }
         self.assertEqual(info, std_info)
+
+    def test_list_static_narratives(self):
+        """
+        TODO: better testing. set up specific files, narratives, maybe run all the things first.
+        TODO: deeper unit testing?
+        """
+        narrs = self.service_impl.list_static_narratives(self.ctx)[0]
+        print(narrs)
