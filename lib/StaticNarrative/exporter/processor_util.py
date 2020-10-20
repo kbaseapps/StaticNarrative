@@ -106,7 +106,7 @@ def build_report_view_data(host: str, ws_client: Workspace, result: list) -> dic
 
     if report.get("html_links"):
         idx = report.get("direct_html_link_index", 0)
-        if idx < 0 or idx >= len(report["html_links"]):
+        if idx is None or idx < 0 or idx >= len(report["html_links"]):
             idx = 0
         html["links"] = report["html_links"]
         html["paths"] = list()
