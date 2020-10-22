@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  install_kbsdk_and_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout git repo
+      uses: actions/checkout@v2
+
+    - name: pull sdk image and test
+      shell: bash
+      env:
+        KBASE_TEST_TOKEN: ${{ secrets.KBASE_TEST_TOKEN }}
+        GITHUB_ACTIONS_CI: 1
+      run: |
+        echo "Pulling image and building script."
+        docker pull kbase/kb-sdk:develop
+        docker tag kbase/kb-sdk:develop kbase/kb-sdk:latest
+        docker run kbase/kb-sdk genscript | sed -E 's/-it/-i/' > $GITHUB_WORKSPACE/kb-sdk
+        chmod 755 $GITHUB_WORKSPACE/kb-sdk
+        echo "Done, running tests."
+        $GITHUB_WORKSPACE/kb-sdk test
