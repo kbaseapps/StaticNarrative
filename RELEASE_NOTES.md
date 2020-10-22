@@ -1,6 +1,11 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.14
+------
+* Fixed a bug that caused a None comparison error when processing a specific configuration of a
+  KBaseReport (PUBLIC-1411).
+
 0.0.13
 ------
 * Fixed author url links.
