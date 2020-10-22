@@ -13,13 +13,13 @@ jobs:
     - name: checkout git repo
       uses: actions/checkout@v2
 
-    - name: pull sdk image
+    - name: pull sdk image and test
       shell: bash
       env:
         KBASE_TEST_TOKEN: ${{ secrets.KBASE_TEST_TOKEN }}
         GITHUB_ACTIONS_CI: 1
       run: |
-        docker pull kbase/kb-sdk:develop
-        docker run kbase/kb-sdk:develop genscript > $GITHUB_WORKSPACE/kb-sdk
+        docker pull kbase/kb-sdk
+        docker run kbase/kb-sdk genscript > $GITHUB_WORKSPACE/kb-sdk
         chmod 755 $GITHUB_WORKSPACE/kb-sdk
         $GITHUB_WORKSPACE/kb-sdk test
