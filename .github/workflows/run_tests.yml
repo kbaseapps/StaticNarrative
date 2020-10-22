@@ -19,9 +19,10 @@ jobs:
         KBASE_TEST_TOKEN: ${{ secrets.KBASE_TEST_TOKEN }}
         GITHUB_ACTIONS_CI: 1
       run: |
-        docker pull ialarmedalien/kb-sdk
+        docker pull kbase/kb-sdk:develop
         echo "installing kb-sdk script to $GITHUB_WORKSPACE"
-        docker run ialarmedalien/kb-sdk genscript > $GITHUB_WORKSPACE/kb-sdk
+        docker tag kbase/kb-sdk:develop kbase/kb-sdk:latest
+        docker run kbase/kb-sdk genscript > $GITHUB_WORKSPACE/kb-sdk
         echo "done, giving run permissions to script"
         chmod 755 $GITHUB_WORKSPACE/kb-sdk
         echo "done, running tests"
