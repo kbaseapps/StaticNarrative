@@ -1,0 +1,118 @@
+{
+    "data": {
+        "direct_html": null,
+        "direct_html_link_index": 0,
+        "file_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/ffbbc04f-e4e0-471e-b787-075f5c4cfcdc",
+                "description": "Simple test file 1",
+                "handle": "KBH_520025",
+                "label": "",
+                "name": "file_number_1.txt"
+            },
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/c857751e-b145-4ef8-aa5e-abf59891ccc0",
+                "description": "Simple test file 2",
+                "handle": "KBH_520026",
+                "label": "",
+                "name": "file_number_2.txt"
+            },
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/f5fcf3d0-22bf-4532-b157-c608ed6e44c1",
+                "description": "Simple test file 3",
+                "handle": "KBH_520027",
+                "label": "",
+                "name": "file_number_3.txt"
+            }
+        ],
+        "html_links": [
+            {
+                "URL": "https://ci.kbase.us/services/shock-api/node/8f7e8210-c378-48d5-8dd4-66de3c3a8054",
+                "description": "Report page 1",
+                "handle": "KBH_520028",
+                "label": "",
+                "name": "page1.html"
+            }
+        ],
+        "html_window_height": null,
+        "objects_created": [],
+        "summary_window_height": null,
+        "text_message": "Here is an example report",
+        "warnings": []
+    },
+    "info": [
+        9,
+        "NarrativeTest.example_report-c8d65867-f05b-421b-9941-35a497e4ac3e",
+        "KBaseReport.Report-3.0",
+        "2020-02-13T22:15:27+0000",
+        1,
+        "wjriehl",
+        47123,
+        "wjriehl:narrative_1581384702051",
+        "3ba827ccd91819b253dc96deffe620c3",
+        942,
+        {
+            "Size(characters)": "25",
+            "Objects Created": "0",
+            "Warnings": "0"
+        }
+    ],
+    "path": [
+        "47123/9/1"
+    ],
+    "provenance": [
+        {
+            "time": "2020-02-13T22:14:00+0000",
+            "epoch": 1581632040000,
+            "service": "NarrativeTest",
+            "service_ver": "25496c5ebfdaec8045b5fd9049aeff5efd4a3834",
+            "method": "report_html_links",
+            "method_params": [
+                {
+                    "workspace_name": "wjriehl:narrative_1581384702051",
+                    "num_pages": 1,
+                    "initial_page": 1,
+                    "include_direct_html": 0,
+                    "num_files": 3
+                }
+            ],
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [
+                {
+                    "name": "NarrativeTest",
+                    "ver": "25496c5ebfdaec8045b5fd9049aeff5efd4a3834",
+                    "code_url": "https://github.com/briehl/narrative-test",
+                    "commit": "25496c5ebfdaec8045b5fd9049aeff5efd4a3834"
+                },
+                {
+                    "name": "KBaseReport",
+                    "code_url": "https://github.com/kbaseapps/KBaseReport",
+                    "commit": "0356e0313025b0d4b1b7fa11e96050aeaaaa828c"
+                },
+                {
+                    "name": "DataFileUtil",
+                    "code_url": "https://github.com/kbaseapps/DataFileUtil",
+                    "commit": "df0bb6568008983c1daf6966cf8cebf54f0a0d80"
+                }
+            ],
+            "custom": {},
+            "description": "KBase SDK method run via the KBase Execution Engine"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 47123,
+    "created": "2020-02-13T22:15:25+0000",
+    "epoch": 1581632125898,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {
+        "handle": [
+            "KBH_520028",
+            "KBH_520027",
+            "KBH_520026",
+            "KBH_520025"
+        ]
+    }
+}
