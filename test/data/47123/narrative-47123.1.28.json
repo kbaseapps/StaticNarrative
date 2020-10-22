@@ -1,0 +1,2017 @@
+{
+    "data": {
+        "cells": [
+            {
+                "cell_type": "code",
+                "execution_count": null,
+                "metadata": {
+                    "kbase": {
+                        "attributes": {
+                            "created": "Tue, 11 Feb 2020 01:31:55 GMT",
+                            "icon": "code",
+                            "id": "28fe3e2d-f089-4632-8e2b-f84be8d50412",
+                            "lastLoaded": "Tue, 11 Feb 2020 01:31:55 GMT",
+                            "status": "new",
+                            "title": "Code Cell"
+                        },
+                        "codeCell": {
+                            "userSettings": {
+                                "showCodeInputArea": true
+                            }
+                        },
+                        "type": "code"
+                    }
+                },
+                "outputs": [],
+                "source": ""
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 1,
+                "metadata": {
+                    "kbase": {
+                        "appCell": {
+                            "app": {
+                                "gitCommitHash": "25496c5ebfdaec8045b5fd9049aeff5efd4a3834",
+                                "id": "NarrativeTest/report_html_links",
+                                "spec": {
+                                    "behavior": {
+                                        "kb_service_input_mapping": [
+                                            {
+                                                "narrative_system_variable": "workspace",
+                                                "target_property": "workspace_name"
+                                            },
+                                            {
+                                                "input_parameter": "num_pages",
+                                                "target_property": "num_pages"
+                                            },
+                                            {
+                                                "input_parameter": "initial_page",
+                                                "target_property": "initial_page"
+                                            },
+                                            {
+                                                "input_parameter": "include_direct",
+                                                "target_property": "include_direct_html"
+                                            },
+                                            {
+                                                "input_parameter": "num_files",
+                                                "target_property": "num_files"
+                                            }
+                                        ],
+                                        "kb_service_method": "report_html_links",
+                                        "kb_service_name": "NarrativeTest",
+                                        "kb_service_output_mapping": [
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_name"
+                                                ],
+                                                "target_property": "report_name"
+                                            },
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_ref"
+                                                ],
+                                                "target_property": "report_ref"
+                                            },
+                                            {
+                                                "constant_value": "16",
+                                                "target_property": "report_window_line_height"
+                                            }
+                                        ],
+                                        "kb_service_url": "",
+                                        "kb_service_version": "25496c5ebfdaec8045b5fd9049aeff5efd4a3834"
+                                    },
+                                    "fixed_parameters": [],
+                                    "info": {
+                                        "app_type": "app",
+                                        "authors": [
+                                            "wjriehl"
+                                        ],
+                                        "categories": [],
+                                        "git_commit_hash": "25496c5ebfdaec8045b5fd9049aeff5efd4a3834",
+                                        "id": "NarrativeTest/report_html_links",
+                                        "input_types": [],
+                                        "module_name": "NarrativeTest",
+                                        "name": "HTML Report with links",
+                                        "namespace": "NarrativeTest",
+                                        "output_types": [],
+                                        "subtitle": "Show an example HTML Report",
+                                        "tooltip": "Show an example HTML Report",
+                                        "ver": "0.0.2"
+                                    },
+                                    "job_id_output_field": "docker",
+                                    "parameters": [
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This is the number of pages that will be generated for the report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "num_pages",
+                                            "optional": 0,
+                                            "short_hint": "Set the number of pages",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 0,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Number of Pages"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This sets the first page to show in your multipage report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "initial_page",
+                                            "optional": 1,
+                                            "short_hint": "The first page to show",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 0,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Initial Page"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "checkbox_options": {
+                                                "checked_value": 1,
+                                                "unchecked_value": 0
+                                            },
+                                            "default_values": [
+                                                ""
+                                            ],
+                                            "description": "Using a direct_html entry and no pages should show the direct_html as the report.",
+                                            "disabled": 0,
+                                            "field_type": "checkbox",
+                                            "id": "include_direct",
+                                            "optional": 1,
+                                            "short_hint": "Select to include a \"direct_html\" entry",
+                                            "ui_class": "parameter",
+                                            "ui_name": "Use direct HTML"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                ""
+                                            ],
+                                            "description": "If > 0, this makes a number of tiny downloadable files.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "num_files",
+                                            "optional": 1,
+                                            "short_hint": "How many files to make",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 0,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Number of files"
+                                        }
+                                    ],
+                                    "widgets": {
+                                        "input": "null",
+                                        "output": "no-display"
+                                    }
+                                },
+                                "tag": "dev",
+                                "version": "0.0.2"
+                            },
+                            "exec": {
+                                "jobState": {
+                                    "authstrat": "kbaseworkspace",
+                                    "cell_id": "e6f39431-0fbd-4f19-948c-ba4952bedd60",
+                                    "child_jobs": [],
+                                    "created": 1581632019000,
+                                    "finished": 1581632140241,
+                                    "job_id": "5e45ca13aaeb5794eb0e24bb",
+                                    "job_input": {
+                                        "app_id": "NarrativeTest/report_html_links",
+                                        "method": "NarrativeTest.report_html_links",
+                                        "narrative_cell_info": {
+                                            "cell_id": "e6f39431-0fbd-4f19-948c-ba4952bedd60",
+                                            "run_id": "c2962417-e69a-4602-90dc-0326023dd0bb",
+                                            "tag": "dev",
+                                            "token_id": "ce15faac-5905-41cc-b79f-38d50c8516ff"
+                                        },
+                                        "params": [
+                                            {
+                                                "include_direct_html": 0,
+                                                "initial_page": 1,
+                                                "num_files": 3,
+                                                "num_pages": 1,
+                                                "workspace_name": "wjriehl:narrative_1581384702051"
+                                            }
+                                        ],
+                                        "parent_job_id": "None",
+                                        "requirements": {
+                                            "clientgroup": "njs",
+                                            "cpu": 4,
+                                            "disk": 30,
+                                            "memory": 2000
+                                        },
+                                        "service_ver": "25496c5ebfdaec8045b5fd9049aeff5efd4a3834",
+                                        "source_ws_objects": [],
+                                        "wsid": 47123
+                                    },
+                                    "job_output": {
+                                        "id": "5e45ca13aaeb5794eb0e24bb",
+                                        "result": [
+                                            {
+                                                "report_name": "NarrativeTest.example_report-c8d65867-f05b-421b-9941-35a497e4ac3e",
+                                                "report_ref": "47123/9/1"
+                                            }
+                                        ],
+                                        "version": "1.1"
+                                    },
+                                    "queued": 1581632020198,
+                                    "run_id": "c2962417-e69a-4602-90dc-0326023dd0bb",
+                                    "running": 1581632039475,
+                                    "scheduler_id": "13640",
+                                    "scheduler_type": "condor",
+                                    "status": "completed",
+                                    "updated": 1581632140241,
+                                    "user": "wjriehl",
+                                    "wsid": 47123
+                                },
+                                "jobStateUpdated": 1581632149101,
+                                "launchState": {
+                                    "cell_id": "e6f39431-0fbd-4f19-948c-ba4952bedd60",
+                                    "event": "launched_job",
+                                    "event_at": "2020-02-13T22:13:40.618108Z",
+                                    "job_id": "5e45ca13aaeb5794eb0e24bb",
+                                    "run_id": "c2962417-e69a-4602-90dc-0326023dd0bb"
+                                },
+                                "outputWidgetInfo": {
+                                    "name": "no-display",
+                                    "params": {
+                                        "report_name": "NarrativeTest.example_report-c8d65867-f05b-421b-9941-35a497e4ac3e",
+                                        "report_ref": "47123/9/1",
+                                        "report_window_line_height": "16"
+                                    },
+                                    "tag": "dev"
+                                }
+                            },
+                            "fsm": {
+                                "currentState": {
+                                    "mode": "success"
+                                }
+                            },
+                            "output": {
+                                "byJob": {
+                                    "5e45ca13aaeb5794eb0e24bb": {
+                                        "cell": {
+                                            "created": false
+                                        },
+                                        "createdAt": "Thu, 13 Feb 2020 22:15:49 GMT",
+                                        "params": {
+                                            "include_direct": 0,
+                                            "initial_page": 1,
+                                            "num_files": 3,
+                                            "num_pages": 1
+                                        }
+                                    }
+                                }
+                            },
+                            "params": {
+                                "include_direct": 0,
+                                "initial_page": 1,
+                                "num_files": 3,
+                                "num_pages": 1
+                            },
+                            "user-settings": {
+                                "showCodeInputArea": false
+                            }
+                        },
+                        "attributes": {
+                            "created": "Thu, 13 Feb 2020 22:13:28 GMT",
+                            "id": "e6f39431-0fbd-4f19-948c-ba4952bedd60",
+                            "info": {
+                                "label": "more...",
+                                "url": "/#appcatalog/app/NarrativeTest/report_html_links/dev"
+                            },
+                            "lastLoaded": "Thu, 13 Feb 2020 22:13:28 GMT",
+                            "status": "new",
+                            "subtitle": "Show an example HTML Report",
+                            "title": "HTML Report with links"
+                        },
+                        "type": "app"
+                    }
+                },
+                "outputs": [],
+                "source": "from biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\": 1,\n        \"initial_page\": 1,\n        \"include_direct\": 0,\n        \"num_files\": 3\n    },\n    tag=\"dev\",\n    version=\"25496c5ebfdaec8045b5fd9049aeff5efd4a3834\",\n    cell_id=\"e6f39431-0fbd-4f19-948c-ba4952bedd60\",\n    run_id=\"c2962417-e69a-4602-90dc-0326023dd0bb\"\n)"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 2,
+                "metadata": {
+                    "kbase": {
+                        "appCell": {
+                            "app": {
+                                "gitCommitHash": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                "id": "NarrativeTest/report_html_links",
+                                "spec": {
+                                    "behavior": {
+                                        "kb_service_input_mapping": [
+                                            {
+                                                "narrative_system_variable": "workspace",
+                                                "target_property": "workspace_name"
+                                            },
+                                            {
+                                                "input_parameter": "num_pages",
+                                                "target_property": "num_pages"
+                                            },
+                                            {
+                                                "input_parameter": "initial_page",
+                                                "target_property": "initial_page"
+                                            },
+                                            {
+                                                "input_parameter": "include_direct",
+                                                "target_property": "include_direct_html"
+                                            }
+                                        ],
+                                        "kb_service_method": "report_html_links",
+                                        "kb_service_name": "NarrativeTest",
+                                        "kb_service_output_mapping": [
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_name"
+                                                ],
+                                                "target_property": "report_name"
+                                            },
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_ref"
+                                                ],
+                                                "target_property": "report_ref"
+                                            },
+                                            {
+                                                "constant_value": "16",
+                                                "target_property": "report_window_line_height"
+                                            }
+                                        ],
+                                        "kb_service_url": "",
+                                        "kb_service_version": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"
+                                    },
+                                    "fixed_parameters": [],
+                                    "info": {
+                                        "app_type": "app",
+                                        "authors": [
+                                            "wjriehl"
+                                        ],
+                                        "categories": [],
+                                        "git_commit_hash": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                        "id": "NarrativeTest/report_html_links",
+                                        "input_types": [],
+                                        "module_name": "NarrativeTest",
+                                        "name": "HTML Report with links",
+                                        "namespace": "NarrativeTest",
+                                        "output_types": [],
+                                        "subtitle": "Show an example HTML Report",
+                                        "tooltip": "Show an example HTML Report",
+                                        "ver": "0.0.2"
+                                    },
+                                    "job_id_output_field": "docker",
+                                    "parameters": [
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This is the number of pages that will be generated for the report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "num_pages",
+                                            "optional": 0,
+                                            "short_hint": "Set the number of pages",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 1,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Number of Pages"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This sets the first page to show in your multipage report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "initial_page",
+                                            "optional": 1,
+                                            "short_hint": "The first page to show",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 1,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Initial Page"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "checkbox_options": {
+                                                "checked_value": 1,
+                                                "unchecked_value": 0
+                                            },
+                                            "default_values": [
+                                                ""
+                                            ],
+                                            "description": "Using a direct_html entry and no pages should show the direct_html as the report.",
+                                            "disabled": 0,
+                                            "field_type": "checkbox",
+                                            "id": "include_direct",
+                                            "optional": 1,
+                                            "short_hint": "Select to include a \"direct_html\" entry",
+                                            "ui_class": "parameter",
+                                            "ui_name": "Use direct HTML"
+                                        }
+                                    ],
+                                    "widgets": {
+                                        "input": "null",
+                                        "output": "no-display"
+                                    }
+                                },
+                                "tag": "dev",
+                                "version": "0.0.2"
+                            },
+                            "exec": {
+                                "jobState": {
+                                    "authstrat": "kbaseworkspace",
+                                    "cell_id": "aa1fac03-c2be-45b1-ba60-e42f89dbe87e",
+                                    "child_jobs": [],
+                                    "created": 1581541418000,
+                                    "finished": 1581541507619,
+                                    "job_id": "5e44682a5619be5eada7e085",
+                                    "job_input": {
+                                        "app_id": "NarrativeTest/report_html_links",
+                                        "method": "NarrativeTest.report_html_links",
+                                        "narrative_cell_info": {
+                                            "cell_id": "aa1fac03-c2be-45b1-ba60-e42f89dbe87e",
+                                            "run_id": "d80fa448-c0fc-467d-9871-6b287ff16dd8",
+                                            "tag": "dev",
+                                            "token_id": "f5478b40-075e-4080-a941-877ff2cc0c5f"
+                                        },
+                                        "params": [
+                                            {
+                                                "include_direct_html": 0,
+                                                "initial_page": 1,
+                                                "num_pages": 1,
+                                                "workspace_name": "wjriehl:narrative_1581384702051"
+                                            }
+                                        ],
+                                        "parent_job_id": "None",
+                                        "requirements": {
+                                            "clientgroup": "njs",
+                                            "cpu": 4,
+                                            "disk": 30,
+                                            "memory": 2000
+                                        },
+                                        "service_ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                        "source_ws_objects": [],
+                                        "wsid": 47123
+                                    },
+                                    "job_output": {
+                                        "id": "5e44682a5619be5eada7e085",
+                                        "result": [
+                                            {
+                                                "report_name": "NarrativeTest.example_report-c2deb2ed-a77a-4c47-bef3-66fff218ce04",
+                                                "report_ref": "47123/4/1"
+                                            }
+                                        ],
+                                        "version": "1.1"
+                                    },
+                                    "queued": 1581541419302,
+                                    "run_id": "d80fa448-c0fc-467d-9871-6b287ff16dd8",
+                                    "running": 1581541437610,
+                                    "scheduler_id": "13605",
+                                    "scheduler_type": "condor",
+                                    "status": "completed",
+                                    "updated": 1581541507619,
+                                    "user": "wjriehl",
+                                    "wsid": 47123
+                                },
+                                "jobStateUpdated": 1581541515809,
+                                "launchState": {
+                                    "cell_id": "aa1fac03-c2be-45b1-ba60-e42f89dbe87e",
+                                    "event": "launched_job",
+                                    "event_at": "2020-02-12T21:03:39.674066Z",
+                                    "job_id": "5e44682a5619be5eada7e085",
+                                    "run_id": "d80fa448-c0fc-467d-9871-6b287ff16dd8"
+                                },
+                                "outputWidgetInfo": {
+                                    "name": "no-display",
+                                    "params": {
+                                        "report_name": "NarrativeTest.example_report-c2deb2ed-a77a-4c47-bef3-66fff218ce04",
+                                        "report_ref": "47123/4/1",
+                                        "report_window_line_height": "16"
+                                    },
+                                    "tag": "dev"
+                                }
+                            },
+                            "fsm": {
+                                "currentState": {
+                                    "mode": "success"
+                                }
+                            },
+                            "newAppName": "HTML Report with links",
+                            "outdated": true,
+                            "output": {
+                                "byJob": {
+                                    "5e44682a5619be5eada7e085": {
+                                        "cell": {
+                                            "created": false
+                                        },
+                                        "createdAt": "Wed, 12 Feb 2020 21:05:15 GMT",
+                                        "params": {
+                                            "include_direct": 0,
+                                            "initial_page": 1,
+                                            "num_pages": 1
+                                        }
+                                    }
+                                }
+                            },
+                            "params": {
+                                "include_direct": 0,
+                                "initial_page": 1,
+                                "num_pages": 1
+                            },
+                            "user-settings": {
+                                "showCodeInputArea": false
+                            }
+                        },
+                        "attributes": {
+                            "created": "Wed, 12 Feb 2020 21:03:35 GMT",
+                            "id": "aa1fac03-c2be-45b1-ba60-e42f89dbe87e",
+                            "info": {
+                                "label": "more...",
+                                "url": "/#appcatalog/app/NarrativeTest/report_html_links/dev"
+                            },
+                            "lastLoaded": "Thu, 13 Feb 2020 18:09:57 GMT",
+                            "status": "new",
+                            "subtitle": "Show an example HTML Report",
+                            "title": "HTML Report with links"
+                        },
+                        "type": "app"
+                    }
+                },
+                "outputs": [],
+                "source": "from biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\": 1,\n        \"initial_page\": 1,\n        \"include_direct\": 0\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"aa1fac03-c2be-45b1-ba60-e42f89dbe87e\",\n    run_id=\"d80fa448-c0fc-467d-9871-6b287ff16dd8\"\n)"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 6,
+                "metadata": {
+                    "kbase": {
+                        "appCell": {
+                            "app": {
+                                "gitCommitHash": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                "id": "NarrativeTest/report_html_links",
+                                "spec": {
+                                    "behavior": {
+                                        "kb_service_input_mapping": [
+                                            {
+                                                "narrative_system_variable": "workspace",
+                                                "target_property": "workspace_name"
+                                            },
+                                            {
+                                                "input_parameter": "num_pages",
+                                                "target_property": "num_pages"
+                                            },
+                                            {
+                                                "input_parameter": "initial_page",
+                                                "target_property": "initial_page"
+                                            },
+                                            {
+                                                "input_parameter": "include_direct",
+                                                "target_property": "include_direct_html"
+                                            }
+                                        ],
+                                        "kb_service_method": "report_html_links",
+                                        "kb_service_name": "NarrativeTest",
+                                        "kb_service_output_mapping": [
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_name"
+                                                ],
+                                                "target_property": "report_name"
+                                            },
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_ref"
+                                                ],
+                                                "target_property": "report_ref"
+                                            },
+                                            {
+                                                "constant_value": "16",
+                                                "target_property": "report_window_line_height"
+                                            }
+                                        ],
+                                        "kb_service_url": "",
+                                        "kb_service_version": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"
+                                    },
+                                    "fixed_parameters": [],
+                                    "info": {
+                                        "app_type": "app",
+                                        "authors": [
+                                            "wjriehl"
+                                        ],
+                                        "categories": [],
+                                        "git_commit_hash": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                        "id": "NarrativeTest/report_html_links",
+                                        "input_types": [],
+                                        "module_name": "NarrativeTest",
+                                        "name": "HTML Report with links",
+                                        "namespace": "NarrativeTest",
+                                        "output_types": [],
+                                        "subtitle": "Show an example HTML Report",
+                                        "tooltip": "Show an example HTML Report",
+                                        "ver": "0.0.2"
+                                    },
+                                    "job_id_output_field": "docker",
+                                    "parameters": [
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This is the number of pages that will be generated for the report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "num_pages",
+                                            "optional": 0,
+                                            "short_hint": "Set the number of pages",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 1,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Number of Pages"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This sets the first page to show in your multipage report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "initial_page",
+                                            "optional": 1,
+                                            "short_hint": "The first page to show",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 1,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Initial Page"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "checkbox_options": {
+                                                "checked_value": 1,
+                                                "unchecked_value": 0
+                                            },
+                                            "default_values": [
+                                                ""
+                                            ],
+                                            "description": "Using a direct_html entry and no pages should show the direct_html as the report.",
+                                            "disabled": 0,
+                                            "field_type": "checkbox",
+                                            "id": "include_direct",
+                                            "optional": 1,
+                                            "short_hint": "Select to include a \"direct_html\" entry",
+                                            "ui_class": "parameter",
+                                            "ui_name": "Use direct HTML"
+                                        }
+                                    ],
+                                    "widgets": {
+                                        "input": "null",
+                                        "output": "no-display"
+                                    }
+                                },
+                                "tag": "dev",
+                                "version": "0.0.2"
+                            },
+                            "exec": {
+                                "jobState": {
+                                    "authstrat": "kbaseworkspace",
+                                    "cell_id": "d8e84a3b-e09c-455a-b42b-9498cdcd73bf",
+                                    "child_jobs": [],
+                                    "created": 1581541721000,
+                                    "finished": 1581541887606,
+                                    "job_id": "5e446959a1372d336359fbc5",
+                                    "job_input": {
+                                        "app_id": "NarrativeTest/report_html_links",
+                                        "method": "NarrativeTest.report_html_links",
+                                        "narrative_cell_info": {
+                                            "cell_id": "d8e84a3b-e09c-455a-b42b-9498cdcd73bf",
+                                            "run_id": "cc10666e-d888-407f-9130-5ab5c3ac9c15",
+                                            "tag": "dev",
+                                            "token_id": "47ded194-394f-4b55-bf97-2bf35738cb72"
+                                        },
+                                        "params": [
+                                            {
+                                                "include_direct_html": 0,
+                                                "initial_page": 3,
+                                                "num_pages": 5,
+                                                "workspace_name": "wjriehl:narrative_1581384702051"
+                                            }
+                                        ],
+                                        "parent_job_id": "None",
+                                        "requirements": {
+                                            "clientgroup": "njs",
+                                            "cpu": 4,
+                                            "disk": 30,
+                                            "memory": 2000
+                                        },
+                                        "service_ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                        "source_ws_objects": [],
+                                        "wsid": 47123
+                                    },
+                                    "job_output": {
+                                        "id": "5e446959a1372d336359fbc5",
+                                        "result": [
+                                            {
+                                                "report_name": "NarrativeTest.example_report-c544984d-f764-4716-8a31-6ceabff4bb4b",
+                                                "report_ref": "47123/7/1"
+                                            }
+                                        ],
+                                        "version": "1.1"
+                                    },
+                                    "queued": 1581541722200,
+                                    "run_id": "cc10666e-d888-407f-9130-5ab5c3ac9c15",
+                                    "running": 1581541743023,
+                                    "scheduler_id": "13609",
+                                    "scheduler_type": "condor",
+                                    "status": "completed",
+                                    "updated": 1581541887606,
+                                    "user": "wjriehl",
+                                    "wsid": 47123
+                                },
+                                "jobStateUpdated": 1581541897028,
+                                "launchState": {
+                                    "cell_id": "d8e84a3b-e09c-455a-b42b-9498cdcd73bf",
+                                    "event": "launched_job",
+                                    "event_at": "2020-02-12T21:08:42.666484Z",
+                                    "job_id": "5e446959a1372d336359fbc5",
+                                    "run_id": "cc10666e-d888-407f-9130-5ab5c3ac9c15"
+                                },
+                                "outputWidgetInfo": {
+                                    "name": "no-display",
+                                    "params": {
+                                        "report_name": "NarrativeTest.example_report-c544984d-f764-4716-8a31-6ceabff4bb4b",
+                                        "report_ref": "47123/7/1",
+                                        "report_window_line_height": "16"
+                                    },
+                                    "tag": "dev"
+                                }
+                            },
+                            "fsm": {
+                                "currentState": {
+                                    "mode": "success"
+                                }
+                            },
+                            "newAppName": "HTML Report with links",
+                            "outdated": true,
+                            "output": {
+                                "byJob": {
+                                    "5e446959a1372d336359fbc5": {
+                                        "cell": {
+                                            "created": false
+                                        },
+                                        "createdAt": "Wed, 12 Feb 2020 21:11:37 GMT",
+                                        "params": {
+                                            "include_direct": 0,
+                                            "initial_page": 3,
+                                            "num_pages": 5
+                                        }
+                                    }
+                                }
+                            },
+                            "params": {
+                                "include_direct": 0,
+                                "initial_page": 3,
+                                "num_pages": 5
+                            },
+                            "user-settings": {
+                                "showCodeInputArea": false
+                            }
+                        },
+                        "attributes": {
+                            "created": "Wed, 12 Feb 2020 21:07:35 GMT",
+                            "id": "d8e84a3b-e09c-455a-b42b-9498cdcd73bf",
+                            "info": {
+                                "label": "more...",
+                                "url": "/#appcatalog/app/NarrativeTest/report_html_links/dev"
+                            },
+                            "lastLoaded": "Thu, 13 Feb 2020 18:09:57 GMT",
+                            "status": "new",
+                            "subtitle": "Show an example HTML Report",
+                            "title": "HTML Report with links"
+                        },
+                        "type": "app"
+                    }
+                },
+                "outputs": [],
+                "source": "from biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\": 5,\n        \"initial_page\": 3,\n        \"include_direct\": 0\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"d8e84a3b-e09c-455a-b42b-9498cdcd73bf\",\n    run_id=\"cc10666e-d888-407f-9130-5ab5c3ac9c15\"\n)"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 5,
+                "metadata": {
+                    "kbase": {
+                        "appCell": {
+                            "app": {
+                                "gitCommitHash": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                "id": "NarrativeTest/report_example",
+                                "spec": {
+                                    "behavior": {
+                                        "kb_service_input_mapping": [
+                                            {
+                                                "narrative_system_variable": "workspace",
+                                                "target_property": "workspace_name"
+                                            },
+                                            {
+                                                "input_parameter": "text_input",
+                                                "target_property": "text_input"
+                                            },
+                                            {
+                                                "input_parameter": "checkbox_input",
+                                                "target_property": "checkbox_input"
+                                            }
+                                        ],
+                                        "kb_service_method": "example_report",
+                                        "kb_service_name": "NarrativeTest",
+                                        "kb_service_output_mapping": [
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_name"
+                                                ],
+                                                "target_property": "report_name"
+                                            },
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_ref"
+                                                ],
+                                                "target_property": "report_ref"
+                                            },
+                                            {
+                                                "constant_value": "16",
+                                                "target_property": "report_window_line_height"
+                                            }
+                                        ],
+                                        "kb_service_url": "",
+                                        "kb_service_version": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"
+                                    },
+                                    "fixed_parameters": [],
+                                    "info": {
+                                        "app_type": "app",
+                                        "authors": [
+                                            "wjriehl"
+                                        ],
+                                        "categories": [],
+                                        "git_commit_hash": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                        "id": "NarrativeTest/report_example",
+                                        "input_types": [],
+                                        "module_name": "NarrativeTest",
+                                        "name": "Example HTML Report",
+                                        "namespace": "NarrativeTest",
+                                        "output_types": [],
+                                        "subtitle": "Show an example HTML Report",
+                                        "tooltip": "Show an example HTML Report",
+                                        "ver": "0.0.2"
+                                    },
+                                    "job_id_output_field": "docker",
+                                    "parameters": [
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                ""
+                                            ],
+                                            "description": "Some input test goes here",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "text_input",
+                                            "optional": 1,
+                                            "short_hint": "Add some text for your report",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "placeholder": "",
+                                                "regex_constraint": []
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Text Input"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "checkbox_options": {
+                                                "checked_value": 1,
+                                                "unchecked_value": 0
+                                            },
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "Your report will show this being checked or not",
+                                            "disabled": 0,
+                                            "field_type": "checkbox",
+                                            "id": "checkbox_input",
+                                            "optional": 0,
+                                            "short_hint": "Show this off in your report",
+                                            "ui_class": "parameter",
+                                            "ui_name": "Checkbox Input"
+                                        }
+                                    ],
+                                    "widgets": {
+                                        "input": "null",
+                                        "output": "no-display"
+                                    }
+                                },
+                                "tag": "dev",
+                                "version": "0.0.2"
+                            },
+                            "exec": {
+                                "jobState": {
+                                    "authstrat": "kbaseworkspace",
+                                    "cell_id": "db8c9ab1-ee30-4091-a350-78443108f4a2",
+                                    "child_jobs": [],
+                                    "created": 1581541719000,
+                                    "finished": 1581541826698,
+                                    "job_id": "5e446957ab9b56e191b14484",
+                                    "job_input": {
+                                        "app_id": "NarrativeTest/report_example",
+                                        "method": "NarrativeTest.example_report",
+                                        "narrative_cell_info": {
+                                            "cell_id": "db8c9ab1-ee30-4091-a350-78443108f4a2",
+                                            "run_id": "f90c9f55-3504-4ed8-951c-4e457d4cc15e",
+                                            "tag": "dev",
+                                            "token_id": "91d717fc-338c-4bce-b28c-a24145f6afa1"
+                                        },
+                                        "params": [
+                                            {
+                                                "checkbox_input": 1,
+                                                "text_input": "blah!",
+                                                "workspace_name": "wjriehl:narrative_1581384702051"
+                                            }
+                                        ],
+                                        "parent_job_id": "None",
+                                        "requirements": {
+                                            "clientgroup": "njs",
+                                            "cpu": 4,
+                                            "disk": 30,
+                                            "memory": 2000
+                                        },
+                                        "service_ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                        "source_ws_objects": [],
+                                        "wsid": 47123
+                                    },
+                                    "job_output": {
+                                        "id": "5e446957ab9b56e191b14484",
+                                        "result": [
+                                            {
+                                                "report_name": "NarrativeTest.example_report2d7ef9d1-4e1f-4449-aa7a-8b7f6ba8d1ac",
+                                                "report_ref": "47123/6/1"
+                                            }
+                                        ],
+                                        "version": "1.1"
+                                    },
+                                    "queued": 1581541720552,
+                                    "run_id": "f90c9f55-3504-4ed8-951c-4e457d4cc15e",
+                                    "running": 1581541743313,
+                                    "scheduler_id": "13608",
+                                    "scheduler_type": "condor",
+                                    "status": "completed",
+                                    "updated": 1581541826698,
+                                    "user": "wjriehl",
+                                    "wsid": 47123
+                                },
+                                "jobStateUpdated": 1581541834345,
+                                "launchState": {
+                                    "cell_id": "db8c9ab1-ee30-4091-a350-78443108f4a2",
+                                    "event": "launched_job",
+                                    "event_at": "2020-02-12T21:08:40.928561Z",
+                                    "job_id": "5e446957ab9b56e191b14484",
+                                    "run_id": "f90c9f55-3504-4ed8-951c-4e457d4cc15e"
+                                },
+                                "outputWidgetInfo": {
+                                    "name": "no-display",
+                                    "params": {
+                                        "report_name": "NarrativeTest.example_report2d7ef9d1-4e1f-4449-aa7a-8b7f6ba8d1ac",
+                                        "report_ref": "47123/6/1",
+                                        "report_window_line_height": "16"
+                                    },
+                                    "tag": "dev"
+                                }
+                            },
+                            "fsm": {
+                                "currentState": {
+                                    "mode": "success"
+                                }
+                            },
+                            "newAppName": "Example HTML Report",
+                            "outdated": true,
+                            "output": {
+                                "byJob": {
+                                    "5e446957ab9b56e191b14484": {
+                                        "cell": {
+                                            "created": false
+                                        },
+                                        "createdAt": "Wed, 12 Feb 2020 21:10:34 GMT",
+                                        "params": {
+                                            "checkbox_input": 1,
+                                            "text_input": "blah!"
+                                        }
+                                    }
+                                }
+                            },
+                            "params": {
+                                "checkbox_input": 1,
+                                "text_input": "blah!"
+                            },
+                            "user-settings": {
+                                "showCodeInputArea": false
+                            }
+                        },
+                        "attributes": {
+                            "created": "Wed, 12 Feb 2020 21:08:03 GMT",
+                            "id": "db8c9ab1-ee30-4091-a350-78443108f4a2",
+                            "info": {
+                                "label": "more...",
+                                "url": "/#appcatalog/app/NarrativeTest/report_example/dev"
+                            },
+                            "lastLoaded": "Thu, 13 Feb 2020 18:09:57 GMT",
+                            "status": "new",
+                            "subtitle": "Show an example HTML Report",
+                            "title": "Example HTML Report"
+                        },
+                        "type": "app"
+                    }
+                },
+                "outputs": [],
+                "source": "from biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_example\",\n    {\n        \"text_input\": \"blah!\",\n        \"checkbox_input\": 1\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"db8c9ab1-ee30-4091-a350-78443108f4a2\",\n    run_id=\"f90c9f55-3504-4ed8-951c-4e457d4cc15e\"\n)"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 4,
+                "metadata": {
+                    "kbase": {
+                        "appCell": {
+                            "app": {
+                                "gitCommitHash": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                "id": "NarrativeTest/report_html_links",
+                                "spec": {
+                                    "behavior": {
+                                        "kb_service_input_mapping": [
+                                            {
+                                                "narrative_system_variable": "workspace",
+                                                "target_property": "workspace_name"
+                                            },
+                                            {
+                                                "input_parameter": "num_pages",
+                                                "target_property": "num_pages"
+                                            },
+                                            {
+                                                "input_parameter": "initial_page",
+                                                "target_property": "initial_page"
+                                            },
+                                            {
+                                                "input_parameter": "include_direct",
+                                                "target_property": "include_direct_html"
+                                            }
+                                        ],
+                                        "kb_service_method": "report_html_links",
+                                        "kb_service_name": "NarrativeTest",
+                                        "kb_service_output_mapping": [
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_name"
+                                                ],
+                                                "target_property": "report_name"
+                                            },
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_ref"
+                                                ],
+                                                "target_property": "report_ref"
+                                            },
+                                            {
+                                                "constant_value": "16",
+                                                "target_property": "report_window_line_height"
+                                            }
+                                        ],
+                                        "kb_service_url": "",
+                                        "kb_service_version": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"
+                                    },
+                                    "fixed_parameters": [],
+                                    "info": {
+                                        "app_type": "app",
+                                        "authors": [
+                                            "wjriehl"
+                                        ],
+                                        "categories": [],
+                                        "git_commit_hash": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                        "id": "NarrativeTest/report_html_links",
+                                        "input_types": [],
+                                        "module_name": "NarrativeTest",
+                                        "name": "HTML Report with links",
+                                        "namespace": "NarrativeTest",
+                                        "output_types": [],
+                                        "subtitle": "Show an example HTML Report",
+                                        "tooltip": "Show an example HTML Report",
+                                        "ver": "0.0.2"
+                                    },
+                                    "job_id_output_field": "docker",
+                                    "parameters": [
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This is the number of pages that will be generated for the report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "num_pages",
+                                            "optional": 0,
+                                            "short_hint": "Set the number of pages",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 1,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Number of Pages"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This sets the first page to show in your multipage report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "initial_page",
+                                            "optional": 1,
+                                            "short_hint": "The first page to show",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 1,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Initial Page"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "checkbox_options": {
+                                                "checked_value": 1,
+                                                "unchecked_value": 0
+                                            },
+                                            "default_values": [
+                                                ""
+                                            ],
+                                            "description": "Using a direct_html entry and no pages should show the direct_html as the report.",
+                                            "disabled": 0,
+                                            "field_type": "checkbox",
+                                            "id": "include_direct",
+                                            "optional": 1,
+                                            "short_hint": "Select to include a \"direct_html\" entry",
+                                            "ui_class": "parameter",
+                                            "ui_name": "Use direct HTML"
+                                        }
+                                    ],
+                                    "widgets": {
+                                        "input": "null",
+                                        "output": "no-display"
+                                    }
+                                },
+                                "tag": "dev",
+                                "version": "0.0.2"
+                            },
+                            "exec": {
+                                "jobState": {
+                                    "authstrat": "kbaseworkspace",
+                                    "cell_id": "e6907d6a-6b95-495a-9c99-3018121b2c0a",
+                                    "child_jobs": [],
+                                    "created": 1581541716000,
+                                    "finished": 1581541810503,
+                                    "job_id": "5e446954b672b15cd3ee59bc",
+                                    "job_input": {
+                                        "app_id": "NarrativeTest/report_html_links",
+                                        "method": "NarrativeTest.report_html_links",
+                                        "narrative_cell_info": {
+                                            "cell_id": "e6907d6a-6b95-495a-9c99-3018121b2c0a",
+                                            "run_id": "acd1377a-0796-4bfd-8e7d-494de1b7cf2c",
+                                            "tag": "dev",
+                                            "token_id": "0c496623-822d-45a0-98c0-34d635c6db3f"
+                                        },
+                                        "params": [
+                                            {
+                                                "include_direct_html": 1,
+                                                "initial_page": 1,
+                                                "num_pages": 2,
+                                                "workspace_name": "wjriehl:narrative_1581384702051"
+                                            }
+                                        ],
+                                        "parent_job_id": "None",
+                                        "requirements": {
+                                            "clientgroup": "njs",
+                                            "cpu": 4,
+                                            "disk": 30,
+                                            "memory": 2000
+                                        },
+                                        "service_ver": "b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa",
+                                        "source_ws_objects": [],
+                                        "wsid": 47123
+                                    },
+                                    "job_output": {
+                                        "id": "5e446954b672b15cd3ee59bc",
+                                        "result": [
+                                            {
+                                                "report_name": "NarrativeTest.example_report-92b37ca6-5542-435b-8fe0-be5d2eb1a109",
+                                                "report_ref": "47123/5/1"
+                                            }
+                                        ],
+                                        "version": "1.1"
+                                    },
+                                    "queued": 1581541717657,
+                                    "run_id": "acd1377a-0796-4bfd-8e7d-494de1b7cf2c",
+                                    "running": 1581541738714,
+                                    "scheduler_id": "13607",
+                                    "scheduler_type": "condor",
+                                    "status": "completed",
+                                    "updated": 1581541810503,
+                                    "user": "wjriehl",
+                                    "wsid": 47123
+                                },
+                                "jobStateUpdated": 1581541813103,
+                                "launchState": {
+                                    "cell_id": "e6907d6a-6b95-495a-9c99-3018121b2c0a",
+                                    "event": "launched_job",
+                                    "event_at": "2020-02-12T21:08:37.908407Z",
+                                    "job_id": "5e446954b672b15cd3ee59bc",
+                                    "run_id": "acd1377a-0796-4bfd-8e7d-494de1b7cf2c"
+                                },
+                                "outputWidgetInfo": {
+                                    "name": "no-display",
+                                    "params": {
+                                        "report_name": "NarrativeTest.example_report-92b37ca6-5542-435b-8fe0-be5d2eb1a109",
+                                        "report_ref": "47123/5/1",
+                                        "report_window_line_height": "16"
+                                    },
+                                    "tag": "dev"
+                                }
+                            },
+                            "fsm": {
+                                "currentState": {
+                                    "mode": "success"
+                                }
+                            },
+                            "newAppName": "HTML Report with links",
+                            "outdated": true,
+                            "output": {
+                                "byJob": {
+                                    "5e446954b672b15cd3ee59bc": {
+                                        "cell": {
+                                            "created": false
+                                        },
+                                        "createdAt": "Wed, 12 Feb 2020 21:10:13 GMT",
+                                        "params": {
+                                            "include_direct": 1,
+                                            "initial_page": 1,
+                                            "num_pages": 2
+                                        }
+                                    }
+                                }
+                            },
+                            "params": {
+                                "include_direct": 1,
+                                "initial_page": 1,
+                                "num_pages": 2
+                            },
+                            "user-settings": {
+                                "showCodeInputArea": false
+                            }
+                        },
+                        "attributes": {
+                            "created": "Wed, 12 Feb 2020 21:08:15 GMT",
+                            "id": "e6907d6a-6b95-495a-9c99-3018121b2c0a",
+                            "info": {
+                                "label": "more...",
+                                "url": "/#appcatalog/app/NarrativeTest/report_html_links/dev"
+                            },
+                            "lastLoaded": "Thu, 13 Feb 2020 18:09:57 GMT",
+                            "status": "new",
+                            "subtitle": "Show an example HTML Report",
+                            "title": "HTML Report with links"
+                        },
+                        "type": "app"
+                    }
+                },
+                "outputs": [],
+                "source": "from biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\": 2,\n        \"initial_page\": 1,\n        \"include_direct\": 1\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"e6907d6a-6b95-495a-9c99-3018121b2c0a\",\n    run_id=\"acd1377a-0796-4bfd-8e7d-494de1b7cf2c\"\n)"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 8,
+                "metadata": {
+                    "kbase": {
+                        "appCell": {
+                            "app": {
+                                "gitCommitHash": "84738351645e027a3b9d5adc9b8551c4c4c82c73",
+                                "id": "NarrativeTest/report_html_links",
+                                "spec": {
+                                    "behavior": {
+                                        "kb_service_input_mapping": [
+                                            {
+                                                "narrative_system_variable": "workspace",
+                                                "target_property": "workspace_name"
+                                            },
+                                            {
+                                                "input_parameter": "num_pages",
+                                                "target_property": "num_pages"
+                                            },
+                                            {
+                                                "input_parameter": "initial_page",
+                                                "target_property": "initial_page"
+                                            },
+                                            {
+                                                "input_parameter": "include_direct",
+                                                "target_property": "include_direct_html"
+                                            }
+                                        ],
+                                        "kb_service_method": "report_html_links",
+                                        "kb_service_name": "NarrativeTest",
+                                        "kb_service_output_mapping": [
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_name"
+                                                ],
+                                                "target_property": "report_name"
+                                            },
+                                            {
+                                                "service_method_output_path": [
+                                                    "0",
+                                                    "report_ref"
+                                                ],
+                                                "target_property": "report_ref"
+                                            },
+                                            {
+                                                "constant_value": "16",
+                                                "target_property": "report_window_line_height"
+                                            }
+                                        ],
+                                        "kb_service_url": "",
+                                        "kb_service_version": "84738351645e027a3b9d5adc9b8551c4c4c82c73"
+                                    },
+                                    "fixed_parameters": [],
+                                    "info": {
+                                        "app_type": "app",
+                                        "authors": [
+                                            "wjriehl"
+                                        ],
+                                        "categories": [],
+                                        "git_commit_hash": "84738351645e027a3b9d5adc9b8551c4c4c82c73",
+                                        "id": "NarrativeTest/report_html_links",
+                                        "input_types": [],
+                                        "module_name": "NarrativeTest",
+                                        "name": "HTML Report with links",
+                                        "namespace": "NarrativeTest",
+                                        "output_types": [],
+                                        "subtitle": "Show an example HTML Report",
+                                        "tooltip": "Show an example HTML Report",
+                                        "ver": "0.0.2"
+                                    },
+                                    "job_id_output_field": "docker",
+                                    "parameters": [
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This is the number of pages that will be generated for the report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "num_pages",
+                                            "optional": 0,
+                                            "short_hint": "Set the number of pages",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 0,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Number of Pages"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "default_values": [
+                                                "1"
+                                            ],
+                                            "description": "This sets the first page to show in your multipage report.",
+                                            "disabled": 0,
+                                            "field_type": "text",
+                                            "id": "initial_page",
+                                            "optional": 1,
+                                            "short_hint": "The first page to show",
+                                            "text_options": {
+                                                "is_output_name": 0,
+                                                "min_int": 0,
+                                                "placeholder": "",
+                                                "regex_constraint": [],
+                                                "validate_as": "int"
+                                            },
+                                            "ui_class": "parameter",
+                                            "ui_name": "Initial Page"
+                                        },
+                                        {
+                                            "advanced": 0,
+                                            "allow_multiple": 0,
+                                            "checkbox_options": {
+                                                "checked_value": 1,
+                                                "unchecked_value": 0
+                                            },
+                                            "default_values": [
+                                                ""
+                                            ],
+                                            "description": "Using a direct_html entry and no pages should show the direct_html as the report.",
+                                            "disabled": 0,
+                                            "field_type": "checkbox",
+                                            "id": "include_direct",
+                                            "optional": 1,
+                                            "short_hint": "Select to include a \"direct_html\" entry",
+                                            "ui_class": "parameter",
+                                            "ui_name": "Use direct HTML"
+                                        }
+                                    ],
+                                    "widgets": {
+                                        "input": "null",
+                                        "output": "no-display"
+                                    }
+                                },
+                                "tag": "dev",
+                                "version": "0.0.2"
+                            },
+                            "exec": {
+                                "jobState": {
+                                    "authstrat": "kbaseworkspace",
+                                    "cell_id": "7e8af111-08ce-4253-b783-4f607a9bc46f",
+                                    "child_jobs": [],
+                                    "created": 1581542320000,
+                                    "finished": 1581542399378,
+                                    "job_id": "5e446bb0b672b15cd3ee5a1a",
+                                    "job_input": {
+                                        "app_id": "NarrativeTest/report_html_links",
+                                        "method": "NarrativeTest.report_html_links",
+                                        "narrative_cell_info": {
+                                            "cell_id": "7e8af111-08ce-4253-b783-4f607a9bc46f",
+                                            "run_id": "4e7a389c-72af-49be-a4bf-7e5c3ca18558",
+                                            "tag": "dev",
+                                            "token_id": "ec436eb9-262a-4798-bb00-528f8322a197"
+                                        },
+                                        "params": [
+                                            {
+                                                "include_direct_html": 1,
+                                                "initial_page": 0,
+                                                "num_pages": 0,
+                                                "workspace_name": "wjriehl:narrative_1581384702051"
+                                            }
+                                        ],
+                                        "parent_job_id": "None",
+                                        "requirements": {
+                                            "clientgroup": "njs",
+                                            "cpu": 4,
+                                            "disk": 30,
+                                            "memory": 2000
+                                        },
+                                        "service_ver": "84738351645e027a3b9d5adc9b8551c4c4c82c73",
+                                        "source_ws_objects": [],
+                                        "wsid": 47123
+                                    },
+                                    "job_output": {
+                                        "id": "5e446bb0b672b15cd3ee5a1a",
+                                        "result": [
+                                            {
+                                                "report_name": "NarrativeTest.example_report-2e0a57b9-18a9-4fd8-a448-02be9388b9e8",
+                                                "report_ref": "47123/8/1"
+                                            }
+                                        ],
+                                        "version": "1.1"
+                                    },
+                                    "queued": 1581542321362,
+                                    "run_id": "4e7a389c-72af-49be-a4bf-7e5c3ca18558",
+                                    "running": 1581542346304,
+                                    "scheduler_id": "13611",
+                                    "scheduler_type": "condor",
+                                    "status": "completed",
+                                    "updated": 1581542399378,
+                                    "user": "wjriehl",
+                                    "wsid": 47123
+                                },
+                                "jobStateUpdated": 1581548098233,
+                                "launchState": {
+                                    "cell_id": "7e8af111-08ce-4253-b783-4f607a9bc46f",
+                                    "event": "launched_job",
+                                    "event_at": "2020-02-12T21:18:41.739818Z",
+                                    "job_id": "5e446bb0b672b15cd3ee5a1a",
+                                    "run_id": "4e7a389c-72af-49be-a4bf-7e5c3ca18558"
+                                },
+                                "outputWidgetInfo": {
+                                    "name": "no-display",
+                                    "params": {
+                                        "report_name": "NarrativeTest.example_report-2e0a57b9-18a9-4fd8-a448-02be9388b9e8",
+                                        "report_ref": "47123/8/1",
+                                        "report_window_line_height": "16"
+                                    },
+                                    "tag": "dev"
+                                }
+                            },
+                            "fsm": {
+                                "currentState": {
+                                    "mode": "success"
+                                }
+                            },
+                            "output": {
+                                "byJob": {
+                                    "5e446bb0b672b15cd3ee5a1a": {
+                                        "cell": {
+                                            "created": false
+                                        },
+                                        "createdAt": "Wed, 12 Feb 2020 22:54:58 GMT",
+                                        "params": {
+                                            "include_direct": 1,
+                                            "initial_page": 0,
+                                            "num_pages": 0
+                                        }
+                                    }
+                                }
+                            },
+                            "params": {
+                                "include_direct": 1,
+                                "initial_page": 0,
+                                "num_pages": 0
+                            },
+                            "user-settings": {
+                                "showCodeInputArea": false
+                            }
+                        },
+                        "attributes": {
+                            "created": "Wed, 12 Feb 2020 21:18:23 GMT",
+                            "id": "7e8af111-08ce-4253-b783-4f607a9bc46f",
+                            "info": {
+                                "label": "more...",
+                                "url": "/#appcatalog/app/NarrativeTest/report_html_links/dev"
+                            },
+                            "lastLoaded": "Thu, 13 Feb 2020 18:09:57 GMT",
+                            "status": "new",
+                            "subtitle": "Show an example HTML Report",
+                            "title": "HTML Report with links"
+                        },
+                        "type": "app"
+                    }
+                },
+                "outputs": [],
+                "source": "from biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\": 0,\n        \"initial_page\": 0,\n        \"include_direct\": 1\n    },\n    tag=\"dev\",\n    version=\"84738351645e027a3b9d5adc9b8551c4c4c82c73\",\n    cell_id=\"7e8af111-08ce-4253-b783-4f607a9bc46f\",\n    run_id=\"4e7a389c-72af-49be-a4bf-7e5c3ca18558\"\n)"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 9,
+                "metadata": {
+                    "kbase": {
+                        "appCell": {
+                            "app": {
+                                "gitCommitHash": "298823e0057dcdc906bac2a943ecadfc93d30a91",
+                                "id": "eapearsonUiTestModule/large_report",
+                                "spec": {
+                                    "behavior": {
+                                        "kb_service_input_mapping": [],
+                                        "kb_service_method": "large_report",
+                                        "kb_service_name": "eapearsonUiTestModule",
+                                        "kb_service_output_mapping": [],
+                                        "kb_service_url": "",
+                                        "kb_service_version": "298823e0057dcdc906bac2a943ecadfc93d30a91"
+                                    },
+                                    "fixed_parameters": [],
+                                    "info": {
+                                        "app_type": "app",
+                                        "authors": [
+                                            "eapearson"
+                                        ],
+                                        "categories": [
+                                            "active",
+                                            "util"
+                                        ],
+                                        "git_commit_hash": "298823e0057dcdc906bac2a943ecadfc93d30a91",
+                                        "id": "eapearsonUiTestModule/large_report",
+                                        "input_types": [],
+                                        "module_name": "eapearsonUiTestModule",
+                                        "name": "Large Sized Report",
+                                        "namespace": "eapearsonUiTestModule",
+                                        "output_types": [],
+                                        "subtitle": "Allows testing with variable run times",
+                                        "tooltip": "Allows testing with variable run times",
+                                        "ver": "0.0.1"
+                                    },
+                                    "job_id_output_field": "docker",
+                                    "parameters": [],
+                                    "widgets": {
+                                        "input": "null",
+                                        "output": "null"
+                                    }
+                                },
+                                "tag": "dev",
+                                "version": "0.0.1"
+                            },
+                            "exec": {
+                                "jobState": {
+                                    "authstrat": "kbaseworkspace",
+                                    "cell_id": "df86bd35-e96f-4bad-b108-f08c2d1b3493",
+                                    "child_jobs": [],
+                                    "created": 1581542322000,
+                                    "error": {
+                                        "code": -32601,
+                                        "error": "No output generated",
+                                        "message": "No output generated. Check logs for more details",
+                                        "name": "Output not found"
+                                    },
+                                    "error_code": 1,
+                                    "errormsg": "Attempting to finish the job with an error",
+                                    "finished": 1581542371280,
+                                    "job_id": "5e446bb2c807c0569427e901",
+                                    "job_input": {
+                                        "app_id": "eapearsonUiTestModule/large_report",
+                                        "method": "eapearsonUiTestModule.large_report",
+                                        "narrative_cell_info": {
+                                            "cell_id": "df86bd35-e96f-4bad-b108-f08c2d1b3493",
+                                            "run_id": "efa11fc5-0597-49e5-b40d-68fdcbd77682",
+                                            "tag": "dev",
+                                            "token_id": "c18dd2a7-5ab6-4bd7-a6b1-7c8f35b9dd7c"
+                                        },
+                                        "params": [],
+                                        "parent_job_id": "None",
+                                        "requirements": {
+                                            "clientgroup": "njs",
+                                            "cpu": 4,
+                                            "disk": 30,
+                                            "memory": 2000
+                                        },
+                                        "service_ver": "298823e0057dcdc906bac2a943ecadfc93d30a91",
+                                        "source_ws_objects": [],
+                                        "wsid": 47123
+                                    },
+                                    "job_output": {},
+                                    "queued": 1581542323639,
+                                    "run_id": "efa11fc5-0597-49e5-b40d-68fdcbd77682",
+                                    "running": 1581542345483,
+                                    "scheduler_id": "13612",
+                                    "scheduler_type": "condor",
+                                    "status": "error",
+                                    "token_id": "c18dd2a7-5ab6-4bd7-a6b1-7c8f35b9dd7c",
+                                    "updated": 1581542371280,
+                                    "user": "wjriehl",
+                                    "wsid": 47123
+                                },
+                                "jobStateUpdated": 1581548098505,
+                                "launchState": {
+                                    "cell_id": "df86bd35-e96f-4bad-b108-f08c2d1b3493",
+                                    "event": "launched_job",
+                                    "event_at": "2020-02-12T21:18:43.875041Z",
+                                    "job_id": "5e446bb2c807c0569427e901",
+                                    "run_id": "efa11fc5-0597-49e5-b40d-68fdcbd77682"
+                                }
+                            },
+                            "fsm": {
+                                "currentState": {
+                                    "mode": "error",
+                                    "stage": "running"
+                                }
+                            },
+                            "output": {
+                                "byJob": {}
+                            },
+                            "params": {},
+                            "user-settings": {
+                                "showCodeInputArea": false
+                            }
+                        },
+                        "attributes": {
+                            "created": "Wed, 12 Feb 2020 21:18:31 GMT",
+                            "id": "df86bd35-e96f-4bad-b108-f08c2d1b3493",
+                            "info": {
+                                "label": "more...",
+                                "url": "/#appcatalog/app/eapearsonUiTestModule/large_report/dev"
+                            },
+                            "lastLoaded": "Thu, 13 Feb 2020 18:09:57 GMT",
+                            "status": "new",
+                            "subtitle": "Allows testing with variable run times",
+                            "title": "Large Sized Report"
+                        },
+                        "type": "app"
+                    }
+                },
+                "outputs": [],
+                "source": "from biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"eapearsonUiTestModule/large_report\",\n    {\n\n    },\n    tag=\"dev\",\n    version=\"298823e0057dcdc906bac2a943ecadfc93d30a91\",\n    cell_id=\"df86bd35-e96f-4bad-b108-f08c2d1b3493\",\n    run_id=\"efa11fc5-0597-49e5-b40d-68fdcbd77682\"\n)"
+            },
+            {
+                "cell_type": "code",
+                "execution_count": 10,
+                "metadata": {
+                    "kbase": {
+                        "appCell": {
+                            "app": {
+                                "gitCommitHash": "298823e0057dcdc906bac2a943ecadfc93d30a91",
+                                "id": "eapearsonUiTestModule/medium_report",
+                                "spec": {
+                                    "behavior": {
+                                        "kb_service_input_mapping": [],
+                                        "kb_service_method": "medium_report",
+                                        "kb_service_name": "eapearsonUiTestModule",
+                                        "kb_service_output_mapping": [],
+                                        "kb_service_url": "",
+                                        "kb_service_version": "298823e0057dcdc906bac2a943ecadfc93d30a91"
+                                    },
+                                    "fixed_parameters": [],
+                                    "info": {
+                                        "app_type": "app",
+                                        "authors": [
+                                            "eapearson"
+                                        ],
+                                        "categories": [
+                                            "active",
+                                            "util"
+                                        ],
+                                        "git_commit_hash": "298823e0057dcdc906bac2a943ecadfc93d30a91",
+                                        "id": "eapearsonUiTestModule/medium_report",
+                                        "input_types": [],
+                                        "module_name": "eapearsonUiTestModule",
+                                        "name": "Medium Sized Report",
+                                        "namespace": "eapearsonUiTestModule",
+                                        "output_types": [],
+                                        "subtitle": "Allows testing with variable run times",
+                                        "tooltip": "Allows testing with variable run times",
+                                        "ver": "0.0.1"
+                                    },
+                                    "job_id_output_field": "docker",
+                                    "parameters": [],
+                                    "widgets": {
+                                        "input": "null",
+                                        "output": "null"
+                                    }
+                                },
+                                "tag": "dev",
+                                "version": "0.0.1"
+                            },
+                            "exec": {
+                                "jobState": {
+                                    "authstrat": "kbaseworkspace",
+                                    "cell_id": "c28f909b-b27e-4452-9f1f-27248b488356",
+                                    "child_jobs": [],
+                                    "created": 1581542325000,
+                                    "error": {
+                                        "code": -32601,
+                                        "error": "No output generated",
+                                        "message": "No output generated. Check logs for more details",
+                                        "name": "Output not found"
+                                    },
+                                    "error_code": 1,
+                                    "errormsg": "Attempting to finish the job with an error",
+                                    "finished": 1581542373094,
+                                    "job_id": "5e446bb566b3f52d2a2374fc",
+                                    "job_input": {
+                                        "app_id": "eapearsonUiTestModule/medium_report",
+                                        "method": "eapearsonUiTestModule.medium_report",
+                                        "narrative_cell_info": {
+                                            "cell_id": "c28f909b-b27e-4452-9f1f-27248b488356",
+                                            "run_id": "b8dc75dd-7fa1-44e1-939d-8c938693fa50",
+                                            "tag": "dev",
+                                            "token_id": "dda5c324-a54c-45ba-8411-da31079c7a79"
+                                        },
+                                        "params": [],
+                                        "parent_job_id": "None",
+                                        "requirements": {
+                                            "clientgroup": "njs",
+                                            "cpu": 4,
+                                            "disk": 30,
+                                            "memory": 2000
+                                        },
+                                        "service_ver": "298823e0057dcdc906bac2a943ecadfc93d30a91",
+                                        "source_ws_objects": [],
+                                        "wsid": 47123
+                                    },
+                                    "job_output": {},
+                                    "queued": 1581542326465,
+                                    "run_id": "b8dc75dd-7fa1-44e1-939d-8c938693fa50",
+                                    "running": 1581542348322,
+                                    "scheduler_id": "13613",
+                                    "scheduler_type": "condor",
+                                    "status": "error",
+                                    "token_id": "dda5c324-a54c-45ba-8411-da31079c7a79",
+                                    "updated": 1581542373094,
+                                    "user": "wjriehl",
+                                    "wsid": 47123
+                                },
+                                "jobStateUpdated": 1581548099153,
+                                "launchState": {
+                                    "cell_id": "c28f909b-b27e-4452-9f1f-27248b488356",
+                                    "event": "launched_job",
+                                    "event_at": "2020-02-12T21:18:46.818249Z",
+                                    "job_id": "5e446bb566b3f52d2a2374fc",
+                                    "run_id": "b8dc75dd-7fa1-44e1-939d-8c938693fa50"
+                                }
+                            },
+                            "fsm": {
+                                "currentState": {
+                                    "mode": "error",
+                                    "stage": "running"
+                                }
+                            },
+                            "output": {
+                                "byJob": {}
+                            },
+                            "params": {},
+                            "user-settings": {
+                                "showCodeInputArea": false
+                            }
+                        },
+                        "attributes": {
+                            "created": "Wed, 12 Feb 2020 21:18:33 GMT",
+                            "id": "c28f909b-b27e-4452-9f1f-27248b488356",
+                            "info": {
+                                "label": "more...",
+                                "url": "/#appcatalog/app/eapearsonUiTestModule/medium_report/dev"
+                            },
+                            "lastLoaded": "Thu, 13 Feb 2020 18:09:57 GMT",
+                            "status": "new",
+                            "subtitle": "Allows testing with variable run times",
+                            "title": "Medium Sized Report"
+                        },
+                        "type": "app"
+                    }
+                },
+                "outputs": [],
+                "source": "from biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"eapearsonUiTestModule/medium_report\",\n    {\n\n    },\n    tag=\"dev\",\n    version=\"298823e0057dcdc906bac2a943ecadfc93d30a91\",\n    cell_id=\"c28f909b-b27e-4452-9f1f-27248b488356\",\n    run_id=\"b8dc75dd-7fa1-44e1-939d-8c938693fa50\"\n)"
+            }
+        ],
+        "metadata": {
+            "creator": "wjriehl",
+            "data_dependencies": [],
+            "description": "",
+            "format": "ipynb",
+            "is_temporary": "false",
+            "job_ids": {
+                "apps": [],
+                "job_usage": {
+                    "queue_time": 0,
+                    "run_time": 0
+                },
+                "methods": []
+            },
+            "kbase": {
+                "creator": "wjriehl",
+                "job_ids": {
+                    "apps": [],
+                    "job_usage": {
+                        "queue_time": 0,
+                        "run_time": 0
+                    },
+                    "methods": []
+                },
+                "name": "Untitled",
+                "ws_name": "wjriehl:narrative_1581384702051"
+            },
+            "kernelspec": {
+                "display_name": "Python 3",
+                "language": "python",
+                "name": "python3"
+            },
+            "language_info": {
+                "codemirror_mode": {
+                    "name": "ipython",
+                    "version": 3
+                },
+                "file_extension": ".py",
+                "mimetype": "text/x-python",
+                "name": "python",
+                "nbconvert_exporter": "python",
+                "pygments_lexer": "ipython3",
+                "version": "3.6.9"
+            },
+            "name": "Reports Test",
+            "type": "KBaseNarrative.Narrative",
+            "ws_name": "wjriehl:narrative_1581384702051"
+        },
+        "nbformat": 4,
+        "nbformat_minor": 1
+    },
+    "info": [
+        1,
+        "Narrative.1581384702051",
+        "KBaseNarrative.Narrative-4.0",
+        "2020-02-13T22:16:16+0000",
+        28,
+        "wjriehl",
+        47123,
+        "wjriehl:narrative_1581384702051",
+        "cd6dce1eba33d9a2fe7e66386872b770",
+        40126,
+        {
+            "creator": "wjriehl",
+            "method.NarrativeTest/report_html_links/25496c5ebfdaec8045b5fd9049aeff5efd4a3834": "1",
+            "method.eapearsonUiTestModule/medium_report/298823e0057dcdc906bac2a943ecadfc93d30a91": "1",
+            "data_dependencies": "[]",
+            "job_info": "{\"queue_time\": 0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}",
+            "format": "ipynb",
+            "description": "",
+            "type": "KBaseNarrative.Narrative",
+            "method.NarrativeTest/report_example/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa": "1",
+            "method.eapearsonUiTestModule/large_report/298823e0057dcdc906bac2a943ecadfc93d30a91": "1",
+            "method.NarrativeTest/report_html_links/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa": "3",
+            "is_temporary": "false",
+            "name": "Reports Test",
+            "method.NarrativeTest/report_html_links/84738351645e027a3b9d5adc9b8551c4c4c82c73": "1",
+            "ws_name": "wjriehl:narrative_1581384702051"
+        }
+    ],
+    "path": [
+        "47123/1/28"
+    ],
+    "provenance": [
+        {
+            "service": "narrative",
+            "service_ver": "4.0.0",
+            "input_ws_objects": [],
+            "resolved_ws_objects": [],
+            "external_data": [],
+            "subactions": [],
+            "custom": {},
+            "description": "Saved by KBase Narrative Interface"
+        }
+    ],
+    "creator": "wjriehl",
+    "orig_wsid": 47123,
+    "created": "2020-02-13T22:16:15+0000",
+    "epoch": 1581632175856,
+    "refs": [],
+    "copy_source_inaccessible": 0,
+    "extracted_ids": {}
+}
