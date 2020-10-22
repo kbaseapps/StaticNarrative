@@ -19,11 +19,10 @@ jobs:
         KBASE_TEST_TOKEN: ${{ secrets.KBASE_TEST_TOKEN }}
         GITHUB_ACTIONS_CI: 1
       run: |
+        echo "Pulling image and building script."
         docker pull kbase/kb-sdk:develop
-        echo "installing kb-sdk script to $GITHUB_WORKSPACE"
         docker tag kbase/kb-sdk:develop kbase/kb-sdk:latest
         docker run kbase/kb-sdk genscript | sed -E 's/-it/-i/' > $GITHUB_WORKSPACE/kb-sdk
-        echo "done, giving run permissions to script"
         chmod 755 $GITHUB_WORKSPACE/kb-sdk
-        echo "done, running tests"
+        echo "Done, running tests."
         $GITHUB_WORKSPACE/kb-sdk test
