@@ -1,5 +1,6 @@
 from installed_clients.WorkspaceClient import Workspace
 from installed_clients.NarrativeMethodStoreClient import NarrativeMethodStore
+from installed_clients.WorkspaceClient import Workspace
 from .processor_util import build_report_view_data
 import re
 import math
@@ -39,10 +40,11 @@ class AppProcessor:
         elif "job_output" in job_state:  # EE2
             exec_result = job_state["job_output"].get("result")
 
+        ws_client = Workspace(self.ws_url, token=self.token)
         kb_info["output"] = {
             "widget": exec_state.get("outputWidgetInfo", {}),
             "result": exec_result,
-            "report": build_report_view_data(self.host, self.ws_url, self.token, exec_result)
+            "report": build_report_view_data(self.host, ws_client, exec_result)
         }
         kb_info["job"] = {
             "state": "This app is new, and hasn't been started."

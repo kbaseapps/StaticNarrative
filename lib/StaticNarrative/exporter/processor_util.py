@@ -18,7 +18,7 @@ def _load_icon_data():
         ICON_DATA = json.load(icon_file)
 
 
-def build_report_view_data(host: str, ws_url: str, token: str, result: list) -> dict:
+def build_report_view_data(host: str, ws_client: Workspace, result: list) -> dict:
     """
     Returns a structure like this:
     {
@@ -67,8 +67,7 @@ def build_report_view_data(host: str, ws_url: str, token: str, result: list) -> 
             not result[0].get('report_ref')):
         return {}
     report_ref = result[0]['report_ref']
-    ws = Workspace(url=ws_url, token=token)
-    report = ws.get_objects2({'objects': [{'ref': report_ref}]})['data'][0]['data']
+    report = ws_client.get_objects2({'objects': [{'ref': report_ref}]})['data'][0]['data']
     """{'direct_html': None,
      'direct_html_link_index': None,
      'file_links': [],
@@ -84,7 +83,7 @@ def build_report_view_data(host: str, ws_url: str, token: str, result: list) -> 
         report_objs_created = report['objects_created']
         # make list to look up obj types with get_object_info3
         info_lookup = [{"ref": o["ref"]} for o in report_objs_created]
-        infos = ws.get_object_info3({'objects': info_lookup})['infos']
+        infos = ws_client.get_object_info3({'objects': info_lookup})['infos']
         for idx, info in enumerate(infos):
             created_objs.append({
                 'upa': report_objs_created[idx]['ref'],
