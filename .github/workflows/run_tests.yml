@@ -1,17 +1,21 @@
 on:
-  push:
-    branches:
-    - master
   pull_request:
     branches:
     - master
+    - main
+    - develop
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
 jobs:
   install_kbsdk_and_test:
     runs-on: ubuntu-latest
     steps:
     - name: checkout git repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: pull sdk image and test
       shell: bash
