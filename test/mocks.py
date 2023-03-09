@@ -1,16 +1,18 @@
-import requests
-import requests_mock
-from typing import Dict, List
 import json
 from copy import deepcopy
+from typing import Dict, List
+
+import requests
 
 
-def _mock_adapter(ref_to_file: Dict[str, str] = {},
-                  ref_to_info: Dict[str, List] = {},
-                  ws_info: List = [],
-                  user_map: Dict[str, str] = {},
-                  ws_perms: Dict[int, Dict[str, str]] = {},
-                  ws_obj_info_file: str = None):
+def _mock_adapter(
+    ref_to_file: Dict[str, str] = {},
+    ref_to_info: Dict[str, List] = {},
+    ws_info: List = [],
+    user_map: Dict[str, str] = {},
+    ws_perms: Dict[int, Dict[str, str]] = {},
+    ws_obj_info_file: str = None,
+):
     """
     Sets up mock calls as a requests_mock adapter function.
     Mocks POST calls to:
@@ -53,16 +55,13 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
                     result = [{"data": [_get_object_from_file(ref_to_file[ref])]}]
             elif method == "Workspace.get_object_info3":
                 # list of created objects for reports - can fail.
-                    info_list = list()
-                    paths = list()
-                    for obj in params[0].get("objects"):
-                        ref = obj["ref"]
-                        info_list.append(ref_to_info.get(ref, _fake_obj_info(ref)))
-                        paths.append([ref])
-                    result = [{
-                        "infos": info_list,
-                        "paths": paths
-                    }]
+                info_list = list()
+                paths = list()
+                for obj in params[0].get("objects"):
+                    ref = obj["ref"]
+                    info_list.append(ref_to_info.get(ref, _fake_obj_info(ref)))
+                    paths.append([ref])
+                result = [{"infos": info_list, "paths": paths}]
             elif method == "Workspace.list_objects":
                 # list of objects in a workspace. can fail with perms error
                 # 10/31/2019 - don't need yet.
@@ -85,9 +84,9 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
                 ws_id = params[0].get("id")
                 result = [ws_perms.get(ws_id, {})]
             elif method == "ServiceWizard.get_service_status":
-                result = [{
-                    "url": "https://something.kbase.us/service/narrative_service_url"
-                }]
+                result = [
+                    {"url": "https://something.kbase.us/service/narrative_service_url"}
+                ]
             elif method == "NarrativeService.list_objects_with_sets":
                 if ws_obj_info_file is not None:
                     result = [_get_object_from_file(ws_obj_info_file)]
@@ -97,13 +96,11 @@ def _mock_adapter(ref_to_file: Dict[str, str] = {},
                 tag = params[0]["tag"]
                 ids = params[0]["ids"]
                 result = [_get_fake_nms_info(tag, ids)]
-            response._content = bytes(json.dumps({
-                "result": result,
-                "version": "1.1"
-            }), "UTF-8")
-        elif rq_method == "GET":
-            if "/api/V2/users/?list=" in request.url:
-                response._content = bytes(json.dumps(user_map), "UTF-8")
+            response._content = bytes(
+                json.dumps({"result": result, "version": "1.1"}), "UTF-8"
+            )
+        elif rq_method == "GET" and "/api/V2/users/?list=" in request.url:
+            response._content = bytes(json.dumps(user_map), "UTF-8")
         return response
 
     return mock_adapter
@@ -116,16 +113,18 @@ def _get_fake_nms_info(tag: str, ids: list) -> List:
         if i in app_infos:
             ret.append(app_infos[i])
         else:
-            ret.append({
-                "id": "SomeModule/some_app",
-                "name": "Some Unknown App",
-                "publications": []
-            })
+            ret.append(
+                {
+                    "id": "SomeModule/some_app",
+                    "name": "Some Unknown App",
+                    "publications": [],
+                }
+            )
     return ret
 
 
 def _fake_obj_info(ref: str) -> List:
-    split_ref = ref.split('/')
+    split_ref = ref.split("/")
     return [
         split_ref[1],
         "Fake_object_name",
@@ -137,7 +136,7 @@ def _fake_obj_info(ref: str) -> List:
         "fake_workspace",
         "some_md5",
         12345,
-        None
+        None,
     ]
 
 
@@ -152,19 +151,25 @@ def _get_object_from_file(filename: str) -> Dict:
     return obj
 
 
-def set_up_ok_mocks(rqm,
-                    ref_to_file: Dict = {},
-                    ref_to_info: Dict = {},
-                    ws_info: List = [],
-                    ws_perms: Dict = {},
-                    user_map: Dict = {},
-                    ws_obj_info_file: str = None):
-    rqm.add_matcher(_mock_adapter(ref_to_file=ref_to_file,
-                                  ref_to_info=ref_to_info,
-                                  ws_info=ws_info,
-                                  ws_perms=ws_perms,
-                                  user_map=user_map,
-                                  ws_obj_info_file=ws_obj_info_file))
+def set_up_ok_mocks(
+    rqm,
+    ref_to_file: Dict = {},
+    ref_to_info: Dict = {},
+    ws_info: List = [],
+    ws_perms: Dict = {},
+    user_map: Dict = {},
+    ws_obj_info_file: str = None,
+):
+    rqm.add_matcher(
+        _mock_adapter(
+            ref_to_file=ref_to_file,
+            ref_to_info=ref_to_info,
+            ws_info=ws_info,
+            ws_perms=ws_perms,
+            user_map=user_map,
+            ws_obj_info_file=ws_obj_info_file,
+        )
+    )
 
 
 def mock_auth_ok(user_id, token):
@@ -195,18 +200,25 @@ def mock_ws_bad(rqm, msg):
     """
     Always returns a 500 from a workspace call, triggering a ServerError
     """
+
     def mock_adapter_bad_ws(request):
         response = requests.Response()
         response.status_code = 500
-        response._content = bytes(json.dumps({
-            "error": {
-                "code": -32500,
-                "message": msg,
-                "error": "long Java vomit stacktrace",
-                "name": "JSONRPCError"
-            },
-            "version": "1.1",
-            "id": request.json().get("id", "12345")
-        }), "UTF-8")
+        response._content = bytes(
+            json.dumps(
+                {
+                    "error": {
+                        "code": -32500,
+                        "message": msg,
+                        "error": "long Java vomit stacktrace",
+                        "name": "JSONRPCError",
+                    },
+                    "version": "1.1",
+                    "id": request.json().get("id", "12345"),
+                }
+            ),
+            "UTF-8",
+        )
         return response
+
     rqm.add_matcher(mock_adapter_bad_ws)

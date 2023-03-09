@@ -1,9 +1,9 @@
-from installed_clients.WorkspaceClient import Workspace
-from installed_clients.NarrativeMethodStoreClient import NarrativeMethodStore
-from installed_clients.WorkspaceClient import Workspace
-from .processor_util import build_report_view_data
-import re
 import math
+import re
+
+from installed_clients.WorkspaceClient import Workspace
+
+from .processor_util import build_report_view_data
 
 
 class AppProcessor:
@@ -30,12 +30,12 @@ class AppProcessor:
         }
         kb_info["params"] = self._process_app_params(
             kb_meta["appCell"]["app"]["spec"]["parameters"],
-            kb_meta["appCell"]["params"]
+            kb_meta["appCell"]["params"],
         )
         exec_state = kb_meta["appCell"].get("exec", {})
         exec_result = list()
         job_state = exec_state.get("jobState", {})
-        if "result" in job_state:        # NJS (aka EE1)
+        if "result" in job_state:  # NJS (aka EE1)
             exec_result = job_state["result"]
         elif "job_output" in job_state:  # EE2
             exec_result = job_state["job_output"].get("result")
@@ -44,11 +44,9 @@ class AppProcessor:
         kb_info["output"] = {
             "widget": exec_state.get("outputWidgetInfo", {}),
             "result": exec_result,
-            "report": build_report_view_data(self.host, ws_client, exec_result)
+            "report": build_report_view_data(self.host, ws_client, exec_result),
         }
-        kb_info["job"] = {
-            "state": "This app is new, and hasn't been started."
-        }
+        kb_info["job"] = {"state": "This app is new, and hasn't been started."}
         if "exec" in kb_meta["appCell"]:
             kb_info["job"]["state"] = self._get_job_state(kb_meta["appCell"])
         return kb_info
@@ -59,11 +57,7 @@ class AppProcessor:
         :param param_values: the parameter values dictionary, keyed on param ids
         :return: dictionary of input, output, and parameter lists
         """
-        info = {
-            "input": [],
-            "output": [],
-            "parameter": []
-        }
+        info = {"input": [], "output": [], "parameter": []}
 
         # two passes
         # 1. Make a lookup table for UPA -> object info
@@ -81,7 +75,9 @@ class AppProcessor:
     def _make_upa_dict(self, value, param_spec: dict):
         upas = list()
         if param_spec["field_type"] == "text":
-            valid_ws_types = param_spec.get("text_options", {}).get("valid_ws_types", [])
+            valid_ws_types = param_spec.get("text_options", {}).get(
+                "valid_ws_types", []
+            )
             if len(valid_ws_types) > 0 and value:
                 if isinstance(value, list):
                     for v in value:
@@ -93,7 +89,9 @@ class AppProcessor:
         upa_map = dict()
         if len(upas):
             ws = Workspace(url=self.ws_url, token=self.token)
-            obj_infos = ws.get_object_info3({"objects": [{"ref": upa} for upa in upas]})["infos"]
+            obj_infos = ws.get_object_info3(
+                {"objects": [{"ref": upa} for upa in upas]}
+            )["infos"]
             upa_map = {u: obj_infos[i] for i, u in enumerate(upas)}
         return upa_map
 
@@ -107,13 +105,16 @@ class AppProcessor:
             should be an object
         3. if value is an int... stuff.
         """
-        # if param_spec.text_options.valid_ws_types exists and has entries, then its an object input
+        # if param_spec.text_options.valid_ws_types exists and has entries,
+        # it's an object input
         # test if value is an UPA and translate it to get its original object name.
 
         # types:
         field_type = param_spec["field_type"]
         if field_type == "text":
-            valid_ws_types = param_spec.get("text_options", {}).get("valid_ws_types", [])
+            valid_ws_types = param_spec.get("text_options", {}).get(
+                "valid_ws_types", []
+            )
             if len(valid_ws_types) > 0 and value:
                 if isinstance(value, list):
                     value = [upas[v][1] if v in upas else v for v in value]
@@ -140,8 +141,8 @@ class AppProcessor:
         """
 
         # Step 1, get job state
-        job_state = app_meta['exec'].get('jobState', {})
-        state = job_state.get('job_state', job_state.get('status', 'unknown'))
+        job_state = app_meta["exec"].get("jobState", {})
+        state = job_state.get("job_state", job_state.get("status", "unknown"))
         if isinstance(state, list):
             state = state[1]
 
@@ -162,7 +163,9 @@ class AppProcessor:
         runtime = None
         # njs
         if "finish_time" in job_state and "exec_start_time" in job_state:
-            runtime = self._ms_to_readable(job_state["finish_time"] - job_state["exec_start_time"])
+            runtime = self._ms_to_readable(
+                job_state["finish_time"] - job_state["exec_start_time"]
+            )
         # ee2
         elif "finished" in job_state and "running" in job_state:
             runtime = self._ms_to_readable(job_state["finished"] - job_state["running"])

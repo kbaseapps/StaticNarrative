@@ -1,10 +1,12 @@
 import os
 import shutil
+
 from ..narrative_ref import NarrativeRef
 
 
-def upload_static_narrative(ref: NarrativeRef, narr_path: str,
-                            upload_endpt: str, url_prefix: str = None) -> str:
+def upload_static_narrative(
+    ref: NarrativeRef, narr_path: str, upload_endpt: str, url_prefix: str = None
+) -> str:
     """
     Uploads a finished static Narrative to the display endpoint.
     Can raise:
@@ -33,8 +35,9 @@ def upload_static_narrative(ref: NarrativeRef, narr_path: str,
         os.makedirs(static_narr_path)
     narr_dir = os.path.dirname(narr_path)
     shutil.copyfile(narr_path, os.path.join(static_narr_path, "index.html"))
-    shutil.copyfile(os.path.join(narr_dir, "data.json"),
-                    os.path.join(static_narr_path, "data.json"))
+    shutil.copyfile(
+        os.path.join(narr_dir, "data.json"), os.path.join(static_narr_path, "data.json")
+    )
 
     static_url = url_prefix or ""
     return f"{static_url}/{ref.wsid}/{ref.ver}/"

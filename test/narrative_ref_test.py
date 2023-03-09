@@ -1,4 +1,5 @@
 import unittest
+
 from StaticNarrative.narrative_ref import NarrativeRef
 
 
@@ -20,9 +21,7 @@ class NarrativeRefTestCase(unittest.TestCase):
         ok_obj_id = 2
         ok_ver = 3
 
-        bad_ids = [
-            "", None, "wat", [], {}, "-1", "4.5"
-        ]
+        bad_ids = ["", None, "wat", [], {}, "-1", "4.5"]
         ws_id_err = "The Narrative Workspace id must be an integer > 0"
         obj_id_err = "The Narrative object id must be an integer > 0"
         ver_err = "The Narrative version must be an integer > 0"
@@ -41,14 +40,7 @@ class NarrativeRefTestCase(unittest.TestCase):
             self.assertIn(ver_err, str(e.exception))
 
     def test_parse_fail(self):
-        bads = [
-            "123/456",
-            "123",
-            "123/456/789/8",
-            "123/456/",
-            "123/",
-            "foo/bar/baz"
-        ]
+        bads = ["123/456", "123", "123/456/789/8", "123/456/", "123/", "foo/bar/baz"]
         for bad in bads:
             with self.assertRaises(ValueError):
                 NarrativeRef.parse(bad)

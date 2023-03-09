@@ -1,5 +1,5 @@
-from collections import defaultdict
 import os
+from collections import defaultdict
 
 
 class StaticNarrativeManager:
@@ -22,9 +22,11 @@ class StaticNarrativeManager:
                     continue
                 print(root)
                 (ws_id, ver) = root.split("/")[-2:]
-                all_sn[ws_id].append({
-                    "ws_id": ws_id,
-                    "narrative_version": ver,
-                    "url": f"/{ws_id}/{ver}/"
-                })
+                all_sn[ws_id].append(
+                    {
+                        "ws_id": ws_id,
+                        "narrative_version": ver,
+                        "url": f"/{ws_id}/{ver}/",
+                    }
+                )
         return dict(all_sn)
