@@ -1,17 +1,17 @@
 """
 Some utility functions for handling Narratives and permissions.
 """
-from installed_clients.WorkspaceClient import Workspace
-from installed_clients.baseclient import ServerError
-from ..exceptions import WorkspaceError
-from typing import Dict
-# from .updater import update_narrative
-from StaticNarrative.narrative_ref import NarrativeRef
-import time
-from dateutil import parser as date_parser
-import re
 import logging
+import re
+import time
+from typing import Dict
 
+from dateutil import parser as date_parser
+from installed_clients.baseclient import ServerError
+from installed_clients.WorkspaceClient import Workspace
+from StaticNarrative.narrative_ref import NarrativeRef
+
+from ..exceptions import WorkspaceError
 
 NARRATIVE_TYPE = "KBaseNarrative.Narrative"
 TYPE_REGEX = rf"^{NARRATIVE_TYPE}-\d+\.\d+$"
@@ -37,11 +37,11 @@ def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> Dict:
     :param include_metadata: if True, includes the object metadata when returning
     """
     try:
-        narr_data = ws_client.get_objects2({'objects': [{'ref': str(ref)}]})
-        nar = narr_data['data'][0]
-        _validate_narr_type(nar['info'][2], ref)
+        narr_data = ws_client.get_objects2({"objects": [{"ref": str(ref)}]})
+        nar = narr_data["data"][0]
+        _validate_narr_type(nar["info"][2], ref)
         # nar['data'] = update_narrative(nar['data'])
-        return nar['data']
+        return nar["data"]
     except ServerError as err:
         raise WorkspaceError(err, ref.wsid)
 
@@ -83,7 +83,7 @@ def save_narrative_url(ws_url: str, token: str, ref: NarrativeRef, url: str) -> 
     new_meta = {
         "static_narrative": url,
         "static_narrative_ver": str(ref.ver),
-        "static_narrative_saved": str(int(time.time()*1000))
+        "static_narrative_saved": str(int(time.time() * 1000)),
     }
     ws_client = Workspace(url=ws_url, token=token)
     try:
@@ -132,22 +132,26 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> Dict:
             "version": int(meta["static_narrative_ver"]),
             "narrative_id": int(meta["narrative"]),
             "url": meta["static_narrative"],
-            "static_saved": int(meta["static_narrative_saved"])
+            "static_saved": int(meta["static_narrative_saved"]),
         }
         try:
-            obj_info = ws_client.get_object_info3({
-                "objects": [{
-                    "ref": f"{ws_id}/{info['narrative_id']}/{info['version']}"
-                }]
-            })
+            obj_info = ws_client.get_object_info3(
+                {
+                    "objects": [
+                        {"ref": f"{ws_id}/{info['narrative_id']}/{info['version']}"}
+                    ]
+                }
+            )
         except ServerError as err:
             raise WorkspaceError(err, ws_id)
         ts = date_parser.isoparse(obj_info["infos"][0][3]).timestamp()
-        info["narr_saved"] = int(ts*1000)
+        info["narr_saved"] = int(ts * 1000)
     return info
 
 
-def verify_admin_privilege(workspace_url: str, user_id: str, token: str, ws_id: int) -> None:
+def verify_admin_privilege(
+    workspace_url: str, user_id: str, token: str, ws_id: int
+) -> None:
     """
     Raises PermissionError if the user is not an admin (has 'a' rights) on the Workspace.
     Gotta write to the Workspace metadata to create and save a Static Narrative, so this

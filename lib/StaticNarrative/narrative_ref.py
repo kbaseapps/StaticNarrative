@@ -19,7 +19,11 @@ class NarrativeRef:
 
         ver is not required
         """
-        (self.wsid, self.objid, self.ver) = (ref.get("wsid"), ref.get("objid"), ref.get("ver"))
+        (self.wsid, self.objid, self.ver) = (
+            ref.get("wsid"),
+            ref.get("objid"),
+            ref.get("ver"),
+        )
         try:
             self.wsid = int(self.wsid)
             if self.wsid <= 0:
@@ -55,11 +59,9 @@ class NarrativeRef:
         if ref.count("/") != 2:
             raise ValueError("A Narrative ref must be of the format wsid/objid/ver")
         split_ref = ref.split("/")
-        return NarrativeRef({
-            "wsid": split_ref[0],
-            "objid": split_ref[1],
-            "ver": split_ref[2]
-        })
+        return NarrativeRef(
+            {"wsid": split_ref[0], "objid": split_ref[1], "ver": split_ref[2]}
+        )
 
     def __str__(self) -> str:
         ref_str = "{}/{}".format(self.wsid, self.objid)
@@ -68,6 +70,8 @@ class NarrativeRef:
         return ref_str
 
     def __eq__(self, other) -> bool:
-        return self.wsid == other.wsid and \
-               self.objid == other.objid and \
-               self.ver == other.ver
+        return (
+            self.wsid == other.wsid
+            and self.objid == other.objid
+            and self.ver == other.ver
+        )
