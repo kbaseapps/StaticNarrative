@@ -123,7 +123,7 @@ class NarrativePreprocessor(Preprocessor):
                 if "publications" in info:
                     citations[tag][info["name"]] = info["publications"]
 
-        parsed_citations = list()
+        parsed_citations = []
         tag_map = {
             "release": "Released Apps",
             "beta": "Apps in Beta",

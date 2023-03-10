@@ -33,7 +33,7 @@ class AppProcessor:
             kb_meta["appCell"]["params"],
         )
         exec_state = kb_meta["appCell"].get("exec", {})
-        exec_result = list()
+        exec_result = []
         job_state = exec_state.get("jobState", {})
         if "result" in job_state:  # NJS (aka EE1)
             exec_result = job_state["result"]
@@ -61,7 +61,7 @@ class AppProcessor:
 
         # two passes
         # 1. Make a lookup table for UPA -> object info
-        upas = dict()
+        upas = {}
         for p in spec_params:
             upas.update(self._make_upa_dict(param_values.get(p["id"]), p))
 
@@ -73,7 +73,7 @@ class AppProcessor:
         return info
 
     def _make_upa_dict(self, value, param_spec: dict):
-        upas = list()
+        upas = []
         if param_spec["field_type"] == "text":
             valid_ws_types = param_spec.get("text_options", {}).get(
                 "valid_ws_types", []
@@ -86,7 +86,7 @@ class AppProcessor:
                 else:
                     if self._is_upa(value):
                         upas.append(value)
-        upa_map = dict()
+        upa_map = {}
         if len(upas):
             ws = Workspace(url=self.ws_url, token=self.token)
             obj_infos = ws.get_object_info3(
@@ -170,7 +170,6 @@ class AppProcessor:
         elif "finished" in job_state and "running" in job_state:
             runtime = self._ms_to_readable(job_state["finished"] - job_state["running"])
 
-        return_state = state
         if state in ["estimating", "running", "in-progress"]:
             return_state = "This app is still in progress"
             if runtime:
@@ -208,7 +207,7 @@ class AppProcessor:
         r = r % MINUTES
         s = round(r / SECONDS)
 
-        t = list()
+        t = []
         used_h = False
         if d > 0:
             t.append(f"{d}d")
