@@ -7,10 +7,6 @@ on:
       - main
       - master
   pull_request:
-    branches:
-      - develop
-      - main
-      - master
     types:
       - opened
       - reopened
