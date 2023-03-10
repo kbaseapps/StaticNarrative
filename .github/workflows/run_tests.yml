@@ -27,12 +27,7 @@ jobs:
       id: test_backend
       shell: bash -l {0}
       run: |
-        pytest \
-            --cov=lib/StaticNarrative \
-            --cov-config=.coveragerc \
-            --cov-report=html \
-            --cov-report=xml \
-            test
+        sh test/run_tests.sh
 
     - name: Send to Codecov
       id: send_to_codecov
