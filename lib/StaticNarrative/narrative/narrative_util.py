@@ -40,7 +40,6 @@ def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> Dict:
         narr_data = ws_client.get_objects2({"objects": [{"ref": str(ref)}]})
         nar = narr_data["data"][0]
         _validate_narr_type(nar["info"][2], ref)
-        # nar['data'] = update_narrative(nar['data'])
         return nar["data"]
     except ServerError as err:
         raise WorkspaceError(err, ref.wsid)
@@ -125,14 +124,14 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> Dict:
         raise WorkspaceError(err, ws_id)
 
     info = {}
-    meta = ws_info[8]
-    if "static_narrative_ver" in meta:
+    ws_meta = ws_info[8]
+    if "static_narrative_ver" in ws_meta:
         info = {
             "ws_id": ws_id,
-            "version": int(meta["static_narrative_ver"]),
-            "narrative_id": int(meta["narrative"]),
-            "url": meta["static_narrative"],
-            "static_saved": int(meta["static_narrative_saved"]),
+            "version": int(ws_meta["static_narrative_ver"]),
+            "narrative_id": int(ws_meta["narrative"]),
+            "url": ws_meta["static_narrative"],
+            "static_saved": int(ws_meta["static_narrative_saved"]),
         }
         try:
             obj_info = ws_client.get_object_info3(
