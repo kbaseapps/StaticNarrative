@@ -4,17 +4,19 @@ Some catch-all functions for helping process Narrative cells.
 import html
 import json
 import os
-from pathlib import Path
 from urllib.parse import quote
 
 from installed_clients.authclient import KBaseAuth as _KBaseAuth
 from installed_clients.WorkspaceClient import Workspace
 
+from StaticNarrative import STATIC_NARRATIVE_BASE_DIR
+
 ICON_DATA = None
 
 
 def _load_icon_data():
-    icon_json = os.path.join("/kb", "module", "data", "icons.json")
+    # this should access the local folder
+    icon_json = os.path.join(STATIC_NARRATIVE_BASE_DIR, "data", "icons.json")
     with open(icon_json, "r") as icon_file:
         global ICON_DATA
         ICON_DATA = json.load(icon_file)
@@ -116,7 +118,7 @@ def build_report_view_data(host: str, ws_client: Workspace, result: list) -> dic
         if idx is None or idx < 0 or idx >= len(report["html_links"]):
             idx = 0
         html["links"] = report["html_links"]
-        html["paths"] = list()
+        html["paths"] = []
         for i, link in enumerate(html["links"]):
             html["paths"].append(f'/api/v1/{report_ref}/$/{i}/{link["name"]}')
         html["link_idx"] = idx
@@ -149,9 +151,7 @@ def get_icon(config, metadata):
         "fa fa-right-arrow", for instance.
     * also, if "type" == "class", then the keys "color" and "shape" should also be present.
     """
-    meta_icon = metadata.get("attributes", {}).get("icon")
     icon = {"type": "image", "icon": None}
-    icon_type = "image"
     if metadata.get("type") == "data":
         icon["type"] = "class"
         icon.update(
