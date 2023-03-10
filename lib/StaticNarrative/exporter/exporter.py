@@ -105,7 +105,6 @@ class NarrativeExporter:
         host = (endpt_parsed.scheme or "https") + "://" + netloc
 
         tpl_base_dir = os.path.join(STATIC_NARRATIVE_BASE_DIR, "lib", "StaticNarrative", "exporter", "static", "templates")
-        print("template base dir: " + tpl_base_dir)
         c.TemplateExporter.template_paths = [
             tpl_base_dir,
             os.path.join(tpl_base_dir, "html"),

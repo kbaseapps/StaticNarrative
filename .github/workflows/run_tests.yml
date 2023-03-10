@@ -6,16 +6,24 @@ on:
       - synchronize
       - closed
 
+
+
 jobs:
-  install_kbsdk_and_test:
+  install_static_narrative_and_test:
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.8', '3.9', '3.10', '3.11']
+
     runs-on: ubuntu-latest
     steps:
     - name: checkout git repo
       uses: actions/checkout@v3
 
-    - uses: actions/setup-python@v4
+    - name: Set up python ${{ matrix.python }}
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: ${{ matrix.python }}
 
     - name: install prerequisites
       shell: bash -l {0}
@@ -23,8 +31,7 @@ jobs:
         cat requirements.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 pip install
         cat requirements-test.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 pip install
 
-    - name: Run backend tests
-      id: test_backend
+    - name: Run tests
       shell: bash -l {0}
       run: |
         sh test/run_tests.sh
