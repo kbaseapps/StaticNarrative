@@ -17,16 +17,31 @@ jobs:
     - name: checkout git repo
       uses: actions/checkout@v3
 
-    - name: pull sdk image and test
-      shell: bash
-      env:
-        KBASE_TEST_TOKEN: ${{ secrets.KBASE_TEST_TOKEN }}
-        GITHUB_ACTIONS_CI: 1
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: install prerequisites
+      shell: bash -l {0}
       run: |
-        echo "Pulling image and building script."
-        docker pull kbase/kb-sdk:develop
-        docker tag kbase/kb-sdk:develop kbase/kb-sdk:latest
-        docker run kbase/kb-sdk genscript | sed -E 's/-it/-i/' > $GITHUB_WORKSPACE/kb-sdk
-        chmod 755 $GITHUB_WORKSPACE/kb-sdk
-        echo "Done, running tests."
-        $GITHUB_WORKSPACE/kb-sdk test
+        cat requirements.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 pip install
+        cat requirements-test.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 pip install
+
+    - name: Run backend tests
+      id: test_backend
+      shell: bash -l {0}
+      run: |
+        pytest \
+            --cov=lib/StaticNarrative \
+            --cov-config=.coveragerc \
+            --cov-report=html \
+            --cov-report=xml \
+            test
+
+    - name: Send to Codecov
+      id: send_to_codecov
+      uses: codecov/codecov-action@v3
+      continue-on-error: true
+      with:
+        files: ./python-coverage/coverage.xml
+        fail_ci_if_error: true

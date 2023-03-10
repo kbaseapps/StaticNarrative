@@ -24,7 +24,9 @@ from ..exceptions import WorkspaceError
 from ..narrative.narrative_util import read_narrative
 from .data_exporter import export_narrative_data
 
-NARRATIVE_TEMPLATE_FILE = "narrative"
+from StaticNarrative import STATIC_NARRATIVE_BASE_DIR
+
+NARRATIVE_TEMPLATE_FILE = "narrative.tpl"
 
 
 class NarrativeExporter:
@@ -102,9 +104,12 @@ class NarrativeExporter:
             netloc = "narrative." + netloc
         host = (endpt_parsed.scheme or "https") + "://" + netloc
 
-        c.TemplateExporter.template_path = [
-            ".",
-            os.path.join(base_path, "static", "templates"),
+        tpl_base_dir = os.path.join(STATIC_NARRATIVE_BASE_DIR, "lib", "StaticNarrative", "exporter", "static", "templates")
+        print("template base dir: " + tpl_base_dir)
+        c.TemplateExporter.template_paths = [
+            tpl_base_dir,
+            os.path.join(tpl_base_dir, "html"),
+            os.path.join(tpl_base_dir, "skeleton"),
         ]
         c.CSSHTMLHeaderPreprocessor.enabled = True
         c.NarrativePreprocessor.enabled = True

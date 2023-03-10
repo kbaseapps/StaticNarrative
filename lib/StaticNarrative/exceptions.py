@@ -14,7 +14,8 @@ class PermissionsError(ServerError):
         for the narrative (i.e. the workspace the narrative is in).
         """
         pat = re.compile(
-            "(\s*[Uu]sers?\s*(\w+)?\s*may not \w+ workspace.*)|(\s*[Tt]oken validation failed)"
+            "(\s*users?\s*(\w+)?\s*may not \w+ workspace.*)|(\s*token validation failed)",
+            re.IGNORECASE
         )
         return pat.search(err) is not None
 
@@ -58,6 +59,4 @@ class WorkspaceError(Exception):
             self.message = ws_server_err.message
 
     def __str__(self):
-        return "WorkspaceError: {}: {}: {}".format(
-            self.ws_id, self.http_code, self.message
-        )
+        return f"WorkspaceError: {self.ws_id}: {self.http_code}: {self.message}"
