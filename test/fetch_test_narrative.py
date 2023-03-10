@@ -41,7 +41,7 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
             meta = cell["metadata"]["kbase"]
             if "appCell" in meta:
                 job_state = meta["appCell"].get("exec", {}).get("jobState")
-                result = list()
+                result = []
                 if "result" in job_state:
                     result = job_state["result"]
                 elif "job_output" in job_state and "result" in job_state["job_output"]:
@@ -58,12 +58,7 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
 
     # List objects results
     service = NarrativeService(url=endpt + "service_wizard", token=token)
-    # service = ServiceClient(url=endpt + "service_wizard", use_url_lookup=True, token=token)
     ws_data = service.list_objects_with_sets({"ws_id": ws_id, "includeMetadata": 1})
-    # ws_data = service.sync_call(
-    #     "NarrativeService.list_objects_with_sets",
-    #     [{"ws_id": ws_id, "includeMetadata": 1}]
-    # )[0]
     data_outpath = os.path.join(outdir, f"objects-{ws_id}.json")
     with open(data_outpath, "w") as fout:
         json.dump(ws_data, fout, indent=4)

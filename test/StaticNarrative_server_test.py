@@ -12,12 +12,6 @@ class StaticNarrativeTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.cfg = get_test_config()
-        # Getting username from Auth profile for token
-        # authServiceUrl = cls.cfg['auth-service-url']
-        # auth_client = _KBaseAuth(authServiceUrl)
-        # user_id = auth_client.get_user(token)
-        # WARNING: don't call any logging methods on the context object,
-        # it'll result in a NoneType error
         cls.ctx = MethodContext(None)
         cls.ctx.update(
             {
@@ -33,21 +27,9 @@ class StaticNarrativeTest(unittest.TestCase):
                 "authenticated": 1,
             }
         )
-        # cls.wsURL = cls.cfg['workspace-url']
-        # cls.wsClient = Workspace(cls.wsURL)
         cls.service_impl = StaticNarrative(cls.cfg)
         cls.scratch = cls.cfg["scratch"]
-        # suffix = int(time.time() * 1000)
-        # cls.wsName = "test_ContigFilter_" + str(suffix)
-        # ret = cls.wsClient.create_workspace({'workspace': cls.wsName})  # noqa
         cls.user_id = "some_user"
-
-    @classmethod
-    def tearDownClass(cls):
-        pass
-        # if hasattr(cls, 'wsName'):
-        #     cls.wsClient.delete_workspace({'workspace': cls.wsName})
-        #     print('Test workspace was deleted')
 
     def test_status(self):
         impl = self.service_impl
@@ -71,7 +53,7 @@ class StaticNarrativeTest(unittest.TestCase):
         """
         Runs through the create process with a number of narratives.
         """
-        ref_to_file = dict()
+        ref_to_file = {}
         # 1. Add ref -> file for narratives
         narr_refs = [
             "5846/1/19",

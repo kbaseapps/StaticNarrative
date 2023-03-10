@@ -1,5 +1,7 @@
 import json
+import os
 from copy import deepcopy
+from test import TEST_BASE_DIR
 from typing import Dict, List
 
 import requests
@@ -32,7 +34,7 @@ def _mock_adapter(
         GET api/V2/users
     """
 
-    workspace_meta = dict()
+    workspace_meta = {}
 
     def mock_adapter(request):
         response = requests.Response()
@@ -55,8 +57,8 @@ def _mock_adapter(
                     result = [{"data": [_get_object_from_file(ref_to_file[ref])]}]
             elif method == "Workspace.get_object_info3":
                 # list of created objects for reports - can fail.
-                info_list = list()
-                paths = list()
+                info_list = []
+                paths = []
                 for obj in params[0].get("objects"):
                     ref = obj["ref"]
                     info_list.append(ref_to_info.get(ref, _fake_obj_info(ref)))
@@ -108,7 +110,7 @@ def _mock_adapter(
 
 def _get_fake_nms_info(tag: str, ids: list) -> List:
     app_infos = _get_object_from_file("data/nms_info.json")[tag]
-    ret = list()
+    ret = []
     for i in ids:
         if i in app_infos:
             ret.append(app_infos[i])
@@ -146,7 +148,7 @@ def _get_object_from_file(filename: str) -> Dict:
     returned from a service.
     If it's not JSON, it'll crash.
     """
-    with open(filename, "r") as f:
+    with open(os.path.join(TEST_BASE_DIR, filename), "r") as f:
         obj = json.load(f)
     return obj
 
