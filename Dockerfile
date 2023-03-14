@@ -5,7 +5,7 @@ FROM python:3.10-alpine
 LABEL MAINTAINER KBase Developer
 
 COPY ./requirements.txt /kb/module/
-COPY ./requirements-dev.txt /kb/module/
+COPY ./requirements-test.txt /kb/module/
 WORKDIR /kb/module
 
 # install python modules one at a time so that all deps get resolved properly
