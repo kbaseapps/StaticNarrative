@@ -55,7 +55,7 @@ $ pytest test
 
 ## API changes
 
-If you make changes to the spec (and thus the API) of the StaticNarrative app, you will need to recompile the app to generate updated versions of `StaticNarrativeImpl.py`, `StaticNarrativeServer.py`, and the compilation report in `work/compile_report.json`. These updated files must be committed to the GitHub repo.
+If you make changes to the spec (and thus the API) of the StaticNarrative app, you will need to recompile the app to generate updated versions of `StaticNarrativeImpl.py`, `StaticNarrativeServer.py`, and the compilation report, `compile_report.json`. These updated files must be committed to the GitHub repo.
 
 Note that there is a bug in some versions of the SDK that assumes the wrong location for the `baseclient.py` and `authclient.py` files. To fix it, after compilation, edit the `StaticNarrativeServer.py` file to amend the following lines:
 
