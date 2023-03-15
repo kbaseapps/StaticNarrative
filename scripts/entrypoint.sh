@@ -19,7 +19,7 @@ elif [ "${1}" = "bash" ] ; then
 elif [ "${1}" = "sh" ] ; then
   sh
 elif [ "${1}" = "report" ] ; then
-  echo "The compile report can be found at ./compile_report.json"
+  echo "The compile report can be found at ./work/compile_report.json"
 else
   echo "Unknown command"
 fi
