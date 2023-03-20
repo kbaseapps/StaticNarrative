@@ -20,7 +20,7 @@ default: compile
 all: compile build set-executable
 
 compile:
-	rm $(COMPILE_REPORT)
+	rm $(COMPILE_REPORT) || true
 	KB_SDK_COMPILE_REPORT_FILE=$(COMPILE_REPORT) kb-sdk compile $(SPEC_FILE) \
 		--verbose \
 		--out $(LIB_DIR) \
