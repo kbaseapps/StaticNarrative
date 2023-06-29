@@ -11,6 +11,7 @@ WORK_DIR = /kb/module/work/tmp
 EXECUTABLE_SCRIPT_NAME = run_$(SERVICE_CAPS)_async_job.sh
 STARTUP_SCRIPT_NAME = start_server.sh
 TEST_SCRIPT_NAME = run_tests.sh
+COMPILE_REPORT = ./compile_report.json
 
 .PHONY: test
 
@@ -19,7 +20,9 @@ default: compile
 all: compile build set-executable
 
 compile:
-	kb-sdk compile $(SPEC_FILE) \
+	rm $(COMPILE_REPORT) || true
+	KB_SDK_COMPILE_REPORT_FILE=$(COMPILE_REPORT) kb-sdk compile $(SPEC_FILE) \
+		--verbose \
 		--out $(LIB_DIR) \
 		--pysrvname $(SERVICE_CAPS).$(SERVICE_CAPS)Server \
 		--pyimplname $(SERVICE_CAPS).$(SERVICE_CAPS)Impl;
