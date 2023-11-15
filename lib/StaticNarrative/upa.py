@@ -95,7 +95,9 @@ def deserialize(serial_upa: str, ws_id: int) -> str:
     the & tag is removed.
     """
     if not isinstance(serial_upa, str):
-        raise ValueError("Can only deserialize UPAs from strings.")
+        raise ValueError(
+            f"Can only deserialize UPAs from strings: {str(serial_upa)} is a {type(serial_upa)}"
+        )
     if serial_upa.startswith(external_tag):
         deserial = serial_upa[len(external_tag) :]
     else:
@@ -105,5 +107,5 @@ def deserialize(serial_upa: str, ws_id: int) -> str:
             )
         deserial = re.sub("^\[(\d+)\]\/", str(ws_id) + "/", serial_upa)
     if not is_upa(deserial):
-        raise ValueError('Deserialized UPA: "{}" is invalid!'.format(deserial))
+        raise ValueError(f'Deserialized UPA: "{deserial}" is invalid!')
     return deserial

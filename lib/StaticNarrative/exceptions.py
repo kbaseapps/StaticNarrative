@@ -1,4 +1,5 @@
 import re
+from typing import T
 
 from installed_clients.baseclient import ServerError
 
@@ -9,22 +10,34 @@ class PermissionsError(ServerError):
     """
 
     @staticmethod
-    def is_permissions_error(err):
+    def is_permissions_error(err: str) -> bool:
         """Try to guess if the error string is a permission-denied error
         for the narrative (i.e. the workspace the narrative is in).
         """
         pat = re.compile(
-            "(\s*users?\s*(\w+)?\s*may not \w+ workspace.*)|(\s*token validation failed)",
-            re.IGNORECASE
+            r"(\s*users?\s*(\w+)?\s*may not \w+ workspace.*)|(\s*token validation failed)",
+            re.IGNORECASE,
         )
         return pat.search(err) is not None
 
-    def __init__(self, name=None, code=None, message=None, **kw):
+    def __init__(
+        self: "PermissionsError",
+        name: str | None = None,
+        code: int | None = None,
+        message: str | None = None,
+        **kw: None | dict[str, T],
+    ) -> None:
         ServerError.__init__(self, name, code, message, **kw)
 
 
 class WorkspaceError(Exception):
-    def __init__(self, ws_server_err, ws_id, message=None, http_code=500):
+    def __init__(
+        self: "WorkspaceError",
+        ws_server_err: ServerError,
+        ws_id: str,
+        message: str | None = None,
+        http_code: int | None = 500,
+    ) -> None:
         """
         This wraps Workspace calls regarding Narratives into exceptions that are
         easier to parse for logging, user communication, etc.
@@ -58,5 +71,5 @@ class WorkspaceError(Exception):
         else:
             self.message = ws_server_err.message
 
-    def __str__(self):
+    def __str__(self: "WorkspaceError") -> str:
         return f"WorkspaceError: {self.ws_id}: {self.http_code}: {self.message}"

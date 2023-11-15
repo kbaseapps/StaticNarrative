@@ -1,12 +1,15 @@
 import os
 from collections import defaultdict
+from typing import T
 
 
 class StaticNarrativeManager:
-    def __init__(self, config: dict) -> None:
+    def __init__(self: "StaticNarrativeManager", config: dict[str, T]) -> None:
         self.config = config
 
-    def list_static_narratives(self) -> dict:
+    def list_static_narratives(
+        self: "StaticNarrativeManager",
+    ) -> dict[str, dict[str, str]]:
         """
         Returns a list of all available static narratives.
         Currently, this combs the filesystem for index.html files and assembles them.
@@ -16,7 +19,7 @@ class StaticNarrativeManager:
         if webroot is None:
             raise ValueError("Missing path to static narratives")
         all_sn = defaultdict(list)
-        for root, dirs, files in os.walk(webroot):
+        for root, _, files in os.walk(webroot):
             for name in files:
                 if name != "index.html":
                     continue

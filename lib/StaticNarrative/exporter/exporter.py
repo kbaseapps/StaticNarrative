@@ -9,34 +9,41 @@ __author__ = "Bill Riehl <wjriehl@lbl.gov>"
 
 import json
 import os
-from typing import Dict
+from typing import T
 from urllib.parse import urlparse
 
 import nbformat
-import StaticNarrative.exporter.preprocessor as preprocessor
 from installed_clients.baseclient import ServerError
 from installed_clients.WorkspaceClient import Workspace
 from nbconvert import HTMLExporter
-from StaticNarrative.narrative_ref import NarrativeRef
 from traitlets.config import Config
 
-from ..exceptions import WorkspaceError
-from ..narrative.narrative_util import read_narrative
-from .data_exporter import export_narrative_data
-
 from StaticNarrative import STATIC_NARRATIVE_BASE_DIR
+from StaticNarrative.exceptions import WorkspaceError
+from StaticNarrative.exporter import preprocessor
+from StaticNarrative.narrative.narrative_util import read_narrative
+from StaticNarrative.narrative_ref import NarrativeRef
+
+from .data_exporter import export_narrative_data
 
 NARRATIVE_TEMPLATE_FILE = "narrative.tpl"
 
 
 class NarrativeExporter:
-    def __init__(self, exporter_cfg: Dict[str, str], user_id: str, token: str):
+    def __init__(
+        self: "NarrativeExporter",
+        exporter_cfg: T,  # config object
+        user_id: str,
+        token: str,
+    ) -> None:
         self.exporter_cfg = exporter_cfg
         self.ws_client = Workspace(url=exporter_cfg["workspace-url"], token=token)
         self.token = token
         self.user_id = user_id
 
-    def export_narrative(self, narrative_ref: NarrativeRef, output_dir: str) -> str:
+    def export_narrative(
+        self: "NarrativeExporter", narrative_ref: NarrativeRef, output_dir: str
+    ) -> str:
         """
         Exports the Narrative to an HTML file and returns the path to that file.
         :param narrative_ref: NarrativeRef - the workspace reference to the narrative object
@@ -50,7 +57,7 @@ class NarrativeExporter:
         except ServerError as e:
             raise WorkspaceError(
                 e, narrative_ref.wsid, "Error while exporting Narrative"
-            )
+            ) from e
 
         # 2. Convert to a notebook object
         kb_notebook = nbformat.reads(json.dumps(nar), as_version=4)
@@ -75,7 +82,9 @@ class NarrativeExporter:
             output_html.write(body)
         return output_path
 
-    def _build_exporter(self, exported_data: dict, ws_id: int) -> HTMLExporter:
+    def _build_exporter(
+        self: "NarrativeExporter", exported_data: dict[str, T], ws_id: int
+    ) -> HTMLExporter:
         """
         This builds the HTMLExporter used to export the Notebook (i.e. Narrative) to
         HTML. Data is passed into the exporter by configuration with various specific
@@ -104,7 +113,14 @@ class NarrativeExporter:
             netloc = "narrative." + netloc
         host = (endpt_parsed.scheme or "https") + "://" + netloc
 
-        tpl_base_dir = os.path.join(STATIC_NARRATIVE_BASE_DIR, "lib", "StaticNarrative", "exporter", "static", "templates")
+        tpl_base_dir = os.path.join(
+            STATIC_NARRATIVE_BASE_DIR,
+            "lib",
+            "StaticNarrative",
+            "exporter",
+            "static",
+            "templates",
+        )
         c.TemplateExporter.template_paths = [
             tpl_base_dir,
             os.path.join(tpl_base_dir, "html"),
