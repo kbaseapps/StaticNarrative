@@ -6,14 +6,12 @@ on:
       - synchronize
       - closed
 
-
-
 jobs:
   install_static_narrative_and_test:
     strategy:
       fail-fast: false
       matrix:
-        python: ['3.8', '3.9', '3.10', '3.11']
+        python: ['3.10', '3.11', '3.12']
 
     runs-on: ubuntu-latest
     steps:
