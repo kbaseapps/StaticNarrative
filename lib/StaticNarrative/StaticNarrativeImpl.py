@@ -1,29 +1,23 @@
 # -*- coding: utf-8 -*-
-#BEGIN_HEADER
-import logging
-import os
-from StaticNarrative.exporter.exporter import NarrativeExporter
-from StaticNarrative.uploader.uploader import upload_static_narrative
-from StaticNarrative.narrative_ref import NarrativeRef
-from StaticNarrative.narrative.narrative_util import (
-    save_narrative_url,
-    get_static_info,
-    verify_admin_privilege,
-    verify_public_narrative
-)
-from StaticNarrative.manager import StaticNarrativeManager
+# BEGIN_HEADER
 
-#END_HEADER
+from StaticNarrative.creator import StaticNarrativeCreator
+from StaticNarrative.manager import StaticNarrativeManager
+from StaticNarrative.narrative.narrative_util import (
+    get_static_info,
+)
+
+# END_HEADER
 
 
 class StaticNarrative:
-    '''
+    """
     Module Name:
     StaticNarrative
 
     Module Description:
     A KBase module: StaticNarrative
-    '''
+    """
 
     ######## WARNING FOR GEVENT USERS ####### noqa
     # Since asynchronous IO can lead to methods - even the same method -
@@ -35,26 +29,16 @@ class StaticNarrative:
     GIT_URL = "https://github.com/briehl/StaticNarrative"
     GIT_COMMIT_HASH = "aed622bf428f5131b0c888f227495d46ef7d986d"
 
-    #BEGIN_CLASS_HEADER
-    #END_CLASS_HEADER
+    # BEGIN_CLASS_HEADER
+    # END_CLASS_HEADER
 
     # config contains contents of config file in a hash or None if it couldn't
     # be found
     def __init__(self, config):
-        #BEGIN_CONSTRUCTOR
-        logging.basicConfig(format='%(created)s %(levelname)s: %(message)s',
-                            level=logging.INFO)
-        self.logger = logging.getLogger("StaticNarrative")
-        self.logger.setLevel(logging.INFO)
-        ch = logging.StreamHandler()
-        ch.setLevel(logging.INFO)
-        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-        ch.setFormatter(formatter)
-        self.logger.addHandler(ch)
+        # BEGIN_CONSTRUCTOR
         self.config = config
-        #END_CONSTRUCTOR
+        # END_CONSTRUCTOR
         pass
-
 
     def create_static_narrative(self, ctx, params):
         """
@@ -71,46 +55,19 @@ class StaticNarrative:
         """
         # ctx is the context object
         # return variables are: output
-        #BEGIN create_static_narrative
-
-        # init - get NarrativeRef and Exporter set up
-        ref = NarrativeRef.parse(params["narrative_ref"])
-        ws_url = self.config["workspace-url"]
-        self.logger.info(f"Creating Static Narrative {ref}")
-        verify_admin_privilege(ws_url, ctx["user_id"], ctx["token"], ref.wsid)
-        verify_public_narrative(ws_url, ref.wsid)
-        exporter = NarrativeExporter(self.config, ctx["user_id"], ctx["token"])
-
-        # set up output directories
-        try:
-            output_dir = os.path.join(
-                self.config["scratch"], str(ref.wsid), str(ref.objid), str(ref.ver)
-            )
-            os.makedirs(output_dir, exist_ok=True)
-        except IOError as e:
-            self.logger.error("Error while creating Static Narrative directory", e)
-            raise
-
-        # export the narrative to a file
-        try:
-            output_path = exporter.export_narrative(ref, output_dir)
-        except Exception as e:
-            self.logger.error("Error while exporting Narrative", e)
-            raise
-
-        # upload it and save it to the Workspace metadata before returning the url path
-        static_url = upload_static_narrative(ref, output_path, self.config["static-file-root"])
-        save_narrative_url(self.config["workspace-url"], ctx["token"], ref, static_url)
-        output = {
-            "static_narrative_url": static_url
-        }
-        self.logger.info(f"Finished creating Static Narrative {ref}")
-        #END create_static_narrative
+        # BEGIN create_static_narrative
+        snc = StaticNarrativeCreator(self.config)
+        params["user_id"] = ctx["user_id"]
+        params["token"] = ctx["token"]
+        output = snc.create_static_narrative(params)
+        # END create_static_narrative
 
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
-            raise ValueError('Method create_static_narrative return value ' +
-                             'output is not type dict as required.')
+            raise ValueError(
+                "Method create_static_narrative return value "
+                + "output is not type dict as required."
+            )
         # return the results
         return [output]
 
@@ -134,14 +91,18 @@ class StaticNarrative:
         """
         # ctx is the context object
         # return variables are: info
-        #BEGIN get_static_narrative_info
-        info = get_static_info(self.config["workspace-url"], ctx["token"], params.get("ws_id"))
-        #END get_static_narrative_info
+        # BEGIN get_static_narrative_info
+        info = get_static_info(
+            self.config["workspace-url"], ctx["token"], params.get("ws_id")
+        )
+        # END get_static_narrative_info
 
         # At some point might do deeper type checking...
         if not isinstance(info, dict):
-            raise ValueError('Method get_static_narrative_info return value ' +
-                             'info is not type dict as required.')
+            raise ValueError(
+                "Method get_static_narrative_info return value "
+                + "info is not type dict as required."
+            )
         # return the results
         return [info]
 
@@ -163,15 +124,17 @@ class StaticNarrative:
         """
         # ctx is the context object
         # return variables are: narratives
-        #BEGIN list_static_narratives
+        # BEGIN list_static_narratives
         manager = StaticNarrativeManager(self.config)
         narratives = manager.list_static_narratives()
-        #END list_static_narratives
+        # END list_static_narratives
 
         # At some point might do deeper type checking...
         if not isinstance(narratives, dict):
-            raise ValueError('Method list_static_narratives return value ' +
-                             'narratives is not type dict as required.')
+            raise ValueError(
+                "Method list_static_narratives return value "
+                + "narratives is not type dict as required."
+            )
         # return the results
         return [narratives]
 
@@ -189,17 +152,21 @@ class StaticNarrative:
         """
         # ctx is the context object
         # return variables are: returnVal
-        #BEGIN status
-        returnVal = {'state': "OK",
-                     'message': "",
-                     'version': self.VERSION,
-                     'git_url': self.GIT_URL,
-                     'git_commit_hash': self.GIT_COMMIT_HASH}
-        #END status
+        # BEGIN status
+        returnVal = {
+            "state": "OK",
+            "message": "",
+            "version": self.VERSION,
+            "git_url": self.GIT_URL,
+            "git_commit_hash": self.GIT_COMMIT_HASH,
+        }
+        # END status
 
         # At some point might do deeper type checking...
         if not isinstance(returnVal, dict):
-            raise ValueError('Method status return value ' +
-                             'returnVal is not type dict as required.')
+            raise ValueError(
+                "Method status return value "
+                + "returnVal is not type dict as required."
+            )
         # return the results
         return [returnVal]
