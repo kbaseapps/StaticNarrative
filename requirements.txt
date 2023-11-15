@@ -1,5 +1,5 @@
-nbconvert==7.2.9
-nbformat==5.7.3
+nbconvert==7.11.0
+nbformat==5.9.2
 traitlets==5.9.0
 python-dateutil==2.8.2
 jsonrpcbase==0.2.0
