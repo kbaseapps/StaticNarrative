@@ -7,6 +7,11 @@ WSID = 123
 OBJID = 456
 VER = 7
 
+WS_ID_ERR = "The Narrative workspace ID must be an integer > 0"
+OBJ_ID_ERR = "The Narrative object ID must be an integer > 0"
+VER_ERR = "The Narrative version must be an integer > 0"
+
+
 class NarrativeRefTestCase(unittest.TestCase):
     def test_ok(self) -> None:
         ref = NarrativeRef({"wsid": WSID, "objid": OBJID, "ver": VER})
@@ -25,26 +30,48 @@ class NarrativeRefTestCase(unittest.TestCase):
         ok_obj_id = 2
         ok_ver = 3
 
-        bad_ids = ["", None, "wat", [], {}, "-1", "4.5"]
-        ws_id_err = "The Narrative workspace ID must be an integer > 0"
-        obj_id_err = "The Narrative object ID must be an integer > 0"
-        ver_err = "The Narrative version must be an integer > 0"
+        bad_ids = ["", None, "wat", [], {}, "-1", "4.5", 0]
 
         for bad_id in bad_ids:
-            with pytest.raises(ValueError, match=ws_id_err):
+            with pytest.raises(ValueError, match=WS_ID_ERR):
                 NarrativeRef({"wsid": bad_id, "objid": ok_obj_id, "ver": ok_ver})
 
-            with pytest.raises(ValueError, match=obj_id_err):
+            with pytest.raises(ValueError, match=OBJ_ID_ERR):
                 NarrativeRef({"wsid": ok_ws_id, "objid": bad_id, "ver": ok_ver})
 
-            with pytest.raises(ValueError, match=ver_err):
+            with pytest.raises(ValueError, match=VER_ERR):
                 NarrativeRef({"wsid": ok_ws_id, "objid": ok_obj_id, "ver": bad_id})
 
+
     def test_parse_fail(self) -> None:
-        bads = ["123/456", "123", "123/456/789/8", "123/456/", "123/", "foo/bar/baz"]
-        for bad in bads:
-            with pytest.raises(ValueError):
+        # incorrect number of slashes
+        bad_refs = ["123", "123/456", "123/456/789/8"]
+        for bad in bad_refs:
+            with pytest.raises(ValueError, match="A Narrative ref must be of the format wsid/objid/ver"):
                 NarrativeRef.parse(bad)
+
+        # slashes without numbers
+        with pytest.raises(ValueError, match=VER_ERR):
+            NarrativeRef.parse("123/456/")
+
+        with pytest.raises(ValueError, match=OBJ_ID_ERR):
+            NarrativeRef.parse("123//456")
+
+        with pytest.raises(ValueError, match=OBJ_ID_ERR):
+            NarrativeRef.parse("123//")
+
+        with pytest.raises(ValueError, match=WS_ID_ERR):
+            NarrativeRef.parse("/123/456")
+
+        with pytest.raises(ValueError, match=WS_ID_ERR):
+            NarrativeRef.parse("//123")
+
+        with pytest.raises(ValueError, match=WS_ID_ERR):
+            NarrativeRef.parse("/123/")
+
+        # invalid data type
+        with pytest.raises(ValueError, match=WS_ID_ERR):
+            NarrativeRef.parse("foo/bar/baz")
 
     def test_equality(self) -> None:
         ref1 = NarrativeRef.parse("1/2/3")

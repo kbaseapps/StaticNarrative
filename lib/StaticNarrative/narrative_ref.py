@@ -7,11 +7,8 @@ It also requires that a version is part of the ref.
 """
 
 
-import numbers
-
-
 class NarrativeRef:
-    def _less_than_zero(self: "NarrativeRef", number, name: str) -> int:
+    def _less_than_zero(self: "NarrativeRef", number: str | int, name: str) -> int:
         try:
             integer = int(number)
             if integer <= 0:
@@ -37,38 +34,6 @@ class NarrativeRef:
         for part in part_name:
             int_version = self._less_than_zero(ref.get(part), part_name[part])
             setattr(self, part, int_version)
-        # (self.wsid, self.objid, self.ver) = (
-        #     ref.get("wsid"),
-        #     ref.get("objid"),
-        #     ref.get("ver"),
-        # )
-
-        # for [ []]
-
-        # try:
-        #     self.wsid = int(self.wsid)
-        #     if self.wsid <= 0:
-        #         raise ValueError
-        # except (ValueError, TypeError) as e:
-        #     err = f"The Narrative Workspace id must be an integer > 0, not {self.wsid}"
-        #     raise ValueError(err) from e
-
-        # try:
-        #     self.objid = int(self.objid)
-        #     if self.objid <= 0:
-        #         raise ValueError
-        # except (ValueError, TypeError) as e:
-        #     raise ValueError(
-        #         f"The Narrative object id must be an integer > 0, not {self.objid}"
-        #     ) from e
-
-        # try:
-        #     self.ver = int(self.ver)
-        #     if self.ver <= 0:
-        #         raise ValueError
-        # except (ValueError, TypeError) as e:
-        #     err = f"The Narrative version must be an integer > 0, not {self.ver}"
-        #     raise ValueError(err) from e
 
     @staticmethod
     def parse(ref: str) -> "NarrativeRef":
