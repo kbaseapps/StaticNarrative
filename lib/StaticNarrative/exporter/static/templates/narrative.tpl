@@ -7,12 +7,12 @@
 <html>
 <head>
 {%- block html_head -%}
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-137652528-1"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KXZCE6YQFZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'UA-137652528-1');
+  gtag('config', 'G-KXZCE6YQFZ');
   gtag('config', 'AW-753507180'); //tracking for Google Ads
 </script><!-- End of Global Site Tag (gtag.js) - Google Analytics -->
 <meta charset="utf-8" />
