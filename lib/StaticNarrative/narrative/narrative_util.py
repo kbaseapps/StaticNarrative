@@ -4,7 +4,7 @@ Some utility functions for handling Narratives and permissions.
 import logging
 import re
 import time
-from typing import T
+from typing import Any
 
 from dateutil import parser as date_parser
 from installed_clients.baseclient import ServerError
@@ -17,7 +17,7 @@ NARRATIVE_TYPE = "KBaseNarrative.Narrative"
 TYPE_REGEX = rf"^{NARRATIVE_TYPE}-\d+\.\d+$"
 
 
-def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> dict[str, T]:
+def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> dict[str, Any]:
     """
     Fetches a Narrative and its object info from the Workspace
     If content is False, this only returns the Narrative's info

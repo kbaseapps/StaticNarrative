@@ -1,10 +1,10 @@
 import os
 from collections import defaultdict
-from typing import T
+from typing import Any
 
 
 class StaticNarrativeManager:
-    def __init__(self: "StaticNarrativeManager", config: dict[str, T]) -> None:
+    def __init__(self: "StaticNarrativeManager", config: dict[str, Any]) -> None:
         self.config = config
 
     def list_static_narratives(

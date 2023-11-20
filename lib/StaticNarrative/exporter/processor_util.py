@@ -4,7 +4,7 @@ Some catch-all functions for helping process Narrative cells.
 import html
 import json
 import os
-from typing import T
+from typing import Any
 from urllib.parse import quote
 
 from installed_clients.authclient import KBaseAuth
@@ -24,7 +24,7 @@ def _load_icon_data() -> None:
 
 
 def build_report_view_data(
-    host: str, ws_client: Workspace, result: dict[str, T] | list[dict[str, T]]
+    host: str, ws_client: Workspace, result: dict[str, Any] | list[dict[str, Any]]
 ) -> dict[str, str | list | dict]:
     """
     Returns a structure like this:
@@ -150,7 +150,7 @@ def build_report_view_data(
     }
 
 
-def get_icon(config: dict[str, T], metadata: dict[str, T]) -> dict[str, str]:
+def get_icon(config: dict[str, Any], metadata: dict[str, Any]) -> dict[str, str]:
     """
     Should return a dict with keys "type" and "icon"
     * if "type" = image, then "icon" second should be the src.
@@ -209,7 +209,7 @@ def get_data_icon(obj_type: str) -> dict[str, str]:
     return icon_info
 
 
-def get_authors(config: dict[str, T], wsid: str) -> list[dict[str, str]]:
+def get_authors(config: dict[str, Any], wsid: str) -> list[dict[str, str]]:
     ws_client = Workspace(
         url=config.narrative_session.ws_url, token=config.narrative_session.token
     )

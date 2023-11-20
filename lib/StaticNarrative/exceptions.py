@@ -1,5 +1,5 @@
 import re
-from typing import T
+from typing import Any
 
 from installed_clients.baseclient import ServerError
 
@@ -25,7 +25,7 @@ class PermissionsError(ServerError):
         name: str | None = None,
         code: int | None = None,
         message: str | None = None,
-        **kw: None | dict[str, T],
+        **kw: None | dict[str, Any],
     ) -> None:
         ServerError.__init__(self, name, code, message, **kw)
 

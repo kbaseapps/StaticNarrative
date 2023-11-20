@@ -2,18 +2,18 @@ import json
 import os
 from copy import deepcopy
 from test import TEST_BASE_DIR
-from typing import Dict, List
+from typing import Any
 
 import requests
 
 
 def _mock_adapter(
-    ref_to_file: Dict[str, str] = {},
-    ref_to_info: Dict[str, List] = {},
-    ws_info: List = [],
-    user_map: Dict[str, str] = {},
-    ws_perms: Dict[int, Dict[str, str]] = {},
-    ws_obj_info_file: str = None,
+    ref_to_file: dict[str, str] | None = None,
+    ref_to_info: dict[str, list] | None = None,
+    ws_info: list | None = None,
+    user_map: dict[str, str] | None = None,
+    ws_perms: dict[int, dict[str, str]] | None = None,
+    ws_obj_info_file: str | None = None,
 ):
     """
     Sets up mock calls as a requests_mock adapter function.
@@ -34,6 +34,11 @@ def _mock_adapter(
         GET api/V2/users
     """
 
+    for prop in [ref_to_file, ref_to_info, user_map, ws_perms]:
+        if prop is None:
+            prop = {}
+    if ws_info is None:
+        ws_info = []
     workspace_meta = {}
 
     def mock_adapter(request):
@@ -108,7 +113,7 @@ def _mock_adapter(
     return mock_adapter
 
 
-def _get_fake_nms_info(tag: str, ids: list) -> List:
+def _get_fake_nms_info(tag: str, ids: list) -> list:
     app_infos = _get_object_from_file("data/nms_info.json")[tag]
     ret = []
     for i in ids:
@@ -125,7 +130,7 @@ def _get_fake_nms_info(tag: str, ids: list) -> List:
     return ret
 
 
-def _fake_obj_info(ref: str) -> List:
+def _fake_obj_info(ref: str) -> list[None | str | int]:
     split_ref = ref.split("/")
     return [
         split_ref[1],
@@ -142,25 +147,24 @@ def _fake_obj_info(ref: str) -> List:
     ]
 
 
-def _get_object_from_file(filename: str) -> Dict:
+def _get_object_from_file(filename: str) -> dict[str, Any]:
     """
     This should be a JSON file representing workspace data or some other JSON data
     returned from a service.
     If it's not JSON, it'll crash.
     """
-    with open(os.path.join(TEST_BASE_DIR, filename), "r") as f:
-        obj = json.load(f)
-    return obj
+    with open(os.path.join(TEST_BASE_DIR, filename)) as f:
+        return json.load(f)
 
 
 def set_up_ok_mocks(
     rqm,
-    ref_to_file: Dict = {},
-    ref_to_info: Dict = {},
-    ws_info: List = [],
-    ws_perms: Dict = {},
-    user_map: Dict = {},
-    ws_obj_info_file: str = None,
+    ref_to_file: dict | None = None,
+    ref_to_info: dict | None = None,
+    ws_info: list | None = None,
+    ws_perms: dict | None = None,
+    user_map: dict | None = None,
+    ws_obj_info_file: str | None = None,
 ):
     rqm.add_matcher(
         _mock_adapter(

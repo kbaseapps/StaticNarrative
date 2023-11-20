@@ -9,7 +9,7 @@ __author__ = "Bill Riehl <wjriehl@lbl.gov>"
 
 import json
 import os
-from typing import T
+from typing import Any
 from urllib.parse import urlparse
 
 import nbformat
@@ -32,7 +32,7 @@ NARRATIVE_TEMPLATE_FILE = "narrative.tpl"
 class NarrativeExporter:
     def __init__(
         self: "NarrativeExporter",
-        exporter_cfg: T,  # config object
+        exporter_cfg: dict[str, str],  # config object
         user_id: str,
         token: str,
     ) -> None:
@@ -83,7 +83,7 @@ class NarrativeExporter:
         return output_path
 
     def _build_exporter(
-        self: "NarrativeExporter", exported_data: dict[str, T], ws_id: int
+        self: "NarrativeExporter", exported_data: dict[str, Any], ws_id: int
     ) -> HTMLExporter:
         """
         This builds the HTMLExporter used to export the Notebook (i.e. Narrative) to

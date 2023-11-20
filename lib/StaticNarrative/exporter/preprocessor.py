@@ -6,7 +6,7 @@ __author__ = "Bill Riehl <wjriehl@lbl.gov>"
 import os
 from collections import defaultdict
 from datetime import datetime
-from typing import T
+from typing import Any
 
 from installed_clients.NarrativeMethodStoreClient import NarrativeMethodStore
 from nbconvert.preprocessors import Preprocessor
@@ -20,7 +20,7 @@ from .processor_util import get_authors, get_icon
 
 class NarrativePreprocessor(Preprocessor):
     def __init__(
-        self: "NarrativePreprocessor", config: T | None = None, **kw: dict[str, T]
+        self: "NarrativePreprocessor", config: Any | None = None, **kw: dict[str, Any]
     ) -> None:
         super().__init__(config=config, **kw)
         self.host = self.config.narrative_session.host
@@ -41,8 +41,8 @@ class NarrativePreprocessor(Preprocessor):
         )
 
     def preprocess(
-        self: "NarrativePreprocessor", nb: NotebookNode, resources: dict[str, T]
-    ) -> tuple[T, dict[str, T]]:
+        self: "NarrativePreprocessor", nb: NotebookNode, resources: dict[str, Any]
+    ) -> tuple[Any, dict[str, Any]]:
         (nb, resources) = super().preprocess(nb, resources)
 
         app_meta = self._get_app_metadata(nb, self.config.narrative_session.nms_url)
@@ -166,7 +166,7 @@ class NarrativePreprocessor(Preprocessor):
 
     def _get_data_cell_ref(
         self: "NarrativePreprocessor",
-        meta: dict[str, T],
+        meta: dict[str, Any],
         ws_id: str | int | None = None,
     ) -> str | None:
         """
@@ -200,8 +200,11 @@ class NarrativePreprocessor(Preprocessor):
         return ref
 
     def preprocess_cell(
-        self: "NarrativePreprocessor", cell: object, resources: dict[str, T], index: int
-    ) -> tuple[object, dict[str, T]]:
+        self: "NarrativePreprocessor",
+        cell: object,
+        resources: dict[str, Any],
+        index: int,
+    ) -> tuple[object, dict[str, Any]]:
         ws_id = self.config.narrative_session.ws_id
 
         if "kbase" in cell.metadata:

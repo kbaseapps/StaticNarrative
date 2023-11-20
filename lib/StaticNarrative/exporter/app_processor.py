@@ -1,6 +1,6 @@
 import math
 import re
-from typing import T
+from typing import Any
 
 from installed_clients.WorkspaceClient import Workspace
 
@@ -17,8 +17,8 @@ class AppProcessor:
         self.token = token
 
     def process(
-        self: "AppProcessor", kb_info: dict[str, T], kb_meta: dict[str, T]
-    ) -> dict[str, T]:
+        self: "AppProcessor", kb_info: dict[str, Any], kb_meta: dict[str, Any]
+    ) -> dict[str, Any]:
         """
         Extracts the useful bits of the complicated metadata structure so that the Jinja
         templates don't look like spaghetti with stuff like
@@ -57,7 +57,7 @@ class AppProcessor:
         return kb_info
 
     def _process_app_params(
-        self: "AppProcessor", spec_params: dict[str, T], param_values: dict[str, T]
+        self: "AppProcessor", spec_params: dict[str, Any], param_values: dict[str, Any]
     ) -> dict[str, list]:
         """
         :param spec_params: the params dictionary from the stored app spec
@@ -80,8 +80,10 @@ class AppProcessor:
         return info
 
     def _make_upa_dict(
-        self: "AppProcessor", value: T, param_spec: dict[str, T]
-    ) -> dict[str, T]:
+        self: "AppProcessor",
+        value: None | int | str | list[str],
+        param_spec: dict[str, Any],
+    ) -> dict[str, Any]:
         upas = []
         if param_spec["field_type"] == "text":
             valid_ws_types = param_spec.get("text_options", {}).get(
@@ -106,8 +108,8 @@ class AppProcessor:
     def _translate_param_value(
         self: "AppProcessor",
         value: None | int | str | list,
-        param_spec: dict[str, T],
-        upas: dict[str, T],
+        param_spec: dict[str, Any],
+        upas: dict[str, Any],
     ):
         """
         Overall flow.
@@ -143,7 +145,7 @@ class AppProcessor:
         upa_regex = r"^\d+\/\d+\/\d+$"
         return re.match(upa_regex, s) is not None
 
-    def _get_job_state(self: "AppProcessor", app_meta: dict[str, T]) -> str:
+    def _get_job_state(self: "AppProcessor", app_meta: dict[str, Any]) -> str:
         """
         Returns the job state as a readable string.
         One of:
