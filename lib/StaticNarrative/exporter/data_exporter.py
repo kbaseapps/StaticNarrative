@@ -1,6 +1,6 @@
 import json
 import os
-from typing import Dict, List
+from typing import Any
 
 from installed_clients.NarrativeServiceClient import NarrativeService
 
@@ -11,7 +11,7 @@ IGNORED_TYPES = ["KBaseNarrative.Narrative"]
 
 def export_narrative_data(
     wsid: int, output_dir: str, service_wizard_url: str, token: str
-) -> Dict:
+) -> dict[str, Any]:
     """
     Exports data from a Narrative into an attached JSON file.
     Returns the output path to the JSON file as well as the data that was dumped into it.
@@ -35,7 +35,7 @@ def export_narrative_data(
             name (str),
             type (str),
             save date (str, timestamp),
-            metadata: (Dict[str, str])
+            metadata: (dict[str, str])
         ]
     }
 
@@ -72,7 +72,9 @@ def export_narrative_data(
     return output_data
 
 
-def _reshape_obj(obj_info: List) -> List:
+def _reshape_obj(
+    obj_info: list[str, str | dict[str, Any]]
+) -> list[str | dict[str, Any]]:
     """
     Just pulls out the relevant info from object info, and mashes it into
     something more useful for the Static Narrative data browser.
@@ -82,7 +84,7 @@ def _reshape_obj(obj_info: List) -> List:
         name,
         type,
         timestamp,
-        metadata (or empty Dict)
+        metadata (or empty dict)
     ]
     """
     return [

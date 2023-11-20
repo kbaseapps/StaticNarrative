@@ -14,7 +14,6 @@ import argparse
 import json
 import os
 import sys
-from typing import List
 
 from installed_clients.NarrativeServiceClient import NarrativeService
 from installed_clients.WorkspaceClient import Workspace
@@ -66,7 +65,7 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
     return 0
 
 
-def parse_args(args: List[str]) -> dict:
+def parse_args(args: list[str]) -> dict[str, str]:
     p = argparse.ArgumentParser(description=__doc__.strip())
     p.add_argument("-t", "--token", dest="token", default=None, help="User auth token")
     p.add_argument("-e", "--env", dest="env", default=None, help="KBase environment")
@@ -86,7 +85,7 @@ def parse_args(args: List[str]) -> dict:
     return args
 
 
-def main(args: List[str]):
+def main(args: list[str]) -> int:
     args = parse_args(args)
     endpt = "kbase.us/services/"
     env = args.env + "."

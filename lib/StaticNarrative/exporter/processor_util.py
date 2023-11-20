@@ -4,9 +4,10 @@ Some catch-all functions for helping process Narrative cells.
 import html
 import json
 import os
+from typing import Any
 from urllib.parse import quote
 
-from installed_clients.authclient import KBaseAuth as _KBaseAuth
+from installed_clients.authclient import KBaseAuth
 from installed_clients.WorkspaceClient import Workspace
 
 from StaticNarrative import STATIC_NARRATIVE_BASE_DIR
@@ -14,15 +15,17 @@ from StaticNarrative import STATIC_NARRATIVE_BASE_DIR
 ICON_DATA = None
 
 
-def _load_icon_data():
+def _load_icon_data() -> None:
     # this should access the local folder
     icon_json = os.path.join(STATIC_NARRATIVE_BASE_DIR, "data", "icons.json")
-    with open(icon_json, "r") as icon_file:
+    with open(icon_json) as icon_file:
         global ICON_DATA
         ICON_DATA = json.load(icon_file)
 
 
-def build_report_view_data(host: str, ws_client: Workspace, result: list) -> dict:
+def build_report_view_data(
+    host: str, ws_client: Workspace, result: dict[str, Any] | list[dict[str, Any]]
+) -> dict[str, str | list | dict]:
     """
     Returns a structure like this:
     {
@@ -91,17 +94,21 @@ def build_report_view_data(host: str, ws_client: Workspace, result: list) -> dic
         report_objs_created = report["objects_created"]
         # make list to look up obj types with get_object_info3
         info_lookup = [{"ref": o["ref"]} for o in report_objs_created]
-        infos = ws_client.get_object_info3({"objects": info_lookup})["infos"]
+        infos = ws_client.get_object_info3({"objects": info_lookup, "ignoreErrors": 1})[
+            "infos"
+        ]
+
         for idx, info in enumerate(infos):
-            created_objs.append(
-                {
-                    "upa": report_objs_created[idx]["ref"],
-                    "description": report_objs_created[idx].get("description", ""),
-                    "name": info[1],
-                    "type": info[2].split("-")[0].split(".")[-1],
-                    "link": host + "/#dataview/" + report_objs_created[idx]["ref"],
-                }
-            )
+            if info:
+                created_objs.append(
+                    {
+                        "upa": report_objs_created[idx]["ref"],
+                        "description": report_objs_created[idx].get("description", ""),
+                        "name": info[1],
+                        "type": info[2].split("-")[0].split(".")[-1],
+                        "link": host + "/#dataview/" + report_objs_created[idx]["ref"],
+                    }
+                )
     html_height = report.get("html_window_height")
     if html_height is None:
         html_height = 500
@@ -143,7 +150,7 @@ def build_report_view_data(host: str, ws_client: Workspace, result: list) -> dic
     }
 
 
-def get_icon(config, metadata):
+def get_icon(config: dict[str, Any], metadata: dict[str, Any]) -> dict[str, str]:
     """
     Should return a dict with keys "type" and "icon"
     * if "type" = image, then "icon" second should be the src.
@@ -186,7 +193,7 @@ def get_icon(config, metadata):
     return icon
 
 
-def get_data_icon(obj_type):
+def get_data_icon(obj_type: str) -> dict[str, str]:
     if ICON_DATA is None:
         _load_icon_data()
 
@@ -202,14 +209,14 @@ def get_data_icon(obj_type):
     return icon_info
 
 
-def get_authors(config, wsid):
-    ws = Workspace(
+def get_authors(config: dict[str, Any], wsid: str) -> list[dict[str, str]]:
+    ws_client = Workspace(
         url=config.narrative_session.ws_url, token=config.narrative_session.token
     )
-    ws_info = ws.get_workspace_info({"id": wsid})
+    ws_info = ws_client.get_workspace_info({"id": wsid})
     author_id_list = [ws_info[2]]
 
-    other_authors = ws.get_permissions({"id": wsid})
+    other_authors = ws_client.get_permissions({"id": wsid})
 
     for author in sorted(other_authors.keys()):
         if (
@@ -219,15 +226,20 @@ def get_authors(config, wsid):
         ):
             author_id_list.append(author)
 
-    auth = _KBaseAuth(config.narrative_session.auth_url)
-    disp_names = auth.get_display_names(config.narrative_session.token, author_id_list)
-    author_list = []
-    for author in author_id_list:
-        author_list.append(
-            {
-                "id": author,
-                "name": html.escape(disp_names.get(author, author)),
-                "path": config.narrative_session.profile_page_url + author,
-            }
+    auth = KBaseAuth(config.narrative_session.auth_url)
+    disp_names = {}
+    try:
+        disp_names = auth.get_display_names(
+            config.narrative_session.token, author_id_list
         )
-    return author_list
+    except Exception as e:
+        print(str(e))
+
+    return [
+        {
+            "id": author,
+            "name": html.escape(disp_names.get(author, author)),
+            "path": config.narrative_session.profile_page_url + author,
+        }
+        for author in author_id_list
+    ]

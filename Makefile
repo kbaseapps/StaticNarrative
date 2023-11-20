@@ -17,7 +17,7 @@ COMPILE_REPORT = ./compile_report.json
 
 default: compile
 
-all: compile build set-executable
+all: compile set-executable
 
 compile:
 	rm $(COMPILE_REPORT) || true

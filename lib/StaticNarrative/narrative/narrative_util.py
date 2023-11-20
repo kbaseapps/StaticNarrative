@@ -4,20 +4,20 @@ Some utility functions for handling Narratives and permissions.
 import logging
 import re
 import time
-from typing import Dict
+from typing import Any
 
 from dateutil import parser as date_parser
 from installed_clients.baseclient import ServerError
 from installed_clients.WorkspaceClient import Workspace
-from StaticNarrative.narrative_ref import NarrativeRef
 
-from ..exceptions import WorkspaceError
+from StaticNarrative.exceptions import WorkspaceError
+from StaticNarrative.narrative_ref import NarrativeRef
 
 NARRATIVE_TYPE = "KBaseNarrative.Narrative"
 TYPE_REGEX = rf"^{NARRATIVE_TYPE}-\d+\.\d+$"
 
 
-def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> Dict:
+def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> dict[str, Any]:
     """
     Fetches a Narrative and its object info from the Workspace
     If content is False, this only returns the Narrative's info
@@ -42,7 +42,7 @@ def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> Dict:
         _validate_narr_type(nar["info"][2], ref)
         return nar["data"]
     except ServerError as err:
-        raise WorkspaceError(err, ref.wsid)
+        raise WorkspaceError(err, ref.wsid) from err
 
 
 def _validate_narr_type(t: str, ref: NarrativeRef) -> None:
@@ -60,7 +60,7 @@ def _validate_narr_type(t: str, ref: NarrativeRef) -> None:
     if not re.match(TYPE_REGEX, t):
         err = "Expected a Narrative object"
         if ref is not None:
-            err += f" with reference {str(ref)}"
+            err += f" with reference {ref!s}"
         err += f", got a {t}"
         raise ValueError(err)
 
@@ -88,10 +88,10 @@ def save_narrative_url(ws_url: str, token: str, ref: NarrativeRef, url: str) -> 
     try:
         ws_client.alter_workspace_metadata({"wsi": {"id": ref.wsid}, "new": new_meta})
     except ServerError as err:
-        raise WorkspaceError(err, ref.wsid)
+        raise WorkspaceError(err, ref.wsid) from err
 
 
-def get_static_info(ws_url: str, token: str, ws_id: int) -> Dict:
+def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]:
     """
     Looks up the static narrative info for the given Workspace id.
     That info is stashed in the Workspace metadata, so that gets fetched, munged into a structure,
@@ -121,7 +121,7 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> Dict:
     try:
         ws_info = ws_client.get_workspace_info({"id": ws_id})
     except ServerError as err:
-        raise WorkspaceError(err, ws_id)
+        raise WorkspaceError(err, ws_id) from err
 
     info = {}
     ws_meta = ws_info[8]
@@ -142,7 +142,7 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> Dict:
                 }
             )
         except ServerError as err:
-            raise WorkspaceError(err, ws_id)
+            raise WorkspaceError(err, ws_id) from err
         ts = date_parser.isoparse(obj_info["infos"][0][3]).timestamp()
         info["narr_saved"] = int(ts * 1000)
     return info
@@ -169,7 +169,7 @@ def verify_admin_privilege(
     try:
         perms = ws_client.get_permissions({"id": ws_id})
     except ServerError as err:
-        raise WorkspaceError(err, ws_id)
+        raise WorkspaceError(err, ws_id) from err
     if user_id not in perms or perms[user_id] != "a":
         err = f"User {user_id} does not have admin rights on workspace {ws_id}"
         logging.getLogger("StaticNarrative").error(err)
@@ -191,7 +191,7 @@ def verify_public_narrative(workspace_url: str, ws_id: int) -> None:
     try:
         perms = ws_client.get_permissions({"id": ws_id})
     except ServerError as err:
-        raise WorkspaceError(err, ws_id)
+        raise WorkspaceError(err, ws_id) from err
     if perms.get("*", "n") not in ["r", "w", "a"]:
         err = f"Workspace {ws_id} must be publicly readable to make a Static Narrative"
         logging.getLogger("StaticNarrative").error(err)

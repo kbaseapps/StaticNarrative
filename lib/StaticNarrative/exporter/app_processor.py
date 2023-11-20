@@ -1,5 +1,6 @@
 import math
 import re
+from typing import Any
 
 from installed_clients.WorkspaceClient import Workspace
 
@@ -7,13 +8,17 @@ from .processor_util import build_report_view_data
 
 
 class AppProcessor:
-    def __init__(self, host: str, ws_url: str, nms_url: str, token: str):
+    def __init__(
+        self: "AppProcessor", host: str, ws_url: str, nms_url: str, token: str
+    ) -> None:
         self.host = host
         self.ws_url = ws_url
         self.nms_url = nms_url
         self.token = token
 
-    def process(self, kb_info: dict, kb_meta: dict) -> dict:
+    def process(
+        self: "AppProcessor", kb_info: dict[str, Any], kb_meta: dict[str, Any]
+    ) -> dict[str, Any]:
         """
         Extracts the useful bits of the complicated metadata structure so that the Jinja
         templates don't look like spaghetti with stuff like
@@ -51,7 +56,9 @@ class AppProcessor:
             kb_info["job"]["state"] = self._get_job_state(kb_meta["appCell"])
         return kb_info
 
-    def _process_app_params(self, spec_params: dict, param_values: dict) -> dict:
+    def _process_app_params(
+        self: "AppProcessor", spec_params: dict[str, Any], param_values: dict[str, Any]
+    ) -> dict[str, list]:
         """
         :param spec_params: the params dictionary from the stored app spec
         :param param_values: the parameter values dictionary, keyed on param ids
@@ -72,7 +79,11 @@ class AppProcessor:
             info[p_type].append(p)
         return info
 
-    def _make_upa_dict(self, value, param_spec: dict):
+    def _make_upa_dict(
+        self: "AppProcessor",
+        value: None | int | str | list[str],
+        param_spec: dict[str, Any],
+    ) -> dict[str, Any]:
         upas = []
         if param_spec["field_type"] == "text":
             valid_ws_types = param_spec.get("text_options", {}).get(
@@ -83,19 +94,23 @@ class AppProcessor:
                     for v in value:
                         if self._is_upa(v):
                             upas.append(v)
-                else:
-                    if self._is_upa(value):
-                        upas.append(value)
+                elif self._is_upa(value):
+                    upas.append(value)
         upa_map = {}
         if len(upas):
-            ws = Workspace(url=self.ws_url, token=self.token)
-            obj_infos = ws.get_object_info3(
+            ws_client = Workspace(url=self.ws_url, token=self.token)
+            obj_infos = ws_client.get_object_info3(
                 {"objects": [{"ref": upa} for upa in upas]}
             )["infos"]
             upa_map = {u: obj_infos[i] for i, u in enumerate(upas)}
         return upa_map
 
-    def _translate_param_value(self, value, param_spec: dict, upas: dict):
+    def _translate_param_value(
+        self: "AppProcessor",
+        value: None | int | str | list,
+        param_spec: dict[str, Any],
+        upas: dict[str, Any],
+    ):
         """
         Overall flow.
         1. if value is a list, iterate everything below over it.
@@ -122,7 +137,7 @@ class AppProcessor:
                     value = upas[value][1] if value in upas else value
         return value
 
-    def _is_upa(self, s: str) -> bool:
+    def _is_upa(self: "AppProcessor", s: str) -> bool:
         """
         An UPA matches this structure: ##/##/##
         E.g. 123/456/789
@@ -130,7 +145,7 @@ class AppProcessor:
         upa_regex = r"^\d+\/\d+\/\d+$"
         return re.match(upa_regex, s) is not None
 
-    def _get_job_state(self, app_meta: dict) -> str:
+    def _get_job_state(self: "AppProcessor", app_meta: dict[str, Any]) -> str:
         """
         Returns the job state as a readable string.
         One of:
@@ -185,7 +200,7 @@ class AppProcessor:
 
         return return_state + "."
 
-    def _ms_to_readable(self, ms: int) -> str:
+    def _ms_to_readable(self: "AppProcessor", ms: int) -> str | None:
         """
         Converts number of milliseconds to a human readable string with format Wd Xh Ym Zs
         e.g. 1234567ms => "
@@ -195,17 +210,17 @@ class AppProcessor:
             ms = int(ms)
         except Exception:
             return None
-        DAYS = 86400000
-        HOURS = 3600000
-        MINUTES = 60000
-        SECONDS = 1000
-        d = math.floor(ms / DAYS)
-        r = ms % DAYS
-        h = math.floor(r / HOURS)
-        r = r % HOURS
-        m = math.floor(r / MINUTES)
-        r = r % MINUTES
-        s = round(r / SECONDS)
+        days = 86400000
+        hours = 3600000
+        minutes = 60000
+        seconds = 1000
+        d = math.floor(ms / days)
+        r = ms % days
+        h = math.floor(r / hours)
+        r = r % hours
+        m = math.floor(r / minutes)
+        r = r % minutes
+        s = round(r / seconds)
 
         t = []
         used_h = False

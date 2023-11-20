@@ -259,7 +259,11 @@ class log(object):
 
                     matches = 1
                     for constraint in constraints:
-                        if constraint not in self._log_constraints or self._log_constraints[constraint] != constraints[constraint]:
+                        if (
+                            constraint not in self._log_constraints
+                            or self._log_constraints[constraint]
+                            != constraints[constraint]
+                        ):
                             matches = 0
 
                     if matches == 1:

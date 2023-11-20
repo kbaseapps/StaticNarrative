@@ -1,11 +1,11 @@
 import os
 import shutil
 
-from ..narrative_ref import NarrativeRef
+from StaticNarrative.narrative_ref import NarrativeRef
 
 
 def upload_static_narrative(
-    ref: NarrativeRef, narr_path: str, upload_endpt: str, url_prefix: str = None
+    ref: NarrativeRef, narr_path: str, upload_endpt: str, url_prefix: str | None = None
 ) -> str:
     """
     Uploads a finished static Narrative to the display endpoint.
