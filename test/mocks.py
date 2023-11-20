@@ -34,11 +34,6 @@ def _mock_adapter(
         GET api/V2/users
     """
 
-    for prop in [ref_to_file, ref_to_info, user_map, ws_perms]:
-        if prop is None:
-            prop = {}
-    if ws_info is None:
-        ws_info = []
     workspace_meta = {}
 
     def mock_adapter(request):
@@ -168,11 +163,11 @@ def set_up_ok_mocks(
 ):
     rqm.add_matcher(
         _mock_adapter(
-            ref_to_file=ref_to_file,
-            ref_to_info=ref_to_info,
-            ws_info=ws_info,
-            ws_perms=ws_perms,
-            user_map=user_map,
+            ref_to_file=ref_to_file or {},
+            ref_to_info=ref_to_info or {},
+            ws_info=ws_info or [],
+            ws_perms=ws_perms or {},
+            user_map=user_map or {},
             ws_obj_info_file=ws_obj_info_file,
         )
     )
