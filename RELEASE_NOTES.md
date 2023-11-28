@@ -1,9 +1,13 @@
 # StaticNarrative release notes
 =========================================
 
-0.0.15
+0.0.16
 ------
 * Added DataCite view tracker to static narrative template.
+
+0.0.15
+------
+* UIP-29 Update the Google analytics tracking tag
 
 0.0.14
 ------
