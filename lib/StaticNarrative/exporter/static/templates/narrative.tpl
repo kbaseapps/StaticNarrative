@@ -1,7 +1,5 @@
 {%- extends 'narrative_basic.tpl' -%}
 {% from 'mathjax.tpl' import mathjax %}
-
-
 {%- block header -%}
 <!DOCTYPE html>
 <html>
@@ -15,6 +13,11 @@
   gtag('config', 'UA-137652528-1');
   gtag('config', 'AW-753507180'); //tracking for Google Ads
 </script><!-- End of Global Site Tag (gtag.js) - Google Analytics -->
+<!-- DataCite view tracker code -->
+<script defer
+        data-repoid="da-wsbych"
+        data-metric="view"
+        src="https://cdn.jsdelivr.net/npm/@datacite/datacite-tracker"></script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="{{ resources.kbase.meta_keywords }}" />
