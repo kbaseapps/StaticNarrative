@@ -1,6 +1,10 @@
 # StaticNarrative release notes
 =========================================
 
+0.0.15
+------
+* Added DataCite view tracker to static narrative template.
+
 0.0.14
 ------
 * Fixed a bug that caused a None comparison error when processing a specific configuration of a
