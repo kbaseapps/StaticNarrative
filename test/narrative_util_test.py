@@ -69,7 +69,8 @@ class NarrativeUtilTestCase(unittest.TestCase):
         good_types = ["KBaseNarrative.Narrative-1.0", "KBaseNarrative.Narrative-4.0"]
         bad_types = [
             "SomeObject.Name",
-            "kbasenarrative.Narrative-1.0" "KBaseNarrative.Narrative-1.0.0",
+            "kbasenarrative.Narrative-1.0",
+            "KBaseNarrative.Narrative-1.0.0",
         ]
         invalid_types = [5, str, {"lol": "no"}, ["wat"], None]
         ref = NarrativeRef.parse("1/2/3")
@@ -204,10 +205,10 @@ class NarrativeUtilTestCase(unittest.TestCase):
         ws_ids_ok = {123: {self.user_id: "a"}, "1123": {self.user_id: "a"}}
         set_up_ok_mocks(rqm, ws_perms=ws_ids_ok)
         for ws_id in ws_ids_ok:
-            self.assertIsNone(
-                verify_admin_privilege(
-                    self.cfg["workspace-url"], self.user_id, self.token, ws_id
-                )
+            # verify_admin_privilege throws an error if the user doesn't have privs,
+            # so we just check that each function completes successfully.
+            verify_admin_privilege(
+                self.cfg["workspace-url"], self.user_id, self.token, ws_id
             )
 
     @requests_mock.Mocker()
@@ -249,8 +250,11 @@ class NarrativeUtilTestCase(unittest.TestCase):
             "789": {self.user_id: "r", "*": "a"},
         }
         set_up_ok_mocks(rqm, ws_perms=ws_perms)
+
+        # verify_public_narrative throws an error so just ensure that the
+        # functions execute without issue.
         for ws_id in ws_perms:
-            self.assertIsNone(verify_public_narrative(self.cfg["workspace-url"], ws_id))
+            verify_public_narrative(self.cfg["workspace-url"], ws_id)
 
     @requests_mock.Mocker()
     def test_verify_public_narrative_fail(self, rqm):
