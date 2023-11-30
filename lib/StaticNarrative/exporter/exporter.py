@@ -5,37 +5,45 @@ Once initialized and given a NarrativeRef, it will export that Narrative as HTML
 to some output dir. This doesn't do the final uploading to the static site, just
 the exporting.
 """
-__author__ = 'Bill Riehl <wjriehl@lbl.gov>'
+__author__ = "Bill Riehl <wjriehl@lbl.gov>"
 
-from traitlets.config import Config
-from nbconvert import (
-    HTMLExporter
-)
-from installed_clients.WorkspaceClient import Workspace
-from installed_clients.baseclient import ServerError
-from ..exceptions import WorkspaceError
-import StaticNarrative.exporter.preprocessor as preprocessor
-from ..narrative.narrative_util import read_narrative
-from typing import Dict
-from urllib.parse import urlparse
-import nbformat
 import json
 import os
+from typing import Any
+from urllib.parse import urlparse
+
+import nbformat
+from installed_clients.baseclient import ServerError
+from installed_clients.WorkspaceClient import Workspace
+from nbconvert import HTMLExporter
+from traitlets.config import Config
+
+from StaticNarrative import STATIC_NARRATIVE_BASE_DIR
+from StaticNarrative.exceptions import WorkspaceError
+from StaticNarrative.exporter import preprocessor
+from StaticNarrative.narrative.narrative_util import read_narrative
 from StaticNarrative.narrative_ref import NarrativeRef
+
 from .data_exporter import export_narrative_data
 
-
-NARRATIVE_TEMPLATE_FILE = "narrative"
+NARRATIVE_TEMPLATE_FILE = "narrative.tpl"
 
 
 class NarrativeExporter:
-    def __init__(self, exporter_cfg: Dict[str, str], user_id: str, token: str):
+    def __init__(
+        self: "NarrativeExporter",
+        exporter_cfg: dict[str, str],  # config object
+        user_id: str,
+        token: str,
+    ) -> None:
         self.exporter_cfg = exporter_cfg
         self.ws_client = Workspace(url=exporter_cfg["workspace-url"], token=token)
         self.token = token
         self.user_id = user_id
 
-    def export_narrative(self, narrative_ref: NarrativeRef, output_dir: str) -> str:
+    def export_narrative(
+        self: "NarrativeExporter", narrative_ref: NarrativeRef, output_dir: str
+    ) -> str:
         """
         Exports the Narrative to an HTML file and returns the path to that file.
         :param narrative_ref: NarrativeRef - the workspace reference to the narrative object
@@ -45,19 +53,18 @@ class NarrativeExporter:
         # 1. Get the Narrative object
         try:
             nar = read_narrative(narrative_ref, self.ws_client)
-            nar['metadata']['wsid'] = narrative_ref.wsid
+            nar["metadata"]["wsid"] = narrative_ref.wsid
         except ServerError as e:
-            raise WorkspaceError(e, narrative_ref.wsid, "Error while exporting Narrative")
+            raise WorkspaceError(
+                e, narrative_ref.wsid, "Error while exporting Narrative"
+            ) from e
 
         # 2. Convert to a notebook object
         kb_notebook = nbformat.reads(json.dumps(nar), as_version=4)
 
         # 3. Export the Narrative workspace data to a sidecar JSON file.
         exported_data = export_narrative_data(
-            narrative_ref.wsid,
-            output_dir,
-            self.exporter_cfg['srv-wiz-url'],
-            self.token
+            narrative_ref.wsid, output_dir, self.exporter_cfg["srv-wiz-url"], self.token
         )
 
         # 4. Export the Narrative to an HTML file
@@ -71,11 +78,13 @@ class NarrativeExporter:
 
         output_filename = "narrative.html"
         output_path = os.path.join(output_dir, output_filename)
-        with open(output_path, 'w') as output_html:
+        with open(output_path, "w") as output_html:
             output_html.write(body)
         return output_path
 
-    def _build_exporter(self, exported_data: dict, ws_id: int) -> HTMLExporter:
+    def _build_exporter(
+        self: "NarrativeExporter", exported_data: dict[str, Any], ws_id: int
+    ) -> HTMLExporter:
         """
         This builds the HTMLExporter used to export the Notebook (i.e. Narrative) to
         HTML. Data is passed into the exporter by configuration with various specific
@@ -104,7 +113,19 @@ class NarrativeExporter:
             netloc = "narrative." + netloc
         host = (endpt_parsed.scheme or "https") + "://" + netloc
 
-        c.TemplateExporter.template_path = ['.', os.path.join(base_path, "static", "templates")]
+        tpl_base_dir = os.path.join(
+            STATIC_NARRATIVE_BASE_DIR,
+            "lib",
+            "StaticNarrative",
+            "exporter",
+            "static",
+            "templates",
+        )
+        c.TemplateExporter.template_paths = [
+            tpl_base_dir,
+            os.path.join(tpl_base_dir, "html"),
+            os.path.join(tpl_base_dir, "skeleton"),
+        ]
         c.CSSHTMLHeaderPreprocessor.enabled = True
         c.NarrativePreprocessor.enabled = True
         c.ClearMetadataPreprocessor.enabled = False
@@ -114,7 +135,9 @@ class NarrativeExporter:
         c.narrative_session.ws_url = self.exporter_cfg["workspace-url"]
         c.narrative_session.nms_url = self.exporter_cfg["nms-url"]
         c.narrative_session.nms_image_url = self.exporter_cfg["nms-image-url"]
-        c.narrative_session.profile_page_url = host + self.exporter_cfg["profile-page-path"]
+        c.narrative_session.profile_page_url = (
+            host + self.exporter_cfg["profile-page-path"]
+        )
         c.narrative_session.auth_url = self.exporter_cfg["auth-url"]
         c.narrative_session.assets_base_url = self.exporter_cfg["assets-base-url"]
         c.narrative_session.service_wizard_url = self.exporter_cfg["srv-wiz-url"]

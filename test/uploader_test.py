@@ -1,8 +1,9 @@
 import os
 import unittest
-from StaticNarrative.uploader.uploader import upload_static_narrative
+from test.test_config import get_test_config
+
 from StaticNarrative.narrative_ref import NarrativeRef
-from .test_config import get_test_config
+from StaticNarrative.uploader.uploader import upload_static_narrative
 
 
 class UploaderTestCase(unittest.TestCase):
@@ -15,7 +16,9 @@ class UploaderTestCase(unittest.TestCase):
         path = "not_a_path"
         with self.assertRaises(IOError) as e:
             upload_static_narrative(self.ref, path, None)
-        self.assertIn(f"Static Narrative doesn't seem to exist at path {path}", str(e.exception))
+        self.assertIn(
+            f"Static Narrative doesn't seem to exist at path {path}", str(e.exception)
+        )
 
     def test_upload_need_to_make_path(self):
         narr_file = os.path.join(self.cfg["scratch"], "test_file.html")
@@ -26,9 +29,13 @@ class UploaderTestCase(unittest.TestCase):
         self.assertEqual(f"/{self.ref.wsid}/{self.ref.ver}/", ret)
         self.assertTrue(
             os.path.exists(
-                os.path.join(upload_endpt, str(self.ref.wsid), str(self.ref.ver))))
+                os.path.join(upload_endpt, str(self.ref.wsid), str(self.ref.ver))
+            )
+        )
         self.assertTrue(
             os.path.isfile(
-                os.path.join(upload_endpt, str(self.ref.wsid), str(self.ref.ver), "index.html")
+                os.path.join(
+                    upload_endpt, str(self.ref.wsid), str(self.ref.ver), "index.html"
+                )
             )
         )

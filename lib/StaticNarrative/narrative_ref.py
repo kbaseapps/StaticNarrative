@@ -8,7 +8,18 @@ It also requires that a version is part of the ref.
 
 
 class NarrativeRef:
-    def __init__(self, ref: str):
+    def _less_than_zero(self: "NarrativeRef", number: str | int, name: str) -> int:
+        try:
+            integer = int(number)
+            if integer <= 0:
+                raise ValueError
+        except (ValueError, TypeError) as e:
+            err = f"The Narrative {name} must be an integer > 0, not {number}"
+            raise ValueError(err) from e
+
+        return integer
+
+    def __init__(self: "NarrativeRef", ref: str) -> None:
         """
         :param ref: dict with keys wsid, objid, ver (either present or None)
         wsid is required, this will raise a ValueError if it is not present, or not a number
@@ -19,34 +30,13 @@ class NarrativeRef:
 
         ver is not required
         """
-        (self.wsid, self.objid, self.ver) = (ref.get("wsid"), ref.get("objid"), ref.get("ver"))
-        try:
-            self.wsid = int(self.wsid)
-            if self.wsid <= 0:
-                raise ValueError()
-        except (ValueError, TypeError):
-            err = f"The Narrative Workspace id must be an integer > 0, not {self.wsid}"
-            raise ValueError(err)
-
-        try:
-            self.objid = int(self.objid)
-            if self.objid <= 0:
-                raise ValueError()
-        except (ValueError, TypeError):
-            raise ValueError(
-                f"The Narrative object id must be an integer > 0, not {self.objid}"
-            )
-
-        try:
-            self.ver = int(self.ver)
-            if self.ver <= 0:
-                raise ValueError()
-        except (ValueError, TypeError):
-            err = f"The Narrative version must be an integer > 0, not {self.ver}"
-            raise ValueError(err)
+        part_name = {"wsid": "workspace ID", "objid": "object ID", "ver": "version"}
+        for part in part_name:
+            int_version = self._less_than_zero(ref.get(part), part_name[part])
+            setattr(self, part, int_version)
 
     @staticmethod
-    def parse(ref: str):
+    def parse(ref: str) -> "NarrativeRef":
         """
         Creates a NarrativeRef from a reference string. Should be numeric.
         This'll fail here if there's < 1 or > 2 slashes.
@@ -55,19 +45,19 @@ class NarrativeRef:
         if ref.count("/") != 2:
             raise ValueError("A Narrative ref must be of the format wsid/objid/ver")
         split_ref = ref.split("/")
-        return NarrativeRef({
-            "wsid": split_ref[0],
-            "objid": split_ref[1],
-            "ver": split_ref[2]
-        })
+        return NarrativeRef(
+            {"wsid": split_ref[0], "objid": split_ref[1], "ver": split_ref[2]}
+        )
 
-    def __str__(self) -> str:
-        ref_str = "{}/{}".format(self.wsid, self.objid)
+    def __str__(self: "NarrativeRef") -> str:
+        ref_str = f"{self.wsid}/{self.objid}"
         if self.ver is not None:
-            ref_str = ref_str + "/{}".format(self.ver)
+            ref_str = ref_str + f"/{self.ver}"
         return ref_str
 
-    def __eq__(self, other) -> bool:
-        return self.wsid == other.wsid and \
-               self.objid == other.objid and \
-               self.ver == other.ver
+    def __eq__(self: "NarrativeRef", other: "NarrativeRef") -> bool:
+        return (
+            self.wsid == other.wsid
+            and self.objid == other.objid
+            and self.ver == other.ver
+        )

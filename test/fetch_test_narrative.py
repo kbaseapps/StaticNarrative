@@ -10,23 +10,25 @@ How to run:
     > mkdir <ws_id>
     > python test/fetch_test_narrative.py -e ci -t <token> -w <ws_id> -o ./<ws_id>
 """
-from typing import List
 import argparse
 import json
-from installed_clients.WorkspaceClient import Workspace
-from installed_clients.NarrativeServiceClient import NarrativeService
 import os
 import sys
 
+from installed_clients.NarrativeServiceClient import NarrativeService
+from installed_clients.WorkspaceClient import Workspace
+
 
 def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int:
-    ws = Workspace(url=endpt + "ws", token=token)
-    ws_info = ws.get_workspace_info({"id": ws_id})
+    ws_client = Workspace(url=endpt + "ws", token=token)
+    ws_info = ws_client.get_workspace_info({"id": ws_id})
     ws_meta = ws_info[8]
 
     # Narrative object
     narr_id = ws_meta["narrative"]
-    narr_obj = ws.get_objects2({"objects": [{"ref": f"{ws_id}/{narr_id}"}]})["data"][0]
+    narr_obj = ws_client.get_objects2({"objects": [{"ref": f"{ws_id}/{narr_id}"}]})[
+        "data"
+    ][0]
     narr_ver = narr_obj["info"][4]
     narr_outpath = os.path.join(outdir, f"narrative-{ws_id}.{narr_id}.{narr_ver}.json")
     with open(narr_outpath, "w") as fout:
@@ -38,13 +40,15 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
             meta = cell["metadata"]["kbase"]
             if "appCell" in meta:
                 job_state = meta["appCell"].get("exec", {}).get("jobState")
-                result = list()
+                result = []
                 if "result" in job_state:
                     result = job_state["result"]
                 elif "job_output" in job_state and "result" in job_state["job_output"]:
                     result = job_state["job_output"]["result"]
                 if len(result) > 0 and "report_ref" in result[0]:
-                    report_data = ws.get_objects2({"objects": [{"ref": result[0]["report_ref"]}]})["data"][0]
+                    report_data = ws_client.get_objects2(
+                        {"objects": [{"ref": result[0]["report_ref"]}]}
+                    )["data"][0]
                     report_info = report_data["info"]
                     ref_dots = f"{report_info[6]}.{report_info[0]}.{report_info[4]}"
                     report_path = os.path.join(outdir, f"report-{ref_dots}.json")
@@ -53,15 +57,7 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
 
     # List objects results
     service = NarrativeService(url=endpt + "service_wizard", token=token)
-    # service = ServiceClient(url=endpt + "service_wizard", use_url_lookup=True, token=token)
-    ws_data = service.list_objects_with_sets({
-        "ws_id": ws_id,
-        "includeMetadata": 1
-    })
-    # ws_data = service.sync_call(
-    #     "NarrativeService.list_objects_with_sets",
-    #     [{"ws_id": ws_id, "includeMetadata": 1}]
-    # )[0]
+    ws_data = service.list_objects_with_sets({"ws_id": ws_id, "includeMetadata": 1})
     data_outpath = os.path.join(outdir, f"objects-{ws_id}.json")
     with open(data_outpath, "w") as fout:
         json.dump(ws_data, fout, indent=4)
@@ -69,12 +65,16 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
     return 0
 
 
-def parse_args(args: List[str]) -> dict:
+def parse_args(args: list[str]) -> dict[str, str]:
     p = argparse.ArgumentParser(description=__doc__.strip())
     p.add_argument("-t", "--token", dest="token", default=None, help="User auth token")
     p.add_argument("-e", "--env", dest="env", default=None, help="KBase environment")
-    p.add_argument("-w", "--ws", dest="ws_id", default=None, help="Workspace id with Narrative")
-    p.add_argument("-o", "--outdir", dest="outdir", default=".", help="File output directory")
+    p.add_argument(
+        "-w", "--ws", dest="ws_id", default=None, help="Workspace id with Narrative"
+    )
+    p.add_argument(
+        "-o", "--outdir", dest="outdir", default=".", help="File output directory"
+    )
     args = p.parse_args(args)
     if args.env is None:
         raise ValueError("env - the KBase environment - is required!")
@@ -85,7 +85,7 @@ def parse_args(args: List[str]) -> dict:
     return args
 
 
-def main(args: List[str]):
+def main(args: list[str]) -> int:
     args = parse_args(args)
     endpt = "kbase.us/services/"
     env = args.env + "."

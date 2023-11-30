@@ -4,7 +4,6 @@ on:
   release:
     branches:
       - main
-      - master
     types: [ published ]
 jobs:
   check-source-branch:

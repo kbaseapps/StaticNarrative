@@ -1,10 +1,11 @@
-import unittest
-from StaticNarrative.exporter.exporter import NarrativeExporter
-import requests_mock
 import os
+import unittest
 from test.mocks import set_up_ok_mocks
-from StaticNarrative.narrative_ref import NarrativeRef
 from test.test_config import get_test_config
+
+import requests_mock
+from StaticNarrative.exporter.exporter import NarrativeExporter
+from StaticNarrative.narrative_ref import NarrativeRef
 
 
 class ExporterTest(unittest.TestCase):
@@ -21,27 +22,25 @@ class ExporterTest(unittest.TestCase):
             "43666/1/21": "data/43666/narrative-43666.1.21.json",
             "43666/1/18": "data/43666/narrative-43666.1.18.json",
             "43666/3/1": "data/43666/report-43666.3.1.json",
-            "43666/7/1": "data/43666/report-43666.7.1.json"
+            "43666/7/1": "data/43666/report-43666.7.1.json",
         }
-        ref_to_info = {
-
-        }
+        ref_to_info = {}
         ws_info = [
             ws_id,
-            'some_narrative',
+            "some_narrative",
             self.user_id,
-            '2019-08-26T17:33:56+0000',
+            "2019-08-26T17:33:56+0000",
             7,
-            'a',
-            'r',
-            'unlocked',
+            "a",
+            "r",
+            "unlocked",
             {
-                'cell_count': '1',
-                'narrative_nice_name': 'Test Exporting',
-                'searchtags': 'narrative',
-                'is_temporary': 'false',
-                'narrative': '1'
-            }
+                "cell_count": "1",
+                "narrative_nice_name": "Test Exporting",
+                "searchtags": "narrative",
+                "is_temporary": "false",
+                "narrative": "1",
+            },
         ]
         user_map = {self.user_id: "Some User"}
 
@@ -51,11 +50,12 @@ class ExporterTest(unittest.TestCase):
             ref_to_info=ref_to_info,
             ws_info=ws_info,
             user_map=user_map,
-            ws_obj_info_file="data/43666/objects-43666.json"
+            ws_obj_info_file="data/43666/objects-43666.json",
         )
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
         static_path = exporter.export_narrative(
-            NarrativeRef({"wsid": ws_id, "objid": 1, "ver": 21}),
-            self.cfg["scratch"]
+            NarrativeRef({"wsid": ws_id, "objid": 1, "ver": 21}), self.cfg["scratch"]
         )
-        self.assertEqual(static_path, os.path.join(self.cfg["scratch"], "narrative.html"))
+        self.assertEqual(
+            static_path, os.path.join(self.cfg["scratch"], "narrative.html")
+        )

@@ -1,13 +1,17 @@
-from typing import List, Dict
-from installed_clients.NarrativeServiceClient import NarrativeService
-from .processor_util import get_data_icon
-import os
 import json
+import os
+from typing import Any
+
+from installed_clients.NarrativeServiceClient import NarrativeService
+
+from .processor_util import get_data_icon
 
 IGNORED_TYPES = ["KBaseNarrative.Narrative"]
 
 
-def export_narrative_data(wsid: int, output_dir: str, service_wizard_url: str, token: str) -> Dict:
+def export_narrative_data(
+    wsid: int, output_dir: str, service_wizard_url: str, token: str
+) -> dict[str, Any]:
     """
     Exports data from a Narrative into an attached JSON file.
     Returns the output path to the JSON file as well as the data that was dumped into it.
@@ -31,7 +35,7 @@ def export_narrative_data(wsid: int, output_dir: str, service_wizard_url: str, t
             name (str),
             type (str),
             save date (str, timestamp),
-            metadata: (Dict[str, str])
+            metadata: (dict[str, str])
         ]
     }
 
@@ -39,10 +43,9 @@ def export_narrative_data(wsid: int, output_dir: str, service_wizard_url: str, t
     """
     # just call out to NarrativeService.list_objects_with_sets.
     ns_client = NarrativeService(url=service_wizard_url, token=token)
-    ws_data = ns_client.list_objects_with_sets({
-        "ws_id": wsid,
-        "includeMetadata": 1
-    })["data"]
+    ws_data = ns_client.list_objects_with_sets({"ws_id": wsid, "includeMetadata": 1})[
+        "data"
+    ]
     filtered_data = []
     type_info = {}
     for item in ws_data:
@@ -52,17 +55,14 @@ def export_narrative_data(wsid: int, output_dir: str, service_wizard_url: str, t
             continue
         type_name = obj_type.split(".")[-1]
         if type_name not in type_info:
-            type_info[type_name] = {
-                "count": 0,
-                "icon": get_data_icon(type_name)
-            }
+            type_info[type_name] = {"count": 0, "icon": get_data_icon(type_name)}
         filtered_data.append(_reshape_obj(obj))
         type_info[type_name]["count"] += 1
 
     # Maybe sort it later. For now, dump to file.
     output_data = {
         "data": sorted(filtered_data, key=lambda o: o[1].lower()),
-        "types": type_info
+        "types": type_info,
     }
 
     output_path = os.path.join(output_dir, "data.json")
@@ -72,7 +72,9 @@ def export_narrative_data(wsid: int, output_dir: str, service_wizard_url: str, t
     return output_data
 
 
-def _reshape_obj(obj_info: List) -> List:
+def _reshape_obj(
+    obj_info: list[str, str | dict[str, Any]]
+) -> list[str | dict[str, Any]]:
     """
     Just pulls out the relevant info from object info, and mashes it into
     something more useful for the Static Narrative data browser.
@@ -82,7 +84,7 @@ def _reshape_obj(obj_info: List) -> List:
         name,
         type,
         timestamp,
-        metadata (or empty Dict)
+        metadata (or empty dict)
     ]
     """
     return [
@@ -90,5 +92,5 @@ def _reshape_obj(obj_info: List) -> List:
         obj_info[1],
         obj_info[2],
         obj_info[3],
-        obj_info[10]
+        obj_info[10],
     ]

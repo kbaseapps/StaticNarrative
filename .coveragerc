@@ -1,0 +1,5 @@
+[html]
+directory = ./python-coverage
+
+[xml]
+output = ./python-coverage/coverage.xml

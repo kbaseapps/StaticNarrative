@@ -17,7 +17,10 @@ from jsonrpcbase import JSONRPCService, InvalidParamsError, KeywordError, \
 from jsonrpcbase import ServerError as JSONServerError
 
 from biokbase import log
-from StaticNarrative.authclient import KBaseAuth as _KBaseAuth
+try:
+    from StaticNarrative.authclient import KBaseAuth as _KBaseAuth
+except ImportError:
+    from installed_clients.authclient import KBaseAuth as _KBaseAuth
 
 try:
     from ConfigParser import ConfigParser
