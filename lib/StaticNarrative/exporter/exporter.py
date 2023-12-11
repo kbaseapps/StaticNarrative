@@ -64,7 +64,11 @@ class NarrativeExporter:
 
         # 3. Export the Narrative workspace data to a sidecar JSON file.
         exported_data = export_narrative_data(
-            narrative_ref.wsid, output_dir, self.exporter_cfg["srv-wiz-url"], self.token
+            self.ws_client,
+            narrative_ref.wsid,
+            output_dir,
+            self.exporter_cfg["srv-wiz-url"],
+            self.token,
         )
 
         # 4. Export the Narrative to an HTML file
