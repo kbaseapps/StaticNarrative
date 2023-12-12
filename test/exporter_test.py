@@ -52,10 +52,9 @@ class ExporterTest(unittest.TestCase):
             user_map=user_map,
             ws_obj_info_file="data/43666/objects-43666.json",
         )
+
         exporter = NarrativeExporter(self.cfg, self.user_id, self.token)
         static_path = exporter.export_narrative(
             NarrativeRef({"wsid": ws_id, "objid": 1, "ver": 21}), self.cfg["scratch"]
         )
-        self.assertEqual(
-            static_path, os.path.join(self.cfg["scratch"], "narrative.html")
-        )
+        assert static_path == os.path.join(self.cfg["scratch"], "narrative.html")

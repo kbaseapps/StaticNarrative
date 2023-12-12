@@ -89,7 +89,7 @@ def _mock_adapter(
                 result = [
                     {"url": "https://something.kbase.us/service/narrative_service_url"}
                 ]
-            elif method == "NarrativeService.list_objects_with_sets":
+            elif "list_objects_with_sets" in method:
                 if ws_obj_info_file is not None:
                     result = [_get_object_from_file(ws_obj_info_file)]
                 else:
