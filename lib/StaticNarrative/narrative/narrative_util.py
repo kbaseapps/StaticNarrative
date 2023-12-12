@@ -18,8 +18,8 @@ TYPE_REGEX = rf"^{NARRATIVE_TYPE}-\d+\.\d+$"
 
 
 def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> dict[str, Any]:
-    """
-    Fetches a Narrative and its object info from the Workspace
+    """Fetches a Narrative and its object info from the Workspace.
+
     If content is False, this only returns the Narrative's info
     and metadata, otherwise, it returns the whole workspace object.
 
@@ -46,9 +46,9 @@ def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> dict[str, Any]:
 
 
 def _validate_narr_type(t: str, ref: NarrativeRef) -> None:
-    """
-    Validates that the given string is a KBase Narrative type string. That is,
-    it's of the form "KBaseNarrative.Narrative-1.0", including the version.
+    """Validates the given string to ensure it is a KBase Narrative type string.
+
+    Checks that the string of the form "KBaseNarrative.Narrative-1.0", including the version.
     If it's not, or if it's not a string, a ValueError is raised.
 
     :param t: str - the type string to compare
@@ -66,8 +66,8 @@ def _validate_narr_type(t: str, ref: NarrativeRef) -> None:
 
 
 def save_narrative_url(ws_url: str, token: str, ref: NarrativeRef, url: str) -> None:
-    """
-    Updates the Narrative workspace metadata with info about the new Static Narrative.
+    """Updates the Narrative workspace metadata with info about the new Static Narrative.
+
     Creates (or updates) metadata keys:
     static_narrative: narrative url
     static_narrative_ver: int, the version
@@ -92,8 +92,8 @@ def save_narrative_url(ws_url: str, token: str, ref: NarrativeRef, url: str) -> 
 
 
 def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]:
-    """
-    Looks up the static narrative info for the given Workspace id.
+    """Looks up the static narrative info for the given workspace ID.
+
     That info is stashed in the Workspace metadata, so that gets fetched, munged into a structure,
     and returned.
     If there's no static narrative, this returns an empty structure, as there's no info.
@@ -151,7 +151,8 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]
 def verify_admin_privilege(
     workspace_url: str, user_id: str, token: str, ws_id: int
 ) -> None:
-    """
+    """Ensures that the user has admin permissions for the workspace.
+
     Raises PermissionError if the user is not an admin (has 'a' rights) on the Workspace.
     Gotta write to the Workspace metadata to create and save a Static Narrative, so this
     checks that the user has rights.
@@ -177,7 +178,8 @@ def verify_admin_privilege(
 
 
 def verify_public_narrative(workspace_url: str, ws_id: int) -> None:
-    """
+    """Ensures that the workspace is public.
+
     Raises a PermissionError if the workspace is not public (i.e. user '*' has 'r' access).
     Creating a stating Narrative is only permitted on public Narratives.
     If the Narrative is public, this returns None.

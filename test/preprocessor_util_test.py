@@ -4,7 +4,7 @@ from installed_clients.WorkspaceClient import Workspace
 from StaticNarrative.exporter.processor_util import build_report_view_data
 
 
-def test_Report_with_None_direct_link_index_and_truthy_html_links():
+def test_Report_with_None_direct_link_index_and_truthy_html_links() -> None:
     """
     Tests the case where a report contains a direct_html_link_index key with a value of None
     and a truthy html_links entry. This caused a None vs. int comparison error in an earlier

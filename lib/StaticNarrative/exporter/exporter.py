@@ -35,17 +35,19 @@ class NarrativeExporter:
         exporter_cfg: dict[str, str],  # config object
         user_id: str,
         token: str,
+        debug: bool = False,
     ) -> None:
         self.exporter_cfg = exporter_cfg
         self.ws_client = Workspace(url=exporter_cfg["workspace-url"], token=token)
         self.token = token
         self.user_id = user_id
+        self.debug = debug
 
     def export_narrative(
         self: "NarrativeExporter", narrative_ref: NarrativeRef, output_dir: str
     ) -> str:
-        """
-        Exports the Narrative to an HTML file and returns the path to that file.
+        """Exports the Narrative to an HTML file and returns the path to that file.
+
         :param narrative_ref: NarrativeRef - the workspace reference to the narrative object
         :param output_dir: str - the requested output file path.
         :return: str - the absolute path to the generated static Narrative HTML file.
@@ -69,6 +71,7 @@ class NarrativeExporter:
             output_dir,
             self.exporter_cfg["srv-wiz-url"],
             self.token,
+            debug=self.debug,
         )
 
         # 4. Export the Narrative to an HTML file

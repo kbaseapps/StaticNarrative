@@ -15,9 +15,11 @@ class ObjectsWithSets:
         self: "ObjectsWithSets",
         set_api_client: DynamicServiceClient,
         workspace_client: Workspace,
+        debug: bool = False,
     ) -> None:
         self.set_api_client = set_api_client
         self.ws_client = workspace_client
+        self.debug = debug
 
     def list_objects_with_sets(
         self: "ObjectsWithSets",
@@ -80,9 +82,9 @@ class ObjectsWithSets:
             ],
         )
 
-        # report_path = os.path.join(outdir, "list_sets.json")
-        # with open(report_path, "w") as fout:
-        #     json.dump(set_ret, fout, indent=2, sort_keys=True)
+        if self.debug:
+            with open(os.path.join(outdir, "list_sets.json"), "w") as fout:
+                json.dump(set_ret, fout, indent=2, sort_keys=True)
 
         # return unless there are some sets in the workspace
         if not set_ret or "sets" not in set_ret:
