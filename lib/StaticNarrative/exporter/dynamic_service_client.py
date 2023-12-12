@@ -40,9 +40,7 @@ class DynamicServiceClient:
     def call_method(
         self: "DynamicServiceClient", method: str, params_array: list
     ) -> list:
-        """
-        Calls the given method. Uses the BaseClient and cached service URL.
-        """
+        """Calls the given method. Uses the BaseClient and cached service URL."""
         was_url_refreshed = False
         if not self.cached_url or (
             time.time() - self.last_refresh_time > self.url_cache_time
@@ -56,8 +54,7 @@ class DynamicServiceClient:
             if was_url_refreshed:
                 raise  # Forwarding error with no changes
             self._lookup_url()
-            method_call_return = self._call(method, params_array, self.token)
-            return method_call_return
+            return self._call(method, params_array, self.token)
 
     def _lookup_url(self: "DynamicServiceClient") -> None:
         bc = BaseClient(url=self.sw_url, lookup_url=False)

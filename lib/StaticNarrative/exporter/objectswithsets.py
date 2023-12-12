@@ -30,7 +30,8 @@ class ObjectsWithSets:
         **kwargs,
     ) -> dict[str, Any]:
         if not ws_id:
-            raise ValueError("ws_id is required")
+            msg = "ws_id is required"
+            raise ValueError(msg)
         return self._list_objects_with_sets([ws_id], types, include_metadata, outdir)
 
     def _check_info_type(

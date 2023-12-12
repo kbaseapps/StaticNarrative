@@ -28,9 +28,8 @@ class WorkspaceListObjectsIterator:
         self.ws_client = ws_client
         if ws_info_list is None:
             if ws_id is None and ws_name is None:
-                raise ValueError(
-                    "In case ws_info_list is not set either ws_id or ws_name should be set"
-                )
+                msg = "In case ws_info_list is not set either ws_id or ws_name should be set"
+                raise ValueError(msg)
             ws_info_list = [
                 self.ws_client.get_workspace_info({"id": ws_id, "workspace": ws_name})
             ]

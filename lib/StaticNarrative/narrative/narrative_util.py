@@ -1,6 +1,4 @@
-"""
-Some utility functions for handling Narratives and permissions.
-"""
+"""Some utility functions for handling Narratives and permissions."""
 import logging
 import re
 import time
@@ -55,7 +53,8 @@ def _validate_narr_type(t: str, ref: NarrativeRef) -> None:
     :param ref: NarrativeRef - the narrative reference that t came from (used in error reporting)
     """
     if not isinstance(t, str):
-        raise ValueError("The type string must be a string")
+        msg = "The type string must be a string"
+        raise ValueError(msg)
 
     if not re.match(TYPE_REGEX, t):
         err = "Expected a Narrative object"
@@ -115,7 +114,8 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]
 
     """
     if not ws_id or not str(ws_id).isdigit():
-        raise ValueError(f"The parameter ws_id must be an integer, not {ws_id}")
+        msg = f"The parameter ws_id must be an integer, not {ws_id}"
+        raise ValueError(msg)
 
     ws_client = Workspace(url=ws_url, token=token)
     try:

@@ -1,9 +1,12 @@
+"""Static narrative management made easy!"""
 import os
 from collections import defaultdict
 from typing import Any
 
 
 class StaticNarrativeManager:
+    """Class for StaticNarrative management."""
+
     def __init__(self: "StaticNarrativeManager", config: dict[str, Any]) -> None:
         self.config = config
 
@@ -17,7 +20,8 @@ class StaticNarrativeManager:
         """
         webroot = self.config["static-file-root"]
         if webroot is None:
-            raise ValueError("Missing path to static narratives")
+            msg = "Missing path to static narratives"
+            raise ValueError(msg)
         all_sn = defaultdict(list)
         for root, _, files in os.walk(webroot):
             for name in files:

@@ -43,7 +43,8 @@ class NarrativeRef:
         Otherwise it'll fail in the main __init__ function if any segment is malformed.
         """
         if ref.count("/") != 2:
-            raise ValueError("A Narrative ref must be of the format wsid/objid/ver")
+            msg = "A Narrative ref must be of the format wsid/objid/ver"
+            raise ValueError(msg)
         split_ref = ref.split("/")
         return NarrativeRef(
             {"wsid": split_ref[0], "objid": split_ref[1], "ver": split_ref[2]}

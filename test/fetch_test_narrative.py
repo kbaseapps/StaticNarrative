@@ -100,11 +100,14 @@ def parse_args(args: list[str]) -> dict[str, str]:
     )
     args = p.parse_args(args)
     if args.env is None:
-        raise ValueError("env - the KBase environment - is required!")
+        msg = "env - the KBase environment - is required!"
+        raise ValueError(msg)
     if args.token is None:
-        raise ValueError("token - a valid Workspace admin auth token - is required!")
+        msg = "token - a valid Workspace admin auth token - is required!"
+        raise ValueError(msg)
     if args.ws_id is None:
-        raise ValueError("ws_id - a valid Workspace id - is required!")
+        msg = "ws_id - a valid Workspace id - is required!"
+        raise ValueError(msg)
     return args
 
 

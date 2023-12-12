@@ -23,7 +23,8 @@ def upload_static_narrative(
     # upload the file
     # return None
     if not os.path.exists(narr_path):
-        raise IOError(f"Static Narrative doesn't seem to exist at path {narr_path}")
+        msg = f"Static Narrative doesn't seem to exist at path {narr_path}"
+        raise OSError(msg)
 
     # Let's assume we get an endpoint to copy to, so upload_endpt is a path
     # we need to:

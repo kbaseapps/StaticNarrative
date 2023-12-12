@@ -1,3 +1,4 @@
+"""Class for creating static narratives."""
 import logging
 import os
 
@@ -12,7 +13,16 @@ from StaticNarrative.uploader.uploader import upload_static_narrative
 
 
 class StaticNarrativeCreator:
+    """Class for creating static narratives."""
+
     def __init__(self: "StaticNarrativeCreator", config: dict) -> None:
+        """Init the class.
+
+        :param self: this class
+        :type self: StaticNarrativeCreator
+        :param config: configuration
+        :type config: dict
+        """
         self.config = config
         logging.basicConfig(
             format="%(created)s %(levelname)s: %(message)s", level=logging.INFO
@@ -83,14 +93,14 @@ class StaticNarrativeCreator:
             )
             os.makedirs(output_dir, exist_ok=True)
         except OSError as e:
-            self.logger.error("Error while creating Static Narrative directory", e)
+            self.logger.exception("Error while creating Static Narrative directory", e)
             raise
 
         # export the narrative to a file
         try:
             output_path = exporter.export_narrative(ref, output_dir)
         except Exception as e:
-            self.logger.error("Error while exporting Narrative", e)
+            self.logger.exception("Error while exporting Narrative", e)
             raise
 
         return output_path
