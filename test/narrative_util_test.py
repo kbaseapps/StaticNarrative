@@ -85,7 +85,7 @@ def test_validate_narr_type_bad_types(type_string: str) -> None:
 def test_validate_narr_type(
     type_string: type[str] | dict[str, str] | list[str] | None
 ) -> None:
-    with pytest.raises(ValueError, match="The type string must be a string"):
+    with pytest.raises(TypeError, match="The type string must be a string"):
         _validate_narr_type(type_string, REF)
 
 
