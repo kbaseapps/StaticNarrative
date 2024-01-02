@@ -28,7 +28,7 @@ You will need to have the SDK installed to use this module if you want to make a
 
 ## Set up
 
-The StaticNarrative repo has been developed and tested using Python 3.10. There are three sets of dependencies for the repo:
+The StaticNarrative repo has been developed and tested using Python 3.12. There are three sets of dependencies for the repo:
 
 * `requirements.txt` - packages required for runtime
 * `requirements-test.txt` - packages used in testing and generating coverage
