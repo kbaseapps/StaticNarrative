@@ -1,3 +1,5 @@
+"""Uploads the generated static narrative to the static narrative server."""
+
 import os
 import shutil
 
@@ -5,25 +7,21 @@ from StaticNarrative.narrative_ref import NarrativeRef
 
 
 def upload_static_narrative(
-    ref: NarrativeRef, narr_path: str, upload_endpt: str, url_prefix: str | None = None
+    ref: NarrativeRef, file_path: str, upload_endpt: str, url_prefix: str | None = None
 ) -> str:
-    """
-    Uploads a finished static Narrative to the display endpoint.
-    Can raise:
-        IOError if the path doesn't exist
+    """Uploads a finished static Narrative to the display endpoint.
 
     :param narr_id: int, the narrative id (will create url http://endpt/narr_id if it doesn't exist)
     :param narr_ver: int, the narrative version
-    :param narr_path: str, the path to the generated static narrative html file
+    :param file_path: str, the path to the generated static narrative html file
     :param upload_endpt: str, the URL where the file should be uploaded
         (could also be mounted path, we'll see?)
+    :raises OSError: if the path doesn't exist
     :returns: The URL to the uploaded public, static, Narrative
     """
-    # validate file is present
-    # upload the file
-    # return None
-    if not os.path.exists(narr_path):
-        msg = f"Static Narrative doesn't seem to exist at path {narr_path}"
+    # validate file is present and upload the file
+    if not os.path.exists(file_path):
+        msg = f"Static Narrative doesn't seem to exist at path {file_path}"
         raise OSError(msg)
 
     # Let's assume we get an endpoint to copy to, so upload_endpt is a path
@@ -31,13 +29,13 @@ def upload_static_narrative(
     # 1. Make a directory there if it doesn't exist (/narr_id)
     # 2. Copy the file to /narr_id/index.html
     # 3. return the url
-    static_narr_path = os.path.join(upload_endpt, str(ref.wsid), str(ref.ver))
-    if not os.path.exists(static_narr_path):
-        os.makedirs(static_narr_path)
-    narr_dir = os.path.dirname(narr_path)
-    shutil.copyfile(narr_path, os.path.join(static_narr_path, "index.html"))
+    static_file_path = os.path.join(upload_endpt, str(ref.wsid), str(ref.ver))
+    if not os.path.exists(static_file_path):
+        os.makedirs(static_file_path)
+    narr_dir = os.path.dirname(file_path)
+    shutil.copyfile(file_path, os.path.join(static_file_path, "index.html"))
     shutil.copyfile(
-        os.path.join(narr_dir, "data.json"), os.path.join(static_narr_path, "data.json")
+        os.path.join(narr_dir, "data.json"), os.path.join(static_file_path, "data.json")
     )
 
     static_url = url_prefix or ""

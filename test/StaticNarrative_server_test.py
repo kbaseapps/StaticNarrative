@@ -1,4 +1,5 @@
 """Tests for the Static Narrative server module."""
+
 from test.mocks import set_up_ok_mocks
 from typing import Any
 
@@ -11,7 +12,12 @@ USER_ID = "some_user"
 def test_status(
     static_narrative_service: StaticNarrative, context: dict[str, Any]
 ) -> None:
+    """Check the status endpoint is up and running."""
     status = static_narrative_service.status(context)[0]
+
+    for prop in ["version", "git_url", "git_commit_hash"]:
+        assert status[prop] is not None
+
     assert status == {
         "state": "OK",
         "message": "",
@@ -19,9 +25,6 @@ def test_status(
         "git_url": static_narrative_service.GIT_URL,
         "git_commit_hash": static_narrative_service.GIT_COMMIT_HASH,
     }
-    assert status["version"] is not None
-    assert status["git_url"] is not None
-    assert status["git_commit_hash"] is not None
 
 
 def test_create_static_narrative_ok_unit(
@@ -133,6 +136,7 @@ def test_create_static_narrative_ok_unit(
 
 def test_create_static_narrative_no_auth() -> None:
     """Test case where user isn't logged in, or just no auth token passed."""
+    # TODO
 
 
 def test_create_static_narrative_user_not_admin(
