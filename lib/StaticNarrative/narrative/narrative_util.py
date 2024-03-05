@@ -54,12 +54,12 @@ def _validate_narr_type(t: str, ref: NarrativeRef) -> None:
     """
     if not isinstance(t, str):
         msg = "The type string must be a string"
-        raise ValueError(msg)
+        raise TypeError(msg)
 
     if not re.match(TYPE_REGEX, t):
         err = "Expected a Narrative object"
         if ref is not None:
-            err += f" with reference {ref!s}"
+            err += f" with reference {ref}"
         err += f", got a {t}"
         raise ValueError(err)
 
