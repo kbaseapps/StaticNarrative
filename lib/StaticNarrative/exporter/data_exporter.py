@@ -19,9 +19,10 @@ def export_narrative_data(
     output_dir: str,
     service_wizard_url: str,
     token: str,
+    debug: bool = False,
 ) -> dict[str, Any]:
-    """
-    Exports data from a Narrative into an attached JSON file.
+    """Exports data from a Narrative into an attached JSON file.
+
     Returns the output path to the JSON file as well as the data that was dumped into it.
     This includes a list of types and the data itself.
 
@@ -53,7 +54,6 @@ def export_narrative_data(
     set_api_client = DynamicServiceClient(
         service_wizard_url, "release", "SetAPI", token
     )
-
     ows = ObjectsWithSets(set_api_client, ws_client)
     ws_data = ows.list_objects_with_sets(ws_id=wsid, include_metadata=1)
 

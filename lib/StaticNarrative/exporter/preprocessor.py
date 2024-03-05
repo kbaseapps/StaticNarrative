@@ -1,6 +1,4 @@
-"""
-Narrative preprocessor for nbconvert exporting
-"""
+"""Narrative preprocessor for nbconvert exporting."""
 __author__ = "Bill Riehl <wjriehl@lbl.gov>"
 
 import os
@@ -145,9 +143,7 @@ class NarrativePreprocessor(Preprocessor):
         return {"citations": parsed_citations, "meta": ", ".join(sorted(app_names))}
 
     def icons_font_css(self: "NarrativePreprocessor") -> str:
-        """
-        Generates the icon font loading css chunk
-        """
+        """Generates the icon font loading css chunk."""
         font_url = (
             self.assets_base_url + "/fonts/" + self.assets_version + "/kbase-icons"
         )

@@ -1,3 +1,4 @@
+"""Mock data for use during tests."""
 import json
 import os
 from copy import deepcopy
@@ -153,7 +154,7 @@ def _get_object_from_file(filename: str) -> dict[str, Any]:
 
 
 def set_up_ok_mocks(
-    rqm,
+    requests_mock,
     ref_to_file: dict | None = None,
     ref_to_info: dict | None = None,
     ws_info: list | None = None,
@@ -161,7 +162,7 @@ def set_up_ok_mocks(
     user_map: dict | None = None,
     ws_obj_info_file: str | None = None,
 ):
-    rqm.add_matcher(
+    requests_mock.add_matcher(
         _mock_adapter(
             ref_to_file=ref_to_file or {},
             ref_to_info=ref_to_info or {},
@@ -197,7 +198,7 @@ def mock_ws_info_unauth(ws_id):
     pass
 
 
-def mock_ws_bad(rqm, msg):
+def mock_ws_bad(requests_mock, msg):
     """
     Always returns a 500 from a workspace call, triggering a ServerError
     """
@@ -222,4 +223,4 @@ def mock_ws_bad(rqm, msg):
         )
         return response
 
-    rqm.add_matcher(mock_adapter_bad_ws)
+    requests_mock.add_matcher(mock_adapter_bad_ws)

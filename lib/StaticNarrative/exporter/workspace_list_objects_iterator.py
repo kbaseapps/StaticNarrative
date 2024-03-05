@@ -1,5 +1,6 @@
 """Class for fetching objects from the workspace."""
 from collections import deque
+from typing import Any
 
 from installed_clients.WorkspaceClient import Workspace
 
@@ -15,21 +16,20 @@ class WorkspaceListObjectsIterator:
     def __init__(
         self: "WorkspaceListObjectsIterator",
         ws_client: Workspace,
-        ws_info_list=None,
-        ws_id=None,
-        ws_name=None,
-        list_objects_params=None,
-        part_size=10000,
-        global_limit=100000,
+        ws_info_list: list[str | int] | None = None,
+        ws_id: int | None = None,
+        ws_name: str | None = None,
+        list_objects_params: dict[str, Any] | None = None,
+        part_size: int = 10000,
+        global_limit: int = 100000,
     ) -> None:
         if not list_objects_params:
             list_objects_params = {}
         self.ws_client = ws_client
         if ws_info_list is None:
             if ws_id is None and ws_name is None:
-                raise ValueError(
-                    "In case ws_info_list is not set either ws_id or ws_name should be set"
-                )
+                msg = "In case ws_info_list is not set either ws_id or ws_name should be set"
+                raise ValueError(msg)
             ws_info_list = [
                 self.ws_client.get_workspace_info({"id": ws_id, "workspace": ws_name})
             ]

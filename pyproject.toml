@@ -17,7 +17,7 @@ select = [
     "C90", # mccabe +
     "I", # isort
     "N", # pep8-naming
-    # "D", # pydocstyle
+    "D", # pydocstyle
     "UP", # pyupgrade
     # extensions
     "YTT", # flake8-2020
@@ -34,7 +34,7 @@ select = [
     "DTZ", # flake8-datetimez
     "T10", # flake8-debugger
     # "DJ", # flake8-django
-    # "EM", # flake8-errmsg
+    "EM", # flake8-errmsg
     "EXE", # flake8-executable
     "FA", # flake8-future-annotations
     "ISC", # flake8-implicit-str-concat
@@ -121,7 +121,7 @@ per-file-ignores = {}
 # Same as Black.
 line-length = 100
 
-# Assume Python 3.10.
+# Assume Python 3.11.
 target-version = "py311"
 
 [tool.ruff.pydocstyle]

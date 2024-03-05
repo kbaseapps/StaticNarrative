@@ -1,5 +1,5 @@
-"""
-Fetches a Narrative's test data for use with this app service.
+"""Fetches a Narrative's test data for use with this app service.
+
 A handy way to run it locally, really.
 
 How to run:
@@ -20,6 +20,19 @@ from installed_clients.WorkspaceClient import Workspace
 
 
 def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int:
+    """Fetch narrative data using the supplied parameters.
+
+    :param endpt: KBase endpoint
+    :type endpt: str
+    :param token: auth token
+    :type token: str
+    :param ws_id: workspace ID
+    :type ws_id: int
+    :param outdir: where to save the output
+    :type outdir: str
+    :return: success code (0)
+    :rtype: int
+    """
     ws_client = Workspace(url=endpt + "ws", token=token)
     ws_info = ws_client.get_workspace_info({"id": ws_id})
     ws_meta = ws_info[8]
@@ -66,6 +79,16 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
 
 
 def parse_args(args: list[str]) -> dict[str, str]:
+    """Parse input arguments to the script.
+
+    :param args: arguments
+    :type args: list[str]
+    :raises ValueError: if there is no KBase environment set
+    :raises ValueError: if there is not a valid WS admin auth token supplied
+    :raises ValueError: if there is no workspace ID supplied
+    :return: sanitised and checked args
+    :rtype: dict[str, str]
+    """
     p = argparse.ArgumentParser(description=__doc__.strip())
     p.add_argument("-t", "--token", dest="token", default=None, help="User auth token")
     p.add_argument("-e", "--env", dest="env", default=None, help="KBase environment")
@@ -77,15 +100,25 @@ def parse_args(args: list[str]) -> dict[str, str]:
     )
     args = p.parse_args(args)
     if args.env is None:
-        raise ValueError("env - the KBase environment - is required!")
+        msg = "env - the KBase environment - is required!"
+        raise ValueError(msg)
     if args.token is None:
-        raise ValueError("token - a valid Workspace admin auth token - is required!")
+        msg = "token - a valid Workspace admin auth token - is required!"
+        raise ValueError(msg)
     if args.ws_id is None:
-        raise ValueError("ws_id - a valid Workspace id - is required!")
+        msg = "ws_id - a valid Workspace id - is required!"
+        raise ValueError(msg)
     return args
 
 
 def main(args: list[str]) -> int:
+    """Run the script.
+
+    :param args: arguments for the script
+    :type args: list[str]
+    :return: output code indicating success (0) or otherwise
+    :rtype: int
+    """
     args = parse_args(args)
     endpt = "kbase.us/services/"
     env = args.env + "."

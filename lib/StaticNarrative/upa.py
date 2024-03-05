@@ -13,7 +13,7 @@ def is_upa(upa: str) -> bool:
     """
     Returns True if the given upa string is valid, False, otherwise.
     """
-    return re.match("^\d+(\/\d+){2}(;\d+(\/\d+){2})*$", upa) is not None
+    return re.match(r"^\d+(\/\d+){2}(;\d+(\/\d+){2})*$", upa) is not None
 
 
 def is_ref(ref: str) -> bool:
@@ -30,22 +30,20 @@ def is_ref(ref: str) -> bool:
     """
     if is_upa(ref):
         return True
-    else:
-        split_path = ref.split(";")
-        for sub_ref in split_path:
-            c = sub_ref.count("/")
-            if c < 1 or c > 2:
-                return False
-        return True
+    split_path = ref.split(";")
+    for sub_ref in split_path:
+        c = sub_ref.count("/")
+        if c < 1 or c > 2:
+            return False
+    return True
 
 
 def _prepare_upa_serialization(upa: str) -> str:
     if isinstance(upa, list):
         upa = ";".join(upa)
     if not is_upa(upa):
-        raise ValueError(
-            '"{}" is not a valid UPA. It may have already been serialized.'.format(upa)
-        )
+        msg = f'"{upa}" is not a valid UPA. It may have already been serialized.'
+        raise ValueError(msg)
     return upa
 
 
@@ -63,7 +61,7 @@ def serialize(upa: str) -> str:
     If the passed upa is not properly formatted, this will raise a ValueError.
     """
     upa = _prepare_upa_serialization(upa)
-    return re.sub("^(\d+)\/", r"[\1]/", upa)
+    return re.sub(r"^(\d+)\/", r"[\1]/", upa)
 
 
 def serialize_external(upa: str) -> str:
@@ -95,17 +93,16 @@ def deserialize(serial_upa: str, ws_id: int) -> str:
     the & tag is removed.
     """
     if not isinstance(serial_upa, str):
-        raise ValueError(
-            f"Can only deserialize UPAs from strings: {str(serial_upa)} is a {type(serial_upa)}"
-        )
+        msg = f"Can only deserialize UPAs from strings: {serial_upa!s} is a {type(serial_upa)}"
+        raise ValueError(msg)
     if serial_upa.startswith(external_tag):
         deserial = serial_upa[len(external_tag) :]
     else:
         if ws_id is None:
-            raise RuntimeError(
-                "Current workspace is unknown! Unable to deserialize UPA."
-            )
-        deserial = re.sub("^\[(\d+)\]\/", str(ws_id) + "/", serial_upa)
+            msg = "Current workspace is unknown! Unable to deserialize UPA."
+            raise RuntimeError(msg)
+        deserial = re.sub(r"^\[(\d+)\]\/", str(ws_id) + "/", serial_upa)
     if not is_upa(deserial):
-        raise ValueError(f'Deserialized UPA: "{deserial}" is invalid!')
+        msg = f'Deserialized UPA: "{deserial}" is invalid!'
+        raise ValueError(msg)
     return deserial
