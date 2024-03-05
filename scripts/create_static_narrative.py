@@ -1,4 +1,5 @@
 """Script to create a static narrative from the commandline."""
+
 import argparse
 import logging
 import sys
@@ -190,11 +191,6 @@ def main(args: list[str]) -> None:
     :type args: list[str]
     """
     args = parse_args(args)
-    endpt = "kbase.us/services/"
-    env = args.env + "."
-    if env == "prod.":
-        env = ""
-    endpt = f"https://{env}{endpt}"
     sn = StaticNarrativeCmdLine(config)
 
     sn.create_static_narrative(
@@ -203,4 +199,5 @@ def main(args: list[str]) -> None:
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    main(sys.argv[1:])
+    sys.exit(0)
