@@ -45,8 +45,8 @@ def get_config() -> None | dict[str, str]:
     retconfig = {}
     config = ConfigParser()
     config.read(get_config_file())
-    for nameval in config.items(get_service_name() or "StaticNarrative"):
-        retconfig[nameval[0]] = nameval[1]
+    for name, value in config.items(get_service_name() or "StaticNarrative"):
+        retconfig[name] = value
     return retconfig
 
 
@@ -156,7 +156,6 @@ def parse_args(args: list[str]) -> dict[str, Any]:
     p = argparse.ArgumentParser()
     p.add_argument("-u", "--user", dest="user_id", default=None, help="User ID")
     p.add_argument("-t", "--token", dest="token", default=None, help="User auth token")
-    p.add_argument("-e", "--env", dest="env", default=None, help="KBase environment")
     p.add_argument(
         "-w", "--ws", dest="ws_id", default=None, help="Workspace ID with Narrative"
     )
@@ -172,8 +171,6 @@ def parse_args(args: list[str]) -> dict[str, Any]:
     )
     args = p.parse_args(args)
     errs = []
-    if not args.env:
-        errs.append("env - the KBase environment - is required!")
     if not args.token:
         errs.append("token - a valid Workspace admin auth token - is required!")
     if not args.ws_id:
