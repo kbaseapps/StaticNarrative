@@ -9,9 +9,7 @@ from StaticNarrative.StaticNarrativeImpl import StaticNarrative
 USER_ID = "some_user"
 
 
-def test_status(
-    static_narrative_service: StaticNarrative, context: dict[str, Any]
-) -> None:
+def test_status(static_narrative_service: StaticNarrative, context: dict[str, Any]) -> None:
     """Check the status endpoint is up and running."""
     status = static_narrative_service.status(context)[0]
 
@@ -153,9 +151,7 @@ def test_create_static_narrative_user_not_admin(
         PermissionError,
         match=f"User {USER_ID} does not have admin rights on workspace {ws_id}",
     ):
-        static_narrative_service.create_static_narrative(
-            context, {"narrative_ref": f"{ws_id}/1/1"}
-        )
+        static_narrative_service.create_static_narrative(context, {"narrative_ref": f"{ws_id}/1/1"})
 
 
 def test_create_static_narrative_not_public(
@@ -215,9 +211,7 @@ def test_get_static_info_ok(
     set_up_ok_mocks(
         requests_mock, ref_to_file=ref_to_file, ref_to_info=ref_to_info, ws_info=ws_info
     )
-    info = static_narrative_service.get_static_narrative_info(
-        context, {"ws_id": ws_id}
-    )[0]
+    info = static_narrative_service.get_static_narrative_info(context, {"ws_id": ws_id})[0]
     std_info = {
         "ws_id": ws_id,
         "version": 1,

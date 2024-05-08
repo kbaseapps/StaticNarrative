@@ -1,4 +1,5 @@
 """Tests for the narrative_util module."""
+
 import time
 from test.mocks import mock_ws_bad, set_up_ok_mocks
 
@@ -82,9 +83,7 @@ def test_validate_narr_type_bad_types(type_string: str) -> None:
 
 
 @pytest.mark.parametrize("type_string", [5, str, {"lol": "no"}, ["wat"], None])
-def test_validate_narr_type(
-    type_string: type[str] | dict[str, str] | list[str] | None
-) -> None:
+def test_validate_narr_type(type_string: type[str] | dict[str, str] | list[str] | None) -> None:
     with pytest.raises(TypeError, match="The type string must be a string"):
         _validate_narr_type(type_string, REF)
 
@@ -106,12 +105,8 @@ def test_save_narrative_url_bad(workspace_url: str, requests_mock) -> None:
 
 
 @pytest.mark.parametrize("ws_id", ["foo", "onetwo", {"no": "way"}, ["nope"], None, str])
-def test_get_static_info_bad(
-    ws_id: dict[str, str] | list[str] | type[str] | str | None
-) -> None:
-    with pytest.raises(
-        ValueError, match="The parameter ws_id must be an integer, not "
-    ):
+def test_get_static_info_bad(ws_id: dict[str, str] | list[str] | type[str] | str | None) -> None:
+    with pytest.raises(ValueError, match="The parameter ws_id must be an integer, not "):
         get_static_info("someurl", "some_token", ws_id)
 
 

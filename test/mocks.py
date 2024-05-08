@@ -1,4 +1,5 @@
 """Mock data for use during tests."""
+
 import json
 import os
 from copy import deepcopy
@@ -16,8 +17,8 @@ def _mock_adapter(
     ws_perms: dict[int, dict[str, str]] | None = None,
     ws_obj_info_file: str | None = None,
 ):
-    """
-    Sets up mock calls as a requests_mock adapter function.
+    """Sets up mock calls as a requests_mock adapter function.
+
     Mocks POST calls to:
         Workspace.get_objects2,
         Workspace.get_workspace_info,
@@ -34,7 +35,6 @@ def _mock_adapter(
     :param user_map: dict - a mapping from user id to full name, used in calls to Auth
         GET api/V2/users
     """
-
     workspace_meta = {}
 
     def mock_adapter(request):
@@ -87,9 +87,7 @@ def _mock_adapter(
                 ws_id = params[0].get("id")
                 result = [ws_perms.get(ws_id, {})]
             elif method == "ServiceWizard.get_service_status":
-                result = [
-                    {"url": "https://something.kbase.us/service/narrative_service_url"}
-                ]
+                result = [{"url": "https://something.kbase.us/service/narrative_service_url"}]
             elif "list_objects_with_sets" in method:
                 if ws_obj_info_file is not None:
                     result = [_get_object_from_file(ws_obj_info_file)]
@@ -99,9 +97,7 @@ def _mock_adapter(
                 tag = params[0]["tag"]
                 ids = params[0]["ids"]
                 result = [_get_fake_nms_info(tag, ids)]
-            response._content = bytes(
-                json.dumps({"result": result, "version": "1.1"}), "UTF-8"
-            )
+            response._content = bytes(json.dumps({"result": result, "version": "1.1"}), "UTF-8")
         elif rq_method == "GET" and "/api/V2/users/?list=" in request.url:
             response._content = bytes(json.dumps(user_map), "UTF-8")
         return response
@@ -144,7 +140,8 @@ def _fake_obj_info(ref: str) -> list[None | str | int]:
 
 
 def _get_object_from_file(filename: str) -> dict[str, Any]:
-    """
+    """JSON file containing test data.
+
     This should be a JSON file representing workspace data or some other JSON data
     returned from a service.
     If it's not JSON, it'll crash.
@@ -199,9 +196,7 @@ def mock_ws_info_unauth(ws_id):
 
 
 def mock_ws_bad(requests_mock, msg):
-    """
-    Always returns a 500 from a workspace call, triggering a ServerError
-    """
+    """Always returns a 500 from a workspace call, triggering a ServerError."""
 
     def mock_adapter_bad_ws(request):
         response = requests.Response()

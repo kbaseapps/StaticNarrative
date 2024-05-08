@@ -1,3 +1,5 @@
+"""Process apps to extract information for displaying them in a SN."""
+
 import math
 import re
 from typing import Any
@@ -8,9 +10,10 @@ from .processor_util import build_report_view_data
 
 
 class AppProcessor:
-    def __init__(
-        self: "AppProcessor", host: str, ws_url: str, nms_url: str, token: str
-    ) -> None:
+    """App information processor."""
+
+    def __init__(self: "AppProcessor", host: str, ws_url: str, nms_url: str, token: str) -> None:
+        """Initialise the app processor."""
         self.host = host
         self.ws_url = ws_url
         self.nms_url = nms_url
@@ -19,7 +22,8 @@ class AppProcessor:
     def process(
         self: "AppProcessor", kb_info: dict[str, Any], kb_meta: dict[str, Any]
     ) -> dict[str, Any]:
-        """
+        """App metadata processor.
+
         Extracts the useful bits of the complicated metadata structure so that the Jinja
         templates don't look like spaghetti with stuff like
         'kbase.appCell.app.spec.info......'
@@ -59,7 +63,8 @@ class AppProcessor:
     def _process_app_params(
         self: "AppProcessor", spec_params: dict[str, Any], param_values: dict[str, Any]
     ) -> dict[str, list]:
-        """
+        """Process the input params.
+
         :param spec_params: the params dictionary from the stored app spec
         :param param_values: the parameter values dictionary, keyed on param ids
         :return: dictionary of input, output, and parameter lists
@@ -84,24 +89,21 @@ class AppProcessor:
         value: None | int | str | list[str],
         param_spec: dict[str, Any],
     ) -> dict[str, Any]:
+        """Make a dictionary mapping UPAs to their object info."""
         upas = []
         if param_spec["field_type"] == "text":
-            valid_ws_types = param_spec.get("text_options", {}).get(
-                "valid_ws_types", []
-            )
+            valid_ws_types = param_spec.get("text_options", {}).get("valid_ws_types", [])
             if len(valid_ws_types) > 0 and value:
                 if isinstance(value, list):
-                    for v in value:
-                        if self._is_upa(v):
-                            upas.append(v)
+                    upas = [v for v in value if self._is_upa(v)]
                 elif self._is_upa(value):
-                    upas.append(value)
+                    upas = [value]
         upa_map = {}
         if len(upas):
             ws_client = Workspace(url=self.ws_url, token=self.token)
-            obj_infos = ws_client.get_object_info3(
-                {"objects": [{"ref": upa} for upa in upas]}
-            )["infos"]
+            obj_infos = ws_client.get_object_info3({"objects": [{"ref": upa} for upa in upas]})[
+                "infos"
+            ]
             upa_map = {u: obj_infos[i] for i, u in enumerate(upas)}
         return upa_map
 
@@ -110,15 +112,16 @@ class AppProcessor:
         value: None | int | str | list,
         param_spec: dict[str, Any],
         upas: dict[str, Any],
-    ):
-        """
+    ) -> list[Any] | str | int:
+        """Convert param values to forms that the SN can use.
+
         Overall flow.
         1. if value is a list, iterate everything below over it.
         2. inspect the spec to see what the value represents.
             a. if a
-        2. if value is a string, check if its an UPA, verify with the spec that it
+            a. if value is a string, check if it's an UPA, verify with the spec that it
             should be an object
-        3. if value is an int... stuff.
+            b. if value is an int... stuff.
         """
         # if param_spec.text_options.valid_ws_types exists and has entries,
         # it's an object input
@@ -127,9 +130,7 @@ class AppProcessor:
         # types:
         field_type = param_spec["field_type"]
         if field_type == "text":
-            valid_ws_types = param_spec.get("text_options", {}).get(
-                "valid_ws_types", []
-            )
+            valid_ws_types = param_spec.get("text_options", {}).get("valid_ws_types", [])
             if len(valid_ws_types) > 0 and value:
                 if isinstance(value, list):
                     value = [upas[v][1] if v in upas else v for v in value]
@@ -138,7 +139,8 @@ class AppProcessor:
         return value
 
     def _is_upa(self: "AppProcessor", s: str) -> bool:
-        """
+        """Is this a KBase UPA I see before me?
+
         An UPA matches this structure: ##/##/##
         E.g. 123/456/789
         """
@@ -146,15 +148,14 @@ class AppProcessor:
         return re.match(upa_regex, s) is not None
 
     def _get_job_state(self: "AppProcessor", app_meta: dict[str, Any]) -> str:
-        """
-        Returns the job state as a readable string.
+        """Returns the job state as a readable string.
+
         One of:
         "completed without errors in TTT"
         "completed with errors in TTT"
         "canceled"
         "queued and not run"
         """
-
         # Step 1, get job state
         job_state = app_meta["exec"].get("jobState", {})
         state = job_state.get("job_state", job_state.get("status", "unknown"))
@@ -178,9 +179,7 @@ class AppProcessor:
         runtime = None
         # njs
         if "finish_time" in job_state and "exec_start_time" in job_state:
-            runtime = self._ms_to_readable(
-                job_state["finish_time"] - job_state["exec_start_time"]
-            )
+            runtime = self._ms_to_readable(job_state["finish_time"] - job_state["exec_start_time"])
         # ee2
         elif "finished" in job_state and "running" in job_state:
             runtime = self._ms_to_readable(job_state["finished"] - job_state["running"])
@@ -201,8 +200,10 @@ class AppProcessor:
         return return_state + "."
 
     def _ms_to_readable(self: "AppProcessor", ms: int) -> str | None:
-        """
-        Converts number of milliseconds to a human readable string with format Wd Xh Ym Zs
+        """Create a sensible time string.
+
+        Converts number of milliseconds to a human readable string with format Wd Xh Ym Zs.
+
         e.g. 1234567ms => "
         """
         # simply make sure it's a number

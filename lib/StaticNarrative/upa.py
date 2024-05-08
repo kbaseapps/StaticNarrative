@@ -1,5 +1,4 @@
-"""
-This is a reasonably tiny API for serializing and deserializing UPAs for storage in Narrative
+"""This is a reasonably tiny API for serializing and deserializing UPAs for storage in Narrative
 documents.
 
 """
@@ -10,15 +9,13 @@ external_tag = "&"
 
 
 def is_upa(upa: str) -> bool:
-    """
-    Returns True if the given upa string is valid, False, otherwise.
-    """
+    """Returns True if the given upa string is valid, False, otherwise."""
     return re.match(r"^\d+(\/\d+){2}(;\d+(\/\d+){2})*$", upa) is not None
 
 
 def is_ref(ref: str) -> bool:
-    """
-    Returns True if the given string is a reference or upa, False otherwise.
+    """Returns True if the given string is a reference or upa, False otherwise.
+
     That is, if it has this structure:
     blahblah/blahblah
     or
@@ -48,8 +45,8 @@ def _prepare_upa_serialization(upa: str) -> str:
 
 
 def serialize(upa: str) -> str:
-    """
-    Serializes an UPA - prepares it for storage as a part of Narrative cell metadata.
+    """Serializes an UPA - prepares it for storage as a part of Narrative cell metadata.
+
     This means a bit of a tweak to the UPA itself. Currently, we want to store it in a way
     that designates it as a serialized string, and gives an easy path to substitute the
     initial workspace part of the UPA with a different workspace.
@@ -65,7 +62,8 @@ def serialize(upa: str) -> str:
 
 
 def serialize_external(upa: str) -> str:
-    """
+    """Serializes refs that are located in different workspaces.
+
     In the case of UPAs representing objects that are located in a different workspace all
     together (e.g. set items that aren't copied into the Narrative with the set container
     object), they get flagged with a special character. In that case, the UPA is maintained,
@@ -82,9 +80,9 @@ def serialize_external(upa: str) -> str:
 
 
 def deserialize(serial_upa: str, ws_id: int) -> str:
-    """
-    Deserializes a serialized UPA to one that is valid for use with the Workspace (or other
-    services that consume Workspace objects).
+    """Deserializes a serialized UPA to one that is valid for use with the Workspace.
+
+    Can also be used by other services that consume Workspace objects.
     A serialized UPA is either of the form:
     [ws]/obj/ver;ws/obj/ver;...
     or

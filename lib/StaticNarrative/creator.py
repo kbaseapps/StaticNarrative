@@ -1,4 +1,5 @@
 """Class for creating static narratives."""
+
 import logging
 import os
 
@@ -24,9 +25,7 @@ class StaticNarrativeCreator:
         :type config: dict
         """
         self.config = config
-        logging.basicConfig(
-            format="%(created)s %(levelname)s: %(message)s", level=logging.INFO
-        )
+        logging.basicConfig(format="%(created)s %(levelname)s: %(message)s", level=logging.INFO)
         self.logger = logging.getLogger("StaticNarrative")
         self.logger.setLevel(logging.INFO)
         ch = logging.StreamHandler()
@@ -120,9 +119,7 @@ class StaticNarrativeCreator:
         :rtype: str
         """
         # upload it and save it to the Workspace metadata before returning the url path
-        static_url = upload_static_narrative(
-            ref, output_path, self.config["static-file-root"]
-        )
+        static_url = upload_static_narrative(ref, output_path, self.config["static-file-root"])
         save_narrative_url(self.config["workspace-url"], token, ref, static_url)
         self.logger.info(f"Finished creating Static Narrative {ref}")
         return static_url

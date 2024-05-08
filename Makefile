@@ -1,15 +1,9 @@
 SERVICE = staticnarrative
 SERVICE_CAPS = StaticNarrative
 SPEC_FILE = StaticNarrative.spec
-URL = https://kbase.us/services/staticnarrative
-DIR = $(shell pwd)
 LIB_DIR = lib
 SCRIPTS_DIR = scripts
 TEST_DIR = test
-LBIN_DIR = bin
-WORK_DIR = /kb/module/work/tmp
-EXECUTABLE_SCRIPT_NAME = run_$(SERVICE_CAPS)_async_job.sh
-STARTUP_SCRIPT_NAME = start_server.sh
 TEST_SCRIPT_NAME = run_tests.sh
 COMPILE_REPORT = ./compile_report.json
 
@@ -28,9 +22,7 @@ compile:
 		--pyimplname $(SERVICE_CAPS).$(SERVICE_CAPS)Impl;
 
 set-executable:
-	chmod +x $(SCRIPTS_DIR)/entrypoint.sh
-	chmod +x $(LBIN_DIR)/$(EXECUTABLE_SCRIPT_NAME)
-	chmod +x $(SCRIPTS_DIR)/$(STARTUP_SCRIPT_NAME)
+	chmod +x $(SCRIPTS_DIR)/*.sh
 	chmod +x $(TEST_DIR)/$(TEST_SCRIPT_NAME)
 
 test:
@@ -38,3 +30,12 @@ test:
 
 clean:
 	rm -rfv $(LBIN_DIR)
+
+format:
+	ruff format
+
+lint:
+	ruff check
+
+lint-fix:
+	ruff check --fix

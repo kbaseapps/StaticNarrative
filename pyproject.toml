@@ -1,14 +1,23 @@
 [tool.black]
 # don't format the installed clients or the SDK-generated files.
-extend-exclude = '''
-lib/(
-    installed_clients/*
-|
-    SetAPI/SetAPI(Impl|Server).py
-)'''
-
+#extend-exclude = '''
+#lib/(
+#    installed_clients/*
+#|
+#    SetAPI/SetAPI(Impl|Server).py
+#)'''
 
 [tool.ruff]
+line-length = 100
+
+extend-exclude = [
+    "lib/installed_clients/*"
+]
+
+# Assume Python 3.10.
+target-version = "py310"
+
+[tool.ruff.lint]
 select = [
     # core
     "F", # Pyflakes
@@ -72,13 +81,14 @@ select = [
     "RUF", # Ruff-specific rules
 ]
 
-
 # E203: whitespace before ‘,’, ‘;’, or ‘:’
 # E501: line length
+# ISC001: conflicts with Ruff's formatter
 # W503: line break after binary operator
 ignore = [
     "E203",
     "E501",
+    "ISC001",
     "S101",
 ]
 
@@ -118,11 +128,5 @@ exclude = [
 ]
 per-file-ignores = {}
 
-# Same as Black.
-line-length = 100
-
-# Assume Python 3.11.
-target-version = "py311"
-
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"

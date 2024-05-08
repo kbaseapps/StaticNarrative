@@ -1,4 +1,5 @@
 """Test configuration."""
+
 import os
 from configparser import ConfigParser
 from test import TEST_BASE_DIR
@@ -8,9 +9,7 @@ import pytest
 from StaticNarrative.StaticNarrativeImpl import StaticNarrative
 from StaticNarrative.StaticNarrativeServer import MethodContext
 
-CONFIG_FILE = os.environ.get(
-    "KB_DEPLOYMENT_CONFIG", os.path.join(TEST_BASE_DIR, "./deploy.cfg")
-)
+CONFIG_FILE = os.environ.get("KB_DEPLOYMENT_CONFIG", os.path.join(TEST_BASE_DIR, "./deploy.cfg"))
 
 
 @pytest.fixture(scope="session")

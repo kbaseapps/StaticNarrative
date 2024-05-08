@@ -10,6 +10,7 @@ How to run:
     > mkdir <ws_id>
     > python test/fetch_test_narrative.py -e ci -t <token> -w <ws_id> -o ./<ws_id>
 """
+
 import argparse
 import json
 import os
@@ -39,9 +40,7 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
 
     # Narrative object
     narr_id = ws_meta["narrative"]
-    narr_obj = ws_client.get_objects2({"objects": [{"ref": f"{ws_id}/{narr_id}"}]})[
-        "data"
-    ][0]
+    narr_obj = ws_client.get_objects2({"objects": [{"ref": f"{ws_id}/{narr_id}"}]})["data"][0]
     narr_ver = narr_obj["info"][4]
     narr_outpath = os.path.join(outdir, f"narrative-{ws_id}.{narr_id}.{narr_ver}.json")
     with open(narr_outpath, "w") as fout:
@@ -92,12 +91,8 @@ def parse_args(args: list[str]) -> dict[str, str]:
     p = argparse.ArgumentParser(description=__doc__.strip())
     p.add_argument("-t", "--token", dest="token", default=None, help="User auth token")
     p.add_argument("-e", "--env", dest="env", default=None, help="KBase environment")
-    p.add_argument(
-        "-w", "--ws", dest="ws_id", default=None, help="Workspace id with Narrative"
-    )
-    p.add_argument(
-        "-o", "--outdir", dest="outdir", default=".", help="File output directory"
-    )
+    p.add_argument("-w", "--ws", dest="ws_id", default=None, help="Workspace id with Narrative")
+    p.add_argument("-o", "--outdir", dest="outdir", default=".", help="File output directory")
     args = p.parse_args(args)
     if args.env is None:
         msg = "env - the KBase environment - is required!"

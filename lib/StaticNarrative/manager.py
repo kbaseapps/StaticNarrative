@@ -1,4 +1,5 @@
 """Static narrative management made easy!"""
+
 import os
 from collections import defaultdict
 from typing import Any
@@ -13,8 +14,8 @@ class StaticNarrativeManager:
     def list_static_narratives(
         self: "StaticNarrativeManager",
     ) -> dict[str, dict[str, str]]:
-        """
-        Returns a list of all available static narratives.
+        """Returns a list of all available static narratives.
+
         Currently, this combs the filesystem for index.html files and assembles them.
         Later, this'll make a call to MongoDB.
         """

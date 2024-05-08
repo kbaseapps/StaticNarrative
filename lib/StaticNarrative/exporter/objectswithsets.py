@@ -49,7 +49,7 @@ class ObjectsWithSets:
         include_metadata: int,
         outdir: str,
     ) -> list[dict[str, Any]]:
-        """
+        """List objects with sets.
 
         :param self: _description_
         :type self: ObjectsWithSets

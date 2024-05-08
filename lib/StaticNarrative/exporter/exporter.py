@@ -1,10 +1,10 @@
-"""
-This class does all the work of exporting a Narrative.
+"""This class does all the work of exporting a Narrative.
 
 Once initialized and given a NarrativeRef, it will export that Narrative as HTML
 to some output dir. This doesn't do the final uploading to the static site, just
 the exporting.
 """
+
 __author__ = "Bill Riehl <wjriehl@lbl.gov>"
 
 import json
@@ -37,6 +37,7 @@ class NarrativeExporter:
         token: str,
         debug: bool = False,
     ) -> None:
+        """Initialise the Narrative Exporter."""
         self.exporter_cfg = exporter_cfg
         self.ws_client = Workspace(url=exporter_cfg["workspace-url"], token=token)
         self.token = token
@@ -57,9 +58,7 @@ class NarrativeExporter:
             nar = read_narrative(narrative_ref, self.ws_client)
             nar["metadata"]["wsid"] = narrative_ref.wsid
         except ServerError as e:
-            raise WorkspaceError(
-                e, narrative_ref.wsid, "Error while exporting Narrative"
-            ) from e
+            raise WorkspaceError(e, narrative_ref.wsid, "Error while exporting Narrative") from e
 
         # 2. Convert to a notebook object
         kb_notebook = nbformat.reads(json.dumps(nar), as_version=4)
@@ -92,7 +91,8 @@ class NarrativeExporter:
     def _build_exporter(
         self: "NarrativeExporter", exported_data: dict[str, Any], ws_id: int
     ) -> HTMLExporter:
-        """
+        """Generate the magnificent HTMLExporter that will fulfil all your dreams.
+
         This builds the HTMLExporter used to export the Notebook (i.e. Narrative) to
         HTML. Data is passed into the exporter by configuration with various specific
         keys set in the config traitlet.
@@ -142,13 +142,10 @@ class NarrativeExporter:
         c.narrative_session.ws_url = self.exporter_cfg["workspace-url"]
         c.narrative_session.nms_url = self.exporter_cfg["nms-url"]
         c.narrative_session.nms_image_url = self.exporter_cfg["nms-image-url"]
-        c.narrative_session.profile_page_url = (
-            host + self.exporter_cfg["profile-page-path"]
-        )
+        c.narrative_session.profile_page_url = host + self.exporter_cfg["profile-page-path"]
         c.narrative_session.auth_url = self.exporter_cfg["auth-url"]
         c.narrative_session.assets_base_url = self.exporter_cfg["assets-base-url"]
         c.narrative_session.service_wizard_url = self.exporter_cfg["srv-wiz-url"]
-        c.narrative_session.data_ie_url = self.exporter_cfg["data-ie-url"]
         c.narrative_session.host = host
         c.narrative_session.base_path = base_path
         c.narrative_session.data_file_path = exported_data["path"]

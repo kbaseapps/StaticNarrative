@@ -13,7 +13,6 @@ from lib.StaticNarrative.narrative_ref import NarrativeRef
 
 DEPLOY = "KB_DEPLOYMENT_CONFIG"
 SERVICE = "KB_SERVICE_NAME"
-AUTH = "auth-service-url"
 
 
 def get_config_file() -> str:
@@ -64,9 +63,7 @@ class StaticNarrativeCmdLine:
         :param config: parsed config
         :type config: dict[str, str]
         """
-        logging.basicConfig(
-            format="%(created)s %(levelname)s: %(message)s", level=logging.INFO
-        )
+        logging.basicConfig(format="%(created)s %(levelname)s: %(message)s", level=logging.INFO)
         self.logger = logging.getLogger("StaticNarrative")
         self.logger.setLevel(logging.INFO)
         ch = logging.StreamHandler()
@@ -96,9 +93,7 @@ class StaticNarrativeCmdLine:
             ws_args = "ids"
 
         ws_client = Workspace(self.config["workspace-url"], token=token)
-        results = ws_client.list_objects(
-            {ws_args: [ws_ref], "type": "KBaseNarrative.Narrative"}
-        )
+        results = ws_client.list_objects({ws_args: [ws_ref], "type": "KBaseNarrative.Narrative"})
         if results[0] and results[0][0]:
             return f"{results[0][6]}/{results[0][0]}/{results[0][4]}"
 
@@ -156,12 +151,8 @@ def parse_args(args: list[str]) -> dict[str, Any]:
     p = argparse.ArgumentParser()
     p.add_argument("-u", "--user", dest="user_id", default=None, help="User ID")
     p.add_argument("-t", "--token", dest="token", default=None, help="User auth token")
-    p.add_argument(
-        "-w", "--ws", dest="ws_id", default=None, help="Workspace ID with Narrative"
-    )
-    p.add_argument(
-        "-o", "--outdir", dest="outdir", default=".", help="File output directory"
-    )
+    p.add_argument("-w", "--ws", dest="ws_id", default=None, help="Workspace ID with Narrative")
+    p.add_argument("-o", "--outdir", dest="outdir", default=".", help="File output directory")
     p.add_argument(
         "-x",
         "--skip-permissions-checks",
@@ -190,9 +181,7 @@ def main(args: list[str]) -> None:
     args = parse_args(args)
     sn = StaticNarrativeCmdLine(config)
 
-    sn.create_static_narrative(
-        args.ws_id, args.user_id, args.token, args.skip_permissions_checks
-    )
+    sn.create_static_narrative(args.ws_id, args.user_id, args.token, args.skip_permissions_checks)
 
 
 if __name__ == "__main__":
