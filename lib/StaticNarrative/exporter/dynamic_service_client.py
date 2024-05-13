@@ -37,14 +37,10 @@ class DynamicServiceClient:
         self.last_refresh_time = None
         self.token = token
 
-    def call_method(
-        self: "DynamicServiceClient", method: str, params_array: list
-    ) -> list:
+    def call_method(self: "DynamicServiceClient", method: str, params_array: list) -> list:
         """Calls the given method. Uses the BaseClient and cached service URL."""
         was_url_refreshed = False
-        if not self.cached_url or (
-            time.time() - self.last_refresh_time > self.url_cache_time
-        ):
+        if not self.cached_url or (time.time() - self.last_refresh_time > self.url_cache_time):
             self._lookup_url()
             was_url_refreshed = True
         try:
@@ -64,8 +60,6 @@ class DynamicServiceClient:
         )["url"]
         self.last_refresh_time = time.time()
 
-    def _call(
-        self: "DynamicServiceClient", method: str, params_array: list, token: str
-    ) -> list:
+    def _call(self: "DynamicServiceClient", method: str, params_array: list, token: str) -> list:
         bc = BaseClient(url=self.cached_url, token=token, lookup_url=False)
         return bc.call_method(self.module_name + "." + method, params_array)

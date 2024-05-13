@@ -1,4 +1,5 @@
 """Tests of the exporter module."""
+
 import os
 from test.mocks import set_up_ok_mocks
 

@@ -1,5 +1,5 @@
-"""
-Describes a Narrative Ref and has utilities for dealing with it.
+"""Describes a Narrative Ref and has utilities for dealing with it.
+
 This is a lightweight version of what's in the Narrative repo - it only handles
 just the strings, and doesn't try to figure out Narrative object ids from
 Workspace ids.
@@ -20,7 +20,8 @@ class NarrativeRef:
         return integer
 
     def __init__(self: "NarrativeRef", ref: str) -> None:
-        """
+        """Initialise a narrative ref object.
+
         :param ref: dict with keys wsid, objid, ver (either present or None)
         wsid is required, this will raise a ValueError if it is not present, or not a number
         objid, while required, can be gathered from the wsid. If there are problems with
@@ -37,8 +38,9 @@ class NarrativeRef:
 
     @staticmethod
     def parse(ref: str) -> "NarrativeRef":
-        """
-        Creates a NarrativeRef from a reference string. Should be numeric.
+        """Creates a NarrativeRef from a reference string.
+
+        Should be numeric.
         This'll fail here if there's < 1 or > 2 slashes.
         Otherwise it'll fail in the main __init__ function if any segment is malformed.
         """
@@ -46,9 +48,7 @@ class NarrativeRef:
             msg = "A Narrative ref must be of the format wsid/objid/ver"
             raise ValueError(msg)
         split_ref = ref.split("/")
-        return NarrativeRef(
-            {"wsid": split_ref[0], "objid": split_ref[1], "ver": split_ref[2]}
-        )
+        return NarrativeRef({"wsid": split_ref[0], "objid": split_ref[1], "ver": split_ref[2]})
 
     def __str__(self: "NarrativeRef") -> str:
         ref_str = f"{self.wsid}/{self.objid}"
@@ -57,8 +57,4 @@ class NarrativeRef:
         return ref_str
 
     def __eq__(self: "NarrativeRef", other: "NarrativeRef") -> bool:
-        return (
-            self.wsid == other.wsid
-            and self.objid == other.objid
-            and self.ver == other.ver
-        )
+        return self.wsid == other.wsid and self.objid == other.objid and self.ver == other.ver

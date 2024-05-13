@@ -1,4 +1,5 @@
 """Some utility functions for handling Narratives and permissions."""
+
 import logging
 import re
 import time
@@ -135,11 +136,7 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]
         }
         try:
             obj_info = ws_client.get_object_info3(
-                {
-                    "objects": [
-                        {"ref": f"{ws_id}/{info['narrative_id']}/{info['version']}"}
-                    ]
-                }
+                {"objects": [{"ref": f"{ws_id}/{info['narrative_id']}/{info['version']}"}]}
             )
         except ServerError as err:
             raise WorkspaceError(err, ws_id) from err
@@ -148,9 +145,7 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]
     return info
 
 
-def verify_admin_privilege(
-    workspace_url: str, user_id: str, token: str, ws_id: int
-) -> None:
+def verify_admin_privilege(workspace_url: str, user_id: str, token: str, ws_id: int) -> None:
     """Ensures that the user has admin permissions for the workspace.
 
     Raises PermissionError if the user is not an admin (has 'a' rights) on the Workspace.

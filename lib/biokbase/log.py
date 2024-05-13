@@ -261,8 +261,7 @@ class log(object):
                     for constraint in constraints:
                         if (
                             constraint not in self._log_constraints
-                            or self._log_constraints[constraint]
-                            != constraints[constraint]
+                            or self._log_constraints[constraint] != constraints[constraint]
                         ):
                             matches = 0
 
@@ -270,9 +269,7 @@ class log(object):
                         max_matching_level = level
 
                 self._api_log_level = max_matching_level
-        if (
-            self.get_log_level() != loglevel or self.get_log_file() != logfile
-        ) and not self._init:
+        if (self.get_log_level() != loglevel or self.get_log_file() != logfile) and not self._init:
             self._callback()
 
     def _resolve_log_level(self, level):
@@ -313,9 +310,7 @@ class log(object):
         self._user_log_level = -1
         self._callback()
 
-    def _get_ident(
-        self, level, user, parentfile, ip_address, authuser, module, method, call_id
-    ):
+    def _get_ident(self, level, user, parentfile, ip_address, authuser, module, method, call_id):
         infos = [
             self._subsystem,
             _MLOG_LEVEL_TO_TEXT[level],
@@ -367,13 +362,7 @@ class log(object):
                     except TypeError:
                         log.write(ident + str(message) + "\n")
         except Exception as e:
-            err = (
-                "Could not write to log file "
-                + str(self.get_log_file())
-                + ": "
-                + str(e)
-                + "."
-            )
+            err = "Could not write to log file " + str(self.get_log_file()) + ": " + str(e) + "."
             _warnings.warn(err)
 
     def log_message(

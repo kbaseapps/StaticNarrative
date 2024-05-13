@@ -1,6 +1,5 @@
-"""
-Some catch-all functions for helping process Narrative cells.
-"""
+"""Some catch-all functions for helping process Narrative cells."""
+
 import html
 import json
 import os
@@ -26,7 +25,8 @@ def _load_icon_data() -> None:
 def build_report_view_data(
     host: str, ws_client: Workspace, result: dict[str, Any] | list[dict[str, Any]]
 ) -> dict[str, str | list | dict]:
-    """
+    """Build the data structure used to represent a report in a static narrative.
+
     Returns a structure like this:
     {
         html: {
@@ -76,9 +76,7 @@ def build_report_view_data(
     ):
         return {}
     report_ref = result[0]["report_ref"]
-    report = ws_client.get_objects2({"objects": [{"ref": report_ref}]})["data"][0][
-        "data"
-    ]
+    report = ws_client.get_objects2({"objects": [{"ref": report_ref}]})["data"][0]["data"]
     """{'direct_html': None,
      'direct_html_link_index': None,
      'file_links': [],
@@ -94,9 +92,7 @@ def build_report_view_data(
         report_objs_created = report["objects_created"]
         # make list to look up obj types with get_object_info3
         info_lookup = [{"ref": o["ref"]} for o in report_objs_created]
-        infos = ws_client.get_object_info3({"objects": info_lookup, "ignoreErrors": 1})[
-            "infos"
-        ]
+        infos = ws_client.get_object_info3({"objects": info_lookup, "ignoreErrors": 1})["infos"]
 
         for idx, info in enumerate(infos):
             if info:
@@ -116,9 +112,7 @@ def build_report_view_data(
     if report.get("direct_html"):
         if not report.get("direct_html").startswith("<html"):
             html["set_height"] = False
-        html["direct"] = "data:text/html;charset=utf-8," + quote(
-            report.get("direct_html")
-        )
+        html["direct"] = "data:text/html;charset=utf-8," + quote(report.get("direct_html"))
 
     if report.get("html_links"):
         idx = report.get("direct_html_link_index", 0)
@@ -151,8 +145,8 @@ def build_report_view_data(
 
 
 def get_icon(config: dict[str, Any], metadata: dict[str, Any]) -> dict[str, str]:
-    """
-    Should return a dict with keys "type" and "icon"
+    """Should return a dict with keys "type" and "icon".
+
     * if "type" = image, then "icon" second should be the src.
     * if "type" = class, "icon" should be the full class to use to render the icon -
         "fa fa-right-arrow", for instance.
@@ -162,9 +156,7 @@ def get_icon(config: dict[str, Any], metadata: dict[str, Any]) -> dict[str, str]
     if metadata.get("type") == "data":
         icon["type"] = "class"
         icon.update(
-            get_data_icon(
-                metadata.get("dataCell", {}).get("objectInfo", {}).get("typeName")
-            )
+            get_data_icon(metadata.get("dataCell", {}).get("objectInfo", {}).get("typeName"))
         )
     elif metadata.get("type") == "output":
         icon["type"] = "class"
@@ -172,9 +164,7 @@ def get_icon(config: dict[str, Any], metadata: dict[str, Any]) -> dict[str, str]
         icon["color"] = "silver"
         icon["shape"] = "square"
     elif metadata.get("type") == "app":
-        if "icon" in metadata.get("appCell", {}).get("app", {}).get("spec", {}).get(
-            "info", {}
-        ):
+        if "icon" in metadata.get("appCell", {}).get("app", {}).get("spec", {}).get("info", {}):
             icon["type"] = "image"
             icon["icon"] = (
                 config.narrative_session.nms_image_url
@@ -210,28 +200,20 @@ def get_data_icon(obj_type: str) -> dict[str, str]:
 
 
 def get_authors(config: dict[str, Any], wsid: str) -> list[dict[str, str]]:
-    ws_client = Workspace(
-        url=config.narrative_session.ws_url, token=config.narrative_session.token
-    )
+    ws_client = Workspace(url=config.narrative_session.ws_url, token=config.narrative_session.token)
     ws_info = ws_client.get_workspace_info({"id": wsid})
     author_id_list = [ws_info[2]]
 
     other_authors = ws_client.get_permissions({"id": wsid})
 
     for author in sorted(other_authors.keys()):
-        if (
-            author != "*"
-            and other_authors[author] in ["w", "a"]
-            and author not in author_id_list
-        ):
+        if author != "*" and other_authors[author] in ["w", "a"] and author not in author_id_list:
             author_id_list.append(author)
 
     auth = KBaseAuth(config.narrative_session.auth_url)
     disp_names = {}
     try:
-        disp_names = auth.get_display_names(
-            config.narrative_session.token, author_id_list
-        )
+        disp_names = auth.get_display_names(config.narrative_session.token, author_id_list)
     except Exception as e:
         print(str(e))
 

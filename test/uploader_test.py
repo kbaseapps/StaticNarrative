@@ -1,4 +1,5 @@
 """Tests of the uploader module."""
+
 import os
 
 import pytest
@@ -10,9 +11,7 @@ REF = NarrativeRef.parse("1/2/3")
 
 def test_upload_no_narrative_file() -> None:
     path = "not_a_path"
-    with pytest.raises(
-        IOError, match=f"Static Narrative doesn't seem to exist at path {path}"
-    ):
+    with pytest.raises(IOError, match=f"Static Narrative doesn't seem to exist at path {path}"):
         upload_static_narrative(REF, path, None)
 
 
@@ -26,6 +25,4 @@ def test_upload_need_to_make_path(scratch_dir: str) -> None:
 
     assert f"/{REF.wsid}/{REF.ver}/" == ret
     assert os.path.exists(os.path.join(upload_endpt, str(REF.wsid), str(REF.ver)))
-    assert os.path.isfile(
-        os.path.join(upload_endpt, str(REF.wsid), str(REF.ver), "index.html")
-    )
+    assert os.path.isfile(os.path.join(upload_endpt, str(REF.wsid), str(REF.ver), "index.html"))

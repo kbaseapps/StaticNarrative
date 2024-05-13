@@ -1,4 +1,5 @@
 """Narrative preprocessor for nbconvert exporting."""
+
 __author__ = "Bill Riehl <wjriehl@lbl.gov>"
 
 import os
@@ -17,18 +18,17 @@ from .processor_util import get_authors, get_icon
 
 
 class NarrativePreprocessor(Preprocessor):
+    """Narrative preprocessor class."""
+
     def __init__(
         self: "NarrativePreprocessor", config: Any | None = None, **kw: dict[str, Any]
     ) -> None:
+        """Init the narrative preprocessor."""
         super().__init__(config=config, **kw)
         self.host = self.config.narrative_session.host
         base_path = self.config.narrative_session.base_path
-        self.style_file = os.path.join(
-            base_path, "static", "styles", "static_narrative.css"
-        )
-        self.icon_style_file = os.path.join(
-            base_path, "static", "styles", "kbase_icons.css"
-        )
+        self.style_file = os.path.join(base_path, "static", "styles", "static_narrative.css")
+        self.icon_style_file = os.path.join(base_path, "static", "styles", "kbase_icons.css")
         self.assets_base_url = self.config.narrative_session.assets_base_url
         self.assets_version = self.config.narrative_session.assets_version
         self.app_processor = AppProcessor(
@@ -59,14 +59,12 @@ class NarrativePreprocessor(Preprocessor):
                 "narrative_link": f"{self.host}/narrative/{ws_id}",
                 "authors": get_authors(self.config, nb["metadata"]["wsid"]),
                 "service_wizard_url": self.config.narrative_session.service_wizard_url,
-                "data_ie_url": self.config.narrative_session.data_ie_url,
                 "script_bundle_url": self.assets_base_url
                 + "/js/"
                 + self.assets_version
                 + "/staticNarrativeBundle.js",
                 "datestamp": datetime.now().strftime("%B %d, %Y").replace(" 0", " "),
-                "logo_url": self.assets_base_url
-                + "/images/kbase-logos/logo-icon-46-46.png",
+                "logo_url": self.assets_base_url + "/images/kbase-logos/logo-icon-46-46.png",
                 "app_citations": app_meta["citations"],
                 "meta_keywords": f"{app_meta['meta']}, {data_types}",
                 "meta_description": f"A KBase Narrative that uses these Apps: {app_meta['meta']}",
@@ -88,8 +86,8 @@ class NarrativePreprocessor(Preprocessor):
     def _get_app_metadata(
         self: "NarrativePreprocessor", nb: NotebookNode, nms_url: str
     ) -> dict[str, str | list[dict[str, str | dict[str, str]]]]:
-        """
-        Returns a structure containing app metadata and citations.
+        """Returns a structure containing app metadata and citations.
+
         {
             meta: str,
             citations: [{
@@ -123,7 +121,7 @@ class NarrativePreprocessor(Preprocessor):
 
             try:
                 app_infos = nms.get_method_full_info(nms_inputs)
-            except Exception as e:
+            except Exception:
                 app_infos = []
             for info in app_infos:
                 app_names.add(info["name"])
@@ -144,9 +142,7 @@ class NarrativePreprocessor(Preprocessor):
 
     def icons_font_css(self: "NarrativePreprocessor") -> str:
         """Generates the icon font loading css chunk."""
-        font_url = (
-            self.assets_base_url + "/fonts/" + self.assets_version + "/kbase-icons"
-        )
+        font_url = self.assets_base_url + "/fonts/" + self.assets_version + "/kbase-icons"
         return (
             "@font-face {\n"
             '    font-family: "kbase-icons";\n'
@@ -165,8 +161,8 @@ class NarrativePreprocessor(Preprocessor):
         meta: dict[str, Any],
         ws_id: str | int | None = None,
     ) -> str | None:
-        """
-        Returns the object reference inside a data cell, if present.
+        """Returns the object reference inside a data cell, if present.
+
         If not present, or not creatable from the metadata, returns None.
         If there's an upas set, use that, and cast it to the current workspace
             (and verify the object is there?)
@@ -178,11 +174,7 @@ class NarrativePreprocessor(Preprocessor):
         ref = None
         if "upas" in meta and ws_id is not None:
             # "upas" may be doubly-nested so check for another "upas" key
-            upas_values = (
-                meta["upas"]["upas"]
-                if "upas" in meta["upas"]
-                else meta["upas"].values()
-            )
+            upas_values = meta["upas"]["upas"] if "upas" in meta["upas"] else meta["upas"].values()
             refs = [deserialize(u, ws_id) for u in upas_values]
             ref = refs[0]
         elif "objectInfo" in meta:
@@ -201,6 +193,7 @@ class NarrativePreprocessor(Preprocessor):
         resources: dict[str, Any],
         index: int,
     ) -> tuple[object, dict[str, Any]]:
+        """Preprocess cell metadata."""
         ws_id = self.config.narrative_session.ws_id
 
         if "kbase" in cell.metadata:

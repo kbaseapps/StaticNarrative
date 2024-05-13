@@ -5,9 +5,7 @@ from installed_clients.baseclient import ServerError
 
 
 class PermissionsError(ServerError):
-    """Raised if user does not have permission to
-    access the workspace.
-    """
+    """Raised if user does not have permission to access the workspace."""
 
     @staticmethod
     def is_permissions_error(err: str) -> bool:
@@ -38,8 +36,7 @@ class WorkspaceError(Exception):
         message: str | None = None,
         http_code: int | None = 500,
     ) -> None:
-        """
-        This wraps Workspace calls regarding Narratives into exceptions that are
+        """This wraps Workspace calls regarding Narratives into exceptions that are
         easier to parse for logging, user communication, etc.
 
         ws_server_err should be the ServerError that comes back from a workspace
@@ -64,9 +61,7 @@ class WorkspaceError(Exception):
             self.message = "You do not have access to this workspace."
             self.http_code = 403
         elif "No object with id" in ws_server_err.message:
-            self.message = (
-                "Unable to find this Narrative based on workspace information."
-            )
+            self.message = "Unable to find this Narrative based on workspace information."
             self.http_code = 404
         else:
             self.message = ws_server_err.message

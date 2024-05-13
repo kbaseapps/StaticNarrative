@@ -1,3 +1,5 @@
+"""Generate the deployment config file."""
+
 import os
 import os.path
 import sys
@@ -13,9 +15,7 @@ if __name__ == "__main__":
         print(
             "Properties from <file_with_properties> will be applied to <deploy_cfg_template_file>"
         )
-        print(
-            "template which will be overwritten with .orig copy saved in the same folder first."
-        )
+        print("template which will be overwritten with .orig copy saved in the same folder first.")
         sys.exit(1)
 
     with open(sys.argv[1]) as file:
@@ -29,19 +29,8 @@ if __name__ == "__main__":
         props = (
             "[global]\n"
             + f"kbase_endpoint = {kbase_endpoint}\n"
-            + f"job_service_url = {kbase_endpoint}/userandjobstate\n"
-            + f"workspace_url = {kbase_endpoint}/ws\n"
-            + f"shock_url = {kbase_endpoint}/shock-api\n"
-            + f"handle_url = {kbase_endpoint}/handle_service\n"
             + f"srv_wiz_url = {kbase_endpoint}/service_wizard\n"
-            + f"njsw_url = {kbase_endpoint}/njs_wrapper\n"
-        )
-        if "AUTH_SERVICE_URL" in os.environ:
-            props += "auth_service_url = " + os.environ.get("AUTH_SERVICE_URL") + "\n"
-        props += (
-            "auth_service_url_allow_insecure = "
-            + os.environ.get("AUTH_SERVICE_URL_ALLOW_INSECURE", "false")
-            + "\n"
+            + f"workspace_url = {kbase_endpoint}/ws\n"
         )
         for key in os.environ:
             if key.startswith("KBASE_SECURE_CONFIG_PARAM_"):
@@ -49,9 +38,7 @@ if __name__ == "__main__":
                 props += param_name + " = " + os.environ.get(key) + "\n"
         config.read_file(StringIO(props))
     else:
-        raise ValueError(
-            "Neither " + sys.argv[2] + " file nor KBASE_ENDPOINT env-variable found"
-        )
+        raise ValueError("Neither " + sys.argv[2] + " file nor KBASE_ENDPOINT env-variable found")
     props = dict(config.items("global"))
 
     ### Additional properties for the StaticNarrative module
@@ -60,11 +47,10 @@ if __name__ == "__main__":
     kbase_root = parsed_endpt.scheme + "://" + parsed_endpt.netloc
     props.update(
         {
-            "nms_url": f"{kbase_endpoint}/narrative_method_store/rpc",
-            "nms_image_url": f"{kbase_endpoint}/narrative_method_store/",
             "auth_url": f"{kbase_endpoint}/auth",
+            "nms_image_url": f"{kbase_endpoint}/narrative_method_store/",
+            "nms_url": f"{kbase_endpoint}/narrative_method_store/rpc",
             "assets_base_url": f"{kbase_root}/ui-assets",
-            "data_ie_url": f"{kbase_endpoint}/data_import_export",
         }
     )
     ### End changes for StaticNarrative

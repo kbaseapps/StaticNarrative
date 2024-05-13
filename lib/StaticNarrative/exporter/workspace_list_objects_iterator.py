@@ -1,4 +1,5 @@
 """Class for fetching objects from the workspace."""
+
 from collections import deque
 from typing import Any
 
@@ -30,9 +31,7 @@ class WorkspaceListObjectsIterator:
             if ws_id is None and ws_name is None:
                 msg = "In case ws_info_list is not set either ws_id or ws_name should be set"
                 raise ValueError(msg)
-            ws_info_list = [
-                self.ws_client.get_workspace_info({"id": ws_id, "workspace": ws_name})
-            ]
+            ws_info_list = [self.ws_client.get_workspace_info({"id": ws_id, "workspace": ws_name})]
         # Let's split workspaces into blocks
         blocks = []  # Each block is array of ws_info
         sorted_ws_info_deque = deque(sorted(ws_info_list, key=lambda x: x[4]))
@@ -69,10 +68,7 @@ class WorkspaceListObjectsIterator:
         while self.part_iter is not None:
             try:
                 self.total_counter += 1
-                if (
-                    self.global_limit is not None
-                    and self.total_counter > self.global_limit
-                ):
+                if self.global_limit is not None and self.total_counter > self.global_limit:
                     raise StopIteration
                 return next(self.part_iter)
             except StopIteration:

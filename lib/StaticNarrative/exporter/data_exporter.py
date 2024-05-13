@@ -1,4 +1,5 @@
 """Fetches data to be exported as part of the Static Narrative creation."""
+
 import json
 import os
 from typing import Any
@@ -51,9 +52,7 @@ def export_narrative_data(
     types and data (above) are dumped to data.json
     """
     # Call the set api client to retrieve objects with sets
-    set_api_client = DynamicServiceClient(
-        service_wizard_url, "release", "SetAPI", token
-    )
+    set_api_client = DynamicServiceClient(service_wizard_url, "release", "SetAPI", token)
     ows = ObjectsWithSets(set_api_client, ws_client)
     ws_data = ows.list_objects_with_sets(ws_id=wsid, include_metadata=1)
 
@@ -83,10 +82,9 @@ def export_narrative_data(
     return output_data
 
 
-def _reshape_obj(
-    obj_info: list[str, str | dict[str, Any]]
-) -> list[str | dict[str, Any]]:
-    """
+def _reshape_obj(obj_info: list[str, str | dict[str, Any]]) -> list[str | dict[str, Any]]:
+    """Strip out useful object info, return as a list.
+
     Just pulls out the relevant info from object info, and mashes it into
     something more useful for the Static Narrative data browser.
     Takes an Object Info tuple from the Workspace and returns the following list:
