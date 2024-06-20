@@ -9,17 +9,18 @@ It also requires that a version is part of the ref.
 
 class NarrativeRef:
     def _less_than_zero(self: "NarrativeRef", number: str | int, name: str) -> int:
+        err_msg = f"The Narrative {name} must be an integer > 0, not {number}"
         try:
             integer = int(number)
-            if integer <= 0:
-                raise ValueError
-        except (ValueError, TypeError) as e:
-            err = f"The Narrative {name} must be an integer > 0, not {number}"
-            raise ValueError(err) from e
+        except TypeError as e:
+            raise ValueError(err_msg) from e
+
+        if integer <= 0:
+            raise ValueError(err_msg)
 
         return integer
 
-    def __init__(self: "NarrativeRef", ref: str) -> None:
+    def __init__(self: "NarrativeRef", ref: dict[str, str | int]) -> None:
         """Initialise a narrative ref object.
 
         :param ref: dict with keys wsid, objid, ver (either present or None)

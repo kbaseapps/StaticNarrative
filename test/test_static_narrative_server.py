@@ -229,5 +229,5 @@ def test_list_static_narratives(
     """TODO: better testing. set up specific files, narratives, maybe run all the things first.
     TODO: deeper unit testing?
     """
-    narrs = static_narrative_service.list_static_narratives(context)[0]
-    print(narrs)
+    output = static_narrative_service.list_static_narratives(context)[0]
+    assert output is not None
