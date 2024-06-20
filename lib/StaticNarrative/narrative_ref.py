@@ -12,7 +12,7 @@ class NarrativeRef:
         err_msg = f"The Narrative {name} must be an integer > 0, not {number}"
         try:
             integer = int(number)
-        except TypeError as e:
+        except (TypeError, ValueError) as e:
             raise ValueError(err_msg) from e
 
         if integer <= 0:
