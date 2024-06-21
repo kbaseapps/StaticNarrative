@@ -7,7 +7,7 @@ from typing import Any
 from installed_clients.WorkspaceClient import Workspace
 
 from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
-from StaticNarrative.exporter.objectswithsets import ObjectsWithSets
+from StaticNarrative.exporter.objects_with_sets import ObjectsWithSets
 
 from .processor_util import get_data_icon
 
