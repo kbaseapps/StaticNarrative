@@ -43,6 +43,7 @@ def generate_config(config: dict[str, Any] | None) -> None | dict[str, Any]:
         if not os.path.isdir(config[path]):
             msg = f"{path}: {config[path]} is not a directory"
             raise RuntimeError(msg)
+
         if path == "scratch" and not os.access(config[path], os.W_OK):
             msg = f"Cannot write to directory {config[path]}"
             raise RuntimeError(msg)
