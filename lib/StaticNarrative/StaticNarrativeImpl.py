@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
 # BEGIN_HEADER
 
+from StaticNarrative.config import generate_config
 from StaticNarrative.creator import StaticNarrativeCreator
 from StaticNarrative.manager import StaticNarrativeManager
 from StaticNarrative.narrative.narrative_util import (
@@ -36,7 +36,7 @@ class StaticNarrative:
     # be found
     def __init__(self, config):
         # BEGIN_CONSTRUCTOR
-        self.config = config
+        self.config = generate_config(config)
         # END_CONSTRUCTOR
         pass
 
@@ -92,9 +92,7 @@ class StaticNarrative:
         # ctx is the context object
         # return variables are: info
         # BEGIN get_static_narrative_info
-        info = get_static_info(
-            self.config["workspace-url"], ctx["token"], params.get("ws_id")
-        )
+        info = get_static_info(self.config["workspace-url"], ctx["token"], params.get("ws_id"))
         # END get_static_narrative_info
 
         # At some point might do deeper type checking...
@@ -165,8 +163,7 @@ class StaticNarrative:
         # At some point might do deeper type checking...
         if not isinstance(returnVal, dict):
             raise ValueError(
-                "Method status return value "
-                + "returnVal is not type dict as required."
+                "Method status return value " + "returnVal is not type dict as required."
             )
         # return the results
         return [returnVal]
