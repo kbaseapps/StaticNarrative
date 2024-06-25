@@ -24,16 +24,20 @@ class NarrativeService(object):
             password=None, token=None, ignore_authrc=False,
             trust_all_ssl_certificates=False,
             auth_svc='https://ci.kbase.us/services/auth/api/legacy/KBase/Sessions/Login',
-            service_ver='release'):
+            service_ver='release',
+            async_job_check_time_ms=100, async_job_check_time_scale_percent=150, 
+            async_job_check_max_time_ms=300000):
         if url is None:
-            url = 'https://kbase.us/services/service_wizard'
+            raise ValueError('A url is required')
         self._service_ver = service_ver
         self._client = _BaseClient(
             url, timeout=timeout, user_id=user_id, password=password,
             token=token, ignore_authrc=ignore_authrc,
             trust_all_ssl_certificates=trust_all_ssl_certificates,
             auth_svc=auth_svc,
-            lookup_url=True)
+            async_job_check_time_ms=async_job_check_time_ms,
+            async_job_check_time_scale_percent=async_job_check_time_scale_percent,
+            async_job_check_max_time_ms=async_job_check_max_time_ms)
 
     def list_objects_with_sets(self, params, context=None):
         """
@@ -107,8 +111,8 @@ class NarrativeService(object):
            String, parameter "data_palette_refs" of mapping from String to
            String
         """
-        return self._client.call_method('NarrativeService.list_objects_with_sets',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.list_objects_with_sets',
+                                    [params], self._service_ver, context)
 
     def copy_narrative(self, params, context=None):
         """
@@ -120,8 +124,8 @@ class NarrativeService(object):
         :returns: instance of type "CopyNarrativeOutput" -> structure:
            parameter "newWsId" of Long, parameter "newNarId" of Long
         """
-        return self._client.call_method('NarrativeService.copy_narrative',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.copy_narrative',
+                                    [params], self._service_ver, context)
 
     def create_new_narrative(self, params, context=None):
         """
@@ -190,8 +194,8 @@ class NarrativeService(object):
            parameter "typeMinorVersion" of String, parameter "saveDateMs" of
            Long
         """
-        return self._client.call_method('NarrativeService.create_new_narrative',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.create_new_narrative',
+                                    [params], self._service_ver, context)
 
     def copy_object(self, params, context=None):
         """
@@ -223,8 +227,8 @@ class NarrativeService(object):
            parameter "typeMinorVersion" of String, parameter "saveDateMs" of
            Long
         """
-        return self._client.call_method('NarrativeService.copy_object',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.copy_object',
+                                    [params], self._service_ver, context)
 
     def list_available_types(self, params, context=None):
         """
@@ -235,8 +239,8 @@ class NarrativeService(object):
            number of objects by type) -> structure: parameter "type_stat" of
            mapping from String to Long
         """
-        return self._client.call_method('NarrativeService.list_available_types',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.list_available_types',
+                                    [params], self._service_ver, context)
 
     def list_narratorials(self, params, context=None):
         """
@@ -285,8 +289,8 @@ class NarrativeService(object):
            parameter "size" of Long, parameter "meta" of mapping from String
            to String
         """
-        return self._client.call_method('NarrativeService.list_narratorials',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.list_narratorials',
+                                    [params], self._service_ver, context)
 
     def list_narratives(self, params, context=None):
         """
@@ -335,8 +339,8 @@ class NarrativeService(object):
            parameter "chsum" of String, parameter "size" of Long, parameter
            "meta" of mapping from String to String
         """
-        return self._client.call_method('NarrativeService.list_narratives',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.list_narratives',
+                                    [params], self._service_ver, context)
 
     def set_narratorial(self, params, context=None):
         """
@@ -351,8 +355,8 @@ class NarrativeService(object):
            "description" of String
         :returns: instance of type "SetNarratorialResult" -> structure:
         """
-        return self._client.call_method('NarrativeService.set_narratorial',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.set_narratorial',
+                                    [params], self._service_ver, context)
 
     def remove_narratorial(self, params, context=None):
         """
@@ -360,8 +364,8 @@ class NarrativeService(object):
            structure: parameter "ws" of String
         :returns: instance of type "RemoveNarratorialResult" -> structure:
         """
-        return self._client.call_method('NarrativeService.remove_narratorial',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.remove_narratorial',
+                                    [params], self._service_ver, context)
 
     def find_object_report(self, params, context=None):
         """
@@ -387,8 +391,8 @@ class NarrativeService(object):
            "object_upa" of String, parameter "copy_inaccessible" of type
            "boolean" (@range [0,1]), parameter "error" of String
         """
-        return self._client.call_method('NarrativeService.find_object_report',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.find_object_report',
+                                    [params], self._service_ver, context)
 
     def request_narrative_share(self, params, context=None):
         """
@@ -407,16 +411,17 @@ class NarrativeService(object):
            Not present if it succeeded.) -> structure: parameter "ok" of type
            "boolean" (@range [0,1]), parameter "error" of String
         """
-        return self._client.call_method('NarrativeService.request_narrative_share',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.request_narrative_share',
+                                    [params], self._service_ver, context)
 
     def get_all_app_info(self, input, context=None):
         """
         This returns all app info from the KBase catalog, formatted in a way to make life easy for the
         Narrative APPS panel on startup.
         :param input: instance of type "GetAppInfoInput" -> structure:
-           parameter "tag" of String, parameter "user_id" of String
-        :returns: instance of type "AllAppInfo" -> structure: parameter
+           parameter "tag" of String, parameter "user" of String
+        :returns: instance of type "AllAppInfo" (App info ids are all
+           lowercase - module/app_id) -> structure: parameter
            "module_versions" of mapping from String to String, parameter
            "categories" of mapping from String to type "CategoryInfo" ->
            structure: parameter "description" of String, parameter "id" of
@@ -434,16 +439,16 @@ class NarrativeService(object):
            of String, parameter "subtitle" of String, parameter "tooltip" of
            String, parameter "ver" of String, parameter "favorite" of Long
         """
-        return self._client.call_method('NarrativeService.get_all_app_info',
-                                        [input], self._service_ver, context)
+        return self._client.run_job('NarrativeService.get_all_app_info',
+                                    [input], self._service_ver, context)
 
     def get_ignore_categories(self, context=None):
         """
         This returns ignored app categories used in Narrative Apps Panel.
         :returns: instance of mapping from String to Long
         """
-        return self._client.call_method('NarrativeService.get_ignore_categories',
-                                        [], self._service_ver, context)
+        return self._client.run_job('NarrativeService.get_ignore_categories',
+                                    [], self._service_ver, context)
 
     def list_all_data(self, params, context=None):
         """
@@ -497,8 +502,8 @@ class NarrativeService(object):
            requested)) -> structure: parameter "display" of String, parameter
            "count" of Long
         """
-        return self._client.call_method('NarrativeService.list_all_data',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.list_all_data',
+                                    [params], self._service_ver, context)
 
     def list_workspace_data(self, params, context=None):
         """
@@ -550,9 +555,120 @@ class NarrativeService(object):
            requested)) -> structure: parameter "display" of String, parameter
            "count" of Long
         """
-        return self._client.call_method('NarrativeService.list_workspace_data',
-                                        [params], self._service_ver, context)
+        return self._client.run_job('NarrativeService.list_workspace_data',
+                                    [params], self._service_ver, context)
+
+    def rename_narrative(self, params, context=None):
+        """
+        This function renames a Narrative without the need to go through the Narrative application.
+        It does so by the following steps:
+        1. Ensure that the rename is just a string. Anything besides a string will fail.
+        2. Test to see if the authenticated user has admin permissions (as this modifies the workspace
+            metadata, only a workspace admin can do a rename).
+        3. Rename the narrative first in the workspace metadata, then create a new Narrative object with
+            the new name.
+        If all this goes off well, the new narrative UPA is returned.
+        :param params: instance of type "RenameNarrativeParams"
+           (narrative_ref - either a Narrative reference (ws_id/obj_id) or
+           UPA (ws_id/obj_id/ver). Should probably be a ref string to avoid
+           overwriting changes. new_name - the new name for the narrative.
+           Note that this isn't the object name, but the narrative's readable
+           name.) -> structure: parameter "narrative_ref" of String,
+           parameter "new_name" of String
+        :returns: instance of type "RenameNarrativeResult" (narrative_upa -
+           UPA of the updated and saved narrative object.) -> structure:
+           parameter "narrative_upa" of String
+        """
+        return self._client.run_job('NarrativeService.rename_narrative',
+                                    [params], self._service_ver, context)
+
+    def get_narrative_doc(self, params, context=None):
+        """
+        Intended to return data of previous versions of a given narrative in the same format returned from Search.
+        Formats a call to workspace service to fit the appropriate schema that is intended for use in UI displays
+        in the narrative navigator. Raises error is "narrative_upa" param is not in specified <workspace_id/obj_id/version> format. 
+        Note that this method is currently to support the UI only, and does not return the full result of a search call,
+        and the following fields are omitted: boolean copied, boolean is_narratorial, boolean is_temporary, string obj_name, string obj_type_module,
+        string obj_type_version, list<string> tags.
+        :param params: instance of type "SearchDocNarrativeParams"
+           (narrative_upa - UPA of the narrative to be requested in search
+           doc format.) -> structure: parameter "narrative_upa" of String
+        :returns: instance of type "SearchDocResult" (access_group - A
+           numeric ID which corresponds to the ownership group. cells - A
+           list of each cell's metadata within a given narrative.
+           creation_date - The date this narrative was created (ISO 8601).
+           creator - The username of the creator of a given narrative.
+           data_objects - A list of each data object used in a given
+           narrative. is_public - Whether or not a given narrative is
+           publicly shared. modified_at - The date a given narrative was last
+           updated according to the version provided in the UPA param (ms
+           since epoch). narrative_title - The title of a given narrative.
+           obj_id - The id of a given narrative shared_users - A list of
+           users who are allowed access to a given narrative. timestamp - The
+           time that a given narrative was last saved, regardless of version.
+           total_cells - The total number of cells in a given narrative.
+           version - The version of the narrative requested) -> structure:
+           parameter "access_group" of Long, parameter "cells" of list of
+           type "DocCell" (desc - a brief description of the narrative cell.
+           cell_type - the type of cell. Can be of type 'markdown', 'widget',
+           'data', 'kbase_app', 'code_cell', or '' if type is not
+           determined.) -> structure: parameter "desc" of String, parameter
+           "cell_type" of String, parameter "creation_date" of String,
+           parameter "creator" of String, parameter "data_objects" of list of
+           type "DocDataObject" (name - The name of the data object. obj_type
+           - The type of data object. readableType - The data object type in
+           a human readable format for displays.) -> structure: parameter
+           "name" of String, parameter "obj_type" of String, parameter
+           "readableType" of String, parameter "is_public" of type "boolean"
+           (@range [0,1]), parameter "modified_at" of Long, parameter
+           "narrative_title" of String, parameter "obj_id" of Long, parameter
+           "owner" of String, parameter "shared_users" of list of String,
+           parameter "timestamp" of Long, parameter "total_cells" of Long,
+           parameter "version" of Long
+        """
+        return self._client.run_job('NarrativeService.get_narrative_doc',
+                                    [params], self._service_ver, context)
+
+    def revert_narrative_object(self, object, context=None):
+        """
+        One stop shop method for running all workspace methods related to reverting an object. sequentially runs
+        Workspace.revert_object, followed by Workspace.alter_workspace_metadata to change "narrative_nice_name" to
+        a possible previous version name, then waits for the new version to be successfully indexed in search before
+        returning the object_info tuple received from the call to Workspace.revert_object. This method is intended for
+        UI, providing a seamless loading experience where the new version is actually indexed in search before finishing.
+        As search takes some time to index, this method takes that time into account and won't return until completed. ObjectIdentity
+        version is required to specify which version of an object to revert to; wsid and objid fields must be integers
+        representing the workspace id and object id.
+        :param object: instance of type "ObjectIdentity" (An object
+           identifier. All fields are required int wsid - the numerical ID of
+           the workspace. int objid - the numerical ID of the object. int ver
+           - the version of the object.) -> structure: parameter "wsid" of
+           Long, parameter "objid" of Long, parameter "ver" of Long
+        :returns: instance of type "object_info" (Information about an
+           object, including user provided metadata. obj_id objid - the
+           numerical id of the object. obj_name name - the name of the
+           object. type_string type - the type of the object. timestamp
+           save_date - the save date of the object. obj_ver ver - the version
+           of the object. username saved_by - the user that saved or copied
+           the object. ws_id wsid - the workspace containing the object.
+           ws_name workspace - the workspace containing the object. string
+           chsum - the md5 checksum of the object. int size - the size of the
+           object in bytes. usermeta meta - arbitrary user-supplied metadata
+           about the object.) -> tuple of size 11: parameter "objid" of Long,
+           parameter "name" of String, parameter "type" of String, parameter
+           "save_date" of type "timestamp" (A time in the format
+           YYYY-MM-DDThh:mm:ssZ, where Z is either the character Z
+           (representing the UTC timezone) or the difference in time to UTC
+           in the format +/-HHMM, eg: 2012-12-17T23:24:06-0500 (EST time)
+           2013-04-03T08:56:32+0000 (UTC time) 2013-04-03T08:56:32Z (UTC
+           time)), parameter "version" of Long, parameter "saved_by" of
+           String, parameter "wsid" of Long, parameter "workspace" of String,
+           parameter "chsum" of String, parameter "size" of Long, parameter
+           "meta" of mapping from String to String
+        """
+        return self._client.run_job('NarrativeService.revert_narrative_object',
+                                    [object], self._service_ver, context)
 
     def status(self, context=None):
-        return self._client.call_method('NarrativeService.status',
-                                        [], self._service_ver, context)
+        return self._client.run_job('NarrativeService.status',
+                                    [], self._service_ver, context)

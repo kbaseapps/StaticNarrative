@@ -1,37 +1,46 @@
 """Test configuration."""
 
 import os
-from configparser import ConfigParser
+from collections.abc import Generator
 from test import TEST_BASE_DIR
 from typing import Any
 
 import pytest
+from StaticNarrative.config import generate_config
 from StaticNarrative.StaticNarrativeImpl import StaticNarrative
-from StaticNarrative.StaticNarrativeServer import MethodContext
 
-CONFIG_FILE = os.environ.get("KB_DEPLOYMENT_CONFIG", os.path.join(TEST_BASE_DIR, "./deploy.cfg"))
+DEPLOY_CONFIG = "KB_DEPLOYMENT_CONFIG"
+TEST_CONFIG_FILE = os.path.join(TEST_BASE_DIR, "./deploy.cfg")
 
 
 @pytest.fixture(scope="session")
-def config() -> dict[str, str]:
-    """Parses the configuration file and retrieves the values under the SetAPI header.
+def config() -> Generator:
+    """Retrieve the config file for the tests.
 
     :return: dictionary of key-value pairs
     :rtype: dict[str, Any]
     """
-    print(f"Retrieving config from {CONFIG_FILE}")
-    cfg_dict = {}
-    config_parser = ConfigParser()
-    config_parser.read(CONFIG_FILE)
-    for nameval in config_parser.items("StaticNarrative"):
-        cfg_dict[nameval[0]] = nameval[1]
+    deploy_config = os.environ.get(DEPLOY_CONFIG)
+    os.environ[DEPLOY_CONFIG] = TEST_CONFIG_FILE
 
-    return cfg_dict
+    # make sure that we are using the test configuration file
+    # so don't load `get_config` until after the appropriate env
+    # vars are set
+    from StaticNarrative.StaticNarrativeServer import get_config
+
+    yield generate_config(get_config())
+
+    if deploy_config:
+        os.environ[DEPLOY_CONFIG] = deploy_config
+    else:
+        del os.environ[DEPLOY_CONFIG]
 
 
 @pytest.fixture(scope="session")
 def context() -> dict[str, Any]:
     """KBase context."""
+    from StaticNarrative.StaticNarrativeServer import MethodContext
+
     context = MethodContext(None)
     context.update(
         {

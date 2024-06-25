@@ -144,6 +144,8 @@ class AppProcessor:
         An UPA matches this structure: ##/##/##
         E.g. 123/456/789
         """
+        if not s:
+            return False
         upa_regex = r"^\d+\/\d+\/\d+$"
         return re.match(upa_regex, s) is not None
 

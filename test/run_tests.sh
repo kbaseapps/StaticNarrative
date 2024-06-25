@@ -7,6 +7,9 @@ current_dir=$(dirname "$(readlink -f "$0")")
 export KB_DEPLOYMENT_CONFIG="$current_dir"/deploy.cfg
 export PYTHONPATH="$current_dir"/../lib:"$PYTHONPATH"
 
+# ensure there's a valid scratch dir and an assets dir
+mkdir -p "$current_dir"/../scratch/nginx
+
 # run without collecting coverage data
 # pytest -vv test
 
