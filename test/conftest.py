@@ -6,6 +6,7 @@ from test import TEST_BASE_DIR
 from typing import Any
 
 import pytest
+from installed_clients.WorkspaceClient import Workspace
 from StaticNarrative.config import generate_config
 from StaticNarrative.StaticNarrativeImpl import StaticNarrative
 
@@ -37,14 +38,26 @@ def config() -> Generator:
 
 
 @pytest.fixture(scope="session")
-def context() -> dict[str, Any]:
+def token() -> str:
+    """Retrieve an auth token for the CI server from the environment."""
+    return os.environ.get("KBASE_CI_TOKEN", "some_token_string")
+
+
+@pytest.fixture(scope="session")
+def workspace_client(config: dict[str, Any], token: str) -> Workspace:
+    """Workspace client."""
+    return Workspace(config["workspace-url"], token=token)
+
+
+@pytest.fixture(scope="session")
+def context(token: str) -> dict[str, Any]:
     """KBase context."""
     from StaticNarrative.StaticNarrativeServer import MethodContext
 
     context = MethodContext(None)
     context.update(
         {
-            "token": "some_token",
+            "token": token,
             "user_id": "some_user",
             "provenance": [
                 {
