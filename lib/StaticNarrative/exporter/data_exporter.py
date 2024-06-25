@@ -53,7 +53,7 @@ def export_narrative_data(
     """
     # Call the set api client to retrieve objects with sets
     set_api_client = DynamicServiceClient(service_wizard_url, "release", "SetAPI", token)
-    ows = ObjectsWithSets(set_api_client, ws_client)
+    ows = ObjectsWithSets(workspace_client=ws_client, token=token)
     ws_data = ows.list_objects_with_sets(ws_id=wsid, include_metadata=1)
 
     filtered_data = []

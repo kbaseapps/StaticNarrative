@@ -16,8 +16,8 @@ from StaticNarrative.exporter.workspace_list_objects_iterator import (
 class ObjectsWithSets:
     def __init__(
         self: "ObjectsWithSets",
-        set_api_client: DynamicServiceClient | None,
         workspace_client: Workspace,
+        set_api_client: DynamicServiceClient | None = None,
         token: str | None = None,
         debug: bool = False,
     ) -> None:
@@ -78,7 +78,7 @@ class ObjectsWithSets:
         processed_refs = {}
         data = []
 
-        if self.set_api_client:
+        if hasattr(self, "set_api_client"):
             set_ret = self.set_api_client.call_method(
                 "list_sets",
                 [
