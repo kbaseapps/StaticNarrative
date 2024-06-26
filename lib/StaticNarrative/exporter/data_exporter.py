@@ -53,7 +53,7 @@ def export_narrative_data(
     """
     # Call the set api client to retrieve objects with sets
     set_api_client = DynamicServiceClient(service_wizard_url, "release", "SetAPI", token)
-    ows = ObjectsWithSets(workspace_client=ws_client, token=token)
+    ows = ObjectsWithSets(workspace_client=ws_client, set_api_client=set_api_client, token=token)
     ws_data = ows.list_objects_with_sets(ws_id=wsid, include_metadata=1)
 
     filtered_data = []
@@ -69,7 +69,7 @@ def export_narrative_data(
         filtered_data.append(_reshape_obj(obj))
         type_info[type_name]["count"] += 1
 
-    # Maybe sort it later. For now, dump to file.
+    # Sort and dump to file.
     output_data = {
         "data": sorted(filtered_data, key=lambda o: o[1].lower()),
         "types": type_info,
@@ -82,7 +82,7 @@ def export_narrative_data(
     return output_data
 
 
-def _reshape_obj(obj_info: list[str, str | dict[str, Any]]) -> list[str | dict[str, Any]]:
+def _reshape_obj(obj_info: list[str | dict[str, Any]]) -> list[str | dict[str, Any]]:
     """Strip out useful object info, return as a list.
 
     Just pulls out the relevant info from object info, and mashes it into

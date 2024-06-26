@@ -1,6 +1,7 @@
 """Test configuration."""
 
 import os
+import tempfile
 from collections.abc import Generator
 from test import TEST_BASE_DIR
 from typing import Any
@@ -29,7 +30,18 @@ def config() -> Generator:
     # vars are set
     from StaticNarrative.StaticNarrativeServer import get_config
 
-    yield generate_config(get_config())
+    original_conf = get_config()
+    assert original_conf is not None
+
+    # use a temp directory for the scratch and static file root dirs
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        original_conf["scratch"] = tmpdirname
+        original_conf["static-file-root"] = os.path.join(
+            original_conf["scratch"], "static_file_root"
+        )
+        os.makedirs(original_conf["static-file-root"], exist_ok=True)
+
+        yield generate_config(original_conf)
 
     if deploy_config:
         os.environ[DEPLOY_CONFIG] = deploy_config
@@ -40,7 +52,9 @@ def config() -> Generator:
 @pytest.fixture(scope="session")
 def token() -> str:
     """Retrieve an auth token for the CI server from the environment."""
-    return os.environ.get("KBASE_CI_TOKEN", "some_token_string")
+    return os.environ.get(
+        "KBASE_CI_TOKEN", os.environ.get("CI_KBASE_TEST_TOKEN", "some_token_string")
+    )
 
 
 @pytest.fixture(scope="session")

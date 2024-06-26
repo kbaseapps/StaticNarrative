@@ -68,8 +68,8 @@ class ObjectsWithSets:
         :type include_metadata: int
         :param outdir: where to save output to if debugging
         :type outdir: str
-        :return: _description_
-        :rtype: dict[str, Any]
+        :return: a list of data objects, organised into sets
+        :rtype: list[dict[str, Any]]
         """
         type_map = None
         if types is not None:
@@ -86,8 +86,6 @@ class ObjectsWithSets:
                         "workspaces": workspaces,
                         "include_set_item_info": 1,
                         "include_metadata": include_metadata,
-                        # TODO: implement infostruct returns!
-                        # "infostruct": 1,
                     }
                 ],
             )
