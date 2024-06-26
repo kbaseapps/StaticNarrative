@@ -38,7 +38,7 @@ jobs:
 
     - name: Send to Codecov
       id: send_to_codecov
-      uses: codecov/codecov-action@master
+      uses: codecov/codecov-action@main
       continue-on-error: true
       with:
         files: ./python-coverage/coverage.xml
