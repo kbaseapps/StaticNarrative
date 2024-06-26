@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout git repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@master
 
     - name: Set up python ${{ matrix.python }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@master
       with:
         python-version: ${{ matrix.python }}
 
@@ -31,12 +31,14 @@ jobs:
 
     - name: Run tests
       shell: bash -l {0}
+      env:
+        KBASE_CI_TOKEN: ${{ secrets.KBASE_CI_TOKEN }}
       run: |
         sh test/run_tests.sh
 
     - name: Send to Codecov
       id: send_to_codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@master
       continue-on-error: true
       with:
         files: ./python-coverage/coverage.xml
