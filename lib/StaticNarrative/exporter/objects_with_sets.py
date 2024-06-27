@@ -1,3 +1,5 @@
+"""Get workspace objects, including set information."""
+
 import json
 import os
 from typing import Any
@@ -5,6 +7,7 @@ from typing import Any
 from installed_clients.WorkspaceClient import Workspace
 
 from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
+from StaticNarrative.exporter.generic_set_navigator import GenericSetNavigator
 from StaticNarrative.exporter.workspace_list_objects_iterator import (
     WorkspaceListObjectsIterator,
 )
@@ -13,12 +16,16 @@ from StaticNarrative.exporter.workspace_list_objects_iterator import (
 class ObjectsWithSets:
     def __init__(
         self: "ObjectsWithSets",
-        set_api_client: DynamicServiceClient,
         workspace_client: Workspace,
+        set_api_client: DynamicServiceClient | None = None,
+        token: str | None = None,
         debug: bool = False,
     ) -> None:
-        self.set_api_client = set_api_client
+        if set_api_client:
+            self.set_api_client = set_api_client
         self.ws_client = workspace_client
+        self.token = token
+        self.generic_set_navigator = GenericSetNavigator(workspace_client, token)
         self.debug = debug
 
     def list_objects_with_sets(
@@ -28,14 +35,14 @@ class ObjectsWithSets:
         include_metadata: int = 0,
         outdir: str = "",
         **kwargs,
-    ) -> dict[str, Any]:
+    ) -> list[dict[str, Any]]:
         if not ws_id:
             msg = "ws_id is required"
             raise ValueError(msg)
         return self._list_objects_with_sets([ws_id], types, include_metadata, outdir)
 
     def _check_info_type(
-        self: "ObjectsWithSets", info: list[str | Any], type_map: dict[str | Any]
+        self: "ObjectsWithSets", info: list[str | Any], type_map: dict[str, Any] | None
     ) -> bool:
         if type_map is None:
             return True
@@ -45,24 +52,24 @@ class ObjectsWithSets:
     def _list_objects_with_sets(
         self: "ObjectsWithSets",
         workspaces: list[int | str],
-        types: list[str],
+        types: list[str] | None,
         include_metadata: int,
         outdir: str,
     ) -> list[dict[str, Any]]:
         """List objects with sets.
 
-        :param self: _description_
+        :param self: this instance
         :type self: ObjectsWithSets
-        :param workspaces: _description_
-        :type workspaces: list[int  |  str]
-        :param types: _description_
+        :param workspaces: list of workspaces to fetch objects from
+        :type workspaces: list[int|str]
+        :param types: list of types to restrict the output to
         :type types: list[str]
-        :param include_metadata: _description_
+        :param include_metadata: whether or not to retrieve object metadata
         :type include_metadata: int
-        :param outdir: _description_
+        :param outdir: where to save output to if debugging
         :type outdir: str
-        :return: _description_
-        :rtype: dict[str, Any]
+        :return: a list of data objects, organised into sets
+        :rtype: list[dict[str, Any]]
         """
         type_map = None
         if types is not None:
@@ -70,18 +77,26 @@ class ObjectsWithSets:
 
         processed_refs = {}
         data = []
-        set_ret = self.set_api_client.call_method(
-            "list_sets",
-            [
+
+        if hasattr(self, "set_api_client"):
+            set_ret = self.set_api_client.call_method(
+                "list_sets",
+                [
+                    {
+                        "workspaces": workspaces,
+                        "include_set_item_info": 1,
+                        "include_metadata": include_metadata,
+                    }
+                ],
+            )
+        else:
+            set_ret = self.generic_set_navigator.list_sets(
                 {
                     "workspaces": workspaces,
                     "include_set_item_info": 1,
                     "include_metadata": include_metadata,
-                    # TODO: implement infostruct returns!
-                    # "infostruct": 1,
                 }
-            ],
-        )
+            )
 
         if self.debug:
             with open(os.path.join(outdir, "list_sets.json"), "w") as fout:
