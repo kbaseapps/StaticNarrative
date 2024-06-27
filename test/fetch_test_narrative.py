@@ -16,8 +16,8 @@ import json
 import os
 import sys
 
-from installed_clients.NarrativeServiceClient import NarrativeService
 from installed_clients.WorkspaceClient import Workspace
+from StaticNarrative.exporter.objects_with_sets import ObjectsWithSets
 
 
 def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int:
@@ -51,7 +51,8 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
         if "kbase" in cell["metadata"]:
             meta = cell["metadata"]["kbase"]
             if "appCell" in meta:
-                job_state = meta["appCell"].get("exec", {}).get("jobState")
+                job_state = meta["appCell"].get("exec", {}).get("jobState", {})
+
                 result = []
                 if "result" in job_state:
                     result = job_state["result"]
@@ -68,8 +69,8 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
                         json.dump(report_data, fout, indent=4)
 
     # List objects results
-    service = NarrativeService(url=endpt + "service_wizard", token=token)
-    ws_data = service.list_objects_with_sets({"ws_id": ws_id, "includeMetadata": 1})
+    ows = ObjectsWithSets(workspace_client=ws_client, token=token)
+    ws_data = ows.list_objects_with_sets(ws_id, includeMetadata=1)
     data_outpath = os.path.join(outdir, f"objects-{ws_id}.json")
     with open(data_outpath, "w") as fout:
         json.dump(ws_data, fout, indent=4)
@@ -77,7 +78,7 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
     return 0
 
 
-def parse_args(args: list[str]) -> dict[str, str]:
+def parse_args(args: list[str]) -> argparse.Namespace:
     """Parse input arguments to the script.
 
     :param args: arguments
@@ -86,24 +87,24 @@ def parse_args(args: list[str]) -> dict[str, str]:
     :raises ValueError: if there is not a valid WS admin auth token supplied
     :raises ValueError: if there is no workspace ID supplied
     :return: sanitised and checked args
-    :rtype: dict[str, str]
+    :rtype: argparse.Namespace
     """
     p = argparse.ArgumentParser(description=__doc__.strip())
     p.add_argument("-t", "--token", dest="token", default=None, help="User auth token")
     p.add_argument("-e", "--env", dest="env", default=None, help="KBase environment")
     p.add_argument("-w", "--ws", dest="ws_id", default=None, help="Workspace id with Narrative")
     p.add_argument("-o", "--outdir", dest="outdir", default=".", help="File output directory")
-    args = p.parse_args(args)
-    if args.env is None:
+    parsed_args = p.parse_args(args)
+    if parsed_args.env is None:
         msg = "env - the KBase environment - is required!"
         raise ValueError(msg)
-    if args.token is None:
+    if parsed_args.token is None:
         msg = "token - a valid Workspace admin auth token - is required!"
         raise ValueError(msg)
-    if args.ws_id is None:
+    if parsed_args.ws_id is None:
         msg = "ws_id - a valid Workspace id - is required!"
         raise ValueError(msg)
-    return args
+    return parsed_args
 
 
 def main(args: list[str]) -> int:
@@ -114,13 +115,15 @@ def main(args: list[str]) -> int:
     :return: output code indicating success (0) or otherwise
     :rtype: int
     """
-    args = parse_args(args)
+    parsed_args = parse_args(args)
     endpt = "kbase.us/services/"
-    env = args.env + "."
+    env = parsed_args.env + "."
     if env == "prod":
         env = ""
     endpt = f"https://{env}{endpt}"
-    return fetch_narrative_data(endpt, args.token, int(args.ws_id), args.outdir)
+    return fetch_narrative_data(
+        endpt, parsed_args.token, int(parsed_args.ws_id), parsed_args.outdir
+    )
 
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ class WorkspaceError(Exception):
     def __init__(
         self: "WorkspaceError",
         ws_server_err: ServerError,
-        ws_id: str,
+        ws_id: str | int,
         message: str | None = None,
         http_code: int | None = 500,
     ) -> None:

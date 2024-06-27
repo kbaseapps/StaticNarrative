@@ -18,7 +18,7 @@ def test_status(static_narrative_service: StaticNarrative, context: dict[str, An
 
     assert status == {
         "state": "OK",
-        "message": "",
+        "message": "All's well that ends with a static narrative",
         "version": static_narrative_service.VERSION,
         "git_url": static_narrative_service.GIT_URL,
         "git_commit_hash": static_narrative_service.GIT_COMMIT_HASH,

@@ -1,15 +1,14 @@
 """Fetches data to be exported as part of the Static Narrative creation."""
 
 import json
-import os
+from pathlib import Path
 from typing import Any
 
 from installed_clients.WorkspaceClient import Workspace
 
 from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
 from StaticNarrative.exporter.objects_with_sets import ObjectsWithSets
-
-from .processor_util import get_data_icon
+from StaticNarrative.exporter.processor_util import get_data_icon
 
 IGNORED_TYPES = ["KBaseNarrative.Narrative"]
 
@@ -17,9 +16,9 @@ IGNORED_TYPES = ["KBaseNarrative.Narrative"]
 def export_narrative_data(
     ws_client: Workspace,
     wsid: int,
-    output_dir: str,
-    service_wizard_url: str,
     token: str,
+    output_dir: str | Path,
+    set_api_client: DynamicServiceClient | None = None,
     debug: bool = False,
 ) -> dict[str, Any]:
     """Exports data from a Narrative into an attached JSON file.
@@ -51,8 +50,7 @@ def export_narrative_data(
 
     types and data (above) are dumped to data.json
     """
-    # Call the set api client to retrieve objects with sets
-    set_api_client = DynamicServiceClient(service_wizard_url, "release", "SetAPI", token)
+    # Call ObjectsWithSets to retrieve data, including any sets in the workspace
     ows = ObjectsWithSets(workspace_client=ws_client, set_api_client=set_api_client, token=token)
     ws_data = ows.list_objects_with_sets(ws_id=wsid, include_metadata=1)
 
@@ -75,10 +73,10 @@ def export_narrative_data(
         "types": type_info,
     }
 
-    output_path = os.path.join(output_dir, "data.json")
+    output_path = Path(output_dir) / "data.json"
     with open(output_path, "w") as outfile:
         json.dump(output_data, outfile)
-    output_data["path"] = output_path
+    output_data["path"] = str(output_path)
     return output_data
 
 

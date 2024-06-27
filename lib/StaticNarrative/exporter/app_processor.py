@@ -6,16 +6,18 @@ from typing import Any
 
 from installed_clients.WorkspaceClient import Workspace
 
-from .processor_util import build_report_view_data
+from StaticNarrative.exporter.processor_util import build_report_view_data
 
 
 class AppProcessor:
     """App information processor."""
 
-    def __init__(self: "AppProcessor", host: str, ws_url: str, nms_url: str, token: str) -> None:
+    def __init__(
+        self: "AppProcessor", host: str, ws_client: Workspace, nms_url: str, token: str
+    ) -> None:
         """Initialise the app processor."""
         self.host = host
-        self.ws_url = ws_url
+        self.ws_client = ws_client
         self.nms_url = nms_url
         self.token = token
 
@@ -49,11 +51,10 @@ class AppProcessor:
         elif "job_output" in job_state:  # EE2
             exec_result = job_state["job_output"].get("result")
 
-        ws_client = Workspace(self.ws_url, token=self.token)
         kb_info["output"] = {
             "widget": exec_state.get("outputWidgetInfo", {}),
             "result": exec_result,
-            "report": build_report_view_data(self.host, ws_client, exec_result),
+            "report": build_report_view_data(self.host, self.ws_client, exec_result),
         }
         kb_info["job"] = {"state": "This app is new, and hasn't been started."}
         if "exec" in kb_meta["appCell"]:
@@ -90,7 +91,7 @@ class AppProcessor:
         param_spec: dict[str, Any],
     ) -> dict[str, Any]:
         """Make a dictionary mapping UPAs to their object info."""
-        upas = []
+        upas: list[str] = []
         if param_spec["field_type"] == "text":
             valid_ws_types = param_spec.get("text_options", {}).get("valid_ws_types", [])
             if len(valid_ws_types) > 0 and value:
@@ -98,14 +99,14 @@ class AppProcessor:
                     upas = [v for v in value if self._is_upa(v)]
                 elif self._is_upa(value):
                     upas = [value]
-        upa_map = {}
-        if len(upas):
-            ws_client = Workspace(url=self.ws_url, token=self.token)
-            obj_infos = ws_client.get_object_info3({"objects": [{"ref": upa} for upa in upas]})[
-                "infos"
-            ]
-            upa_map = {u: obj_infos[i] for i, u in enumerate(upas)}
-        return upa_map
+        if not upas:
+            return {}
+
+        result = self.ws_client.get_object_info3({"objects": [{"ref": upa} for upa in upas]})
+        if not result:
+            return {}
+        obj_infos = result["infos"]
+        return {u: obj_infos[i] for i, u in enumerate(upas)}
 
     def _translate_param_value(
         self: "AppProcessor",

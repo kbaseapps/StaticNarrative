@@ -5,10 +5,17 @@ from typing import Any
 from urllib.parse import urlparse
 
 
-def generate_config(config: dict[str, Any] | None) -> None | dict[str, Any]:
+def generate_config(config: dict[str, Any] | None) -> dict[str, Any]:
     """Generate the config for the StaticNarrative, with some tweaks."""
     if not config:
-        return {}
+        msg = "No config information found"
+        raise RuntimeError(msg)
+
+    required_values = ["kbase-endpoint", "scratch", "static-file-root"]
+    if not all(config.get(v) for v in required_values):
+        missing = [v for v in required_values if not config.get(v)]
+        msg = f"Missing required config values: {', '.join(missing)}"
+        raise RuntimeError(msg)
 
     kbase_endpoint = config.get("kbase-endpoint")
     if kbase_endpoint == "{{ kbase_endpoint }}":
@@ -32,14 +39,11 @@ def generate_config(config: dict[str, Any] | None) -> None | dict[str, Any]:
     # ensure these paths are absolute, not relative
     for path in ["static-file-root", "scratch"]:
         assigned_path = config.get(path)
-        if assigned_path is None:
-            msg = f"Missing required config setting {path}"
-            raise RuntimeError(msg)
 
         if not os.path.isabs(assigned_path):
             config[path] = os.path.abspath(assigned_path)
 
-        # check that the directory exists and is writeable
+        # check that the directory exists and is writable
         if not os.path.isdir(config[path]):
             msg = f"{path}: {config[path]} is not a directory"
             raise RuntimeError(msg)

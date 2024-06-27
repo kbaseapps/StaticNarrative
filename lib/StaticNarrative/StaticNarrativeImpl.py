@@ -1,5 +1,7 @@
 # BEGIN_HEADER
 
+from installed_clients.WorkspaceClient import Workspace
+
 from StaticNarrative.config import generate_config
 from StaticNarrative.creator import StaticNarrativeCreator
 from StaticNarrative.manager import StaticNarrativeManager
@@ -37,6 +39,9 @@ class StaticNarrative:
     def __init__(self, config):
         # BEGIN_CONSTRUCTOR
         self.config = generate_config(config)
+        if not self.config:
+            msg = "No configuration data found. Please check KB_DEPLOYMENT_CONFIG env var points to a valid config file."
+            raise RuntimeError(msg)
         # END_CONSTRUCTOR
         pass
 
@@ -56,9 +61,8 @@ class StaticNarrative:
         # ctx is the context object
         # return variables are: output
         # BEGIN create_static_narrative
-        snc = StaticNarrativeCreator(self.config)
+        snc = StaticNarrativeCreator(self.config, token=ctx["token"])
         params["user_id"] = ctx["user_id"]
-        params["token"] = ctx["token"]
         output = snc.create_static_narrative(params)
         # END create_static_narrative
 
@@ -92,7 +96,8 @@ class StaticNarrative:
         # ctx is the context object
         # return variables are: info
         # BEGIN get_static_narrative_info
-        info = get_static_info(self.config["workspace-url"], ctx["token"], params.get("ws_id"))
+        ws_client = Workspace(self.config["workspace-url"], token=ctx["token"])
+        info = get_static_info(ws_client, params.get("ws_id"))
         # END get_static_narrative_info
 
         # At some point might do deeper type checking...
@@ -153,7 +158,7 @@ class StaticNarrative:
         # BEGIN status
         returnVal = {
             "state": "OK",
-            "message": "",
+            "message": "All's well that ends with a static narrative",
             "version": self.VERSION,
             "git_url": self.GIT_URL,
             "git_commit_hash": self.GIT_COMMIT_HASH,

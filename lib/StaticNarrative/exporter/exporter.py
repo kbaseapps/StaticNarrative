@@ -21,15 +21,17 @@ from traitlets.config import Config
 from StaticNarrative import STATIC_NARRATIVE_BASE_DIR
 from StaticNarrative.exceptions import WorkspaceError
 from StaticNarrative.exporter import preprocessor
+from StaticNarrative.exporter.data_exporter import export_narrative_data
+from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
 from StaticNarrative.narrative.narrative_util import read_narrative
 from StaticNarrative.narrative_ref import NarrativeRef
-
-from .data_exporter import export_narrative_data
 
 NARRATIVE_TEMPLATE_FILE = "narrative.tpl"
 
 
 class NarrativeExporter:
+    """Class for exporting Static Narratives."""
+
     def __init__(
         self: "NarrativeExporter",
         exporter_cfg: dict[str, str],  # config object
@@ -55,7 +57,7 @@ class NarrativeExporter:
         """
         # 1. Get the Narrative object
         try:
-            nar = read_narrative(narrative_ref, self.ws_client)
+            nar = read_narrative(self.ws_client, narrative_ref)
             nar["metadata"]["wsid"] = narrative_ref.wsid
         except ServerError as e:
             raise WorkspaceError(e, narrative_ref.wsid, "Error while exporting Narrative") from e
@@ -64,12 +66,16 @@ class NarrativeExporter:
         kb_notebook = nbformat.reads(json.dumps(nar), as_version=4)
 
         # 3. Export the Narrative workspace data to a sidecar JSON file.
+        set_api_client = DynamicServiceClient(
+            self.exporter_cfg["srv-wiz-url"], "release", "SetAPI", self.token
+        )
+
         exported_data = export_narrative_data(
             self.ws_client,
             narrative_ref.wsid,
-            output_dir,
-            self.exporter_cfg["srv-wiz-url"],
             self.token,
+            output_dir,
+            set_api_client,
             debug=self.debug,
         )
 
@@ -152,6 +158,7 @@ class NarrativeExporter:
         c.narrative_session.narrative_data = exported_data
         c.narrative_session.assets_version = self.exporter_cfg["assets-version"]
         c.narrative_session.ws_id = ws_id
+        c.narrative_session.ws_client = self.ws_client
 
         html_exporter = HTMLExporter(config=c)
         html_exporter.template_file = NARRATIVE_TEMPLATE_FILE

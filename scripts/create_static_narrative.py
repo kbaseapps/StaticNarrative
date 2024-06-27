@@ -5,7 +5,8 @@ import logging
 import sys
 from configparser import ConfigParser
 from os import environ
-from typing import Any
+
+from StaticNarrative.config import generate_config
 
 from lib.installed_clients.WorkspaceClient import Workspace
 from lib.StaticNarrative.creator import StaticNarrativeCreator
@@ -49,20 +50,25 @@ def get_config() -> None | dict[str, str]:
     return retconfig
 
 
-config = get_config()
-
-
 class StaticNarrativeCmdLine:
     """Class for creating static narratives from the command line."""
 
-    def __init__(self: "StaticNarrativeCmdLine", config: dict[str, str]) -> None:
+    def __init__(self: "StaticNarrativeCmdLine", config: dict[str, str], token: str) -> None:
         """Init the class.
 
         :param self: this class
         :type self: StaticNarrativeCmdLine
         :param config: parsed config
         :type config: dict[str, str]
+        :param token: token for access KBase APIs
+        :type token: str
         """
+        if not token or not config["workspace-url"]:
+            msg = "workspace URL and a token required to initialise the StaticNarrativeCmdLine."
+            raise RuntimeError(msg)
+        self.config = config
+        self.token = token
+
         logging.basicConfig(format="%(created)s %(levelname)s: %(message)s", level=logging.INFO)
         self.logger = logging.getLogger("StaticNarrative")
         self.logger.setLevel(logging.INFO)
@@ -71,19 +77,14 @@ class StaticNarrativeCmdLine:
         formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
         ch.setFormatter(formatter)
         self.logger.addHandler(ch)
-        self.config = config
 
-    def get_narrative_id_from_workspace(
-        self: "StaticNarrativeCmdLine", ws_ref: str | int, token: str
-    ) -> str:
+    def get_narrative_id_from_workspace(self: "StaticNarrativeCmdLine", ws_ref: str | int) -> str:
         """Retrieve the Narrative object from a workspace (if one exists).
 
         :param self: this class
         :type self: StaticNarrativeCmdLine
         :param ws_ref: workspace reference (ID or name)
         :type ws_ref: str | int
-        :param token: user token
-        :type token: str
         :raises ValueError: if no Narrative object is found
         :return: KBaseNarrative.Narrative object UPA
         :rtype: str
@@ -92,9 +93,9 @@ class StaticNarrativeCmdLine:
         if str(ws_ref).isdigit():
             ws_args = "ids"
 
-        ws_client = Workspace(self.config["workspace-url"], token=token)
+        ws_client = Workspace(self.config["workspace-url"], token=self.token)
         results = ws_client.list_objects({ws_args: [ws_ref], "type": "KBaseNarrative.Narrative"})
-        if results[0] and results[0][0]:
+        if results and results[0] and results[0][0]:
             return f"{results[0][6]}/{results[0][0]}/{results[0][4]}"
 
         # no narrative object
@@ -105,7 +106,6 @@ class StaticNarrativeCmdLine:
         self: "StaticNarrativeCmdLine",
         ws_ref: str | int,
         user_id: str,
-        token: str,
         skip_permissions_checks: str,
     ) -> None:
         """Create a static narrative from a Workspace reference.
@@ -114,39 +114,35 @@ class StaticNarrativeCmdLine:
         :type ws_ref: str
         :param user_id: valid KBase user ID
         :type user_id: str
-        :param token: KBase token, valid for whichever server the workspace is on
-        :type token: str
         :param skip_permissions_checks: whether the permission checks should be run
         :type skip_permissions_checks: str
         """
         # this is a workspace reference
+        ws_ref = str(ws_ref)
+        narrative_ref = ws_ref
         if ws_ref.count("/") == 0:
-            narrative_ref = self.get_narrative_id_from_workspace(ws_ref, token)
-        else:
-            narrative_ref = ws_ref
+            narrative_ref = self.get_narrative_id_from_workspace(ws_ref)
 
         ref = NarrativeRef.parse(narrative_ref)
-        snc = StaticNarrativeCreator(self.config)
+        snc = StaticNarrativeCreator(self.config, token=self.token)
 
-        log_msg = f"Creating Static Narrative {ref}"
-        self.logger.info(log_msg)
+        self.logger.info("Creating Static Narrative %s", ref)
 
         if not skip_permissions_checks:
-            snc.check_permissions(ref, user_id=user_id, token=token)
+            snc.check_permissions(ref, user_id=user_id)
 
-        output_path = snc.export_narrative(ref, user_id, token)
-        log_msg = f"Static Narrative for {ref} created at {output_path}"
-        self.logger.info(log_msg)
+        output_path = snc.export_narrative(ref, user_id)
+        self.logger.info("Static Narrative for %s created at %s", ref, output_path)
 
 
-def parse_args(args: list[str]) -> dict[str, Any]:
+def parse_args(args: list[str]) -> argparse.Namespace:
     """Parse input arguments.
 
     :param args: input argument list
     :type args: list[str]
     :raises ValueError: if one or more of the parameters are missing
     :return: parsed arguments
-    :rtype: dict[str, str]
+    :rtype: argparse.Namespace
     """
     p = argparse.ArgumentParser()
     p.add_argument("-u", "--user", dest="user_id", default=None, help="User ID")
@@ -160,16 +156,16 @@ def parse_args(args: list[str]) -> dict[str, Any]:
         default=None,
         help="Skip the workspace permissions checks; omit the argument to ensure that permission checks are run.",
     )
-    args = p.parse_args(args)
+    parsed_args = p.parse_args(args)
     errs = []
-    if not args.token:
+    if not parsed_args.token:
         errs.append("token - a valid Workspace admin auth token - is required!")
-    if not args.ws_id:
+    if not parsed_args.ws_id:
         errs.append("ws_id - a valid Workspace id - is required!")
     if errs:
         err_str = "\n".join(["Could not create a static narrative:", *errs])
         raise ValueError(err_str)
-    return args
+    return parsed_args
 
 
 def main(args: list[str]) -> None:
@@ -178,10 +174,16 @@ def main(args: list[str]) -> None:
     :param args: input args as a list
     :type args: list[str]
     """
-    args = parse_args(args)
-    sn = StaticNarrativeCmdLine(config)
+    parsed_args = parse_args(args)
+    config = generate_config(get_config())
+    if config is None:
+        msg = f"No configuration data found. Please check {DEPLOY} env var points to a valid config file."
+        raise RuntimeError(msg)
+    sn = StaticNarrativeCmdLine(config, token=parsed_args.token)
 
-    sn.create_static_narrative(args.ws_id, args.user_id, args.token, args.skip_permissions_checks)
+    sn.create_static_narrative(
+        parsed_args.ws_id, parsed_args.user_id, parsed_args.skip_permissions_checks
+    )
 
 
 if __name__ == "__main__":
