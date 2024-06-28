@@ -28,8 +28,6 @@ class StaticNarrativeCreator:
         :type config: dict[str, Any]
         :param token: token
         :type token: str
-        # :param user_id: user ID
-        # :type user_id: str
         :return: nothing
         :rtype: None
         """
