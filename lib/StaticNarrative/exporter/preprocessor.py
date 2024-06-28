@@ -8,20 +8,20 @@ from datetime import datetime
 from typing import Any
 
 from installed_clients.NarrativeMethodStoreClient import NarrativeMethodStore
+from installed_clients.WorkspaceClient import Workspace
 from nbconvert.preprocessors import Preprocessor
 from nbformat import NotebookNode
 
+from StaticNarrative.exporter.app_processor import AppProcessor
+from StaticNarrative.exporter.processor_util import get_authors, get_icon
 from StaticNarrative.upa import deserialize
-
-from .app_processor import AppProcessor
-from .processor_util import get_authors, get_icon
 
 
 class NarrativePreprocessor(Preprocessor):
     """Narrative preprocessor class."""
 
     def __init__(
-        self: "NarrativePreprocessor", config: Any | None = None, **kw: dict[str, Any]
+        self: "NarrativePreprocessor", config: dict[str, Any] | None = None, **kw: dict[str, Any]
     ) -> None:
         """Init the narrative preprocessor."""
         super().__init__(config=config, **kw)
@@ -31,9 +31,12 @@ class NarrativePreprocessor(Preprocessor):
         self.icon_style_file = os.path.join(base_path, "static", "styles", "kbase_icons.css")
         self.assets_base_url = self.config.narrative_session.assets_base_url
         self.assets_version = self.config.narrative_session.assets_version
+        self.ws_client = Workspace(
+            self.config.narrative_session.ws_url, token=self.config.narrative_session.token
+        )
         self.app_processor = AppProcessor(
             self.host,
-            self.config.narrative_session.ws_url,
+            self.ws_client,
             self.config.narrative_session.nms_url,
             self.config.narrative_session.token,
         )

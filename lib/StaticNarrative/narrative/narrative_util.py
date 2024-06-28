@@ -16,7 +16,7 @@ NARRATIVE_TYPE = "KBaseNarrative.Narrative"
 TYPE_REGEX = rf"^{NARRATIVE_TYPE}-\d+\.\d+$"
 
 
-def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> dict[str, Any]:
+def read_narrative(ws_client: Workspace, ref: NarrativeRef) -> dict[str, Any]:
     """Fetches a Narrative and its object info from the Workspace.
 
     If content is False, this only returns the Narrative's info
@@ -31,9 +31,9 @@ def read_narrative(ref: NarrativeRef, ws_client: Workspace) -> dict[str, Any]:
         ValueError (if ref isn't a Narrative object),
         WorkspaceError if there's a Workspace issue (ref isn't valid, or token isn't valid)
 
+
+    :param ws_client: workspace client
     :param ref: a NarrativeRef
-    :param content: if True, returns the narrative document, otherwise just the metadata
-    :param include_metadata: if True, includes the object metadata when returning
     """
     try:
         narr_data = ws_client.get_objects2({"objects": [{"ref": str(ref)}]})
@@ -65,7 +65,7 @@ def _validate_narr_type(t: str, ref: NarrativeRef) -> None:
         raise ValueError(err)
 
 
-def save_narrative_url(ws_url: str, token: str, ref: NarrativeRef, url: str) -> None:
+def save_narrative_url(ws_client: Workspace, ref: NarrativeRef, url: str) -> None:
     """Updates the Narrative workspace metadata with info about the new Static Narrative.
 
     Creates (or updates) metadata keys:
@@ -73,8 +73,8 @@ def save_narrative_url(ws_url: str, token: str, ref: NarrativeRef, url: str) -> 
     static_narrative_ver: int, the version
     static_narrative_saved: int, ms since epoch saved
     If it fails, will throw a WorkspaceError
-    :param ws_url: str - the URL for the workspace endpoint
-    :param token: str - the user's auth token
+
+    :param ws_client: Workspace - workspace client
     :param ref: the NarrativeRef for the Narrative that was made static
     :param url: the url string that was saved (should really just be the path, not the full url,
         something like /123/4 instead of ci.kbase.us/n/123/4)
@@ -84,14 +84,13 @@ def save_narrative_url(ws_url: str, token: str, ref: NarrativeRef, url: str) -> 
         "static_narrative_ver": str(ref.ver),
         "static_narrative_saved": str(int(time.time() * 1000)),
     }
-    ws_client = Workspace(url=ws_url, token=token)
     try:
         ws_client.alter_workspace_metadata({"wsi": {"id": ref.wsid}, "new": new_meta})
     except ServerError as err:
         raise WorkspaceError(err, ref.wsid) from err
 
 
-def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]:
+def get_static_info(ws_client: Workspace, ws_id: int) -> dict[str, int | str]:
     """Looks up the static narrative info for the given workspace ID.
 
     That info is stashed in the Workspace metadata, so that gets fetched, munged into a structure,
@@ -100,8 +99,7 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]
     If ws_id is not present, or not numeric, raises a ValueError.
     If there's a problem when contacting the Workspace (anything that raises a ServerError),
     this raises a WorkspaceError.
-    :param ws_url: the URL for the workspace endpoint
-    :param token: the user auth token
+    :param ws_client: workspace client
     :param ws_id: the workspace id of the narrative to fetch info for.
     :returns: a dictionary with the following keys if a static narrative is present:
         ws_id - int - the workspace id
@@ -118,7 +116,6 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]
         msg = f"The parameter ws_id must be an integer, not {ws_id}"
         raise ValueError(msg)
 
-    ws_client = Workspace(url=ws_url, token=token)
     try:
         ws_info = ws_client.get_workspace_info({"id": ws_id})
     except ServerError as err:
@@ -145,7 +142,7 @@ def get_static_info(ws_url: str, token: str, ws_id: int) -> dict[str, int | str]
     return info
 
 
-def verify_admin_privilege(workspace_url: str, user_id: str, token: str, ws_id: int) -> None:
+def verify_admin_privilege(ws_client: Workspace, user_id: str, ws_id: int | str) -> None:
     """Ensures that the user has admin permissions for the workspace.
 
     Raises PermissionError if the user is not an admin (has 'a' rights) on the Workspace.
@@ -155,13 +152,11 @@ def verify_admin_privilege(workspace_url: str, user_id: str, token: str, ws_id: 
 
     Raises a WorkspaceError if anything goes wrong with the permission lookup.
 
-    :param workspace_url: str - the workspace endpoint url
-    :param token: str - the auth token
+    :param ws_client: Workspace - workspace client
     :param user_id: str - the user id to check. This is expected to be the owner of the
         provided token. Not checked, though, since that should be done by the Server module.
     :param ws_id: int - the workspace to check
     """
-    ws_client = Workspace(url=workspace_url, token=token)
     try:
         perms = ws_client.get_permissions({"id": ws_id})
     except ServerError as err:
@@ -172,19 +167,18 @@ def verify_admin_privilege(workspace_url: str, user_id: str, token: str, ws_id: 
         raise PermissionError(err)
 
 
-def verify_public_narrative(workspace_url: str, ws_id: int) -> None:
+def verify_public_narrative(ws_client: Workspace, ws_id: int | str) -> None:
     """Ensures that the workspace is public.
 
     Raises a PermissionError if the workspace is not public (i.e. user '*' has 'r' access).
-    Creating a stating Narrative is only permitted on public Narratives.
+    Creating a static narrative is only permitted on public Narratives.
     If the Narrative is public, this returns None.
 
     Raises a WorkspaceError if anything goes wrong with the lookup.
 
-    :param workspace_url: str - the workspace endpoint url
+    :param ws_client: Workspace - aworkspace client
     :param ws_id: int - the workspace to check
     """
-    ws_client = Workspace(url=workspace_url)
     try:
         perms = ws_client.get_permissions({"id": ws_id})
     except ServerError as err:

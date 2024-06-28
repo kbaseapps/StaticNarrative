@@ -1,6 +1,10 @@
 """Generic set queries."""
 
+import json
 import time
+from typing import Any
+
+from installed_clients.WorkspaceClient import Workspace
 
 from StaticNarrative import util
 from StaticNarrative.exporter.workspace_list_objects_iterator import WorkspaceListObjectsIterator
@@ -14,11 +18,14 @@ class GenericSetNavigator:
     SET_TYPES = ["KBaseSets.ReadsSet"]
     DEBUG = False
 
-    def __init__(self, workspace_client, token=None):
+    def __init__(
+        self: "GenericSetNavigator", workspace_client: Workspace, token: str | None = None
+    ) -> None:
+        """Create a new GenericSetNavigator instance."""
         self.ws = workspace_client
         self.token = token
 
-    def list_sets(self, params):
+    def list_sets(self: "GenericSetNavigator", params: dict[str, Any]) -> dict[str, Any]:
         """Get a list of the top-level sets.
 
         Top-level sets are those that are unreferenced by any other sets in the specified workspace.
@@ -64,13 +71,13 @@ class GenericSetNavigator:
 
         return {"sets": top_level_sets}
 
-    def _validate_list_params(self, params):
+    def _validate_list_params(self: "GenericSetNavigator", params: dict[str, Any]) -> None:
         """Validates the parameters set to list_sets.
 
         Rules:
         1. At least one of workspace and workspaces must be present as keys. If
            both are missing, raise a ValueError
-        2. include_set_item_info must be 0 or 1 if present
+        2. include_set_item_info must be 0 or 1 if present.
         """
         if "workspace" not in params and "workspaces" not in params:
             msg = 'One of "workspace" or "workspaces" field required to list sets'
@@ -80,15 +87,15 @@ class GenericSetNavigator:
             msg = '"include_set_item_info" field must be set to 0 or 1'
             raise ValueError(msg)
 
-    def _list_all_sets(self, workspaces, include_metadata):
+    def _list_all_sets(
+        self: "GenericSetNavigator", workspaces: list[str], include_metadata: int
+    ) -> list[dict[str, Any]]:
         """List all objects of one of the set_types in workspaces.
 
         :param workspaces: list of workspace IDs
         :type workspaces: list[str]
         :param include_metadata: whether or not to include metadata
         :type include_metadata: int (1 / 0)
-        :param set_types: list of the set types to include
-        :type set_types: list[str]
         :return: list of objects in sets
         :rtype: list[dict]
         """
@@ -128,7 +135,7 @@ class GenericSetNavigator:
             print(("Time of object info listing: " + str(time.time() - t2)))
         return sets
 
-    def _get_top_level_sets(self, set_list):
+    def _get_top_level_sets(self: "GenericSetNavigator", set_list):
         """Assumes set_list items are populated, kicks out any set that
         is directly referenced by another set on the list.
 
@@ -157,7 +164,9 @@ class GenericSetNavigator:
 
         return top_level_sets
 
-    def _populate_set_refs(self, set_list):
+    def _populate_set_refs(
+        self: "GenericSetNavigator", set_list: list[dict[str, Any]]
+    ) -> list[dict[str, Any]]:
         """Given a list of sets, go fetch their items and attach them to the original list.
 
         Has a side effect of updating the input set_list.
@@ -177,13 +186,13 @@ class GenericSetNavigator:
         # if ws call worked, then len(obj_data)==len(set_list)
         for k in range(len(obj_data)):
             items = [{REF: item_ref} for item_ref in obj_data[k]["refs"]]
-            # for item_ref in obj_data[k]["refs"]:
-            #     items.append({REF: item_ref})
             set_list[k]["items"] = items
 
         return set_list
 
-    def _populate_set_item_info(self, set_list):
+    def _populate_set_item_info(
+        self: "GenericSetNavigator", set_list: list[dict[str, Any]]
+    ) -> list[dict[str, Any]]:
         # keys are refs to items, values are a ref to one of the
         # sets that they are in.  We build a lookup here first so that
         # we don't duplicate items in the ws call, but depending
@@ -207,12 +216,42 @@ class GenericSetNavigator:
 
         return set_list
 
-    def _populate_set_item_ref_path(self, set_list):
+    def _populate_set_item_ref_path(
+        self: "GenericSetNavigator", set_list: list[dict[str, Any]]
+    ) -> list[dict[str, Any]]:
         for s in set_list:
             obj_spec = util.build_ws_obj_selector(s[REF], s.get("ref_path_to_set", []))
             util.populate_item_object_ref_paths(s["items"], obj_spec)
 
         return set_list
 
-    def _build_obj_ref(self, obj_info):
+    def _build_obj_ref(self: "GenericSetNavigator", obj_info: list[str | Any]) -> str:
         return str(obj_info[6]) + "/" + str(obj_info[0]) + "/" + str(obj_info[4])
+
+    def _get_ws_types(self: "GenericSetNavigator") -> list[str]:
+        """Retrieve all the KBaseSet types available from the workspace.
+
+        :param self: self
+        :type self: self
+        :raises ValueError: if there are no subtypes of KBaseSet
+        :return: list of types
+        :rtype: list[str]
+        """
+        set_type = "KBaseSets"
+        module_info = self.ws.get_module_info({"mod": set_type})
+        if not module_info:
+            msg = "No KBaseSets modules found."
+            raise ValueError(msg)
+
+        all_types = []
+        if "types" in module_info:
+            for mod_type in module_info["types"]:
+                mod_details = json.loads(module_info["types"][mod_type])
+                if "id" in mod_details:
+                    all_types.append(f"{set_type}.{mod_details.get('id')}")
+                else:
+                    msg = f"No id found in type description:\n{module_info['types'][mod_type]}"
+                    raise ValueError(msg)
+
+        self.ALL_SET_TYPES = all_types
+        return all_types
