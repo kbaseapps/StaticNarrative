@@ -1,10 +1,12 @@
 """Tests of the exporter module."""
 
 import os
-from test.mocks import set_up_ok_mocks
 
+from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
 from StaticNarrative.exporter.exporter import NarrativeExporter
 from StaticNarrative.narrative_ref import NarrativeRef
+
+from test.mocks import set_up_ok_mocks
 
 USER_ID = "some_user"
 TOKEN = "some_token"  # noqa: S105
@@ -48,6 +50,7 @@ def test_exporter_ok(config: dict[str, str], scratch_dir: str, requests_mock) ->
     )
 
     exporter = NarrativeExporter(config, USER_ID, TOKEN)
+    assert isinstance(exporter.set_api_client, DynamicServiceClient)
     static_path = exporter.export_narrative(
         NarrativeRef({"wsid": ws_id, "objid": 1, "ver": 21}), scratch_dir
     )

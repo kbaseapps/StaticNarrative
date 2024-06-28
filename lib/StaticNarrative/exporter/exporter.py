@@ -37,6 +37,7 @@ class NarrativeExporter:
         exporter_cfg: dict[str, str],  # config object
         user_id: str,
         token: str,
+        use_set_api: int = 1,
         debug: bool = False,
     ) -> None:
         """Initialise the Narrative Exporter."""
@@ -45,6 +46,12 @@ class NarrativeExporter:
         self.token = token
         self.user_id = user_id
         self.debug = debug
+        if use_set_api:
+            self.set_api_client = DynamicServiceClient(
+                self.exporter_cfg["srv-wiz-url"], "release", "SetAPI", self.token
+            )
+        else:
+            self.set_api_client = None
 
     def export_narrative(
         self: "NarrativeExporter", narrative_ref: NarrativeRef, output_dir: str
@@ -66,16 +73,12 @@ class NarrativeExporter:
         kb_notebook = nbformat.reads(json.dumps(nar), as_version=4)
 
         # 3. Export the Narrative workspace data to a sidecar JSON file.
-        set_api_client = DynamicServiceClient(
-            self.exporter_cfg["srv-wiz-url"], "release", "SetAPI", self.token
-        )
-
         exported_data = export_narrative_data(
             self.ws_client,
             narrative_ref.wsid,
             self.token,
             output_dir,
-            set_api_client,
+            set_api_client=self.set_api_client,
             debug=self.debug,
         )
 
