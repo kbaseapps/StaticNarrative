@@ -8,7 +8,7 @@ How to run:
     > export PYTHONPATH=$PYTHONPATH:$(pwd)/lib
 3. Run it with:
     > mkdir <ws_id>
-    > python test/fetch_test_narrative.py -e ci -t <token> -w <ws_id> -o ./<ws_id>
+    > python scripts/fetch_test_narrative.py -e ci -t <token> -w <ws_id> -o ./<ws_id>
 """
 
 import argparse

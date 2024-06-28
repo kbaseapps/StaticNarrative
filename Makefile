@@ -28,9 +28,6 @@ set-executable:
 test:
 	sh $(TEST_DIR)/$(TEST_SCRIPT_NAME)
 
-clean:
-	rm -rfv $(LBIN_DIR)
-
 format:
 	ruff format
 
