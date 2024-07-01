@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"method": "Workspace.get_object_info3", "params": [{"objects": [{"ref":
+      "67395/24/1"}, {"ref": "67395/1066/1"}, {"ref": "67395/2066/1"}], "ignoreErrors":
+      1}], "version": "1.1", "id": "07377388742401514"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '204'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"infos":[[24,"assy00014","KBaseGenomeAnnotations.Assembly-6.0","2022-04-14T13:26:52+0000",1,"ialarmedalien",67395,"ialarmedalien:narrative_1649942812539","b875f0cb383d3996e57614d39240e486",795,null],null,null],"paths":[["67395/24/1"],null,null]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c826ceec6567b3-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:35:16 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=KJglrx8qP.Td1Z8WPY7uhWWl4tK0LPtRKMA379SqJvk-1719855316-1.0.1.1-owKQ4SXFRpy6QqgUq0qttb0RrjvPsdmpBwIlF0vQqkXL9AsxJ_Bhq73lt75fekRae__CMXqH9x1_sWQKWOVTGw;
+        path=/; expires=Mon, 01-Jul-24 18:05:16 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+version: 1

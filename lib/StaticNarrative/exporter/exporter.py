@@ -27,6 +27,7 @@ from StaticNarrative.narrative.narrative_util import read_narrative
 from StaticNarrative.narrative_ref import NarrativeRef
 
 NARRATIVE_TEMPLATE_FILE = "narrative.tpl"
+OUTPUT_HTML_FILE = "narrative.html"
 
 
 class NarrativeExporter:
@@ -34,27 +35,29 @@ class NarrativeExporter:
 
     def __init__(
         self: "NarrativeExporter",
-        exporter_cfg: dict[str, str],  # config object
+        config: dict[str, str],  # config object
         user_id: str,
         token: str,
         use_set_api: int = 1,
         debug: bool = False,
     ) -> None:
         """Initialise the Narrative Exporter."""
-        self.exporter_cfg = exporter_cfg
-        self.ws_client = Workspace(url=exporter_cfg["workspace-url"], token=token)
+        self.config = config
+        self.ws_client = Workspace(url=config["workspace-url"], token=token)
         self.token = token
         self.user_id = user_id
         self.debug = debug
         if use_set_api:
             self.set_api_client = DynamicServiceClient(
-                self.exporter_cfg["srv-wiz-url"], "release", "SetAPI", self.token
+                self.config["srv-wiz-url"], "release", "SetAPI", self.token
             )
         else:
             self.set_api_client = None
 
     def export_narrative(
-        self: "NarrativeExporter", narrative_ref: NarrativeRef, output_dir: str
+        self: "NarrativeExporter",
+        narrative_ref: NarrativeRef,
+        output_dir: str,
     ) -> str:
         """Exports the Narrative to an HTML file and returns the path to that file.
 
@@ -82,8 +85,9 @@ class NarrativeExporter:
             debug=self.debug,
         )
 
-        # 4. Export the Narrative to an HTML file
-        html_exporter = self._build_exporter(exported_data, narrative_ref.wsid)
+        # 4. Generate the data for the HTML file
+        html_exporter = self._build_exporter(exported_data, narrative_ref)
+
         (body, resources) = html_exporter.from_notebook_node(kb_notebook)
 
         # copy some assets
@@ -91,14 +95,13 @@ class NarrativeExporter:
         # TODO: Maybe add to ui-assets repo?
         # ...maybe not yet.
 
-        output_filename = "narrative.html"
-        output_path = os.path.join(output_dir, output_filename)
+        output_path = os.path.join(output_dir, OUTPUT_HTML_FILE)
         with open(output_path, "w") as output_html:
             output_html.write(body)
-        return output_path
+        return str(output_path)
 
     def _build_exporter(
-        self: "NarrativeExporter", exported_data: dict[str, Any], ws_id: int
+        self: "NarrativeExporter", exported_data: dict[str, Any], narrative_ref: NarrativeRef
     ) -> HTMLExporter:
         """Generate the magnificent HTMLExporter that will fulfil all your dreams.
 
@@ -120,7 +123,7 @@ class NarrativeExporter:
 
         # all the static files (css, fonts, etc.) are relative to this dir.
         base_path = os.path.dirname(os.path.abspath(__file__))
-        service_endpt = self.exporter_cfg["kbase-endpoint"]
+        service_endpt = self.config["kbase-endpoint"]
 
         endpt_parsed = urlparse(service_endpt)
         netloc = endpt_parsed.netloc
@@ -130,13 +133,9 @@ class NarrativeExporter:
         host = (endpt_parsed.scheme or "https") + "://" + netloc
 
         tpl_base_dir = os.path.join(
-            STATIC_NARRATIVE_BASE_DIR,
-            "lib",
-            "StaticNarrative",
-            "exporter",
-            "static",
-            "templates",
+            STATIC_NARRATIVE_BASE_DIR, "lib", "StaticNarrative", "exporter", "static", "templates"
         )
+
         c.TemplateExporter.template_paths = [
             tpl_base_dir,
             os.path.join(tpl_base_dir, "html"),
@@ -146,23 +145,25 @@ class NarrativeExporter:
         c.NarrativePreprocessor.enabled = True
         c.ClearMetadataPreprocessor.enabled = False
 
-        c.narrative_session.token = self.token
-        c.narrative_session.user_id = self.user_id
-        c.narrative_session.ws_url = self.exporter_cfg["workspace-url"]
-        c.narrative_session.nms_url = self.exporter_cfg["nms-url"]
-        c.narrative_session.nms_image_url = self.exporter_cfg["nms-image-url"]
-        c.narrative_session.profile_page_url = host + self.exporter_cfg["profile-page-path"]
-        c.narrative_session.auth_url = self.exporter_cfg["auth-url"]
-        c.narrative_session.assets_base_url = self.exporter_cfg["assets-base-url"]
-        c.narrative_session.service_wizard_url = self.exporter_cfg["srv-wiz-url"]
-        c.narrative_session.host = host
+        c.narrative_session.assets_base_url = self.config["assets-base-url"]
+        c.narrative_session.assets_version = self.config["assets-version"]
+        c.narrative_session.auth_url = self.config["auth-url"]
         c.narrative_session.base_path = base_path
         c.narrative_session.data_file_path = exported_data["path"]
-        c.narrative_session.narrative_data = exported_data
-        c.narrative_session.assets_version = self.exporter_cfg["assets-version"]
-        c.narrative_session.ws_id = ws_id
+        c.narrative_session.host = host
+        c.narrative_session.indexed_data = exported_data["indexed_data"]
+        c.narrative_session.data_types = exported_data["types"]
+        c.narrative_session.nms_image_url = self.config["nms-image-url"]
+        c.narrative_session.nms_url = self.config["nms-url"]
+        c.narrative_session.profile_page_path = host + self.config["profile-page-path"]
+        c.narrative_session.service_wizard_url = self.config["srv-wiz-url"]
+        c.narrative_session.token = self.token
+        c.narrative_session.user_id = self.user_id
         c.narrative_session.ws_client = self.ws_client
+        c.narrative_session.ws_id = narrative_ref.wsid
+        c.narrative_session.ws_url = self.config["workspace-url"]
 
         html_exporter = HTMLExporter(config=c)
         html_exporter.template_file = NARRATIVE_TEMPLATE_FILE
+        html_exporter.environment.add_extension("jinja2.ext.debug")
         return html_exporter

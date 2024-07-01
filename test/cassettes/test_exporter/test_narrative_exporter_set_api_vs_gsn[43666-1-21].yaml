@@ -1,0 +1,1565 @@
+interactions:
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "43666/1/21"}]}],
+      "version": "1.1", "id": "7366211376365404"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"cells":[{"cell_type":"markdown","metadata":{"kbase":{"attributes":{"icon":"paragraph","title":"Welcome
+        to KBase''s Narrative Interface!"},"cellState":{"selected":false,"showTitle":false}}},"source":"##
+        Welcome to KBase''s Narrative Interface!\n\n**What''s a Narrative?** Narratives
+        are shareable, reproducible workflows that can include data, analysis steps,
+        results, visualizations and commentary. [Learn more...](http://kbase.us/narrative-guide)\n\n**Take
+        the Tour:** Choose \"Narrative Tour\" from the \"Help\" menu above. The tour
+        walks you through the user interface, pointing out various useful aspects
+        of it.\n\n**Get Some Data:** Click the Add Data button in the Data Panel to
+        search KBase data or upload your own. Hover over a data object to reveal a
+        button for adding it to your Narrative. [Learn more...](http://kbase.us/narrative-guide/explore-data)\n\n**Analyze
+        It:** Use the Apps panel or the App Catalog to browse available analysis apps.
+        Select an app to add it to your Narrative, fill in the fields, and click the
+        \"Run\" button to launch the app. [Learn more...](http://kbase.us/narrative-guide/browse-apps-and-methods)\n\n**Save
+        and Share Your Narrative:** Be sure to save your Narrative frequently. To
+        let collaborators view your analysis steps and results, click the Share button.
+        Or make your Narrative public and help expand the social web that KBase is
+        building to make systems biology research more open, reproducible and collaborative.
+        [Learn more...](http://kbase.us/narrative-guide/share-narratives/)\n\n**Find
+        Documentation:** For more information, please see the [Narrative Interface
+        User Guide](http://kbase.us/narrative-guide) or the [tutorials](http://kbase.us/tutorials).\n\n**Questions?
+        Bug reports?** [Contact us](http://kbase.us/contact-us)!\n\n> Ready to begin
+        adding to your Narrative? You can keep this Welcome cell or delete it by selecting
+        \"Delete cell\" from the \"...\" menu in the top right corner of this cell.\n"},{"cell_type":"code","execution_count":1,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"055c7eeda5f420f6d72b2fc8d542f7444a51ba84","id":"kb_quast/run_QUAST_app","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"assemblies","target_property":"assemblies","target_type_transform":"list<ref>"}],"kb_service_method":"run_QUAST_app","kb_service_name":"kb_quast","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"5","target_property":"report_window_line_height"},{"service_method_output_path":["0"],"target_property":"QUAST_result"},{"input_parameter":"assemblies","target_property":"input_assemblies"},{"narrative_system_variable":"workspace","target_property":"workspace_name"}],"kb_service_url":"","kb_service_version":"055c7eeda5f420f6d72b2fc8d542f7444a51ba84"},"fixed_parameters":[],"info":{"app_type":"app","authors":[],"categories":["assembly"],"git_commit_hash":"055c7eeda5f420f6d72b2fc8d542f7444a51ba84","icon":{"url":"img?method_id=kb_quast/run_QUAST_app&image_name=quast-blue_360.png&tag=release"},"id":"kb_quast/run_QUAST_app","input_types":["KBaseGenomeAnnotations.Assembly","KBaseGenomes.ContigSet"],"module_name":"kb_quast","name":"QUAST
+        - Quality Assessment Tool for Genome Assemblies","namespace":"kb_quast","output_types":[],"subtitle":"Run
+        QUAST on a set of assemblies to assess quality.","tooltip":"Run QUAST on a
+        set of assemblies to assess quality.","ver":"0.0.3"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":1,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"assemblies","optional":0,"short_hint":"Assembly
+        objects to be analyzed by QUAST.","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseGenomes.ContigSet","KBaseGenomeAnnotations.Assembly"]},"ui_class":"input","ui_name":"Assemblies"}],"widgets":{"input":"kbaseNarrativeMethodInput","output":"no-display"}},"tag":"release","version":"0.0.3"},"exec":{"jobState":{"canceled":0,"cell_id":"89d36e34-0b27-409d-9aeb-d7ec73467e44","child_jobs":[],"creation_time":1564507093765,"exec_start_time":1564507118799,"finish_time":1564507224903,"finished":1,"job_id":"5d407bccaa5a4d298c5dc87d","job_state":"completed","result":[{"report_name":"kb_quast_report_753191bb-e485-42f8-8e33-9a78b06b34c6","report_ref":"43666/3/1"}],"run_id":"f7557847-29a7-4af2-91a7-190fe6bd09a6","status":["2019-07-30T17:20:24+0000","complete","done",null,null,1,0],"sub_jobs":[],"ujs_url":"https://ci.kbase.us/services/userandjobstate/"},"jobStateUpdated":1564507223498,"launchState":{"cell_id":"89d36e34-0b27-409d-9aeb-d7ec73467e44","event":"launched_job","event_at":"2019-07-30T17:18:13.845787Z","job_id":"5d407bccaa5a4d298c5dc87d","run_id":"f7557847-29a7-4af2-91a7-190fe6bd09a6"},"outputWidgetInfo":{"name":"no-display","params":{"QUAST_result":{"report_name":"kb_quast_report_753191bb-e485-42f8-8e33-9a78b06b34c6","report_ref":"43666/3/1"},"input_assemblies":["2/8"],"report_name":"kb_quast_report_753191bb-e485-42f8-8e33-9a78b06b34c6","report_ref":"43666/3/1","report_window_line_height":"5","workspace_name":"wjriehl:narrative_1564507007662"},"tag":"release"}},"fsm":{"currentState":{"mode":"success"}},"output":{"byJob":{"5d407bccaa5a4d298c5dc87d":{"cell":{"created":false},"createdAt":"Tue,
+        30 Jul 2019 17:20:23 GMT","params":{"assemblies":["43666/2/8"]}}}},"params":{"assemblies":["43666/2/8"]},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Tue,
+        30 Jul 2019 17:17:15 GMT","id":"89d36e34-0b27-409d-9aeb-d7ec73467e44","info":{"label":"more...","url":"/#appcatalog/app/kb_quast/run_QUAST_app/release"},"lastLoaded":"Wed,
+        06 Nov 2019 18:12:08 GMT","status":"new","subtitle":"Run QUAST on a set of
+        assemblies to assess quality.","title":"QUAST - Quality Assessment Tool for
+        Genome Assemblies"},"type":"app"}},"outputs":[],"source":"from biokbase.narrative.jobs.appmanager
+        import AppManager\nAppManager().run_app(\n    \"kb_quast/run_QUAST_app\",\n    {\n        \"assemblies\":
+        [\"43666/2/8\"]\n    },\n    tag=\"release\",\n    version=\"0.0.3\",\n    cell_id=\"89d36e34-0b27-409d-9aeb-d7ec73467e44\",\n    run_id=\"f7557847-29a7-4af2-91a7-190fe6bd09a6\"\n)"},{"cell_type":"code","execution_count":6,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"d60865d5f12e71f3491c23c298670fd1ef24c252","id":"ProkkaAnnotation/annotate_contigs","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"output_workspace"},{"input_parameter":"object_ref","target_property":"object_ref","target_type_transform":"ref"},{"input_parameter":"output_genome_name","target_property":"output_genome_name"},{"input_parameter":"scientific_name","target_property":"scientific_name"},{"input_parameter":"kingdom","target_property":"kingdom"},{"input_parameter":"genus","target_property":"genus"},{"input_parameter":"gcode","target_property":"gcode"},{"input_parameter":"metagenome","target_property":"metagenome"},{"input_parameter":"rawproduct","target_property":"rawproduct"},{"input_parameter":"fast","target_property":"fast"},{"input_parameter":"mincontiglen","target_property":"mincontiglen"},{"input_parameter":"evalue","target_property":"evalue"},{"input_parameter":"rfam","target_property":"rfam"},{"input_parameter":"norrna","target_property":"norrna"},{"input_parameter":"notrna","target_property":"notrna"}],"kb_service_method":"annotate","kb_service_name":"ProkkaAnnotation","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"input_parameter":"output_genome_name","target_property":"id"},{"narrative_system_variable":"workspace","target_property":"ws"}],"kb_service_url":"","kb_service_version":"d60865d5f12e71f3491c23c298670fd1ef24c252"},"fixed_parameters":[],"info":{"app_type":"app","authors":["rsutormin","bsadkhin"],"categories":["active","annotation"],"git_commit_hash":"d60865d5f12e71f3491c23c298670fd1ef24c252","icon":{"url":"img?method_id=ProkkaAnnotation/annotate_contigs&image_name=prokka.png&tag=release"},"id":"ProkkaAnnotation/annotate_contigs","input_types":["KBaseGenomeAnnotations.Assembly","KBaseGenomes.Genome"],"module_name":"ProkkaAnnotation","name":"Annotate
+        Assembly and ReAnnotate Genomes with Prokka v1.12","namespace":"ProkkaAnnotation","output_types":["KBaseGenomes.Genome"],"subtitle":"Annotate
+        Assembly with Prokka annotation pipeline.","tooltip":"Annotate Assembly with
+        Prokka annotation pipeline.","ver":"2.0.0"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"object_ref","optional":0,"short_hint":"Assembly
+        object (set of dna contigs) or Genome object (set of features with Ontology
+        and Function to reannotate)","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseGenomeAnnotations.Assembly","KBaseGenomes.Genome"]},"ui_class":"input","ui_name":"Assembly
+        or Genome"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"scientific_name","optional":1,"short_hint":"Optional
+        scientific name of organism (default ''Unknown'')","ui_class":"parameter","ui_name":"Scientific
+        name"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"output_genome_name","optional":0,"short_hint":"The
+        name under which the resulting Genome will be saved in the Narrative","text_options":{"is_output_name":1,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseGenomes.Genome"]},"ui_class":"output","ui_name":"Output
+        genome"},{"advanced":1,"allow_multiple":0,"default_values":["Bacteria"],"description":"","disabled":0,"dropdown_options":{"options":[{"display":"Bacteria","index":0,"value":"Bacteria"},{"display":"Archaea","index":1,"value":"Archaea"},{"display":"Mitochondria","index":2,"value":"Mitochondria"},{"display":"Viruses","index":3,"value":"Viruses"}]},"field_type":"dropdown","id":"kingdom","optional":0,"short_hint":"Annotation
+        mode: Archaea | Bacteria | Mitochondria | Viruses (default ''Bacteria'').","ui_class":"parameter","ui_name":"Kingdom"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"dropdown_options":{"options":[{"display":"Do
+        not use genus-specific database","index":0,"value":""},{"display":"Enterococcus","index":1,"value":"Enterococcus"},{"display":"Escherichia","index":2,"value":"Escherichia"},{"display":"Staphylococcus","index":3,"value":"Staphylococcus"}]},"field_type":"dropdown","id":"genus","optional":1,"short_hint":"Optional
+        genus name: Enterococcus | Escherichia | Staphylococcus (uses genus-specific
+        BLAST database) (default ''do not use genus-specific database'')","ui_class":"parameter","ui_name":"Genus"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"gcode","optional":1,"short_hint":"Genetic
+        code / Translation table (set if --kingdom is set) (default ''0'')","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Genetic
+        code"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"metagenome","optional":1,"short_hint":"Improve
+        gene predictions for highly fragmented genomes (default OFF).","ui_class":"parameter","ui_name":"Metagenome"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"rawproduct","optional":1,"short_hint":"Do
+        not clean up /product annotation (default OFF).","ui_class":"parameter","ui_name":"Raw
+        product"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"fast","optional":1,"short_hint":"Fast
+        mode - skip CDS /product searching (default OFF).","ui_class":"parameter","ui_name":"Fast"},{"advanced":1,"allow_multiple":0,"default_values":["1"],"description":"","disabled":0,"field_type":"text","id":"mincontiglen","optional":1,"short_hint":"Minimum
+        contig size [NCBI needs 200] (default ''1'')","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Min.contig
+        size"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"evalue","optional":1,"short_hint":"Similarity
+        e-value cutoff (default ''1e-06'').","ui_class":"parameter","ui_name":"E-value"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"rfam","optional":1,"short_hint":"Enable
+        searching for ncRNAs with Infernal+Rfam (SLOW!, default OFF).","ui_class":"parameter","ui_name":"Rfam"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"norrna","optional":1,"short_hint":"Don''t
+        run rRNA search (default OFF).","ui_class":"parameter","ui_name":"No rRNA"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"notrna","optional":1,"short_hint":"Don''t
+        run tRNA search (default OFF).","ui_class":"parameter","ui_name":"No tRNA"}],"widgets":{"input":"kbaseNarrativeMethodInput","output":"kbaseGenomeView"}},"tag":"release","version":"2.0.0"},"exec":{"jobState":{"canceled":0,"cell_id":"921d4153-fb8a-4c77-b764-377fa11e8ae8","child_jobs":[],"creation_time":1566327487015,"exec_start_time":1566327508958,"finish_time":1566327818632,"finished":1,"job_id":"5d5c42b6aa5a4d298c5dc8f8","job_state":"completed","result":[{"output_genome_ref":"43666/6/1","report_name":"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc","report_ref":"43666/7/1"}],"run_id":"7c594250-b7f4-4c9e-96fb-f45fd0befc3a","status":["2019-08-20T19:03:38+0000","complete","done",null,null,1,0],"sub_jobs":[],"ujs_url":"https://ci.kbase.us/services/userandjobstate/"},"jobStateUpdated":1566327827162,"launchState":{"cell_id":"921d4153-fb8a-4c77-b764-377fa11e8ae8","event":"launched_job","event_at":"2019-08-20T18:58:07.089778Z","job_id":"5d5c42b6aa5a4d298c5dc8f8","run_id":"7c594250-b7f4-4c9e-96fb-f45fd0befc3a"},"outputWidgetInfo":{"name":"kbaseGenomeView","params":{"id":"some_genome","report_name":"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc","report_ref":"43666/7/1","ws":"wjriehl:narrative_1564507007662"},"tag":"release"}},"fsm":{"currentState":{"mode":"success"}},"output":{"byJob":{"5d5c42b6aa5a4d298c5dc8f8":{"cell":{"created":true,"id":"e719db84-d317-4f24-af01-23ba59907c42"},"createdAt":"Tue,
+        20 Aug 2019 19:03:47 GMT","params":{"evalue":"","fast":0,"gcode":null,"genus":"","kingdom":"Bacteria","metagenome":0,"mincontiglen":1,"norrna":0,"notrna":0,"object_ref":"MEGAHIT.contigs","output_genome_name":"some_genome","rawproduct":0,"rfam":0,"scientific_name":"something"}}}},"params":{"evalue":"","fast":0,"gcode":null,"genus":"","kingdom":"Bacteria","metagenome":0,"mincontiglen":1,"norrna":0,"notrna":0,"object_ref":"MEGAHIT.contigs","output_genome_name":"some_genome","rawproduct":0,"rfam":0,"scientific_name":"something"},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Tue,
+        20 Aug 2019 18:57:46 GMT","id":"921d4153-fb8a-4c77-b764-377fa11e8ae8","info":{"label":"more...","url":"/#appcatalog/app/ProkkaAnnotation/annotate_contigs/release"},"lastLoaded":"Wed,
+        06 Nov 2019 18:12:08 GMT","status":"new","subtitle":"Annotate Assembly with
+        Prokka annotation pipeline.","title":"Annotate Assembly and ReAnnotate Genomes
+        with Prokka v1.12"},"type":"app"}},"outputs":[],"source":"from biokbase.narrative.jobs.appmanager
+        import AppManager\nAppManager().run_app(\n    \"ProkkaAnnotation/annotate_contigs\",\n    {\n        \"object_ref\":
+        \"MEGAHIT.contigs\",\n        \"scientific_name\": \"something\",\n        \"output_genome_name\":
+        \"some_genome\",\n        \"kingdom\": \"Bacteria\",\n        \"genus\": \"\",\n        \"gcode\":
+        None,\n        \"metagenome\": 0,\n        \"rawproduct\": 0,\n        \"fast\":
+        0,\n        \"mincontiglen\": 1,\n        \"evalue\": \"\",\n        \"rfam\":
+        0,\n        \"norrna\": 0,\n        \"notrna\": 0\n    },\n    tag=\"release\",\n    version=\"2.0.0\",\n    cell_id=\"921d4153-fb8a-4c77-b764-377fa11e8ae8\",\n    run_id=\"7c594250-b7f4-4c9e-96fb-f45fd0befc3a\"\n)"},{"cell_type":"code","execution_count":7,"metadata":{"kbase":{"attributes":{"created":"Tue,
+        20 Aug 2019 19:03:47 GMT","icon":"arrow-right","id":"e719db84-d317-4f24-af01-23ba59907c42","lastLoaded":"Wed,
+        06 Nov 2019 18:12:07 GMT","status":"new","title":"Output from Annotate Assembly
+        and ReAnnotate Genomes with Prokka v1.12"},"dataCell":{"upas":{"id":"[43666]/6/1"}},"outputCell":{"jobId":"5d5c42b6aa5a4d298c5dc8f8","parentCellId":"921d4153-fb8a-4c77-b764-377fa11e8ae8","user-settings":{"showCodeInputArea":false},"widget":{"name":"kbaseGenomeView","params":{"id":"some_genome","report_name":"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc","report_ref":"43666/7/1","ws":"wjriehl:narrative_1564507007662"},"tag":"release"}},"type":"output"}},"outputs":[{"data":{"application/javascript":"\n        element.html(\"<div
+        id=''kb-vis-d497e767-e486-44d6-ad3c-1107bde130a9'' class=''kb-vis-area''></div>\");\n        require([''kbaseNarrativeOutputCell''],
+        function(KBaseNarrativeOutputCell) {\n            var w = new KBaseNarrativeOutputCell($(''#kb-vis-d497e767-e486-44d6-ad3c-1107bde130a9''),
+        {\n                \"upas\": {\"id\": \"43666/6/1\"},\n                \"data\":
+        {\"report_ref\": \"43666/7/1\", \"ws\": \"wjriehl:narrative_1564507007662\",
+        \"id\": \"some_genome\", \"report_name\": \"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc\"},\n                \"type\":
+        \"method\",\n                \"widget\": \"kbaseGenomeView\",\n                \"cellId\":
+        \"e719db84-d317-4f24-af01-23ba59907c42\",\n                \"title\": \"\",\n                \"time\":
+        1566327827380\n            });\n        });\n        ","text/plain":"<IPython.core.display.Javascript
+        object>"},"execution_count":7,"metadata":{},"output_type":"execute_result"}],"source":"from
+        biokbase.narrative.widgetmanager import WidgetManager\nWidgetManager().show_output_widget(\n    \"kbaseGenomeView\",\n    {\n        \"report_ref\":
+        \"43666/7/1\",\n        \"ws\": \"wjriehl:narrative_1564507007662\",\n        \"id\":
+        \"some_genome\",\n        \"report_name\": \"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc\"\n    },\n    tag=\"release\",\n    cell_id=\"e719db84-d317-4f24-af01-23ba59907c42\"\n)"},{"cell_type":"code","execution_count":2,"metadata":{"kbase":{"attributes":{"created":"Fri,
+        23 Aug 2019 20:01:58 GMT","icon":"database","id":"1b69c8b8-5d15-4a9f-9d03-05a9b1d1c004","lastLoaded":"Wed,
+        06 Nov 2019 18:12:07 GMT","status":"new","subtitle":"v1 - KBaseGenomes.Genome-15.1","title":"some_genome"},"dataCell":{"objectInfo":{"checksum":"fa92aabaf8a57d22761799421aeddfa2","id":6,"metadata":{"Assembly
+        Object":"43666/5/6","Domain":"Bacteria","GC content":"0.66636","Genetic code":"0","MD5":"bb342ff10217f9e5348a67148bb0c5f6","Name":"something","Number
+        contigs":"295","Number of CDS":"3895","Number of Genome Level Warnings":"4","Number
+        of Protein Encoding Genes":"3895","Size":"3837282","Source":"PROKKA annotation
+        pipeline","Taxonomy":"Unconfirmed Organism: something","Type":"Unknown"},"name":"some_genome","obj_id":"ws.43666.obj.6","ref":"43666/6/1","ref_path":null,"saveDate":"2019-08-20T19:02:48.000Z","save_date":"2019-08-20T19:02:48+0000","saved_by":"wjriehl","size":14353585,"type":"KBaseGenomes.Genome-15.1","typeMajorVersion":"15","typeMinorVersion":"1","typeModule":"KBaseGenomes","typeName":"Genome","version":1,"ws":"wjriehl:narrative_1564507007662","ws_id":43666,"wsid":43666},"upas":{"id":"[43666]/6/1"},"user-settings":{"showCodeInputArea":false}},"type":"data"}},"outputs":[{"data":{"application/javascript":"\n        element.html(\"<div
+        id=''kb-vis-16c4a1f2-3d40-4caa-a768-b1fd57c3137f'' class=''kb-vis-area''></div>\");\n        require([''kbaseNarrativeOutputCell''],
+        function(KBaseNarrativeOutputCell) {\n            var w = new KBaseNarrativeOutputCell($(''#kb-vis-16c4a1f2-3d40-4caa-a768-b1fd57c3137f''),
+        {\n                \"upas\": {\"id\": \"43666/6/1\"},\n                \"data\":
+        {\"id\": \"some_genome\", \"ws\": \"wjriehl:narrative_1564507007662\"},\n                \"type\":
+        \"viewer\",\n                \"widget\": \"kbaseGenomeView\",\n                \"cellId\":
+        \"1b69c8b8-5d15-4a9f-9d03-05a9b1d1c004\",\n                \"title\": \"some_genome\",\n                \"time\":
+        1566590519138\n            });\n        });\n        ","text/plain":"<IPython.core.display.Javascript
+        object>"},"execution_count":2,"metadata":{},"output_type":"execute_result"}],"source":"from
+        biokbase.narrative.widgetmanager import WidgetManager\nWidgetManager().show_data_widget(\n    \"43666/6/1\",\n    cell_id=\"1b69c8b8-5d15-4a9f-9d03-05a9b1d1c004\",\n    title=\"some_genome\",\n    tag=\"release\"\n)"},{"cell_type":"code","execution_count":3,"metadata":{"kbase":{"attributes":{"created":"Fri,
+        23 Aug 2019 20:02:03 GMT","icon":"database","id":"26186464-eeca-40aa-ad76-5e7cdb12a9ce","lastLoaded":"Wed,
+        06 Nov 2019 18:12:08 GMT","status":"new","subtitle":"v6 - KBaseGenomeAnnotations.Assembly-6.0","title":"MEGAHIT.contigs"},"dataCell":{"objectInfo":{"checksum":"6e19aa8d984f416271456820cc64f614","id":5,"metadata":{"GC
+        content":"0.66636","MD5":"bb342ff10217f9e5348a67148bb0c5f6","N Contigs":"295","Size":"3837282"},"name":"MEGAHIT.contigs","obj_id":"ws.43666.obj.5","ref":"43666/5/6","ref_path":null,"saveDate":"2019-08-20T18:57:39.000Z","save_date":"2019-08-20T18:57:39+0000","saved_by":"wjriehl","size":52149,"type":"KBaseGenomeAnnotations.Assembly-6.0","typeMajorVersion":"6","typeMinorVersion":"0","typeModule":"KBaseGenomeAnnotations","typeName":"Assembly","version":6,"ws":"wjriehl:narrative_1564507007662","ws_id":43666,"wsid":43666},"upas":{"objNameOrId":"[43666]/5/6"},"user-settings":{"showCodeInputArea":false}},"type":"data"}},"outputs":[{"data":{"application/javascript":"\n        element.html(\"<div
+        id=''kb-vis-386cf00f-caa9-4706-b115-69731997f3da'' class=''kb-vis-area''></div>\");\n        require([''kbaseNarrativeOutputCell''],
+        function(KBaseNarrativeOutputCell) {\n            var w = new KBaseNarrativeOutputCell($(''#kb-vis-386cf00f-caa9-4706-b115-69731997f3da''),
+        {\n                \"upas\": {\"objNameOrId\": \"43666/5/6\"},\n                \"data\":
+        {\"objNameOrId\": \"MEGAHIT.contigs\", \"wsNameOrId\": \"wjriehl:narrative_1564507007662\"},\n                \"type\":
+        \"viewer\",\n                \"widget\": \"kbaseGenomeAnnotationAssembly\",\n                \"cellId\":
+        \"26186464-eeca-40aa-ad76-5e7cdb12a9ce\",\n                \"title\": \"MEGAHIT.contigs\",\n                \"time\":
+        1566590523391\n            });\n        });\n        ","text/plain":"<IPython.core.display.Javascript
+        object>"},"execution_count":3,"metadata":{},"output_type":"execute_result"}],"source":"from
+        biokbase.narrative.widgetmanager import WidgetManager\nWidgetManager().show_data_widget(\n    \"43666/5/6\",\n    cell_id=\"26186464-eeca-40aa-ad76-5e7cdb12a9ce\",\n    title=\"MEGAHIT.contigs\",\n    tag=\"release\"\n)"},{"cell_type":"code","execution_count":1,"metadata":{"kbase":{"attributes":{"created":"Thu,
+        22 Aug 2019 21:13:48 GMT","icon":"code","id":"2b4df4ad-191d-40e3-8c77-865a2a8487a9","lastLoaded":"Thu,
+        22 Aug 2019 21:13:48 GMT","status":"new","subtitle":"python","title":"Code
+        Cell"},"codeCell":{"userSettings":{"showCodeInputArea":true}},"type":"code"}},"outputs":[{"name":"stdout","output_type":"stream","text":"This
+        is some code.\n"}],"source":"s = \"This is some code.\"\nprint(s)"},{"cell_type":"markdown","metadata":{"kbase":{"attributes":{"icon":"paragraph","title":"This
+        is some markdown."},"cellState":{"selected":false,"showTitle":false}}},"source":"##
+        This is some markdown.\n---\nWhee!"},{"cell_type":"code","execution_count":null,"metadata":{"kbase":{"attributes":{"created":"Thu,
+        22 Aug 2019 21:14:04 GMT","icon":"code","id":"d7ef81cd-e4fa-4234-9005-c81e977d2fe7","lastLoaded":"Thu,
+        22 Aug 2019 21:14:04 GMT","status":"new","title":"Code Cell"},"codeCell":{"userSettings":{"showCodeInputArea":true}},"type":"code"}},"outputs":[],"source":""},{"cell_type":"code","execution_count":null,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"f6f8088e846831fc94a0b0806d7a769dfaccf836","id":"fba_tools/edit_media","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace"},{"input_parameter":"compounds_to_add","target_property":"compounds_to_add"},{"input_parameter":"compounds_to_change","target_property":"compounds_to_change"},{"input_parameter":"media_id","target_property":"media_id","target_type_transform":"resolved-ref"},{"input_parameter":"media_output_id","target_property":"media_output_id"},{"input_parameter":"compounds_to_remove","target_property":"compounds_to_remove"},{"input_parameter":"pH_data","target_property":"pH_data"},{"input_parameter":"temperature","target_property":"temperature"},{"input_parameter":"isDefined","target_property":"isDefined"},{"input_parameter":"type","target_property":"type"}],"kb_service_method":"edit_media","kb_service_name":"fba_tools","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"narrative_system_variable":"workspace","target_property":"ws"},{"constant_value":"KBaseBiochem.Media","target_property":"type"},{"input_parameter":"media_output_id","target_property":"obj"}],"kb_service_url":"","kb_service_version":"f6f8088e846831fc94a0b0806d7a769dfaccf836"},"fixed_parameters":[],"info":{"app_type":"app","authors":["chenry@mcs.anl.gov"],"categories":["active","metabolic_modeling"],"git_commit_hash":"f6f8088e846831fc94a0b0806d7a769dfaccf836","id":"fba_tools/edit_media","input_types":["KBaseBiochem.Media"],"module_name":"fba_tools","name":"Edit
+        Media","namespace":"fba_tools","output_types":["KBaseBiochem.Media"],"subtitle":"Edit
+        an existing media formulation.","tooltip":"Edit an existing media formulation.","ver":"1.7.5"},"job_id_output_field":"docker","parameter_groups":[{"advanced":0,"allow_multiple":1,"description":"","id":"compounds_to_change","optional":1,"parameter_ids":["change_id","change_concentration","change_minflux","change_maxflux"],"short_hint":"Compounds
+        to change in media","ui_name":"Compounds to change in media","with_border":0},{"advanced":0,"allow_multiple":1,"description":"","id":"compounds_to_add","optional":1,"parameter_ids":["add_id","add_concentration","add_minflux","add_maxflux"],"short_hint":"Compounds
+        to add to media","ui_name":"Compounds to add to media","with_border":0}],"parameters":[{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"Media
+        specifies the set of chemical compounds organism can use for its growth","disabled":0,"field_type":"text","id":"media_id","optional":0,"short_hint":"Media
+        specifies the set of chemical compounds organism can use for its growth","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseBiochem.Media"]},"ui_class":"input","ui_name":"Media
+        to edit"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"Media
+        specifies the set of chemical compounds organism can use for its growth","disabled":0,"field_type":"text","id":"media_output_id","optional":0,"short_hint":"Media
+        specifies the set of chemical compounds organism can use for its growth","text_options":{"is_output_name":1,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseBiochem.Media"]},"ui_class":"output","ui_name":"Output
+        media ID"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"ID
+        of compound to change","disabled":0,"field_type":"textsubdata","id":"change_id","optional":1,"short_hint":"ID
+        of compound to change","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"textsubdata_options":{"allow_custom":0,"multiselection":0,"placeholder":"","show_src_obj":0,"subdata_selection":{"parameter_id":"media_id","path_to_subdata":["mediacompounds"],"selection_id":"compound_ref","subdata_included":["mediacompounds/[*]/compound_ref"]}},"ui_class":"parameter","ui_name":"Compound
+        ID"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"Compounds
+        to remove","disabled":0,"field_type":"textsubdata","id":"compounds_to_remove","optional":1,"short_hint":"Compounds
+        to remove","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"textsubdata_options":{"allow_custom":0,"multiselection":1,"placeholder":"","show_src_obj":0,"subdata_selection":{"parameter_id":"media_id","path_to_subdata":["mediacompounds"],"selection_id":"compound_ref","subdata_included":["mediacompounds/[*]/compound_ref"]}},"ui_class":"parameter","ui_name":"Compounds
+        to remove"},{"advanced":0,"allow_multiple":0,"default_values":["0.001"],"description":"Concentration
+        in mmol","disabled":0,"field_type":"text","id":"change_concentration","optional":1,"short_hint":"Concentration
+        in mmol","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Concentration"},{"advanced":0,"allow_multiple":0,"default_values":["-100"],"description":"Min
+        flux in mmol/gm CDW hr","disabled":0,"field_type":"text","id":"change_minflux","optional":1,"short_hint":"Min
+        flux in mmol/gm CDW hr","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Min
+        flux"},{"advanced":0,"allow_multiple":0,"default_values":["100"],"description":"Max
+        flux in mmol/gm CDW hr","disabled":0,"field_type":"text","id":"change_maxflux","optional":1,"short_hint":"Max
+        flux in mmol/gm CDW hr","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Max
+        flux"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"ID
+        of compound to add","disabled":0,"field_type":"text","id":"add_id","optional":0,"short_hint":"ID
+        of compound to add","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"ui_class":"parameter","ui_name":"Compound
+        ID"},{"advanced":0,"allow_multiple":0,"default_values":["0.001"],"description":"Concentration
+        in mmol","disabled":0,"field_type":"text","id":"add_concentration","optional":0,"short_hint":"Concentration
+        in mmol","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Concentration"},{"advanced":0,"allow_multiple":0,"default_values":["-100"],"description":"Min
+        flux in mmol/gm CDW hr","disabled":0,"field_type":"text","id":"add_minflux","optional":0,"short_hint":"Min
+        flux in mmol/gm CDW hr","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Min
+        flux"},{"advanced":0,"allow_multiple":0,"default_values":["100"],"description":"Max
+        flux in mmol/gm CDW hr","disabled":0,"field_type":"text","id":"add_maxflux","optional":0,"short_hint":"Max
+        flux in mmol/gm CDW hr","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Max
+        flux"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"pH
+        of media","disabled":0,"field_type":"text","id":"pH_data","optional":1,"short_hint":"pH
+        of media","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"pH"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"Temperature
+        of media","disabled":0,"field_type":"text","id":"temperature","optional":1,"short_hint":"Temperature
+        of media","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Temperature"},{"advanced":1,"allow_multiple":0,"default_values":["unknown"],"description":"Type
+        of media","disabled":0,"dropdown_options":{"options":[{"display":"Unknown","index":0,"value":"unknown"},{"display":"Biolog","index":1,"value":"biolog"},{"display":"Undefined","index":2,"value":"undefined"},{"display":"Defined","index":3,"value":"defined"}]},"field_type":"dropdown","id":"type","optional":1,"short_hint":"Type
+        of media","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"ui_class":"parameter","ui_name":"Type
+        of media"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["1"],"description":"Check
+        if media is defined","disabled":0,"field_type":"checkbox","id":"isDefined","optional":0,"short_hint":"Check
+        if media is defined","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"ui_class":"parameter","ui_name":"Defined
+        media"}],"widgets":{"input":"null","output":"kbaseTabTable"}},"tag":"release","version":"1.7.5"},"fsm":{"currentState":{"mode":"editing","params":"incomplete"}},"output":{"byJob":{}},"params":{"compounds_to_add":[],"compounds_to_change":[],"compounds_to_remove":[],"isDefined":1,"media_id":null,"media_output_id":null,"pH_data":null,"temperature":null,"type":"unknown"},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        06 Nov 2019 19:35:17 GMT","id":"b22605e9-a10b-45e1-b60b-248c5944943a","info":{"label":"more...","url":"/#appcatalog/app/fba_tools/edit_media/release"},"lastLoaded":"Wed,
+        06 Nov 2019 19:35:17 GMT","status":"new","subtitle":"Edit an existing media
+        formulation.","title":"Edit Media"},"type":"app"}},"outputs":[],"source":""}],"metadata":{"creator":"wjriehl","data_dependencies":[],"description":"","format":"ipynb","is_temporary":"false","job_ids":{"apps":[],"job_usage":{"queue_time":0,"run_time":0},"methods":[]},"kbase":{"creator":"wjriehl","job_ids":{"apps":[],"job_usage":{"queue_time":0,"run_time":0},"methods":[]},"name":"Untitled","ws_name":"wjriehl:narrative_1564507007662"},"kernelspec":{"display_name":"Python
+        3","language":"python","name":"python3"},"language_info":{"codemirror_mode":{"name":"ipython","version":3},"file_extension":".py","mimetype":"text/x-python","name":"python","nbconvert_exporter":"python","pygments_lexer":"ipython3","version":"3.7.4"},"name":"Test
+        Exporting","type":"KBaseNarrative.Narrative","ws_name":"wjriehl:narrative_1564507007662"},"nbformat":4,"nbformat_minor":1},"info":[1,"Narrative.1564507007662","KBaseNarrative.Narrative-4.0","2019-11-06T19:35:31+0000",21,"wjriehl",43666,"wjriehl:narrative_1564507007662","4688cdc1492fc6f696046e67f3b8a4e4",35237,{"creator":"wjriehl","data_dependencies":"[]","jupyter.markdown":"2","method.kb_quast/run_QUAST_app/055c7eeda5f420f6d72b2fc8d542f7444a51ba84":"1","job_info":"{\"queue_time\":
+        0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}","method.fba_tools/edit_media/f6f8088e846831fc94a0b0806d7a769dfaccf836":"1","format":"ipynb","description":"","type":"KBaseNarrative.Narrative","method.ProkkaAnnotation/annotate_contigs/d60865d5f12e71f3491c23c298670fd1ef24c252":"1","is_temporary":"false","name":"Test
+        Exporting","ws_name":"wjriehl:narrative_1564507007662"}],"path":["43666/1/21"],"provenance":[{"service":"narrative","service_ver":"4.0.0","method_params":[],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[],"custom":{},"description":"Saved
+        by KBase Narrative Interface"}],"creator":"wjriehl","orig_wsid":43666,"created":"2019-11-06T19:35:31+0000","epoch":1573068931642,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824d12962ce80-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:54 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=_1ge6Y.laUifEoSK4UNvXpubCR0oiB.t2Gez0PfZ8mY-1719855234-1.0.1.1-d4XY3B4RqsVz8Wnetq5aAOXpAbvICm4cfe5gXsP2LYnoVMktE6qD0WdRdRuhG8yFBHcZ2Z13zWXa5bTNe3xQkw;
+        path=/; expires=Mon, 01-Jul-24 18:03:54 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "ServiceWizard.get_service_status", "params": [{"module_name":
+      "SetAPI", "version": "release"}], "version": "1.1", "id": "7231823660708399"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '151'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/service_wizard
+  response:
+    body:
+      string: '{"version": "1.1", "result": [{"git_commit_hash": "5a838320de2b4884f11457a51a26870eadb175f6",
+        "status": "active", "version": "0.3.5", "hash": "5a838320de2b4884f11457a51a26870eadb175f6",
+        "release_tags": ["release", "beta"], "url": "https://ci.kbase.us:443/dynserv/5a838320de2b4884f11457a51a26870eadb175f6.SetAPI",
+        "module_name": "SetAPI", "health": "healthy", "up": 1}], "id": "7231823660708399"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824d2294bfaba-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:55 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=WuMsZfZ3pycZ9b.7jUl.uwjo3XvLTx.j7oYtYNfEZDI-1719855235-1.0.1.1-7A.QVJ7WmBn5G.YGc0qAutrv8iAQCkdLb_InCPA4yaZYGv8M9QFdnNpV1dAneaxqYt8Hwxim0LV87KyLB0x7Xw;
+        path=/; expires=Mon, 01-Jul-24 18:03:55 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"method": "SetAPI.list_sets", "params": [{"workspaces": [43666], "include_set_item_info":
+      1, "include_metadata": 1}], "version": "1.1", "id": "10589194404150615"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '163'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/dynserv/5a838320de2b4884f11457a51a26870eadb175f6.SetAPI
+  response:
+    body:
+      string: '{"version": "1.1", "result": [{"sets": []}], "id": "10589194404150615"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization,Cookie
+      Access-Control-Max-Age:
+      - '1728000'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824d61cef9440-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:56 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Wo.LE7bmZVLtA1vNI.I2Dh_sWsESSQ9xjenHMht81hE-1719855236-1.0.1.1-ipZ7tjZgYQJQc9hfAdCG7pSGM7BYvBpRZrX7qqI8wlAUP.PYdPMpIiWNcsd47gyiybglKYusN51VeWSSGqabqQ;
+        path=/; expires=Mon, 01-Jul-24 18:03:56 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 43666}], "version":
+      "1.1", "id": "6594746634036757"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '113'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[43666,"wjriehl:narrative_1564507007662","wjriehl","2020-01-24T18:48:28+0000",7,"n","r","unlocked",{"static_narrative_ver":"22","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"10","narrative_nice_name":"Test
+        Exporting","static_narrative_saved":"1579891708594","static_narrative":"/43666/22"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824db8e1922d2-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:56 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=7Qhaiy9UVoaciXcZszffsuYh..olWN3U_p14crDEGKA-1719855236-1.0.1.1-vzGgUF10iaINxz1s2CaqUWbshh50aTwF27HS1k7k6N1fUnswCrLHxSZ7R3Y0f2UvUOs5Mv0KCiP.HK1ZyRUtUg;
+        path=/; expires=Mon, 01-Jul-24 18:03:56 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.list_objects", "params": [{"includeMetadata": 1,
+      "ids": [43666], "minObjectID": 1, "maxObjectID": 10000}], "version": "1.1",
+      "id": "13641725561229223"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '173'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[[1,"Narrative.1564507007662","KBaseNarrative.Narrative-4.0","2020-01-24T17:30:39+0000",22,"wjriehl",43666,"wjriehl:narrative_1564507007662","74bec066485ce99b7c61d09e78432745",33901,{"creator":"wjriehl","data_dependencies":"[]","jupyter.markdown":"2","method.kb_quast/run_QUAST_app/055c7eeda5f420f6d72b2fc8d542f7444a51ba84":"1","job_info":"{\"queue_time\":
+        0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}","method.fba_tools/edit_media/f6f8088e846831fc94a0b0806d7a769dfaccf836":"1","format":"ipynb","description":"","type":"KBaseNarrative.Narrative","method.ProkkaAnnotation/annotate_contigs/d60865d5f12e71f3491c23c298670fd1ef24c252":"1","is_temporary":"false","name":"Test
+        Exporting","ws_name":"wjriehl:narrative_1564507007662"}],[2,"Rhodobacter_CACIA_14H1_contigs","KBaseGenomes.ContigSet-2.0","2019-07-30T17:17:52+0000",8,"wjriehl",43666,"wjriehl:narrative_1564507007662","8b0b883f7134325a940cd07d0652881b",3925871,{}],[4,"bsub_annotation","KBaseGenomes.Genome-8.0","2019-08-20T18:40:24+0000",15,"wjriehl",43666,"wjriehl:narrative_1564507007662","c85809f93839d0316bd231b3d3ba658f",2684445,{"GC
+        content":"0.5","Genetic code":"11","Close genomes":"30","Source ID":"bsub_annotation","Size":"4215606","Number
+        features":"4553","Number contigs":"1","Domain":"B","Source":"KBase","Name":"B
+        subtilis","MD5":"dbf77105f122414ce1969295209d0f14"}],[5,"MEGAHIT.contigs","KBaseGenomeAnnotations.Assembly-6.0","2019-08-20T18:57:39+0000",6,"wjriehl",43666,"wjriehl:narrative_1564507007662","6e19aa8d984f416271456820cc64f614",52149,{"GC
+        content":"0.66636","Size":"3837282","N Contigs":"295","MD5":"bb342ff10217f9e5348a67148bb0c5f6"}],[6,"some_genome","KBaseGenomes.Genome-15.1","2019-08-20T19:02:48+0000",1,"wjriehl",43666,"wjriehl:narrative_1564507007662","fa92aabaf8a57d22761799421aeddfa2",14353585,{"Taxonomy":"Unconfirmed
+        Organism: something","Size":"3837282","Source":"PROKKA annotation pipeline","Name":"something","GC
+        content":"0.66636","Genetic code":"0","Type":"Unknown","Number of Genome Level
+        Warnings":"4","Number of Protein Encoding Genes":"3895","Assembly Object":"43666/5/6","Number
+        contigs":"295","Domain":"Bacteria","Number of CDS":"3895","MD5":"bb342ff10217f9e5348a67148bb0c5f6"}]]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824dc68c297fa-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:56 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=fUnMrihT06frB8_dJ7SJrcdLJBf3NsMjhfGPCs30Q9E-1719855236-1.0.1.1-yIDBi08qc6ST6C6ZfpZT47e_wYZMMjJQHZ8XF1rgXRcqBscpCEHN1O2HzJeV72rxRMvGpPEJrMeCdTOnP4f3Cg;
+        path=/; expires=Mon, 01-Jul-24 18:03:56 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "43666/3/1"}]}],
+      "version": "1.1", "id": "25898700219102777"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":0,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/6f4e2100-4ef2-4182-b4de-6ae5feb88067","description":null,"handle":"KBH_476885","label":"QUAST
+        report","name":"report.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"All
+        statistics are based on contigs of size >= 500 bp, unless otherwise noted
+        (e.g., \"# contigs (>= 0 bp)\" and \"Total length (>= 0 bp)\" include all
+        contigs).\n\nAssembly                        Rhodobacter_CACIA_14H1_contigs\n#
+        contigs (>= 0 bp)             304                           \n# contigs (>=
+        1000 bp)          290                           \n# contigs (>= 10000 bp)         147                           \n#
+        contigs (>= 100000 bp)        0                             \n# contigs (>=
+        1000000 bp)       0                             \nTotal length (>= 0 bp)          3867594                       \nTotal
+        length (>= 1000 bp)       3860047                       \nTotal length (>=
+        10000 bp)      2990442                       \nTotal length (>= 100000 bp)     0                             \nTotal
+        length (>= 1000000 bp)    0                             \n# contigs                       299                           \nLargest
+        contig                  58528                         \nTotal length                    3866436                       \nGC
+        (%)                          66.62                         \nN50                             17793                         \nN75                             10888                         \nL50                             70                            \nL75                             139                           \n#
+        N''s per 100 kbp               0.00                          \n# predicted
+        genes (unique)      3817                          \n# predicted genes (>=
+        0 bp)     3817                          \n# predicted genes (>= 300 bp)   3446                          \n#
+        predicted genes (>= 1500 bp)  487                           \n# predicted
+        genes (>= 3000 bp)  36                            \n","warnings":[]},"info":[3,"kb_quast_report_753191bb-e485-42f8-8e33-9a78b06b34c6","KBaseReport.Report-3.0","2019-07-30T17:20:18+0000",1,"wjriehl",43666,"wjriehl:narrative_1564507007662","296ec75f2fd9062917e5b782141d38a2",2127,{"Size(characters)":"1734","Objects
+        Created":"0","Warnings":"0"}],"path":["43666/3/1"],"provenance":[{"time":"2019-07-30T17:18:39+0000","epoch":1564507119000,"service":"kb_quast","service_ver":"0.0.3","method":"run_QUAST_app","method_params":[{"assemblies":["43666/2/8"],"workspace_name":"wjriehl:narrative_1564507007662"}],"input_ws_objects":["43666/2/8"],"resolved_ws_objects":["43666/2/8"],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"kb_quast","ver":"0.0.3","code_url":"https://github.com/kbaseapps/kb_quast","commit":"055c7eeda5f420f6d72b2fc8d542f7444a51ba84"},{"name":"AssemblyUtil","ver":"1.1.0-release","code_url":"https://github.com/kbaseapps/AssemblyUtil","commit":"afd3f360f4fb30143bca41cf58c1977d8ab45e8b"},{"name":"DataFileUtil","ver":"0.1.1-release","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"7f5646bc29b5cb35d32c86f3acdf7b18a0f6d53f"},{"name":"KBaseReport","ver":"3.0.5-release","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":43666,"created":"2019-07-30T17:20:17+0000","epoch":1564507217486,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_476885"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824dfcec3f9f5-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:57 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=gj..Hzj2WzBG6.sJC1vgN9xF9UGajZt7r_K2rrTbBDY-1719855237-1.0.1.1-.fwArHsqSSEeh8riu8dQWIonrtTYqClIa0qViFAcKIb5aRSUV8qcADhRReGYXd5tZc_uN4MYrEk85peuJaT2eg;
+        path=/; expires=Mon, 01-Jul-24 18:03:57 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "43666/7/1"}]}],
+      "version": "1.1", "id": "2610531277147896"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '129'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":null,"file_links":[],"html_links":[],"html_window_height":null,"objects_created":[{"description":"Annotated
+        genome","ref":"43666/6/1"}],"summary_window_height":null,"text_message":"Genome
+        saved to: wjriehl:narrative_1564507007662/some_genome\nNumber of genes predicted:
+        3895\nNumber of protein coding genes: 3895\nNumber of genes with non-hypothetical
+        function: 2411\nNumber of genes with EC-number: 1413\nNumber of genes with
+        Seed Subsystem Ontology: 1081\nAverage protein length: 864 aa.\n","warnings":[]},"info":[7,"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc","KBaseReport.Report-3.0","2019-08-20T19:03:24+0000",1,"wjriehl",43666,"wjriehl:narrative_1564507007662","db6bc68860feb197c29719202445e81b",552,{"Size(characters)":"303","Objects
+        Created":"1","Warnings":"0"}],"path":["43666/7/1"],"provenance":[{"time":"2019-08-20T18:58:29+0000","epoch":1566327509000,"service":"ProkkaAnnotation","service_ver":"d60865d5f12e71f3491c23c298670fd1ef24c252","method":"annotate","method_params":[{"mincontiglen":1,"object_ref":"wjriehl:narrative_1564507007662/MEGAHIT.contigs","scientific_name":"something","evalue":null,"output_genome_name":"some_genome","kingdom":"Bacteria","gcode":null,"norrna":0,"metagenome":0,"fast":0,"output_workspace":"wjriehl:narrative_1564507007662","notrna":0,"rfam":0,"genus":null,"rawproduct":0}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"ProkkaAnnotation","ver":"d60865d5f12e71f3491c23c298670fd1ef24c252","code_url":"https://github.com/kbaseapps/ProkkaAnnotation","commit":"d60865d5f12e71f3491c23c298670fd1ef24c252"},{"name":"AssemblyUtil","code_url":"https://github.com/kbaseapps/AssemblyUtil","commit":"afd3f360f4fb30143bca41cf58c1977d8ab45e8b"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"7f5646bc29b5cb35d32c86f3acdf7b18a0f6d53f"},{"name":"GenomeFileUtil","code_url":"https://github.com/kbaseapps/GenomeFileUtil","commit":"04d6c8b75849fdd59b49970a07e6f715af4d7647"},{"name":"WsLargeDataIO","code_url":"https://github.com/kbaseapps/WsLargeDataIO","commit":"8d76a294f3877be83cce9b51daebe541acc107d3"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":43666,"created":"2019-08-20T19:03:24+0000","epoch":1566327804145,"refs":["43666/6/1"],"copy_source_inaccessible":0,"extracted_ids":{}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824e1aa65944c-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:57 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=7R9Np6jwBM.YtaNUn8WfbVDtwrFFsVQU5AHR2a828Po-1719855237-1.0.1.1-CycYN76w02acYy6NdUJ6cfzkbzz83JtAtT2BPYYNAeqaxTbOETnMNu4p3x28zUca5coZacjqTXM0ZYd4IMaHMg;
+        path=/; expires=Mon, 01-Jul-24 18:03:57 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "NarrativeMethodStore.get_method_full_info", "params": [{"ids":
+      ["kb_quast/run_QUAST_app", "fba_tools/edit_media", "ProkkaAnnotation/annotate_contigs"],
+      "tag": "release"}], "version": "1.1", "id": "5831970468014763"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '227'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/narrative_method_store/rpc
+  response:
+    body:
+      string: '{"version":"1.1","result":[[{"id":"kb_quast/run_QUAST_app","module_name":"kb_quast","git_commit_hash":"f6be7c27bbf44a0d65b0250dbdb8079b5df9d7ae","name":"Assess
+        Quality of Assemblies with QUAST - v4.4","ver":"1.0.0","authors":["gaprice"],"contact":"http://kbase.us/contact-us/","subtitle":"Run
+        QUAST (QUality ASsessment Tool) on a set of Assemblies to assess their quality.","tooltip":"Run
+        QUAST (QUality ASsessment Tool) on a set of Assemblies to assess their quality.","description":"<p>This
+        is the KBase wrapper for version 4.4 of the <a href=\"http://quast.sourceforge.net/\"
+        target=\"_blank\">QUAST</a> assembly quality assessment tool. QUAST evaluates
+        assemblies by computing various metrics, including number of contigs, N50/75,
+        L50/75, GC content, number of uncalled bases (N s), and predicted genes. It
+        takes one or more Assembly objects as input and then generates an output report
+        with statistics for all of the input assemblies.</p>\n\n<p>Use QUAST to assess
+        the output assemblies from different configurations of the same assembler,
+        or compare assemblies from multiple assemblers to determine which one is optimal
+        for downstream analysis. The QUAST report color codes \"worst, median, best\"
+        for each of the statistics generated, but pay attention to the degree of difference
+        between the lengths and values to better understand how the parameters of
+        your assembler relate to the resulting Assembly.</p>\n\n<p><h3>Reading the
+        QUAST output report:</h3>\n<ul>\n    <li><b># contigs</b> is the total number
+        of contigs in the Assembly.</li>\n    <li><b>Largest contig</b> is the length
+        of the longest contig in the Assembly.</li>\n    <li><b>Total length</b> is
+        the total number of bases in the Assembly.</li>\n    <li><b>GC (%)</b> is
+        the total number of G and C nucleotides in the Assembly, divided by the total
+        length of the Assembly.</li>\n    <li><b>N50</b> is the length for which the
+        collection of all contigs of that length or longer covers at least half (50%)
+        the total base content of the Assembly. It serves as a median value for assessing
+        whether the Assembly is balanced towards longer contigs (higher N50) or shorter
+        contigs (lower N50). N75 is used for the same purpose but is the length is
+        set at 75% of total base content instead of 50%.</li>\n    <li><b>L50 is the
+        number of contigs equal to or longer than the N50 length. In other words,
+        L50, is the minimal number of contigs that contain half the total base content
+        of the Assembly. L75 is used for the same purpose in reference to the N75
+        length.</li>\n</ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_quast/run_QUAST_app&image_name=quast-blue_360.png&tag=release"},"categories":["assembly"],"screenshots":[],"publications":[{"pmid":"23422339","display_text":"[1]
+        Gurevich A, Saveliev V, Vyahhi N, Tesler G. QUAST: quality assessment tool
+        for genome assemblies. Bioinformatics. 2013;29: 1072 1075. doi:10.1093/bioinformatics/btt086\n","link":"https://www.ncbi.nlm.nih.gov/pubmed/23422339"},{"pmid":"27378299","display_text":"[2]
+        Mikheenko A, Valin G, Prjibelski A, Saveliev V, Gurevich A. Icarus: visualizer
+        for de novo assembly evaluation. Bioinformatics. 2016;32: 3321 3323. doi:10.1093/bioinformatics/btw379\n","link":"https://www.ncbi.nlm.nih.gov/pubmed/27378299"}],"namespace":"kb_quast"},{"id":"fba_tools/edit_media","module_name":"fba_tools","git_commit_hash":"f6f8088e846831fc94a0b0806d7a769dfaccf836","name":"Edit
+        Media","ver":"1.7.5","authors":["chenry@mcs.anl.gov"],"contact":"http://kbase.us/contact-us/","subtitle":"Edit
+        an existing media formulation.","tooltip":"Edit an existing media formulation.","description":"<p>Edit
+        a media formulation by adding or removing compounds, changing concentrations,
+        or adjusting flux bounds.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","metabolic_modeling"],"screenshots":[],"publications":[],"namespace":"fba_tools"},{"id":"ProkkaAnnotation/annotate_contigs","module_name":"ProkkaAnnotation","git_commit_hash":"1967e07320b1898db0c6998bb4549b7f1187e5a8","name":"Annotate
+        Assembly and Re-annotate Genomes with Prokka - v1.14.5","ver":"3.2.1","authors":["rsutormin","bsadkhin","slebras"],"contact":"https://www.kbase.us/support/","subtitle":"Annotate
+        Assembly and Re-annotate Genomes with Prokka annotation pipeline.","tooltip":"Annotate
+        Assembly and Re-annotate Genomes with Prokka annotation pipeline.","description":"<p>\nThis
+        is a KBase wrapper for the\n<a href=\"http://www.bioinformatics.net.au/software.prokka.shtml\"
+        target=\"_blank\">Prokka</a>\nannotation pipeline.\n</p>\n\n<p>\nProkka is
+        a software tool for the rapid annotation of prokaryotic genomes. A typical
+        4Mbp genome can be fully annotated in less than 20 minutes.\n</p>\n\n<p>\nFor
+        rRNA prediction this app currently uses Barrnap (written by the author of
+        Prokka and recommended if you prefer speed over absolute accuracy).\n</p>\n\n<p>\nSee
+        more information at https://github.com/kbaseapps/ProkkaAnnotation/blob/master/README.rst\n</p>\n\n<p>Prokka
+        version: 1.14.5</p>\n<p>Barrnap version: 0.8</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=ProkkaAnnotation/annotate_contigs&image_name=prokka.png&tag=release"},"categories":["active","annotation"],"screenshots":[],"publications":[{"pmid":"24642063","display_text":"Seemann
+        T. Prokka: rapid prokaryotic genome annotation. Bioinformatics. 2014;30: 2068
+        2069. doi:10.1093/bioinformatics/btu153\n","link":"https://www.ncbi.nlm.nih.gov/pubmed/24642063"}],"namespace":"ProkkaAnnotation"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824e2dae7cf19-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:57 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Rc4zSql3D.5HThgE4NB7NiFSJhpP3juq.WAkDHb1hLo-1719855237-1.0.1.1-EuOekzUWDwHtkO2D70D1xTliUZgg1Hqbo.cAG9Ad1VHrQ4qM9S3skGc1lhVEMamZ1h4cIbBVZR2Eoy7Ha9qc5A;
+        path=/; expires=Mon, 01-Jul-24 18:03:57 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 43666}], "version":
+      "1.1", "id": "3122600707482813"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '113'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[43666,"wjriehl:narrative_1564507007662","wjriehl","2020-01-24T18:48:28+0000",7,"n","r","unlocked",{"static_narrative_ver":"22","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"10","narrative_nice_name":"Test
+        Exporting","static_narrative_saved":"1579891708594","static_narrative":"/43666/22"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824e3aad696bf-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:57 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=_5_uuAWDsH5LdF9Ax3N9k4bnHvVZDUi2KT0Sti7cFbE-1719855237-1.0.1.1-ummEIJDKxDsWBOsgUaPdsKus31_EbIKElSEpqNfQNcuzHNjb_7.YKF8ac9XsUdTxRSOXsEVzHQBWt9OWH2wpyg;
+        path=/; expires=Mon, 01-Jul-24 18:03:57 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_permissions", "params": [{"id": 43666}], "version":
+      "1.1", "id": "4251882916608365"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '110'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"ialarmedalien":"n","*":"r"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824e51b6c16fb-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:57 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=blWnvzC8MegfCrHmG6LTXsFgcn4HbvcdD3XHs5cXfkk-1719855237-1.0.1.1-Z8dm_w8L18zp3KjWHwC6izmI0Kr7wwHbGF_QsvzxATcwPMW3.hdVgoMcMziF3ZKfijbOBvKpmq4WC0c8GErNvA;
+        path=/; expires=Mon, 01-Jul-24 18:03:57 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "43666/1/21"}]}],
+      "version": "1.1", "id": "6579982474139315"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"cells":[{"cell_type":"markdown","metadata":{"kbase":{"attributes":{"icon":"paragraph","title":"Welcome
+        to KBase''s Narrative Interface!"},"cellState":{"selected":false,"showTitle":false}}},"source":"##
+        Welcome to KBase''s Narrative Interface!\n\n**What''s a Narrative?** Narratives
+        are shareable, reproducible workflows that can include data, analysis steps,
+        results, visualizations and commentary. [Learn more...](http://kbase.us/narrative-guide)\n\n**Take
+        the Tour:** Choose \"Narrative Tour\" from the \"Help\" menu above. The tour
+        walks you through the user interface, pointing out various useful aspects
+        of it.\n\n**Get Some Data:** Click the Add Data button in the Data Panel to
+        search KBase data or upload your own. Hover over a data object to reveal a
+        button for adding it to your Narrative. [Learn more...](http://kbase.us/narrative-guide/explore-data)\n\n**Analyze
+        It:** Use the Apps panel or the App Catalog to browse available analysis apps.
+        Select an app to add it to your Narrative, fill in the fields, and click the
+        \"Run\" button to launch the app. [Learn more...](http://kbase.us/narrative-guide/browse-apps-and-methods)\n\n**Save
+        and Share Your Narrative:** Be sure to save your Narrative frequently. To
+        let collaborators view your analysis steps and results, click the Share button.
+        Or make your Narrative public and help expand the social web that KBase is
+        building to make systems biology research more open, reproducible and collaborative.
+        [Learn more...](http://kbase.us/narrative-guide/share-narratives/)\n\n**Find
+        Documentation:** For more information, please see the [Narrative Interface
+        User Guide](http://kbase.us/narrative-guide) or the [tutorials](http://kbase.us/tutorials).\n\n**Questions?
+        Bug reports?** [Contact us](http://kbase.us/contact-us)!\n\n> Ready to begin
+        adding to your Narrative? You can keep this Welcome cell or delete it by selecting
+        \"Delete cell\" from the \"...\" menu in the top right corner of this cell.\n"},{"cell_type":"code","execution_count":1,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"055c7eeda5f420f6d72b2fc8d542f7444a51ba84","id":"kb_quast/run_QUAST_app","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"assemblies","target_property":"assemblies","target_type_transform":"list<ref>"}],"kb_service_method":"run_QUAST_app","kb_service_name":"kb_quast","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"5","target_property":"report_window_line_height"},{"service_method_output_path":["0"],"target_property":"QUAST_result"},{"input_parameter":"assemblies","target_property":"input_assemblies"},{"narrative_system_variable":"workspace","target_property":"workspace_name"}],"kb_service_url":"","kb_service_version":"055c7eeda5f420f6d72b2fc8d542f7444a51ba84"},"fixed_parameters":[],"info":{"app_type":"app","authors":[],"categories":["assembly"],"git_commit_hash":"055c7eeda5f420f6d72b2fc8d542f7444a51ba84","icon":{"url":"img?method_id=kb_quast/run_QUAST_app&image_name=quast-blue_360.png&tag=release"},"id":"kb_quast/run_QUAST_app","input_types":["KBaseGenomeAnnotations.Assembly","KBaseGenomes.ContigSet"],"module_name":"kb_quast","name":"QUAST
+        - Quality Assessment Tool for Genome Assemblies","namespace":"kb_quast","output_types":[],"subtitle":"Run
+        QUAST on a set of assemblies to assess quality.","tooltip":"Run QUAST on a
+        set of assemblies to assess quality.","ver":"0.0.3"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":1,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"assemblies","optional":0,"short_hint":"Assembly
+        objects to be analyzed by QUAST.","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseGenomes.ContigSet","KBaseGenomeAnnotations.Assembly"]},"ui_class":"input","ui_name":"Assemblies"}],"widgets":{"input":"kbaseNarrativeMethodInput","output":"no-display"}},"tag":"release","version":"0.0.3"},"exec":{"jobState":{"canceled":0,"cell_id":"89d36e34-0b27-409d-9aeb-d7ec73467e44","child_jobs":[],"creation_time":1564507093765,"exec_start_time":1564507118799,"finish_time":1564507224903,"finished":1,"job_id":"5d407bccaa5a4d298c5dc87d","job_state":"completed","result":[{"report_name":"kb_quast_report_753191bb-e485-42f8-8e33-9a78b06b34c6","report_ref":"43666/3/1"}],"run_id":"f7557847-29a7-4af2-91a7-190fe6bd09a6","status":["2019-07-30T17:20:24+0000","complete","done",null,null,1,0],"sub_jobs":[],"ujs_url":"https://ci.kbase.us/services/userandjobstate/"},"jobStateUpdated":1564507223498,"launchState":{"cell_id":"89d36e34-0b27-409d-9aeb-d7ec73467e44","event":"launched_job","event_at":"2019-07-30T17:18:13.845787Z","job_id":"5d407bccaa5a4d298c5dc87d","run_id":"f7557847-29a7-4af2-91a7-190fe6bd09a6"},"outputWidgetInfo":{"name":"no-display","params":{"QUAST_result":{"report_name":"kb_quast_report_753191bb-e485-42f8-8e33-9a78b06b34c6","report_ref":"43666/3/1"},"input_assemblies":["2/8"],"report_name":"kb_quast_report_753191bb-e485-42f8-8e33-9a78b06b34c6","report_ref":"43666/3/1","report_window_line_height":"5","workspace_name":"wjriehl:narrative_1564507007662"},"tag":"release"}},"fsm":{"currentState":{"mode":"success"}},"output":{"byJob":{"5d407bccaa5a4d298c5dc87d":{"cell":{"created":false},"createdAt":"Tue,
+        30 Jul 2019 17:20:23 GMT","params":{"assemblies":["43666/2/8"]}}}},"params":{"assemblies":["43666/2/8"]},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Tue,
+        30 Jul 2019 17:17:15 GMT","id":"89d36e34-0b27-409d-9aeb-d7ec73467e44","info":{"label":"more...","url":"/#appcatalog/app/kb_quast/run_QUAST_app/release"},"lastLoaded":"Wed,
+        06 Nov 2019 18:12:08 GMT","status":"new","subtitle":"Run QUAST on a set of
+        assemblies to assess quality.","title":"QUAST - Quality Assessment Tool for
+        Genome Assemblies"},"type":"app"}},"outputs":[],"source":"from biokbase.narrative.jobs.appmanager
+        import AppManager\nAppManager().run_app(\n    \"kb_quast/run_QUAST_app\",\n    {\n        \"assemblies\":
+        [\"43666/2/8\"]\n    },\n    tag=\"release\",\n    version=\"0.0.3\",\n    cell_id=\"89d36e34-0b27-409d-9aeb-d7ec73467e44\",\n    run_id=\"f7557847-29a7-4af2-91a7-190fe6bd09a6\"\n)"},{"cell_type":"code","execution_count":6,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"d60865d5f12e71f3491c23c298670fd1ef24c252","id":"ProkkaAnnotation/annotate_contigs","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"output_workspace"},{"input_parameter":"object_ref","target_property":"object_ref","target_type_transform":"ref"},{"input_parameter":"output_genome_name","target_property":"output_genome_name"},{"input_parameter":"scientific_name","target_property":"scientific_name"},{"input_parameter":"kingdom","target_property":"kingdom"},{"input_parameter":"genus","target_property":"genus"},{"input_parameter":"gcode","target_property":"gcode"},{"input_parameter":"metagenome","target_property":"metagenome"},{"input_parameter":"rawproduct","target_property":"rawproduct"},{"input_parameter":"fast","target_property":"fast"},{"input_parameter":"mincontiglen","target_property":"mincontiglen"},{"input_parameter":"evalue","target_property":"evalue"},{"input_parameter":"rfam","target_property":"rfam"},{"input_parameter":"norrna","target_property":"norrna"},{"input_parameter":"notrna","target_property":"notrna"}],"kb_service_method":"annotate","kb_service_name":"ProkkaAnnotation","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"input_parameter":"output_genome_name","target_property":"id"},{"narrative_system_variable":"workspace","target_property":"ws"}],"kb_service_url":"","kb_service_version":"d60865d5f12e71f3491c23c298670fd1ef24c252"},"fixed_parameters":[],"info":{"app_type":"app","authors":["rsutormin","bsadkhin"],"categories":["active","annotation"],"git_commit_hash":"d60865d5f12e71f3491c23c298670fd1ef24c252","icon":{"url":"img?method_id=ProkkaAnnotation/annotate_contigs&image_name=prokka.png&tag=release"},"id":"ProkkaAnnotation/annotate_contigs","input_types":["KBaseGenomeAnnotations.Assembly","KBaseGenomes.Genome"],"module_name":"ProkkaAnnotation","name":"Annotate
+        Assembly and ReAnnotate Genomes with Prokka v1.12","namespace":"ProkkaAnnotation","output_types":["KBaseGenomes.Genome"],"subtitle":"Annotate
+        Assembly with Prokka annotation pipeline.","tooltip":"Annotate Assembly with
+        Prokka annotation pipeline.","ver":"2.0.0"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"object_ref","optional":0,"short_hint":"Assembly
+        object (set of dna contigs) or Genome object (set of features with Ontology
+        and Function to reannotate)","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseGenomeAnnotations.Assembly","KBaseGenomes.Genome"]},"ui_class":"input","ui_name":"Assembly
+        or Genome"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"scientific_name","optional":1,"short_hint":"Optional
+        scientific name of organism (default ''Unknown'')","ui_class":"parameter","ui_name":"Scientific
+        name"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"output_genome_name","optional":0,"short_hint":"The
+        name under which the resulting Genome will be saved in the Narrative","text_options":{"is_output_name":1,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseGenomes.Genome"]},"ui_class":"output","ui_name":"Output
+        genome"},{"advanced":1,"allow_multiple":0,"default_values":["Bacteria"],"description":"","disabled":0,"dropdown_options":{"options":[{"display":"Bacteria","index":0,"value":"Bacteria"},{"display":"Archaea","index":1,"value":"Archaea"},{"display":"Mitochondria","index":2,"value":"Mitochondria"},{"display":"Viruses","index":3,"value":"Viruses"}]},"field_type":"dropdown","id":"kingdom","optional":0,"short_hint":"Annotation
+        mode: Archaea | Bacteria | Mitochondria | Viruses (default ''Bacteria'').","ui_class":"parameter","ui_name":"Kingdom"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"dropdown_options":{"options":[{"display":"Do
+        not use genus-specific database","index":0,"value":""},{"display":"Enterococcus","index":1,"value":"Enterococcus"},{"display":"Escherichia","index":2,"value":"Escherichia"},{"display":"Staphylococcus","index":3,"value":"Staphylococcus"}]},"field_type":"dropdown","id":"genus","optional":1,"short_hint":"Optional
+        genus name: Enterococcus | Escherichia | Staphylococcus (uses genus-specific
+        BLAST database) (default ''do not use genus-specific database'')","ui_class":"parameter","ui_name":"Genus"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"gcode","optional":1,"short_hint":"Genetic
+        code / Translation table (set if --kingdom is set) (default ''0'')","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Genetic
+        code"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"metagenome","optional":1,"short_hint":"Improve
+        gene predictions for highly fragmented genomes (default OFF).","ui_class":"parameter","ui_name":"Metagenome"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"rawproduct","optional":1,"short_hint":"Do
+        not clean up /product annotation (default OFF).","ui_class":"parameter","ui_name":"Raw
+        product"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"fast","optional":1,"short_hint":"Fast
+        mode - skip CDS /product searching (default OFF).","ui_class":"parameter","ui_name":"Fast"},{"advanced":1,"allow_multiple":0,"default_values":["1"],"description":"","disabled":0,"field_type":"text","id":"mincontiglen","optional":1,"short_hint":"Minimum
+        contig size [NCBI needs 200] (default ''1'')","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Min.contig
+        size"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"","disabled":0,"field_type":"text","id":"evalue","optional":1,"short_hint":"Similarity
+        e-value cutoff (default ''1e-06'').","ui_class":"parameter","ui_name":"E-value"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"rfam","optional":1,"short_hint":"Enable
+        searching for ncRNAs with Infernal+Rfam (SLOW!, default OFF).","ui_class":"parameter","ui_name":"Rfam"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"norrna","optional":1,"short_hint":"Don''t
+        run rRNA search (default OFF).","ui_class":"parameter","ui_name":"No rRNA"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["0"],"description":"","disabled":0,"field_type":"checkbox","id":"notrna","optional":1,"short_hint":"Don''t
+        run tRNA search (default OFF).","ui_class":"parameter","ui_name":"No tRNA"}],"widgets":{"input":"kbaseNarrativeMethodInput","output":"kbaseGenomeView"}},"tag":"release","version":"2.0.0"},"exec":{"jobState":{"canceled":0,"cell_id":"921d4153-fb8a-4c77-b764-377fa11e8ae8","child_jobs":[],"creation_time":1566327487015,"exec_start_time":1566327508958,"finish_time":1566327818632,"finished":1,"job_id":"5d5c42b6aa5a4d298c5dc8f8","job_state":"completed","result":[{"output_genome_ref":"43666/6/1","report_name":"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc","report_ref":"43666/7/1"}],"run_id":"7c594250-b7f4-4c9e-96fb-f45fd0befc3a","status":["2019-08-20T19:03:38+0000","complete","done",null,null,1,0],"sub_jobs":[],"ujs_url":"https://ci.kbase.us/services/userandjobstate/"},"jobStateUpdated":1566327827162,"launchState":{"cell_id":"921d4153-fb8a-4c77-b764-377fa11e8ae8","event":"launched_job","event_at":"2019-08-20T18:58:07.089778Z","job_id":"5d5c42b6aa5a4d298c5dc8f8","run_id":"7c594250-b7f4-4c9e-96fb-f45fd0befc3a"},"outputWidgetInfo":{"name":"kbaseGenomeView","params":{"id":"some_genome","report_name":"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc","report_ref":"43666/7/1","ws":"wjriehl:narrative_1564507007662"},"tag":"release"}},"fsm":{"currentState":{"mode":"success"}},"output":{"byJob":{"5d5c42b6aa5a4d298c5dc8f8":{"cell":{"created":true,"id":"e719db84-d317-4f24-af01-23ba59907c42"},"createdAt":"Tue,
+        20 Aug 2019 19:03:47 GMT","params":{"evalue":"","fast":0,"gcode":null,"genus":"","kingdom":"Bacteria","metagenome":0,"mincontiglen":1,"norrna":0,"notrna":0,"object_ref":"MEGAHIT.contigs","output_genome_name":"some_genome","rawproduct":0,"rfam":0,"scientific_name":"something"}}}},"params":{"evalue":"","fast":0,"gcode":null,"genus":"","kingdom":"Bacteria","metagenome":0,"mincontiglen":1,"norrna":0,"notrna":0,"object_ref":"MEGAHIT.contigs","output_genome_name":"some_genome","rawproduct":0,"rfam":0,"scientific_name":"something"},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Tue,
+        20 Aug 2019 18:57:46 GMT","id":"921d4153-fb8a-4c77-b764-377fa11e8ae8","info":{"label":"more...","url":"/#appcatalog/app/ProkkaAnnotation/annotate_contigs/release"},"lastLoaded":"Wed,
+        06 Nov 2019 18:12:08 GMT","status":"new","subtitle":"Annotate Assembly with
+        Prokka annotation pipeline.","title":"Annotate Assembly and ReAnnotate Genomes
+        with Prokka v1.12"},"type":"app"}},"outputs":[],"source":"from biokbase.narrative.jobs.appmanager
+        import AppManager\nAppManager().run_app(\n    \"ProkkaAnnotation/annotate_contigs\",\n    {\n        \"object_ref\":
+        \"MEGAHIT.contigs\",\n        \"scientific_name\": \"something\",\n        \"output_genome_name\":
+        \"some_genome\",\n        \"kingdom\": \"Bacteria\",\n        \"genus\": \"\",\n        \"gcode\":
+        None,\n        \"metagenome\": 0,\n        \"rawproduct\": 0,\n        \"fast\":
+        0,\n        \"mincontiglen\": 1,\n        \"evalue\": \"\",\n        \"rfam\":
+        0,\n        \"norrna\": 0,\n        \"notrna\": 0\n    },\n    tag=\"release\",\n    version=\"2.0.0\",\n    cell_id=\"921d4153-fb8a-4c77-b764-377fa11e8ae8\",\n    run_id=\"7c594250-b7f4-4c9e-96fb-f45fd0befc3a\"\n)"},{"cell_type":"code","execution_count":7,"metadata":{"kbase":{"attributes":{"created":"Tue,
+        20 Aug 2019 19:03:47 GMT","icon":"arrow-right","id":"e719db84-d317-4f24-af01-23ba59907c42","lastLoaded":"Wed,
+        06 Nov 2019 18:12:07 GMT","status":"new","title":"Output from Annotate Assembly
+        and ReAnnotate Genomes with Prokka v1.12"},"dataCell":{"upas":{"id":"[43666]/6/1"}},"outputCell":{"jobId":"5d5c42b6aa5a4d298c5dc8f8","parentCellId":"921d4153-fb8a-4c77-b764-377fa11e8ae8","user-settings":{"showCodeInputArea":false},"widget":{"name":"kbaseGenomeView","params":{"id":"some_genome","report_name":"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc","report_ref":"43666/7/1","ws":"wjriehl:narrative_1564507007662"},"tag":"release"}},"type":"output"}},"outputs":[{"data":{"application/javascript":"\n        element.html(\"<div
+        id=''kb-vis-d497e767-e486-44d6-ad3c-1107bde130a9'' class=''kb-vis-area''></div>\");\n        require([''kbaseNarrativeOutputCell''],
+        function(KBaseNarrativeOutputCell) {\n            var w = new KBaseNarrativeOutputCell($(''#kb-vis-d497e767-e486-44d6-ad3c-1107bde130a9''),
+        {\n                \"upas\": {\"id\": \"43666/6/1\"},\n                \"data\":
+        {\"report_ref\": \"43666/7/1\", \"ws\": \"wjriehl:narrative_1564507007662\",
+        \"id\": \"some_genome\", \"report_name\": \"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc\"},\n                \"type\":
+        \"method\",\n                \"widget\": \"kbaseGenomeView\",\n                \"cellId\":
+        \"e719db84-d317-4f24-af01-23ba59907c42\",\n                \"title\": \"\",\n                \"time\":
+        1566327827380\n            });\n        });\n        ","text/plain":"<IPython.core.display.Javascript
+        object>"},"execution_count":7,"metadata":{},"output_type":"execute_result"}],"source":"from
+        biokbase.narrative.widgetmanager import WidgetManager\nWidgetManager().show_output_widget(\n    \"kbaseGenomeView\",\n    {\n        \"report_ref\":
+        \"43666/7/1\",\n        \"ws\": \"wjriehl:narrative_1564507007662\",\n        \"id\":
+        \"some_genome\",\n        \"report_name\": \"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc\"\n    },\n    tag=\"release\",\n    cell_id=\"e719db84-d317-4f24-af01-23ba59907c42\"\n)"},{"cell_type":"code","execution_count":2,"metadata":{"kbase":{"attributes":{"created":"Fri,
+        23 Aug 2019 20:01:58 GMT","icon":"database","id":"1b69c8b8-5d15-4a9f-9d03-05a9b1d1c004","lastLoaded":"Wed,
+        06 Nov 2019 18:12:07 GMT","status":"new","subtitle":"v1 - KBaseGenomes.Genome-15.1","title":"some_genome"},"dataCell":{"objectInfo":{"checksum":"fa92aabaf8a57d22761799421aeddfa2","id":6,"metadata":{"Assembly
+        Object":"43666/5/6","Domain":"Bacteria","GC content":"0.66636","Genetic code":"0","MD5":"bb342ff10217f9e5348a67148bb0c5f6","Name":"something","Number
+        contigs":"295","Number of CDS":"3895","Number of Genome Level Warnings":"4","Number
+        of Protein Encoding Genes":"3895","Size":"3837282","Source":"PROKKA annotation
+        pipeline","Taxonomy":"Unconfirmed Organism: something","Type":"Unknown"},"name":"some_genome","obj_id":"ws.43666.obj.6","ref":"43666/6/1","ref_path":null,"saveDate":"2019-08-20T19:02:48.000Z","save_date":"2019-08-20T19:02:48+0000","saved_by":"wjriehl","size":14353585,"type":"KBaseGenomes.Genome-15.1","typeMajorVersion":"15","typeMinorVersion":"1","typeModule":"KBaseGenomes","typeName":"Genome","version":1,"ws":"wjriehl:narrative_1564507007662","ws_id":43666,"wsid":43666},"upas":{"id":"[43666]/6/1"},"user-settings":{"showCodeInputArea":false}},"type":"data"}},"outputs":[{"data":{"application/javascript":"\n        element.html(\"<div
+        id=''kb-vis-16c4a1f2-3d40-4caa-a768-b1fd57c3137f'' class=''kb-vis-area''></div>\");\n        require([''kbaseNarrativeOutputCell''],
+        function(KBaseNarrativeOutputCell) {\n            var w = new KBaseNarrativeOutputCell($(''#kb-vis-16c4a1f2-3d40-4caa-a768-b1fd57c3137f''),
+        {\n                \"upas\": {\"id\": \"43666/6/1\"},\n                \"data\":
+        {\"id\": \"some_genome\", \"ws\": \"wjriehl:narrative_1564507007662\"},\n                \"type\":
+        \"viewer\",\n                \"widget\": \"kbaseGenomeView\",\n                \"cellId\":
+        \"1b69c8b8-5d15-4a9f-9d03-05a9b1d1c004\",\n                \"title\": \"some_genome\",\n                \"time\":
+        1566590519138\n            });\n        });\n        ","text/plain":"<IPython.core.display.Javascript
+        object>"},"execution_count":2,"metadata":{},"output_type":"execute_result"}],"source":"from
+        biokbase.narrative.widgetmanager import WidgetManager\nWidgetManager().show_data_widget(\n    \"43666/6/1\",\n    cell_id=\"1b69c8b8-5d15-4a9f-9d03-05a9b1d1c004\",\n    title=\"some_genome\",\n    tag=\"release\"\n)"},{"cell_type":"code","execution_count":3,"metadata":{"kbase":{"attributes":{"created":"Fri,
+        23 Aug 2019 20:02:03 GMT","icon":"database","id":"26186464-eeca-40aa-ad76-5e7cdb12a9ce","lastLoaded":"Wed,
+        06 Nov 2019 18:12:08 GMT","status":"new","subtitle":"v6 - KBaseGenomeAnnotations.Assembly-6.0","title":"MEGAHIT.contigs"},"dataCell":{"objectInfo":{"checksum":"6e19aa8d984f416271456820cc64f614","id":5,"metadata":{"GC
+        content":"0.66636","MD5":"bb342ff10217f9e5348a67148bb0c5f6","N Contigs":"295","Size":"3837282"},"name":"MEGAHIT.contigs","obj_id":"ws.43666.obj.5","ref":"43666/5/6","ref_path":null,"saveDate":"2019-08-20T18:57:39.000Z","save_date":"2019-08-20T18:57:39+0000","saved_by":"wjriehl","size":52149,"type":"KBaseGenomeAnnotations.Assembly-6.0","typeMajorVersion":"6","typeMinorVersion":"0","typeModule":"KBaseGenomeAnnotations","typeName":"Assembly","version":6,"ws":"wjriehl:narrative_1564507007662","ws_id":43666,"wsid":43666},"upas":{"objNameOrId":"[43666]/5/6"},"user-settings":{"showCodeInputArea":false}},"type":"data"}},"outputs":[{"data":{"application/javascript":"\n        element.html(\"<div
+        id=''kb-vis-386cf00f-caa9-4706-b115-69731997f3da'' class=''kb-vis-area''></div>\");\n        require([''kbaseNarrativeOutputCell''],
+        function(KBaseNarrativeOutputCell) {\n            var w = new KBaseNarrativeOutputCell($(''#kb-vis-386cf00f-caa9-4706-b115-69731997f3da''),
+        {\n                \"upas\": {\"objNameOrId\": \"43666/5/6\"},\n                \"data\":
+        {\"objNameOrId\": \"MEGAHIT.contigs\", \"wsNameOrId\": \"wjriehl:narrative_1564507007662\"},\n                \"type\":
+        \"viewer\",\n                \"widget\": \"kbaseGenomeAnnotationAssembly\",\n                \"cellId\":
+        \"26186464-eeca-40aa-ad76-5e7cdb12a9ce\",\n                \"title\": \"MEGAHIT.contigs\",\n                \"time\":
+        1566590523391\n            });\n        });\n        ","text/plain":"<IPython.core.display.Javascript
+        object>"},"execution_count":3,"metadata":{},"output_type":"execute_result"}],"source":"from
+        biokbase.narrative.widgetmanager import WidgetManager\nWidgetManager().show_data_widget(\n    \"43666/5/6\",\n    cell_id=\"26186464-eeca-40aa-ad76-5e7cdb12a9ce\",\n    title=\"MEGAHIT.contigs\",\n    tag=\"release\"\n)"},{"cell_type":"code","execution_count":1,"metadata":{"kbase":{"attributes":{"created":"Thu,
+        22 Aug 2019 21:13:48 GMT","icon":"code","id":"2b4df4ad-191d-40e3-8c77-865a2a8487a9","lastLoaded":"Thu,
+        22 Aug 2019 21:13:48 GMT","status":"new","subtitle":"python","title":"Code
+        Cell"},"codeCell":{"userSettings":{"showCodeInputArea":true}},"type":"code"}},"outputs":[{"name":"stdout","output_type":"stream","text":"This
+        is some code.\n"}],"source":"s = \"This is some code.\"\nprint(s)"},{"cell_type":"markdown","metadata":{"kbase":{"attributes":{"icon":"paragraph","title":"This
+        is some markdown."},"cellState":{"selected":false,"showTitle":false}}},"source":"##
+        This is some markdown.\n---\nWhee!"},{"cell_type":"code","execution_count":null,"metadata":{"kbase":{"attributes":{"created":"Thu,
+        22 Aug 2019 21:14:04 GMT","icon":"code","id":"d7ef81cd-e4fa-4234-9005-c81e977d2fe7","lastLoaded":"Thu,
+        22 Aug 2019 21:14:04 GMT","status":"new","title":"Code Cell"},"codeCell":{"userSettings":{"showCodeInputArea":true}},"type":"code"}},"outputs":[],"source":""},{"cell_type":"code","execution_count":null,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"f6f8088e846831fc94a0b0806d7a769dfaccf836","id":"fba_tools/edit_media","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace"},{"input_parameter":"compounds_to_add","target_property":"compounds_to_add"},{"input_parameter":"compounds_to_change","target_property":"compounds_to_change"},{"input_parameter":"media_id","target_property":"media_id","target_type_transform":"resolved-ref"},{"input_parameter":"media_output_id","target_property":"media_output_id"},{"input_parameter":"compounds_to_remove","target_property":"compounds_to_remove"},{"input_parameter":"pH_data","target_property":"pH_data"},{"input_parameter":"temperature","target_property":"temperature"},{"input_parameter":"isDefined","target_property":"isDefined"},{"input_parameter":"type","target_property":"type"}],"kb_service_method":"edit_media","kb_service_name":"fba_tools","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"narrative_system_variable":"workspace","target_property":"ws"},{"constant_value":"KBaseBiochem.Media","target_property":"type"},{"input_parameter":"media_output_id","target_property":"obj"}],"kb_service_url":"","kb_service_version":"f6f8088e846831fc94a0b0806d7a769dfaccf836"},"fixed_parameters":[],"info":{"app_type":"app","authors":["chenry@mcs.anl.gov"],"categories":["active","metabolic_modeling"],"git_commit_hash":"f6f8088e846831fc94a0b0806d7a769dfaccf836","id":"fba_tools/edit_media","input_types":["KBaseBiochem.Media"],"module_name":"fba_tools","name":"Edit
+        Media","namespace":"fba_tools","output_types":["KBaseBiochem.Media"],"subtitle":"Edit
+        an existing media formulation.","tooltip":"Edit an existing media formulation.","ver":"1.7.5"},"job_id_output_field":"docker","parameter_groups":[{"advanced":0,"allow_multiple":1,"description":"","id":"compounds_to_change","optional":1,"parameter_ids":["change_id","change_concentration","change_minflux","change_maxflux"],"short_hint":"Compounds
+        to change in media","ui_name":"Compounds to change in media","with_border":0},{"advanced":0,"allow_multiple":1,"description":"","id":"compounds_to_add","optional":1,"parameter_ids":["add_id","add_concentration","add_minflux","add_maxflux"],"short_hint":"Compounds
+        to add to media","ui_name":"Compounds to add to media","with_border":0}],"parameters":[{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"Media
+        specifies the set of chemical compounds organism can use for its growth","disabled":0,"field_type":"text","id":"media_id","optional":0,"short_hint":"Media
+        specifies the set of chemical compounds organism can use for its growth","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseBiochem.Media"]},"ui_class":"input","ui_name":"Media
+        to edit"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"Media
+        specifies the set of chemical compounds organism can use for its growth","disabled":0,"field_type":"text","id":"media_output_id","optional":0,"short_hint":"Media
+        specifies the set of chemical compounds organism can use for its growth","text_options":{"is_output_name":1,"placeholder":"","regex_constraint":[],"valid_ws_types":["KBaseBiochem.Media"]},"ui_class":"output","ui_name":"Output
+        media ID"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"ID
+        of compound to change","disabled":0,"field_type":"textsubdata","id":"change_id","optional":1,"short_hint":"ID
+        of compound to change","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"textsubdata_options":{"allow_custom":0,"multiselection":0,"placeholder":"","show_src_obj":0,"subdata_selection":{"parameter_id":"media_id","path_to_subdata":["mediacompounds"],"selection_id":"compound_ref","subdata_included":["mediacompounds/[*]/compound_ref"]}},"ui_class":"parameter","ui_name":"Compound
+        ID"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"Compounds
+        to remove","disabled":0,"field_type":"textsubdata","id":"compounds_to_remove","optional":1,"short_hint":"Compounds
+        to remove","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"textsubdata_options":{"allow_custom":0,"multiselection":1,"placeholder":"","show_src_obj":0,"subdata_selection":{"parameter_id":"media_id","path_to_subdata":["mediacompounds"],"selection_id":"compound_ref","subdata_included":["mediacompounds/[*]/compound_ref"]}},"ui_class":"parameter","ui_name":"Compounds
+        to remove"},{"advanced":0,"allow_multiple":0,"default_values":["0.001"],"description":"Concentration
+        in mmol","disabled":0,"field_type":"text","id":"change_concentration","optional":1,"short_hint":"Concentration
+        in mmol","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Concentration"},{"advanced":0,"allow_multiple":0,"default_values":["-100"],"description":"Min
+        flux in mmol/gm CDW hr","disabled":0,"field_type":"text","id":"change_minflux","optional":1,"short_hint":"Min
+        flux in mmol/gm CDW hr","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Min
+        flux"},{"advanced":0,"allow_multiple":0,"default_values":["100"],"description":"Max
+        flux in mmol/gm CDW hr","disabled":0,"field_type":"text","id":"change_maxflux","optional":1,"short_hint":"Max
+        flux in mmol/gm CDW hr","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Max
+        flux"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"ID
+        of compound to add","disabled":0,"field_type":"text","id":"add_id","optional":0,"short_hint":"ID
+        of compound to add","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"ui_class":"parameter","ui_name":"Compound
+        ID"},{"advanced":0,"allow_multiple":0,"default_values":["0.001"],"description":"Concentration
+        in mmol","disabled":0,"field_type":"text","id":"add_concentration","optional":0,"short_hint":"Concentration
+        in mmol","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Concentration"},{"advanced":0,"allow_multiple":0,"default_values":["-100"],"description":"Min
+        flux in mmol/gm CDW hr","disabled":0,"field_type":"text","id":"add_minflux","optional":0,"short_hint":"Min
+        flux in mmol/gm CDW hr","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Min
+        flux"},{"advanced":0,"allow_multiple":0,"default_values":["100"],"description":"Max
+        flux in mmol/gm CDW hr","disabled":0,"field_type":"text","id":"add_maxflux","optional":0,"short_hint":"Max
+        flux in mmol/gm CDW hr","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Max
+        flux"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"pH
+        of media","disabled":0,"field_type":"text","id":"pH_data","optional":1,"short_hint":"pH
+        of media","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"pH"},{"advanced":1,"allow_multiple":0,"default_values":[""],"description":"Temperature
+        of media","disabled":0,"field_type":"text","id":"temperature","optional":1,"short_hint":"Temperature
+        of media","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"validate_as":"float"},"ui_class":"parameter","ui_name":"Temperature"},{"advanced":1,"allow_multiple":0,"default_values":["unknown"],"description":"Type
+        of media","disabled":0,"dropdown_options":{"options":[{"display":"Unknown","index":0,"value":"unknown"},{"display":"Biolog","index":1,"value":"biolog"},{"display":"Undefined","index":2,"value":"undefined"},{"display":"Defined","index":3,"value":"defined"}]},"field_type":"dropdown","id":"type","optional":1,"short_hint":"Type
+        of media","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"ui_class":"parameter","ui_name":"Type
+        of media"},{"advanced":1,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["1"],"description":"Check
+        if media is defined","disabled":0,"field_type":"checkbox","id":"isDefined","optional":0,"short_hint":"Check
+        if media is defined","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[],"valid_ws_types":[]},"ui_class":"parameter","ui_name":"Defined
+        media"}],"widgets":{"input":"null","output":"kbaseTabTable"}},"tag":"release","version":"1.7.5"},"fsm":{"currentState":{"mode":"editing","params":"incomplete"}},"output":{"byJob":{}},"params":{"compounds_to_add":[],"compounds_to_change":[],"compounds_to_remove":[],"isDefined":1,"media_id":null,"media_output_id":null,"pH_data":null,"temperature":null,"type":"unknown"},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        06 Nov 2019 19:35:17 GMT","id":"b22605e9-a10b-45e1-b60b-248c5944943a","info":{"label":"more...","url":"/#appcatalog/app/fba_tools/edit_media/release"},"lastLoaded":"Wed,
+        06 Nov 2019 19:35:17 GMT","status":"new","subtitle":"Edit an existing media
+        formulation.","title":"Edit Media"},"type":"app"}},"outputs":[],"source":""}],"metadata":{"creator":"wjriehl","data_dependencies":[],"description":"","format":"ipynb","is_temporary":"false","job_ids":{"apps":[],"job_usage":{"queue_time":0,"run_time":0},"methods":[]},"kbase":{"creator":"wjriehl","job_ids":{"apps":[],"job_usage":{"queue_time":0,"run_time":0},"methods":[]},"name":"Untitled","ws_name":"wjriehl:narrative_1564507007662"},"kernelspec":{"display_name":"Python
+        3","language":"python","name":"python3"},"language_info":{"codemirror_mode":{"name":"ipython","version":3},"file_extension":".py","mimetype":"text/x-python","name":"python","nbconvert_exporter":"python","pygments_lexer":"ipython3","version":"3.7.4"},"name":"Test
+        Exporting","type":"KBaseNarrative.Narrative","ws_name":"wjriehl:narrative_1564507007662"},"nbformat":4,"nbformat_minor":1},"info":[1,"Narrative.1564507007662","KBaseNarrative.Narrative-4.0","2019-11-06T19:35:31+0000",21,"wjriehl",43666,"wjriehl:narrative_1564507007662","4688cdc1492fc6f696046e67f3b8a4e4",35237,{"creator":"wjriehl","data_dependencies":"[]","jupyter.markdown":"2","method.kb_quast/run_QUAST_app/055c7eeda5f420f6d72b2fc8d542f7444a51ba84":"1","job_info":"{\"queue_time\":
+        0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}","method.fba_tools/edit_media/f6f8088e846831fc94a0b0806d7a769dfaccf836":"1","format":"ipynb","description":"","type":"KBaseNarrative.Narrative","method.ProkkaAnnotation/annotate_contigs/d60865d5f12e71f3491c23c298670fd1ef24c252":"1","is_temporary":"false","name":"Test
+        Exporting","ws_name":"wjriehl:narrative_1564507007662"}],"path":["43666/1/21"],"provenance":[{"service":"narrative","service_ver":"4.0.0","method_params":[],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[],"custom":{},"description":"Saved
+        by KBase Narrative Interface"}],"creator":"wjriehl","orig_wsid":43666,"created":"2019-11-06T19:35:31+0000","epoch":1573068931642,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824e72a2467f2-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:58 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=5GuZBu4acx8nD6_vKcKkGHSY17fKImePGYnpTO8iIdg-1719855238-1.0.1.1-G_0fx4XNUirWdE_KD4nKEs11uYFXcY35uPZu3LUiyM7_BSooyY28hYA0XISRnRrkgzmgDUuIxcLhVfI8MJ911g;
+        path=/; expires=Mon, 01-Jul-24 18:03:58 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 43666}], "version":
+      "1.1", "id": "04664707617468156"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '114'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[43666,"wjriehl:narrative_1564507007662","wjriehl","2020-01-24T18:48:28+0000",7,"n","r","unlocked",{"static_narrative_ver":"22","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"10","narrative_nice_name":"Test
+        Exporting","static_narrative_saved":"1579891708594","static_narrative":"/43666/22"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824e83f4b253c-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:58 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=oqeaNPtqLW6SNMU3PJpnlWsarAOQZiOA72peNrSB0JY-1719855238-1.0.1.1-uxLUKKR4kjR1fifF0zxFQxgH0hSBySAoEyyPWUoMddC1tRRqW7On1CoeHw3GvmAAFnKEjX0ADZCj3_on0oUM2A;
+        path=/; expires=Mon, 01-Jul-24 18:03:58 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.list_objects", "params": [{"includeMetadata": 1,
+      "type": "KBaseSets.ReadsSet", "ids": [43666], "minObjectID": 1, "maxObjectID":
+      10000}], "version": "1.1", "id": "1984053741187981"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '202'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824e95a83d019-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:58 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=MSRctwIgwvITC89oHO.DVLiEes0YxiQa8Um2QBjwk50-1719855238-1.0.1.1-9x9ErCJ2iqYdc6OyknJS5j0fOF3Efn0mROpXi5TCOP.G8swv7esqlk41HRHloGcIXUMrj85BwQyPON.medt20A;
+        path=/; expires=Mon, 01-Jul-24 18:03:58 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 43666}], "version":
+      "1.1", "id": "8514924041213591"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '113'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[43666,"wjriehl:narrative_1564507007662","wjriehl","2020-01-24T18:48:28+0000",7,"n","r","unlocked",{"static_narrative_ver":"22","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"10","narrative_nice_name":"Test
+        Exporting","static_narrative_saved":"1579891708594","static_narrative":"/43666/22"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824ea4ae1cf72-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:58 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=1DoScQK6FLR7nCeB7RsXkWmR_P0ERNFzltaWwim9US0-1719855238-1.0.1.1-Q5Vu3R1PQW0hPDSXw0jbdgpfBD3ZfSIVDpGkwDcTuk_0.bBvo7CzO.IrtFt1s8aCr0lOmU732RGQSP9hTNYewQ;
+        path=/; expires=Mon, 01-Jul-24 18:03:58 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.list_objects", "params": [{"includeMetadata": 1,
+      "ids": [43666], "minObjectID": 1, "maxObjectID": 10000}], "version": "1.1",
+      "id": "2674228153201954"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '172'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[[1,"Narrative.1564507007662","KBaseNarrative.Narrative-4.0","2020-01-24T17:30:39+0000",22,"wjriehl",43666,"wjriehl:narrative_1564507007662","74bec066485ce99b7c61d09e78432745",33901,{"creator":"wjriehl","data_dependencies":"[]","jupyter.markdown":"2","method.kb_quast/run_QUAST_app/055c7eeda5f420f6d72b2fc8d542f7444a51ba84":"1","job_info":"{\"queue_time\":
+        0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}","method.fba_tools/edit_media/f6f8088e846831fc94a0b0806d7a769dfaccf836":"1","format":"ipynb","description":"","type":"KBaseNarrative.Narrative","method.ProkkaAnnotation/annotate_contigs/d60865d5f12e71f3491c23c298670fd1ef24c252":"1","is_temporary":"false","name":"Test
+        Exporting","ws_name":"wjriehl:narrative_1564507007662"}],[2,"Rhodobacter_CACIA_14H1_contigs","KBaseGenomes.ContigSet-2.0","2019-07-30T17:17:52+0000",8,"wjriehl",43666,"wjriehl:narrative_1564507007662","8b0b883f7134325a940cd07d0652881b",3925871,{}],[4,"bsub_annotation","KBaseGenomes.Genome-8.0","2019-08-20T18:40:24+0000",15,"wjriehl",43666,"wjriehl:narrative_1564507007662","c85809f93839d0316bd231b3d3ba658f",2684445,{"GC
+        content":"0.5","Genetic code":"11","Close genomes":"30","Source ID":"bsub_annotation","Size":"4215606","Number
+        features":"4553","Number contigs":"1","Domain":"B","Source":"KBase","Name":"B
+        subtilis","MD5":"dbf77105f122414ce1969295209d0f14"}],[5,"MEGAHIT.contigs","KBaseGenomeAnnotations.Assembly-6.0","2019-08-20T18:57:39+0000",6,"wjriehl",43666,"wjriehl:narrative_1564507007662","6e19aa8d984f416271456820cc64f614",52149,{"GC
+        content":"0.66636","Size":"3837282","N Contigs":"295","MD5":"bb342ff10217f9e5348a67148bb0c5f6"}],[6,"some_genome","KBaseGenomes.Genome-15.1","2019-08-20T19:02:48+0000",1,"wjriehl",43666,"wjriehl:narrative_1564507007662","fa92aabaf8a57d22761799421aeddfa2",14353585,{"Taxonomy":"Unconfirmed
+        Organism: something","Size":"3837282","Source":"PROKKA annotation pipeline","Name":"something","GC
+        content":"0.66636","Genetic code":"0","Type":"Unknown","Number of Genome Level
+        Warnings":"4","Number of Protein Encoding Genes":"3895","Assembly Object":"43666/5/6","Number
+        contigs":"295","Domain":"Bacteria","Number of CDS":"3895","MD5":"bb342ff10217f9e5348a67148bb0c5f6"}]]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824eb2d7767cd-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:58 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=S1zW9MIAbaTqgk2oJyNFXRhberKNbT.NmJ.EH1bMAOY-1719855238-1.0.1.1-DLIqNUu2AhgwACipV6BNj62Yr.aTzVYEaZds3Wq0nmt2nAqBaaC1TOm9b5H0uqsHG7459wRw8.a4geFCQtvrhg;
+        path=/; expires=Mon, 01-Jul-24 18:03:58 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "43666/3/1"}]}],
+      "version": "1.1", "id": "8803429218285934"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '129'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":0,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/6f4e2100-4ef2-4182-b4de-6ae5feb88067","description":null,"handle":"KBH_476885","label":"QUAST
+        report","name":"report.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"All
+        statistics are based on contigs of size >= 500 bp, unless otherwise noted
+        (e.g., \"# contigs (>= 0 bp)\" and \"Total length (>= 0 bp)\" include all
+        contigs).\n\nAssembly                        Rhodobacter_CACIA_14H1_contigs\n#
+        contigs (>= 0 bp)             304                           \n# contigs (>=
+        1000 bp)          290                           \n# contigs (>= 10000 bp)         147                           \n#
+        contigs (>= 100000 bp)        0                             \n# contigs (>=
+        1000000 bp)       0                             \nTotal length (>= 0 bp)          3867594                       \nTotal
+        length (>= 1000 bp)       3860047                       \nTotal length (>=
+        10000 bp)      2990442                       \nTotal length (>= 100000 bp)     0                             \nTotal
+        length (>= 1000000 bp)    0                             \n# contigs                       299                           \nLargest
+        contig                  58528                         \nTotal length                    3866436                       \nGC
+        (%)                          66.62                         \nN50                             17793                         \nN75                             10888                         \nL50                             70                            \nL75                             139                           \n#
+        N''s per 100 kbp               0.00                          \n# predicted
+        genes (unique)      3817                          \n# predicted genes (>=
+        0 bp)     3817                          \n# predicted genes (>= 300 bp)   3446                          \n#
+        predicted genes (>= 1500 bp)  487                           \n# predicted
+        genes (>= 3000 bp)  36                            \n","warnings":[]},"info":[3,"kb_quast_report_753191bb-e485-42f8-8e33-9a78b06b34c6","KBaseReport.Report-3.0","2019-07-30T17:20:18+0000",1,"wjriehl",43666,"wjriehl:narrative_1564507007662","296ec75f2fd9062917e5b782141d38a2",2127,{"Size(characters)":"1734","Objects
+        Created":"0","Warnings":"0"}],"path":["43666/3/1"],"provenance":[{"time":"2019-07-30T17:18:39+0000","epoch":1564507119000,"service":"kb_quast","service_ver":"0.0.3","method":"run_QUAST_app","method_params":[{"assemblies":["43666/2/8"],"workspace_name":"wjriehl:narrative_1564507007662"}],"input_ws_objects":["43666/2/8"],"resolved_ws_objects":["43666/2/8"],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"kb_quast","ver":"0.0.3","code_url":"https://github.com/kbaseapps/kb_quast","commit":"055c7eeda5f420f6d72b2fc8d542f7444a51ba84"},{"name":"AssemblyUtil","ver":"1.1.0-release","code_url":"https://github.com/kbaseapps/AssemblyUtil","commit":"afd3f360f4fb30143bca41cf58c1977d8ab45e8b"},{"name":"DataFileUtil","ver":"0.1.1-release","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"7f5646bc29b5cb35d32c86f3acdf7b18a0f6d53f"},{"name":"KBaseReport","ver":"3.0.5-release","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":43666,"created":"2019-07-30T17:20:17+0000","epoch":1564507217486,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_476885"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824ef69ee237a-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:59 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=6qwRs7ylfYFnLc4zqZzZ3mcdPFePMu1pe7Lr0Ztcmjs-1719855239-1.0.1.1-l_bAz9sS_D2.v6d4JzdTtk2HPvhAhe8z7mIszU.z1zxArSWxzbYP_TE.9n7lm5M1KHqA3JuBzdhLtuzGaI3TqA;
+        path=/; expires=Mon, 01-Jul-24 18:03:59 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "43666/7/1"}]}],
+      "version": "1.1", "id": "10107778406349188"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":null,"file_links":[],"html_links":[],"html_window_height":null,"objects_created":[{"description":"Annotated
+        genome","ref":"43666/6/1"}],"summary_window_height":null,"text_message":"Genome
+        saved to: wjriehl:narrative_1564507007662/some_genome\nNumber of genes predicted:
+        3895\nNumber of protein coding genes: 3895\nNumber of genes with non-hypothetical
+        function: 2411\nNumber of genes with EC-number: 1413\nNumber of genes with
+        Seed Subsystem Ontology: 1081\nAverage protein length: 864 aa.\n","warnings":[]},"info":[7,"kb_prokka_report_eace2678-2f8d-45d0-a332-a9a2baeeb2bc","KBaseReport.Report-3.0","2019-08-20T19:03:24+0000",1,"wjriehl",43666,"wjriehl:narrative_1564507007662","db6bc68860feb197c29719202445e81b",552,{"Size(characters)":"303","Objects
+        Created":"1","Warnings":"0"}],"path":["43666/7/1"],"provenance":[{"time":"2019-08-20T18:58:29+0000","epoch":1566327509000,"service":"ProkkaAnnotation","service_ver":"d60865d5f12e71f3491c23c298670fd1ef24c252","method":"annotate","method_params":[{"mincontiglen":1,"object_ref":"wjriehl:narrative_1564507007662/MEGAHIT.contigs","scientific_name":"something","evalue":null,"output_genome_name":"some_genome","kingdom":"Bacteria","gcode":null,"norrna":0,"metagenome":0,"fast":0,"output_workspace":"wjriehl:narrative_1564507007662","notrna":0,"rfam":0,"genus":null,"rawproduct":0}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"ProkkaAnnotation","ver":"d60865d5f12e71f3491c23c298670fd1ef24c252","code_url":"https://github.com/kbaseapps/ProkkaAnnotation","commit":"d60865d5f12e71f3491c23c298670fd1ef24c252"},{"name":"AssemblyUtil","code_url":"https://github.com/kbaseapps/AssemblyUtil","commit":"afd3f360f4fb30143bca41cf58c1977d8ab45e8b"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"7f5646bc29b5cb35d32c86f3acdf7b18a0f6d53f"},{"name":"GenomeFileUtil","code_url":"https://github.com/kbaseapps/GenomeFileUtil","commit":"04d6c8b75849fdd59b49970a07e6f715af4d7647"},{"name":"WsLargeDataIO","code_url":"https://github.com/kbaseapps/WsLargeDataIO","commit":"8d76a294f3877be83cce9b51daebe541acc107d3"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":43666,"created":"2019-08-20T19:03:24+0000","epoch":1566327804145,"refs":["43666/6/1"],"copy_source_inaccessible":0,"extracted_ids":{}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824f17c83cfe1-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:33:59 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=fYC8ibIepTtNNZtk0PkaImv5XfUP5fmVZoSOqW99Cts-1719855239-1.0.1.1-kSr3E6qz52eO2wx2nh.yHl3l4jkR_xgsCbu_DWdUEQfvcDJK5u479ALgpqERQIbkZGaTxgVoXy0K25R121OUwg;
+        path=/; expires=Mon, 01-Jul-24 18:03:59 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "NarrativeMethodStore.get_method_full_info", "params": [{"ids":
+      ["kb_quast/run_QUAST_app", "fba_tools/edit_media", "ProkkaAnnotation/annotate_contigs"],
+      "tag": "release"}], "version": "1.1", "id": "5300484983956686"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '227'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/narrative_method_store/rpc
+  response:
+    body:
+      string: '{"version":"1.1","result":[[{"id":"kb_quast/run_QUAST_app","module_name":"kb_quast","git_commit_hash":"f6be7c27bbf44a0d65b0250dbdb8079b5df9d7ae","name":"Assess
+        Quality of Assemblies with QUAST - v4.4","ver":"1.0.0","authors":["gaprice"],"contact":"http://kbase.us/contact-us/","subtitle":"Run
+        QUAST (QUality ASsessment Tool) on a set of Assemblies to assess their quality.","tooltip":"Run
+        QUAST (QUality ASsessment Tool) on a set of Assemblies to assess their quality.","description":"<p>This
+        is the KBase wrapper for version 4.4 of the <a href=\"http://quast.sourceforge.net/\"
+        target=\"_blank\">QUAST</a> assembly quality assessment tool. QUAST evaluates
+        assemblies by computing various metrics, including number of contigs, N50/75,
+        L50/75, GC content, number of uncalled bases (N s), and predicted genes. It
+        takes one or more Assembly objects as input and then generates an output report
+        with statistics for all of the input assemblies.</p>\n\n<p>Use QUAST to assess
+        the output assemblies from different configurations of the same assembler,
+        or compare assemblies from multiple assemblers to determine which one is optimal
+        for downstream analysis. The QUAST report color codes \"worst, median, best\"
+        for each of the statistics generated, but pay attention to the degree of difference
+        between the lengths and values to better understand how the parameters of
+        your assembler relate to the resulting Assembly.</p>\n\n<p><h3>Reading the
+        QUAST output report:</h3>\n<ul>\n    <li><b># contigs</b> is the total number
+        of contigs in the Assembly.</li>\n    <li><b>Largest contig</b> is the length
+        of the longest contig in the Assembly.</li>\n    <li><b>Total length</b> is
+        the total number of bases in the Assembly.</li>\n    <li><b>GC (%)</b> is
+        the total number of G and C nucleotides in the Assembly, divided by the total
+        length of the Assembly.</li>\n    <li><b>N50</b> is the length for which the
+        collection of all contigs of that length or longer covers at least half (50%)
+        the total base content of the Assembly. It serves as a median value for assessing
+        whether the Assembly is balanced towards longer contigs (higher N50) or shorter
+        contigs (lower N50). N75 is used for the same purpose but is the length is
+        set at 75% of total base content instead of 50%.</li>\n    <li><b>L50 is the
+        number of contigs equal to or longer than the N50 length. In other words,
+        L50, is the minimal number of contigs that contain half the total base content
+        of the Assembly. L75 is used for the same purpose in reference to the N75
+        length.</li>\n</ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_quast/run_QUAST_app&image_name=quast-blue_360.png&tag=release"},"categories":["assembly"],"screenshots":[],"publications":[{"pmid":"23422339","display_text":"[1]
+        Gurevich A, Saveliev V, Vyahhi N, Tesler G. QUAST: quality assessment tool
+        for genome assemblies. Bioinformatics. 2013;29: 1072 1075. doi:10.1093/bioinformatics/btt086\n","link":"https://www.ncbi.nlm.nih.gov/pubmed/23422339"},{"pmid":"27378299","display_text":"[2]
+        Mikheenko A, Valin G, Prjibelski A, Saveliev V, Gurevich A. Icarus: visualizer
+        for de novo assembly evaluation. Bioinformatics. 2016;32: 3321 3323. doi:10.1093/bioinformatics/btw379\n","link":"https://www.ncbi.nlm.nih.gov/pubmed/27378299"}],"namespace":"kb_quast"},{"id":"fba_tools/edit_media","module_name":"fba_tools","git_commit_hash":"f6f8088e846831fc94a0b0806d7a769dfaccf836","name":"Edit
+        Media","ver":"1.7.5","authors":["chenry@mcs.anl.gov"],"contact":"http://kbase.us/contact-us/","subtitle":"Edit
+        an existing media formulation.","tooltip":"Edit an existing media formulation.","description":"<p>Edit
+        a media formulation by adding or removing compounds, changing concentrations,
+        or adjusting flux bounds.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","metabolic_modeling"],"screenshots":[],"publications":[],"namespace":"fba_tools"},{"id":"ProkkaAnnotation/annotate_contigs","module_name":"ProkkaAnnotation","git_commit_hash":"1967e07320b1898db0c6998bb4549b7f1187e5a8","name":"Annotate
+        Assembly and Re-annotate Genomes with Prokka - v1.14.5","ver":"3.2.1","authors":["rsutormin","bsadkhin","slebras"],"contact":"https://www.kbase.us/support/","subtitle":"Annotate
+        Assembly and Re-annotate Genomes with Prokka annotation pipeline.","tooltip":"Annotate
+        Assembly and Re-annotate Genomes with Prokka annotation pipeline.","description":"<p>\nThis
+        is a KBase wrapper for the\n<a href=\"http://www.bioinformatics.net.au/software.prokka.shtml\"
+        target=\"_blank\">Prokka</a>\nannotation pipeline.\n</p>\n\n<p>\nProkka is
+        a software tool for the rapid annotation of prokaryotic genomes. A typical
+        4Mbp genome can be fully annotated in less than 20 minutes.\n</p>\n\n<p>\nFor
+        rRNA prediction this app currently uses Barrnap (written by the author of
+        Prokka and recommended if you prefer speed over absolute accuracy).\n</p>\n\n<p>\nSee
+        more information at https://github.com/kbaseapps/ProkkaAnnotation/blob/master/README.rst\n</p>\n\n<p>Prokka
+        version: 1.14.5</p>\n<p>Barrnap version: 0.8</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=ProkkaAnnotation/annotate_contigs&image_name=prokka.png&tag=release"},"categories":["active","annotation"],"screenshots":[],"publications":[{"pmid":"24642063","display_text":"Seemann
+        T. Prokka: rapid prokaryotic genome annotation. Bioinformatics. 2014;30: 2068
+        2069. doi:10.1093/bioinformatics/btu153\n","link":"https://www.ncbi.nlm.nih.gov/pubmed/24642063"}],"namespace":"ProkkaAnnotation"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824f2c8a71758-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:34:00 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=psyKztSrQGkVXVy_LXAkjNDIdcKSWQh4pAFNQUiZW2s-1719855240-1.0.1.1-cykUC00D5W2uUOt1rRfXzlU3iLLPuVeTHvv6k4KcfripHaFWbAdvEqVWpRUCe6HIF08zXHATxK2175H.flkkiw;
+        path=/; expires=Mon, 01-Jul-24 18:04:00 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 43666}], "version":
+      "1.1", "id": "9275837434204829"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '113'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[43666,"wjriehl:narrative_1564507007662","wjriehl","2020-01-24T18:48:28+0000",7,"n","r","unlocked",{"static_narrative_ver":"22","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"10","narrative_nice_name":"Test
+        Exporting","static_narrative_saved":"1579891708594","static_narrative":"/43666/22"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824f38d636802-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:34:00 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=yp7Qj76b_bzJ_Qwztkdrt0IMofseTrM5HW0vyANYkIg-1719855240-1.0.1.1-oDethwHPL310Ko_Ri2T3RRna2G4QSJ5nbDFrdVfOCvf_Xz76Az1o7w2u3XWuPM4Enk0oAvvp1L531gNXclGxEg;
+        path=/; expires=Mon, 01-Jul-24 18:04:00 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_permissions", "params": [{"id": 43666}], "version":
+      "1.1", "id": "6989450658203429"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '110'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"ialarmedalien":"n","*":"r"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c824f4aff5cec9-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:34:00 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=NjzTag5RHb97766Yba5hu.JNNn0uGZJdrPnW74yDhGE-1719855240-1.0.1.1-E8ygxCBFdvFeVLrjRzPbwIPGauRx3XrkLqhj5MxzaVuis_rDueyCmqPyetWgw0KmYrsvsSZafEY025M7KgdHeQ;
+        path=/; expires=Mon, 01-Jul-24 18:04:00 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+version: 1

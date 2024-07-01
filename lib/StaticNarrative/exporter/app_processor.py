@@ -1,10 +1,10 @@
 """Process apps to extract information for displaying them in a SN."""
 
 import math
-import re
 from typing import Any
 
 from installed_clients.WorkspaceClient import Workspace
+from traitlets.config import Config
 
 from StaticNarrative.exporter.processor_util import build_report_view_data
 
@@ -13,13 +13,17 @@ class AppProcessor:
     """App information processor."""
 
     def __init__(
-        self: "AppProcessor", host: str, ws_client: Workspace, nms_url: str, token: str
+        self: "AppProcessor",
+        ws_client: Workspace,
+        config: Config,
     ) -> None:
         """Initialise the app processor."""
-        self.host = host
         self.ws_client = ws_client
-        self.nms_url = nms_url
-        self.token = token
+        self.config = config
+
+        self.host = config.host
+        self.nms_url = config.nms_url
+        self.token = config.token
 
     def process(
         self: "AppProcessor", kb_info: dict[str, Any], kb_meta: dict[str, Any]
@@ -54,7 +58,9 @@ class AppProcessor:
         kb_info["output"] = {
             "widget": exec_state.get("outputWidgetInfo", {}),
             "result": exec_result,
-            "report": build_report_view_data(self.host, self.ws_client, exec_result),
+            "report": build_report_view_data(
+                self.ws_client, self.config.indexed_data, self.host, exec_result
+            ),
         }
         kb_info["job"] = {"state": "This app is new, and hasn't been started."}
         if "exec" in kb_meta["appCell"]:
@@ -72,47 +78,17 @@ class AppProcessor:
         """
         info = {"input": [], "output": [], "parameter": []}
 
-        # two passes
-        # 1. Make a lookup table for UPA -> object info
-        upas = {}
+        # translation from internal value -> something prettier.
         for p in spec_params:
-            upas.update(self._make_upa_dict(param_values.get(p["id"]), p))
-
-        # 2. Do translation from internal value -> something prettier.
-        for p in spec_params:
-            p["value"] = self._translate_param_value(param_values.get(p["id"]), p, upas)
+            p["value"] = self._translate_param_value(param_values.get(p["id"]), p)
             p_type = p["ui_class"]
             info[p_type].append(p)
         return info
-
-    def _make_upa_dict(
-        self: "AppProcessor",
-        value: None | int | str | list[str],
-        param_spec: dict[str, Any],
-    ) -> dict[str, Any]:
-        """Make a dictionary mapping UPAs to their object info."""
-        upas: list[str] = []
-        if param_spec["field_type"] == "text":
-            valid_ws_types = param_spec.get("text_options", {}).get("valid_ws_types", [])
-            if len(valid_ws_types) > 0 and value:
-                if isinstance(value, list):
-                    upas = [v for v in value if self._is_upa(v)]
-                elif self._is_upa(value):
-                    upas = [value]
-        if not upas:
-            return {}
-
-        result = self.ws_client.get_object_info3({"objects": [{"ref": upa} for upa in upas]})
-        if not result:
-            return {}
-        obj_infos = result["infos"]
-        return {u: obj_infos[i] for i, u in enumerate(upas)}
 
     def _translate_param_value(
         self: "AppProcessor",
         value: None | int | str | list,
         param_spec: dict[str, Any],
-        upas: dict[str, Any],
     ) -> list[Any] | str | int:
         """Convert param values to forms that the SN can use.
 
@@ -134,21 +110,19 @@ class AppProcessor:
             valid_ws_types = param_spec.get("text_options", {}).get("valid_ws_types", [])
             if len(valid_ws_types) > 0 and value:
                 if isinstance(value, list):
-                    value = [upas[v][1] if v in upas else v for v in value]
+                    value = [
+                        self.config.indexed_data[v]["object_info"][1]
+                        if v in self.config.indexed_data
+                        else v
+                        for v in value
+                    ]
                 else:
-                    value = upas[value][1] if value in upas else value
+                    value = (
+                        self.config.indexed_data[value]["object_info"][1]
+                        if value in self.config.indexed_data
+                        else value
+                    )
         return value
-
-    def _is_upa(self: "AppProcessor", s: str) -> bool:
-        """Is this a KBase UPA I see before me?
-
-        An UPA matches this structure: ##/##/##
-        E.g. 123/456/789
-        """
-        if not s:
-            return False
-        upa_regex = r"^\d+\/\d+\/\d+$"
-        return re.match(upa_regex, s) is not None
 
     def _get_job_state(self: "AppProcessor", app_meta: dict[str, Any]) -> str:
         """Returns the job state as a readable string.

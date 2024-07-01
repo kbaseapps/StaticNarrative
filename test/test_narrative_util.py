@@ -1,7 +1,6 @@
 """Tests for the narrative_util module."""
 
 import time
-from test.mocks import mock_ws_bad, set_up_ok_mocks
 
 import pytest
 from installed_clients.WorkspaceClient import Workspace
@@ -16,12 +15,14 @@ from StaticNarrative.narrative.narrative_util import (
 )
 from StaticNarrative.narrative_ref import NarrativeRef
 
+from test.mocks import mock_ws_bad, set_up_ok_mocks
+
 USER_ID = "some_user"
 TOKEN = "some_token"  # noqa: S105
 REF = NarrativeRef.parse("1/2/3")
 
 
-def test_read_narrative_ok(workspace_client, requests_mock) -> None:
+def test_read_narrative_ok(workspace_client: Workspace, requests_mock) -> None:
     ref = "43666/1/18"
     ref_to_file = {ref: "data/43666/narrative-43666.1.18.json"}
     set_up_ok_mocks(requests_mock, ref_to_file=ref_to_file)
@@ -35,7 +36,7 @@ def test_read_narrative_ok(workspace_client, requests_mock) -> None:
     assert len(nar["cells"]) == 9
 
 
-def test_read_narrative_bad_client(workspace_client, requests_mock) -> None:
+def test_read_narrative_bad_client(workspace_client: Workspace, requests_mock) -> None:
     ws_id = 908
     mock_ws_bad(requests_mock, "Can't fetch object")
     with pytest.raises(WorkspaceError, match=f"{ws_id}.+Can't fetch object"):
@@ -45,7 +46,7 @@ def test_read_narrative_bad_client(workspace_client, requests_mock) -> None:
         )
 
 
-def test_read_narrative_not_narrative(workspace_client, requests_mock) -> None:
+def test_read_narrative_not_narrative(workspace_client: Workspace, requests_mock) -> None:
     ref = "43666/3/1"
     ref_to_file = {ref: "data/43666/report-43666.3.1.json"}
     set_up_ok_mocks(requests_mock, ref_to_file=ref_to_file)
@@ -111,7 +112,7 @@ def test_get_static_info_bad(
         get_static_info(workspace_client, ws_id)
 
 
-def test_get_static_info_ok(workspace_client, requests_mock) -> None:
+def test_get_static_info_ok(workspace_client: Workspace, requests_mock) -> None:
     ws_id1 = 123
     ws_id2 = 456
     save_time = str(int(time.time() * 1000))
@@ -186,13 +187,13 @@ def test_get_static_info_ok(workspace_client, requests_mock) -> None:
     }
 
 
-def test_static_info_ws_err(workspace_client, requests_mock) -> None:
+def test_static_info_ws_err(workspace_client: Workspace, requests_mock) -> None:
     mock_ws_bad(requests_mock, "Workspace not found")
     with pytest.raises(WorkspaceError, match="123"):
         get_static_info(workspace_client, 123)
 
 
-def test_verify_admin_privs_ok(workspace_client, requests_mock) -> None:
+def test_verify_admin_privs_ok(workspace_client: Workspace, requests_mock) -> None:
     ws_ids_ok = {123: {USER_ID: "a"}, "1123": {USER_ID: "a"}}
     set_up_ok_mocks(requests_mock, ws_perms=ws_ids_ok)
     for ws_id in ws_ids_ok:
@@ -201,7 +202,7 @@ def test_verify_admin_privs_ok(workspace_client, requests_mock) -> None:
         verify_admin_privilege(workspace_client, USER_ID, ws_id)
 
 
-def test_verify_admin_privs_fail(workspace_client, requests_mock) -> None:
+def test_verify_admin_privs_fail(workspace_client: Workspace, requests_mock) -> None:
     ws_no_privs = {
         123: {USER_ID: "n"},
         456: {USER_ID: "w"},
@@ -217,14 +218,14 @@ def test_verify_admin_privs_fail(workspace_client, requests_mock) -> None:
             verify_admin_privilege(workspace_client, USER_ID, ws_id)
 
 
-def test_verify_admin_privs_bad_client(workspace_client, requests_mock) -> None:
+def test_verify_admin_privs_bad_client(workspace_client: Workspace, requests_mock) -> None:
     mock_ws_bad(requests_mock, "Can't reach workspace")
     ws_id = 5
     with pytest.raises(WorkspaceError, match=f"{ws_id}.+Can't reach workspace"):
         verify_admin_privilege(workspace_client, USER_ID, ws_id)
 
 
-def test_verify_public_narrative_ok(workspace_client, requests_mock) -> None:
+def test_verify_public_narrative_ok(workspace_client: Workspace, requests_mock) -> None:
     # all kinda stupid, but valid.
     ws_perms = {
         123: {USER_ID: "a", "*": "r"},
@@ -239,7 +240,7 @@ def test_verify_public_narrative_ok(workspace_client, requests_mock) -> None:
         verify_public_narrative(workspace_client, ws_id)
 
 
-def test_verify_public_narrative_fail(workspace_client, requests_mock) -> None:
+def test_verify_public_narrative_fail(workspace_client: Workspace, requests_mock) -> None:
     ws_no_privs = {
         123: {USER_ID: "n"},
         "456": {USER_ID: "a"},
@@ -254,7 +255,7 @@ def test_verify_public_narrative_fail(workspace_client, requests_mock) -> None:
             verify_public_narrative(workspace_client, ws_id)
 
 
-def test_verify_public_privs_bad_client(workspace_client, requests_mock) -> None:
+def test_verify_public_privs_bad_client(workspace_client: Workspace, requests_mock) -> None:
     mock_ws_bad(requests_mock, "Can't reach workspace")
     ws_id = 666
     with pytest.raises(WorkspaceError, match=f"{ws_id}.+Can't reach workspace"):
