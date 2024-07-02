@@ -73,7 +73,7 @@ from installed_clients.authclient import KBaseAuth as _KBaseAuth
 
 # Deployment
 
-This is deployed as all other KBase dynamic services, with a hitch. This needs an extra configured directory mount to put the generated static narratives. This is set internally to the module in `deploy.cfg` as `static-file-root`, but must be mounted in the running service externally.
+This is deployed as all other KBase dynamic services, with a hitch. This needs an extra configured directory mount to put the generated static narratives. This is set internally to the module in `deploy.cfg` as `static_file_root`, but must be mounted in the running service externally.
 
 # Help
 

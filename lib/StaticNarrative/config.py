@@ -11,13 +11,13 @@ def generate_config(config: dict[str, Any] | None) -> dict[str, Any]:
         msg = "No config information found"
         raise RuntimeError(msg)
 
-    required_values = ["kbase-endpoint", "scratch", "static-file-root"]
+    required_values = ["kbase_endpoint", "scratch", "static_file_root"]
     if not all(config.get(v) for v in required_values):
         missing = [v for v in required_values if not config.get(v)]
         msg = f"Missing required config values: {', '.join(missing)}"
         raise RuntimeError(msg)
 
-    kbase_endpoint = config.get("kbase-endpoint")
+    kbase_endpoint = config.get("kbase_endpoint")
     if kbase_endpoint == "{{ kbase_endpoint }}":
         msg = "Config file has not been populated correctly"
         raise RuntimeError(msg)
@@ -27,17 +27,17 @@ def generate_config(config: dict[str, Any] | None) -> dict[str, Any]:
 
     config.update(
         {
-            "workspace-url": f"{kbase_endpoint}/ws",
-            "srv-wiz-url": f"{kbase_endpoint}/service_wizard",
-            "auth-url": f"{kbase_endpoint}/auth",
-            "nms-url": f"{kbase_endpoint}/narrative_method_store/rpc",
-            "nms-image-url": f"{kbase_endpoint}/narrative_method_store/",
-            "assets-base-url": f"{base_url}/ui-assets",
+            "workspace_url": f"{kbase_endpoint}/ws",
+            "srv_wiz_url": f"{kbase_endpoint}/service_wizard",
+            "auth_url": f"{kbase_endpoint}/auth",
+            "nms_url": f"{kbase_endpoint}/narrative_method_store/rpc",
+            "nms_image_url": f"{kbase_endpoint}/narrative_method_store/",
+            "assets_base_url": f"{base_url}/ui-assets",
         }
     )
 
     # ensure these paths are absolute, not relative
-    for path in ["static-file-root", "scratch"]:
+    for path in ["static_file_root", "scratch"]:
         assigned_path = config.get(path)
 
         if not os.path.isabs(assigned_path):

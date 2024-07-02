@@ -31,13 +31,13 @@ class StaticNarrativeCreator:
         :return: nothing
         :rtype: None
         """
-        if not token or not config["workspace-url"]:
+        if not token or not config["workspace_url"]:
             msg = "workspace URL and a token required to initialise the StaticNarrativeCreator."
             raise RuntimeError(msg)
 
         self.config = config
         self.token = token
-        self.ws_client = Workspace(self.config["workspace-url"], token=token)
+        self.ws_client = Workspace(self.config["workspace_url"], token=token)
 
         logging.basicConfig(format="%(created)s %(levelname)s: %(message)s", level=logging.INFO)
         self.logger = logging.getLogger("StaticNarrative")
@@ -179,7 +179,7 @@ class StaticNarrativeCreator:
         :rtype: str
         """
         # upload it and save it to the Workspace metadata before returning the url path
-        static_url = upload_static_narrative(ref, output_path, self.config["static-file-root"])
+        static_url = upload_static_narrative(ref, output_path, self.config["static_file_root"])
         save_narrative_url(self.ws_client, ref, static_url)
         self.logger.info("Finished creating Static Narrative %s", ref)
         return static_url
