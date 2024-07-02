@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1003/83"}]}],
-      "version": "1.1", "id": "08388466080123502"}'
+      "version": "1.1", "id": "9061418947005736"}'
     headers:
       Accept:
       - '*/*'
@@ -10,7 +10,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '134'
+      - '133'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -15354,7 +15354,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82555cbff7ac7-SJC
+      - 89cf644eed1017c4-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -15362,12 +15362,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:16 GMT
+      - Tue, 02 Jul 2024 14:40:36 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=5rwDA9XFIrdod41BVV4pFO8btt_DU8WSuw7_DZoOOvE-1719855256-1.0.1.1-aY4Y.6_33fdsC3GWLfXWbqDHW4xGY2FH69lCYROyRJWXARdMu2feRuWFQvNEuVaAmJBdC2YtkozquvHXwZjrrg;
-        path=/; expires=Mon, 01-Jul-24 18:04:16 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=9hQ0JphnjX6wrYAI0BBYAdZQLcUhtabLQfgB4qZBdFE-1719931236-1.0.1.1-0oLN1PigiFdi2EYnnZ_7FH82smE2LlAmgRpSMhIH_RGZ7pmiRYYez2t1Pby0TerF02ALNbhYqQWu2HGWgzLocw;
+        path=/; expires=Tue, 02-Jul-24 15:10:36 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -15380,7 +15380,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "ServiceWizard.get_service_status", "params": [{"module_name":
-      "SetAPI", "version": "release"}], "version": "1.1", "id": "49527024616766124"}'
+      "SetAPI", "version": "release"}], "version": "1.1", "id": "687943260286488"}'
     headers:
       Accept:
       - '*/*'
@@ -15389,7 +15389,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '152'
+      - '150'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -15399,7 +15399,7 @@ interactions:
       string: '{"version": "1.1", "result": [{"git_commit_hash": "5a838320de2b4884f11457a51a26870eadb175f6",
         "status": "active", "version": "0.3.5", "hash": "5a838320de2b4884f11457a51a26870eadb175f6",
         "release_tags": ["release", "beta"], "url": "https://ci.kbase.us:443/dynserv/5a838320de2b4884f11457a51a26870eadb175f6.SetAPI",
-        "module_name": "SetAPI", "health": "healthy", "up": 1}], "id": "49527024616766124"}'
+        "module_name": "SetAPI", "health": "healthy", "up": 1}], "id": "687943260286488"}'
     headers:
       Access-Control-Allow-Headers:
       - authorization
@@ -15408,7 +15408,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825585f78cf19-SJC
+      - 89cf64530eb115d4-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -15416,12 +15416,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:16 GMT
+      - Tue, 02 Jul 2024 14:40:36 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=nU5_FYvMFawCpQBo7r7yrGT4oSheyHRmhXavSFPTZN4-1719855256-1.0.1.1-emvgTUL1sg0_iKaL0ikKA6y4diWS8An7I7eauyfph0TVnE1Hc8M3M8T0FNAv8yOLG1tz8.u58pJUU0WpdZaNAQ;
-        path=/; expires=Mon, 01-Jul-24 18:04:16 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=AH5fGPxjEtBN6.1vP7K4WFxaseAES4yhZYpwUGWIYKU-1719931236-1.0.1.1-HQ2sFuh73TghBT0m.uQJkAa9bD02cbD_wYoQwOoQ31zfBuJzg7IT021oX562eWCWYQnVJGysEOlghgnbYTZkDA;
+        path=/; expires=Tue, 02-Jul-24 15:10:36 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -15434,7 +15434,7 @@ interactions:
       message: OK
 - request:
     body: '{"method": "SetAPI.list_sets", "params": [{"workspaces": [67395], "include_set_item_info":
-      1, "include_metadata": 1}], "version": "1.1", "id": "2638431817461464"}'
+      1, "include_metadata": 1}], "version": "1.1", "id": "30127505435676794"}'
     headers:
       Accept:
       - '*/*'
@@ -15443,7 +15443,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '162'
+      - '163'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -15478,7 +15478,7 @@ interactions:
         "null"}], "items": [{"ref": "67395/1017/1", "info": [1017, "rhodobacter.art.q50.SE.reads",
         "KBaseFile.SingleEndLibrary-2.0", "2023-10-11T16:24:02+0000", 1, "ialarmedalien",
         67395, "ialarmedalien:narrative_1649942812539", "31b40bb1004929f69cd4acfe247ea46d",
-        351, {"sequencing_tech": "Illumina", "single_genome": "1"}]}]}]}], "id": "2638431817461464"}'
+        351, {"sequencing_tech": "Illumina", "single_genome": "1"}]}]}]}], "id": "30127505435676794"}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -15495,7 +15495,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8255c687d2544-SJC
+      - 89cf6455ef6f7aeb-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -15503,12 +15503,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:17 GMT
+      - Tue, 02 Jul 2024 14:40:37 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=AnYgGdrKM3v17r15glb.Lr_PYWIo6juuqU7Lvk1ClBQ-1719855257-1.0.1.1-kgkyPXtwAL0200_609mbL_RWzwlMTeI7Bjy1bpkwnUPXHBHnM6pKJ1UgNk0_2eWfzdBu6IcDiIieqXKfqiVCLA;
-        path=/; expires=Mon, 01-Jul-24 18:04:17 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=PDM.uqNt_qdoxfzoqdmIlqQaKWGxfYYdKXg4ovjii8k-1719931237-1.0.1.1-cDCwkht2JuAvZvIiX4yZ9YrqHhggSagNInfbuNK6rYfj_51qk8NcaN8QJELaFDbLJUvjlBBx4.BfCZhqP12KRQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:37 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -15520,8 +15520,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 67395}], "version":
-      "1.1", "id": "3535915252624028"}'
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 67395, "workspace":
+      null}], "version": "1.1", "id": "13723318099560322"}'
     headers:
       Accept:
       - '*/*'
@@ -15530,7 +15530,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '113'
+      - '133'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -15547,7 +15547,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82562fa51ce8c-SJC
+      - 89cf645c8ab3679d-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -15555,12 +15555,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:18 GMT
+      - Tue, 02 Jul 2024 14:40:37 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=_9GZWQgLDf7fBP57b1gX6KXscU1af9VRKb341jLVOxY-1719855258-1.0.1.1-6o1jWXQctdLGiZmk.NlZNeLmJlrY3QECF_WIV0PIE9Nf2TUGiFqsf94caP4BLvaSnRCnTUrn1ek7yVdfXmdchA;
-        path=/; expires=Mon, 01-Jul-24 18:04:18 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=hXP3SmGyI.ke383Jz_YOZIs2BRqISb.q1_QuVGNWAUs-1719931237-1.0.1.1-HlkKZrp0u_FhDzAFiCFGfxKsCu64IpzX8r891vQbsItYXb4pVAl7NWE4LGzQdsuC8maM3hDScNxE2YUcqksvJw;
+        path=/; expires=Tue, 02-Jul-24 15:10:37 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -15574,7 +15574,7 @@ interactions:
 - request:
     body: '{"method": "Workspace.list_objects", "params": [{"includeMetadata": 1,
       "ids": [67395], "minObjectID": 1, "maxObjectID": 10000}], "version": "1.1",
-      "id": "04858929408545687"}'
+      "id": "20541778250914866"}'
     headers:
       Accept:
       - '*/*'
@@ -16160,7 +16160,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82564ae3f238b-SJC
+      - 89cf645d5e331732-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16168,12 +16168,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:18 GMT
+      - Tue, 02 Jul 2024 14:40:38 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=_zg9rNs_RFGBrKoEqiPP4ME4p1bV5OYQ.g5d2AmLAjw-1719855258-1.0.1.1-GTzJjlaJUHfV0IjjZ8wdz9hCUyYTUFYClLhw0t2YOdhZL5HH7BKlKmEdVOWaHaiT4vW_k6X2wen2DIQdcVXvwQ;
-        path=/; expires=Mon, 01-Jul-24 18:04:18 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=dSHXbiUfY41E8A1i9ZnyJ8WDWU_4zcwQUhScjpfzNP0-1719931238-1.0.1.1-yV6j0Hs_NPDKyS8VH4Kuyjw23zUCpVXYvG3V_8oaDJWnn.834dk1jIs.eFMAdzM9YzutrxISDUI.Pp1O3usGyg;
+        path=/; expires=Tue, 02-Jul-24 15:10:38 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16186,7 +16186,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1068/1"}]}],
-      "version": "1.1", "id": "2372684638054725"}'
+      "version": "1.1", "id": "8936208784956641"}'
     headers:
       Accept:
       - '*/*'
@@ -16217,7 +16217,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8256d9adc982b-SJC
+      - 89cf64661b20f94f-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16225,12 +16225,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:19 GMT
+      - Tue, 02 Jul 2024 14:40:39 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=J0oJke.4bRyYSoIcygy4t34QVCGsZRk91l6nPS_uWdI-1719855259-1.0.1.1-FNVcnJ4QO8t9nvyxPWvbLklz5rr6pw1OMMP3hligyptsiqCffSuKjIL0eK0t8cR8HHDyRbauxCZmC1XjNmSkLg;
-        path=/; expires=Mon, 01-Jul-24 18:04:19 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=OQ5fa6ghOg.vgbEuAa08uLwkpr.01vtl9lXeQrluxYY-1719931239-1.0.1.1-OxECAgd9wKqkpQu.EXft7RXGguQH.6.hs8wBd6X4VPRhnB_0PM1n7UAw9Y8n5Hkg4d8bT4YlAo7zz91pBKG9Pw;
+        path=/; expires=Tue, 02-Jul-24 15:10:39 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16243,7 +16243,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_object_info3", "params": [{"objects": [{"ref":
-      "67395/1067/1"}], "ignoreErrors": 1}], "version": "1.1", "id": "1694264498866611"}'
+      "67395/1067/1"}], "ignoreErrors": 1}], "version": "1.1", "id": "3284254844430866"}'
     headers:
       Accept:
       - '*/*'
@@ -16268,7 +16268,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8256efcef6447-SJC
+      - 89cf64692e73235b-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16276,12 +16276,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:20 GMT
+      - Tue, 02 Jul 2024 14:40:39 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=yEKgsAhTGIeIv5wyhKb.GHfAO8TeqhbQJf5vYEcc3dQ-1719855260-1.0.1.1-isgC9WKGM7xoYY3CQQb5WKtLSjbIKL2354hft9Ovr8GKo9RhAQ0AgP_kPrK16y7GQBNIm7mtGoxZk7hLfuOomQ;
-        path=/; expires=Mon, 01-Jul-24 18:04:20 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=0LcVPwgbfxX4DYNqMP.jnHwZlbzupjbGiJq3lvhizeU-1719931239-1.0.1.1-kJTQ0V256YxNbcztRxkVrm1NEGVBpagsMDOvmK9KHq6IyvejCmZF27Ou.NL5_koBf.S0ixiBkGIyguzlcWPBnw;
+        path=/; expires=Tue, 02-Jul-24 15:10:39 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16294,7 +16294,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1070/1"}]}],
-      "version": "1.1", "id": "7263922214969012"}'
+      "version": "1.1", "id": "4256415622413737"}'
     headers:
       Accept:
       - '*/*'
@@ -16325,7 +16325,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8256fee21981c-SJC
+      - 89cf6469f8eb169a-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16333,12 +16333,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:20 GMT
+      - Tue, 02 Jul 2024 14:40:40 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=XXe1jkA850dcIIQH3bHu6cyB.CQeMhBYLHjFT9Tty34-1719855260-1.0.1.1-_iDdRi8lQ4D7o3muITveyHgTogxzt71oEuJ25uKkDxExKS8qTSs0hZPrvGx8HMkduIezOKDYRPc2zDlvxCBVyg;
-        path=/; expires=Mon, 01-Jul-24 18:04:20 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=ISfqUV5Pgja.9XR0LvMzcSHM9MHuyX2gU_.XbFHd5B8-1719931240-1.0.1.1-WyfY7E6C_iS7pHvL3fNp.EX903Jff.NEef9ksgik4es2MorMXW9diWTx.1zBLiAecMAb6.vSyhPz.WIl0S5EsQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:40 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16351,7 +16351,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1013/1"}]}],
-      "version": "1.1", "id": "5038131774704071"}'
+      "version": "1.1", "id": "23312052281291207"}'
     headers:
       Accept:
       - '*/*'
@@ -16360,7 +16360,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '132'
+      - '133'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -16380,7 +16380,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82571397e96c9-SJC
+      - 89cf646c98e1f96f-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16388,12 +16388,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:20 GMT
+      - Tue, 02 Jul 2024 14:40:40 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=OpVNZMO5fDbHNl9wP56TqcIR_5Jx16cKp.WV84cnpX4-1719855260-1.0.1.1-k92WU5H9b2QpbToS_84LhJTy7yL4UfswjdSX5BiKQDl8RO6AKQpbJa0htqeNkfJ2vLXpAQM85hsLOzQ0s1V4_g;
-        path=/; expires=Mon, 01-Jul-24 18:04:20 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=I_GlYD7WeRtQGay.obE4GOle1Bv.NESrrm8hmmbwifI-1719931240-1.0.1.1-_XPpqtAfihB24Bs8JA..X7fwzVJMFLEOQNqGyebNxGjlNAFuWslNF9CcTQM5mKQVy5OV_nCD1J0KuY7dOKg95g;
+        path=/; expires=Tue, 02-Jul-24 15:10:40 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16406,7 +16406,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1065/1"}]}],
-      "version": "1.1", "id": "006097277730412798"}'
+      "version": "1.1", "id": "7292619588153366"}'
     headers:
       Accept:
       - '*/*'
@@ -16415,7 +16415,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '134'
+      - '132'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -16435,7 +16435,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825728b2a9870-SJC
+      - 89cf646f1e22986d-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16443,12 +16443,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:20 GMT
+      - Tue, 02 Jul 2024 14:40:41 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=e.4qdSeZDbTS8fZI5J36lXOPkxLwIhBVK6KKgo3cCkc-1719855260-1.0.1.1-unjv51OJDDFnMUlh.UUtUikSKhfhFcNqibp_84mVBc4vxrNFDyx3ehyqy3fKOzpqCguXlgfBSGnHw5M9p6lHqA;
-        path=/; expires=Mon, 01-Jul-24 18:04:20 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=1GA5xh_YHozWYHLb0a7jdD.RQUU2UhGKtjrncKse9fA-1719931241-1.0.1.1-SIHsIGBNz8wNLLiN.JL0XeymOC2pIMfGGizEtgh5DS3Klmq6QXGc0R3t4H_f906e3vjnW2otQkrc3VqsAomLCg;
+        path=/; expires=Tue, 02-Jul-24 15:10:41 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16461,7 +16461,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1061/1"}]}],
-      "version": "1.1", "id": "3675555436317888"}'
+      "version": "1.1", "id": "1303624395102838"}'
     headers:
       Accept:
       - '*/*'
@@ -16489,7 +16489,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82573dca3faba-SJC
+      - 89cf64724d855c1b-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16497,12 +16497,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:20 GMT
+      - Tue, 02 Jul 2024 14:40:41 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=BamysFGJLtdpRc3k4BKQQHrK7uMnI2Kzx1aRV6jDe6A-1719855260-1.0.1.1-qreaqAduHwi065X.vjxAqbNNDM0KsJVEpTlzQihW1joktS.XrEaf82L.IjZc._fPfksyuJm8MPiq9SQPjpVOZg;
-        path=/; expires=Mon, 01-Jul-24 18:04:20 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=SJHJjZzjWdyRTgOFHzZBi6XlYQRMMBq375u3sRRk5DY-1719931241-1.0.1.1-QukGFHjNI4dAGRgNh176vEj_K_j8B_MCZLkWaXKsvjcxddswNkR9R9jD3NIX.uQ5lRZEwxlnLKamk.qM_a_A9w;
+        path=/; expires=Tue, 02-Jul-24 15:10:41 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16515,7 +16515,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1064/1"}]}],
-      "version": "1.1", "id": "8306211313077156"}'
+      "version": "1.1", "id": "9980766795683136"}'
     headers:
       Accept:
       - '*/*'
@@ -16559,7 +16559,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82574cfa19831-SJC
+      - 89cf64753e6a238d-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16567,12 +16567,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:21 GMT
+      - Tue, 02 Jul 2024 14:40:42 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=7mrHfrSjBAkOjpuRZ_00cIFHM5.Fm8ktcs9.At9sKrU-1719855261-1.0.1.1-60ZOWnoaT4hvSivJLExcWL97petxmhdBcB_tSzIz3hDmsT9fBQVHwPzPMT7g457KG4kLOXtbObGzwhBiP0FmcQ;
-        path=/; expires=Mon, 01-Jul-24 18:04:21 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=Oov_ZCgjdJEsQIe6wuLi2hS4GJmA2xGqPaVVhppQj.k-1719931242-1.0.1.1-GcTQdvXhr7k04AM3fGpU2Py8Y_qiTjRbEDfym7o9G8ftSGctHgsIy9hL2SHK.ia9pHhK55m2ByUl.Q9ZnKMnmA;
+        path=/; expires=Tue, 02-Jul-24 15:10:42 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16585,7 +16585,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1066/1"}]}],
-      "version": "1.1", "id": "3677590843712186"}'
+      "version": "1.1", "id": "7616002823939793"}'
     headers:
       Accept:
       - '*/*'
@@ -16643,7 +16643,7 @@ interactions:
         java.base/sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)\n\tat
         java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat
         java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat
-        java.base/java.lang.Thread.run(Thread.java:829)\n"},"id":"3677590843712186"}'
+        java.base/java.lang.Thread.run(Thread.java:829)\n"},"id":"7616002823939793"}'
     headers:
       Access-Control-Allow-Headers:
       - authorization
@@ -16652,18 +16652,18 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825776a4f942c-SJC
+      - 89cf647a8bd3ce58-SJC
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:21 GMT
+      - Tue, 02 Jul 2024 14:40:42 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=EH4NLVu7F8U_NLETjMNpxmZ5CfL8q4e5kvpRw_liCuc-1719855261-1.0.1.1-dPpSQ86Lr8eE2r66n6uqawe0heEyGb9gGiK6WJsVQ7xZWmmYQxUVQEx2HhzsxRgAjmT_ySrwqPiOriKgR6jOOg;
-        path=/; expires=Mon, 01-Jul-24 18:04:21 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=hMQbJ3ovZPsdNk8sHEmPWy85HSKY2dhK_dRSspA2ZRo-1719931242-1.0.1.1-RQ.AkCK2vFojGL57Eofi_kCWUp1RGOOWnoURtU9YAJS5AF3Dl3bws1sQI2g12Icd4_WRscB3szMNjPk0j.SnYQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:42 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16674,7 +16674,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1062/1"}]}],
-      "version": "1.1", "id": "8085469442665544"}'
+      "version": "1.1", "id": "2640100374090736"}'
     headers:
       Accept:
       - '*/*'
@@ -16702,7 +16702,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82578a9527ae6-SJC
+      - 89cf647c0b499e62-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16710,12 +16710,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:21 GMT
+      - Tue, 02 Jul 2024 14:40:43 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=_w43KLPDOjkZ.d2hP.va0eGZ24Qzt0fkVawG.GDB5lI-1719855261-1.0.1.1-PB0PTqOZXi3IjJdH6lNAqqYP9jFfFt3LgQCZbx0p6evzgs4yqVeZjWSBSgIOmdiEYWHPLpwoFiOUYZXQKGua1w;
-        path=/; expires=Mon, 01-Jul-24 18:04:21 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=v1ebnoN0ZcyrXDk8d25HsoS35fkDnTIewMXYFQNIb.8-1719931243-1.0.1.1-VUQIMKOMjZRM4RwrH9kwTY37_StVwu58QT83y6ZLjz340aK55lLzsbHqTXqSR1cva4ZJBzOTABgs_aDzGqTR5g;
+        path=/; expires=Tue, 02-Jul-24 15:10:43 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16728,7 +16728,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1053/1"}]}],
-      "version": "1.1", "id": "5219476755641181"}'
+      "version": "1.1", "id": "1808549052600089"}'
     headers:
       Accept:
       - '*/*'
@@ -16757,7 +16757,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8257a6c8f67a0-SJC
+      - 89cf647e8faf7e27-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16765,12 +16765,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:21 GMT
+      - Tue, 02 Jul 2024 14:40:43 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=4hA_2BYo6myL1dzpjM255RWzM4RtTQzvMPAAd9tLoO4-1719855261-1.0.1.1-U3jPpGz8hJkk7gMAC358Tieh.x1z4zQPBLagbp2mE3Muvn93CElUibzU8h6HcSVWx7fIoLvyh5wMaUTbXtaubw;
-        path=/; expires=Mon, 01-Jul-24 18:04:21 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=Ty0eWf117pgrhiLjkRIztMkw3GcJmaZFDa2pqsgg1C8-1719931243-1.0.1.1-UTavax2oP98X6lEKyp6PURrf9qtkox60S3vPiPK124Q3_soeVvbqElVzQmn9QvbKoNqywXYl_zyiTsuJIUSXGQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:43 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16783,7 +16783,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1021/1"}]}],
-      "version": "1.1", "id": "2249353739522172"}'
+      "version": "1.1", "id": "3602404213769713"}'
     headers:
       Accept:
       - '*/*'
@@ -16811,7 +16811,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8257b9d2b96ef-SJC
+      - 89cf64810806f973-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16819,12 +16819,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:22 GMT
+      - Tue, 02 Jul 2024 14:40:43 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=U_0mxP.VgAZxALwuEpJzl_tYmnrJoAmkNS4_GU42yjY-1719855262-1.0.1.1-PdFQswQ8Xcvev4vzGHkCJ.OMcwa2czZMkwrhO418c9w8IWHjkO2j8OPHB9.6iy2ojZQFSwS42fivXhEkpWvdJA;
-        path=/; expires=Mon, 01-Jul-24 18:04:22 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=SDKFDUYwWtabCEh2jYAZjnpWz8WZe2sXffzfCCJerdc-1719931243-1.0.1.1-nUqSOZMj6.hBVSdlIsHWfj9_3xyUO1GxiSh7IyQck1Ylw5jN.kUtDeBi8NU22fxI5rwEgU8qd.uw9kGi6wrq4g;
+        path=/; expires=Tue, 02-Jul-24 15:10:43 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16837,7 +16837,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1054/1"}]}],
-      "version": "1.1", "id": "7694109400609837"}'
+      "version": "1.1", "id": "15337074036354414"}'
     headers:
       Accept:
       - '*/*'
@@ -16846,7 +16846,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '132'
+      - '133'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -16871,7 +16871,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8257ce87026b0-SJC
+      - 89cf64832dadcf7a-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -16879,12 +16879,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:22 GMT
+      - Tue, 02 Jul 2024 14:40:44 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=7_x8V.tuIpeLM0xRJus4AsfnQyH108rx15Biu7UV8MY-1719855262-1.0.1.1-CdM56u9XTjoryAkqFIawhc_t2lkJy5Foj9gfGG_wWDgGEQ45WWT3uiff1Cw_ZLD2YJbJSIrpoq5FPwD_EJWrKw;
-        path=/; expires=Mon, 01-Jul-24 18:04:22 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=2wuNzHO9DIqqqJVtIS4wjS7JNmMhKFyeUmW9Pjw59To-1719931244-1.0.1.1-YEq2db8p3hHY2lOTb0q.42Th_ZoiZD8YbYSSrKzPdU1GWzOdAATv8zUgX3KEuqsgjzPdH063CAAPaYxWqkJNZA;
+        path=/; expires=Tue, 02-Jul-24 15:10:44 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -16897,11 +16897,12 @@ interactions:
       message: ''
 - request:
     body: '{"method": "NarrativeMethodStore.get_method_full_info", "params": [{"ids":
-      ["GenericsAPI/import_amplicon", "sample_uploader/import_samples", "SpeciesTreeBuilder/insert_genomeset_into_species_tree",
-      "kb_uploadmethods/import_tsv_as_expression_matrix_from_staging", "FeatureSetUtils/build_feature_set",
-      "kb_SetUtilities/KButil_Build_GenomeSet", "kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet",
-      "kb_SetUtilities/KButil_Batch_Create_GenomeSet", "kb_SetUtilities/KButil_Batch_Create_AssemblySet"],
-      "tag": "release"}], "version": "1.1", "id": "918191750109496"}'
+      ["kb_SetUtilities/KButil_Build_GenomeSet", "kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet",
+      "FeatureSetUtils/build_feature_set", "kb_SetUtilities/KButil_Batch_Create_AssemblySet",
+      "SpeciesTreeBuilder/insert_genomeset_into_species_tree", "sample_uploader/import_samples",
+      "kb_uploadmethods/import_tsv_as_expression_matrix_from_staging", "kb_SetUtilities/KButil_Batch_Create_GenomeSet",
+      "GenericsAPI/import_amplicon"], "tag": "release"}], "version": "1.1", "id":
+      "2430531538874714"}'
     headers:
       Accept:
       - '*/*'
@@ -16910,24 +16911,109 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '556'
+      - '557'
       User-Agent:
       - python-requests/2.31.0
     method: POST
     uri: https://ci.kbase.us/services/narrative_method_store/rpc
   response:
     body:
-      string: '{"version":"1.1","result":[[{"id":"GenericsAPI/import_amplicon","module_name":"GenericsAPI","git_commit_hash":"2d68b13be4bf7278817cbfef949777a03ea1bda7","name":"Import
-        Amplicon Matrix from TSV/FASTA File in Staging Area","ver":"1.0.29","authors":["jjeffryes","tgu2"],"contact":"http://kbase.us/contact-us/","subtitle":"Import
-        a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix","tooltip":"Import
-        a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix","description":"<p>
-        Import a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix
-        data object.\nPlease see the <a href=\"http://kbase.us/data-upload-download-guide/\">Data
-        Upload/Download Guide</a> for more information. </p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=GenericsAPI/import_amplicon&image_name=upload.png&tag=release"},"categories":["upload"],"screenshots":[],"publications":[],"namespace":"GenericsAPI"},{"id":"sample_uploader/import_samples","module_name":"sample_uploader","git_commit_hash":"cb079adedc5a304391ada8e9bc3c90ce9c31288c","name":"Import
-        Samples","ver":"1.1.1","authors":["slebras"],"contact":"help@kbase.us","subtitle":"import
-        some samples","tooltip":"import some samples","description":"<p>Uploader for
-        Samples into KBase. Produces a SampleSet object.</p>\n<p>For more information
-        on file template formats, look at the <a href=\"https://docs.kbase.us/workflows/samples-and-samplesets/sesar-samples\">documentation.</a></p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=sample_uploader/import_samples&image_name=sample_uploader.png&tag=release"},"categories":["active","upload"],"screenshots":[],"publications":[],"namespace":"sample_uploader"},{"id":"SpeciesTreeBuilder/insert_genomeset_into_species_tree","module_name":"SpeciesTreeBuilder","git_commit_hash":"b081c5f264e2ff955cc528def3a7ba347137a50c","name":"Insert
+      string: '{"version":"1.1","result":[[{"id":"kb_SetUtilities/KButil_Build_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Build
+        GenomeSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
+        users to create a GenomeSet object.","tooltip":"Allows users to create a GenomeSet
+        object.","description":"<p><b>Build Genome Set</b> allows a user to create
+        a set of Genomes (each consisting of functional and structural annotations
+        for a corresponding assembly). The GenomeSet can be used in subsequent Apps
+        that operate on GenomeSets, thus allowing for bulk operations on Genome objects.
+        Genome objects must already be within the Narrative''s data workspace, so
+        if there are genomes from other Narratives or public reference genomes that
+        the user wishes to include, they must first be imported into the active Narrative.
+        Simply click the <b> + </b> plus icon to add a genome object to the set. Once
+        the plus icon is hit, a dropdown list will appear that is populated with all
+        the genome objects in this Narrative.</p>\n\n<p><hr></p>\n<p><strong>Team
+        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
+        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
+        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
+        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
+        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["RAST_SDK.reannotate_microbial_genomes","ProkkaAnnotation.annotate","kb_Msuite.run_checkm_lineage_wf","kb_phylogenomics.run_DomainAnnotation_Sets","PangenomeOrthomcl.build_pangenome_with_orthomcl","SpeciesTreeBuilder.insert_genomeset_into_species_tree"]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Build_GenomeSet&image_name=kb-purple.png&tag=release"},"categories":["active","util","comparative_genomics"],"screenshots":[{"url":"img?method_id=kb_SetUtilities/KButil_Build_GenomeSet&image_name=Build_GenomeSet.png&tag=release"}],"publications":[{"pmid":"36376589","display_text":"Chivian
+        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
+        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
+        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
+        The United States Department of Energy Systems Biology Knowledgebase. Nature
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Add
+        Genomes to GenomeSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support","subtitle":"Allows
+        user to add a Genome to a GenomeSet","tooltip":"Allows user to add a Genome
+        to a GenomeSet","description":"<p><b>Add Genomes to GenomeSet</b> allows a
+        user to expand the membership of a set of genomes (each of which is a set
+        of DNA contigs including structural and functional annotations). The GenomeSet
+        object can be used in subsequent Apps allowing for bulk operations on Genome
+        objects. The Genomes and GenomeSet must already be within the Narrative''s
+        data workspace, so if there are genomes from other Narratives or public reference
+        genomes that the user wishes to include, they must first be imported into
+        the active Narrative. Simply click the <b> + </b> plus icon to add a Genome
+        object to the set. Once the plus icon is selected, a dropdown list will appear
+        that is populated with all the Genome objects in the narrative.  Additionally,
+        you may add the genomes present in GenomeSets and Species Trees here.</p>\n\n<p><hr></p>\n<p><strong>Team
+        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
+        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
+        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
+        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
+        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["RAST_SDK.reannotate_microbial_genomes","ProkkaAnnotation.annotate","kb_phylogenomics.run_DomainAnnotation_Sets","PangenomeOrthomcl.build_pangenome_with_orthomcl","SpeciesTreeBuilder.insert_genomeset_into_species_tree"]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet&image_name=kb-purple.png&tag=release"},"categories":["active","util","comparative_genomics"],"screenshots":[{"url":"img?method_id=kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet&image_name=Add_Genomes_to_GenomeSet.png&tag=release"}],"publications":[{"pmid":"36376589","display_text":"Chivian
+        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
+        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
+        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
+        The United States Department of Energy Systems Biology Knowledgebase. Nature
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"FeatureSetUtils/build_feature_set","module_name":"FeatureSetUtils","git_commit_hash":"c5b615ea30a4b3cdb0fdc7ac1485607638f624b8","name":"Build
+        FeatureSet from Genome","ver":"1.2.6","authors":["jjeffryes"],"contact":"help@kbase.us","subtitle":"Create
+        a new FeatureSet by selecting features from a Genome.","tooltip":"Create a
+        new FeatureSet by selecting features from a Genome.","description":"<p>FeatureSets
+        are useful for grouping a set of proteinencoding gene features and performing
+        some operation on that set of features. For instance, instead of specifying
+        all the features in a list for each App, you can use this App to build a single
+        FeatureSet and then use this as input for other Apps. There are quite a few
+        Apps that accept a FeatureSet as input, including types of BLAST, MUSCLE,
+        and expression analysis. FeatureSets are also shareable, so it allows you
+        to call out or comment on specific features in your Narrative.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":["KButil_Build_GenomeSet_from_FeatureSet","functional_enrichment_go_term","KButil_Logical_Slice_Two_FeatureSets","KButil_Logical_Slice_Two_FeatureSets","KButil_Merge_FeatureSet_Collection","MUSCLE_nuc","MUSCLE_prot","KButil_Slice_FeatureSets_by_Genomes","view_fxn_profile_featureSet","filter_matrix_by_feature_set","functional_enrichment_go_term","view_expression_heatmap","view_expression_profile","view_expression_pairwise_correlation","BLASTn_Search","BLASTp_Search","BLASTx_Search","HMMER_MSA_Search","psiBLAST_msa_start_Search","tBLASTx_Search"],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=FeatureSetUtils/build_feature_set&image_name=kb-orange.png&tag=release"},"categories":["active","comparative_genomics","util"],"screenshots":[],"publications":[{"display_text":"Arkin
+        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
+        The United States Department of Energy Systems Biology Knowledgebase. Nature
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"FeatureSetUtils"},{"id":"kb_SetUtilities/KButil_Batch_Create_AssemblySet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Batch
+        Create Assembly Set - v1.2.0","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
+        user to create an AssemblySet without specifying names","tooltip":"Allows
+        user to create an AssemblySet without specifying names","description":"<p>This
+        App allows the user to group individual <b><i>Assembly</i></b> objects into
+        an <b><i>Assembly Set</i></b>.</p>\n<p>\n<h3>Description</h3>\n<b>Batch Create
+        Assembly Set</b> allows a user to create a Set of Assemblies (each one of
+        which is a group of contigs or scaffold genome fragments) which can be used
+        in subsequent Apps that operate on Assembly Sets.  Each Assembly object must
+        already be within the Narrative''s data workspace, so if there are assemblies
+        from other Narratives or assemblies from public reference genomes that the
+        user wishes to include, they must first be imported into the active Narrative.  All
+        Assemblies that match the <i>Name Pattern</i> will be included in the Set.  If
+        the <i>Name Pattern</i> is left blank, all assembly objects in the current
+        Narrative will be included.\n</p>\n<p>Example allowed <i>Name Patterns</i>:<br>\n<ul>\n<li>
+        <b>*.Assembly</b>\n<li> <b>Sample_1-*</b>\n<li> <b>Sample_1-*.Assembly</b>\n</ul>\n</p>\n\n<p><hr></p>\n<p><strong>Team
+        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
+        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
+        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
+        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
+        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Batch_Create_AssemblySet&image_name=kb-blue.png&tag=release"},"categories":["active","util","assembly","annotation"],"screenshots":[],"publications":[{"pmid":"36376589","display_text":"Chivian
+        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
+        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
+        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
+        The United States Department of Energy Systems Biology Knowledgebase. Nature
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"SpeciesTreeBuilder/insert_genomeset_into_species_tree","module_name":"SpeciesTreeBuilder","git_commit_hash":"b081c5f264e2ff955cc528def3a7ba347137a50c","name":"Insert
         Set of Genomes Into SpeciesTree - v2.2.0","ver":"0.1.2","authors":["rsutormin"],"contact":"http://kbase.us/contact-us/","subtitle":"Add
         a user-provided GenomeSet to a KBase SpeciesTree.","tooltip":"Add a user-provided
         GenomeSet to a KBase SpeciesTree.","description":"<p>This App allows a user
@@ -17070,7 +17156,11 @@ interactions:
         proteases with\n  possible chaperone activity [Posttranslational modification,
         protein\n  turnover, chaperones].</td>\n </tr>\n</table>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["insert_genomeset_into_species_tree_generic","genome_comparison","compute_pangenome"]},"icon":{"url":"img?method_id=SpeciesTreeBuilder/insert_genomeset_into_species_tree&image_name=speciestree-purple.png&tag=release"},"categories":["active","comparative_genomics"],"screenshots":[],"publications":[{"display_text":"Price
         MN, Dehal PS, Arkin AP. FastTree 2   Approximately Maximum-Likelihood Trees
-        for Large Alignments. PLoS One. 2010;5. doi:10.1371/journal.pone.0009490\n","link":"http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2835736/"}],"namespace":"SpeciesTreeBuilder"},{"id":"kb_uploadmethods/import_tsv_as_expression_matrix_from_staging","module_name":"kb_uploadmethods","git_commit_hash":"2135cd43a1b8b9c15d334c0b02f655c5e25264a2","name":"Import
+        for Large Alignments. PLoS One. 2010;5. doi:10.1371/journal.pone.0009490\n","link":"http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2835736/"}],"namespace":"SpeciesTreeBuilder"},{"id":"sample_uploader/import_samples","module_name":"sample_uploader","git_commit_hash":"cb079adedc5a304391ada8e9bc3c90ce9c31288c","name":"Import
+        Samples","ver":"1.1.1","authors":["slebras"],"contact":"help@kbase.us","subtitle":"import
+        some samples","tooltip":"import some samples","description":"<p>Uploader for
+        Samples into KBase. Produces a SampleSet object.</p>\n<p>For more information
+        on file template formats, look at the <a href=\"https://docs.kbase.us/workflows/samples-and-samplesets/sesar-samples\">documentation.</a></p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=sample_uploader/import_samples&image_name=sample_uploader.png&tag=release"},"categories":["active","upload"],"screenshots":[],"publications":[],"namespace":"sample_uploader"},{"id":"kb_uploadmethods/import_tsv_as_expression_matrix_from_staging","module_name":"kb_uploadmethods","git_commit_hash":"2135cd43a1b8b9c15d334c0b02f655c5e25264a2","name":"Import
         TSV File as Expression Matrix From Staging Area","ver":"1.0.56","authors":["tgu2"],"contact":"http://kbase.us/contact-us/","subtitle":"Import
         a TSV file from your staging area into your Narrative as an Expression Matrix","tooltip":"Import
         a TSV (tab-separated values) file from your staging area into your Narrative
@@ -17088,73 +17178,7 @@ interactions:
         sample.\nBe sure to exclude gene features for which all expressions are missing
         or are the same for all the conditions/samples.  See the\n<a href=\"http://kbase.us/data-upload-download-guide/\"
         target=\"_blank\">Data Upload and Download Guide</a> for more information
-        about formatting your expression data file.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_uploadmethods/import_tsv_as_expression_matrix_from_staging&image_name=data-yellow.png&tag=release"},"categories":["inactive","assembly","upload"],"screenshots":[],"publications":[],"namespace":"kb_uploadmethods"},{"id":"FeatureSetUtils/build_feature_set","module_name":"FeatureSetUtils","git_commit_hash":"c5b615ea30a4b3cdb0fdc7ac1485607638f624b8","name":"Build
-        FeatureSet from Genome","ver":"1.2.6","authors":["jjeffryes"],"contact":"help@kbase.us","subtitle":"Create
-        a new FeatureSet by selecting features from a Genome.","tooltip":"Create a
-        new FeatureSet by selecting features from a Genome.","description":"<p>FeatureSets
-        are useful for grouping a set of proteinencoding gene features and performing
-        some operation on that set of features. For instance, instead of specifying
-        all the features in a list for each App, you can use this App to build a single
-        FeatureSet and then use this as input for other Apps. There are quite a few
-        Apps that accept a FeatureSet as input, including types of BLAST, MUSCLE,
-        and expression analysis. FeatureSets are also shareable, so it allows you
-        to call out or comment on specific features in your Narrative.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":["KButil_Build_GenomeSet_from_FeatureSet","functional_enrichment_go_term","KButil_Logical_Slice_Two_FeatureSets","KButil_Logical_Slice_Two_FeatureSets","KButil_Merge_FeatureSet_Collection","MUSCLE_nuc","MUSCLE_prot","KButil_Slice_FeatureSets_by_Genomes","view_fxn_profile_featureSet","filter_matrix_by_feature_set","functional_enrichment_go_term","view_expression_heatmap","view_expression_profile","view_expression_pairwise_correlation","BLASTn_Search","BLASTp_Search","BLASTx_Search","HMMER_MSA_Search","psiBLAST_msa_start_Search","tBLASTx_Search"],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=FeatureSetUtils/build_feature_set&image_name=kb-orange.png&tag=release"},"categories":["active","comparative_genomics","util"],"screenshots":[],"publications":[{"display_text":"Arkin
-        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
-        The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"FeatureSetUtils"},{"id":"kb_SetUtilities/KButil_Build_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Build
-        GenomeSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
-        users to create a GenomeSet object.","tooltip":"Allows users to create a GenomeSet
-        object.","description":"<p><b>Build Genome Set</b> allows a user to create
-        a set of Genomes (each consisting of functional and structural annotations
-        for a corresponding assembly). The GenomeSet can be used in subsequent Apps
-        that operate on GenomeSets, thus allowing for bulk operations on Genome objects.
-        Genome objects must already be within the Narrative''s data workspace, so
-        if there are genomes from other Narratives or public reference genomes that
-        the user wishes to include, they must first be imported into the active Narrative.
-        Simply click the <b> + </b> plus icon to add a genome object to the set. Once
-        the plus icon is hit, a dropdown list will appear that is populated with all
-        the genome objects in this Narrative.</p>\n\n<p><hr></p>\n<p><strong>Team
-        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
-        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
-        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
-        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
-        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["RAST_SDK.reannotate_microbial_genomes","ProkkaAnnotation.annotate","kb_Msuite.run_checkm_lineage_wf","kb_phylogenomics.run_DomainAnnotation_Sets","PangenomeOrthomcl.build_pangenome_with_orthomcl","SpeciesTreeBuilder.insert_genomeset_into_species_tree"]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Build_GenomeSet&image_name=kb-purple.png&tag=release"},"categories":["active","util","comparative_genomics"],"screenshots":[{"url":"img?method_id=kb_SetUtilities/KButil_Build_GenomeSet&image_name=Build_GenomeSet.png&tag=release"}],"publications":[{"pmid":"36376589","display_text":"Chivian
-        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
-        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
-        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
-        The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Add
-        Genomes to GenomeSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support","subtitle":"Allows
-        user to add a Genome to a GenomeSet","tooltip":"Allows user to add a Genome
-        to a GenomeSet","description":"<p><b>Add Genomes to GenomeSet</b> allows a
-        user to expand the membership of a set of genomes (each of which is a set
-        of DNA contigs including structural and functional annotations). The GenomeSet
-        object can be used in subsequent Apps allowing for bulk operations on Genome
-        objects. The Genomes and GenomeSet must already be within the Narrative''s
-        data workspace, so if there are genomes from other Narratives or public reference
-        genomes that the user wishes to include, they must first be imported into
-        the active Narrative. Simply click the <b> + </b> plus icon to add a Genome
-        object to the set. Once the plus icon is selected, a dropdown list will appear
-        that is populated with all the Genome objects in the narrative.  Additionally,
-        you may add the genomes present in GenomeSets and Species Trees here.</p>\n\n<p><hr></p>\n<p><strong>Team
-        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
-        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
-        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
-        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
-        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["RAST_SDK.reannotate_microbial_genomes","ProkkaAnnotation.annotate","kb_phylogenomics.run_DomainAnnotation_Sets","PangenomeOrthomcl.build_pangenome_with_orthomcl","SpeciesTreeBuilder.insert_genomeset_into_species_tree"]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet&image_name=kb-purple.png&tag=release"},"categories":["active","util","comparative_genomics"],"screenshots":[{"url":"img?method_id=kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet&image_name=Add_Genomes_to_GenomeSet.png&tag=release"}],"publications":[{"pmid":"36376589","display_text":"Chivian
-        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
-        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
-        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
-        The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"kb_SetUtilities/KButil_Batch_Create_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Batch
+        about formatting your expression data file.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_uploadmethods/import_tsv_as_expression_matrix_from_staging&image_name=data-yellow.png&tag=release"},"categories":["inactive","assembly","upload"],"screenshots":[],"publications":[],"namespace":"kb_uploadmethods"},{"id":"kb_SetUtilities/KButil_Batch_Create_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Batch
         Create Genome Set - v1.2.0","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
         user to create a GenomeSet without specifying names","tooltip":"Allows user
         to create a GenomeSet without specifying names","description":"<p>This App
@@ -17182,36 +17206,13 @@ interactions:
         from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
         AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
         The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"kb_SetUtilities/KButil_Batch_Create_AssemblySet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Batch
-        Create Assembly Set - v1.2.0","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
-        user to create an AssemblySet without specifying names","tooltip":"Allows
-        user to create an AssemblySet without specifying names","description":"<p>This
-        App allows the user to group individual <b><i>Assembly</i></b> objects into
-        an <b><i>Assembly Set</i></b>.</p>\n<p>\n<h3>Description</h3>\n<b>Batch Create
-        Assembly Set</b> allows a user to create a Set of Assemblies (each one of
-        which is a group of contigs or scaffold genome fragments) which can be used
-        in subsequent Apps that operate on Assembly Sets.  Each Assembly object must
-        already be within the Narrative''s data workspace, so if there are assemblies
-        from other Narratives or assemblies from public reference genomes that the
-        user wishes to include, they must first be imported into the active Narrative.  All
-        Assemblies that match the <i>Name Pattern</i> will be included in the Set.  If
-        the <i>Name Pattern</i> is left blank, all assembly objects in the current
-        Narrative will be included.\n</p>\n<p>Example allowed <i>Name Patterns</i>:<br>\n<ul>\n<li>
-        <b>*.Assembly</b>\n<li> <b>Sample_1-*</b>\n<li> <b>Sample_1-*.Assembly</b>\n</ul>\n</p>\n\n<p><hr></p>\n<p><strong>Team
-        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
-        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
-        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
-        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
-        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Batch_Create_AssemblySet&image_name=kb-blue.png&tag=release"},"categories":["active","util","assembly","annotation"],"screenshots":[],"publications":[{"pmid":"36376589","display_text":"Chivian
-        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
-        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
-        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
-        The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"}]]}'
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"GenericsAPI/import_amplicon","module_name":"GenericsAPI","git_commit_hash":"2d68b13be4bf7278817cbfef949777a03ea1bda7","name":"Import
+        Amplicon Matrix from TSV/FASTA File in Staging Area","ver":"1.0.29","authors":["jjeffryes","tgu2"],"contact":"http://kbase.us/contact-us/","subtitle":"Import
+        a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix","tooltip":"Import
+        a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix","description":"<p>
+        Import a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix
+        data object.\nPlease see the <a href=\"http://kbase.us/data-upload-download-guide/\">Data
+        Upload/Download Guide</a> for more information. </p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=GenericsAPI/import_amplicon&image_name=upload.png&tag=release"},"categories":["upload"],"screenshots":[],"publications":[],"namespace":"GenericsAPI"}]]}'
     headers:
       Access-Control-Allow-Headers:
       - authorization
@@ -17220,7 +17221,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8257f1e5bcf6d-SJC
+      - 89cf6486bb8f7ae0-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -17228,12 +17229,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:22 GMT
+      - Tue, 02 Jul 2024 14:40:44 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=YviUTdcs_u45nENsN1Qwh3Ta4PVrdY3ELplsnrgKPaQ-1719855262-1.0.1.1-1kMogtVp3nFLS2ygrw3NttMUat1_aK28__PUgSBTkvv9bVqaF.099SiBrbVx3Hs2VQIYbP2ODLAHUb3LHF2JVw;
-        path=/; expires=Mon, 01-Jul-24 18:04:22 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=nKqRG2rLd5Tc8_qc66g4OaOeb6Vax2tfyDcj3KUIv0k-1719931244-1.0.1.1-iC4XOvPZLN2pND53LJEU2MQPYI2_pbOv5JVwYVG1xHZ6xxrj2suRdYVD72sqmI6mk_9Vlpn_vM4sctMkVlauwQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:44 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -17246,9 +17247,9 @@ interactions:
       message: OK
 - request:
     body: '{"method": "NarrativeMethodStore.get_method_full_info", "params": [{"ids":
-      ["kb_SetUtilities/KButil_Build_ReadsSet", "NarrativeTest/report_example", "eapearsonUiTestModule/medium_report",
-      "eapearsonUiTestModule/large_report", "Templatomatic/run_Templatomatic", "NarrativeTest/report_html_links"],
-      "tag": "dev"}], "version": "1.1", "id": "38309799515885834"}'
+      ["eapearsonUiTestModule/medium_report", "NarrativeTest/report_example", "kb_SetUtilities/KButil_Build_ReadsSet",
+      "Templatomatic/run_Templatomatic", "NarrativeTest/report_html_links", "eapearsonUiTestModule/large_report"],
+      "tag": "dev"}], "version": "1.1", "id": "3407696058963755"}'
     headers:
       Accept:
       - '*/*'
@@ -17257,14 +17258,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '357'
+      - '356'
       User-Agent:
       - python-requests/2.31.0
     method: POST
     uri: https://ci.kbase.us/services/narrative_method_store/rpc
   response:
     body:
-      string: '{"version":"1.1","result":[[{"id":"kb_SetUtilities/KButil_Build_ReadsSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Build
+      string: '{"version":"1.1","result":[[{"id":"eapearsonUiTestModule/medium_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Medium
+        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","description":"This method will pause for a given number of seconds
+        before returning.\n\nThe purpose of this function is to provide a somewhat
+        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"NarrativeTest/report_example","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"Example
+        HTML Report","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
+        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"},{"id":"kb_SetUtilities/KButil_Build_ReadsSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Build
         ReadsSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
         users to create a ReadsSet object.","tooltip":"Allows users to create a ReadsSet
         object.","description":"<p><b>Build Reads Set</b> allows a user to create
@@ -17305,20 +17314,7 @@ interactions:
         from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
         AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
         The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"NarrativeTest/report_example","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"Example
-        HTML Report","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
-        an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
-        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"},{"id":"eapearsonUiTestModule/medium_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Medium
-        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
-        testing with variable run times","tooltip":"Allows testing with variable run
-        times","description":"This method will pause for a given number of seconds
-        before returning.\n\nThe purpose of this function is to provide a somewhat
-        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"eapearsonUiTestModule/large_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Large
-        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
-        testing with variable run times","tooltip":"Allows testing with variable run
-        times","description":"This method will pause for a given number of seconds
-        before returning.\n\nThe purpose of this function is to provide a somewhat
-        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"Templatomatic/run_Templatomatic","module_name":"Templatomatic","git_commit_hash":"5c24a264a9cfd6b0a1ef3bd3c3bd64cd6ba690df","name":"Run
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"Templatomatic/run_Templatomatic","module_name":"Templatomatic","git_commit_hash":"5c24a264a9cfd6b0a1ef3bd3c3bd64cd6ba690df","name":"Run
         Templatomatic","ver":"0.0.1","authors":["ialarmedalien"],"contact":"","subtitle":"Run
         Templatomatic and generate an extended report with templates!","tooltip":"Run
         Templatomatic and generate an extended report with templates!","description":"<p>Templatomatic
@@ -17330,7 +17326,12 @@ interactions:
         from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\"> www.flaticon.com</a>.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":["KBaseReport"],"next_apps":["KBaseReport"]},"icon":{"url":"img?method_id=Templatomatic/run_Templatomatic&image_name=icon.png&tag=dev"},"categories":["active"],"screenshots":[{"url":"img?method_id=Templatomatic/run_Templatomatic&image_name=Templatomatic.png&tag=dev"}],"publications":[],"namespace":"Templatomatic"},{"id":"NarrativeTest/report_html_links","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"HTML
         Report with links","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
         an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
-        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"}]]}'
+        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"},{"id":"eapearsonUiTestModule/large_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Large
+        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","description":"This method will pause for a given number of seconds
+        before returning.\n\nThe purpose of this function is to provide a somewhat
+        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"}]]}'
     headers:
       Access-Control-Allow-Headers:
       - authorization
@@ -17339,7 +17340,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8258058df15d4-SJC
+      - 89cf6487ce12fab6-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -17347,12 +17348,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:22 GMT
+      - Tue, 02 Jul 2024 14:40:44 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=.SDrkV7t5TVVlniyxKhNoMC5sqRlpznCCHHSqj7GyfQ-1719855262-1.0.1.1-.tzVfPLDpTrxq78GzPd8EjnkX7FRTPoiT4bLlfjazA6sKC4mwpv4knfid4QuUtuN0Ll9R8FDjnMU66_V7yrJ.A;
-        path=/; expires=Mon, 01-Jul-24 18:04:22 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=gYvPHDltUh8z9qJ_stXaFNud00XeYcHDb7fe8NmvuAE-1719931244-1.0.1.1-jVOOxLZDKpV5lNxpm9J0t.CWX9x69mTT9L_b2DrgV.E65yqCCkUhkZeeYwJeU8n4kPdiiVKj6YAHyKPtEU1_Mg;
+        path=/; expires=Tue, 02-Jul-24 15:10:44 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -17365,7 +17366,7 @@ interactions:
       message: OK
 - request:
     body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 67395}], "version":
-      "1.1", "id": "8007738637711472"}'
+      "1.1", "id": "773671502001857"}'
     headers:
       Accept:
       - '*/*'
@@ -17374,7 +17375,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '113'
+      - '112'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -17391,7 +17392,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825814b94ceb5-SJC
+      - 89cf6488acb024de-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -17399,12 +17400,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:22 GMT
+      - Tue, 02 Jul 2024 14:40:44 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=GpH4Rmxlzg6j223blRjmKFOhNld8hzjI.mkQKgE0n0c-1719855262-1.0.1.1-897C_BtzRMqsziGcYPU_gMUkYlichTHcnpy.DxAcqu2HgWZkp_GBJTIkh2Ezv9MD_nDRIfgXu3s.yfreQa.pIw;
-        path=/; expires=Mon, 01-Jul-24 18:04:22 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=yzUSUFN8V1ossETB7qI1Tr8wV_4Y2yPsM2a_pWzOiCs-1719931244-1.0.1.1-jALwKYnz69bJtYbWnQZsFGzZJ2dOc6htEIE5LPeL9Ug6jSgrO5BTMV8K3cCnYJ9jfqk_cvYnmGIRIYOxjhVNHg;
+        path=/; expires=Tue, 02-Jul-24 15:10:44 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -17417,7 +17418,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_permissions", "params": [{"id": 67395}], "version":
-      "1.1", "id": "16468572435046613"}'
+      "1.1", "id": "7018217617207768"}'
     headers:
       Accept:
       - '*/*'
@@ -17426,7 +17427,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '111'
+      - '110'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -17442,7 +17443,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825823f0e9806-SJC
+      - 89cf6489bebe15e5-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -17450,12 +17451,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:23 GMT
+      - Tue, 02 Jul 2024 14:40:45 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=WjJ7EEeGIo05ErM9_ny3hjEtEHEh6hZlJZkWupVQI_k-1719855263-1.0.1.1-3ZgIB1Belbiph54PibqsexTk.tQcN.8m27yu_AJsE9FnlIEozSTt3rRaYtp9mkan9R4hIUhl8Cf7vP7efODVRw;
-        path=/; expires=Mon, 01-Jul-24 18:04:23 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=NhgbWqVJxcQcKoYTl7_BFe8FOxDqF6Gwqc4yXSbKgKE-1719931245-1.0.1.1-X9QlUCXGjbhE1GSJW4XAG7pOhHTVXuMA0bMeA_oMf7SCY7KZ4tVo1cuwrTejdhKlHx_iUQbWm4PptnxhSBTQvg;
+        path=/; expires=Tue, 02-Jul-24 15:10:45 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -17468,7 +17469,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1003/83"}]}],
-      "version": "1.1", "id": "3562467860020355"}'
+      "version": "1.1", "id": "14023586070912542"}'
     headers:
       Accept:
       - '*/*'
@@ -17477,7 +17478,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '133'
+      - '134'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -32821,7 +32822,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82585cf0cfad2-SJC
+      - 89cf648d58702710-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -32829,12 +32830,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:23 GMT
+      - Tue, 02 Jul 2024 14:40:45 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=QBu6hYZ6TbV4reRydOv1fIfPhtaU1vYxyhjMoWvne6o-1719855263-1.0.1.1-iYno79kCUgRG2JJFiiXGNQZdonnLv1gkuMMX7kFodgLFNGLi8sjWg0qpqMzhO4DPEsvKxrHBB7io85lA97mcVw;
-        path=/; expires=Mon, 01-Jul-24 18:04:23 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=OHW0.WTTTSLpKxaRC20vMHH1zuk7BrDqa_cXr.gTPMA-1719931245-1.0.1.1-krfnowix5lFjbsYW.En3WQGKGFWLU_6Y8haR4tfbSnibCHc.jw.q1juD_iAJBpxQ5D0iqNYjyhM2OI.8tvvncw;
+        path=/; expires=Tue, 02-Jul-24 15:10:45 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -32847,7 +32848,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 67395}], "version":
-      "1.1", "id": "18554819117258137"}'
+      "1.1", "id": "8333468721775442"}'
     headers:
       Accept:
       - '*/*'
@@ -32856,7 +32857,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '114'
+      - '113'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -32873,7 +32874,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82588790c9e70-SJC
+      - 89cf648febd0aab1-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -32881,12 +32882,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:24 GMT
+      - Tue, 02 Jul 2024 14:40:46 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=4XFPOXM1f8dsHeKKDLhrucXrpcUwy50s8uffo0D.ORk-1719855264-1.0.1.1-i.ZaaqEx_dpuoW2HwNqVuM5dRjK4HMoEPSSGSM.7yUZHboAgdrByBcCsX1SVMAFjH.y7WC2iEejUYIRguiT3tg;
-        path=/; expires=Mon, 01-Jul-24 18:04:24 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=MqjDlCoTRN6OUvJeDqct.nSEzUIxHe6iG.jQCW3HLpo-1719931246-1.0.1.1-IylPz8kTxIgWS0LFwqd56H3.fw960R7ZKxAk3cI6DCla.QFR.Z.pGazY2OZXAbwQ5zhrXAHa62_fVJhzjU6bnQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:46 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -32900,7 +32901,7 @@ interactions:
 - request:
     body: '{"method": "Workspace.list_objects", "params": [{"includeMetadata": 1,
       "type": "KBaseSets.ReadsSet", "ids": [67395], "minObjectID": 1, "maxObjectID":
-      10000}], "version": "1.1", "id": "5583457197510976"}'
+      10000}], "version": "1.1", "id": "9879525466455905"}'
     headers:
       Accept:
       - '*/*'
@@ -32925,7 +32926,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8258a1d982350-SJC
+      - 89cf6490db47980f-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -32933,12 +32934,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:24 GMT
+      - Tue, 02 Jul 2024 14:40:46 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=TSLCIzY75DKjiiNpQKfdb5cob5ULh3rWB1kAh3Yp3BE-1719855264-1.0.1.1-CalXWmJRHrGNM74jmzzvmJSM2Yt7y1_RAxegWNtAKegEFFOzUS7SRoI8cdAAOezBJ5YD_UgckvYmnSU.HZmGTA;
-        path=/; expires=Mon, 01-Jul-24 18:04:24 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=NF5EndW3io5t1lkqbiO7wmbrqrXirk.AnD8X5f53qZA-1719931246-1.0.1.1-HgobtTi7w5ihJtMXDv6b3JJjGqsuCP6jqjZH8BQuWhCKXmtDdfya.uyi4PtwWWCu1fdA4PEeIN7ST0PwHrd2XQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:46 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -32952,7 +32953,7 @@ interactions:
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1014/1"},
       {"ref": "67395/1056/1"}, {"ref": "67395/1057/1"}, {"ref": "67395/1059/2"}],
-      "no_data": 1}], "version": "1.1", "id": "588698275715865"}'
+      "no_data": 1}], "version": "1.1", "id": "30450093439361914"}'
     headers:
       Accept:
       - '*/*'
@@ -32961,7 +32962,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '220'
+      - '222'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -32977,7 +32978,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8258b9f2167b2-SJC
+      - 89cf6491d8e5fa36-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -32985,12 +32986,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:24 GMT
+      - Tue, 02 Jul 2024 14:40:46 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=fQpqes53te9okysHYUEnClP6KJ3_HPZ7KPfv5u5sVBQ-1719855264-1.0.1.1-cUKjzo_h2MVvWIvzHAnikpfmSA4oW_oE3ZHittEqgqcQPpor73tmQ6Rm38ly1tPREwtgAuCkWeBwE13XHvN2Kw;
-        path=/; expires=Mon, 01-Jul-24 18:04:24 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=.XdkmhrRzTjWr284S.ZPb6Zvmqvn716FHcnTKIKUdcU-1719931246-1.0.1.1-sud1XYzYJRqrG3PPQfmsSVnhomYyLDWUuRWBC.56_WnyHnQjIAMoswTdJakC.BTON1OusOGYQtL5UunY_ZnGTw;
+        path=/; expires=Tue, 02-Jul-24 15:10:46 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -33005,7 +33006,7 @@ interactions:
     body: '{"method": "Workspace.get_object_info3", "params": [{"objects": [{"ref":
       "67395/1057/1;67395/1007/1"}, {"ref": "67395/1057/1;67395/1016/4"}, {"ref":
       "67395/1059/2;67395/1017/1"}], "includeMetadata": 1}], "version": "1.1", "id":
-      "010416380116700541"}'
+      "46904323491712785"}'
     headers:
       Accept:
       - '*/*'
@@ -33014,7 +33015,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '249'
+      - '248'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -33030,7 +33031,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8258cafdf174b-SJC
+      - 89cf6492dd32faaa-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -33038,12 +33039,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:24 GMT
+      - Tue, 02 Jul 2024 14:40:46 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=1Q.HuRSnuIXWEPbfT4zmZbINO3fzXbnuA.22jxMRfJs-1719855264-1.0.1.1-eQ4URgni7v8yJcqktemlqbvspnyl429azxAzh8v.ZJLw8H3cYReqTZM3QCxuvnevig4Wh954z34XZcXk5qB_Rw;
-        path=/; expires=Mon, 01-Jul-24 18:04:24 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=dj5S4oxhwGwdgNSw9XBs3KHvsHtPyeZC8sgnFjiQito-1719931246-1.0.1.1-nZaZicNNXQ7ywucKTEHeVZ0ZxVf4MGlslOBkltzgNeObqV6kSnRRaFGZYfpTYBa5M3BZo6PWFYRaimTv4SGbvg;
+        path=/; expires=Tue, 02-Jul-24 15:10:46 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -33055,8 +33056,8 @@ interactions:
       code: 200
       message: ''
 - request:
-    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 67395}], "version":
-      "1.1", "id": "21885312879867558"}'
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 67395, "workspace":
+      null}], "version": "1.1", "id": "11147372455701576"}'
     headers:
       Accept:
       - '*/*'
@@ -33065,7 +33066,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '114'
+      - '133'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -33082,7 +33083,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8258dad012710-SJC
+      - 89cf6494285e252d-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -33090,12 +33091,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:24 GMT
+      - Tue, 02 Jul 2024 14:40:46 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=9NBOJWM7LbMTc5tfbT76dD3aWVCKf02ElJp7zmFOGos-1719855264-1.0.1.1-IvaawBtK3bqbVEsFwMRy493sW2ZNgCHrWWl5ppTF_s.TxTzAmTHF1YeGjuTkk_A.qu5aH3Ow3cvtHZ0.wDPhow;
-        path=/; expires=Mon, 01-Jul-24 18:04:24 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=84RdfwCBZGE_pPHzPM4cuH2RPKIbave5f_cACX1pA54-1719931246-1.0.1.1-o2Udz10.UKv84S1gXX_7s5bY8LKiP__u9LkcerlWOqTGfGKdTpNSEEd3GFn8Lq3wW7AYv3A43eQkMnJEZgVsow;
+        path=/; expires=Tue, 02-Jul-24 15:10:46 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -33109,7 +33110,7 @@ interactions:
 - request:
     body: '{"method": "Workspace.list_objects", "params": [{"includeMetadata": 1,
       "ids": [67395], "minObjectID": 1, "maxObjectID": 10000}], "version": "1.1",
-      "id": "9078106702915316"}'
+      "id": "13742891089931597"}'
     headers:
       Accept:
       - '*/*'
@@ -33118,7 +33119,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '172'
+      - '173'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -33695,7 +33696,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8258e8987f963-SJC
+      - 89cf6494fdce15e7-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -33703,12 +33704,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:25 GMT
+      - Tue, 02 Jul 2024 14:40:47 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=aQGQE6DFMv4yM5hgM4QFB3EaTCL5vXaGiCfn1mBg12I-1719855265-1.0.1.1-9ejGArUW8kSaZ3V5kAHxlJgbgYr5dwcQfhJvzrVxU4YxdefgT8pzLHUdU8QyYJcI5OHr_5SVOzW24IUz5bOhJA;
-        path=/; expires=Mon, 01-Jul-24 18:04:25 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=WI06oG3V.5g3xl.RXs2oFi42au7eFyMga_gmgb9nRYw-1719931247-1.0.1.1-Kzw9E25I5fjpq3ZBVKcd2mbO0z_dUHRRQiJRAXhXwg4PTiUqFSyTZDCjg0fg56ZOjNhjimhRuFzfNRB7MHvFpg;
+        path=/; expires=Tue, 02-Jul-24 15:10:47 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -33721,7 +33722,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1068/1"}]}],
-      "version": "1.1", "id": "9505909677756054"}'
+      "version": "1.1", "id": "6012540752746335"}'
     headers:
       Accept:
       - '*/*'
@@ -33752,7 +33753,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c82596dba11668-SJC
+      - 89cf649d6a4ecfb0-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -33760,12 +33761,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:26 GMT
+      - Tue, 02 Jul 2024 14:40:48 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=bm5SsRFYS_oEmFobigpfN0Xr48w2MM5nHGzD3Vu72w8-1719855266-1.0.1.1-JDysl7w_GVxxmb61gLHMtFyMcY2n.hnWuumrqLaNEvoXnHNJFRHe9JVnlVhxEHkAdtiZLrED6mqiBqKIlVpJdg;
-        path=/; expires=Mon, 01-Jul-24 18:04:26 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=lXg0MCEdJT4zhdRhJWR4AatWHp0UmsY7EIdsfYukurY-1719931248-1.0.1.1-tLwmPzwI5CCPFXLYP41BksHAVeGuOOSR675VkCLJ5_hZa0iB3KRE40_Q512Bk.dT409lNMsc14L.3iOayOIvtg;
+        path=/; expires=Tue, 02-Jul-24 15:10:48 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -33778,7 +33779,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_object_info3", "params": [{"objects": [{"ref":
-      "67395/1067/1"}], "ignoreErrors": 1}], "version": "1.1", "id": "4949907566207099"}'
+      "67395/1067/1"}], "ignoreErrors": 1}], "version": "1.1", "id": "8450169875652978"}'
     headers:
       Accept:
       - '*/*'
@@ -33803,7 +33804,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825984b007aca-SJC
+      - 89cf649f894dcf69-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -33811,12 +33812,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:26 GMT
+      - Tue, 02 Jul 2024 14:40:48 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=C3JOC9MFqqYZjXtyIJFwAgfOtIapvXcmRP_AjLc5WNU-1719855266-1.0.1.1-vgh5qVZy_xczLcaTUB4qAA1SG2u28HP48bk74t1x_453tGJdymrvlnehqP3JyPurMcxNtEQb7FkeRYoqb9shyQ;
-        path=/; expires=Mon, 01-Jul-24 18:04:26 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=8uAT8TKw1bwrOjRPu53g.7DgKLQlxtG5_Nff5G6gzH8-1719931248-1.0.1.1-tH5tDn2T9rnHxy2wpnipvtQAFUaWiaSsEV7SyWO6D_RkeSICydnhaPLu7mp.J0cze.yZh8cAei01FP7xBDsZRA;
+        path=/; expires=Tue, 02-Jul-24 15:10:48 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -33829,7 +33830,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1070/1"}]}],
-      "version": "1.1", "id": "543033086173139"}'
+      "version": "1.1", "id": "7455250895297008"}'
     headers:
       Accept:
       - '*/*'
@@ -33838,7 +33839,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '132'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -33860,7 +33861,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825992f03aab5-SJC
+      - 89cf64a09ad39e4d-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -33868,12 +33869,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:26 GMT
+      - Tue, 02 Jul 2024 14:40:48 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=s4mBBm4MCk2omZSGzzviqJMeIiMHHD1u0sPx52BFCtI-1719855266-1.0.1.1-3q1S9ib6ZgPqaiXn6oNjEdthg3t63KxOJcZdiH5EJLEOXKz4q0IE1yUMB6CvStey3MWEJ3JGn5Gur1LCk44LqQ;
-        path=/; expires=Mon, 01-Jul-24 18:04:26 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=QGXl2wKSVEFGX75Q7xYdv_womVzBKj6dv7Y97JYyPsI-1719931248-1.0.1.1-.0YLPh7S7v07itKz_YDS1noNdQrM6vLRUWJeTNZUByzOo6sdeCtj0iBFVuAa51EXXc4Ldwk6oag1qey84aBaqA;
+        path=/; expires=Tue, 02-Jul-24 15:10:48 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -33886,7 +33887,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1013/1"}]}],
-      "version": "1.1", "id": "4976503037575968"}'
+      "version": "1.1", "id": "8554289791189827"}'
     headers:
       Accept:
       - '*/*'
@@ -33915,7 +33916,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8259bbf265c1f-SJC
+      - 89cf64a1ee3b968c-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -33923,12 +33924,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:27 GMT
+      - Tue, 02 Jul 2024 14:40:49 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=EeT.NT8WFhyW45FpmvBw2fghXccdjV5uALDfB5gleHU-1719855267-1.0.1.1-UW2hgIYZnnRQaihZo0eF7MLhdGSyaKcXHBURop88DE_GyYALyZcpiFfWWCXknUwW96jcCPj5FcxcliHEGMj0bQ;
-        path=/; expires=Mon, 01-Jul-24 18:04:27 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=CXwsmWKz5L43g.xtMQZ.Kvbp3OhCq9yb8R5soNHsZyM-1719931249-1.0.1.1-_k23zp1UQFNSjFRfz8SEkBRf2RnqzvTEjHOOEp0OX6dAWuFCCe92e785lInHUj.koRQCwvtOlKtDj5IVItuGOA;
+        path=/; expires=Tue, 02-Jul-24 15:10:49 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -33941,7 +33942,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1065/1"}]}],
-      "version": "1.1", "id": "6444374006608732"}'
+      "version": "1.1", "id": "4863029449187497"}'
     headers:
       Accept:
       - '*/*'
@@ -33970,7 +33971,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8259d58597ab5-SJC
+      - 89cf64a2eb8d237a-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -33978,12 +33979,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:27 GMT
+      - Tue, 02 Jul 2024 14:40:49 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=QWl_fEUnZHsIlZu3yVmsp2ix_6FXVr5hELMOmWYVftY-1719855267-1.0.1.1-c.x4k3EVUIyHwt1A_8UbxZNxqBIaoCUoNPywS4qUqQmZIjnKL4b27VSPIEARZYgSUCE6qktLio3io1b_rz9WRA;
-        path=/; expires=Mon, 01-Jul-24 18:04:27 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=OVa6oil8RbKJRxnIzG314TFQzf9V1jEtTRERDnapasU-1719931249-1.0.1.1-FrjmjouhM9L2GmhLuTxnWXNH5yur3_UG_6eDQWFLYefsnwpw3gknPiYjb2GwSTatouXpyGDCuBmxhbbNgVThTQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:49 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -33996,7 +33997,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1061/1"}]}],
-      "version": "1.1", "id": "22818679354735083"}'
+      "version": "1.1", "id": "43260499289924703"}'
     headers:
       Accept:
       - '*/*'
@@ -34024,7 +34025,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c8259eed3e9642-SJC
+      - 89cf64a3eca396b4-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34032,12 +34033,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:27 GMT
+      - Tue, 02 Jul 2024 14:40:49 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=DbN_yljfrIEWaEWDK6LvWLocQRGBXk2XObRI4fePpmo-1719855267-1.0.1.1-YgrBuXopwpXjiPMIzgTbyXDWl1j1m1QYmFeLYNdON9_chBvtUfGyjbS3_r3k1Jt9EZ31vxEqw7eMivrZ_tsTgA;
-        path=/; expires=Mon, 01-Jul-24 18:04:27 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=VdRtMdexZvdGteY.YORTQvUY3qPDk_zqyT53Ny2lDEY-1719931249-1.0.1.1-a9XF4MQQgOKEeU2p2lfB2vHYar8i04mmaTGXFeVYUbhiW3t9.L97R8VmBZmkCmo0TMeYIE910hdz91riOsDq_Q;
+        path=/; expires=Tue, 02-Jul-24 15:10:49 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34050,7 +34051,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1064/1"}]}],
-      "version": "1.1", "id": "942677287343203"}'
+      "version": "1.1", "id": "8839212814959581"}'
     headers:
       Accept:
       - '*/*'
@@ -34059,7 +34060,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '131'
+      - '132'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -34094,7 +34095,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825a01ef72542-SJC
+      - 89cf64a4e9f29e53-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34102,12 +34103,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:28 GMT
+      - Tue, 02 Jul 2024 14:40:49 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=C5v1mAhmoZGxySrIGYu6Z6GWa4So87BrHjQQCZ.LuCs-1719855268-1.0.1.1-JMCOTBnMCUta1iwz2pnTrElAzf2yzOwJjomOihtIMNRyOTXh6BNwBxa_UYGZBXQ8.gkP2onmGjQNbKeuePvVCg;
-        path=/; expires=Mon, 01-Jul-24 18:04:28 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=e_X6OJoe918MhAsDdQ4i2ILERAScsEM5g5gVZJ22vDE-1719931249-1.0.1.1-_8t_O4eI6miugBXnKSuAmFPCs6obiSxCwAd1FJ0H1yx7xRPhV.zDxHpVrm4_KdesYP6LYS.Cd0vn6vF9WvEMpg;
+        path=/; expires=Tue, 02-Jul-24 15:10:49 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34120,7 +34121,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1066/1"}]}],
-      "version": "1.1", "id": "6848690605319158"}'
+      "version": "1.1", "id": "3262054790277813"}'
     headers:
       Accept:
       - '*/*'
@@ -34178,7 +34179,7 @@ interactions:
         java.base/sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)\n\tat
         java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat
         java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat
-        java.base/java.lang.Thread.run(Thread.java:829)\n"},"id":"6848690605319158"}'
+        java.base/java.lang.Thread.run(Thread.java:829)\n"},"id":"3262054790277813"}'
     headers:
       Access-Control-Allow-Headers:
       - authorization
@@ -34187,18 +34188,18 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825a2bb6e16f9-SJC
+      - 89cf64a73e6c250d-SJC
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:28 GMT
+      - Tue, 02 Jul 2024 14:40:49 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=SqIpXzZ.YbnfhLgpSA3i_svKp9.41DQR2LMm1fHD4Wg-1719855268-1.0.1.1-I1d00kdToofj0PO.zeaSz8B_B8mmXwG_eMMQAmI7BgLkAW_1VQF4T0UZg1GRR5FF5EjDWfik_S1zZhwbzUrtBA;
-        path=/; expires=Mon, 01-Jul-24 18:04:28 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=ByE72EWTtgqrgYgdQjAOlq04p6LSs.1D6UXE.829vR4-1719931249-1.0.1.1-8poejPy4Mpkv.J5fqcj7sfWJgSB9l7SZ_HQC0lN48AW.vwCVV3hoAIE8QrgR14UEi_WTtfS.CSxZ9hkttCv08Q;
+        path=/; expires=Tue, 02-Jul-24 15:10:49 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34209,7 +34210,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1062/1"}]}],
-      "version": "1.1", "id": "01388097934975474"}'
+      "version": "1.1", "id": "23344358703694268"}'
     headers:
       Accept:
       - '*/*'
@@ -34237,7 +34238,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825a3ae2516a4-SJC
+      - 89cf64a84eab7ae5-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34245,12 +34246,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:28 GMT
+      - Tue, 02 Jul 2024 14:40:50 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=NIb2cI8JvsNNO7wCD6C5mY_dOehocB_7Iiq0ndBKiUA-1719855268-1.0.1.1-oFmF4fX_Nj89val0FREAQ9XgaACU_CqOCJ7fR_GMVEKHKCqbHI106G4KcdUXC0WMp8h5oCCedxU2ayx0Jt.wrA;
-        path=/; expires=Mon, 01-Jul-24 18:04:28 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=qf5kdXVZ74Itx7PkRMw3k4.mVIKnJo4p.YuTY0lEpyM-1719931250-1.0.1.1-lXfq2EpUGN5DQibotzgQQIHRlJu9UMhj4RSHxgMwjx9.oYQbMzy9PUl8xnCypzdGrJiff0yCRMTvDX3cYXO60Q;
+        path=/; expires=Tue, 02-Jul-24 15:10:50 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34263,7 +34264,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1053/1"}]}],
-      "version": "1.1", "id": "9581836180156279"}'
+      "version": "1.1", "id": "8453284210108346"}'
     headers:
       Accept:
       - '*/*'
@@ -34292,7 +34293,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825a4d804987e-SJC
+      - 89cf64a94edd96de-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34300,12 +34301,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:28 GMT
+      - Tue, 02 Jul 2024 14:40:50 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=smigRfceLa9R0HH1fvGP4LriJMl0ui79GtpkRJ8AY84-1719855268-1.0.1.1-SrR2_tiQmEKQ0URV3i7fAM9ZEuoYax6bhDDP_FlZCDGmTwZ0z1r7aePNpHnJwSUKgMRNdNUbBr9IbB4CvOGHfA;
-        path=/; expires=Mon, 01-Jul-24 18:04:28 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=.CcPHeVe4Pg8kBSj4P6AUmDXrtL2XrMPn_8IacBN37c-1719931250-1.0.1.1-K4Cgy.Tmy4tjO4YBg2UBpCL1g.PK8U02nZb9PWyv7JuM2kwuhbN1WD3_D4HoXzPH8jDPRBc_6dMJr_NAXJZB5A;
+        path=/; expires=Tue, 02-Jul-24 15:10:50 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34318,7 +34319,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1021/1"}]}],
-      "version": "1.1", "id": "1956538265435236"}'
+      "version": "1.1", "id": "18802407106144237"}'
     headers:
       Accept:
       - '*/*'
@@ -34327,7 +34328,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '132'
+      - '133'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -34346,7 +34347,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825a64922642c-SJC
+      - 89cf64aa9846d045-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34354,12 +34355,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:28 GMT
+      - Tue, 02 Jul 2024 14:40:50 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=3VCZh0fVaHVCHq3ADFx7G1gEL4UtbxZvESYOTzELzl8-1719855268-1.0.1.1-xSB4LSGuXG_5JiaUGk9j6P96J_Zl2sWryxyhTb_R6Q9FQwIlHAEePcTrBS0EbMct2RPw0yiGqSoabmoT98xQXw;
-        path=/; expires=Mon, 01-Jul-24 18:04:28 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=zYRU8WVLxaJrS8Murfo1ospHf3Q1QI9cz8oKzPiHcsk-1719931250-1.0.1.1-VKY0dWiT6G_yr8pbAIenkgzt1_95T.PLtTlonFjr2VICPSZl.xZZgIQ2y_FpGgEynjADuFe1OpgHtLAhnfPCVQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:50 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34372,7 +34373,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1054/1"}]}],
-      "version": "1.1", "id": "8624081828175728"}'
+      "version": "1.1", "id": "6379129166470218"}'
     headers:
       Accept:
       - '*/*'
@@ -34406,7 +34407,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825a75ffcfa26-SJC
+      - 89cf64abac92f983-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34414,12 +34415,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:29 GMT
+      - Tue, 02 Jul 2024 14:40:50 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=WMFbB88Xnriv8jshvrwEwFEnY54t18dzQ9wKLDwWBcw-1719855269-1.0.1.1-AX5f4fxwfH7XxjA98feePpTvMwtT4_xajxcitQHr_Vw.nYQs80ubDIkBmVBH7SrNPw1mJuPkcLpjYU6y4pQ0eg;
-        path=/; expires=Mon, 01-Jul-24 18:04:29 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=U6GfOzkbsBhZxQkq3e8T9Uh5ucQ9OiyV7h2lucmOWwc-1719931250-1.0.1.1-KwPsFmoj_sR3OxjKQN9SxrvIeJ0TAY3fpLVPLE7INmCfIeNlhSo6aM46J6KXcoq0Q9t0wQVixwj4tzDlpX35Iw;
+        path=/; expires=Tue, 02-Jul-24 15:10:50 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34432,11 +34433,12 @@ interactions:
       message: ''
 - request:
     body: '{"method": "NarrativeMethodStore.get_method_full_info", "params": [{"ids":
-      ["GenericsAPI/import_amplicon", "sample_uploader/import_samples", "SpeciesTreeBuilder/insert_genomeset_into_species_tree",
-      "kb_uploadmethods/import_tsv_as_expression_matrix_from_staging", "FeatureSetUtils/build_feature_set",
-      "kb_SetUtilities/KButil_Build_GenomeSet", "kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet",
-      "kb_SetUtilities/KButil_Batch_Create_GenomeSet", "kb_SetUtilities/KButil_Batch_Create_AssemblySet"],
-      "tag": "release"}], "version": "1.1", "id": "28406898169362904"}'
+      ["kb_SetUtilities/KButil_Build_GenomeSet", "kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet",
+      "FeatureSetUtils/build_feature_set", "kb_SetUtilities/KButil_Batch_Create_AssemblySet",
+      "SpeciesTreeBuilder/insert_genomeset_into_species_tree", "sample_uploader/import_samples",
+      "kb_uploadmethods/import_tsv_as_expression_matrix_from_staging", "kb_SetUtilities/KButil_Batch_Create_GenomeSet",
+      "GenericsAPI/import_amplicon"], "tag": "release"}], "version": "1.1", "id":
+      "86692804448386"}'
     headers:
       Accept:
       - '*/*'
@@ -34445,24 +34447,109 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '558'
+      - '555'
       User-Agent:
       - python-requests/2.31.0
     method: POST
     uri: https://ci.kbase.us/services/narrative_method_store/rpc
   response:
     body:
-      string: '{"version":"1.1","result":[[{"id":"GenericsAPI/import_amplicon","module_name":"GenericsAPI","git_commit_hash":"2d68b13be4bf7278817cbfef949777a03ea1bda7","name":"Import
-        Amplicon Matrix from TSV/FASTA File in Staging Area","ver":"1.0.29","authors":["jjeffryes","tgu2"],"contact":"http://kbase.us/contact-us/","subtitle":"Import
-        a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix","tooltip":"Import
-        a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix","description":"<p>
-        Import a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix
-        data object.\nPlease see the <a href=\"http://kbase.us/data-upload-download-guide/\">Data
-        Upload/Download Guide</a> for more information. </p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=GenericsAPI/import_amplicon&image_name=upload.png&tag=release"},"categories":["upload"],"screenshots":[],"publications":[],"namespace":"GenericsAPI"},{"id":"sample_uploader/import_samples","module_name":"sample_uploader","git_commit_hash":"cb079adedc5a304391ada8e9bc3c90ce9c31288c","name":"Import
-        Samples","ver":"1.1.1","authors":["slebras"],"contact":"help@kbase.us","subtitle":"import
-        some samples","tooltip":"import some samples","description":"<p>Uploader for
-        Samples into KBase. Produces a SampleSet object.</p>\n<p>For more information
-        on file template formats, look at the <a href=\"https://docs.kbase.us/workflows/samples-and-samplesets/sesar-samples\">documentation.</a></p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=sample_uploader/import_samples&image_name=sample_uploader.png&tag=release"},"categories":["active","upload"],"screenshots":[],"publications":[],"namespace":"sample_uploader"},{"id":"SpeciesTreeBuilder/insert_genomeset_into_species_tree","module_name":"SpeciesTreeBuilder","git_commit_hash":"b081c5f264e2ff955cc528def3a7ba347137a50c","name":"Insert
+      string: '{"version":"1.1","result":[[{"id":"kb_SetUtilities/KButil_Build_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Build
+        GenomeSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
+        users to create a GenomeSet object.","tooltip":"Allows users to create a GenomeSet
+        object.","description":"<p><b>Build Genome Set</b> allows a user to create
+        a set of Genomes (each consisting of functional and structural annotations
+        for a corresponding assembly). The GenomeSet can be used in subsequent Apps
+        that operate on GenomeSets, thus allowing for bulk operations on Genome objects.
+        Genome objects must already be within the Narrative''s data workspace, so
+        if there are genomes from other Narratives or public reference genomes that
+        the user wishes to include, they must first be imported into the active Narrative.
+        Simply click the <b> + </b> plus icon to add a genome object to the set. Once
+        the plus icon is hit, a dropdown list will appear that is populated with all
+        the genome objects in this Narrative.</p>\n\n<p><hr></p>\n<p><strong>Team
+        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
+        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
+        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
+        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
+        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["RAST_SDK.reannotate_microbial_genomes","ProkkaAnnotation.annotate","kb_Msuite.run_checkm_lineage_wf","kb_phylogenomics.run_DomainAnnotation_Sets","PangenomeOrthomcl.build_pangenome_with_orthomcl","SpeciesTreeBuilder.insert_genomeset_into_species_tree"]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Build_GenomeSet&image_name=kb-purple.png&tag=release"},"categories":["active","util","comparative_genomics"],"screenshots":[{"url":"img?method_id=kb_SetUtilities/KButil_Build_GenomeSet&image_name=Build_GenomeSet.png&tag=release"}],"publications":[{"pmid":"36376589","display_text":"Chivian
+        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
+        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
+        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
+        The United States Department of Energy Systems Biology Knowledgebase. Nature
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Add
+        Genomes to GenomeSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support","subtitle":"Allows
+        user to add a Genome to a GenomeSet","tooltip":"Allows user to add a Genome
+        to a GenomeSet","description":"<p><b>Add Genomes to GenomeSet</b> allows a
+        user to expand the membership of a set of genomes (each of which is a set
+        of DNA contigs including structural and functional annotations). The GenomeSet
+        object can be used in subsequent Apps allowing for bulk operations on Genome
+        objects. The Genomes and GenomeSet must already be within the Narrative''s
+        data workspace, so if there are genomes from other Narratives or public reference
+        genomes that the user wishes to include, they must first be imported into
+        the active Narrative. Simply click the <b> + </b> plus icon to add a Genome
+        object to the set. Once the plus icon is selected, a dropdown list will appear
+        that is populated with all the Genome objects in the narrative.  Additionally,
+        you may add the genomes present in GenomeSets and Species Trees here.</p>\n\n<p><hr></p>\n<p><strong>Team
+        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
+        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
+        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
+        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
+        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["RAST_SDK.reannotate_microbial_genomes","ProkkaAnnotation.annotate","kb_phylogenomics.run_DomainAnnotation_Sets","PangenomeOrthomcl.build_pangenome_with_orthomcl","SpeciesTreeBuilder.insert_genomeset_into_species_tree"]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet&image_name=kb-purple.png&tag=release"},"categories":["active","util","comparative_genomics"],"screenshots":[{"url":"img?method_id=kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet&image_name=Add_Genomes_to_GenomeSet.png&tag=release"}],"publications":[{"pmid":"36376589","display_text":"Chivian
+        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
+        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
+        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
+        The United States Department of Energy Systems Biology Knowledgebase. Nature
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"FeatureSetUtils/build_feature_set","module_name":"FeatureSetUtils","git_commit_hash":"c5b615ea30a4b3cdb0fdc7ac1485607638f624b8","name":"Build
+        FeatureSet from Genome","ver":"1.2.6","authors":["jjeffryes"],"contact":"help@kbase.us","subtitle":"Create
+        a new FeatureSet by selecting features from a Genome.","tooltip":"Create a
+        new FeatureSet by selecting features from a Genome.","description":"<p>FeatureSets
+        are useful for grouping a set of proteinencoding gene features and performing
+        some operation on that set of features. For instance, instead of specifying
+        all the features in a list for each App, you can use this App to build a single
+        FeatureSet and then use this as input for other Apps. There are quite a few
+        Apps that accept a FeatureSet as input, including types of BLAST, MUSCLE,
+        and expression analysis. FeatureSets are also shareable, so it allows you
+        to call out or comment on specific features in your Narrative.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":["KButil_Build_GenomeSet_from_FeatureSet","functional_enrichment_go_term","KButil_Logical_Slice_Two_FeatureSets","KButil_Logical_Slice_Two_FeatureSets","KButil_Merge_FeatureSet_Collection","MUSCLE_nuc","MUSCLE_prot","KButil_Slice_FeatureSets_by_Genomes","view_fxn_profile_featureSet","filter_matrix_by_feature_set","functional_enrichment_go_term","view_expression_heatmap","view_expression_profile","view_expression_pairwise_correlation","BLASTn_Search","BLASTp_Search","BLASTx_Search","HMMER_MSA_Search","psiBLAST_msa_start_Search","tBLASTx_Search"],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=FeatureSetUtils/build_feature_set&image_name=kb-orange.png&tag=release"},"categories":["active","comparative_genomics","util"],"screenshots":[],"publications":[{"display_text":"Arkin
+        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
+        The United States Department of Energy Systems Biology Knowledgebase. Nature
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"FeatureSetUtils"},{"id":"kb_SetUtilities/KButil_Batch_Create_AssemblySet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Batch
+        Create Assembly Set - v1.2.0","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
+        user to create an AssemblySet without specifying names","tooltip":"Allows
+        user to create an AssemblySet without specifying names","description":"<p>This
+        App allows the user to group individual <b><i>Assembly</i></b> objects into
+        an <b><i>Assembly Set</i></b>.</p>\n<p>\n<h3>Description</h3>\n<b>Batch Create
+        Assembly Set</b> allows a user to create a Set of Assemblies (each one of
+        which is a group of contigs or scaffold genome fragments) which can be used
+        in subsequent Apps that operate on Assembly Sets.  Each Assembly object must
+        already be within the Narrative''s data workspace, so if there are assemblies
+        from other Narratives or assemblies from public reference genomes that the
+        user wishes to include, they must first be imported into the active Narrative.  All
+        Assemblies that match the <i>Name Pattern</i> will be included in the Set.  If
+        the <i>Name Pattern</i> is left blank, all assembly objects in the current
+        Narrative will be included.\n</p>\n<p>Example allowed <i>Name Patterns</i>:<br>\n<ul>\n<li>
+        <b>*.Assembly</b>\n<li> <b>Sample_1-*</b>\n<li> <b>Sample_1-*.Assembly</b>\n</ul>\n</p>\n\n<p><hr></p>\n<p><strong>Team
+        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
+        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
+        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
+        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
+        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Batch_Create_AssemblySet&image_name=kb-blue.png&tag=release"},"categories":["active","util","assembly","annotation"],"screenshots":[],"publications":[{"pmid":"36376589","display_text":"Chivian
+        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
+        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
+        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
+        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
+        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
+        The United States Department of Energy Systems Biology Knowledgebase. Nature
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"SpeciesTreeBuilder/insert_genomeset_into_species_tree","module_name":"SpeciesTreeBuilder","git_commit_hash":"b081c5f264e2ff955cc528def3a7ba347137a50c","name":"Insert
         Set of Genomes Into SpeciesTree - v2.2.0","ver":"0.1.2","authors":["rsutormin"],"contact":"http://kbase.us/contact-us/","subtitle":"Add
         a user-provided GenomeSet to a KBase SpeciesTree.","tooltip":"Add a user-provided
         GenomeSet to a KBase SpeciesTree.","description":"<p>This App allows a user
@@ -34605,7 +34692,11 @@ interactions:
         proteases with\n  possible chaperone activity [Posttranslational modification,
         protein\n  turnover, chaperones].</td>\n </tr>\n</table>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["insert_genomeset_into_species_tree_generic","genome_comparison","compute_pangenome"]},"icon":{"url":"img?method_id=SpeciesTreeBuilder/insert_genomeset_into_species_tree&image_name=speciestree-purple.png&tag=release"},"categories":["active","comparative_genomics"],"screenshots":[],"publications":[{"display_text":"Price
         MN, Dehal PS, Arkin AP. FastTree 2   Approximately Maximum-Likelihood Trees
-        for Large Alignments. PLoS One. 2010;5. doi:10.1371/journal.pone.0009490\n","link":"http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2835736/"}],"namespace":"SpeciesTreeBuilder"},{"id":"kb_uploadmethods/import_tsv_as_expression_matrix_from_staging","module_name":"kb_uploadmethods","git_commit_hash":"2135cd43a1b8b9c15d334c0b02f655c5e25264a2","name":"Import
+        for Large Alignments. PLoS One. 2010;5. doi:10.1371/journal.pone.0009490\n","link":"http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2835736/"}],"namespace":"SpeciesTreeBuilder"},{"id":"sample_uploader/import_samples","module_name":"sample_uploader","git_commit_hash":"cb079adedc5a304391ada8e9bc3c90ce9c31288c","name":"Import
+        Samples","ver":"1.1.1","authors":["slebras"],"contact":"help@kbase.us","subtitle":"import
+        some samples","tooltip":"import some samples","description":"<p>Uploader for
+        Samples into KBase. Produces a SampleSet object.</p>\n<p>For more information
+        on file template formats, look at the <a href=\"https://docs.kbase.us/workflows/samples-and-samplesets/sesar-samples\">documentation.</a></p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=sample_uploader/import_samples&image_name=sample_uploader.png&tag=release"},"categories":["active","upload"],"screenshots":[],"publications":[],"namespace":"sample_uploader"},{"id":"kb_uploadmethods/import_tsv_as_expression_matrix_from_staging","module_name":"kb_uploadmethods","git_commit_hash":"2135cd43a1b8b9c15d334c0b02f655c5e25264a2","name":"Import
         TSV File as Expression Matrix From Staging Area","ver":"1.0.56","authors":["tgu2"],"contact":"http://kbase.us/contact-us/","subtitle":"Import
         a TSV file from your staging area into your Narrative as an Expression Matrix","tooltip":"Import
         a TSV (tab-separated values) file from your staging area into your Narrative
@@ -34623,73 +34714,7 @@ interactions:
         sample.\nBe sure to exclude gene features for which all expressions are missing
         or are the same for all the conditions/samples.  See the\n<a href=\"http://kbase.us/data-upload-download-guide/\"
         target=\"_blank\">Data Upload and Download Guide</a> for more information
-        about formatting your expression data file.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_uploadmethods/import_tsv_as_expression_matrix_from_staging&image_name=data-yellow.png&tag=release"},"categories":["inactive","assembly","upload"],"screenshots":[],"publications":[],"namespace":"kb_uploadmethods"},{"id":"FeatureSetUtils/build_feature_set","module_name":"FeatureSetUtils","git_commit_hash":"c5b615ea30a4b3cdb0fdc7ac1485607638f624b8","name":"Build
-        FeatureSet from Genome","ver":"1.2.6","authors":["jjeffryes"],"contact":"help@kbase.us","subtitle":"Create
-        a new FeatureSet by selecting features from a Genome.","tooltip":"Create a
-        new FeatureSet by selecting features from a Genome.","description":"<p>FeatureSets
-        are useful for grouping a set of proteinencoding gene features and performing
-        some operation on that set of features. For instance, instead of specifying
-        all the features in a list for each App, you can use this App to build a single
-        FeatureSet and then use this as input for other Apps. There are quite a few
-        Apps that accept a FeatureSet as input, including types of BLAST, MUSCLE,
-        and expression analysis. FeatureSets are also shareable, so it allows you
-        to call out or comment on specific features in your Narrative.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":["KButil_Build_GenomeSet_from_FeatureSet","functional_enrichment_go_term","KButil_Logical_Slice_Two_FeatureSets","KButil_Logical_Slice_Two_FeatureSets","KButil_Merge_FeatureSet_Collection","MUSCLE_nuc","MUSCLE_prot","KButil_Slice_FeatureSets_by_Genomes","view_fxn_profile_featureSet","filter_matrix_by_feature_set","functional_enrichment_go_term","view_expression_heatmap","view_expression_profile","view_expression_pairwise_correlation","BLASTn_Search","BLASTp_Search","BLASTx_Search","HMMER_MSA_Search","psiBLAST_msa_start_Search","tBLASTx_Search"],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=FeatureSetUtils/build_feature_set&image_name=kb-orange.png&tag=release"},"categories":["active","comparative_genomics","util"],"screenshots":[],"publications":[{"display_text":"Arkin
-        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
-        The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"FeatureSetUtils"},{"id":"kb_SetUtilities/KButil_Build_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Build
-        GenomeSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
-        users to create a GenomeSet object.","tooltip":"Allows users to create a GenomeSet
-        object.","description":"<p><b>Build Genome Set</b> allows a user to create
-        a set of Genomes (each consisting of functional and structural annotations
-        for a corresponding assembly). The GenomeSet can be used in subsequent Apps
-        that operate on GenomeSets, thus allowing for bulk operations on Genome objects.
-        Genome objects must already be within the Narrative''s data workspace, so
-        if there are genomes from other Narratives or public reference genomes that
-        the user wishes to include, they must first be imported into the active Narrative.
-        Simply click the <b> + </b> plus icon to add a genome object to the set. Once
-        the plus icon is hit, a dropdown list will appear that is populated with all
-        the genome objects in this Narrative.</p>\n\n<p><hr></p>\n<p><strong>Team
-        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
-        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
-        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
-        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
-        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["RAST_SDK.reannotate_microbial_genomes","ProkkaAnnotation.annotate","kb_Msuite.run_checkm_lineage_wf","kb_phylogenomics.run_DomainAnnotation_Sets","PangenomeOrthomcl.build_pangenome_with_orthomcl","SpeciesTreeBuilder.insert_genomeset_into_species_tree"]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Build_GenomeSet&image_name=kb-purple.png&tag=release"},"categories":["active","util","comparative_genomics"],"screenshots":[{"url":"img?method_id=kb_SetUtilities/KButil_Build_GenomeSet&image_name=Build_GenomeSet.png&tag=release"}],"publications":[{"pmid":"36376589","display_text":"Chivian
-        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
-        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
-        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
-        The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Add
-        Genomes to GenomeSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support","subtitle":"Allows
-        user to add a Genome to a GenomeSet","tooltip":"Allows user to add a Genome
-        to a GenomeSet","description":"<p><b>Add Genomes to GenomeSet</b> allows a
-        user to expand the membership of a set of genomes (each of which is a set
-        of DNA contigs including structural and functional annotations). The GenomeSet
-        object can be used in subsequent Apps allowing for bulk operations on Genome
-        objects. The Genomes and GenomeSet must already be within the Narrative''s
-        data workspace, so if there are genomes from other Narratives or public reference
-        genomes that the user wishes to include, they must first be imported into
-        the active Narrative. Simply click the <b> + </b> plus icon to add a Genome
-        object to the set. Once the plus icon is selected, a dropdown list will appear
-        that is populated with all the Genome objects in the narrative.  Additionally,
-        you may add the genomes present in GenomeSets and Species Trees here.</p>\n\n<p><hr></p>\n<p><strong>Team
-        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
-        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
-        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
-        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
-        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":["RAST_SDK.reannotate_microbial_genomes","ProkkaAnnotation.annotate","kb_phylogenomics.run_DomainAnnotation_Sets","PangenomeOrthomcl.build_pangenome_with_orthomcl","SpeciesTreeBuilder.insert_genomeset_into_species_tree"]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet&image_name=kb-purple.png&tag=release"},"categories":["active","util","comparative_genomics"],"screenshots":[{"url":"img?method_id=kb_SetUtilities/KButil_Add_Genomes_to_GenomeSet&image_name=Add_Genomes_to_GenomeSet.png&tag=release"}],"publications":[{"pmid":"36376589","display_text":"Chivian
-        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
-        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
-        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
-        The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"kb_SetUtilities/KButil_Batch_Create_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Batch
+        about formatting your expression data file.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_uploadmethods/import_tsv_as_expression_matrix_from_staging&image_name=data-yellow.png&tag=release"},"categories":["inactive","assembly","upload"],"screenshots":[],"publications":[],"namespace":"kb_uploadmethods"},{"id":"kb_SetUtilities/KButil_Batch_Create_GenomeSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Batch
         Create Genome Set - v1.2.0","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
         user to create a GenomeSet without specifying names","tooltip":"Allows user
         to create a GenomeSet without specifying names","description":"<p>This App
@@ -34717,36 +34742,13 @@ interactions:
         from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
         AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
         The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"kb_SetUtilities/KButil_Batch_Create_AssemblySet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Batch
-        Create Assembly Set - v1.2.0","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
-        user to create an AssemblySet without specifying names","tooltip":"Allows
-        user to create an AssemblySet without specifying names","description":"<p>This
-        App allows the user to group individual <b><i>Assembly</i></b> objects into
-        an <b><i>Assembly Set</i></b>.</p>\n<p>\n<h3>Description</h3>\n<b>Batch Create
-        Assembly Set</b> allows a user to create a Set of Assemblies (each one of
-        which is a group of contigs or scaffold genome fragments) which can be used
-        in subsequent Apps that operate on Assembly Sets.  Each Assembly object must
-        already be within the Narrative''s data workspace, so if there are assemblies
-        from other Narratives or assemblies from public reference genomes that the
-        user wishes to include, they must first be imported into the active Narrative.  All
-        Assemblies that match the <i>Name Pattern</i> will be included in the Set.  If
-        the <i>Name Pattern</i> is left blank, all assembly objects in the current
-        Narrative will be included.\n</p>\n<p>Example allowed <i>Name Patterns</i>:<br>\n<ul>\n<li>
-        <b>*.Assembly</b>\n<li> <b>Sample_1-*</b>\n<li> <b>Sample_1-*.Assembly</b>\n</ul>\n</p>\n\n<p><hr></p>\n<p><strong>Team
-        members who developed &amp; deployed App in KBase:</strong> <a href=\"https://narrative.kbase.us/#people/dylan\">Dylan
-        Chivian</a>. For questions, please <a href= http://www.kbase.us/support/ >contact
-        us</a>.</p>\n\n<p><strong>Please cite:</strong>\n  <ul>\n    <li>Chivian D,
-        Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM, Gu
-        T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n  </ul>\n</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=kb_SetUtilities/KButil_Batch_Create_AssemblySet&image_name=kb-blue.png&tag=release"},"categories":["active","util","assembly","annotation"],"screenshots":[],"publications":[{"pmid":"36376589","display_text":"Chivian
-        D, Jungbluth SP, Dehal PS, Wood-Charlson EM, Canon RS, Allen BH, Clark MM,
-        Gu T, Land ML, Price GA, Riehl WJ, Sneddon MW, Sutormin R, Zhang Q, Cottingham
-        RW, Henry CS, Arkin AP. Metagenome-assembled genome extraction and analysis
-        from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
-        AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
-        The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"}]]}'
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"GenericsAPI/import_amplicon","module_name":"GenericsAPI","git_commit_hash":"2d68b13be4bf7278817cbfef949777a03ea1bda7","name":"Import
+        Amplicon Matrix from TSV/FASTA File in Staging Area","ver":"1.0.29","authors":["jjeffryes","tgu2"],"contact":"http://kbase.us/contact-us/","subtitle":"Import
+        a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix","tooltip":"Import
+        a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix","description":"<p>
+        Import a TSV/FASTA file from your staging area into your Narrative as an AmpliconMatrix
+        data object.\nPlease see the <a href=\"http://kbase.us/data-upload-download-guide/\">Data
+        Upload/Download Guide</a> for more information. </p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"icon":{"url":"img?method_id=GenericsAPI/import_amplicon&image_name=upload.png&tag=release"},"categories":["upload"],"screenshots":[],"publications":[],"namespace":"GenericsAPI"}]]}'
     headers:
       Access-Control-Allow-Headers:
       - authorization
@@ -34755,7 +34757,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825a92c3a1688-SJC
+      - 89cf64ad8f8a5c1c-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34763,12 +34765,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:29 GMT
+      - Tue, 02 Jul 2024 14:40:50 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=jKbkFtlpuwz_b7yW.NPbx7kYU04_KqmDauRGrn..ijU-1719855269-1.0.1.1-AWia2DGCXtS3Pj_R.cTy0XNvygwvFZaZy8Md7IFno5BKK4q56NSqlN1KJiyj2N_bNOI8hpWl_AqFRJH756Brqw;
-        path=/; expires=Mon, 01-Jul-24 18:04:29 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=j1CM8PIfgxMz9PFQUy8vGWyyYuaWWrGUblY_KnZaTD0-1719931250-1.0.1.1-wroDCKf7G9XekmlmxWrXLyxeWqjHwnkrsXiXbcuVUHGj.ql_VxiX.ZpIe_aGkboOgWJK0pxqQkrhh4tBN58IQg;
+        path=/; expires=Tue, 02-Jul-24 15:10:50 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34781,9 +34783,9 @@ interactions:
       message: OK
 - request:
     body: '{"method": "NarrativeMethodStore.get_method_full_info", "params": [{"ids":
-      ["kb_SetUtilities/KButil_Build_ReadsSet", "NarrativeTest/report_example", "eapearsonUiTestModule/medium_report",
-      "eapearsonUiTestModule/large_report", "Templatomatic/run_Templatomatic", "NarrativeTest/report_html_links"],
-      "tag": "dev"}], "version": "1.1", "id": "3533922992871039"}'
+      ["eapearsonUiTestModule/medium_report", "NarrativeTest/report_example", "kb_SetUtilities/KButil_Build_ReadsSet",
+      "Templatomatic/run_Templatomatic", "NarrativeTest/report_html_links", "eapearsonUiTestModule/large_report"],
+      "tag": "dev"}], "version": "1.1", "id": "18145899840939472"}'
     headers:
       Accept:
       - '*/*'
@@ -34792,14 +34794,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '356'
+      - '357'
       User-Agent:
       - python-requests/2.31.0
     method: POST
     uri: https://ci.kbase.us/services/narrative_method_store/rpc
   response:
     body:
-      string: '{"version":"1.1","result":[[{"id":"kb_SetUtilities/KButil_Build_ReadsSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Build
+      string: '{"version":"1.1","result":[[{"id":"eapearsonUiTestModule/medium_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Medium
+        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","description":"This method will pause for a given number of seconds
+        before returning.\n\nThe purpose of this function is to provide a somewhat
+        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"NarrativeTest/report_example","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"Example
+        HTML Report","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
+        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"},{"id":"kb_SetUtilities/KButil_Build_ReadsSet","module_name":"kb_SetUtilities","git_commit_hash":"79b273010c6c30b9343e03b64b7d7502ded704ce","name":"Build
         ReadsSet - v1.7.6","ver":"1.9.0","authors":["dylan"],"contact":"http://www.kbase.us/support/","subtitle":"Allows
         users to create a ReadsSet object.","tooltip":"Allows users to create a ReadsSet
         object.","description":"<p><b>Build Reads Set</b> allows a user to create
@@ -34840,20 +34850,7 @@ interactions:
         from microbiomes using KBase. Nat Protoc. 2023 Jan;18(1):208-238. doi: 10.1038/s41596-022-00747-x\n","link":"https://www.nature.com/articles/s41596-022-00747-x"},{"display_text":"Arkin
         AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase:
         The United States Department of Energy Systems Biology Knowledgebase. Nature
-        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"NarrativeTest/report_example","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"Example
-        HTML Report","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
-        an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
-        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"},{"id":"eapearsonUiTestModule/medium_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Medium
-        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
-        testing with variable run times","tooltip":"Allows testing with variable run
-        times","description":"This method will pause for a given number of seconds
-        before returning.\n\nThe purpose of this function is to provide a somewhat
-        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"eapearsonUiTestModule/large_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Large
-        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
-        testing with variable run times","tooltip":"Allows testing with variable run
-        times","description":"This method will pause for a given number of seconds
-        before returning.\n\nThe purpose of this function is to provide a somewhat
-        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"Templatomatic/run_Templatomatic","module_name":"Templatomatic","git_commit_hash":"5c24a264a9cfd6b0a1ef3bd3c3bd64cd6ba690df","name":"Run
+        Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163\n","link":"https://www.nature.com/articles/nbt.4163"}],"namespace":"kb_SetUtilities"},{"id":"Templatomatic/run_Templatomatic","module_name":"Templatomatic","git_commit_hash":"5c24a264a9cfd6b0a1ef3bd3c3bd64cd6ba690df","name":"Run
         Templatomatic","ver":"0.0.1","authors":["ialarmedalien"],"contact":"","subtitle":"Run
         Templatomatic and generate an extended report with templates!","tooltip":"Run
         Templatomatic and generate an extended report with templates!","description":"<p>Templatomatic
@@ -34865,7 +34862,12 @@ interactions:
         from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\"> www.flaticon.com</a>.</p>","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":["KBaseReport"],"next_apps":["KBaseReport"]},"icon":{"url":"img?method_id=Templatomatic/run_Templatomatic&image_name=icon.png&tag=dev"},"categories":["active"],"screenshots":[{"url":"img?method_id=Templatomatic/run_Templatomatic&image_name=Templatomatic.png&tag=dev"}],"publications":[],"namespace":"Templatomatic"},{"id":"NarrativeTest/report_html_links","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"HTML
         Report with links","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
         an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
-        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"}]]}'
+        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"},{"id":"eapearsonUiTestModule/large_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Large
+        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","description":"This method will pause for a given number of seconds
+        before returning.\n\nThe purpose of this function is to provide a somewhat
+        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"}]]}'
     headers:
       Access-Control-Allow-Headers:
       - authorization
@@ -34874,7 +34876,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825aa89a61576-SJC
+      - 89cf64ae88549876-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34882,12 +34884,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:29 GMT
+      - Tue, 02 Jul 2024 14:40:50 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=nHLXEaOZlCBLRoCVlQbGFnFC.F6AKcosEDc8xb0_Cho-1719855269-1.0.1.1-KrkhcBXaOhkVOB0jITfyisx0Fsfp7VIWS7xzPWtYm5BJaxFmzKoAZXD4MOvhVALCVOMCysfh0cOOtEkySCQY3w;
-        path=/; expires=Mon, 01-Jul-24 18:04:29 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=SLbgJVPXYc_2bbq0js.mBvP1_SqjFmztfVbKOjtuqaA-1719931250-1.0.1.1-WdvPDSzW64aDUe6JORryyukE8dYeC88j87w1RLiZ12zqfRDSiI8rj.2PY._LMPLJpXtBvlMkWQuMnpNAxUM2lQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:50 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34900,7 +34902,7 @@ interactions:
       message: OK
 - request:
     body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 67395}], "version":
-      "1.1", "id": "5021866813982975"}'
+      "1.1", "id": "899754832179122"}'
     headers:
       Accept:
       - '*/*'
@@ -34909,7 +34911,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '113'
+      - '112'
       User-Agent:
       - python-requests/2.31.0
     method: POST
@@ -34926,7 +34928,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825ab8fe4987f-SJC
+      - 89cf64af5c472519-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34934,12 +34936,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:29 GMT
+      - Tue, 02 Jul 2024 14:40:51 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=pz0PN4R.r6Wk48Hd8v4qxxV219k7mf3C5ATeBL6PIDI-1719855269-1.0.1.1-aT14Vx78X6dUWEd1WSfZEjGNJv5rcf4iqwQPMPI9K62S14iw.oH5wQpCmaQGGzb84ujzVQ4M6CmZ9ouV2KZyiA;
-        path=/; expires=Mon, 01-Jul-24 18:04:29 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=36lgra1T7ZLgq1CxqOhFFKAYQoqpddtdH2Aj9mvxsTM-1719931251-1.0.1.1-kW94zEHhLLRJMyUNlwYIViMx7trjetUAZVskPc1rhSleC0mzAM6bU7qoHMo9qTJou5T.VKoNt927O6TPPx5H2w;
+        path=/; expires=Tue, 02-Jul-24 15:10:51 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
@@ -34952,7 +34954,7 @@ interactions:
       message: ''
 - request:
     body: '{"method": "Workspace.get_permissions", "params": [{"id": 67395}], "version":
-      "1.1", "id": "28250687032210087"}'
+      "1.1", "id": "32469699316449085"}'
     headers:
       Accept:
       - '*/*'
@@ -34977,7 +34979,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 89c825aceca2fa9a-SJC
+      - 89cf64b0ab9597fa-SJC
       Connection:
       - keep-alive
       Content-Encoding:
@@ -34985,12 +34987,12 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 01 Jul 2024 17:34:29 GMT
+      - Tue, 02 Jul 2024 14:40:51 GMT
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=b0LdtNEQJGsfBbTPBZ8oO9lKPCsQkNFWMcdf_.pgyp8-1719855269-1.0.1.1-OCgXH5Lk8xrV3qcSJpWbynVDwVp6DFdXyyrkK5QGohOf6cF6HQQdkhGPpxKJJePRQNjyyRWfd.mXoJc9nECQXw;
-        path=/; expires=Mon, 01-Jul-24 18:04:29 GMT; domain=.kbase.us; HttpOnly; Secure;
+      - __cf_bm=wqnFxG8oLiFQgGM2DPcoaD1yEv52l0LDPNvWDws2A2I-1719931251-1.0.1.1-hDFQJixciyBqwBismvpLELz0ma3QmwvZnx.K0kdyN04TsSEfcqvEoSPthSPgoYvTWQQGWewvebGmgr0Ocd2EZg;
+        path=/; expires=Tue, 02-Jul-24 15:10:51 GMT; domain=.kbase.us; HttpOnly; Secure;
         SameSite=None
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains

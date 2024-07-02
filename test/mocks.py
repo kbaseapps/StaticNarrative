@@ -3,10 +3,11 @@
 import json
 import os
 from copy import deepcopy
-from test import TEST_BASE_DIR
 from typing import Any
 
 import requests
+
+from test import TEST_BASE_DIR
 
 
 def _mock_adapter(
@@ -37,7 +38,7 @@ def _mock_adapter(
     """
     workspace_meta = {}
 
-    def mock_adapter(request):
+    def mock_adapter(request: requests.Request) -> requests.Response:
         response = requests.Response()
         response.status_code = 200
         rq_method = request.method.upper()

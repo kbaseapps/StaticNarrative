@@ -52,7 +52,7 @@ def test_init_fail(
     params[args["bad_id"]] = bad_id
 
     with pytest.raises(ValueError, match=args["error"]):
-        NarrativeRef(params)
+        NarrativeRef(params)  # type: ignore[arg-type]
 
 
 errors = {

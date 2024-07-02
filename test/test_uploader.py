@@ -14,12 +14,14 @@ REF = NarrativeRef.parse("1/2/3")
 
 
 def test_upload_no_directory() -> None:
+    """Test that an error is raised if the directory that the SN files are in does not exist."""
     fake_path = "not/a/real/path"
     with pytest.raises(IOError, match=f"Static Narrative directory {fake_path} does not exist"):
         upload_static_narrative(REF, fake_path, "/some/path")
 
 
 def test_upload_no_narrative_file(tmpdir: LocalPath) -> None:
+    """Test that an error is raised if the narrative HTML file does not exist."""
     path = Path(tmpdir) / OUTPUT_HTML_FILE
     with pytest.raises(
         IOError, match=f"Static Narrative file doesn't seem to exist at path {path}"
@@ -28,6 +30,7 @@ def test_upload_no_narrative_file(tmpdir: LocalPath) -> None:
 
 
 def test_upload_no_data_json_file(tmpdir: LocalPath) -> None:
+    """Test that an error is raised if the data.json file does not exist."""
     narr_file = Path(tmpdir) / OUTPUT_HTML_FILE
     with open(narr_file, "w") as fout:
         fout.write("test")
@@ -40,6 +43,7 @@ def test_upload_no_data_json_file(tmpdir: LocalPath) -> None:
 
 
 def test_upload_need_to_make_path(tmpdir: LocalPath) -> None:
+    """Test that a new directory is created if the output directory does not exist."""
     narr_file = Path(tmpdir) / OUTPUT_HTML_FILE
     data_file = Path(tmpdir) / OUTPUT_DATA_FILE
 

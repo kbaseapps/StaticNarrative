@@ -1,10 +1,11 @@
 """Tests for the Static Narrative server module."""
 
-from test.mocks import set_up_ok_mocks
 from typing import Any
 
 import pytest
 from StaticNarrative.StaticNarrativeImpl import StaticNarrative
+
+from test.mocks import set_up_ok_mocks
 
 USER_ID = "some_user"
 

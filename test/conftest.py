@@ -63,7 +63,19 @@ def token() -> str:
 
 
 @pytest.fixture(scope="session")
-def workspace_client(config: dict[str, Any], token: str) -> Workspace:
+def fake_user() -> str:
+    """A placeholder user."""
+    return "some_user"
+
+
+@pytest.fixture(scope="session")
+def fake_token() -> str:
+    """A placeholder token."""
+    return "some_token_string"
+
+
+@pytest.fixture(scope="session")
+def ws_client(config: dict[str, Any], token: str) -> Workspace:
     """Workspace client."""
     return Workspace(config["workspace-url"], token=token)
 

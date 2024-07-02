@@ -12,12 +12,6 @@ from StaticNarrative.exporter.processor_util import (
 )
 
 
-@pytest.fixture(scope="module")
-def ws() -> Workspace:
-    """Workspace object."""
-    return Workspace("http://example.com")
-
-
 def test_report_with_none_direct_link_index_and_truthy_html_links() -> None:
     """Test for error reported in Jira ticket PUBLIC-1411.
 
@@ -74,16 +68,14 @@ def test_report_with_none_direct_link_index_and_truthy_html_links() -> None:
         {"this": "that", "the": "other"},
     ],
 )
-def test_build_report_invalid_input(ws: Workspace, report_input) -> None:
+def test_build_report_invalid_input(ws_client: Workspace, report_input) -> None:
     """Ensure that invalid input to build_report... returns an empty dict."""
-    assert build_report_view_data(ws, {}, "string", report_input) == {}
+    assert build_report_view_data(ws_client, {}, "string", report_input) == {}
 
 
 @pytest.mark.parametrize("report_ref", ["123/4/5", "67395/1066/1", "67395/2066/1"])
 @pytest.mark.vcr()
-def test_build_report_view_data_fail_no_report(
-    workspace_client: Workspace, report_ref: str
-) -> None:
+def test_build_report_view_data_fail_no_report(ws_client: Workspace, report_ref: str) -> None:
     """Test for the case where a workspace report does not exist.
 
     123/4/5: workspace deleted
@@ -92,7 +84,7 @@ def test_build_report_view_data_fail_no_report(
     """
     assert (
         build_report_view_data(
-            workspace_client, {}, "string", {"report_name": "my_report", "report_ref": report_ref}
+            ws_client, {}, "string", {"report_name": "my_report", "report_ref": report_ref}
         )
         == {}
     )
@@ -100,12 +92,12 @@ def test_build_report_view_data_fail_no_report(
 
 @pytest.mark.parametrize("report", [{}, {"objects_created": []}])
 def test_get_created_objects_from_report_no_objects(
-    ws: Workspace, report: dict[str, list[Any]]
+    ws_client: Workspace, report: dict[str, list[Any]]
 ) -> None:
     """Test that an empty list is returned if there are no objects created."""
     assert (
         get_created_objects_from_report(
-            ws,
+            ws_client,
             {},
             "some_host",
             report,
@@ -183,14 +175,12 @@ INDEXED_DATA = {
     ],
 )
 @pytest.mark.vcr()
-def test_get_created_objects_from_report(
-    workspace_client: Workspace, params: dict[str, Any]
-) -> None:
+def test_get_created_objects_from_report(ws_client: Workspace, params: dict[str, Any]) -> None:
     """Test retrieval of created objects from a report."""
     host = "https://example.com"
     indexed_data = deepcopy(params)
     output = get_created_objects_from_report(
-        workspace_client,
+        ws_client,
         indexed_data,
         host,
         {

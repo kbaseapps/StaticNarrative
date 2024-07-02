@@ -13,9 +13,6 @@ from StaticNarrative.narrative_ref import NarrativeRef
 
 from test.mocks import set_up_ok_mocks
 
-USER_ID = "some_user"
-TOKEN = "some_token"  # noqa: S105
-
 
 def check_files_identical(file1_path: str | Path, file2_path: str | Path) -> None:
     """Check whether two files are identical.
@@ -58,11 +55,11 @@ WORKSPACE_IDS = [
 )
 @pytest.mark.vcr()
 def test_narrative_exporter_set_api_vs_gsn(
-    config: dict[str, str], token: str, ws_id: str, tmpdir: Path
+    config: dict[str, str], fake_user: str, token: str, ws_id: str, tmpdir: Path
 ) -> None:
     """Ensure that the narrative exporter exports the appropriate narrative."""
     narr_ref = NarrativeRef.parse(ws_id)
-    narrative_exporter = NarrativeExporter(config, USER_ID, token)
+    narrative_exporter = NarrativeExporter(config, fake_user, token)
     original_function = narrative_exporter._build_exporter  # noqa: SLF001
 
     set_api_dir = tmpdir / "set_api"
@@ -93,7 +90,13 @@ def test_narrative_exporter_set_api_vs_gsn(
             )
 
 
-def test_exporter_ok(config: dict[str, str], scratch_dir: str, requests_mock) -> None:
+def test_exporter_ok(
+    config: dict[str, str], fake_user: str, fake_token: str, scratch_dir: str, requests_mock
+) -> None:
+    """Test that the Narrative Exporter works correctly.
+
+    Workspace functionality is mocked out.
+    """
     ws_id = 43666
     ref_to_file = {
         "43666/1/21": "data/43666/narrative-43666.1.21.json",
@@ -105,7 +108,7 @@ def test_exporter_ok(config: dict[str, str], scratch_dir: str, requests_mock) ->
     ws_info = [
         ws_id,
         "some_narrative",
-        USER_ID,
+        fake_user,
         "2019-08-26T17:33:56+0000",
         7,
         "a",
@@ -119,7 +122,7 @@ def test_exporter_ok(config: dict[str, str], scratch_dir: str, requests_mock) ->
             "narrative": "1",
         },
     ]
-    user_map = {USER_ID: "Some User"}
+    user_map = {fake_user: "Some User"}
 
     set_up_ok_mocks(
         requests_mock,
@@ -130,7 +133,7 @@ def test_exporter_ok(config: dict[str, str], scratch_dir: str, requests_mock) ->
         ws_obj_info_file="data/43666/objects-43666.json",
     )
 
-    exporter = NarrativeExporter(config, USER_ID, TOKEN)
+    exporter = NarrativeExporter(config, fake_user, fake_token)
     assert isinstance(exporter.set_api_client, DynamicServiceClient)
     static_path = exporter.export_narrative(
         NarrativeRef({"wsid": ws_id, "objid": 1, "ver": 21}), scratch_dir
