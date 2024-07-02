@@ -6,7 +6,7 @@ import os
 from typing import Any
 from urllib.parse import quote
 
-from installed_clients.authclient import KBaseAuth
+import requests
 from installed_clients.WorkspaceClient import Workspace
 from traitlets.config import Config
 
@@ -251,20 +251,35 @@ def get_data_icon(obj_type: str) -> dict[str, str]:
     return icon_info
 
 
-def get_authors(ws_client: Workspace, config: Config, wsid: str) -> list[dict[str, str]]:
+def get_display_names(auth_url: str, token: str, user_ids: list[str]) -> dict[str, Any]:
+    """Given a list of user IDs, get the corresponding display names."""
+    headers = {"Authorization": token}
+    r = requests.get(
+        f"{auth_url}/api/V2/users/?list=" + ",".join(user_ids),
+        headers=headers,
+        timeout=30 * 60,  # same as baseclient default
+    )
+    r.raise_for_status()
+    return r.json()
+
+
+def get_authors(ws_client: Workspace, config: Config, wsid: str | int) -> list[dict[str, str]]:
+    """Retrieve the list of people with workspace admin and write permissions."""
     ws_info = ws_client.get_workspace_info({"id": wsid})
-    author_id_list = [ws_info[2]]
+    ws_author = ws_info[2]
 
-    other_authors = ws_client.get_permissions({"id": wsid})
+    other_authors = ws_client.get_permissions({"id": wsid}) or []
 
-    for author in sorted(other_authors.keys()):
-        if author != "*" and other_authors[author] in ["w", "a"] and author not in author_id_list:
-            author_id_list.append(author)
+    author_id_set = {
+        author
+        for author in other_authors
+        if other_authors[author] in ["w", "a"] and author != "*" and author != ws_author
+    }
 
-    auth = KBaseAuth(config.auth_url)
+    author_id_list = [ws_author, *sorted(author_id_set)]
     disp_names = {}
     try:
-        disp_names = auth.get_display_names(config.token, author_id_list)
+        disp_names = get_display_names(config.auth_url, config.token, author_id_list)
     except Exception as e:
         print(str(e))
 

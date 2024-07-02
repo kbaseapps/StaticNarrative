@@ -153,6 +153,7 @@ class NarrativeExporter:
         c.narrative_session.host = host
         c.narrative_session.indexed_data = exported_data["indexed_data"]
         c.narrative_session.data_types = exported_data["types"]
+        c.narrative_session.narrative_ref = narrative_ref
         c.narrative_session.nms_image_url = self.config["nms-image-url"]
         c.narrative_session.nms_url = self.config["nms-url"]
         c.narrative_session.profile_page_path = host + self.config["profile-page-path"]
@@ -160,8 +161,6 @@ class NarrativeExporter:
         c.narrative_session.token = self.token
         c.narrative_session.user_id = self.user_id
         c.narrative_session.ws_client = self.ws_client
-        c.narrative_session.ws_id = narrative_ref.wsid
-        c.narrative_session.ws_url = self.config["workspace-url"]
 
         html_exporter = HTMLExporter(config=c)
         html_exporter.template_file = NARRATIVE_TEMPLATE_FILE

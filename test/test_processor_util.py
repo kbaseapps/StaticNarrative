@@ -8,8 +8,12 @@ import pytest
 from installed_clients.WorkspaceClient import Workspace
 from StaticNarrative.exporter.processor_util import (
     build_report_view_data,
+    get_authors,
     get_created_objects_from_report,
 )
+from traitlets.config import Config
+
+from test.mocks import set_up_ok_mocks
 
 
 def test_report_with_none_direct_link_index_and_truthy_html_links() -> None:
@@ -218,3 +222,77 @@ def test_get_created_objects_from_report(ws_client: Workspace, params: dict[str,
         },
     ]
     assert indexed_data == INDEXED_DATA
+
+
+USERS = ["owner", "user_1", "user_2", "user_3"]
+NAMES = ["The Wizard of Oz", "<insert name here>", "Me; Myself; & I", "Occam's Razor"]
+HTML_NAMES = [
+    "The Wizard of Oz",
+    "&lt;insert name here&gt;",
+    "Me; Myself; &amp; I",
+    "Occam's Razor",
+]
+
+DISPLAY_NAMES = dict(zip(USERS, NAMES, strict=True))
+
+AUTH_SERVER_OK = [
+    {"id": USERS[ix], "name": HTML_NAMES[ix], "path": f"profile_page_path/{item}"}
+    for ix, item in enumerate(USERS)
+]
+
+NO_AUTH_SERVER = [{"id": item, "name": item, "path": f"profile_page_path/{item}"} for item in USERS]
+
+
+@pytest.mark.parametrize("auth_server_available", [True, False])
+@pytest.mark.parametrize("wsid", [54321, 54322, 54333, 54444])
+def test_get_authors_auth_server_available(
+    ws_client: Workspace,
+    fake_token: str,
+    config: dict[str, Any],
+    wsid: int,
+    requests_mock,
+    auth_server_available: bool,
+) -> None:
+    """Check the output of the get_authors command with a range of inputs and with or without the auth server response."""
+    workspace_get_permissions = {
+        54321: {},
+        54322: {
+            USERS[0]: "a",
+            "*": "r",
+        },
+        54333: {
+            USERS[0]: "a",
+            USERS[1]: "a",
+            "*": "r",
+        },
+        54444: {
+            USERS[0]: "a",
+            "*": "r",
+            USERS[1]: "a",
+            USERS[2]: "w",
+            USERS[3]: "r",
+        },
+    }
+
+    set_up_ok_mocks(
+        requests_mock,
+        ws_info=[wsid, f"{USERS[0]}:narrative_12345", USERS[0]],
+        ws_perms=workspace_get_permissions,
+        user_map=DISPLAY_NAMES if auth_server_available else {},
+    )
+
+    conf = Config(
+        profile_page_path="profile_page_path/", token=fake_token, auth_url=config["auth_url"]
+    )
+
+    output = get_authors(ws_client, conf, wsid)
+    expected_output = NO_AUTH_SERVER
+    if auth_server_available:
+        expected_output = AUTH_SERVER_OK
+
+    if wsid in [54321, 54322]:
+        assert output == expected_output[:1]
+    elif wsid == 54333:
+        assert output == expected_output[:2]
+    elif wsid == 54444:
+        assert output == expected_output[:3]

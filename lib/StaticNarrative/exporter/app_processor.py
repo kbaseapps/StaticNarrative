@@ -89,7 +89,7 @@ class AppProcessor:
         self: "AppProcessor",
         value: None | int | str | list,
         param_spec: dict[str, Any],
-    ) -> list[Any] | str | int:
+    ) -> list[Any] | str | int | None:
         """Convert param values to forms that the SN can use.
 
         Overall flow.
