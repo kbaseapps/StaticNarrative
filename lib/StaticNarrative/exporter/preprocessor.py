@@ -35,10 +35,8 @@ class NarrativePreprocessor(Preprocessor):
             self.config.narrative_session.ws_url, token=self.config.narrative_session.token
         )
         self.app_processor = AppProcessor(
-            self.host,
             self.ws_client,
-            self.config.narrative_session.nms_url,
-            self.config.narrative_session.token,
+            self.config.narrative_session,
         )
 
     def preprocess(
@@ -47,8 +45,7 @@ class NarrativePreprocessor(Preprocessor):
         (nb, resources) = super().preprocess(nb, resources)
 
         app_meta = self._get_app_metadata(nb, self.config.narrative_session.nms_url)
-        narr_data = self.config.narrative_session.narrative_data
-        data_types = ", ".join(sorted(narr_data.get("types", {}).keys()))
+        data_types = ", ".join(sorted(self.config.narrative_session.data_types))
         ws_id = self.config.narrative_session.ws_id
 
         # Get some more stuff to show in the page into resources
@@ -60,7 +57,11 @@ class NarrativePreprocessor(Preprocessor):
                 "host": self.host,
                 "creator": nb["metadata"]["creator"],
                 "narrative_link": f"{self.host}/narrative/{ws_id}",
-                "authors": get_authors(self.config, nb["metadata"]["wsid"]),
+                "authors": get_authors(
+                    self.ws_client,
+                    self.config.narrative_session,
+                    nb["metadata"]["wsid"],
+                ),
                 "service_wizard_url": self.config.narrative_session.service_wizard_url,
                 "script_bundle_url": self.assets_base_url
                 + "/js/"

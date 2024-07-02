@@ -1,31 +1,33 @@
 """Tests for the config package."""
 
-from unittest.mock import patch
+from collections.abc import Generator
+from typing import Any
+from unittest.mock import MagicMock, patch
 
 import pytest
 from StaticNarrative.config import generate_config
 
 
 @pytest.fixture()
-def mock_os_path_isabs():
+def mock_os_path_isabs() -> Generator[MagicMock, Any, None]:
     with patch("os.path.isabs") as mock_isabs:
         yield mock_isabs
 
 
 @pytest.fixture()
-def mock_os_path_isdir():
+def mock_os_path_isdir() -> Generator[MagicMock, Any, None]:
     with patch("os.path.isdir") as mock_isdir:
         yield mock_isdir
 
 
 @pytest.fixture()
-def mock_os_access():
+def mock_os_access() -> Generator[MagicMock, Any, None]:
     with patch("os.access") as mock_access:
         yield mock_access
 
 
 @pytest.fixture()
-def mock_os_path_abspath():
+def mock_os_path_abspath() -> Generator[MagicMock, Any, None]:
     with patch("os.path.abspath") as mock_abspath:
         yield mock_abspath
 
@@ -36,7 +38,10 @@ def test_generate_config_fail_empty_config() -> None:
 
 
 def test_generate_config_with_valid_config(
-    mock_os_path_isabs, mock_os_path_isdir, mock_os_access, mock_os_path_abspath
+    mock_os_path_isabs: MagicMock,
+    mock_os_path_isdir: MagicMock,
+    mock_os_access: MagicMock,
+    mock_os_path_abspath: MagicMock,
 ) -> None:
     mock_os_path_isabs.side_effect = lambda x: x.startswith("/")
     mock_os_path_isdir.side_effect = lambda x: x.startswith("/")
@@ -107,8 +112,11 @@ def test_generate_config_fail_missing_dirs() -> None:
 
 
 def test_generate_config_with_relative_paths(
-    mock_os_path_isabs, mock_os_path_isdir, mock_os_access, mock_os_path_abspath
-):
+    mock_os_path_isabs: MagicMock,
+    mock_os_path_isdir: MagicMock,
+    mock_os_access: MagicMock,
+    mock_os_path_abspath: MagicMock,
+) -> None:
     """Check the absolutification of paths."""
     mock_os_path_isabs.side_effect = lambda x: False
     mock_os_path_isdir.side_effect = lambda x: True
@@ -127,8 +135,8 @@ def test_generate_config_with_relative_paths(
 
 
 def test_generate_config_fail_non_directory_static_file_root(
-    mock_os_path_isabs, mock_os_path_isdir
-):
+    mock_os_path_isabs: MagicMock, mock_os_path_isdir: MagicMock
+) -> None:
     """Check that an error is thrown if static-file-root is not a directory.
 
     Note that static-file-root is checked first.
@@ -146,8 +154,8 @@ def test_generate_config_fail_non_directory_static_file_root(
 
 
 def test_generate_config_fail_non_writable_scratch(
-    mock_os_path_isabs, mock_os_path_isdir, mock_os_access
-):
+    mock_os_path_isabs: MagicMock, mock_os_path_isdir: MagicMock, mock_os_access: MagicMock
+) -> None:
     """Check that an error is thrown if scratch is not writable."""
     mock_os_path_isabs.side_effect = lambda x: True
     mock_os_path_isdir.side_effect = lambda x: True

@@ -1,10 +1,11 @@
 """Tests for the Static Narrative server module."""
 
-from test.mocks import set_up_ok_mocks
 from typing import Any
 
 import pytest
 from StaticNarrative.StaticNarrativeImpl import StaticNarrative
+
+from test.mocks import set_up_ok_mocks
 
 USER_ID = "some_user"
 
@@ -96,6 +97,7 @@ def test_create_static_narrative_ok_unit(
                 report_ref = report_ref + "/1"
             ref_dots = report_ref.replace("/", ".")
             ref_to_file[report_ref] = f"data/{ws_id}/report-{ref_dots}.json"
+
     for narr_ref in narr_refs:
         ws_id = int(narr_ref.split("/")[0])
         ws_info = [

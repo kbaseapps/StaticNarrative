@@ -8,22 +8,19 @@ from urllib.parse import quote
 
 from installed_clients.authclient import KBaseAuth
 from installed_clients.WorkspaceClient import Workspace
+from traitlets.config import Config
 
 from StaticNarrative import STATIC_NARRATIVE_BASE_DIR
+from StaticNarrative.upa import generate_upa
 
 ICON_DATA = None
 
 
-def _load_icon_data() -> None:
-    # this should access the local folder
-    icon_json = os.path.join(STATIC_NARRATIVE_BASE_DIR, "data", "icons.json")
-    with open(icon_json) as icon_file:
-        global ICON_DATA
-        ICON_DATA = json.load(icon_file)
-
-
 def build_report_view_data(
-    host: str, ws_client: Workspace, result: dict[str, Any] | list[dict[str, Any]]
+    ws_client: Workspace,
+    indexed_data: dict[str, Any],
+    host: str,
+    result: dict[str, Any] | list[dict[str, Any]],
 ) -> dict[str, str | list | dict]:
     """Build the data structure used to represent a report in a static narrative.
 
@@ -66,45 +63,41 @@ def build_report_view_data(
     """
     if not result:
         return {}
-    if not isinstance(result, list):
-        result = [result]
+    if isinstance(result, list):
+        result = result[0]  # what about the rest of the list?!
     if (
-        not result[0]
-        or not isinstance(result[0], dict)
-        or not result[0].get("report_name")
-        or not result[0].get("report_ref")
+        not result
+        or not isinstance(result, dict)
+        or not result.get("report_name")
+        or not result.get("report_ref")
     ):
         return {}
-    report_ref = result[0]["report_ref"]
-    report = ws_client.get_objects2({"objects": [{"ref": report_ref}]})["data"][0]["data"]
-    """{'direct_html': None,
-     'direct_html_link_index': None,
-     'file_links': [],
-     'html_links': [],
-     'html_window_height': None,
-     'objects_created': [{'description': 'Annotated genome', 'ref': '43666/6/1'}],
-     'summary_window_height': None,
-     'text_message': 'Genome saved to: wjriehl:narrative_1564507007662/some_genome\nNumber of genes predicted: 3895\nNumber of protein coding genes: 3895\nNumber of genes with non-hypothetical function: 2411\nNumber of genes with EC-number: 1413\nNumber of genes with Seed Subsystem Ontology: 1081\nAverage protein length: 864 aa.\n',
-     'warnings': []}
-    """
-    created_objs = []
-    if report.get("objects_created"):
-        report_objs_created = report["objects_created"]
-        # make list to look up obj types with get_object_info3
-        info_lookup = [{"ref": o["ref"]} for o in report_objs_created]
-        infos = ws_client.get_object_info3({"objects": info_lookup, "ignoreErrors": 1})["infos"]
+    report_ref = result["report_ref"]
 
-        for idx, info in enumerate(infos):
-            if info:
-                created_objs.append(
-                    {
-                        "upa": report_objs_created[idx]["ref"],
-                        "description": report_objs_created[idx].get("description", ""),
-                        "name": info[1],
-                        "type": info[2].split("-")[0].split(".")[-1],
-                        "link": host + "/#dataview/" + report_objs_created[idx]["ref"],
-                    }
-                )
+    if report_ref in indexed_data:
+        report = indexed_data[report_ref]["data"]
+    else:
+        try:
+            report = ws_client.get_objects2({"objects": [{"ref": report_ref}]})["data"][0]["data"]
+        except Exception:
+            # can't retrieve report - e.g. if it has been deleted
+            return {}
+
+    """
+    {
+        'direct_html': None,
+        'direct_html_link_index': None,
+        'file_links': [],
+        'html_links': [],
+        'html_window_height': None,
+        'objects_created': [{'description': 'Annotated genome', 'ref': '43666/6/1'}],
+        'summary_window_height': None,
+        'text_message': 'Genome saved to: wjriehl:narrative_1564507007662/some_genome\nNumber of genes predicted: 3895\nNumber of protein coding genes: 3895\nNumber of genes with non-hypothetical function: 2411\nNumber of genes with EC-number: 1413\nNumber of genes with Seed Subsystem Ontology: 1081\nAverage protein length: 864 aa.\n',
+        'warnings': []
+    }
+    """
+    created_objs = get_created_objects_from_report(ws_client, indexed_data, host, report)
+
     html_height = report.get("html_window_height")
     if html_height is None:
         html_height = 500
@@ -119,9 +112,9 @@ def build_report_view_data(
         if idx is None or idx < 0 or idx >= len(report["html_links"]):
             idx = 0
         html["links"] = report["html_links"]
-        html["paths"] = []
-        for i, link in enumerate(html["links"]):
-            html["paths"].append(f'/api/v1/{report_ref}/$/{i}/{link["name"]}')
+        html["paths"] = [
+            f'/api/v1/{report_ref}/$/{i}/{link["name"]}' for i, link in enumerate(html["links"])
+        ]
         html["link_idx"] = idx
 
     if report.get("file_links"):
@@ -136,6 +129,7 @@ def build_report_view_data(
         html["iframe_style"] += f"; height: {html['height']}"
     else:
         html["iframe_style"] += "; height: auto"
+
     return {
         "objects": created_objs,
         "summary": report.get("text_message", ""),
@@ -144,7 +138,64 @@ def build_report_view_data(
     }
 
 
-def get_icon(config: dict[str, Any], metadata: dict[str, Any]) -> dict[str, str]:
+def get_created_objects_from_report(
+    ws_client: Workspace,
+    indexed_data: dict[str, Any],
+    host: str,
+    report: dict[str, Any],
+) -> list[dict[str, Any]]:
+    """Create a data structure to represent objects created by an app.
+
+    :param ws_client: workspace client
+    :type ws_client: Workspace
+    :param indexed_data: KBase objects, indexed by UPA
+    :type indexed_data: dict[str, Any]
+    :param host: string representing the KBase host for URL generation
+    :type host: str
+    :param report: report data structure
+    :type report: dict[str, Any]
+    :return: list of data structures for representing objects
+    :rtype: list[dict[str, Any]]
+    """
+    if not report.get("objects_created"):
+        return []
+
+    report_objs_created = report["objects_created"]
+    # make list to look up obj types with get_object_info3
+    info_lookup = [{"ref": o["ref"]} for o in report_objs_created if o["ref"] not in indexed_data]
+    if info_lookup:
+        result = ws_client.get_object_info3({"objects": info_lookup, "ignoreErrors": 1})
+        if result and "infos" in result:
+            for ix, obj in enumerate(result["infos"]):
+                if obj:
+                    upa = generate_upa(obj)
+                    indexed_data[upa] = {"object_info": obj}
+                else:
+                    indexed_data[info_lookup[ix]["ref"]] = None
+
+    return [
+        {
+            "upa": o["ref"],
+            "description": o.get("description", ""),
+            "name": indexed_data[o["ref"]]["object_info"][1] or "unknown",
+            "type": indexed_data[o["ref"]]["object_info"][2].split("-")[0].split(".")[-1]
+            or "unknown",
+            "link": host + "/#dataview/" + o["ref"],
+        }
+        for o in report_objs_created
+        if indexed_data[o["ref"]]
+    ]
+
+
+def _load_icon_data() -> None:
+    # this should access the local folder
+    icon_json = os.path.join(STATIC_NARRATIVE_BASE_DIR, "data", "icons.json")
+    with open(icon_json) as icon_file:
+        global ICON_DATA
+        ICON_DATA = json.load(icon_file)
+
+
+def get_icon(config: Config, metadata: dict[str, Any]) -> dict[str, str]:
     """Should return a dict with keys "type" and "icon".
 
     * if "type" = image, then "icon" second should be the src.
@@ -184,6 +235,7 @@ def get_icon(config: dict[str, Any], metadata: dict[str, Any]) -> dict[str, str]
 
 
 def get_data_icon(obj_type: str) -> dict[str, str]:
+    """Get the appropriate icon metadata for a specific object type."""
     if ICON_DATA is None:
         _load_icon_data()
 
@@ -199,8 +251,7 @@ def get_data_icon(obj_type: str) -> dict[str, str]:
     return icon_info
 
 
-def get_authors(config: dict[str, Any], wsid: str) -> list[dict[str, str]]:
-    ws_client = Workspace(url=config.narrative_session.ws_url, token=config.narrative_session.token)
+def get_authors(ws_client: Workspace, config: Config, wsid: str) -> list[dict[str, str]]:
     ws_info = ws_client.get_workspace_info({"id": wsid})
     author_id_list = [ws_info[2]]
 
@@ -210,10 +261,10 @@ def get_authors(config: dict[str, Any], wsid: str) -> list[dict[str, str]]:
         if author != "*" and other_authors[author] in ["w", "a"] and author not in author_id_list:
             author_id_list.append(author)
 
-    auth = KBaseAuth(config.narrative_session.auth_url)
+    auth = KBaseAuth(config.auth_url)
     disp_names = {}
     try:
-        disp_names = auth.get_display_names(config.narrative_session.token, author_id_list)
+        disp_names = auth.get_display_names(config.token, author_id_list)
     except Exception as e:
         print(str(e))
 
@@ -221,7 +272,7 @@ def get_authors(config: dict[str, Any], wsid: str) -> list[dict[str, str]]:
         {
             "id": author,
             "name": html.escape(disp_names.get(author, author)),
-            "path": config.narrative_session.profile_page_url + author,
+            "path": config.profile_page_path + author,
         }
         for author in author_id_list
     ]

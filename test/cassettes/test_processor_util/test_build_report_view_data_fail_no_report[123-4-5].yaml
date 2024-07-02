@@ -1,0 +1,93 @@
+interactions:
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "123/4/5"}]}],
+      "version": "1.1", "id": "31658190832048105"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '128'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","error":{"name":"JSONRPCError","code":-32500,"message":"Object
+        4 cannot be accessed: Workspace 123 is deleted","error":"us.kbase.workspace.database.exceptions.InaccessibleObjectException:
+        Object 4 cannot be accessed: Workspace 123 is deleted\n\tat us.kbase.workspace.database.PermissionsCheckerFactory$ObjectPermissionsChecker.check(PermissionsCheckerFactory.java:331)\n\tat
+        us.kbase.workspace.database.ObjectResolver.resolve(ObjectResolver.java:203)\n\tat
+        us.kbase.workspace.database.ObjectResolver.<init>(ObjectResolver.java:80)\n\tat
+        us.kbase.workspace.database.ObjectResolver.<init>(ObjectResolver.java:37)\n\tat
+        us.kbase.workspace.database.ObjectResolver$Builder.resolve(ObjectResolver.java:593)\n\tat
+        us.kbase.workspace.database.Workspace.getObjects(Workspace.java:1067)\n\tat
+        us.kbase.workspace.kbase.WorkspaceServerMethods.getObjects(WorkspaceServerMethods.java:479)\n\tat
+        us.kbase.workspace.WorkspaceServer.getObjects2(WorkspaceServer.java:804)\n\tat
+        jdk.internal.reflect.GeneratedMethodAccessor53.invoke(Unknown Source)\n\tat
+        java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat
+        java.base/java.lang.reflect.Method.invoke(Method.java:566)\n\tat us.kbase.common.service.JsonServerServlet.processRpcCall(JsonServerServlet.java:681)\n\tat
+        us.kbase.common.service.JsonServerServlet.doPost(JsonServerServlet.java:553)\n\tat
+        javax.servlet.http.HttpServlet.service(HttpServlet.java:661)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:742)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat
+        org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat
+        org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)\n\tat
+        org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\n\tat
+        org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)\n\tat
+        org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)\n\tat
+        org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)\n\tat
+        org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)\n\tat
+        org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\n\tat
+        org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat
+        org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)\n\tat
+        org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\n\tat
+        org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)\n\tat
+        org.apache.tomcat.util.net.Nio2Endpoint$SocketProcessor.doRun(Nio2Endpoint.java:1735)\n\tat
+        org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat
+        org.apache.tomcat.util.net.AbstractEndpoint.processSocket(AbstractEndpoint.java:1069)\n\tat
+        org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$3.completed(Nio2Endpoint.java:575)\n\tat
+        org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$3.completed(Nio2Endpoint.java:553)\n\tat
+        java.base/sun.nio.ch.Invoker.invokeUnchecked(Invoker.java:127)\n\tat java.base/sun.nio.ch.Invoker$2.run(Invoker.java:219)\n\tat
+        java.base/sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)\n\tat
+        java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat
+        java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat
+        java.base/java.lang.Thread.run(Thread.java:829)\nCaused by: us.kbase.workspace.database.exceptions.NoSuchWorkspaceException:
+        Workspace 123 is deleted\n\tat us.kbase.workspace.database.mongo.MongoWorkspaceDB.resolveWorkspaces(MongoWorkspaceDB.java:1271)\n\tat
+        us.kbase.workspace.database.mongo.MongoWorkspaceDB.resolveWorkspaces(MongoWorkspaceDB.java:1245)\n\tat
+        us.kbase.workspace.database.PermissionsCheckerFactory$ObjectPermissionsChecker.check(PermissionsCheckerFactory.java:328)\n\t...
+        41 more\n"},"id":"31658190832048105"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c826cbbee997ff-SJC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:35:15 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=719clQYzUDmcHrBYub.gFCFD_Sx1AFWW7R.qFnZnzC4-1719855315-1.0.1.1-dWnX8I23l3Ukz0PooW64mL18pN3mpHfOkhjTZ__4zQTSdNUrNZArlHImGhAumfXVev0ADRo0qDsSdNNvqdkzzQ;
+        path=/; expires=Mon, 01-Jul-24 18:05:15 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    status:
+      code: 500
+      message: ''
+version: 1
