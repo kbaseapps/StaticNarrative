@@ -282,7 +282,7 @@ def test_get_authors_auth_server_available(
     )
 
     conf = Config(
-        profile_page_path="profile_page_path/", token=fake_token, auth_url=config["auth_url"]
+        profile_page_path="profile_page_path/", token=fake_token, auth_url="https://auth.com"
     )
 
     output = get_authors(ws_client, conf, wsid)
