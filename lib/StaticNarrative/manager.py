@@ -9,6 +9,7 @@ class StaticNarrativeManager:
     """Class for StaticNarrative management."""
 
     def __init__(self: "StaticNarrativeManager", config: dict[str, Any]) -> None:
+        """Initialise an instance."""
         self.config = config
 
     def list_static_narratives(

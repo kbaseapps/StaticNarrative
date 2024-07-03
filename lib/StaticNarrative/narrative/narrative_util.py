@@ -9,10 +9,10 @@ from dateutil import parser as date_parser
 from installed_clients.baseclient import ServerError
 from installed_clients.WorkspaceClient import Workspace
 
+from StaticNarrative.constants import DATA, INFO, NARRATIVE_TYPE
 from StaticNarrative.exceptions import WorkspaceError
 from StaticNarrative.narrative_ref import NarrativeRef
 
-NARRATIVE_TYPE = "KBaseNarrative.Narrative"
 TYPE_REGEX = rf"^{NARRATIVE_TYPE}-\d+\.\d+$"
 
 
@@ -37,9 +37,9 @@ def read_narrative(ws_client: Workspace, ref: NarrativeRef) -> dict[str, Any]:
     """
     try:
         narr_data = ws_client.get_objects2({"objects": [{"ref": str(ref)}]})
-        nar = narr_data["data"][0]
-        _validate_narr_type(nar["info"][2], ref)
-        return nar["data"]
+        nar = narr_data[DATA][0]
+        _validate_narr_type(nar[INFO][2], ref)
+        return nar[DATA]
     except ServerError as err:
         raise WorkspaceError(err, ref.wsid) from err
 
@@ -116,6 +116,7 @@ def get_static_info(ws_client: Workspace, ws_id: int) -> dict[str, int | str]:
         msg = f"The parameter ws_id must be an integer, not {ws_id}"
         raise ValueError(msg)
 
+    ws_id = int(ws_id)
     try:
         ws_info = ws_client.get_workspace_info({"id": ws_id})
     except ServerError as err:

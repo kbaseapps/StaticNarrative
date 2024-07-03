@@ -29,7 +29,7 @@ def test_ok_from_parse() -> None:
     assert ref.ver == VER
 
 
-@pytest.mark.parametrize("bad_id", ["", None, "wat", [], {}, "-1", "4.5", 0])
+@pytest.mark.parametrize("bad_id", ["", None, "wat", [], {}, "-1", "4.5", 0, -1, 4.5])
 @pytest.mark.parametrize(
     "args",
     [

@@ -1,0 +1,11 @@
+"""Constants used throughout the codebase."""
+
+DATA = "data"
+ID = "by_id"
+INFO = "object_info"
+NARRATIVE_TEMPLATE_FILE = "narrative.tpl"
+NARRATIVE_TYPE = "KBaseNarrative.Narrative"
+OUTPUT_DATA_FILE = "data.json"
+OUTPUT_HTML_FILE = "narrative.html"
+SAVED_HTML_FILE = "index.html"
+TYPE = "by_type"

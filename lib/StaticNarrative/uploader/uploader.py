@@ -3,11 +3,8 @@
 import os
 import shutil
 
-from StaticNarrative.exporter.data_exporter import OUTPUT_DATA_FILE
-from StaticNarrative.exporter.exporter import OUTPUT_HTML_FILE
+from StaticNarrative.constants import OUTPUT_DATA_FILE, OUTPUT_HTML_FILE, SAVED_HTML_FILE
 from StaticNarrative.narrative_ref import NarrativeRef
-
-SAVED_HTML_FILE = "index.html"
 
 
 def upload_static_narrative(

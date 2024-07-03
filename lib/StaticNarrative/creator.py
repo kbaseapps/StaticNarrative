@@ -6,6 +6,7 @@ from typing import Any
 
 from installed_clients.WorkspaceClient import Workspace
 
+from StaticNarrative.constants import NARRATIVE_TYPE
 from StaticNarrative.exporter.exporter import NarrativeExporter
 from StaticNarrative.narrative.narrative_util import (
     save_narrative_url,
@@ -63,14 +64,12 @@ class StaticNarrativeCreator:
         if str(ws_ref).isdigit():
             ws_args = "ids"
 
-        results = self.ws_client.list_objects(
-            {ws_args: [ws_ref], "type": "KBaseNarrative.Narrative"}
-        )
+        results = self.ws_client.list_objects({ws_args: [ws_ref], "type": NARRATIVE_TYPE})
         if results and results[0] and results[0][0]:
             return f"{results[0][6]}/{results[0][0]}/{results[0][4]}"
 
         # no narrative object
-        msg = f"Workspace {ws_ref} did not contain a KBaseNarrative.Narrative object."
+        msg = f"Workspace {ws_ref} did not contain a {NARRATIVE_TYPE} object."
         raise ValueError(msg)
 
     def create_local_static_narrative(

@@ -6,13 +6,15 @@ from typing import Any
 
 from installed_clients.WorkspaceClient import Workspace
 
+from StaticNarrative.constants import INFO, NARRATIVE_TYPE, OUTPUT_DATA_FILE
 from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
 from StaticNarrative.exporter.objects_with_sets import ObjectsWithSets
 from StaticNarrative.exporter.processor_util import get_data_icon
 from StaticNarrative.upa import generate_upa
 
-IGNORED_TYPES = ["KBaseNarrative.Narrative"]
-OUTPUT_DATA_FILE = "data.json"
+IGNORED_TYPES = [NARRATIVE_TYPE]
+SET_ITEMS = "set_items"
+SET_ITEMS_INFO = "set_items_info"
 
 
 def export_narrative_data(
@@ -60,11 +62,11 @@ def export_narrative_data(
     indexed_data = {}
     type_info = {}
     for item in ws_data:
-        obj = item["object_info"]
+        obj = item[INFO]
         obj_type = obj[2].split("-")[0]
         if obj_type in IGNORED_TYPES:
             continue
-        obj_upa = generate_upa(item["object_info"])
+        obj_upa = generate_upa(item[INFO])
         type_name = obj_type.split(".")[-1]
         if type_name not in type_info:
             type_info[type_name] = {"count": 0, "icon": get_data_icon(type_name)}
@@ -72,12 +74,12 @@ def export_narrative_data(
         type_info[type_name]["count"] += 1
 
         # if this is a set, go through each item in the set and add it to indexed_data
-        if "set_items" in item and "set_items_info" in item["set_items"]:
-            item["set_items"]["upas"] = []
-            for set_item in item["set_items"]["set_items_info"]:
+        if SET_ITEMS in item and SET_ITEMS_INFO in item[SET_ITEMS]:
+            item[SET_ITEMS]["upas"] = []
+            for set_item in item[SET_ITEMS][SET_ITEMS_INFO]:
                 set_item_upa = generate_upa(set_item)
-                indexed_data[set_item_upa] = {"object_info": set_item}
-                item["set_items"]["upas"].append(set_item_upa)
+                indexed_data[set_item_upa] = {INFO: set_item}
+                item[SET_ITEMS]["upas"].append(set_item_upa)
 
         # add the item to the index of ws objects
         indexed_data[obj_upa] = item
