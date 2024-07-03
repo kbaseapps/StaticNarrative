@@ -26,19 +26,18 @@ class StaticNarrativeCreator:
         :type self: StaticNarrativeCreator
         :param config: configuration
         :type config: dict[str, Any]
-        :param token: token
+        :param token: token for accessing KBase APIs
         :type token: str
         :return: nothing
         :rtype: None
         """
-        self.config = config
-
-        if not token or not self.config["workspace-url"]:
+        if not token or not config["workspace-url"]:
             msg = "workspace URL and a token required to initialise the StaticNarrativeCreator."
             raise RuntimeError(msg)
 
-        self.ws_client = Workspace(self.config["workspace-url"], token=token)
+        self.config = config
         self.token = token
+        self.ws_client = Workspace(self.config["workspace-url"], token=token)
 
         logging.basicConfig(format="%(created)s %(levelname)s: %(message)s", level=logging.INFO)
         self.logger = logging.getLogger("StaticNarrative")
@@ -48,6 +47,62 @@ class StaticNarrativeCreator:
         formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
         ch.setFormatter(formatter)
         self.logger.addHandler(ch)
+
+    def get_narrative_id_from_workspace(self: "StaticNarrativeCreator", ws_ref: str | int) -> str:
+        """Retrieve the Narrative object from a workspace (if one exists).
+
+        :param self: this class
+        :type self: StaticNarrativeCmdLine
+        :param ws_ref: workspace reference (ID or name)
+        :type ws_ref: str | int
+        :raises ValueError: if no Narrative object is found
+        :return: KBaseNarrative.Narrative object UPA
+        :rtype: str
+        """
+        ws_args = "workspaces"
+        if str(ws_ref).isdigit():
+            ws_args = "ids"
+
+        results = self.ws_client.list_objects(
+            {ws_args: [ws_ref], "type": "KBaseNarrative.Narrative"}
+        )
+        if results and results[0] and results[0][0]:
+            return f"{results[0][6]}/{results[0][0]}/{results[0][4]}"
+
+        # no narrative object
+        msg = f"Workspace {ws_ref} did not contain a KBaseNarrative.Narrative object."
+        raise ValueError(msg)
+
+    def create_local_static_narrative(
+        self: "StaticNarrativeCreator",
+        ws_ref: str | int,
+        user_id: str,
+        skip_permissions_checks: str,
+    ) -> None:
+        """Create a static narrative from a Workspace reference.
+
+        :param ws_ref: workspace reference; may be the narrative UPA or a workspace ID
+        :type ws_ref: str
+        :param user_id: valid KBase user ID
+        :type user_id: str
+        :param skip_permissions_checks: whether the permission checks should be run
+        :type skip_permissions_checks: str
+        """
+        # this is a workspace reference
+        ws_ref = str(ws_ref)
+        narrative_ref = ws_ref
+        if ws_ref.count("/") == 0:
+            narrative_ref = self.get_narrative_id_from_workspace(ws_ref)
+
+        ref = NarrativeRef.parse(narrative_ref)
+
+        self.logger.info("Creating Static Narrative %s", ref)
+
+        if not skip_permissions_checks:
+            self.check_permissions(ref, user_id=user_id)
+
+        output_path = self.export_narrative(ref, user_id)
+        self.logger.info("Static Narrative for %s created at %s", ref, output_path)
 
     def create_static_narrative(
         self: "StaticNarrativeCreator", params: dict[str, str]
@@ -65,7 +120,9 @@ class StaticNarrativeCreator:
         user_id = params["user_id"]
         self.check_permissions(ref, user_id=user_id)
         output_path = self.export_narrative(ref, user_id=user_id)
-        static_url = self.upload_and_save(ref, output_path=output_path)
+        # get the output directory for the upload_and_save command
+        output_dir = os.path.dirname(output_path)
+        static_url = self.upload_and_save(ref, output_dir)
 
         return {"static_narrative_url": static_url}
 
@@ -91,6 +148,7 @@ class StaticNarrativeCreator:
         :rtype: str
         """
         exporter = NarrativeExporter(self.config, user_id, self.token)
+
         # set up output directories
         try:
             output_dir = os.path.join(

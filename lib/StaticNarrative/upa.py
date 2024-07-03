@@ -1,11 +1,30 @@
-"""This is a reasonably tiny API for serializing and deserializing UPAs for storage in Narrative
-documents.
-
-"""
+"""A reasonably tiny API for dealing with KBase UPAs."""
 
 import re
+from typing import Any
 
 external_tag = "&"
+
+UPA_REGEX = re.compile(r"^\d+\/\d+\/\d+$")
+
+
+def generate_upa(info_or_data: list[Any] | dict[str, Any]) -> str:
+    """Generate a UPA from either an object info tuple or an object dictionary from get_objects2.
+
+    :param info_or_data: object info tuple or object dictionary
+    :type info_or_data: list[Any] | dict[str, Any]
+    :raises KeyError: if the input is a dictionary and there is no "info" key present
+    :return: UPA as a string
+    :rtype: str
+    """
+    if isinstance(info_or_data, dict):
+        if "info" not in info_or_data:
+            msg = "No 'info' key present, cannot generate UPA"
+            raise KeyError(msg)
+        info = info_or_data["info"]
+    else:
+        info = info_or_data
+    return f"{info[6]}/{info[0]}/{info[4]}"
 
 
 def is_upa(upa: str) -> bool:
@@ -92,7 +111,8 @@ def deserialize(serial_upa: str, ws_id: int) -> str:
     """
     if not isinstance(serial_upa, str):
         msg = f"Can only deserialize UPAs from strings: {serial_upa!s} is a {type(serial_upa)}"
-        raise ValueError(msg)
+        raise TypeError(msg)
+
     if serial_upa.startswith(external_tag):
         deserial = serial_upa[len(external_tag) :]
     else:
@@ -103,4 +123,5 @@ def deserialize(serial_upa: str, ws_id: int) -> str:
     if not is_upa(deserial):
         msg = f'Deserialized UPA: "{deserial}" is invalid!'
         raise ValueError(msg)
+
     return deserial

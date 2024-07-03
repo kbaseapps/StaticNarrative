@@ -9,8 +9,10 @@ from installed_clients.WorkspaceClient import Workspace
 from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
 from StaticNarrative.exporter.objects_with_sets import ObjectsWithSets
 from StaticNarrative.exporter.processor_util import get_data_icon
+from StaticNarrative.upa import generate_upa
 
 IGNORED_TYPES = ["KBaseNarrative.Narrative"]
+OUTPUT_DATA_FILE = "data.json"
 
 
 def export_narrative_data(
@@ -55,17 +57,30 @@ def export_narrative_data(
     ws_data = ows.list_objects_with_sets(ws_id=wsid, include_metadata=1)
 
     filtered_data = []
+    indexed_data = {}
     type_info = {}
     for item in ws_data:
         obj = item["object_info"]
         obj_type = obj[2].split("-")[0]
         if obj_type in IGNORED_TYPES:
             continue
+        obj_upa = generate_upa(item["object_info"])
         type_name = obj_type.split(".")[-1]
         if type_name not in type_info:
             type_info[type_name] = {"count": 0, "icon": get_data_icon(type_name)}
-        filtered_data.append(_reshape_obj(obj))
+        filtered_data.append(_reshape_obj(obj, obj_upa))
         type_info[type_name]["count"] += 1
+
+        # if this is a set, go through each item in the set and add it to indexed_data
+        if "set_items" in item and "set_items_info" in item["set_items"]:
+            item["set_items"]["upas"] = []
+            for set_item in item["set_items"]["set_items_info"]:
+                set_item_upa = generate_upa(set_item)
+                indexed_data[set_item_upa] = {"object_info": set_item}
+                item["set_items"]["upas"].append(set_item_upa)
+
+        # add the item to the index of ws objects
+        indexed_data[obj_upa] = item
 
     # Sort and dump to file.
     output_data = {
@@ -73,14 +88,15 @@ def export_narrative_data(
         "types": type_info,
     }
 
-    output_path = Path(output_dir) / "data.json"
+    output_path = Path(output_dir) / OUTPUT_DATA_FILE
     with open(output_path, "w") as outfile:
         json.dump(output_data, outfile)
     output_data["path"] = str(output_path)
+    output_data["indexed_data"] = indexed_data
     return output_data
 
 
-def _reshape_obj(obj_info: list[str | dict[str, Any]]) -> list[str | dict[str, Any]]:
+def _reshape_obj(obj_info: list[str | dict[str, Any]], obj_upa: str) -> list[str | dict[str, Any]]:
     """Strip out useful object info, return as a list.
 
     Just pulls out the relevant info from object info, and mashes it into
@@ -95,7 +111,7 @@ def _reshape_obj(obj_info: list[str | dict[str, Any]]) -> list[str | dict[str, A
     ]
     """
     return [
-        f"{obj_info[6]}/{obj_info[0]}/{obj_info[4]}",
+        obj_upa,
         obj_info[1],
         obj_info[2],
         obj_info[3],

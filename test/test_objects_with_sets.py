@@ -15,13 +15,9 @@ def set_api_client(config: dict[str, Any], token: str) -> DynamicServiceClient:
 
 
 @pytest.fixture()
-def ows(
-    workspace_client: Workspace, set_api_client: DynamicServiceClient, token: str
-) -> ObjectsWithSets:
+def ows(ws_client: Workspace, set_api_client: DynamicServiceClient, token: str) -> ObjectsWithSets:
     """Get an instance of ObjectsWithSets."""
-    return ObjectsWithSets(
-        set_api_client=set_api_client, workspace_client=workspace_client, token=token
-    )
+    return ObjectsWithSets(set_api_client=set_api_client, workspace_client=ws_client, token=token)
 
 
 def test_set_api_client_local_vs_set_api_remote(ows: ObjectsWithSets) -> None:

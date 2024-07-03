@@ -1,0 +1,1821 @@
+interactions:
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/1/28"}]}],
+      "version": "1.1", "id": "03374541338826065"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '131'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"cells":[{"cell_type":"code","execution_count":null,"metadata":{"kbase":{"attributes":{"created":"Tue,
+        11 Feb 2020 01:31:55 GMT","icon":"code","id":"28fe3e2d-f089-4632-8e2b-f84be8d50412","lastLoaded":"Tue,
+        11 Feb 2020 01:31:55 GMT","status":"new","title":"Code Cell"},"codeCell":{"userSettings":{"showCodeInputArea":true}},"type":"code"}},"outputs":[],"source":""},{"cell_type":"code","execution_count":1,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"},{"input_parameter":"num_files","target_property":"num_files"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"If
+        > 0, this makes a number of tiny downloadable files.","disabled":0,"field_type":"text","id":"num_files","optional":1,"short_hint":"How
+        many files to make","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of files"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"e6f39431-0fbd-4f19-948c-ba4952bedd60","child_jobs":[],"created":1581632019000,"finished":1581632140241,"job_id":"5e45ca13aaeb5794eb0e24bb","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"e6f39431-0fbd-4f19-948c-ba4952bedd60","run_id":"c2962417-e69a-4602-90dc-0326023dd0bb","tag":"dev","token_id":"ce15faac-5905-41cc-b79f-38d50c8516ff"},"params":[{"include_direct_html":0,"initial_page":1,"num_files":3,"num_pages":1,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e45ca13aaeb5794eb0e24bb","result":[{"report_name":"NarrativeTest.example_report-c8d65867-f05b-421b-9941-35a497e4ac3e","report_ref":"47123/9/1"}],"version":"1.1"},"queued":1581632020198,"run_id":"c2962417-e69a-4602-90dc-0326023dd0bb","running":1581632039475,"scheduler_id":"13640","scheduler_type":"condor","status":"completed","updated":1581632140241,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581632149101,"launchState":{"cell_id":"e6f39431-0fbd-4f19-948c-ba4952bedd60","event":"launched_job","event_at":"2020-02-13T22:13:40.618108Z","job_id":"5e45ca13aaeb5794eb0e24bb","run_id":"c2962417-e69a-4602-90dc-0326023dd0bb"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-c8d65867-f05b-421b-9941-35a497e4ac3e","report_ref":"47123/9/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"output":{"byJob":{"5e45ca13aaeb5794eb0e24bb":{"cell":{"created":false},"createdAt":"Thu,
+        13 Feb 2020 22:15:49 GMT","params":{"include_direct":0,"initial_page":1,"num_files":3,"num_pages":1}}}},"params":{"include_direct":0,"initial_page":1,"num_files":3,"num_pages":1},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Thu,
+        13 Feb 2020 22:13:28 GMT","id":"e6f39431-0fbd-4f19-948c-ba4952bedd60","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 22:13:28 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        1,\n        \"initial_page\": 1,\n        \"include_direct\": 0,\n        \"num_files\":
+        3\n    },\n    tag=\"dev\",\n    version=\"25496c5ebfdaec8045b5fd9049aeff5efd4a3834\",\n    cell_id=\"e6f39431-0fbd-4f19-948c-ba4952bedd60\",\n    run_id=\"c2962417-e69a-4602-90dc-0326023dd0bb\"\n)"},{"cell_type":"code","execution_count":2,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"aa1fac03-c2be-45b1-ba60-e42f89dbe87e","child_jobs":[],"created":1581541418000,"finished":1581541507619,"job_id":"5e44682a5619be5eada7e085","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"aa1fac03-c2be-45b1-ba60-e42f89dbe87e","run_id":"d80fa448-c0fc-467d-9871-6b287ff16dd8","tag":"dev","token_id":"f5478b40-075e-4080-a941-877ff2cc0c5f"},"params":[{"include_direct_html":0,"initial_page":1,"num_pages":1,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e44682a5619be5eada7e085","result":[{"report_name":"NarrativeTest.example_report-c2deb2ed-a77a-4c47-bef3-66fff218ce04","report_ref":"47123/4/1"}],"version":"1.1"},"queued":1581541419302,"run_id":"d80fa448-c0fc-467d-9871-6b287ff16dd8","running":1581541437610,"scheduler_id":"13605","scheduler_type":"condor","status":"completed","updated":1581541507619,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581541515809,"launchState":{"cell_id":"aa1fac03-c2be-45b1-ba60-e42f89dbe87e","event":"launched_job","event_at":"2020-02-12T21:03:39.674066Z","job_id":"5e44682a5619be5eada7e085","run_id":"d80fa448-c0fc-467d-9871-6b287ff16dd8"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-c2deb2ed-a77a-4c47-bef3-66fff218ce04","report_ref":"47123/4/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"newAppName":"HTML
+        Report with links","outdated":true,"output":{"byJob":{"5e44682a5619be5eada7e085":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 21:05:15 GMT","params":{"include_direct":0,"initial_page":1,"num_pages":1}}}},"params":{"include_direct":0,"initial_page":1,"num_pages":1},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:03:35 GMT","id":"aa1fac03-c2be-45b1-ba60-e42f89dbe87e","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        1,\n        \"initial_page\": 1,\n        \"include_direct\": 0\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"aa1fac03-c2be-45b1-ba60-e42f89dbe87e\",\n    run_id=\"d80fa448-c0fc-467d-9871-6b287ff16dd8\"\n)"},{"cell_type":"code","execution_count":6,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"d8e84a3b-e09c-455a-b42b-9498cdcd73bf","child_jobs":[],"created":1581541721000,"finished":1581541887606,"job_id":"5e446959a1372d336359fbc5","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"d8e84a3b-e09c-455a-b42b-9498cdcd73bf","run_id":"cc10666e-d888-407f-9130-5ab5c3ac9c15","tag":"dev","token_id":"47ded194-394f-4b55-bf97-2bf35738cb72"},"params":[{"include_direct_html":0,"initial_page":3,"num_pages":5,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e446959a1372d336359fbc5","result":[{"report_name":"NarrativeTest.example_report-c544984d-f764-4716-8a31-6ceabff4bb4b","report_ref":"47123/7/1"}],"version":"1.1"},"queued":1581541722200,"run_id":"cc10666e-d888-407f-9130-5ab5c3ac9c15","running":1581541743023,"scheduler_id":"13609","scheduler_type":"condor","status":"completed","updated":1581541887606,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581541897028,"launchState":{"cell_id":"d8e84a3b-e09c-455a-b42b-9498cdcd73bf","event":"launched_job","event_at":"2020-02-12T21:08:42.666484Z","job_id":"5e446959a1372d336359fbc5","run_id":"cc10666e-d888-407f-9130-5ab5c3ac9c15"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-c544984d-f764-4716-8a31-6ceabff4bb4b","report_ref":"47123/7/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"newAppName":"HTML
+        Report with links","outdated":true,"output":{"byJob":{"5e446959a1372d336359fbc5":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 21:11:37 GMT","params":{"include_direct":0,"initial_page":3,"num_pages":5}}}},"params":{"include_direct":0,"initial_page":3,"num_pages":5},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:07:35 GMT","id":"d8e84a3b-e09c-455a-b42b-9498cdcd73bf","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        5,\n        \"initial_page\": 3,\n        \"include_direct\": 0\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"d8e84a3b-e09c-455a-b42b-9498cdcd73bf\",\n    run_id=\"cc10666e-d888-407f-9130-5ab5c3ac9c15\"\n)"},{"cell_type":"code","execution_count":5,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_example","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"text_input","target_property":"text_input"},{"input_parameter":"checkbox_input","target_property":"checkbox_input"}],"kb_service_method":"example_report","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_example","input_types":[],"module_name":"NarrativeTest","name":"Example
+        HTML Report","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"Some
+        input test goes here","disabled":0,"field_type":"text","id":"text_input","optional":1,"short_hint":"Add
+        some text for your report","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[]},"ui_class":"parameter","ui_name":"Text
+        Input"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["1"],"description":"Your
+        report will show this being checked or not","disabled":0,"field_type":"checkbox","id":"checkbox_input","optional":0,"short_hint":"Show
+        this off in your report","ui_class":"parameter","ui_name":"Checkbox Input"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"db8c9ab1-ee30-4091-a350-78443108f4a2","child_jobs":[],"created":1581541719000,"finished":1581541826698,"job_id":"5e446957ab9b56e191b14484","job_input":{"app_id":"NarrativeTest/report_example","method":"NarrativeTest.example_report","narrative_cell_info":{"cell_id":"db8c9ab1-ee30-4091-a350-78443108f4a2","run_id":"f90c9f55-3504-4ed8-951c-4e457d4cc15e","tag":"dev","token_id":"91d717fc-338c-4bce-b28c-a24145f6afa1"},"params":[{"checkbox_input":1,"text_input":"blah!","workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e446957ab9b56e191b14484","result":[{"report_name":"NarrativeTest.example_report2d7ef9d1-4e1f-4449-aa7a-8b7f6ba8d1ac","report_ref":"47123/6/1"}],"version":"1.1"},"queued":1581541720552,"run_id":"f90c9f55-3504-4ed8-951c-4e457d4cc15e","running":1581541743313,"scheduler_id":"13608","scheduler_type":"condor","status":"completed","updated":1581541826698,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581541834345,"launchState":{"cell_id":"db8c9ab1-ee30-4091-a350-78443108f4a2","event":"launched_job","event_at":"2020-02-12T21:08:40.928561Z","job_id":"5e446957ab9b56e191b14484","run_id":"f90c9f55-3504-4ed8-951c-4e457d4cc15e"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report2d7ef9d1-4e1f-4449-aa7a-8b7f6ba8d1ac","report_ref":"47123/6/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"newAppName":"Example
+        HTML Report","outdated":true,"output":{"byJob":{"5e446957ab9b56e191b14484":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 21:10:34 GMT","params":{"checkbox_input":1,"text_input":"blah!"}}}},"params":{"checkbox_input":1,"text_input":"blah!"},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:08:03 GMT","id":"db8c9ab1-ee30-4091-a350-78443108f4a2","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_example/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"Example HTML Report"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_example\",\n    {\n        \"text_input\":
+        \"blah!\",\n        \"checkbox_input\": 1\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"db8c9ab1-ee30-4091-a350-78443108f4a2\",\n    run_id=\"f90c9f55-3504-4ed8-951c-4e457d4cc15e\"\n)"},{"cell_type":"code","execution_count":4,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"e6907d6a-6b95-495a-9c99-3018121b2c0a","child_jobs":[],"created":1581541716000,"finished":1581541810503,"job_id":"5e446954b672b15cd3ee59bc","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"e6907d6a-6b95-495a-9c99-3018121b2c0a","run_id":"acd1377a-0796-4bfd-8e7d-494de1b7cf2c","tag":"dev","token_id":"0c496623-822d-45a0-98c0-34d635c6db3f"},"params":[{"include_direct_html":1,"initial_page":1,"num_pages":2,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e446954b672b15cd3ee59bc","result":[{"report_name":"NarrativeTest.example_report-92b37ca6-5542-435b-8fe0-be5d2eb1a109","report_ref":"47123/5/1"}],"version":"1.1"},"queued":1581541717657,"run_id":"acd1377a-0796-4bfd-8e7d-494de1b7cf2c","running":1581541738714,"scheduler_id":"13607","scheduler_type":"condor","status":"completed","updated":1581541810503,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581541813103,"launchState":{"cell_id":"e6907d6a-6b95-495a-9c99-3018121b2c0a","event":"launched_job","event_at":"2020-02-12T21:08:37.908407Z","job_id":"5e446954b672b15cd3ee59bc","run_id":"acd1377a-0796-4bfd-8e7d-494de1b7cf2c"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-92b37ca6-5542-435b-8fe0-be5d2eb1a109","report_ref":"47123/5/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"newAppName":"HTML
+        Report with links","outdated":true,"output":{"byJob":{"5e446954b672b15cd3ee59bc":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 21:10:13 GMT","params":{"include_direct":1,"initial_page":1,"num_pages":2}}}},"params":{"include_direct":1,"initial_page":1,"num_pages":2},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:08:15 GMT","id":"e6907d6a-6b95-495a-9c99-3018121b2c0a","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        2,\n        \"initial_page\": 1,\n        \"include_direct\": 1\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"e6907d6a-6b95-495a-9c99-3018121b2c0a\",\n    run_id=\"acd1377a-0796-4bfd-8e7d-494de1b7cf2c\"\n)"},{"cell_type":"code","execution_count":8,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"84738351645e027a3b9d5adc9b8551c4c4c82c73","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"84738351645e027a3b9d5adc9b8551c4c4c82c73"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"84738351645e027a3b9d5adc9b8551c4c4c82c73","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"7e8af111-08ce-4253-b783-4f607a9bc46f","child_jobs":[],"created":1581542320000,"finished":1581542399378,"job_id":"5e446bb0b672b15cd3ee5a1a","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"7e8af111-08ce-4253-b783-4f607a9bc46f","run_id":"4e7a389c-72af-49be-a4bf-7e5c3ca18558","tag":"dev","token_id":"ec436eb9-262a-4798-bb00-528f8322a197"},"params":[{"include_direct_html":1,"initial_page":0,"num_pages":0,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"84738351645e027a3b9d5adc9b8551c4c4c82c73","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e446bb0b672b15cd3ee5a1a","result":[{"report_name":"NarrativeTest.example_report-2e0a57b9-18a9-4fd8-a448-02be9388b9e8","report_ref":"47123/8/1"}],"version":"1.1"},"queued":1581542321362,"run_id":"4e7a389c-72af-49be-a4bf-7e5c3ca18558","running":1581542346304,"scheduler_id":"13611","scheduler_type":"condor","status":"completed","updated":1581542399378,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581548098233,"launchState":{"cell_id":"7e8af111-08ce-4253-b783-4f607a9bc46f","event":"launched_job","event_at":"2020-02-12T21:18:41.739818Z","job_id":"5e446bb0b672b15cd3ee5a1a","run_id":"4e7a389c-72af-49be-a4bf-7e5c3ca18558"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-2e0a57b9-18a9-4fd8-a448-02be9388b9e8","report_ref":"47123/8/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"output":{"byJob":{"5e446bb0b672b15cd3ee5a1a":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 22:54:58 GMT","params":{"include_direct":1,"initial_page":0,"num_pages":0}}}},"params":{"include_direct":1,"initial_page":0,"num_pages":0},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:18:23 GMT","id":"7e8af111-08ce-4253-b783-4f607a9bc46f","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        0,\n        \"initial_page\": 0,\n        \"include_direct\": 1\n    },\n    tag=\"dev\",\n    version=\"84738351645e027a3b9d5adc9b8551c4c4c82c73\",\n    cell_id=\"7e8af111-08ce-4253-b783-4f607a9bc46f\",\n    run_id=\"4e7a389c-72af-49be-a4bf-7e5c3ca18558\"\n)"},{"cell_type":"code","execution_count":9,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"298823e0057dcdc906bac2a943ecadfc93d30a91","id":"eapearsonUiTestModule/large_report","spec":{"behavior":{"kb_service_input_mapping":[],"kb_service_method":"large_report","kb_service_name":"eapearsonUiTestModule","kb_service_output_mapping":[],"kb_service_url":"","kb_service_version":"298823e0057dcdc906bac2a943ecadfc93d30a91"},"fixed_parameters":[],"info":{"app_type":"app","authors":["eapearson"],"categories":["active","util"],"git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","id":"eapearsonUiTestModule/large_report","input_types":[],"module_name":"eapearsonUiTestModule","name":"Large
+        Sized Report","namespace":"eapearsonUiTestModule","output_types":[],"subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","ver":"0.0.1"},"job_id_output_field":"docker","parameters":[],"widgets":{"input":"null","output":"null"}},"tag":"dev","version":"0.0.1"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"df86bd35-e96f-4bad-b108-f08c2d1b3493","child_jobs":[],"created":1581542322000,"error":{"code":-32601,"error":"No
+        output generated","message":"No output generated. Check logs for more details","name":"Output
+        not found"},"error_code":1,"errormsg":"Attempting to finish the job with an
+        error","finished":1581542371280,"job_id":"5e446bb2c807c0569427e901","job_input":{"app_id":"eapearsonUiTestModule/large_report","method":"eapearsonUiTestModule.large_report","narrative_cell_info":{"cell_id":"df86bd35-e96f-4bad-b108-f08c2d1b3493","run_id":"efa11fc5-0597-49e5-b40d-68fdcbd77682","tag":"dev","token_id":"c18dd2a7-5ab6-4bd7-a6b1-7c8f35b9dd7c"},"params":[],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"298823e0057dcdc906bac2a943ecadfc93d30a91","source_ws_objects":[],"wsid":47123},"job_output":{},"queued":1581542323639,"run_id":"efa11fc5-0597-49e5-b40d-68fdcbd77682","running":1581542345483,"scheduler_id":"13612","scheduler_type":"condor","status":"error","token_id":"c18dd2a7-5ab6-4bd7-a6b1-7c8f35b9dd7c","updated":1581542371280,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581548098505,"launchState":{"cell_id":"df86bd35-e96f-4bad-b108-f08c2d1b3493","event":"launched_job","event_at":"2020-02-12T21:18:43.875041Z","job_id":"5e446bb2c807c0569427e901","run_id":"efa11fc5-0597-49e5-b40d-68fdcbd77682"}},"fsm":{"currentState":{"mode":"error","stage":"running"}},"output":{"byJob":{}},"params":{},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:18:31 GMT","id":"df86bd35-e96f-4bad-b108-f08c2d1b3493","info":{"label":"more...","url":"/#appcatalog/app/eapearsonUiTestModule/large_report/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Allows testing with variable
+        run times","title":"Large Sized Report"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"eapearsonUiTestModule/large_report\",\n    {\n\n    },\n    tag=\"dev\",\n    version=\"298823e0057dcdc906bac2a943ecadfc93d30a91\",\n    cell_id=\"df86bd35-e96f-4bad-b108-f08c2d1b3493\",\n    run_id=\"efa11fc5-0597-49e5-b40d-68fdcbd77682\"\n)"},{"cell_type":"code","execution_count":10,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"298823e0057dcdc906bac2a943ecadfc93d30a91","id":"eapearsonUiTestModule/medium_report","spec":{"behavior":{"kb_service_input_mapping":[],"kb_service_method":"medium_report","kb_service_name":"eapearsonUiTestModule","kb_service_output_mapping":[],"kb_service_url":"","kb_service_version":"298823e0057dcdc906bac2a943ecadfc93d30a91"},"fixed_parameters":[],"info":{"app_type":"app","authors":["eapearson"],"categories":["active","util"],"git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","id":"eapearsonUiTestModule/medium_report","input_types":[],"module_name":"eapearsonUiTestModule","name":"Medium
+        Sized Report","namespace":"eapearsonUiTestModule","output_types":[],"subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","ver":"0.0.1"},"job_id_output_field":"docker","parameters":[],"widgets":{"input":"null","output":"null"}},"tag":"dev","version":"0.0.1"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"c28f909b-b27e-4452-9f1f-27248b488356","child_jobs":[],"created":1581542325000,"error":{"code":-32601,"error":"No
+        output generated","message":"No output generated. Check logs for more details","name":"Output
+        not found"},"error_code":1,"errormsg":"Attempting to finish the job with an
+        error","finished":1581542373094,"job_id":"5e446bb566b3f52d2a2374fc","job_input":{"app_id":"eapearsonUiTestModule/medium_report","method":"eapearsonUiTestModule.medium_report","narrative_cell_info":{"cell_id":"c28f909b-b27e-4452-9f1f-27248b488356","run_id":"b8dc75dd-7fa1-44e1-939d-8c938693fa50","tag":"dev","token_id":"dda5c324-a54c-45ba-8411-da31079c7a79"},"params":[],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"298823e0057dcdc906bac2a943ecadfc93d30a91","source_ws_objects":[],"wsid":47123},"job_output":{},"queued":1581542326465,"run_id":"b8dc75dd-7fa1-44e1-939d-8c938693fa50","running":1581542348322,"scheduler_id":"13613","scheduler_type":"condor","status":"error","token_id":"dda5c324-a54c-45ba-8411-da31079c7a79","updated":1581542373094,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581548099153,"launchState":{"cell_id":"c28f909b-b27e-4452-9f1f-27248b488356","event":"launched_job","event_at":"2020-02-12T21:18:46.818249Z","job_id":"5e446bb566b3f52d2a2374fc","run_id":"b8dc75dd-7fa1-44e1-939d-8c938693fa50"}},"fsm":{"currentState":{"mode":"error","stage":"running"}},"output":{"byJob":{}},"params":{},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:18:33 GMT","id":"c28f909b-b27e-4452-9f1f-27248b488356","info":{"label":"more...","url":"/#appcatalog/app/eapearsonUiTestModule/medium_report/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Allows testing with variable
+        run times","title":"Medium Sized Report"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"eapearsonUiTestModule/medium_report\",\n    {\n\n    },\n    tag=\"dev\",\n    version=\"298823e0057dcdc906bac2a943ecadfc93d30a91\",\n    cell_id=\"c28f909b-b27e-4452-9f1f-27248b488356\",\n    run_id=\"b8dc75dd-7fa1-44e1-939d-8c938693fa50\"\n)"}],"metadata":{"creator":"wjriehl","data_dependencies":[],"description":"","format":"ipynb","is_temporary":"false","job_ids":{"apps":[],"job_usage":{"queue_time":0,"run_time":0},"methods":[]},"kbase":{"creator":"wjriehl","job_ids":{"apps":[],"job_usage":{"queue_time":0,"run_time":0},"methods":[]},"name":"Untitled","ws_name":"wjriehl:narrative_1581384702051"},"kernelspec":{"display_name":"Python
+        3","language":"python","name":"python3"},"language_info":{"codemirror_mode":{"name":"ipython","version":3},"file_extension":".py","mimetype":"text/x-python","name":"python","nbconvert_exporter":"python","pygments_lexer":"ipython3","version":"3.6.9"},"name":"Reports
+        Test","type":"KBaseNarrative.Narrative","ws_name":"wjriehl:narrative_1581384702051"},"nbformat":4,"nbformat_minor":1},"info":[1,"Narrative.1581384702051","KBaseNarrative.Narrative-4.0","2020-02-13T22:16:16+0000",28,"wjriehl",47123,"wjriehl:narrative_1581384702051","cd6dce1eba33d9a2fe7e66386872b770",40126,{"creator":"wjriehl","method.NarrativeTest/report_html_links/25496c5ebfdaec8045b5fd9049aeff5efd4a3834":"1","method.eapearsonUiTestModule/medium_report/298823e0057dcdc906bac2a943ecadfc93d30a91":"1","data_dependencies":"[]","job_info":"{\"queue_time\":
+        0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}","format":"ipynb","description":"","type":"KBaseNarrative.Narrative","method.NarrativeTest/report_example/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa":"1","method.eapearsonUiTestModule/large_report/298823e0057dcdc906bac2a943ecadfc93d30a91":"1","method.NarrativeTest/report_html_links/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa":"3","is_temporary":"false","name":"Reports
+        Test","method.NarrativeTest/report_html_links/84738351645e027a3b9d5adc9b8551c4c4c82c73":"1","ws_name":"wjriehl:narrative_1581384702051"}],"path":["47123/1/28"],"provenance":[{"service":"narrative","service_ver":"4.0.0","method_params":[],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[],"custom":{},"description":"Saved
+        by KBase Narrative Interface"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-13T22:16:15+0000","epoch":1581632175856,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf641b4aa09450-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:27 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=vYWy1k9AavtvkszqbyDBDxaIOoQx5xDOxUbJXm1yAk0-1719931227-1.0.1.1-HexnKRZNANH4tDa8hcIxXvavoQHsbG43FH7WNZORQqTjmhuOPpE8dKM6tpX3UPUQUcn1UmhJB7jlTXy_i5cHCQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:27 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "ServiceWizard.get_service_status", "params": [{"module_name":
+      "SetAPI", "version": "release"}], "version": "1.1", "id": "8734511802641626"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '151'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/service_wizard
+  response:
+    body:
+      string: '{"version": "1.1", "result": [{"git_commit_hash": "5a838320de2b4884f11457a51a26870eadb175f6",
+        "status": "active", "version": "0.3.5", "hash": "5a838320de2b4884f11457a51a26870eadb175f6",
+        "release_tags": ["release", "beta"], "url": "https://ci.kbase.us:443/dynserv/5a838320de2b4884f11457a51a26870eadb175f6.SetAPI",
+        "module_name": "SetAPI", "health": "healthy", "up": 1}], "id": "8734511802641626"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf641ddeb9ce4c-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:28 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=ToyXLdrV4DT0rwFzBTmjmwOI9Sg0NGj9mIt0.mFU2Rs-1719931228-1.0.1.1-E6xAnlVEnDF1FVt3z7VZLoxvYzvPLMID6OnmoRZckAeYw4ilONAavbRe8r9.Gfqt73v4UgYC2NxNYnJfRZeXFQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:28 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"method": "SetAPI.list_sets", "params": [{"workspaces": [47123], "include_set_item_info":
+      1, "include_metadata": 1}], "version": "1.1", "id": "5286576572904716"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '162'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/dynserv/5a838320de2b4884f11457a51a26870eadb175f6.SetAPI
+  response:
+    body:
+      string: '{"version": "1.1", "result": [{"sets": []}], "id": "5286576572904716"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization,Cookie
+      Access-Control-Max-Age:
+      - '1728000'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf6420d9169872-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:29 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=VOJiWlvZVqudBt1RAwPGX4TrcaE343BovftoxDCZamQ-1719931229-1.0.1.1-ZV6pOjXNpItvMLhRdMcLwhx_e8BUIJquQ81mgvSzAcb9ovMr3_lRPmC7jmNQpqNAIj.0xdJfmmnjpRHoyo9s5w;
+        path=/; expires=Tue, 02-Jul-24 15:10:29 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 47123, "workspace":
+      null}], "version": "1.1", "id": "21412865376585177"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '133'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[47123,"wjriehl:narrative_1581384702051","wjriehl","2020-05-04T18:33:09+0000",9,"n","r","unlocked",{"static_narrative_ver":"30","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"9","narrative_nice_name":"Reports
+        Test","static_narrative_saved":"1588617189159","static_narrative":"/47123/30/"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf64262b89983d-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:29 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=oqySj_ZumnSQK8M4PZ4KtcJQtRU4IVVQHW5MBBgvjhg-1719931229-1.0.1.1-siev0iG8kAWhfw_n65W4ohoVIVGDaxWbZor3.bFaRd3xZPQKC0bx5wpYJ8FBoZCgzmVdGEK0QE4fKpiXSK6kJg;
+        path=/; expires=Tue, 02-Jul-24 15:10:29 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.list_objects", "params": [{"includeMetadata": 1,
+      "ids": [47123], "minObjectID": 1, "maxObjectID": 10000}], "version": "1.1",
+      "id": "6635530695985165"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '172'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[[1,"Narrative.1581384702051","KBaseNarrative.Narrative-4.0","2020-02-18T20:31:39+0000",30,"wjriehl",47123,"wjriehl:narrative_1581384702051","5b8e7ddc0d94f9a85f9bbce600b39a25",40180,{"creator":"wjriehl","method.NarrativeTest/report_html_links/25496c5ebfdaec8045b5fd9049aeff5efd4a3834":"1","method.eapearsonUiTestModule/medium_report/298823e0057dcdc906bac2a943ecadfc93d30a91":"1","data_dependencies":"[]","job_info":"{\"queue_time\":
+        0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}","format":"ipynb","description":"","type":"KBaseNarrative.Narrative","method.NarrativeTest/report_example/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa":"1","method.eapearsonUiTestModule/large_report/298823e0057dcdc906bac2a943ecadfc93d30a91":"1","method.NarrativeTest/report_html_links/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa":"3","is_temporary":"false","name":"Reports
+        Test","method.NarrativeTest/report_html_links/84738351645e027a3b9d5adc9b8551c4c4c82c73":"1","ws_name":"wjriehl:narrative_1581384702051"}]]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf6426fa35aaa5-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:29 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Ldbm9KHAiSvNld1tkutfzh6UmukJzMFLRccHuDPpQ5Y-1719931229-1.0.1.1-fPuSLzvlHjCqmdfPxhKYLGlcrH7hfxWSY.0uwT0bzAoyxOLqV61XNJ7KYi11aXoTvBJO0JH_PNMJHzI5ocI6bA;
+        path=/; expires=Tue, 02-Jul-24 15:10:29 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/9/1"}]}],
+      "version": "1.1", "id": "14266828971940648"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":0,"file_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/ffbbc04f-e4e0-471e-b787-075f5c4cfcdc","description":"Simple
+        test file 1","handle":"KBH_520025","label":"","name":"file_number_1.txt"},{"URL":"https://ci.kbase.us/services/shock-api/node/c857751e-b145-4ef8-aa5e-abf59891ccc0","description":"Simple
+        test file 2","handle":"KBH_520026","label":"","name":"file_number_2.txt"},{"URL":"https://ci.kbase.us/services/shock-api/node/f5fcf3d0-22bf-4532-b157-c608ed6e44c1","description":"Simple
+        test file 3","handle":"KBH_520027","label":"","name":"file_number_3.txt"}],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/8f7e8210-c378-48d5-8dd4-66de3c3a8054","description":"Report
+        page 1","handle":"KBH_520028","label":"","name":"page1.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[9,"NarrativeTest.example_report-c8d65867-f05b-421b-9941-35a497e4ac3e","KBaseReport.Report-3.0","2020-02-13T22:15:27+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","3ba827ccd91819b253dc96deffe620c3",942,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/9/1"],"provenance":[{"time":"2020-02-13T22:14:00+0000","epoch":1581632040000,"service":"NarrativeTest","service_ver":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","method":"report_html_links","method_params":[{"num_pages":1,"include_direct_html":0,"num_files":3,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":1}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","code_url":"https://github.com/briehl/narrative-test","commit":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-13T22:15:25+0000","epoch":1581632125898,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_520028","KBH_520027","KBH_520026","KBH_520025"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf642a28f19e53-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:30 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=tpbaxZ93LHAuDd.p1R8JLC.ejJmuiPv1AGZ1w6dwDuw-1719931230-1.0.1.1-.YIGDUWVel1kX0F1AFScA6redBD2sSdG3xMIXHDLRKB15WOubKs9pMAwTbq3QeQjwQUBZ3SZBnaDlri8f8DQ0w;
+        path=/; expires=Tue, 02-Jul-24 15:10:30 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/4/1"}]}],
+      "version": "1.1", "id": "04179672000804813"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":0,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/306f8e4f-ddcb-4a83-adbd-5ab19f14ab81","description":"Report
+        page 1","handle":"KBH_519779","label":"","name":"page1.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[4,"NarrativeTest.example_report-c2deb2ed-a77a-4c47-bef3-66fff218ce04","KBaseReport.Report-3.0","2020-02-12T21:04:47+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","06b284325fff04a596f1002b4dfc0aaa",385,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/4/1"],"provenance":[{"time":"2020-02-12T21:03:58+0000","epoch":1581541438000,"service":"NarrativeTest","service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","method":"report_html_links","method_params":[{"num_pages":1,"include_direct_html":0,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":1}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","code_url":"https://github.com/briehl/narrative-test","commit":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:04:46+0000","epoch":1581541486562,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_519779"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf642e68b45c1e-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:30 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Po_P6Byq4uJn7qf5SHpmdT_lCVCj.aqI28OIZrAuVnM-1719931230-1.0.1.1-uzcGY7HSfsixGgfCbad4.tahrD6_qmwmY0yetRLAVld_elUPIYjTbcaSf_zLge6QLgrI6mucRE295r85K31ZZQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:30 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/7/1"}]}],
+      "version": "1.1", "id": "8566556347449733"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '129'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":2,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/47b5a29a-6650-4d59-856a-e61079e13fb1","description":"Report
+        page 1","handle":"KBH_519789","label":"","name":"page1.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/cd95091e-3e31-4a21-a4df-de924b5fd9e0","description":"Report
+        page 2","handle":"KBH_519791","label":"","name":"page2.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/db80c207-e368-4601-8eb6-5ff341190efe","description":"Report
+        page 3","handle":"KBH_519794","label":"","name":"page3.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/9522541c-f0e2-40ef-88ca-25c92c4d2f68","description":"Report
+        page 4","handle":"KBH_519795","label":"","name":"page4.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/fbcd9693-72b3-4bd4-8a77-202787c35b8d","description":"Report
+        page 5","handle":"KBH_519796","label":"","name":"page5.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[7,"NarrativeTest.example_report-c544984d-f764-4716-8a31-6ceabff4bb4b","KBaseReport.Report-3.0","2020-02-12T21:10:47+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","d57c87b804431ac93566b481dffde223",1081,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/7/1"],"provenance":[{"time":"2020-02-12T21:09:04+0000","epoch":1581541744000,"service":"NarrativeTest","service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","method":"report_html_links","method_params":[{"num_pages":5,"include_direct_html":0,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":3}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","code_url":"https://github.com/briehl/narrative-test","commit":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:10:46+0000","epoch":1581541846483,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_519789","KBH_519794","KBH_519791","KBH_519796","KBH_519795"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf64305e769812-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:30 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=BqaNBv4rJmfZJgPehUgCIxOEKxiA1Il3UGMGGmJNUYs-1719931230-1.0.1.1-ic4PLadYERZqDt.saocN3DEw605WU3Xg9HvPJ3C78XFDkpPhjrRn.gm0xfGD6pqGHGOqdagZsvf5Hpz55zwzZQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:30 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/6/1"}]}],
+      "version": "1.1", "id": "12771057721093448"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":0,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/742021ac-6e33-4cc8-b4f0-0d90960daf81","description":"Just
+        an example report","handle":"KBH_519792","label":"","name":"index.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"This
+        is a report message","warnings":[]},"info":[6,"NarrativeTest.example_report2d7ef9d1-4e1f-4449-aa7a-8b7f6ba8d1ac","KBaseReport.Report-3.0","2020-02-12T21:10:13+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","2ebe47508f2d10413e8af0fbe13dfce4",393,{"Size(characters)":"24","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/6/1"],"provenance":[{"time":"2020-02-12T21:09:04+0000","epoch":1581541744000,"service":"NarrativeTest","service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","method":"example_report","method_params":[{"text_input":"blah!","workspace_name":"wjriehl:narrative_1581384702051","checkbox_input":1}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","code_url":"https://github.com/briehl/narrative-test","commit":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:10:11+0000","epoch":1581541811878,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_519792"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf643209bf986d-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:31 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=e_ZoQFjCGttHcJ9KNSNqJvp6Qx_kw8SG7HhE._LBJdQ-1719931231-1.0.1.1-ltY6N7XOcWgK5HS13W9ZWl4KpjMWvT4t7lxCm_1gBtc5zDt8cM3mpD0X_dlvQFCw4YRsplGoGAM0nEdm0I7IQQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:31 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/5/1"}]}],
+      "version": "1.1", "id": "13546365490493562"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":"Here is
+        some direct html for your Narrative perusal.","direct_html_link_index":0,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/3a6972b9-9453-4b74-b705-a9679dff26af","description":"Report
+        page 1","handle":"KBH_519788","label":"","name":"page1.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/8b982303-0c1f-4f4c-a487-1e7583754e08","description":"Report
+        page 2","handle":"KBH_519790","label":"","name":"page2.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[5,"NarrativeTest.example_report-92b37ca6-5542-435b-8fe0-be5d2eb1a109","KBaseReport.Report-3.0","2020-02-12T21:10:02+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","7db73635d6879fbcddcd88c3f2b4bc77",609,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/5/1"],"provenance":[{"time":"2020-02-12T21:08:59+0000","epoch":1581541739000,"service":"NarrativeTest","service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","method":"report_html_links","method_params":[{"num_pages":2,"include_direct_html":1,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":1}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","code_url":"https://github.com/briehl/narrative-test","commit":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:10:01+0000","epoch":1581541801368,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_519788","KBH_519790"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf64332fc496cb-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:31 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=iNGXWGZddGAgAqDocUqBWjekbwMzfDMh340yRmCCJeM-1719931231-1.0.1.1-essV4B9BFWSuvR2T0uG6MV5cxWfQuRyJ8r60jrpIGln0rRHM3T9x6vXRULP81St3NcBwqy7SWTM_zR57gruV8g;
+        path=/; expires=Tue, 02-Jul-24 15:10:31 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/8/1"}]}],
+      "version": "1.1", "id": "6239516921456781"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '129'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":"Here is
+        some direct html for your Narrative perusal.","direct_html_link_index":null,"file_links":[],"html_links":[],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[8,"NarrativeTest.example_report-2e0a57b9-18a9-4fd8-a448-02be9388b9e8","KBaseReport.Report-3.0","2020-02-12T21:19:47+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","8517efb8d47e730309f784aab6161c3e",265,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/8/1"],"provenance":[{"time":"2020-02-12T21:19:07+0000","epoch":1581542347000,"service":"NarrativeTest","service_ver":"84738351645e027a3b9d5adc9b8551c4c4c82c73","method":"report_html_links","method_params":[{"num_pages":0,"include_direct_html":1,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":0}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"84738351645e027a3b9d5adc9b8551c4c4c82c73","code_url":"https://github.com/briehl/narrative-test","commit":"84738351645e027a3b9d5adc9b8551c4c4c82c73"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:19:47+0000","epoch":1581542387350,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf64349b14cfc0-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:31 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=_9g_XGx9_xC1zWNrByJiQtF_XBDxndPeSsnF9Xb4u.I-1719931231-1.0.1.1-1OkY66ozcRG8xU0KUZSIVbYHXniAZZA5xJuNoIMj.2QjciH3bK5NHBCu4PCvj5AsWyfxLzFcWJdNhBDsHR3QLg;
+        path=/; expires=Tue, 02-Jul-24 15:10:31 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "NarrativeMethodStore.get_method_full_info", "params": [{"ids":
+      ["eapearsonUiTestModule/medium_report", "eapearsonUiTestModule/large_report",
+      "NarrativeTest/report_html_links", "NarrativeTest/report_example"], "tag": "dev"}],
+      "version": "1.1", "id": "7089823527921177"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '280'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/narrative_method_store/rpc
+  response:
+    body:
+      string: '{"version":"1.1","result":[[{"id":"eapearsonUiTestModule/medium_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Medium
+        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","description":"This method will pause for a given number of seconds
+        before returning.\n\nThe purpose of this function is to provide a somewhat
+        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"eapearsonUiTestModule/large_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Large
+        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","description":"This method will pause for a given number of seconds
+        before returning.\n\nThe purpose of this function is to provide a somewhat
+        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"NarrativeTest/report_html_links","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"HTML
+        Report with links","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
+        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"},{"id":"NarrativeTest/report_example","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"Example
+        HTML Report","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
+        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf6435af12fb40-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:31 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=4.rfVvtdukOue2S9xYoplJFoPh8Z2zyebtBRv10C.SI-1719931231-1.0.1.1-zPjtQ8ZH.jGpxVroqdGm7ZAILpM3imshsmZZoozrhZK5ILZ7YkyU9Ifu3I2Vh7590iXPprPbVqpoofHCTKT1Pw;
+        path=/; expires=Tue, 02-Jul-24 15:10:31 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 47123}], "version":
+      "1.1", "id": "6261192113461423"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '113'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[47123,"wjriehl:narrative_1581384702051","wjriehl","2020-05-04T18:33:09+0000",9,"n","r","unlocked",{"static_narrative_ver":"30","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"9","narrative_nice_name":"Reports
+        Test","static_narrative_saved":"1588617189159","static_narrative":"/47123/30/"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf64368dbf22ea-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:31 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=BhUf00BRcNNt.CyQIGwsQWOUd1_yxh12p_RnAf0bNag-1719931231-1.0.1.1-MQqRAh.mpCkRaRLhs747C_u89DhWe0hqBR5L6sGHtUH.73uxrQiBeXUQaLrEiyuq7PeZnCttyAlGJQFyScr_Gg;
+        path=/; expires=Tue, 02-Jul-24 15:10:31 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_permissions", "params": [{"id": 47123}], "version":
+      "1.1", "id": "49123546163286747"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '111'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"ialarmedalien":"n","*":"r"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf6437680e67a9-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:31 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=kJcDOzM5xLA4RJl8sw9dIAQeBPO2Mp5EaLtHABYQSM4-1719931231-1.0.1.1-GycjBoMfVHKAzF2L2TBRP6SC56.OYtUDOUQGWW.ujys.Nh8hKzdqVtmkuoPH_gq1tsOQTy35lt4vxwguMnzKJw;
+        path=/; expires=Tue, 02-Jul-24 15:10:31 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/1/28"}]}],
+      "version": "1.1", "id": "3004676252405981"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"cells":[{"cell_type":"code","execution_count":null,"metadata":{"kbase":{"attributes":{"created":"Tue,
+        11 Feb 2020 01:31:55 GMT","icon":"code","id":"28fe3e2d-f089-4632-8e2b-f84be8d50412","lastLoaded":"Tue,
+        11 Feb 2020 01:31:55 GMT","status":"new","title":"Code Cell"},"codeCell":{"userSettings":{"showCodeInputArea":true}},"type":"code"}},"outputs":[],"source":""},{"cell_type":"code","execution_count":1,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"},{"input_parameter":"num_files","target_property":"num_files"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"},{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"If
+        > 0, this makes a number of tiny downloadable files.","disabled":0,"field_type":"text","id":"num_files","optional":1,"short_hint":"How
+        many files to make","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of files"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"e6f39431-0fbd-4f19-948c-ba4952bedd60","child_jobs":[],"created":1581632019000,"finished":1581632140241,"job_id":"5e45ca13aaeb5794eb0e24bb","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"e6f39431-0fbd-4f19-948c-ba4952bedd60","run_id":"c2962417-e69a-4602-90dc-0326023dd0bb","tag":"dev","token_id":"ce15faac-5905-41cc-b79f-38d50c8516ff"},"params":[{"include_direct_html":0,"initial_page":1,"num_files":3,"num_pages":1,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e45ca13aaeb5794eb0e24bb","result":[{"report_name":"NarrativeTest.example_report-c8d65867-f05b-421b-9941-35a497e4ac3e","report_ref":"47123/9/1"}],"version":"1.1"},"queued":1581632020198,"run_id":"c2962417-e69a-4602-90dc-0326023dd0bb","running":1581632039475,"scheduler_id":"13640","scheduler_type":"condor","status":"completed","updated":1581632140241,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581632149101,"launchState":{"cell_id":"e6f39431-0fbd-4f19-948c-ba4952bedd60","event":"launched_job","event_at":"2020-02-13T22:13:40.618108Z","job_id":"5e45ca13aaeb5794eb0e24bb","run_id":"c2962417-e69a-4602-90dc-0326023dd0bb"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-c8d65867-f05b-421b-9941-35a497e4ac3e","report_ref":"47123/9/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"output":{"byJob":{"5e45ca13aaeb5794eb0e24bb":{"cell":{"created":false},"createdAt":"Thu,
+        13 Feb 2020 22:15:49 GMT","params":{"include_direct":0,"initial_page":1,"num_files":3,"num_pages":1}}}},"params":{"include_direct":0,"initial_page":1,"num_files":3,"num_pages":1},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Thu,
+        13 Feb 2020 22:13:28 GMT","id":"e6f39431-0fbd-4f19-948c-ba4952bedd60","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 22:13:28 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        1,\n        \"initial_page\": 1,\n        \"include_direct\": 0,\n        \"num_files\":
+        3\n    },\n    tag=\"dev\",\n    version=\"25496c5ebfdaec8045b5fd9049aeff5efd4a3834\",\n    cell_id=\"e6f39431-0fbd-4f19-948c-ba4952bedd60\",\n    run_id=\"c2962417-e69a-4602-90dc-0326023dd0bb\"\n)"},{"cell_type":"code","execution_count":2,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"aa1fac03-c2be-45b1-ba60-e42f89dbe87e","child_jobs":[],"created":1581541418000,"finished":1581541507619,"job_id":"5e44682a5619be5eada7e085","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"aa1fac03-c2be-45b1-ba60-e42f89dbe87e","run_id":"d80fa448-c0fc-467d-9871-6b287ff16dd8","tag":"dev","token_id":"f5478b40-075e-4080-a941-877ff2cc0c5f"},"params":[{"include_direct_html":0,"initial_page":1,"num_pages":1,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e44682a5619be5eada7e085","result":[{"report_name":"NarrativeTest.example_report-c2deb2ed-a77a-4c47-bef3-66fff218ce04","report_ref":"47123/4/1"}],"version":"1.1"},"queued":1581541419302,"run_id":"d80fa448-c0fc-467d-9871-6b287ff16dd8","running":1581541437610,"scheduler_id":"13605","scheduler_type":"condor","status":"completed","updated":1581541507619,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581541515809,"launchState":{"cell_id":"aa1fac03-c2be-45b1-ba60-e42f89dbe87e","event":"launched_job","event_at":"2020-02-12T21:03:39.674066Z","job_id":"5e44682a5619be5eada7e085","run_id":"d80fa448-c0fc-467d-9871-6b287ff16dd8"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-c2deb2ed-a77a-4c47-bef3-66fff218ce04","report_ref":"47123/4/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"newAppName":"HTML
+        Report with links","outdated":true,"output":{"byJob":{"5e44682a5619be5eada7e085":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 21:05:15 GMT","params":{"include_direct":0,"initial_page":1,"num_pages":1}}}},"params":{"include_direct":0,"initial_page":1,"num_pages":1},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:03:35 GMT","id":"aa1fac03-c2be-45b1-ba60-e42f89dbe87e","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        1,\n        \"initial_page\": 1,\n        \"include_direct\": 0\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"aa1fac03-c2be-45b1-ba60-e42f89dbe87e\",\n    run_id=\"d80fa448-c0fc-467d-9871-6b287ff16dd8\"\n)"},{"cell_type":"code","execution_count":6,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"d8e84a3b-e09c-455a-b42b-9498cdcd73bf","child_jobs":[],"created":1581541721000,"finished":1581541887606,"job_id":"5e446959a1372d336359fbc5","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"d8e84a3b-e09c-455a-b42b-9498cdcd73bf","run_id":"cc10666e-d888-407f-9130-5ab5c3ac9c15","tag":"dev","token_id":"47ded194-394f-4b55-bf97-2bf35738cb72"},"params":[{"include_direct_html":0,"initial_page":3,"num_pages":5,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e446959a1372d336359fbc5","result":[{"report_name":"NarrativeTest.example_report-c544984d-f764-4716-8a31-6ceabff4bb4b","report_ref":"47123/7/1"}],"version":"1.1"},"queued":1581541722200,"run_id":"cc10666e-d888-407f-9130-5ab5c3ac9c15","running":1581541743023,"scheduler_id":"13609","scheduler_type":"condor","status":"completed","updated":1581541887606,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581541897028,"launchState":{"cell_id":"d8e84a3b-e09c-455a-b42b-9498cdcd73bf","event":"launched_job","event_at":"2020-02-12T21:08:42.666484Z","job_id":"5e446959a1372d336359fbc5","run_id":"cc10666e-d888-407f-9130-5ab5c3ac9c15"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-c544984d-f764-4716-8a31-6ceabff4bb4b","report_ref":"47123/7/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"newAppName":"HTML
+        Report with links","outdated":true,"output":{"byJob":{"5e446959a1372d336359fbc5":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 21:11:37 GMT","params":{"include_direct":0,"initial_page":3,"num_pages":5}}}},"params":{"include_direct":0,"initial_page":3,"num_pages":5},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:07:35 GMT","id":"d8e84a3b-e09c-455a-b42b-9498cdcd73bf","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        5,\n        \"initial_page\": 3,\n        \"include_direct\": 0\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"d8e84a3b-e09c-455a-b42b-9498cdcd73bf\",\n    run_id=\"cc10666e-d888-407f-9130-5ab5c3ac9c15\"\n)"},{"cell_type":"code","execution_count":5,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_example","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"text_input","target_property":"text_input"},{"input_parameter":"checkbox_input","target_property":"checkbox_input"}],"kb_service_method":"example_report","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_example","input_types":[],"module_name":"NarrativeTest","name":"Example
+        HTML Report","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":[""],"description":"Some
+        input test goes here","disabled":0,"field_type":"text","id":"text_input","optional":1,"short_hint":"Add
+        some text for your report","text_options":{"is_output_name":0,"placeholder":"","regex_constraint":[]},"ui_class":"parameter","ui_name":"Text
+        Input"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":["1"],"description":"Your
+        report will show this being checked or not","disabled":0,"field_type":"checkbox","id":"checkbox_input","optional":0,"short_hint":"Show
+        this off in your report","ui_class":"parameter","ui_name":"Checkbox Input"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"db8c9ab1-ee30-4091-a350-78443108f4a2","child_jobs":[],"created":1581541719000,"finished":1581541826698,"job_id":"5e446957ab9b56e191b14484","job_input":{"app_id":"NarrativeTest/report_example","method":"NarrativeTest.example_report","narrative_cell_info":{"cell_id":"db8c9ab1-ee30-4091-a350-78443108f4a2","run_id":"f90c9f55-3504-4ed8-951c-4e457d4cc15e","tag":"dev","token_id":"91d717fc-338c-4bce-b28c-a24145f6afa1"},"params":[{"checkbox_input":1,"text_input":"blah!","workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e446957ab9b56e191b14484","result":[{"report_name":"NarrativeTest.example_report2d7ef9d1-4e1f-4449-aa7a-8b7f6ba8d1ac","report_ref":"47123/6/1"}],"version":"1.1"},"queued":1581541720552,"run_id":"f90c9f55-3504-4ed8-951c-4e457d4cc15e","running":1581541743313,"scheduler_id":"13608","scheduler_type":"condor","status":"completed","updated":1581541826698,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581541834345,"launchState":{"cell_id":"db8c9ab1-ee30-4091-a350-78443108f4a2","event":"launched_job","event_at":"2020-02-12T21:08:40.928561Z","job_id":"5e446957ab9b56e191b14484","run_id":"f90c9f55-3504-4ed8-951c-4e457d4cc15e"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report2d7ef9d1-4e1f-4449-aa7a-8b7f6ba8d1ac","report_ref":"47123/6/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"newAppName":"Example
+        HTML Report","outdated":true,"output":{"byJob":{"5e446957ab9b56e191b14484":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 21:10:34 GMT","params":{"checkbox_input":1,"text_input":"blah!"}}}},"params":{"checkbox_input":1,"text_input":"blah!"},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:08:03 GMT","id":"db8c9ab1-ee30-4091-a350-78443108f4a2","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_example/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"Example HTML Report"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_example\",\n    {\n        \"text_input\":
+        \"blah!\",\n        \"checkbox_input\": 1\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"db8c9ab1-ee30-4091-a350-78443108f4a2\",\n    run_id=\"f90c9f55-3504-4ed8-951c-4e457d4cc15e\"\n)"},{"cell_type":"code","execution_count":4,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":1,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"e6907d6a-6b95-495a-9c99-3018121b2c0a","child_jobs":[],"created":1581541716000,"finished":1581541810503,"job_id":"5e446954b672b15cd3ee59bc","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"e6907d6a-6b95-495a-9c99-3018121b2c0a","run_id":"acd1377a-0796-4bfd-8e7d-494de1b7cf2c","tag":"dev","token_id":"0c496623-822d-45a0-98c0-34d635c6db3f"},"params":[{"include_direct_html":1,"initial_page":1,"num_pages":2,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e446954b672b15cd3ee59bc","result":[{"report_name":"NarrativeTest.example_report-92b37ca6-5542-435b-8fe0-be5d2eb1a109","report_ref":"47123/5/1"}],"version":"1.1"},"queued":1581541717657,"run_id":"acd1377a-0796-4bfd-8e7d-494de1b7cf2c","running":1581541738714,"scheduler_id":"13607","scheduler_type":"condor","status":"completed","updated":1581541810503,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581541813103,"launchState":{"cell_id":"e6907d6a-6b95-495a-9c99-3018121b2c0a","event":"launched_job","event_at":"2020-02-12T21:08:37.908407Z","job_id":"5e446954b672b15cd3ee59bc","run_id":"acd1377a-0796-4bfd-8e7d-494de1b7cf2c"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-92b37ca6-5542-435b-8fe0-be5d2eb1a109","report_ref":"47123/5/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"newAppName":"HTML
+        Report with links","outdated":true,"output":{"byJob":{"5e446954b672b15cd3ee59bc":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 21:10:13 GMT","params":{"include_direct":1,"initial_page":1,"num_pages":2}}}},"params":{"include_direct":1,"initial_page":1,"num_pages":2},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:08:15 GMT","id":"e6907d6a-6b95-495a-9c99-3018121b2c0a","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        2,\n        \"initial_page\": 1,\n        \"include_direct\": 1\n    },\n    tag=\"dev\",\n    version=\"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa\",\n    cell_id=\"e6907d6a-6b95-495a-9c99-3018121b2c0a\",\n    run_id=\"acd1377a-0796-4bfd-8e7d-494de1b7cf2c\"\n)"},{"cell_type":"code","execution_count":8,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"84738351645e027a3b9d5adc9b8551c4c4c82c73","id":"NarrativeTest/report_html_links","spec":{"behavior":{"kb_service_input_mapping":[{"narrative_system_variable":"workspace","target_property":"workspace_name"},{"input_parameter":"num_pages","target_property":"num_pages"},{"input_parameter":"initial_page","target_property":"initial_page"},{"input_parameter":"include_direct","target_property":"include_direct_html"}],"kb_service_method":"report_html_links","kb_service_name":"NarrativeTest","kb_service_output_mapping":[{"service_method_output_path":["0","report_name"],"target_property":"report_name"},{"service_method_output_path":["0","report_ref"],"target_property":"report_ref"},{"constant_value":"16","target_property":"report_window_line_height"}],"kb_service_url":"","kb_service_version":"84738351645e027a3b9d5adc9b8551c4c4c82c73"},"fixed_parameters":[],"info":{"app_type":"app","authors":["wjriehl"],"categories":[],"git_commit_hash":"84738351645e027a3b9d5adc9b8551c4c4c82c73","id":"NarrativeTest/report_html_links","input_types":[],"module_name":"NarrativeTest","name":"HTML
+        Report with links","namespace":"NarrativeTest","output_types":[],"subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","ver":"0.0.2"},"job_id_output_field":"docker","parameters":[{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        is the number of pages that will be generated for the report.","disabled":0,"field_type":"text","id":"num_pages","optional":0,"short_hint":"Set
+        the number of pages","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Number
+        of Pages"},{"advanced":0,"allow_multiple":0,"default_values":["1"],"description":"This
+        sets the first page to show in your multipage report.","disabled":0,"field_type":"text","id":"initial_page","optional":1,"short_hint":"The
+        first page to show","text_options":{"is_output_name":0,"min_int":0,"placeholder":"","regex_constraint":[],"validate_as":"int"},"ui_class":"parameter","ui_name":"Initial
+        Page"},{"advanced":0,"allow_multiple":0,"checkbox_options":{"checked_value":1,"unchecked_value":0},"default_values":[""],"description":"Using
+        a direct_html entry and no pages should show the direct_html as the report.","disabled":0,"field_type":"checkbox","id":"include_direct","optional":1,"short_hint":"Select
+        to include a \"direct_html\" entry","ui_class":"parameter","ui_name":"Use
+        direct HTML"}],"widgets":{"input":"null","output":"no-display"}},"tag":"dev","version":"0.0.2"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"7e8af111-08ce-4253-b783-4f607a9bc46f","child_jobs":[],"created":1581542320000,"finished":1581542399378,"job_id":"5e446bb0b672b15cd3ee5a1a","job_input":{"app_id":"NarrativeTest/report_html_links","method":"NarrativeTest.report_html_links","narrative_cell_info":{"cell_id":"7e8af111-08ce-4253-b783-4f607a9bc46f","run_id":"4e7a389c-72af-49be-a4bf-7e5c3ca18558","tag":"dev","token_id":"ec436eb9-262a-4798-bb00-528f8322a197"},"params":[{"include_direct_html":1,"initial_page":0,"num_pages":0,"workspace_name":"wjriehl:narrative_1581384702051"}],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"84738351645e027a3b9d5adc9b8551c4c4c82c73","source_ws_objects":[],"wsid":47123},"job_output":{"id":"5e446bb0b672b15cd3ee5a1a","result":[{"report_name":"NarrativeTest.example_report-2e0a57b9-18a9-4fd8-a448-02be9388b9e8","report_ref":"47123/8/1"}],"version":"1.1"},"queued":1581542321362,"run_id":"4e7a389c-72af-49be-a4bf-7e5c3ca18558","running":1581542346304,"scheduler_id":"13611","scheduler_type":"condor","status":"completed","updated":1581542399378,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581548098233,"launchState":{"cell_id":"7e8af111-08ce-4253-b783-4f607a9bc46f","event":"launched_job","event_at":"2020-02-12T21:18:41.739818Z","job_id":"5e446bb0b672b15cd3ee5a1a","run_id":"4e7a389c-72af-49be-a4bf-7e5c3ca18558"},"outputWidgetInfo":{"name":"no-display","params":{"report_name":"NarrativeTest.example_report-2e0a57b9-18a9-4fd8-a448-02be9388b9e8","report_ref":"47123/8/1","report_window_line_height":"16"},"tag":"dev"}},"fsm":{"currentState":{"mode":"success"}},"output":{"byJob":{"5e446bb0b672b15cd3ee5a1a":{"cell":{"created":false},"createdAt":"Wed,
+        12 Feb 2020 22:54:58 GMT","params":{"include_direct":1,"initial_page":0,"num_pages":0}}}},"params":{"include_direct":1,"initial_page":0,"num_pages":0},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:18:23 GMT","id":"7e8af111-08ce-4253-b783-4f607a9bc46f","info":{"label":"more...","url":"/#appcatalog/app/NarrativeTest/report_html_links/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Show an example HTML
+        Report","title":"HTML Report with links"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"NarrativeTest/report_html_links\",\n    {\n        \"num_pages\":
+        0,\n        \"initial_page\": 0,\n        \"include_direct\": 1\n    },\n    tag=\"dev\",\n    version=\"84738351645e027a3b9d5adc9b8551c4c4c82c73\",\n    cell_id=\"7e8af111-08ce-4253-b783-4f607a9bc46f\",\n    run_id=\"4e7a389c-72af-49be-a4bf-7e5c3ca18558\"\n)"},{"cell_type":"code","execution_count":9,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"298823e0057dcdc906bac2a943ecadfc93d30a91","id":"eapearsonUiTestModule/large_report","spec":{"behavior":{"kb_service_input_mapping":[],"kb_service_method":"large_report","kb_service_name":"eapearsonUiTestModule","kb_service_output_mapping":[],"kb_service_url":"","kb_service_version":"298823e0057dcdc906bac2a943ecadfc93d30a91"},"fixed_parameters":[],"info":{"app_type":"app","authors":["eapearson"],"categories":["active","util"],"git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","id":"eapearsonUiTestModule/large_report","input_types":[],"module_name":"eapearsonUiTestModule","name":"Large
+        Sized Report","namespace":"eapearsonUiTestModule","output_types":[],"subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","ver":"0.0.1"},"job_id_output_field":"docker","parameters":[],"widgets":{"input":"null","output":"null"}},"tag":"dev","version":"0.0.1"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"df86bd35-e96f-4bad-b108-f08c2d1b3493","child_jobs":[],"created":1581542322000,"error":{"code":-32601,"error":"No
+        output generated","message":"No output generated. Check logs for more details","name":"Output
+        not found"},"error_code":1,"errormsg":"Attempting to finish the job with an
+        error","finished":1581542371280,"job_id":"5e446bb2c807c0569427e901","job_input":{"app_id":"eapearsonUiTestModule/large_report","method":"eapearsonUiTestModule.large_report","narrative_cell_info":{"cell_id":"df86bd35-e96f-4bad-b108-f08c2d1b3493","run_id":"efa11fc5-0597-49e5-b40d-68fdcbd77682","tag":"dev","token_id":"c18dd2a7-5ab6-4bd7-a6b1-7c8f35b9dd7c"},"params":[],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"298823e0057dcdc906bac2a943ecadfc93d30a91","source_ws_objects":[],"wsid":47123},"job_output":{},"queued":1581542323639,"run_id":"efa11fc5-0597-49e5-b40d-68fdcbd77682","running":1581542345483,"scheduler_id":"13612","scheduler_type":"condor","status":"error","token_id":"c18dd2a7-5ab6-4bd7-a6b1-7c8f35b9dd7c","updated":1581542371280,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581548098505,"launchState":{"cell_id":"df86bd35-e96f-4bad-b108-f08c2d1b3493","event":"launched_job","event_at":"2020-02-12T21:18:43.875041Z","job_id":"5e446bb2c807c0569427e901","run_id":"efa11fc5-0597-49e5-b40d-68fdcbd77682"}},"fsm":{"currentState":{"mode":"error","stage":"running"}},"output":{"byJob":{}},"params":{},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:18:31 GMT","id":"df86bd35-e96f-4bad-b108-f08c2d1b3493","info":{"label":"more...","url":"/#appcatalog/app/eapearsonUiTestModule/large_report/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Allows testing with variable
+        run times","title":"Large Sized Report"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"eapearsonUiTestModule/large_report\",\n    {\n\n    },\n    tag=\"dev\",\n    version=\"298823e0057dcdc906bac2a943ecadfc93d30a91\",\n    cell_id=\"df86bd35-e96f-4bad-b108-f08c2d1b3493\",\n    run_id=\"efa11fc5-0597-49e5-b40d-68fdcbd77682\"\n)"},{"cell_type":"code","execution_count":10,"metadata":{"kbase":{"appCell":{"app":{"gitCommitHash":"298823e0057dcdc906bac2a943ecadfc93d30a91","id":"eapearsonUiTestModule/medium_report","spec":{"behavior":{"kb_service_input_mapping":[],"kb_service_method":"medium_report","kb_service_name":"eapearsonUiTestModule","kb_service_output_mapping":[],"kb_service_url":"","kb_service_version":"298823e0057dcdc906bac2a943ecadfc93d30a91"},"fixed_parameters":[],"info":{"app_type":"app","authors":["eapearson"],"categories":["active","util"],"git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","id":"eapearsonUiTestModule/medium_report","input_types":[],"module_name":"eapearsonUiTestModule","name":"Medium
+        Sized Report","namespace":"eapearsonUiTestModule","output_types":[],"subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","ver":"0.0.1"},"job_id_output_field":"docker","parameters":[],"widgets":{"input":"null","output":"null"}},"tag":"dev","version":"0.0.1"},"exec":{"jobState":{"authstrat":"kbaseworkspace","cell_id":"c28f909b-b27e-4452-9f1f-27248b488356","child_jobs":[],"created":1581542325000,"error":{"code":-32601,"error":"No
+        output generated","message":"No output generated. Check logs for more details","name":"Output
+        not found"},"error_code":1,"errormsg":"Attempting to finish the job with an
+        error","finished":1581542373094,"job_id":"5e446bb566b3f52d2a2374fc","job_input":{"app_id":"eapearsonUiTestModule/medium_report","method":"eapearsonUiTestModule.medium_report","narrative_cell_info":{"cell_id":"c28f909b-b27e-4452-9f1f-27248b488356","run_id":"b8dc75dd-7fa1-44e1-939d-8c938693fa50","tag":"dev","token_id":"dda5c324-a54c-45ba-8411-da31079c7a79"},"params":[],"parent_job_id":"None","requirements":{"clientgroup":"njs","cpu":4,"disk":30,"memory":2000},"service_ver":"298823e0057dcdc906bac2a943ecadfc93d30a91","source_ws_objects":[],"wsid":47123},"job_output":{},"queued":1581542326465,"run_id":"b8dc75dd-7fa1-44e1-939d-8c938693fa50","running":1581542348322,"scheduler_id":"13613","scheduler_type":"condor","status":"error","token_id":"dda5c324-a54c-45ba-8411-da31079c7a79","updated":1581542373094,"user":"wjriehl","wsid":47123},"jobStateUpdated":1581548099153,"launchState":{"cell_id":"c28f909b-b27e-4452-9f1f-27248b488356","event":"launched_job","event_at":"2020-02-12T21:18:46.818249Z","job_id":"5e446bb566b3f52d2a2374fc","run_id":"b8dc75dd-7fa1-44e1-939d-8c938693fa50"}},"fsm":{"currentState":{"mode":"error","stage":"running"}},"output":{"byJob":{}},"params":{},"user-settings":{"showCodeInputArea":false}},"attributes":{"created":"Wed,
+        12 Feb 2020 21:18:33 GMT","id":"c28f909b-b27e-4452-9f1f-27248b488356","info":{"label":"more...","url":"/#appcatalog/app/eapearsonUiTestModule/medium_report/dev"},"lastLoaded":"Thu,
+        13 Feb 2020 18:09:57 GMT","status":"new","subtitle":"Allows testing with variable
+        run times","title":"Medium Sized Report"},"type":"app"}},"outputs":[],"source":"from
+        biokbase.narrative.jobs.appmanager import AppManager\nAppManager().run_app(\n    \"eapearsonUiTestModule/medium_report\",\n    {\n\n    },\n    tag=\"dev\",\n    version=\"298823e0057dcdc906bac2a943ecadfc93d30a91\",\n    cell_id=\"c28f909b-b27e-4452-9f1f-27248b488356\",\n    run_id=\"b8dc75dd-7fa1-44e1-939d-8c938693fa50\"\n)"}],"metadata":{"creator":"wjriehl","data_dependencies":[],"description":"","format":"ipynb","is_temporary":"false","job_ids":{"apps":[],"job_usage":{"queue_time":0,"run_time":0},"methods":[]},"kbase":{"creator":"wjriehl","job_ids":{"apps":[],"job_usage":{"queue_time":0,"run_time":0},"methods":[]},"name":"Untitled","ws_name":"wjriehl:narrative_1581384702051"},"kernelspec":{"display_name":"Python
+        3","language":"python","name":"python3"},"language_info":{"codemirror_mode":{"name":"ipython","version":3},"file_extension":".py","mimetype":"text/x-python","name":"python","nbconvert_exporter":"python","pygments_lexer":"ipython3","version":"3.6.9"},"name":"Reports
+        Test","type":"KBaseNarrative.Narrative","ws_name":"wjriehl:narrative_1581384702051"},"nbformat":4,"nbformat_minor":1},"info":[1,"Narrative.1581384702051","KBaseNarrative.Narrative-4.0","2020-02-13T22:16:16+0000",28,"wjriehl",47123,"wjriehl:narrative_1581384702051","cd6dce1eba33d9a2fe7e66386872b770",40126,{"creator":"wjriehl","method.NarrativeTest/report_html_links/25496c5ebfdaec8045b5fd9049aeff5efd4a3834":"1","method.eapearsonUiTestModule/medium_report/298823e0057dcdc906bac2a943ecadfc93d30a91":"1","data_dependencies":"[]","job_info":"{\"queue_time\":
+        0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}","format":"ipynb","description":"","type":"KBaseNarrative.Narrative","method.NarrativeTest/report_example/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa":"1","method.eapearsonUiTestModule/large_report/298823e0057dcdc906bac2a943ecadfc93d30a91":"1","method.NarrativeTest/report_html_links/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa":"3","is_temporary":"false","name":"Reports
+        Test","method.NarrativeTest/report_html_links/84738351645e027a3b9d5adc9b8551c4c4c82c73":"1","ws_name":"wjriehl:narrative_1581384702051"}],"path":["47123/1/28"],"provenance":[{"service":"narrative","service_ver":"4.0.0","method_params":[],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[],"custom":{},"description":"Saved
+        by KBase Narrative Interface"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-13T22:16:15+0000","epoch":1581632175856,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf64392cebaaaf-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:32 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=fJV7uMmw8nqYdD0wI91w7U93zVVa2k5RQvDEVR1VXBk-1719931232-1.0.1.1-690eQyjjZfW.Ue4WSYblthj_ORHb2pLtuXGjqhDHKqWEVtTFX7qiMhSUYyx.ImL_87cHoyWod2v74zLhiLW_Lg;
+        path=/; expires=Tue, 02-Jul-24 15:10:32 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 47123}], "version":
+      "1.1", "id": "7454736896148888"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '113'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[47123,"wjriehl:narrative_1581384702051","wjriehl","2020-05-04T18:33:09+0000",9,"n","r","unlocked",{"static_narrative_ver":"30","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"9","narrative_nice_name":"Reports
+        Test","static_narrative_saved":"1588617189159","static_narrative":"/47123/30/"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf643a79519e68-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:32 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=WiUj9rVHeldmWFp35QVqlEixFjU20V4mNq3T_DjA8JY-1719931232-1.0.1.1-HPQbzamWIweutySjV3N6vybbAey7UIbD7SvItTCNfleQH.dHMf.5qNizSUGoyUTDZhJG2V12BYjRkzu_mU7NnA;
+        path=/; expires=Tue, 02-Jul-24 15:10:32 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.list_objects", "params": [{"includeMetadata": 1,
+      "type": "KBaseSets.ReadsSet", "ids": [47123], "minObjectID": 1, "maxObjectID":
+      10000}], "version": "1.1", "id": "23343922332644873"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '203'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf643c0e369687-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:32 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=QxgDTGU_LhV5t1Y6Q_0JxE28llP_F_IfjpNBrVD7DJY-1719931232-1.0.1.1-PnusU4POljnSnQDwC25eFmMlmkQC6OQQ6VlHylrCvD4afnhYQaSaAOoXqSBzFaAU0b638.aKe4kfz8XV2m2QFw;
+        path=/; expires=Tue, 02-Jul-24 15:10:32 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 47123, "workspace":
+      null}], "version": "1.1", "id": "12471902917752942"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '133'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[47123,"wjriehl:narrative_1581384702051","wjriehl","2020-05-04T18:33:09+0000",9,"n","r","unlocked",{"static_narrative_ver":"30","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"9","narrative_nice_name":"Reports
+        Test","static_narrative_saved":"1588617189159","static_narrative":"/47123/30/"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf643ccacf230a-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:32 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=cyD2KFhHFbPlH9KyyskZdR41e_519ZzUi6qmtWX5QJk-1719931232-1.0.1.1-D6WnZHXcTO.wNU6iais1ZuQTi7T2pOokAbEBfrPyOvWRVIpZG1BZB5HyDaiKDrsYEPFb0WLmIArFv9dpUtuI9w;
+        path=/; expires=Tue, 02-Jul-24 15:10:32 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.list_objects", "params": [{"includeMetadata": 1,
+      "ids": [47123], "minObjectID": 1, "maxObjectID": 10000}], "version": "1.1",
+      "id": "5326254554904869"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '172'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[[1,"Narrative.1581384702051","KBaseNarrative.Narrative-4.0","2020-02-18T20:31:39+0000",30,"wjriehl",47123,"wjriehl:narrative_1581384702051","5b8e7ddc0d94f9a85f9bbce600b39a25",40180,{"creator":"wjriehl","method.NarrativeTest/report_html_links/25496c5ebfdaec8045b5fd9049aeff5efd4a3834":"1","method.eapearsonUiTestModule/medium_report/298823e0057dcdc906bac2a943ecadfc93d30a91":"1","data_dependencies":"[]","job_info":"{\"queue_time\":
+        0, \"run_time\": 0, \"running\": 0, \"completed\": 0, \"error\": 0}","format":"ipynb","description":"","type":"KBaseNarrative.Narrative","method.NarrativeTest/report_example/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa":"1","method.eapearsonUiTestModule/large_report/298823e0057dcdc906bac2a943ecadfc93d30a91":"1","method.NarrativeTest/report_html_links/b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa":"3","is_temporary":"false","name":"Reports
+        Test","method.NarrativeTest/report_html_links/84738351645e027a3b9d5adc9b8551c4c4c82c73":"1","ws_name":"wjriehl:narrative_1581384702051"}]]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf643e1a881761-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:33 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=6ifA8HbAGddNcxgvF.RgUz9rI.Wqw3SMhMsOm1qfcaI-1719931233-1.0.1.1-2_9BW6IZiJ6Fs5YaigZZ7r5d99TuMF7hpTpTbzr9FrEj_Z_ZcN08qg6wY6KaMVjRigUCewlY.4MXLDd2Bxu6kA;
+        path=/; expires=Tue, 02-Jul-24 15:10:33 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/9/1"}]}],
+      "version": "1.1", "id": "009601591229884687"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '131'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":0,"file_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/ffbbc04f-e4e0-471e-b787-075f5c4cfcdc","description":"Simple
+        test file 1","handle":"KBH_520025","label":"","name":"file_number_1.txt"},{"URL":"https://ci.kbase.us/services/shock-api/node/c857751e-b145-4ef8-aa5e-abf59891ccc0","description":"Simple
+        test file 2","handle":"KBH_520026","label":"","name":"file_number_2.txt"},{"URL":"https://ci.kbase.us/services/shock-api/node/f5fcf3d0-22bf-4532-b157-c608ed6e44c1","description":"Simple
+        test file 3","handle":"KBH_520027","label":"","name":"file_number_3.txt"}],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/8f7e8210-c378-48d5-8dd4-66de3c3a8054","description":"Report
+        page 1","handle":"KBH_520028","label":"","name":"page1.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[9,"NarrativeTest.example_report-c8d65867-f05b-421b-9941-35a497e4ac3e","KBaseReport.Report-3.0","2020-02-13T22:15:27+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","3ba827ccd91819b253dc96deffe620c3",942,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/9/1"],"provenance":[{"time":"2020-02-13T22:14:00+0000","epoch":1581632040000,"service":"NarrativeTest","service_ver":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","method":"report_html_links","method_params":[{"num_pages":1,"include_direct_html":0,"num_files":3,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":1}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834","code_url":"https://github.com/briehl/narrative-test","commit":"25496c5ebfdaec8045b5fd9049aeff5efd4a3834"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-13T22:15:25+0000","epoch":1581632125898,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_520028","KBH_520027","KBH_520026","KBH_520025"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf64425b75ce84-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:33 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=troGfBruIikNApDNVuRnPeKqbbV9ZHhERy_qxmNJi0I-1719931233-1.0.1.1-wd89GGEukpR_B_U1lzj5P33dtVJwcLPSa2MkAJyu9BrAyRAS2oisf6uUdFBnwTLJD0CB5B7_QpcuVrUbdVAW4Q;
+        path=/; expires=Tue, 02-Jul-24 15:10:33 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/4/1"}]}],
+      "version": "1.1", "id": "7086475007931605"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '129'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":0,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/306f8e4f-ddcb-4a83-adbd-5ab19f14ab81","description":"Report
+        page 1","handle":"KBH_519779","label":"","name":"page1.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[4,"NarrativeTest.example_report-c2deb2ed-a77a-4c47-bef3-66fff218ce04","KBaseReport.Report-3.0","2020-02-12T21:04:47+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","06b284325fff04a596f1002b4dfc0aaa",385,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/4/1"],"provenance":[{"time":"2020-02-12T21:03:58+0000","epoch":1581541438000,"service":"NarrativeTest","service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","method":"report_html_links","method_params":[{"num_pages":1,"include_direct_html":0,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":1}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","code_url":"https://github.com/briehl/narrative-test","commit":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:04:46+0000","epoch":1581541486562,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_519779"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf644428e8235c-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:34 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=5502VGYMDtnG2YOtsyTrQc9e3vlw38zk8aWsO_0VQaI-1719931234-1.0.1.1-D2UDsCqghONO6P8eqM3K7xwinIwi1RwD0IK3KPVaoCf7dRZJHI2a2vZp9sNhK3VA_JD8jxvPEOVZ05MfcOeDVA;
+        path=/; expires=Tue, 02-Jul-24 15:10:34 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/7/1"}]}],
+      "version": "1.1", "id": "5927645573947401"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '129'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":2,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/47b5a29a-6650-4d59-856a-e61079e13fb1","description":"Report
+        page 1","handle":"KBH_519789","label":"","name":"page1.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/cd95091e-3e31-4a21-a4df-de924b5fd9e0","description":"Report
+        page 2","handle":"KBH_519791","label":"","name":"page2.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/db80c207-e368-4601-8eb6-5ff341190efe","description":"Report
+        page 3","handle":"KBH_519794","label":"","name":"page3.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/9522541c-f0e2-40ef-88ca-25c92c4d2f68","description":"Report
+        page 4","handle":"KBH_519795","label":"","name":"page4.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/fbcd9693-72b3-4bd4-8a77-202787c35b8d","description":"Report
+        page 5","handle":"KBH_519796","label":"","name":"page5.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[7,"NarrativeTest.example_report-c544984d-f764-4716-8a31-6ceabff4bb4b","KBaseReport.Report-3.0","2020-02-12T21:10:47+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","d57c87b804431ac93566b481dffde223",1081,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/7/1"],"provenance":[{"time":"2020-02-12T21:09:04+0000","epoch":1581541744000,"service":"NarrativeTest","service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","method":"report_html_links","method_params":[{"num_pages":5,"include_direct_html":0,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":3}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","code_url":"https://github.com/briehl/narrative-test","commit":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:10:46+0000","epoch":1581541846483,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_519789","KBH_519794","KBH_519791","KBH_519796","KBH_519795"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf6445691d9435-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:34 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=KVye3YC5ZlzIUdNYEoZH4njNgpOIrlwEp_pD1z1s.ok-1719931234-1.0.1.1-7XoYIXadPG8y7iji2vHFLI0_cKjlPk6fERZ9h.JF7UAPR2JQ5eU3VCfc1rE1bwjlCbJG87mPRTKM1XcS7aTPdw;
+        path=/; expires=Tue, 02-Jul-24 15:10:34 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/6/1"}]}],
+      "version": "1.1", "id": "9875178957320327"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '129'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":null,"direct_html_link_index":0,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/742021ac-6e33-4cc8-b4f0-0d90960daf81","description":"Just
+        an example report","handle":"KBH_519792","label":"","name":"index.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"This
+        is a report message","warnings":[]},"info":[6,"NarrativeTest.example_report2d7ef9d1-4e1f-4449-aa7a-8b7f6ba8d1ac","KBaseReport.Report-3.0","2020-02-12T21:10:13+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","2ebe47508f2d10413e8af0fbe13dfce4",393,{"Size(characters)":"24","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/6/1"],"provenance":[{"time":"2020-02-12T21:09:04+0000","epoch":1581541744000,"service":"NarrativeTest","service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","method":"example_report","method_params":[{"text_input":"blah!","workspace_name":"wjriehl:narrative_1581384702051","checkbox_input":1}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","code_url":"https://github.com/briehl/narrative-test","commit":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:10:11+0000","epoch":1581541811878,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_519792"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf6446fb40ce4c-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:34 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Juc6sVuB74AzW8AsnV_1eF.A9cPtzCy4QQD0cCPEyXc-1719931234-1.0.1.1-uKDVEM6Z5gEwDlraSV3tlveI9NE9fz9VKbkOtDlV1ghGNX01XeuPc2DRHppBJjMgtNSc9B6OQToGfKjlkGA5yw;
+        path=/; expires=Tue, 02-Jul-24 15:10:34 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/5/1"}]}],
+      "version": "1.1", "id": "13949260539051356"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":"Here is
+        some direct html for your Narrative perusal.","direct_html_link_index":0,"file_links":[],"html_links":[{"URL":"https://ci.kbase.us/services/shock-api/node/3a6972b9-9453-4b74-b705-a9679dff26af","description":"Report
+        page 1","handle":"KBH_519788","label":"","name":"page1.html"},{"URL":"https://ci.kbase.us/services/shock-api/node/8b982303-0c1f-4f4c-a487-1e7583754e08","description":"Report
+        page 2","handle":"KBH_519790","label":"","name":"page2.html"}],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[5,"NarrativeTest.example_report-92b37ca6-5542-435b-8fe0-be5d2eb1a109","KBaseReport.Report-3.0","2020-02-12T21:10:02+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","7db73635d6879fbcddcd88c3f2b4bc77",609,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/5/1"],"provenance":[{"time":"2020-02-12T21:08:59+0000","epoch":1581541739000,"service":"NarrativeTest","service_ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","method":"report_html_links","method_params":[{"num_pages":2,"include_direct_html":1,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":1}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa","code_url":"https://github.com/briehl/narrative-test","commit":"b4c5dfc69ae106b3aa1d34b8bd21b6cb4e1c39aa"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:10:01+0000","epoch":1581541801368,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{"handle":["KBH_519788","KBH_519790"]}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf64482ca8aaa9-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:34 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=lsmiE1yoRztskGx7xnTdNKO9E4Xxjv06E7sP5aPhB3U-1719931234-1.0.1.1-nGRKucMQaw4xraYUMaZkvLafomfMakUaqeC9TaoMNc5FMJH.r7TJh4ZugPdKpZ9Tv.F.QrdeglDch7z081aKDA;
+        path=/; expires=Tue, 02-Jul-24 15:10:34 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "47123/8/1"}]}],
+      "version": "1.1", "id": "15436221885900592"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"data":[{"data":{"direct_html":"Here is
+        some direct html for your Narrative perusal.","direct_html_link_index":null,"file_links":[],"html_links":[],"html_window_height":null,"objects_created":[],"summary_window_height":null,"text_message":"Here
+        is an example report","warnings":[]},"info":[8,"NarrativeTest.example_report-2e0a57b9-18a9-4fd8-a448-02be9388b9e8","KBaseReport.Report-3.0","2020-02-12T21:19:47+0000",1,"wjriehl",47123,"wjriehl:narrative_1581384702051","8517efb8d47e730309f784aab6161c3e",265,{"Size(characters)":"25","Objects
+        Created":"0","Warnings":"0"}],"path":["47123/8/1"],"provenance":[{"time":"2020-02-12T21:19:07+0000","epoch":1581542347000,"service":"NarrativeTest","service_ver":"84738351645e027a3b9d5adc9b8551c4c4c82c73","method":"report_html_links","method_params":[{"num_pages":0,"include_direct_html":1,"workspace_name":"wjriehl:narrative_1581384702051","initial_page":0}],"input_ws_objects":[],"resolved_ws_objects":[],"intermediate_incoming":[],"intermediate_outgoing":[],"external_data":[],"subactions":[{"name":"NarrativeTest","ver":"84738351645e027a3b9d5adc9b8551c4c4c82c73","code_url":"https://github.com/briehl/narrative-test","commit":"84738351645e027a3b9d5adc9b8551c4c4c82c73"},{"name":"KBaseReport","code_url":"https://github.com/kbaseapps/KBaseReport","commit":"0356e0313025b0d4b1b7fa11e96050aeaaaa828c"},{"name":"DataFileUtil","code_url":"https://github.com/kbaseapps/DataFileUtil","commit":"df0bb6568008983c1daf6966cf8cebf54f0a0d80"}],"custom":{},"description":"KBase
+        SDK method run via the KBase Execution Engine"}],"creator":"wjriehl","orig_wsid":47123,"created":"2020-02-12T21:19:47+0000","epoch":1581542387350,"refs":[],"copy_source_inaccessible":0,"extracted_ids":{}}]}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf6449b859689b-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:34 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=2vGqM1RnjdmVnZjRbrsTsGMlhm4gAN8egkkUiAvIb3I-1719931234-1.0.1.1-lfXa318q62btwsGlVG3cn1MAnTapHPO7HTYPTpkRssiCcU9h8heYwQxfEvlruiERqQCpX8kIpR_RI9VFSYxKrw;
+        path=/; expires=Tue, 02-Jul-24 15:10:34 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "NarrativeMethodStore.get_method_full_info", "params": [{"ids":
+      ["eapearsonUiTestModule/medium_report", "eapearsonUiTestModule/large_report",
+      "NarrativeTest/report_html_links", "NarrativeTest/report_example"], "tag": "dev"}],
+      "version": "1.1", "id": "08396762950179959"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '281'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/narrative_method_store/rpc
+  response:
+    body:
+      string: '{"version":"1.1","result":[[{"id":"eapearsonUiTestModule/medium_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Medium
+        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","description":"This method will pause for a given number of seconds
+        before returning.\n\nThe purpose of this function is to provide a somewhat
+        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"eapearsonUiTestModule/large_report","module_name":"eapearsonUiTestModule","git_commit_hash":"298823e0057dcdc906bac2a943ecadfc93d30a91","name":"Large
+        Sized Report","ver":"0.0.1","authors":["eapearson"],"contact":"","subtitle":"Allows
+        testing with variable run times","tooltip":"Allows testing with variable run
+        times","description":"This method will pause for a given number of seconds
+        before returning.\n\nThe purpose of this function is to provide a somewhat
+        deterministic way to\ntest function execution from a test environment.","technical_description":"","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":["active","util"],"screenshots":[],"publications":[],"namespace":"eapearsonUiTestModule"},{"id":"NarrativeTest/report_html_links","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"HTML
+        Report with links","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
+        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"},{"id":"NarrativeTest/report_example","module_name":"NarrativeTest","git_commit_hash":"a17cce938a979c42022cb5e9d416604f87d8a69d","name":"Example
+        HTML Report","ver":"0.0.6","authors":["wjriehl"],"contact":"help@kbase.us","subtitle":"Show
+        an example HTML Report","tooltip":"Show an example HTML Report","description":"<p>Demonstrate
+        a KBase HTML Report using some simple inputs.</p>","technical_description":"none","app_type":"app","suggestions":{"related_methods":[],"next_methods":[],"related_apps":[],"next_apps":[]},"categories":[],"screenshots":[],"publications":[],"namespace":"NarrativeTest"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf644abb889e52-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:35 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=fhWQP.5U6DcIEW_..JbTetg3G3Vhq9S3mq1EQite7Ps-1719931235-1.0.1.1-3Yu3IdGN7o1Vy7fTeIUS5UFxZaCbeyDamyiHFBfE0zDTjrvCwoULe49Hn0KaKjvCjv0aG94nUUdOD6GCOh9euw;
+        path=/; expires=Tue, 02-Jul-24 15:10:35 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"method": "Workspace.get_workspace_info", "params": [{"id": 47123}], "version":
+      "1.1", "id": "7184345172095353"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '113'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[[47123,"wjriehl:narrative_1581384702051","wjriehl","2020-05-04T18:33:09+0000",9,"n","r","unlocked",{"static_narrative_ver":"30","searchtags":"narrative","is_temporary":"false","narrative":"1","cell_count":"9","narrative_nice_name":"Reports
+        Test","static_narrative_saved":"1588617189159","static_narrative":"/47123/30/"}]]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf644b6fb1aaa5-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:35 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=gL189tOUjjLaUe7Y.Y0MU5ukCdLryhn21BFzkljvRvs-1719931235-1.0.1.1-jwxhz1c2y92_Ert1rglXxxsLavO7sb8YQbG2r2MImcDE3xv2NdANUhn0JEMSo9jpKWcsWcXsYasUqAoX0xa9XQ;
+        path=/; expires=Tue, 02-Jul-24 15:10:35 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"method": "Workspace.get_permissions", "params": [{"id": 47123}], "version":
+      "1.1", "id": "9421605235888341"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '110'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","result":[{"ialarmedalien":"n","*":"r"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89cf644c4a83cf61-SJC
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jul 2024 14:40:35 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=3QObsNMgXkFwtp6v._8RmjWkMxFs_g8rjAisdxlVIB0-1719931235-1.0.1.1-vBS1RYMwLIJapp5WrE8hQcVl3v7Xe9Q5omTLZVKkW6qIwDK2BqDJ7bP3qHk9CD0noh8L6NmsGZhosnVjmaA2xg;
+        path=/; expires=Tue, 02-Jul-24 15:10:35 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: ''
+version: 1

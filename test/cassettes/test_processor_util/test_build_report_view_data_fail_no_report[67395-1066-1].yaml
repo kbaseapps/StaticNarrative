@@ -1,0 +1,91 @@
+interactions:
+- request:
+    body: '{"method": "Workspace.get_objects2", "params": [{"objects": [{"ref": "67395/1066/1"}]}],
+      "version": "1.1", "id": "44282812097182644"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '133'
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://ci.kbase.us/services/ws
+  response:
+    body:
+      string: '{"version":"1.1","error":{"name":"JSONRPCError","code":-32500,"message":"Object
+        1066 (name NarrativeTest.example_report7c45168f-f2da-43f8-941f-5c02a129103f)
+        in workspace 67395 (name ialarmedalien:narrative_1649942812539) has been deleted","error":"us.kbase.workspace.database.exceptions.DeletedObjectException:
+        Object 1066 (name NarrativeTest.example_report7c45168f-f2da-43f8-941f-5c02a129103f)
+        in workspace 67395 (name ialarmedalien:narrative_1649942812539) has been deleted\n\tat
+        us.kbase.workspace.database.mongo.MongoWorkspaceDB.queryObjects(MongoWorkspaceDB.java:3133)\n\tat
+        us.kbase.workspace.database.mongo.MongoWorkspaceDB.resolveObjectIDs(MongoWorkspaceDB.java:3066)\n\tat
+        us.kbase.workspace.database.mongo.MongoWorkspaceDB.getObjects(MongoWorkspaceDB.java:2354)\n\tat
+        us.kbase.workspace.database.Workspace.getObjects(Workspace.java:1130)\n\tat
+        us.kbase.workspace.database.Workspace.getObjects(Workspace.java:1069)\n\tat
+        us.kbase.workspace.kbase.WorkspaceServerMethods.getObjects(WorkspaceServerMethods.java:479)\n\tat
+        us.kbase.workspace.WorkspaceServer.getObjects2(WorkspaceServer.java:804)\n\tat
+        jdk.internal.reflect.GeneratedMethodAccessor53.invoke(Unknown Source)\n\tat
+        java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat
+        java.base/java.lang.reflect.Method.invoke(Method.java:566)\n\tat us.kbase.common.service.JsonServerServlet.processRpcCall(JsonServerServlet.java:681)\n\tat
+        us.kbase.common.service.JsonServerServlet.doPost(JsonServerServlet.java:553)\n\tat
+        javax.servlet.http.HttpServlet.service(HttpServlet.java:661)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:742)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat
+        org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat
+        org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat
+        org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)\n\tat
+        org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\n\tat
+        org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)\n\tat
+        org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)\n\tat
+        org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)\n\tat
+        org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)\n\tat
+        org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\n\tat
+        org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat
+        org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)\n\tat
+        org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\n\tat
+        org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)\n\tat
+        org.apache.tomcat.util.net.Nio2Endpoint$SocketProcessor.doRun(Nio2Endpoint.java:1735)\n\tat
+        org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat
+        org.apache.tomcat.util.net.AbstractEndpoint.processSocket(AbstractEndpoint.java:1069)\n\tat
+        org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$3.completed(Nio2Endpoint.java:575)\n\tat
+        org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$3.completed(Nio2Endpoint.java:553)\n\tat
+        java.base/sun.nio.ch.Invoker.invokeUnchecked(Invoker.java:127)\n\tat java.base/sun.nio.ch.Invoker$2.run(Invoker.java:219)\n\tat
+        java.base/sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)\n\tat
+        java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat
+        java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat
+        java.base/java.lang.Thread.run(Thread.java:829)\n"},"id":"44282812097182644"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 89c826cc8c6ad021-SJC
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Jul 2024 17:35:15 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=LuSYdBEKeiRpXycOox1xmYLtiMKNWoQIdDNWJChg4K4-1719855315-1.0.1.1-QGhhfrPcV0GjaUpVuaG50PesKXkeu_xnLbkCBPFXb8U9ezn8SbGbe0S3QxDPU_GFv83G8XLW54QtvfbVXo.DcQ;
+        path=/; expires=Mon, 01-Jul-24 18:05:15 GMT; domain=.kbase.us; HttpOnly; Secure;
+        SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    status:
+      code: 500
+      message: ''
+version: 1

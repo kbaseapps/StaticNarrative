@@ -23,7 +23,7 @@ Related Jira ticket: https://kbase-jira.atlassian.net/browse/DATAUP-X
 - [ ] My changes generate no new warnings
 - [ ] I have added tests that prove my fix is effective or that my feature works
 - [ ] New and existing unit tests pass locally with my changes
-- [ ] (Python) I have run Black and Flake8 on changed Python code
+- [ ] (Python) I have run Ruff on changed Python code
 - [ ] If appropriate, I have recompiled the app and added the updated `StaticNarrativeImpl.py`, `StaticNarrativeServer.py`, and `compile_report.json` to this PR.
 
 # Updating Version and Release Notes (if applicable)
