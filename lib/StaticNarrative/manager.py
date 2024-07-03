@@ -19,7 +19,7 @@ class StaticNarrativeManager:
         Currently, this combs the filesystem for index.html files and assembles them.
         Later, this'll make a call to MongoDB.
         """
-        webroot = self.config["static-file-root"]
+        webroot = self.config["static_file_root"]
         if webroot is None:
             msg = "Missing path to static narratives"
             raise ValueError(msg)

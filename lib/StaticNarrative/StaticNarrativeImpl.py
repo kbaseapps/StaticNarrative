@@ -96,7 +96,7 @@ class StaticNarrative:
         # ctx is the context object
         # return variables are: info
         # BEGIN get_static_narrative_info
-        ws_client = Workspace(self.config["workspace-url"], token=ctx["token"])
+        ws_client = Workspace(self.config["workspace_url"], token=ctx["token"])
         info = get_static_info(ws_client, params.get("ws_id"))
         # END get_static_narrative_info
 

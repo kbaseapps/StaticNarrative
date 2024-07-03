@@ -33,7 +33,9 @@ def _mock_adapter(
     :param ws_info: list - the Workspace info that should be returned on a call to
         Workspace.get_workspace_info
     :param ws_perms: dict - a mapping from a workspace id to a dict with user permissions on that ws
-    :param user_map: dict - a mapping from user id to full name, used in calls to Auth
+        Workspace.get_permissions
+    :param user_map: dict - a mapping from user id to full name, used in calls to Auth.
+        If the user map is an empty dictionary, the endpoint will return an error.
         GET api/V2/users
     """
     workspace_meta = {}
@@ -100,7 +102,25 @@ def _mock_adapter(
                 result = [_get_fake_nms_info(tag, ids)]
             response._content = bytes(json.dumps({"result": result, "version": "1.1"}), "UTF-8")
         elif rq_method == "GET" and "/api/V2/users/?list=" in request.url:
-            response._content = bytes(json.dumps(user_map), "UTF-8")
+            if user_map == {}:
+                response.status_code = 500
+                response._content = bytes(
+                    json.dumps(
+                        {
+                            "error": {
+                                "code": -32500,
+                                "message": "some dumb problem",
+                                "error": "long Java vomit stacktrace",
+                                "name": "JSONRPCError",
+                            },
+                            "version": "1.1",
+                            "id": request.json().get("id", "12345"),
+                        }
+                    ),
+                    "UTF-8",
+                )
+            else:
+                response._content = bytes(json.dumps(user_map), "UTF-8")
         return response
 
     return mock_adapter

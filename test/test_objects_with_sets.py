@@ -11,7 +11,7 @@ from StaticNarrative.exporter.objects_with_sets import ObjectsWithSets
 @pytest.fixture()
 def set_api_client(config: dict[str, Any], token: str) -> DynamicServiceClient:
     """Get a client for the SetAPI."""
-    return DynamicServiceClient(config["srv-wiz-url"], "release", "SetAPI", token)
+    return DynamicServiceClient(config["srv_wiz_url"], "release", "SetAPI", token)
 
 
 @pytest.fixture()

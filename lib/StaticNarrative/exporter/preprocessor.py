@@ -7,8 +7,8 @@ from collections import defaultdict
 from datetime import datetime
 from typing import Any
 
+import nbformat
 from installed_clients.NarrativeMethodStoreClient import NarrativeMethodStore
-from installed_clients.WorkspaceClient import Workspace
 from nbconvert.preprocessors import Preprocessor
 from nbformat import NotebookNode
 
@@ -31,9 +31,8 @@ class NarrativePreprocessor(Preprocessor):
         self.icon_style_file = os.path.join(base_path, "static", "styles", "kbase_icons.css")
         self.assets_base_url = self.config.narrative_session.assets_base_url
         self.assets_version = self.config.narrative_session.assets_version
-        self.ws_client = Workspace(
-            self.config.narrative_session.ws_url, token=self.config.narrative_session.token
-        )
+        self.narrative_ref = self.config.narrative_session.narrative_ref
+        self.ws_client = self.config.narrative_session.ws_client
         self.app_processor = AppProcessor(
             self.ws_client,
             self.config.narrative_session,
@@ -46,7 +45,7 @@ class NarrativePreprocessor(Preprocessor):
 
         app_meta = self._get_app_metadata(nb, self.config.narrative_session.nms_url)
         data_types = ", ".join(sorted(self.config.narrative_session.data_types))
-        ws_id = self.config.narrative_session.ws_id
+        ws_id = self.narrative_ref.wsid
 
         # Get some more stuff to show in the page into resources
         if "kbase" not in resources:
@@ -60,7 +59,7 @@ class NarrativePreprocessor(Preprocessor):
                 "authors": get_authors(
                     self.ws_client,
                     self.config.narrative_session,
-                    nb["metadata"]["wsid"],
+                    ws_id,
                 ),
                 "service_wizard_url": self.config.narrative_session.service_wizard_url,
                 "script_bundle_url": self.assets_base_url
@@ -124,7 +123,7 @@ class NarrativePreprocessor(Preprocessor):
             nms_inputs = {"ids": list(apps[tag]), "tag": tag}
 
             try:
-                app_infos = nms.get_method_full_info(nms_inputs)
+                app_infos = nms.get_method_full_info(nms_inputs) or []
             except Exception:
                 app_infos = []
             for info in app_infos:
@@ -193,12 +192,12 @@ class NarrativePreprocessor(Preprocessor):
 
     def preprocess_cell(
         self: "NarrativePreprocessor",
-        cell: object,
+        cell: nbformat.notebooknode.NotebookNode,
         resources: dict[str, Any],
         index: int,
     ) -> tuple[object, dict[str, Any]]:
         """Preprocess cell metadata."""
-        ws_id = self.config.narrative_session.ws_id
+        ws_id = self.narrative_ref.wsid
 
         if "kbase" in cell.metadata:
             kb_meta = cell.metadata.get("kbase", {})
