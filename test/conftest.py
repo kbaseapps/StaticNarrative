@@ -41,10 +41,10 @@ def config() -> Generator:
     # use a temp directory for the scratch and static file root dirs
     with tempfile.TemporaryDirectory() as tmpdirname:
         original_conf["scratch"] = tmpdirname
-        original_conf["static-file-root"] = os.path.join(
+        original_conf["static_file_root"] = os.path.join(
             original_conf["scratch"], "static_file_root"
         )
-        os.makedirs(original_conf["static-file-root"], exist_ok=True)
+        os.makedirs(original_conf["static_file_root"], exist_ok=True)
 
         yield generate_config(original_conf)
 
@@ -77,7 +77,7 @@ def fake_token() -> str:
 @pytest.fixture(scope="session")
 def ws_client(config: dict[str, Any], token: str) -> Workspace:
     """Workspace client."""
-    return Workspace(config["workspace-url"], token=token)
+    return Workspace(config["workspace_url"], token=token)
 
 
 @pytest.fixture(scope="session")
@@ -118,7 +118,7 @@ def scratch_dir(config: dict[str, str]) -> str:
 @pytest.fixture(scope="session")
 def workspace_url(config: dict[str, str]) -> str:
     """Workspace URL."""
-    return config["workspace-url"]
+    return config["workspace_url"]
 
 
 # initialise logging for vcrpy

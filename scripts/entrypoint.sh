@@ -8,11 +8,11 @@ fi
 
 if [ $# -eq 0 ] ; then
   sh ./scripts/start_server.sh
+elif [ "${1}" = "async" ] ; then
+  sh ./scripts/run_async.sh
 elif [ "${1}" = "test" ] ; then
   echo "Run Tests"
   sh ./test/run_tests.sh
-elif [ "${1}" = "async" ] ; then
-  sh ./scripts/run_async.sh
 elif [ "${1}" = "bash" ] ; then
   echo "This image only supports sh shells"
   sh

@@ -43,13 +43,13 @@ class NarrativeExporter:
     ) -> None:
         """Initialise the Narrative Exporter."""
         self.config = config
-        self.ws_client = Workspace(url=config["workspace-url"], token=token)
+        self.ws_client = Workspace(url=config["workspace_url"], token=token)
         self.token = token
         self.user_id = user_id
         self.debug = debug
         if use_set_api:
             self.set_api_client = DynamicServiceClient(
-                self.config["srv-wiz-url"], "release", "SetAPI", self.token
+                self.config["srv_wiz_url"], "release", "SetAPI", self.token
             )
         else:
             self.set_api_client = None
@@ -123,7 +123,7 @@ class NarrativeExporter:
 
         # all the static files (css, fonts, etc.) are relative to this dir.
         base_path = os.path.dirname(os.path.abspath(__file__))
-        service_endpt = self.config["kbase-endpoint"]
+        service_endpt = self.config["kbase_endpoint"]
 
         endpt_parsed = urlparse(service_endpt)
         netloc = endpt_parsed.netloc
@@ -145,19 +145,19 @@ class NarrativeExporter:
         c.NarrativePreprocessor.enabled = True
         c.ClearMetadataPreprocessor.enabled = False
 
-        c.narrative_session.assets_base_url = self.config["assets-base-url"]
-        c.narrative_session.assets_version = self.config["assets-version"]
-        c.narrative_session.auth_url = self.config["auth-url"]
+        c.narrative_session.assets_base_url = self.config["assets_base_url"]
+        c.narrative_session.assets_version = self.config["assets_version"]
+        c.narrative_session.auth_url = self.config["auth_url"]
         c.narrative_session.base_path = base_path
         c.narrative_session.data_file_path = exported_data["path"]
         c.narrative_session.host = host
         c.narrative_session.indexed_data = exported_data["indexed_data"]
         c.narrative_session.data_types = exported_data["types"]
         c.narrative_session.narrative_ref = narrative_ref
-        c.narrative_session.nms_image_url = self.config["nms-image-url"]
-        c.narrative_session.nms_url = self.config["nms-url"]
-        c.narrative_session.profile_page_path = host + self.config["profile-page-path"]
-        c.narrative_session.service_wizard_url = self.config["srv-wiz-url"]
+        c.narrative_session.nms_image_url = self.config["nms_image_url"]
+        c.narrative_session.nms_url = self.config["nms_url"]
+        c.narrative_session.profile_page_path = host + self.config["profile_page_path"]
+        c.narrative_session.service_wizard_url = self.config["srv_wiz_url"]
         c.narrative_session.token = self.token
         c.narrative_session.user_id = self.user_id
         c.narrative_session.ws_client = self.ws_client
