@@ -2,9 +2,10 @@
 
 DATA = "data"
 ID = "by_id"
-INFO = "object_info"
+INFO = "info"
 NARRATIVE_TEMPLATE_FILE = "narrative.tpl"
 NARRATIVE_TYPE = "KBaseNarrative.Narrative"
+OBJ_INFO = "object_info"
 OUTPUT_DATA_FILE = "data.json"
 OUTPUT_HTML_FILE = "narrative.html"
 SAVED_HTML_FILE = "index.html"

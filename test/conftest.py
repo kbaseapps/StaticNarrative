@@ -5,6 +5,7 @@ import logging
 import os
 import tempfile
 from collections.abc import Generator
+from pathlib import Path
 from typing import Any
 
 import pytest
@@ -17,7 +18,7 @@ from StaticNarrative.StaticNarrativeImpl import StaticNarrative
 from test import TEST_BASE_DIR
 
 DEPLOY_CONFIG = "KB_DEPLOYMENT_CONFIG"
-TEST_CONFIG_FILE = os.path.join(TEST_BASE_DIR, "./deploy.cfg")
+TEST_CONFIG_FILE = TEST_BASE_DIR / "deploy.cfg"
 
 
 @pytest.fixture(scope="session")
@@ -28,7 +29,7 @@ def config() -> Generator:
     :rtype: dict[str, Any]
     """
     deploy_config = os.environ.get(DEPLOY_CONFIG)
-    os.environ[DEPLOY_CONFIG] = TEST_CONFIG_FILE
+    os.environ[DEPLOY_CONFIG] = str(TEST_CONFIG_FILE)
 
     # make sure that we are using the test configuration file
     # so don't load `get_config` until after the appropriate env
@@ -41,10 +42,9 @@ def config() -> Generator:
     # use a temp directory for the scratch and static file root dirs
     with tempfile.TemporaryDirectory() as tmpdirname:
         original_conf["scratch"] = tmpdirname
-        original_conf["static_file_root"] = os.path.join(
-            original_conf["scratch"], "static_file_root"
-        )
-        os.makedirs(original_conf["static_file_root"], exist_ok=True)
+        static_file_root = Path(original_conf["scratch"]) / "static_file_root"
+        static_file_root.mkdir(exist_ok=True, parents=True)
+        original_conf["static_file_root"] = str(static_file_root)
 
         yield generate_config(original_conf)
 

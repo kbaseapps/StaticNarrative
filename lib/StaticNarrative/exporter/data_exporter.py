@@ -6,7 +6,7 @@ from typing import Any
 
 from installed_clients.WorkspaceClient import Workspace
 
-from StaticNarrative.constants import INFO, NARRATIVE_TYPE, OUTPUT_DATA_FILE
+from StaticNarrative.constants import NARRATIVE_TYPE, OBJ_INFO, OUTPUT_DATA_FILE
 from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
 from StaticNarrative.exporter.objects_with_sets import ObjectsWithSets
 from StaticNarrative.exporter.processor_util import get_data_icon
@@ -62,11 +62,11 @@ def export_narrative_data(
     indexed_data = {}
     type_info = {}
     for item in ws_data:
-        obj = item[INFO]
+        obj = item[OBJ_INFO]
         obj_type = obj[2].split("-")[0]
         if obj_type in IGNORED_TYPES:
             continue
-        obj_upa = generate_upa(item[INFO])
+        obj_upa = generate_upa(item[OBJ_INFO])
         type_name = obj_type.split(".")[-1]
         if type_name not in type_info:
             type_info[type_name] = {"count": 0, "icon": get_data_icon(type_name)}
@@ -78,7 +78,7 @@ def export_narrative_data(
             item[SET_ITEMS]["upas"] = []
             for set_item in item[SET_ITEMS][SET_ITEMS_INFO]:
                 set_item_upa = generate_upa(set_item)
-                indexed_data[set_item_upa] = {INFO: set_item}
+                indexed_data[set_item_upa] = {OBJ_INFO: set_item}
                 item[SET_ITEMS]["upas"].append(set_item_upa)
 
         # add the item to the index of ws objects
@@ -91,7 +91,7 @@ def export_narrative_data(
     }
 
     output_path = Path(output_dir) / OUTPUT_DATA_FILE
-    with open(output_path, "w") as outfile:
+    with output_path.open("w") as outfile:
         json.dump(output_data, outfile)
     output_data["path"] = str(output_path)
     output_data["indexed_data"] = indexed_data

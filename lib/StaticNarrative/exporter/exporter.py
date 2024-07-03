@@ -8,7 +8,7 @@ the exporting.
 __author__ = "Bill Riehl <wjriehl@lbl.gov>"
 
 import json
-import os
+from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
@@ -95,8 +95,8 @@ class NarrativeExporter:
         # TODO: Maybe add to ui-assets repo?
         # ...maybe not yet.
 
-        output_path = os.path.join(output_dir, OUTPUT_HTML_FILE)
-        with open(output_path, "w") as output_html:
+        output_path = Path(output_dir) / OUTPUT_HTML_FILE
+        with output_path.open("w") as output_html:
             output_html.write(body)
         return str(output_path)
 
@@ -122,7 +122,7 @@ class NarrativeExporter:
         c.HTMLExporter.preprocessors = [preprocessor.NarrativePreprocessor]
 
         # all the static files (css, fonts, etc.) are relative to this dir.
-        base_path = os.path.dirname(os.path.abspath(__file__))
+        base_path = Path(__file__).resolve().parent
         service_endpt = self.config["kbase_endpoint"]
 
         endpt_parsed = urlparse(service_endpt)
@@ -132,15 +132,20 @@ class NarrativeExporter:
             netloc = "narrative." + netloc
         host = (endpt_parsed.scheme or "https") + "://" + netloc
 
-        tpl_base_dir = os.path.join(
-            STATIC_NARRATIVE_BASE_DIR, "lib", "StaticNarrative", "exporter", "static", "templates"
+        tpl_base_dir = (
+            STATIC_NARRATIVE_BASE_DIR
+            / "lib"
+            / "StaticNarrative"
+            / "exporter"
+            / "static"
+            / "templates"
         )
-
         c.TemplateExporter.template_paths = [
-            tpl_base_dir,
-            os.path.join(tpl_base_dir, "html"),
-            os.path.join(tpl_base_dir, "skeleton"),
+            str(tpl_base_dir),
+            str(tpl_base_dir / "html"),
+            str(tpl_base_dir / "skeleton"),
         ]
+
         c.CSSHTMLHeaderPreprocessor.enabled = True
         c.NarrativePreprocessor.enabled = True
         c.ClearMetadataPreprocessor.enabled = False

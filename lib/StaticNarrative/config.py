@@ -1,6 +1,7 @@
 """Config for the StaticNarrative app."""
 
 import os
+from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
@@ -38,18 +39,21 @@ def generate_config(config: dict[str, Any] | None) -> dict[str, Any]:
 
     # ensure these paths are absolute, not relative
     for path in ["static_file_root", "scratch"]:
-        assigned_path = config.get(path)
+        # we have already checked that the path is not None
+        assigned_path = Path(config.get(path))
 
-        if not os.path.isabs(assigned_path):
-            config[path] = os.path.abspath(assigned_path)
+        if not assigned_path.is_absolute():
+            assigned_path = assigned_path.resolve()
 
         # check that the directory exists and is writable
-        if not os.path.isdir(config[path]):
+        if not assigned_path.is_dir():
             msg = f"{path}: {config[path]} is not a directory"
             raise RuntimeError(msg)
 
-        if path == "scratch" and not os.access(config[path], os.W_OK):
-            msg = f"Cannot write to directory {config[path]}"
+        if path == "scratch" and not os.access(assigned_path, os.W_OK):
+            msg = f"Cannot write to directory {assigned_path}"
             raise RuntimeError(msg)
+
+        config[path] = str(assigned_path)
 
     return config

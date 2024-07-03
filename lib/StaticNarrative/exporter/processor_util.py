@@ -189,8 +189,8 @@ def get_created_objects_from_report(
 
 def _load_icon_data() -> None:
     # this should access the local folder
-    icon_json = os.path.join(STATIC_NARRATIVE_BASE_DIR, "data", "icons.json")
-    with open(icon_json) as icon_file:
+    icon_json = STATIC_NARRATIVE_BASE_DIR / "data" / "icons.json"
+    with icon_json.open() as icon_file:
         global ICON_DATA
         ICON_DATA = json.load(icon_file)
 
