@@ -39,7 +39,8 @@ def config() -> Generator:
     original_conf = get_config()
     assert original_conf is not None
 
-    # use a temp directory for the scratch and static file root dirs
+    # the test config values for the scratch and static file root dirs are
+    # set to '/tmp'; set them to a temp directory for testing.
     with tempfile.TemporaryDirectory() as tmpdirname:
         original_conf["scratch"] = tmpdirname
         static_file_root = Path(original_conf["scratch"]) / "static_file_root"
