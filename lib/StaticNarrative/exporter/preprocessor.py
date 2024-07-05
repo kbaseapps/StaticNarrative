@@ -13,7 +13,8 @@ from nbconvert.preprocessors import Preprocessor
 from nbformat import NotebookNode
 
 from StaticNarrative.exporter.app_processor import AppProcessor
-from StaticNarrative.exporter.processor_util import get_authors, get_icon
+from StaticNarrative.exporter.icon_util import get_icon
+from StaticNarrative.exporter.processor_util import get_authors
 from StaticNarrative.upa import deserialize
 
 

@@ -8,8 +8,8 @@ from installed_clients.WorkspaceClient import Workspace
 
 from StaticNarrative.constants import NARRATIVE_TYPE, OBJ_INFO, OUTPUT_DATA_FILE
 from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
+from StaticNarrative.exporter.icon_util import get_data_icon
 from StaticNarrative.exporter.objects_with_sets import ObjectsWithSets
-from StaticNarrative.exporter.processor_util import get_data_icon
 from StaticNarrative.upa import generate_upa
 
 IGNORED_TYPES = [NARRATIVE_TYPE]
