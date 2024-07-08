@@ -9,37 +9,30 @@ from dateutil import parser as date_parser
 from installed_clients.baseclient import ServerError
 from installed_clients.WorkspaceClient import Workspace
 
+from StaticNarrative.constants import DATA, INFO, NARRATIVE_TYPE
 from StaticNarrative.exceptions import WorkspaceError
 from StaticNarrative.narrative_ref import NarrativeRef
 
-NARRATIVE_TYPE = "KBaseNarrative.Narrative"
 TYPE_REGEX = rf"^{NARRATIVE_TYPE}-\d+\.\d+$"
 
 
 def read_narrative(ws_client: Workspace, ref: NarrativeRef) -> dict[str, Any]:
-    """Fetches a Narrative and its object info from the Workspace.
-
-    If content is False, this only returns the Narrative's info
-    and metadata, otherwise, it returns the whole workspace object.
-
-    This is mainly a wrapper around Workspace.get_objects2(), except that
-    it always returns a dict. If content is False, it returns a dict
-    containing a single key: 'info', with the object info and, optionally,
-    metadata.
+    """Fetches a Narrative object from the Workspace.
 
     Can the following errors:
+        TypeError (if the type string for the object is not a string -- this should never happen)
         ValueError (if ref isn't a Narrative object),
         WorkspaceError if there's a Workspace issue (ref isn't valid, or token isn't valid)
-
 
     :param ws_client: workspace client
     :param ref: a NarrativeRef
     """
     try:
         narr_data = ws_client.get_objects2({"objects": [{"ref": str(ref)}]})
-        nar = narr_data["data"][0]
-        _validate_narr_type(nar["info"][2], ref)
-        return nar["data"]
+        # there should be no situation in which this call returns None
+        nar = narr_data[DATA][0]
+        _validate_narr_type(nar[INFO][2], ref)
+        return nar[DATA]
     except ServerError as err:
         raise WorkspaceError(err, ref.wsid) from err
 
@@ -48,7 +41,8 @@ def _validate_narr_type(t: str, ref: NarrativeRef) -> None:
     """Validates the given string to ensure it is a KBase Narrative type string.
 
     Checks that the string of the form "KBaseNarrative.Narrative-1.0", including the version.
-    If it's not, or if it's not a string, a ValueError is raised.
+    If the type string is not a string, a TypeError is raised (this should never happen).
+    If the ref is for an object that is not a KBaseNarrative type, a ValueError is raised.
 
     :param t: str - the type string to compare
     :param ref: NarrativeRef - the narrative reference that t came from (used in error reporting)
@@ -116,6 +110,7 @@ def get_static_info(ws_client: Workspace, ws_id: int) -> dict[str, int | str]:
         msg = f"The parameter ws_id must be an integer, not {ws_id}"
         raise ValueError(msg)
 
+    ws_id = int(ws_id)
     try:
         ws_info = ws_client.get_workspace_info({"id": ws_id})
     except ServerError as err:

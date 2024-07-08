@@ -17,8 +17,6 @@ from StaticNarrative.narrative_ref import NarrativeRef
 
 from test.mocks import mock_ws_bad, set_up_ok_mocks
 
-USER_ID = "some_user"
-TOKEN = "some_token"  # noqa: S105
 REF = NarrativeRef.parse("1/2/3")
 
 

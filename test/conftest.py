@@ -5,6 +5,7 @@ import logging
 import os
 import tempfile
 from collections.abc import Generator
+from pathlib import Path
 from typing import Any
 
 import pytest
@@ -12,12 +13,13 @@ import vcr
 import vcr.request
 from installed_clients.WorkspaceClient import Workspace
 from StaticNarrative.config import generate_config
+from StaticNarrative.narrative_ref import NarrativeRef
 from StaticNarrative.StaticNarrativeImpl import StaticNarrative
 
 from test import TEST_BASE_DIR
 
 DEPLOY_CONFIG = "KB_DEPLOYMENT_CONFIG"
-TEST_CONFIG_FILE = os.path.join(TEST_BASE_DIR, "./deploy.cfg")
+TEST_CONFIG_FILE = TEST_BASE_DIR / "deploy.cfg"
 
 
 @pytest.fixture(scope="session")
@@ -28,7 +30,7 @@ def config() -> Generator:
     :rtype: dict[str, Any]
     """
     deploy_config = os.environ.get(DEPLOY_CONFIG)
-    os.environ[DEPLOY_CONFIG] = TEST_CONFIG_FILE
+    os.environ[DEPLOY_CONFIG] = str(TEST_CONFIG_FILE)
 
     # make sure that we are using the test configuration file
     # so don't load `get_config` until after the appropriate env
@@ -38,13 +40,13 @@ def config() -> Generator:
     original_conf = get_config()
     assert original_conf is not None
 
-    # use a temp directory for the scratch and static file root dirs
+    # the test config values for the scratch and static file root dirs are
+    # set to '/tmp'; set them to a temp directory for testing.
     with tempfile.TemporaryDirectory() as tmpdirname:
         original_conf["scratch"] = tmpdirname
-        original_conf["static_file_root"] = os.path.join(
-            original_conf["scratch"], "static_file_root"
-        )
-        os.makedirs(original_conf["static_file_root"], exist_ok=True)
+        static_file_root = Path(original_conf["scratch"]) / "static_file_root"
+        static_file_root.mkdir(exist_ok=True, parents=True)
+        original_conf["static_file_root"] = str(static_file_root)
 
         yield generate_config(original_conf)
 
@@ -72,6 +74,12 @@ def fake_user() -> str:
 def fake_token() -> str:
     """A placeholder token."""
     return "some_token_string"
+
+
+@pytest.fixture(scope="session")
+def narr_ref() -> NarrativeRef:
+    """Example narrative ref for testing."""
+    return NarrativeRef.parse("12345/1/1")
 
 
 @pytest.fixture(scope="session")

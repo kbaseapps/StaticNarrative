@@ -1,6 +1,7 @@
 """Tests for the config package."""
 
 from collections.abc import Generator
+from pathlib import Path
 from typing import Any
 from unittest.mock import MagicMock, patch
 
@@ -8,16 +9,9 @@ import pytest
 from StaticNarrative.config import generate_config
 
 
-@pytest.fixture()
-def mock_os_path_isabs() -> Generator[MagicMock, Any, None]:
-    with patch("os.path.isabs") as mock_isabs:
-        yield mock_isabs
-
-
-@pytest.fixture()
-def mock_os_path_isdir() -> Generator[MagicMock, Any, None]:
-    with patch("os.path.isdir") as mock_isdir:
-        yield mock_isdir
+def absolutify(self: Path) -> Path:
+    """Generate an absolute version of a path."""
+    return Path("/absolute") / self
 
 
 @pytest.fixture()
@@ -26,28 +20,24 @@ def mock_os_access() -> Generator[MagicMock, Any, None]:
         yield mock_access
 
 
-@pytest.fixture()
-def mock_os_path_abspath() -> Generator[MagicMock, Any, None]:
-    with patch("os.path.abspath") as mock_abspath:
-        yield mock_abspath
-
-
 def test_generate_config_fail_empty_config() -> None:
     with pytest.raises(RuntimeError, match="No config information found"):
         generate_config(None)
 
 
 def test_generate_config_with_valid_config(
-    mock_os_path_isabs: MagicMock,
-    mock_os_path_isdir: MagicMock,
+    monkeypatch: pytest.MonkeyPatch,
     mock_os_access: MagicMock,
-    mock_os_path_abspath: MagicMock,
 ) -> None:
-    mock_os_path_isabs.side_effect = lambda x: x.startswith("/")
-    mock_os_path_isdir.side_effect = lambda x: x.startswith("/")
     mock_os_access.side_effect = lambda x, y: True
-    mock_os_path_abspath.side_effect = lambda x: f"/absolute/{x}"
 
+    def starts_with_slash(self) -> bool:
+        """Fake function to replace is_absolute and is_dir."""
+        return str(self).startswith("/")
+
+    monkeypatch.setattr(Path, "is_absolute", starts_with_slash)
+    monkeypatch.setattr(Path, "is_dir", starts_with_slash)
+    monkeypatch.setattr(Path, "resolve", absolutify)
     config = {
         "kbase_endpoint": "https://kbase.us/services",
         "static_file_root": "static-files",
@@ -112,16 +102,15 @@ def test_generate_config_fail_missing_dirs() -> None:
 
 
 def test_generate_config_with_relative_paths(
-    mock_os_path_isabs: MagicMock,
-    mock_os_path_isdir: MagicMock,
+    monkeypatch: pytest.MonkeyPatch,
     mock_os_access: MagicMock,
-    mock_os_path_abspath: MagicMock,
 ) -> None:
     """Check the absolutification of paths."""
-    mock_os_path_isabs.side_effect = lambda x: False
-    mock_os_path_isdir.side_effect = lambda x: True
     mock_os_access.side_effect = lambda x, y: True
-    mock_os_path_abspath.side_effect = lambda x: f"/absolute/{x}"
+
+    monkeypatch.setattr(Path, "is_absolute", lambda _: False)
+    monkeypatch.setattr(Path, "is_dir", lambda _: True)
+    monkeypatch.setattr(Path, "resolve", absolutify)
 
     config = {
         "kbase_endpoint": "https://kbase.us/services",
@@ -135,14 +124,14 @@ def test_generate_config_with_relative_paths(
 
 
 def test_generate_config_fail_non_directory_static_file_root(
-    mock_os_path_isabs: MagicMock, mock_os_path_isdir: MagicMock
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     """Check that an error is thrown if static_file_root is not a directory.
 
     Note that static_file_root is checked first.
     """
-    mock_os_path_isabs.side_effect = lambda x: True
-    mock_os_path_isdir.side_effect = lambda x: False
+    monkeypatch.setattr(Path, "is_absolute", lambda _: True)
+    monkeypatch.setattr(Path, "is_dir", lambda _: False)
 
     config = {
         "kbase_endpoint": "https://kbase.us/services",
@@ -154,12 +143,13 @@ def test_generate_config_fail_non_directory_static_file_root(
 
 
 def test_generate_config_fail_non_writable_scratch(
-    mock_os_path_isabs: MagicMock, mock_os_path_isdir: MagicMock, mock_os_access: MagicMock
+    mock_os_access: MagicMock,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     """Check that an error is thrown if scratch is not writable."""
-    mock_os_path_isabs.side_effect = lambda x: True
-    mock_os_path_isdir.side_effect = lambda x: True
     mock_os_access.side_effect = lambda x, y: False
+    monkeypatch.setattr(Path, "is_absolute", lambda _: True)
+    monkeypatch.setattr(Path, "is_dir", lambda _: True)
 
     config = {
         "kbase_endpoint": "https://kbase.us/services",

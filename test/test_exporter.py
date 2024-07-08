@@ -1,36 +1,39 @@
 """Tests of the exporter module."""
 
-import os
 import shutil
 from pathlib import Path
 from unittest import mock
 
 import pytest
 from nbconvert import HTMLExporter
+from StaticNarrative.constants import OUTPUT_DATA_FILE, OUTPUT_HTML_FILE
 from StaticNarrative.exporter.dynamic_service_client import DynamicServiceClient
-from StaticNarrative.exporter.exporter import OUTPUT_HTML_FILE, NarrativeExporter
+from StaticNarrative.exporter.exporter import NarrativeExporter
 from StaticNarrative.narrative_ref import NarrativeRef
 
 from test.mocks import set_up_ok_mocks
 
 
-def check_files_identical(file1_path: str | Path, file2_path: str | Path) -> None:
+def check_files_identical(file1_path: Path, file2_path: Path) -> None:
     """Check whether two files are identical.
 
     :param file1_path: full path to file 1
-    :type file1_path: str
+    :type file1_path: Path
     :param file2_path: full path to file 2
-    :type file2_path: str
+    :type file2_path: Path
     """
-    with open(file1_path) as file1:
+    with file1_path.open() as file1:
         file1_contents = file1.read()
 
-    with open(file2_path) as file2:
+    with file2_path.open() as file2:
         file2_contents = file2.read()
 
+    copied_bad_file_path = Path(file1_path).parent / f"alt-{file1_path.name}"
     if file2_contents != file1_contents:
-        shutil.copyfile(file2_path, str(file1_path) + "-alt")
-    assert file1_contents == file2_contents, "The files do not have identical contents."
+        shutil.copyfile(file2_path, copied_bad_file_path)
+    assert (
+        file1_contents == file2_contents
+    ), f"The files do not have identical contents: check {copied_bad_file_path}"
 
 
 WORKSPACE_IDS = [
@@ -55,18 +58,18 @@ WORKSPACE_IDS = [
 )
 @pytest.mark.vcr()
 def test_narrative_exporter_set_api_vs_gsn(
-    config: dict[str, str], fake_user: str, token: str, ws_id: str, tmpdir: Path
+    config: dict[str, str], fake_user: str, token: str, ws_id: str, tmp_path: Path
 ) -> None:
     """Ensure that the narrative exporter exports the appropriate narrative."""
     narr_ref = NarrativeRef.parse(ws_id)
     narrative_exporter = NarrativeExporter(config, fake_user, token)
     original_function = narrative_exporter._build_exporter  # noqa: SLF001
 
-    set_api_dir = tmpdir / "set_api"
-    gsn_dir = tmpdir / "gsn"
+    set_api_dir = tmp_path / "set_api"
+    gsn_dir = tmp_path / "gsn"
 
-    os.makedirs(set_api_dir, exist_ok=True)
-    os.makedirs(gsn_dir, exist_ok=True)
+    set_api_dir.mkdir(parents=True, exist_ok=True)
+    gsn_dir.mkdir(parents=True, exist_ok=True)
 
     def side_effect(*args, **kwargs) -> HTMLExporter:
         """Patch the html exporter to remove the `uuid` function which adds randomness to the templates."""
@@ -83,7 +86,7 @@ def test_narrative_exporter_set_api_vs_gsn(
         narrative_exporter.export_narrative(narr_ref, str(gsn_dir))
 
         # compare contents
-        for file in ["data.json", OUTPUT_HTML_FILE]:
+        for file in [OUTPUT_DATA_FILE, OUTPUT_HTML_FILE]:
             check_files_identical(
                 set_api_dir / file,
                 gsn_dir / file,
@@ -138,4 +141,5 @@ def test_exporter_ok(
     static_path = exporter.export_narrative(
         NarrativeRef({"wsid": ws_id, "objid": 1, "ver": 21}), scratch_dir
     )
-    assert static_path == os.path.join(scratch_dir, OUTPUT_HTML_FILE)
+    expected_outfile = Path(scratch_dir) / OUTPUT_HTML_FILE
+    assert static_path == expected_outfile

@@ -13,8 +13,6 @@ from traitlets.config import Config
 from StaticNarrative import STATIC_NARRATIVE_BASE_DIR
 from StaticNarrative.upa import generate_upa
 
-ICON_DATA = None
-
 
 def build_report_view_data(
     ws_client: Workspace,
@@ -185,70 +183,6 @@ def get_created_objects_from_report(
         for o in report_objs_created
         if indexed_data[o["ref"]]
     ]
-
-
-def _load_icon_data() -> None:
-    # this should access the local folder
-    icon_json = os.path.join(STATIC_NARRATIVE_BASE_DIR, "data", "icons.json")
-    with open(icon_json) as icon_file:
-        global ICON_DATA
-        ICON_DATA = json.load(icon_file)
-
-
-def get_icon(config: Config, metadata: dict[str, Any]) -> dict[str, str]:
-    """Should return a dict with keys "type" and "icon".
-
-    * if "type" = image, then "icon" second should be the src.
-    * if "type" = class, "icon" should be the full class to use to render the icon -
-        "fa fa-right-arrow", for instance.
-    * also, if "type" == "class", then the keys "color" and "shape" should also be present.
-    """
-    icon = {"type": "image", "icon": None}
-    if metadata.get("type") == "data":
-        icon["type"] = "class"
-        icon.update(
-            get_data_icon(metadata.get("dataCell", {}).get("objectInfo", {}).get("typeName"))
-        )
-    elif metadata.get("type") == "output":
-        icon["type"] = "class"
-        icon["icon"] = "fa-arrow-right"
-        icon["color"] = "silver"
-        icon["shape"] = "square"
-    elif metadata.get("type") == "app":
-        if "icon" in metadata.get("appCell", {}).get("app", {}).get("spec", {}).get("info", {}):
-            icon["type"] = "image"
-            icon["icon"] = (
-                config.narrative_session.nms_image_url
-                + metadata["appCell"]["app"]["spec"]["info"]["icon"]["url"]
-            )
-        else:
-            icon["type"] = "class"
-            icon["icon"] = "fa-cube"
-            icon["shape"] = "square"
-            icon["color"] = "#673ab7"
-    else:
-        icon["type"] = "class"
-        icon["icon"] = "fa-question-circle-o"
-        icon["shape"] = "square"
-        icon["color"] = "silver"
-    return icon
-
-
-def get_data_icon(obj_type: str) -> dict[str, str]:
-    """Get the appropriate icon metadata for a specific object type."""
-    if ICON_DATA is None:
-        _load_icon_data()
-
-    icon_info = {
-        "icon": ICON_DATA["data"]["DEFAULT"],
-        "color": ICON_DATA["colors"][0],
-        "shape": "circle",
-    }
-    if obj_type in ICON_DATA["data"]:
-        icon_info["icon"] = " ".join(ICON_DATA["data"][obj_type])
-    if obj_type in ICON_DATA["color_mapping"]:
-        icon_info["color"] = ICON_DATA["color_mapping"][obj_type]
-    return icon_info
 
 
 def get_display_names(auth_url: str, token: str, user_ids: list[str]) -> dict[str, Any]:

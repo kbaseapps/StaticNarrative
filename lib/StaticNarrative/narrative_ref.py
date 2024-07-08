@@ -8,8 +8,12 @@ It also requires that a version is part of the ref.
 
 
 class NarrativeRef:
-    def _less_than_zero(self: "NarrativeRef", number: str | int, name: str) -> int:
+    """Lightweight class representing a KBase reference."""
+
+    def _less_than_zero(self: "NarrativeRef", number: str | int | None, name: str) -> int:
         err_msg = f"The Narrative {name} must be an integer > 0, not {number}"
+        if number is None or not str(number).isdigit():
+            raise ValueError(err_msg)
         try:
             integer = int(number)
         except (TypeError, ValueError) as e:
@@ -32,7 +36,18 @@ class NarrativeRef:
 
         ver is not required
         """
+        # initialise these attributes to prevent errors showing up all over the codebase
+        self.wsid: int
+        self.objid: int
+        self.ver: int
+
         part_name = {"wsid": "workspace ID", "objid": "object ID", "ver": "version"}
+        # ensure all parts are available
+        missing_parts = [part for part in part_name if part not in ref]
+        if missing_parts:
+            msg = "Missing keys required to create a NarrativeRef: " + ", ".join(missing_parts)
+            raise ValueError(msg)
+
         for part in part_name:
             int_version = self._less_than_zero(ref.get(part), part_name[part])
             setattr(self, part, int_version)
@@ -41,8 +56,8 @@ class NarrativeRef:
     def parse(ref: str) -> "NarrativeRef":
         """Creates a NarrativeRef from a reference string.
 
-        Should be numeric.
-        This'll fail here if there's < 1 or > 2 slashes.
+        Expects a string in the form xxx/yyy/zzz with exactly two slashes.
+
         Otherwise it'll fail in the main __init__ function if any segment is malformed.
         """
         if ref.count("/") != 2:
@@ -52,10 +67,12 @@ class NarrativeRef:
         return NarrativeRef({"wsid": split_ref[0], "objid": split_ref[1], "ver": split_ref[2]})
 
     def __str__(self: "NarrativeRef") -> str:
+        """Stringified form of the reference."""
         ref_str = f"{self.wsid}/{self.objid}"
         if self.ver is not None:
             ref_str = ref_str + f"/{self.ver}"
         return ref_str
 
     def __eq__(self: "NarrativeRef", other: "NarrativeRef") -> bool:
+        """For checking equality with other reference objects."""
         return self.wsid == other.wsid and self.objid == other.objid and self.ver == other.ver

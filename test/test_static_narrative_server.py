@@ -7,8 +7,6 @@ from StaticNarrative.StaticNarrativeImpl import StaticNarrative
 
 from test.mocks import set_up_ok_mocks
 
-USER_ID = "some_user"
-
 
 def test_status(static_narrative_service: StaticNarrative, context: dict[str, Any]) -> None:
     """Check the status endpoint is up and running."""
@@ -27,7 +25,10 @@ def test_status(static_narrative_service: StaticNarrative, context: dict[str, An
 
 
 def test_create_static_narrative_ok_unit(
-    static_narrative_service: StaticNarrative, context: dict[str, Any], requests_mock
+    static_narrative_service: StaticNarrative,
+    context: dict[str, Any],
+    fake_user: str,
+    requests_mock,
 ) -> None:
     """Runs through the create process with a number of narratives."""
     ref_to_file = {}
@@ -103,7 +104,7 @@ def test_create_static_narrative_ok_unit(
         ws_info = [
             ws_id,
             "some_narrative",
-            USER_ID,
+            fake_user,
             "2019-08-26T17:33:56+0000",
             7,
             "a",
@@ -117,8 +118,8 @@ def test_create_static_narrative_ok_unit(
                 "narrative": "1",
             },
         ]
-        ws_perms = {ws_id: {USER_ID: "a", "*": "r", "some_other_user": "w"}}
-        user_map = {USER_ID: "Some User", "some_other_user": "Some Other User"}
+        ws_perms = {ws_id: {fake_user: "a", "*": "r", "some_other_user": "w"}}
+        user_map = {fake_user: "Some User", "some_other_user": "Some Other User"}
         set_up_ok_mocks(
             requests_mock,
             ref_to_file=ref_to_file,
@@ -140,28 +141,34 @@ def test_create_static_narrative_no_auth() -> None:
 
 
 def test_create_static_narrative_user_not_admin(
-    static_narrative_service: StaticNarrative, context: dict[str, Any], requests_mock
+    static_narrative_service: StaticNarrative,
+    context: dict[str, Any],
+    fake_user: str,
+    requests_mock,
 ) -> None:
     """Test case where user doesn't have admin rights on the workspace."""
     ws_id = 12345
     set_up_ok_mocks(
         requests_mock,
-        ws_perms={ws_id: {USER_ID: "n"}},
-        user_map={USER_ID: "Some User"},
+        ws_perms={ws_id: {fake_user: "n"}},
+        user_map={fake_user: "Some User"},
     )
     with pytest.raises(
         PermissionError,
-        match=f"User {USER_ID} does not have admin rights on workspace {ws_id}",
+        match=f"User {fake_user} does not have admin rights on workspace {ws_id}",
     ):
         static_narrative_service.create_static_narrative(context, {"narrative_ref": f"{ws_id}/1/1"})
 
 
 def test_create_static_narrative_not_public(
-    static_narrative_service: StaticNarrative, context: dict[str, Any], requests_mock
+    static_narrative_service: StaticNarrative,
+    context: dict[str, Any],
+    fake_user: str,
+    requests_mock,
 ) -> None:
     """Test case where Narative isn't public."""
-    ws_perms = {123: {USER_ID: "a", "*": "n"}, 456: {USER_ID: "a"}}
-    set_up_ok_mocks(requests_mock, ws_perms=ws_perms, user_map={USER_ID: "Some User"})
+    ws_perms = {123: {fake_user: "a", "*": "n"}, 456: {fake_user: "a"}}
+    set_up_ok_mocks(requests_mock, ws_perms=ws_perms, user_map={fake_user: "Some User"})
     for ws_id in ws_perms:
         with pytest.raises(
             PermissionError,
@@ -178,7 +185,10 @@ def test_create_static_narrative_bad() -> None:
 
 
 def test_get_static_info_ok(
-    static_narrative_service: StaticNarrative, context: dict[str, Any], requests_mock
+    static_narrative_service: StaticNarrative,
+    context: dict[str, Any],
+    fake_user: str,
+    requests_mock,
 ) -> None:
     ws_id = 5
     ws_name = "fake_ws"
@@ -201,7 +211,7 @@ def test_get_static_info_ok(
             "KBaseNarrative.Narrative-4.0",
             ts_iso,
             1,
-            USER_ID,
+            fake_user,
             ws_id,
             ws_name,
             "an_md5",
@@ -209,7 +219,7 @@ def test_get_static_info_ok(
             None,
         ]
     }
-    ws_info = [5, ws_name, USER_ID, ts_iso, 1, "a", "r", "unlocked", ws_meta]
+    ws_info = [5, ws_name, fake_user, ts_iso, 1, "a", "r", "unlocked", ws_meta]
     set_up_ok_mocks(
         requests_mock, ref_to_file=ref_to_file, ref_to_info=ref_to_info, ws_info=ws_info
     )

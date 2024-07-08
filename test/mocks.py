@@ -1,8 +1,8 @@
 """Mock data for use during tests."""
 
 import json
-import os
 from copy import deepcopy
+from pathlib import Path
 from typing import Any
 
 import requests
@@ -100,11 +100,11 @@ def _mock_adapter(
                 tag = params[0]["tag"]
                 ids = params[0]["ids"]
                 result = [_get_fake_nms_info(tag, ids)]
-            response._content = bytes(json.dumps({"result": result, "version": "1.1"}), "UTF-8")
+            response._content = bytes(json.dumps({"result": result, "version": "1.1"}), "UTF-8")  # noqa: SLF001
         elif rq_method == "GET" and "/api/V2/users/?list=" in request.url:
             if user_map == {}:
                 response.status_code = 500
-                response._content = bytes(
+                response._content = bytes(  # noqa: SLF001
                     json.dumps(
                         {
                             "error": {
@@ -120,7 +120,7 @@ def _mock_adapter(
                     "UTF-8",
                 )
             else:
-                response._content = bytes(json.dumps(user_map), "UTF-8")
+                response._content = bytes(json.dumps(user_map), "UTF-8")  # noqa: SLF001
         return response
 
     return mock_adapter
@@ -167,7 +167,7 @@ def _get_object_from_file(filename: str) -> dict[str, Any]:
     returned from a service.
     If it's not JSON, it'll crash.
     """
-    with open(os.path.join(TEST_BASE_DIR, filename)) as f:
+    with Path(TEST_BASE_DIR / filename).open() as f:
         return json.load(f)
 
 
@@ -192,37 +192,13 @@ def set_up_ok_mocks(
     )
 
 
-def mock_auth_ok(user_id, token):
-    pass
-
-
-def mock_auth_bad_token(token):
-    pass
-
-
-def mock_ws_narrative_fetch(narrative_ref):
-    pass
-
-
-def mock_ws_narrative_fetch_forbidden(narrative_ref):
-    pass
-
-
-def mock_ws_info(ws_id):
-    pass
-
-
-def mock_ws_info_unauth(ws_id):
-    pass
-
-
-def mock_ws_bad(requests_mock, msg):
+def mock_ws_bad(requests_mock, msg: str) -> None:
     """Always returns a 500 from a workspace call, triggering a ServerError."""
 
-    def mock_adapter_bad_ws(request):
+    def mock_adapter_bad_ws(request: requests.Request) -> requests.Response:
         response = requests.Response()
         response.status_code = 500
-        response._content = bytes(
+        response._content = bytes(  # noqa: SLF001
             json.dumps(
                 {
                     "error": {
