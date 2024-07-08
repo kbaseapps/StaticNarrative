@@ -58,35 +58,26 @@ def export_narrative_data(
     ows = ObjectsWithSets(workspace_client=ws_client, set_api_client=set_api_client, token=token)
     ws_data = ows.list_objects_with_sets(ws_id=wsid, include_metadata=1)
 
-    filtered_data = []
     indexed_data = {}
     type_info = {}
     for item in ws_data:
-        obj = item[OBJ_INFO]
-        obj_type = obj[2].split("-")[0]
-        if obj_type in IGNORED_TYPES:
-            continue
-        obj_upa = generate_upa(item[OBJ_INFO])
-        type_name = obj_type.split(".")[-1]
-        if type_name not in type_info:
-            type_info[type_name] = {"count": 0, "icon": get_data_icon(type_name)}
-        filtered_data.append(_reshape_obj(obj, obj_upa))
-        type_info[type_name]["count"] += 1
+        # add the item to the index of ws objects and types
+        _index_obj(item, type_info, indexed_data)
 
         # if this is a set, go through each item in the set and add it to indexed_data
         if SET_ITEMS in item and SET_ITEMS_INFO in item[SET_ITEMS]:
             item[SET_ITEMS]["upas"] = []
             for set_item in item[SET_ITEMS][SET_ITEMS_INFO]:
                 set_item_upa = generate_upa(set_item)
-                indexed_data[set_item_upa] = {OBJ_INFO: set_item}
                 item[SET_ITEMS]["upas"].append(set_item_upa)
+                _index_obj({OBJ_INFO: set_item}, type_info, indexed_data)
 
-        # add the item to the index of ws objects
-        indexed_data[obj_upa] = item
+    # generate a list of data for output, sorted by object name
+    reshaped_data = [_reshape_obj(upa, val) for upa, val in indexed_data.items()]
 
     # Sort and dump to file.
     output_data = {
-        "data": sorted(filtered_data, key=lambda o: o[1].lower()),
+        "data": sorted(reshaped_data, key=lambda x: x[1].lower()),
         "types": type_info,
     }
 
@@ -98,12 +89,28 @@ def export_narrative_data(
     return output_data
 
 
-def _reshape_obj(obj_info: list[str | dict[str, Any]], obj_upa: str) -> list[str | dict[str, Any]]:
+def _index_obj(
+    item: dict[str, Any], type_info: dict[str, Any], indexed_data: dict[str, Any]
+) -> None:
+    """Index by object ID and save the type information."""
+    obj = item[OBJ_INFO]
+    obj_type = obj[2].split("-")[0]
+    if obj_type in IGNORED_TYPES:
+        return
+    obj_upa = generate_upa(item[OBJ_INFO])
+    type_name = obj_type.split(".")[-1]
+    if type_name not in type_info:
+        type_info[type_name] = {"count": 0, "icon": get_data_icon(type_name)}
+    type_info[type_name]["count"] += 1
+    indexed_data[obj_upa] = item
+
+
+def _reshape_obj(obj_upa: str, obj: dict[str, Any]) -> list[str | dict[str, Any]]:
     """Strip out useful object info, return as a list.
 
     Just pulls out the relevant info from object info, and mashes it into
     something more useful for the Static Narrative data browser.
-    Takes an Object Info tuple from the Workspace and returns the following list:
+    Takes a KBase object from the Workspace and returns the following list:
     [
         UPA,
         name,
@@ -112,10 +119,14 @@ def _reshape_obj(obj_info: list[str | dict[str, Any]], obj_upa: str) -> list[str
         metadata (or empty dict)
     ]
     """
+    if OBJ_INFO not in obj:
+        msg = "Invalid KBase obj data format: " + json.dumps(obj)
+        raise ValueError(msg)
+
     return [
         obj_upa,
-        obj_info[1],
-        obj_info[2],
-        obj_info[3],
-        obj_info[10],
+        obj[OBJ_INFO][1],
+        obj[OBJ_INFO][2],
+        obj[OBJ_INFO][3],
+        obj[OBJ_INFO][10],
     ]
