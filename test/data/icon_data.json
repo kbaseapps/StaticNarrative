@@ -1,0 +1,30 @@
+{
+    "methods": {
+        "method": [
+            "fa-cube"
+        ],
+        "app": [
+            "fa-cubes"
+        ]
+    },
+    "data": {
+        "DEFAULT": [
+            "fa-file-o"
+        ],
+        "AssemblyInput": [
+            "icon icon-reads"
+        ],
+        "Assembly": [
+            "fa-align-justify"
+        ]
+    },
+    "colors": [
+        "#F44336",
+        "#E91E63",
+        "#9C27B0"
+    ],
+    "color_mapping": {
+        "AssemblyInput": "#F44336",
+        "Assembly": "#920D58"
+    }
+}

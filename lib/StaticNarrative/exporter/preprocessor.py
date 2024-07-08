@@ -2,9 +2,9 @@
 
 __author__ = "Bill Riehl <wjriehl@lbl.gov>"
 
-import os
 from collections import defaultdict
 from datetime import datetime
+from pathlib import Path
 from typing import Any
 
 import nbformat
@@ -13,7 +13,8 @@ from nbconvert.preprocessors import Preprocessor
 from nbformat import NotebookNode
 
 from StaticNarrative.exporter.app_processor import AppProcessor
-from StaticNarrative.exporter.processor_util import get_authors, get_icon
+from StaticNarrative.exporter.icon_util import get_icon
+from StaticNarrative.exporter.processor_util import get_authors
 from StaticNarrative.upa import deserialize
 
 
@@ -27,8 +28,8 @@ class NarrativePreprocessor(Preprocessor):
         super().__init__(config=config, **kw)
         self.host = self.config.narrative_session.host
         base_path = self.config.narrative_session.base_path
-        self.style_file = os.path.join(base_path, "static", "styles", "static_narrative.css")
-        self.icon_style_file = os.path.join(base_path, "static", "styles", "kbase_icons.css")
+        self.style_file = Path(base_path) / "static" / "styles" / "static_narrative.css"
+        self.icon_style_file = Path(base_path) / "static" / "styles" / "kbase_icons.css"
         self.assets_base_url = self.config.narrative_session.assets_base_url
         self.assets_version = self.config.narrative_session.assets_version
         self.narrative_ref = self.config.narrative_session.narrative_ref
@@ -41,6 +42,7 @@ class NarrativePreprocessor(Preprocessor):
     def preprocess(
         self: "NarrativePreprocessor", nb: NotebookNode, resources: dict[str, Any]
     ) -> tuple[Any, dict[str, Any]]:
+        """Preprocessing to apply before starting the real processing."""
         (nb, resources) = super().preprocess(nb, resources)
 
         app_meta = self._get_app_metadata(nb, self.config.narrative_session.nms_url)
@@ -78,9 +80,9 @@ class NarrativePreprocessor(Preprocessor):
             resources["inlining"] = {}
         if "css" not in resources["inlining"]:
             resources["inlining"]["css"] = []
-        with open(self.style_file) as css:
+        with self.style_file.open() as css:
             resources["inlining"]["css"].append(css.read())
-        with open(self.icon_style_file) as icons:
+        with self.icon_style_file.open() as icons:
             icons_file = self.icons_font_css() + icons.read()
             resources["inlining"]["css"].append(icons_file)
 
