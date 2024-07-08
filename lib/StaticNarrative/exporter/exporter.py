@@ -57,12 +57,12 @@ class NarrativeExporter:
     def export_narrative(
         self: "NarrativeExporter",
         narrative_ref: NarrativeRef,
-        output_dir: str,
-    ) -> str:
+        output_dir: str | Path,
+    ) -> Path:
         """Exports the Narrative to an HTML file and returns the path to that file.
 
         :param narrative_ref: NarrativeRef - the workspace reference to the narrative object
-        :param output_dir: str - the requested output file path.
+        :param output_dir: str | Path - the requested output file path.
         :return: str - the absolute path to the generated static Narrative HTML file.
         """
         # 1. Get the Narrative object
@@ -98,7 +98,7 @@ class NarrativeExporter:
         output_path = Path(output_dir) / OUTPUT_HTML_FILE
         with output_path.open("w") as output_html:
             output_html.write(body)
-        return str(output_path)
+        return output_path
 
     def _build_exporter(
         self: "NarrativeExporter", exported_data: dict[str, Any], narrative_ref: NarrativeRef

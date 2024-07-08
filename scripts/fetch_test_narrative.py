@@ -13,8 +13,8 @@ How to run:
 
 import argparse
 import json
-import os
 import sys
+from pathlib import Path
 
 from installed_clients.WorkspaceClient import Workspace
 from StaticNarrative.exporter.objects_with_sets import ObjectsWithSets
@@ -42,7 +42,7 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
     narr_id = ws_meta["narrative"]
     narr_obj = ws_client.get_objects2({"objects": [{"ref": f"{ws_id}/{narr_id}"}]})["data"][0]
     narr_ver = narr_obj["info"][4]
-    narr_outpath = os.path.join(outdir, f"narrative-{ws_id}.{narr_id}.{narr_ver}.json")
+    narr_outpath = Path(outdir) / f"narrative-{ws_id}.{narr_id}.{narr_ver}.json"
     with open(narr_outpath, "w") as fout:
         json.dump(narr_obj, fout, indent=4)
 
@@ -64,15 +64,15 @@ def fetch_narrative_data(endpt: str, token: str, ws_id: int, outdir: str) -> int
                     )["data"][0]
                     report_info = report_data["info"]
                     ref_dots = f"{report_info[6]}.{report_info[0]}.{report_info[4]}"
-                    report_path = os.path.join(outdir, f"report-{ref_dots}.json")
-                    with open(report_path, "w") as fout:
+                    report_path = Path(outdir) / f"report-{ref_dots}.json"
+                    with report_path.open("w") as fout:
                         json.dump(report_data, fout, indent=4)
 
     # List objects results
     ows = ObjectsWithSets(workspace_client=ws_client, token=token)
     ws_data = ows.list_objects_with_sets(ws_id, includeMetadata=1)
-    data_outpath = os.path.join(outdir, f"objects-{ws_id}.json")
-    with open(data_outpath, "w") as fout:
+    data_outpath = Path(outdir) / f"objects-{ws_id}.json"
+    with data_outpath.open("w") as fout:
         json.dump(ws_data, fout, indent=4)
 
     return 0

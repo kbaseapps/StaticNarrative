@@ -13,6 +13,7 @@ import vcr
 import vcr.request
 from installed_clients.WorkspaceClient import Workspace
 from StaticNarrative.config import generate_config
+from StaticNarrative.narrative_ref import NarrativeRef
 from StaticNarrative.StaticNarrativeImpl import StaticNarrative
 
 from test import TEST_BASE_DIR
@@ -73,6 +74,12 @@ def fake_user() -> str:
 def fake_token() -> str:
     """A placeholder token."""
     return "some_token_string"
+
+
+@pytest.fixture(scope="session")
+def narr_ref() -> NarrativeRef:
+    """Example narrative ref for testing."""
+    return NarrativeRef.parse("12345/1/1")
 
 
 @pytest.fixture(scope="session")
