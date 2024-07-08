@@ -142,4 +142,4 @@ def test_exporter_ok(
         NarrativeRef({"wsid": ws_id, "objid": 1, "ver": 21}), scratch_dir
     )
     expected_outfile = Path(scratch_dir) / OUTPUT_HTML_FILE
-    assert static_path == str(expected_outfile)
+    assert static_path == expected_outfile
