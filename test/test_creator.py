@@ -1,12 +1,12 @@
 """Tests for the StaticNarrativeCreator class."""
 
+from copy import deepcopy
 from collections.abc import Callable, Generator
 from pathlib import Path
 from typing import Any
 
 import pytest
 from pytest_mock import MockerFixture
-from pytest_mock.plugin import _mocker
 from StaticNarrative.creator import StaticNarrativeCreator
 from StaticNarrative.narrative_ref import NarrativeRef
 
@@ -59,6 +59,7 @@ def test_export_narrative_fail_dir_issue(
     """Test the case where the static narrative base dir cannot be created."""
     scratch_dir = tmp_path / "output"
     scratch_dir.mkdir(mode=555)
+    creator.config = deepcopy(creator.config)
     # oh no! the scratch directory has been misconfigured!
     creator.config["scratch"] = str(scratch_dir)
 
