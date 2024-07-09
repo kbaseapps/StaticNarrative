@@ -79,11 +79,11 @@ def test_narrative_exporter_set_api_vs_gsn(
 
     with mock.patch.object(narrative_exporter, "_build_exporter", side_effect=side_effect):
         # run the exporter using the SetAPI client
-        narrative_exporter.export_narrative(narr_ref, str(set_api_dir))
+        narrative_exporter.export_narrative(narr_ref, set_api_dir)
 
         # remove the SetAPI client and rerun the exporter
         narrative_exporter.set_api_client = None
-        narrative_exporter.export_narrative(narr_ref, str(gsn_dir))
+        narrative_exporter.export_narrative(narr_ref, gsn_dir)
 
         # compare contents
         for file in [OUTPUT_DATA_FILE, OUTPUT_HTML_FILE]:
