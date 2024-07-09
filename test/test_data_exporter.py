@@ -6,7 +6,6 @@ from typing import Any
 from unittest.mock import MagicMock
 
 import pytest
-from installed_clients.WorkspaceClient import Workspace
 from StaticNarrative.constants import OBJ_INFO, OUTPUT_DATA_FILE
 from StaticNarrative.exporter.data_exporter import (
     SET_ITEMS,
@@ -63,6 +62,7 @@ def test_export_narrative_data(
     narrative_data: list[dict[str, Any]],
     mocker: Callable[..., Generator[Any, None, None]],
 ) -> None:
+    """Test the default functionality of export_narrative_data with mocked set data."""
     mocker.patch(
         "StaticNarrative.exporter.objects_with_sets.ObjectsWithSets.list_objects_with_sets",
         return_value=narrative_data,
