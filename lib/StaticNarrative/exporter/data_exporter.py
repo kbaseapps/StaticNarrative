@@ -77,6 +77,7 @@ def export_narrative_data(
 
     # Sort and dump to file.
     output_data = {
+        "headers": ["upa", "name", "type", "timestamp", "other"],
         "data": sorted(reshaped_data, key=lambda x: x[1].lower()),
         "types": type_info,
     }
@@ -92,12 +93,23 @@ def export_narrative_data(
 def _index_obj(
     item: dict[str, Any], type_info: dict[str, Any], indexed_data: dict[str, Any]
 ) -> None:
-    """Index by object ID and save the type information."""
+    """Index the data obj by ID and save the type information.
+
+    Note that the type_info and indexed_data dictionaries are updated by this function.
+
+    :param item: dictionary of workspace data, including info under the 'object_info' key
+    :type item: dict[str, Any]
+    :param type_info: dictionary of type information
+    :type type_info: dict[str, Any]
+    :param indexed_data: dictionary of objects, indexed by object ID
+    :type indexed_data: dict[str, Any]
+    """
+    # Index by object ID and save the type information.
     obj = item[OBJ_INFO]
     obj_type = obj[2].split("-")[0]
     if obj_type in IGNORED_TYPES:
         return
-    obj_upa = generate_upa(item[OBJ_INFO])
+    obj_upa = generate_upa(obj)
     type_name = obj_type.split(".")[-1]
     if type_name not in type_info:
         type_info[type_name] = {"count": 0, "icon": get_data_icon(type_name)}
