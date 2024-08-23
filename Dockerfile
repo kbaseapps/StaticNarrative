@@ -1,15 +1,22 @@
 FROM python:3.12-alpine
 LABEL MAINTAINER KBase Developer
 
+# Install pip requirements
+COPY requirements.txt .
+COPY requirements-test.txt .
+
+# install python modules one at a time so that all deps get resolved properly
+RUN apk --update add build-base python3-dev linux-headers pcre-dev && \
+    apk cache clean && \
+    pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt -r requirements-test.txt && \
+    apk del build-base python3-dev linux-headers
+
 COPY ./ /kb/module/
 WORKDIR /kb/module
-# install python modules one at a time so that all deps get resolved properly
-RUN pip install --upgrade pip && \
-    cat requirements.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 pip install && \
-    cat requirements-test.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 pip install && \
-    mkdir -p /kb/module/work && \
+RUN mkdir -p /kb/module/work && \
     chmod -R a+rw /kb/module && \
-    cp compile_report.json work/
+    mv compile_report.json work/
 
 ENV PYTHONPATH="/kb/module/lib:$PYTHONPATH"
 
