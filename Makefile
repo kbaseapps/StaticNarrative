@@ -18,6 +18,7 @@ compile:
 	KB_SDK_COMPILE_REPORT_FILE=$(COMPILE_REPORT) kb-sdk compile $(SPEC_FILE) \
 		--verbose \
 		--out $(LIB_DIR) \
+		--pyclname $(SERVICE_CAPS).$(SERVICE_CAPS)Client \
 		--pysrvname $(SERVICE_CAPS).$(SERVICE_CAPS)Server \
 		--pyimplname $(SERVICE_CAPS).$(SERVICE_CAPS)Impl;
 
